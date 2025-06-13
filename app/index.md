@@ -6,4 +6,4 @@ title: My first page
 
 This is my first page, built using Eleventy and `@x-govuk/govuk-eleventy-plugin`.
 
-[Submit an Application to change the Land Register service API](http://localhost:8080/apis/submit-an-application-to-change-the-land-register/)
+[Submit an Application to change the Land Register service API](/apis/submit-an-application-to-change-the-land-register/)
