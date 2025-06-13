@@ -20,8 +20,8 @@ title: Eleventy Prototype
 ### API List
 
 - [Submit an Application to change the Land Register service API](/apis/submit-an-application-to-change-the-land-register/)
-  - [Send a Document](/api/send-a-document/)
-  - [Submit an Application](/api/submit-an-application/)
-  - [Notifications](/api/notifications/)
-  - [Application Information](/api/application-information/)
+  - [Send a Document](/apis/send-a-document/)
+  - [Submit an Application](/apis/submit-an-application/)
+  - [Notifications](/apis/notifications/)
+  - [Application Information](/apis/application-information/)
 - [Estimate Completion Date](/apis/estimate-completion-date/)
