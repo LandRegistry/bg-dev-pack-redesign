@@ -1,6 +1,7 @@
 ---
 title: Application Information API
 layout: devpack.njk
+breadcrumb: false
 ---
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">

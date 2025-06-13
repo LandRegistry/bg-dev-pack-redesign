@@ -11,15 +11,14 @@ export default function (eleventyConfig) {
       shortcut: "hmlrassets/images/favicon.ico",
       touch: "hmlrassets/images/apple-touch-icon.png"
     },
+    showBreadcrumbs: false,
     opengraphImageUrl: "hmlrassets/images/hmlr-opengraph-image.png",
     themeColor: '#789904',
     // rebrand: true,
     stylesheets: ['/assets/styles.css'],
     titleSuffix: "HM Land Registry Developer Pack",
     header: {
-      logotype: {
-        text: " HM Land Registry "
-      },
+      logotype: {text: " HM Land Registry "},
       productName: "- Developer Pack",
       search: {
         label: "Search developer pack",
@@ -27,6 +26,7 @@ export default function (eleventyConfig) {
         sitemapPath: "/sitemap"
       }
     },
+    serviceNavigation: true,
     footer: {
       logo: false,
       // copyright: {

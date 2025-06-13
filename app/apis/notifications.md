@@ -1,14 +1,12 @@
 ---
 title: Notifications API
 layout: devpack.njk
+breadcrumb: false
 ---
 
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
 
-<h1 class="govuk-heading-xl">
-Notifications service API
-</h1>
 <p class="govuk-body-l">Use this service to get updates about multiple applications submitted by the same business unit.</p>
 
 <div class="govuk-warning-text">
