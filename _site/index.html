@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template">
   <head>
     <meta charset="utf-8">
-    <title>My first page - HM Land Registry Developer Pack</title>
+    <title>Eleventy Prototype - HM Land Registry Developer Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/assets/styles.css">
 
 
-  <meta property="og:title" content="My first page">
+  <meta property="og:title" content="Eleventy Prototype">
 
     <meta property="og:image" content="hmlrassets/images/hmlr-opengraph-image.png">
   </head>
@@ -43,15 +43,37 @@
         <main class="govuk-main-wrapper" id="main-content">
   <header class="app-document-header">
   <h1 class="app-document-header__title govuk-heading-xl">
-    My first page
+    Eleventy Prototype
   </h1>
 
 </header>
 
 
 
-  <div class="app-prose-scope"><p class="govuk-body">This is my first page, built using Eleventy and <code class="x-govuk-code x-govuk-code--inline">@x-govuk/govuk-eleventy-plugin</code>.</p>
-<p class="govuk-body"><a href="/apis/submit-an-application-to-change-the-land-register/" class="govuk-link">Submit an Application to change the Land Register service API</a></p>
+  <div class="app-prose-scope"><div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      This is a temporary index page.
+    </p>
+  </div>
+</div>
+<h3 id="api-list" tabindex="-1" class="govuk-heading-m">API List</h3>
+<ul class="govuk-list govuk-list--bullet">
+<li><a href="/apis/submit-an-application-to-change-the-land-register/" class="govuk-link">Submit an Application to change the Land Register service API</a>
+<ul class="govuk-list govuk-list--bullet">
+<li><a href="/api/send-a-document/" class="govuk-link">Send a Document</a></li>
+<li><a href="/api/submit-an-application/" class="govuk-link">Submit an Application</a></li>
+<li><a href="/api/notifications/" class="govuk-link">Notifications</a></li>
+<li><a href="/api/application-information/" class="govuk-link">Application Information</a></li>
+</ul>
+</li>
+<li><a href="/apis/estimate-completion-date/" class="govuk-link">Estimate Completion Date</a></li>
+</ul>
 </div>
 
 
