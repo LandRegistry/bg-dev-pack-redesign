@@ -1,14 +1,13 @@
 ---
 title: Estimated Completion Date
-layout: devpack.njk
+layout: devpack-old.njk
+sectionKey: Estimated Completion Date
 ---
 
 ---
 ## Overview
 
-The Estimated Completion Date (ECD) is a date by which the application is likely to be completed.
-It is not based on the individual application but is an estimate of when the majority (90%)
-of that application type will be completed. 
+The Estimated Completion Date (ECD) is a date by which the application is likely to be completed. It is not based on the individual application but is an estimate of when the majority (90%) of that application type will be completed. 
 
 In order to retain parity with our Portal customer experience, we require that anyone integrating with this service refer to the estimated completion timeframes which can be found at [https://www.gov.uk/guidance/hm-land-registry-estimated-completion-timeframes](https://www.gov.uk/guidance/hm-land-registry-estimated-completion-timeframes). We also see benefit in end users being familiar with the above URL, the insights provided are likely to reduce the need for customer contact. Therefore we also ask that you make your customers aware of the above URL.
 
@@ -23,13 +22,9 @@ The ECD:
 
 ## Application Types
 
-To use the ECD service you will need to know the application reference of the application you wish to find
-out the ECD for. If you do not know the application reference, please use the [application enquiry](../application_enquiry/index.html)
-service to obtain this.
+To use the ECD service you will need to know the application reference of the application you wish to find out the ECD for. If you do not know the application reference, please use the [application enquiry](../application_enquiry/index.html) service to obtain this.
 
-This service is for applications that change the register i.e. register create and register update
-applications only. This is denoted by the format of the application reference (you may also see this referred
-to as the ABR or HMLR reference):
+This service is for applications that change the register i.e. register create and register update applications only. This is denoted by the format of the application reference (you may also see this referred to as the ABR or HMLR reference):
 
 `A999AAA` or `AAXXXXX`
 
@@ -42,8 +37,7 @@ Where:
 
 ## Process Flow
 
-To request the Estimated Completion Date of an application, you will need to input the Application Reference into
-your Case Management Software:
+To request the Estimated Completion Date of an application, you will need to input the Application Reference into your Case Management Software:
 
 ### Input
 
@@ -62,8 +56,8 @@ your Case Management Software:
 ### Process Flow Diagram
 
 <div style="padding-bottom: 15px">
-  <a href="/images/estimated_completion_date/validation_diagram.png" target="_blank" >
-    <img src="/images/estimated_completion_date/validation_diagram.png" style="width:700px;" alt="Estimate Completion Date Service version 1 flow diagram" title="Clicking this image will open the image in a new tab">
+  <a href="/assets/images/estimated_completion_date/validation_diagram.png" target="_blank" >
+    <img src="/assets/images/estimated_completion_date/validation_diagram.png" style="width:700px;" alt="Estimate Completion Date Service version 1 flow diagram" title="Clicking this image will open the image in a new tab">
   </a>
 </div>
 
@@ -76,8 +70,7 @@ This service is available 24/7.
 ---
 
 ## Access Control
-To use this service you will need to be an existing Business Gateway user. You will also need to ensure that users
-have at least one of the following access role codes/collection IDs:
+To use this service you will need to be an existing Business Gateway user. You will also need to ensure that users have at least one of the following access role codes/collection IDs:
 - L1, L2, L3, WM1, WM2, WM5, C4, VS1, Z1, Z2
 
 If you would like to integrate with this service you can request access at
@@ -95,7 +88,7 @@ See [Rest Rate Limiting](/rest/get_started/rate_limiting.html)
 
 <div style="padding-bottom: 15px">
   <div style="float:left; padding-right: 15px">
-    <img src="/images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+    <img src="/assets/images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div >
     <p><a href="openapi.html" class="govuk-!-font-size-24" id="openapi-yaml">OpenAPI Schema</a></p>
@@ -109,8 +102,7 @@ See [Rest Rate Limiting](/rest/get_started/rate_limiting.html)
 
 ## Error and Status Codes
 
-When developing for exception handling, use the HTTP codes in the table.
-The error codes listed are subject to change.
+When developing for exception handling, use the HTTP codes in the table. The error codes listed are subject to change.
 
 <table class="govuk-table" cellpadding="10">
   <caption>Error and HTTP Codes</caption>
@@ -184,7 +176,8 @@ This requires a customer test certificate (this is different to the production c
 
 ### Scenarios when ECD is returned
 
-Scenario 1 - Application reference is valid and matches an application. ECD is provided.<br>
+Scenario 1 - Application reference is valid and matches an application. ECD is provided.
+
 ABR: X000XXX
 
 <pre><code>
@@ -204,9 +197,7 @@ ABR: X000XXX
 }
 </code></pre>
 
-<br>
-
-Scenario 2 - Application reference is valid, application is delayed. ECD is provided.<br>
+Scenario 2 - Application reference is valid, application is delayed. ECD is provided.
 ABR: X001XXX
 
 <pre><code>
@@ -242,9 +233,7 @@ ABR: X002XXX
 }
 </code></pre>
 
-<br>
-
-Scenario 4 - Application reference is valid and matches an application. ECD is not yet calculated.<br>
+Scenario 4 - Application reference is valid and matches an application. ECD is not yet calculated.
 ABR: X003XXX
 
 <pre><code>
@@ -258,9 +247,7 @@ ABR: X003XXX
 }
 </code></pre>
 
-<br>
-
-Scenario 5 - Application reference is valid and matches a cancelled application. ECD status is unavailable.<br>
+Scenario 5 - Application reference is valid and matches a cancelled application. ECD status is unavailable.
 ABR: X004XXX
 
 <pre><code>
@@ -276,7 +263,7 @@ ABR: X004XXX
 
 ### Client-side error scenarios
 
-Scenario 6 - Application reference is invalid.<br>
+Scenario 6 - Application reference is invalid.
 ABR: 005XXXX
 
 <pre><code>
@@ -293,9 +280,7 @@ ABR: 005XXXX
 }
 </code></pre>
 
-<br>
-
-Scenario 7 - Application reference is valid but does not match a HMLR application.<br>
+Scenario 7 - Application reference is valid but does not match a HMLR application.
 ABR: X006XXX
 
 <pre><code>

@@ -48,7 +48,15 @@
 </nav>
 
         <main class="govuk-main-wrapper" id="main-content">
-  <header class="app-document-header">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter-from-desktop">
+      <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="sub-navigation-heading">Pages in this section</h2>
+</nav>
+
+    </div>
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      <header class="app-document-header">
   <h1 class="app-document-header__title govuk-heading-xl">
     Estimated Completion Date
   </h1>
@@ -57,11 +65,9 @@
 
 
 
-  <div class="app-prose-scope"><hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <div class="app-prose-scope"><hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <h2 id="overview" tabindex="-1" class="govuk-heading-l">Overview</h2>
-<p class="govuk-body">The Estimated Completion Date (ECD) is a date by which the application is likely to be completed.<br>
-It is not based on the individual application but is an estimate of when the majority (90%)<br>
-of that application type will be completed.</p>
+<p class="govuk-body">The Estimated Completion Date (ECD) is a date by which the application is likely to be completed. It is not based on the individual application but is an estimate of when the majority (90%) of that application type will be completed.</p>
 <p class="govuk-body">In order to retain parity with our Portal customer experience, we require that anyone integrating with this service refer to the estimated completion timeframes which can be found at <a href="https://www.gov.uk/guidance/hm-land-registry-estimated-completion-timeframes" class="govuk-link">https://www.gov.uk/guidance/hm-land-registry-estimated-completion-timeframes</a>. We also see benefit in end users being familiar with the above URL, the insights provided are likely to reduce the need for customer contact. Therefore we also ask that you make your customers aware of the above URL.</p>
 <p class="govuk-body">The ECD:</p>
 <ul class="govuk-list govuk-list--bullet">
@@ -72,12 +78,8 @@ of that application type will be completed.</p>
 </ul>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <h2 id="application-types" tabindex="-1" class="govuk-heading-l">Application Types</h2>
-<p class="govuk-body">To use the ECD service you will need to know the application reference of the application you wish to find<br>
-out the ECD for. If you do not know the application reference, please use the <a href="../application_enquiry/index.html" class="govuk-link">application enquiry</a><br>
-service to obtain this.</p>
-<p class="govuk-body">This service is for applications that change the register i.e. register create and register update<br>
-applications only. This is denoted by the format of the application reference (you may also see this referred<br>
-to as the ABR or HMLR reference):</p>
+<p class="govuk-body">To use the ECD service you will need to know the application reference of the application you wish to find out the ECD for. If you do not know the application reference, please use the <a href="../application_enquiry/index.html" class="govuk-link">application enquiry</a> service to obtain this.</p>
+<p class="govuk-body">This service is for applications that change the register i.e. register create and register update applications only. This is denoted by the format of the application reference (you may also see this referred to as the ABR or HMLR reference):</p>
 <p class="govuk-body"><code class="x-govuk-code x-govuk-code--inline">A999AAA</code> or <code class="x-govuk-code x-govuk-code--inline">AAXXXXX</code></p>
 <p class="govuk-body">Where:<br>
 <code class="x-govuk-code x-govuk-code--inline">A = [A-Z]</code><br>
@@ -85,8 +87,7 @@ to as the ABR or HMLR reference):</p>
 <code class="x-govuk-code x-govuk-code--inline">X = [0-9A-F]</code></p>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <h2 id="process-flow" tabindex="-1" class="govuk-heading-l">Process Flow</h2>
-<p class="govuk-body">To request the Estimated Completion Date of an application, you will need to input the Application Reference into<br>
-your Case Management Software:</p>
+<p class="govuk-body">To request the Estimated Completion Date of an application, you will need to input the Application Reference into your Case Management Software:</p>
 <h3 id="input" tabindex="-1" class="govuk-heading-m">Input</h3>
 <ul class="govuk-list govuk-list--bullet">
 <li>Login details</li>
@@ -103,8 +104,8 @@ your Case Management Software:</p>
 </ul>
 <h3 id="process-flow-diagram" tabindex="-1" class="govuk-heading-m">Process Flow Diagram</h3>
 <div style="padding-bottom: 15px">
-  <a href="/images/estimated_completion_date/validation_diagram.png" target="_blank" >
-    <img src="/images/estimated_completion_date/validation_diagram.png" style="width:700px;" alt="Estimate Completion Date Service version 1 flow diagram" title="Clicking this image will open the image in a new tab">
+  <a href="/assets/images/estimated_completion_date/validation_diagram.png" target="_blank" >
+    <img src="/assets/images/estimated_completion_date/validation_diagram.png" style="width:700px;" alt="Estimate Completion Date Service version 1 flow diagram" title="Clicking this image will open the image in a new tab">
   </a>
 </div>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -112,8 +113,7 @@ your Case Management Software:</p>
 <p class="govuk-body">This service is available 24/7.</p>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <h2 id="access-control" tabindex="-1" class="govuk-heading-l">Access Control</h2>
-<p class="govuk-body">To use this service you will need to be an existing Business Gateway user. You will also need to ensure that users<br>
-have at least one of the following access role codes/collection IDs:</p>
+<p class="govuk-body">To use this service you will need to be an existing Business Gateway user. You will also need to ensure that users have at least one of the following access role codes/collection IDs:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li>L1, L2, L3, WM1, WM2, WM5, C4, VS1, Z1, Z2</li>
 </ul>
@@ -126,7 +126,7 @@ have at least one of the following access role codes/collection IDs:</p>
 <h2 id="schemas" tabindex="-1" class="govuk-heading-l">Schemas</h2>
 <div style="padding-bottom: 15px">
   <div style="float:left; padding-right: 15px">
-    <img src="/images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+    <img src="/assets/images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div >
     <p><a href="openapi.html" class="govuk-!-font-size-24" id="openapi-yaml">OpenAPI Schema</a></p>
@@ -137,8 +137,7 @@ have at least one of the following access role codes/collection IDs:</p>
 </div>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <h2 id="error-and-status-codes" tabindex="-1" class="govuk-heading-l">Error and Status Codes</h2>
-<p class="govuk-body">When developing for exception handling, use the HTTP codes in the table.<br>
-The error codes listed are subject to change.</p>
+<p class="govuk-body">When developing for exception handling, use the HTTP codes in the table. The error codes listed are subject to change.</p>
 <table class="govuk-table" cellpadding="10">
   <caption>Error and HTTP Codes</caption>
   <thead class="govuk-table__head">
@@ -202,8 +201,8 @@ The error codes listed are subject to change.</p>
 <p class="govuk-body">Where <code class="x-govuk-code x-govuk-code--inline">{application_reference}</code> is replaced by the application reference you need to use.</p>
 <p class="govuk-body">This requires a customer test certificate (this is different to the production client certificates)</p>
 <h3 id="scenarios-when-ecd-is-returned" tabindex="-1" class="govuk-heading-m">Scenarios when ECD is returned</h3>
-<p class="govuk-body">Scenario 1 - Application reference is valid and matches an application. ECD is provided.<br><br>
-ABR: X000XXX</p>
+<p class="govuk-body">Scenario 1 - Application reference is valid and matches an application. ECD is provided.</p>
+<p class="govuk-body">ABR: X000XXX</p>
 <pre><code>
 {
     "data": {
@@ -220,8 +219,7 @@ ABR: X000XXX</p>
     }
 }
 </code></pre>
-<br>
-<p class="govuk-body">Scenario 2 - Application reference is valid, application is delayed. ECD is provided.<br><br>
+<p class="govuk-body">Scenario 2 - Application reference is valid, application is delayed. ECD is provided.<br>
 ABR: X001XXX</p>
 <pre><code>
 {
@@ -252,8 +250,7 @@ ABR: X002XXX</p>
     }
 }
 </code></pre>
-<br>
-<p class="govuk-body">Scenario 4 - Application reference is valid and matches an application. ECD is not yet calculated.<br><br>
+<p class="govuk-body">Scenario 4 - Application reference is valid and matches an application. ECD is not yet calculated.<br>
 ABR: X003XXX</p>
 <pre><code>
 {
@@ -265,8 +262,7 @@ ABR: X003XXX</p>
     }
 }
 </code></pre>
-<br>
-<p class="govuk-body">Scenario 5 - Application reference is valid and matches a cancelled application. ECD status is unavailable.<br><br>
+<p class="govuk-body">Scenario 5 - Application reference is valid and matches a cancelled application. ECD status is unavailable.<br>
 ABR: X004XXX</p>
 <pre><code>
 {
@@ -279,7 +275,7 @@ ABR: X004XXX</p>
 }
 </code></pre>
 <h3 id="client-side-error-scenarios" tabindex="-1" class="govuk-heading-m">Client-side error scenarios</h3>
-<p class="govuk-body">Scenario 6 - Application reference is invalid.<br><br>
+<p class="govuk-body">Scenario 6 - Application reference is invalid.<br>
 ABR: 005XXXX</p>
 <pre><code>
 {
@@ -294,8 +290,7 @@ ABR: 005XXXX</p>
     ]
 }
 </code></pre>
-<br>
-<p class="govuk-body">Scenario 7 - Application reference is valid but does not match a HMLR application.<br><br>
+<p class="govuk-body">Scenario 7 - Application reference is valid but does not match a HMLR application.<br>
 ABR: X006XXX</p>
 <pre><code>
 {
@@ -314,6 +309,8 @@ ABR: X006XXX</p>
 
 
 
+    </div>
+  </div>
         </main>
       </div>
 
