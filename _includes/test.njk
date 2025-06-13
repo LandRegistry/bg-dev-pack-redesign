@@ -1,0 +1,62 @@
+{% extends "layouts/page.njk" %}
+
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% block content %}
+
+
+
+<div class="govuk-width-container {{ containerClasses }}">
+
+
+
+  {{ govukNotificationBanner({
+    tag: {
+      text: "Prototype",
+      classes: "govuk-tag--pink"
+    },
+    html: 'This is a prototype of a new design for the Business Gateway developer pack. You might experience problems.'
+  }) }}
+
+
+
+  <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main" {% if mainLang %} lang="{{ mainLang }}" {% endif %}>
+
+                {# <div style="background-color: #f3f2f1 ; padding: 10px;;">
+                  <h1 class="govuk-heading-xl">
+                    Create web services using Business Gateway APIs </h1>
+                </div> #}
+
+<div class="fullWidth">
+
+<div class="app-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-from-desktop">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl app-masthead__title">Create web services using Business Gateway APIs prototype</h1>
+      <p class="app-masthead__description govuk-body">This is a prototype of a new design for the Business Gateway developer pack. We're asking early adopters to use this version when integrating the new Submit an application to change the land register APIs.</p>
+
+<p class="govuk-body">We've focused on providing you with all the information needed to integrate the new APIs and so you'll find that some information relating to our other SOAP or REST APIs is yet to be added. </p>
+
+<p class="govuk-body">We'll be regularly updating this prototype to include all the information integrators need to build the full package of Business Gateway services.</p>
+
+<p class="govuk-body">As this is just a prototype of the new developer pack, you may experience some issues. It has not been accessibility tested.</p>
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<a href="/homepage" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+View developer pack
+</a>
+
+</div>
+</div>
+</main>
+</div>
+
+
+{% endblock %}

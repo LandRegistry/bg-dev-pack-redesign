@@ -1,0 +1,39 @@
+// Use GOV.UK Frontend
+$_font-family: Helvetica, Arial, system-ui, sans-serif;
+@use "pkg:govuk-frontend/dist/govuk" with (
+  $govuk-font-family: $_font-family,
+  $govuk-brand-colour: #789904
+);
+
+// Use GOV.UK Eleventy Plugin components
+@use "pkg:@x-govuk/govuk-eleventy-plugin";
+
+$govuk-brand-colour: #789904;
+
+aside.contents-list {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #b1b4b6;
+}
+
+aside.related-items {
+  border-top: 2px solid $govuk-brand-colour;
+  padding-top: 10px;
+}
+
+.dashed-list > li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  overflow: hidden;
+}
+
+aside.contents-list li {
+  position: relative;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+aside.content-list ol.dashed-list, .content-list ul {
+  list-style-type: none;
+}

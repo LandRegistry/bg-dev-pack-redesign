@@ -1,0 +1,20 @@
+{
+  "name": "custdocstest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "eleventy --serve --watch",
+    "run": "eleventy --serve",
+    "build:sass": "sass --style=compressed --quiet-deps --load-path=. assets/scss/main.scss assets/css/main.css"
+  },
+  "sass": "assets/scss/main.scss",
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.1",
+    "@hmlr/frontend": "^2.1.0-rc.2",
+    "@x-govuk/govuk-eleventy-plugin": "^7.0.1"
+  }
+}
