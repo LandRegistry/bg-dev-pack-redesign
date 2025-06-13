@@ -11,7 +11,6 @@ export default function (eleventyConfig) {
       shortcut: "hmlrassets/images/favicon.ico",
       touch: "hmlrassets/images/apple-touch-icon.png"
     },
-
     opengraphImageUrl: "hmlrassets/images/hmlr-opengraph-image.png",
     themeColor: '#789904',
     rebrand: true,
