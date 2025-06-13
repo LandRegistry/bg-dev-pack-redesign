@@ -22,25 +22,14 @@ export default function (eleventyConfig) {
       },
       productName: "- Developer Pack"
     },
-    // serviceNavigation: {
-    //   serviceName: "Business Gateway",
-    //   serviceUrl: "#",
-    //   navigation: [
-    //     {
-    //       href: "#",
-    //       text: "Navigation item 1",
-    //     },
-    //     {
-    //       href: "#",
-    //       text: "Navigation item 2",
-    //       active: true,
-    //     },
-    //     {
-    //       href: "#",
-    //       text: "Navigation item 3",
-    //     },
-    //   ],
-    // },
+    serviceNavigation: {
+      serviceName: "Service Naviagation Bar",
+      search: {
+        label: "Search developer pack",
+        indexPath: "/search.json",
+        sitemapPath: "/sitemap"
+      }
+    },
     footer: {
       logo: false,
       // copyright: {

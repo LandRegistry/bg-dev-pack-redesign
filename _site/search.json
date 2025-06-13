@@ -1,0 +1,50 @@
+[  {
+    "title": "Eleventy Prototype",
+    "layout": "page",
+    "hasFrontmatterDate": false,
+    "date": "12 June 2025",
+    "templateContent": "important this temporary index page api list submit application change land register service send document notifications information estimate completion date",
+    "url": "/"
+  },  {
+    "title": "Send a Document Service API",
+"section": "Home",    "layout": "devpack.njk",
+    "hasFrontmatterDate": false,
+    "date": "12 June 2025",
+    "templateContent": "use this service attach documents your application ! warning these api endpoints are currently live contents overview view technical guide specification how works test send document should used can integrated using rest core there two steps sending document: request generate upload url will respond with hmlr that only active 10 minutes after creation endpoint also return id when submit uploaded via process subject security scanning have been 180 days which point they removed web version opens new tab does provide environment integrators our business gateway apis instead provided example code demonstrate what expect see developing own services stubs general testing guidance visit related change land register information notifications more subsection",
+    "url": "/apis/send-a-document/"
+  },  {
+    "title": "Submit an Application to change the Land Register service API",
+"section": "Home",    "layout": "devpack.njk",
+    "hasFrontmatterDate": false,
+    "date": "12 June 2025",
+    "templateContent": "use this service help lodge applications with hmlr update register create new lease transfer part contents overview view api specification how works submit application change land will can integrated using rest core faster more responsive than before identify errors prior acceptance resulting fewer requisitions improved experience customers important changes will: collect validate data current version increase number automated checks submission automatically check format structure information added against already future compare provide contained attached documents return 'll benefit from: increased output quality: built all types including charge transactions face consistent results across services: get parity outcomes our digital services greater confidence automation: accurate opportunities streamline processes improve error prevention: system catch fix administrative attachment process: attaching classifying deeds quicker straightforward upgraded technology: from platform mean that are only accepted onto day list when provided both valid correct validation significantly reduce avoidable common mistakes such name discrepancies missing details ability automate additional include: document uploads submission: now need upload submitting json format: instead xml request bodies apis simpler efficient asynchronous successful response means been received prioritisation occur after applied renaming transactions: soap referred fields: transaction specific included initially values joint tenancies removing notes: notes section longer fields have commonly found field these roe id registration overseas entity should type evidence relevant company charges certificate boolean conveyancers_certificate capture value must cert_reg_ch uploaded variation names required exact match cover letter merge close leasehold titles appropriate selected purpose endpoints support: ! warning currently live send generate url about notifications submitted web opens tab related subsection",
+    "url": "/apis/submit-an-application-to-change-the-land-register/"
+  },  {
+    "title": "Submit an Application to change the Land Register service API",
+"section": "Home",    "layout": "devpack.njk",
+    "hasFrontmatterDate": false,
+    "date": "13 June 2025",
+    "templateContent": "use this service provide data hmlr updating register ! warning these api endpoints are currently live contents overview view technical guide specification how works test submit application will help users necessary asynchronous returning unique id submission request which can used when fetching status supports following types: update transfer part dipositionary first lease includes new extension removing default form restriction jp1 content contains information about: addresses documents parties transactions titles web version opens tab does environment integrators using our business gateway apis instead provided example code demonstrate what should expect see developing your own services stubs general testing guidance visit related change land send document notifications more subsection",
+    "url": "/apis/submit-an-application/"
+  },  {
+    "title": "Notifications API",
+"section": "Home",    "layout": "devpack.njk",
+    "hasFrontmatterDate": false,
+    "date": "13 June 2025",
+    "templateContent": "notifications service api use this get updates about multiple applications submitted by same business unit ! warning these endpoints are currently live contents overview view technical guide specification how works test provides way fetching only supports pull interaction model where must requested periodically however more information push will shared future two endpoints: v0 all that match provided filters post acknowledge notify hmlr have been received can used after receiving notification indicating application changed which available visit section submit page web version opens new tab does provide environment integrators using our gateway apis instead example code demonstrate what should expect see when developing your own services stubs general testing guidance related change land register send document subsection",
+    "url": "/apis/notifications/"
+  },  {
+    "title": "Application Information API",
+"section": "Home",    "layout": "devpack.njk",
+    "hasFrontmatterDate": false,
+    "date": "13 June 2025",
+    "templateContent": "use this service get information about specific application ! warning these api endpoints are currently live contents overview view technical guide specification how works test used detailed includes: status application_request_id request id accepted hmlr_reference once previously known abr priority priority_timestamp any errors that prevented submission warnings did prevent need addressed before caseworker can process otherwise requisition may occur more after receiving notification indicating changed which notifications will available visit section submit page web version opens new tab interaction state diagram hmlr does provide environment integrators using our business gateway apis instead provided example code demonstrate what should expect see when developing your own services stubs general testing guidance related change land register send document subsection",
+    "url": "/apis/application-information/"
+  },  {
+    "title": "Estimated Completion Date",
+"section": "Home",    "layout": "devpack-old.njk",
+    "hasFrontmatterDate": false,
+    "date": "13 June 2025",
+    "templateContent": "overview estimated completion date ecd by which application likely completed based individual estimate when majority 90% that type will order retain parity with our portal customer experience require anyone integrating this service refer timeframes can found https: www.gov.uk guidance hm land registry also see benefit end users being familiar above url insights provided are reduce need contact therefore ask make your customers aware ecd: calculated from day received hmlr may take hour displayed after submission updated every 30 calendar days until cancelled correspondence issued first item only types use know reference wish find out please enquiry obtain applications change register .e create update denoted format referred abr : a999aaa aaxxxxx where: = z 9 0 x 9a f process flow request input into case management software: login details output status priority note: openapi specification further link diagram working hours available 24 7 access control existing business gateway user ensure have least one following role codes collection ids: l1 l2 l3 wm1 wm2 wm5 c4 vs1 z1 z2 would like integrate apply e services rate limiting rest schemas schema yaml file suitable assistive technology download error developing exception handling http table listed subject code title detail 400 parameter invalid bg40001 401 unauthorized bg40004 credentials account active 403 forbidden bg40005 incorrect organisation permitted 404 bg40002 does exist 429 limit exceeded bg40006 too many requests wait try again 500 occurred bg50001 internal server 504 timeout bg50004 timed test stubs endpoint environment accessed bgtest.landregistry.gov.uk bg2test api v1 {application_reference} where replaced requires certificate different production client certificates scenarios returned scenario 1 valid matches abr: x000xxx { \"data\": \"application_reference\": \"x000xxx\" \"application_status\": \"received\" \"application_priority_date\": \"20 08 2021\" \"estimated_completion_date_status\": \"available\" \"estimated_completion_dates\": \"date\": \"17 03 2023\" \"probability\": 0.9 } 2 delayed x001xxx \"x001xxx\" \"delayed\" \"19 01 \"13 05 2024\" 3 x002xxx \"x002xxx\" \"12 02 2022\" \"exceeded\" 4 yet x003xxx \"x003xxx\" 04 \"calculating\" 5 unavailable x004xxx \"x004xxx\" \"cancelled\" \"23 \"unavailable\" side 6 005xxxx \"errors\": \"code\": \"bg40001\" \"detail\": \"application format.\" \"status\": \"400\" \"trace_id\": \"c62e9b3f e523 4f04 a941 c6cf0d60c080\" \"title\": \"parameter invalid.\" match x006xxx \"bg40002\" \" exist.\" \"404\" found.\"",
+    "url": "/apis/estimate-completion-date/"
+  }]
