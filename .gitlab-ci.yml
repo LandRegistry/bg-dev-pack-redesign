@@ -1,21 +1,7 @@
 image: node:22  # Use the Node.js 22 Docker image
 
-cache:
-  paths:
-    - node_modules/
-
 stages:
-  - build
   - deploy
-
-build:
-  stage: build
-  script:
-    - npm install
-    - npx @11ty/eleventy
-  artifacts:
-    paths:
-      - _site
 
 pages:
   stage: deploy
