@@ -13,7 +13,7 @@ export default function (eleventyConfig) {
     },
     opengraphImageUrl: "hmlrassets/images/hmlr-opengraph-image.png",
     themeColor: '#789904',
-    rebrand: true,
+    // rebrand: true,
     stylesheets: ['/assets/styles.css'],
     titleSuffix: "HM Land Registry Developer Pack",
     header: {
