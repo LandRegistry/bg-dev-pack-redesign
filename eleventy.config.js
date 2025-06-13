@@ -20,10 +20,7 @@ export default function (eleventyConfig) {
       logotype: {
         text: " HM Land Registry "
       },
-      productName: "- Developer Pack"
-    },
-    serviceNavigation: {
-      serviceName: "Service Naviagation Bar",
+      productName: "- Developer Pack",
       search: {
         label: "Search developer pack",
         indexPath: "/search.json",
