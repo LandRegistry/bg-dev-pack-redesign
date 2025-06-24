@@ -3,6 +3,9 @@ title: Estimated Completion Date
 layout: devpack-old.njk
 sectionKey: Estimated Completion Date
 breadcrumb: false
+eleventyNavigation:
+    key: estimated-completion-date
+    parent: apis
 ---
 
 ---

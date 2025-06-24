@@ -2,6 +2,9 @@
 title: Submit an Application to change the Land Register service API
 layout: devpack.njk
 breadcrumb: false
+eleventyNavigation:
+    key: submit-an-application-to-change-the-land-register
+    parent: apis
 ---
 
 {% set showBreadcrumbs = false %}

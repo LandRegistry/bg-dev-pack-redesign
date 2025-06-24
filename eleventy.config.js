@@ -18,8 +18,8 @@ export default function (eleventyConfig) {
     stylesheets: ['/assets/styles.css'],
     titleSuffix: "HM Land Registry Developer Pack",
     header: {
-      logotype: {text: " HM Land Registry "},
-      productName: "- Developer Pack",
+      logotype: {text: "HM Land Registry"},
+      productName: "Developer Pack",
       search: {
         label: "Search developer pack",
         indexPath: "/search.json",
@@ -34,6 +34,18 @@ export default function (eleventyConfig) {
       // }
     }
   })
+
+  eleventyConfig.addCollection('Explore APIs', collection => 
+    collection.getFilteredByGlob([
+      '/api/*.md'
+    ]).sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+  )
+
+  eleventyConfig.addCollection('Support', collection => 
+    collection.getFilteredByGlob([
+      '/support/*.md'
+    ]).sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+  )
 
   return {
     dataTemplateEngine: 'njk',

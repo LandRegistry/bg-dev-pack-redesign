@@ -2,6 +2,9 @@
 title: Notifications API
 layout: devpack.njk
 breadcrumb: false
+eleventyNavigation:
+    key: notifications
+    parent: apis
 ---
 
 <div class="govuk-grid-row">
@@ -78,7 +81,7 @@ How to test this service API
 
 <ul class="govuk-list">
 <li>
-<a class="govuk-body govuk-link" href="/apis/notifications-technical-guide">Technical guide</a>
+<a class="govuk-body govuk-link" href="/apis/notifications/technical-guide">Technical guide</a>
 </li>
 </ul>
 </div>
@@ -105,7 +108,7 @@ How to test this service API
 <p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code to demonstrate what you should  expect to see when developing your own services.</p>
 <ul class="govuk-list">
 <li>
-<p class="govuk-body"><a class="govuk-body govuk-link" href="/apis/notifications-test-stubs">View Notifications test stubs</a>.</p>
+<p class="govuk-body"><a class="govuk-body govuk-link" href="/apis/notifications/test-stubs">View Notifications test stubs</a>.</p>
 </li>
 </ul>
 <p class="govuk-body">For general testing guidance, visit our <a class="govuk-body govuk-link" href="/a-guide-to-testing">guide to testing</a>.</p>

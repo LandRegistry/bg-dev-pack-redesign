@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template">
+  <head>
+    <meta charset="utf-8">
+    <title> - HM Land Registry Developer Pack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#789904">
+
+<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="hmlrassets/images/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="hmlrassets/images/apple-touch-icon.png">
+  <script src="/assets/application.js" type="module" defer></script>
+
+  <link rel="stylesheet" href="/assets/styles.css">
+
+
+  <meta property="og:title" content="">
+
+    <meta property="og:image" content="hmlrassets/images/hmlr-opengraph-image.png">
+  </head>
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+      <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+  <header class="govuk-header app-header govuk-header--full-width-border" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container app-header__container">
+    <div class="govuk-header__logo app-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+          <span class="app-header__logotype">HM Land Registry</span>
+        <span class="govuk-header__product-name">
+          Developer Pack
+        </span>
+      </a>
+    </div>
+    <site-search class="app-site-search govuk-!-display-none-print" index="/search.json" label="Search developer pack"><a class="app-site-search__link" href="/sitemap">Sitemap</a></site-search>
+
+  </div>
+</header>
+
+  
+
+  <div class="govuk-service-navigation app-service-navigation"
+data-module="govuk-service-navigation"
+>
+      <div class="govuk-width-container">
+
+    <div class="govuk-service-navigation__container">
+      
+
+      
+    </div>
+
+    </div>
+
+  </div>
+
+
+
+      <div class="govuk-width-container">
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag govuk-tag--pink">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a new design for the Business Gateway developer pack. You might experience problems.
+    </span>
+  </p>
+</div>
+
+  
+        <main class="govuk-main-wrapper" id="main-content">
+  <header class="app-document-header">
+  <h1 class="app-document-header__title govuk-heading-xl">
+    
+  </h1>
+
+</header>
+
+
+
+  <div class="app-prose-scope"><div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Submit an application API test stubs
+    </h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+<p class="govuk-body"><p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway<br>
+APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see<br>
+when developing your own services.</p><br>
+<p class="govuk-body">Base URL:<br>
+<code style="color: #a71d5d; background-color: #f5f5f5">https://bgtest.landregistry.gov.uk/bg2test/api</code><br>
+</p><br>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"><br>
+<h3 class="govuk-heading-m">Scenario 1: Submit a single charge</h2><br>
+<h3 class="govuk-heading-s">Request</h3><br>
+<p class="govuk-body">Method:<br>
+<code style="color: #a71d5d; background-color: #f5f5f5">POST</code><br>
+</p><br>
+<p class="govuk-body">Endpoint:<br>
+<code style="color: #a71d5d; background-color: #f5f5f5">/v0/applications</code><br>
+</p><br>
+<p class="govuk-body">Headers:<br>
+<ul class="govuk-list govuk-list--bullet"><br>
+<li><code style="color: #a71d5d; background-color: #f5f5f5">Authorization: &amp;ltany-value&amp;gt<br>
+</code></li><br>
+<li><code style="color: #a71d5d; background-color: #f5f5f5">Idempotency-Key: &amp;ltany-value&amp;gt<br>
+</code></li><br>
+</ul><br>
+</p><br>
+<p class="govuk-body">Note: The idempotency key should be unique for each request (this is not enforced by the<br>
+stubs).</p><br>
+<pre><br>
+<code class="language-json" style="background-color: #f3f2f1"><br>
+{<br>
+“data”: {<br>
+“submission_warning_understood”: true,<br>
+“applicants”: [<br>
+“Borrower1”,<br>
+“Borrower2”<br>
+],<br>
+“customer_reference”: “CustomerRef”,<br>
+“documents”: {<br>
+“AP1”: {<br>
+“type”: “AP1”,<br>
+“document_id”: “4fd53325-d120-4366-b151-b006d0ef9a5d”,<br>
+“document_metadata”: {<br>
+“certification_statement_type”: “CERTIFIED”,<br>
+“document_filename”: “e-AP1.pdf”<br>
+}<br>
+},<br>
+“Deed”: {<br>
+“type”: “MRTG_DEED”,<br>
+“document_id”: “0d7bd3a5-1aec-4862-9fc9-f796dfc11d35”,<br>
+“document_metadata”: {<br>
+“certification_statement_type”: “CERTIFIED”,<br>
+“document_filename”: “Deed.pdf”<br>
+}<br>
+}<br>
+},<br>
+“application_lodger”: {<br>
+“email”: “valid.email@landregistry.gov.uk”,<br>
+“type”: “CONVEYANCER”<br>
+},<br>
+“parties”: {<br>
+“Borrower1”: {<br>
+“address_for_service_option”: “NOT_REQUIRED”,<br>
+“representation_type”: “LODGING_CONVEYANCER”,<br>
+“details”: {<br>
+“type”: “PRIVATE_INDIVIDUAL”,<br>
+“forenames”: “Tony”,<br>
+“surname”: “Bonito”<br>
+}<br>
+},<br>
+“Borrower2”: {<br>
+“address_for_service_option”: “NOT_REQUIRED”,<br>
+“representation_type”: “LODGING_CONVEYANCER”,<br>
+“details”: {<br>
+“type”: “PRIVATE_INDIVIDUAL”,<br>
+“forenames”: “Toni”,<br>
+“surname”: “Bonito”<br>
+}<br>
+},<br>
+“TheBank”: {<br>
+“address_for_service_option”: “NOT_REQUIRED”,<br>
+“representation_type”: “LODGING_CONVEYANCER”,<br>
+“details”: {<br>
+“type”: “UK_COMPANY”,<br>
+“company_number”: “12345”,<br>
+“organisation_name”: “Albion Home Loans Limited”<br>
+}<br>
+}<br>
+},<br>
+“titles”: {<br>
+“MS305610”: {<br>
+“disclosable_overriding_interests”: “false”,<br>
+“title_number”: “MS305610”,<br>
+“scope_details”: {<br>
+“scope”: “WHOLE”,<br>
+“part_description”: null<br>
+},<br>
+“title_type”: “REGISTER_TITLE”<br>
+}<br>
+},<br>
+“transactions”: {<br>
+“Charge”: {<br>
+“details”: {<br>
+“type”: “CHARGE”,<br>
+“date”: “2024-01-01”,<br>
+“mdref”: “MD006A”,<br>
+“value”: 120000<br>
+},<br>
+“documents”: [“Deed”],<br>
+“priority”: 1,<br>
+“fee_in_pence”: 3000,<br>
+“party_roles”: [{<br>
+“party_reference”: “Borrower1”,<br>
+“role”: “BORROWER”<br>
+}, {<br>
+“party_reference”: “Borrower2”,<br>
+“role”: “BORROWER”<br>
+}, {<br>
+“party_reference”: “TheBank”,<br>
+“role”: “LENDER”<br>
+}],<br>
+“type”: “C”,<br>
+“title_references”: [“MS305610”]<br>
+}<br>
+},<br>
+“type”: “REGISTER_UPDATE”<br>
+}<br>
+}<br>
+</code><br>
+</pre><br>
+<div class="govuk-!-padding-bottom-6"></div><br>
+<h3 class="govuk-heading-s">Response</h3><br>
+<p class="govuk-body">Status:<br>
+<code style="color: #a71d5d; background-color: #f5f5f5">202</code><br>
+</p><br>
+<pre><br>
+<code class="language-json" style="background-color: #f3f2f1"><br>
+{<br>
+“data”: {<br>
+“application_request_id”: “b3ac19be-2b6d-4b8a-971c-e758b0e8e790”<br>
+}<br>
+}<br>
+</code><br>
+</pre><br>
+<div class="govuk-!-padding-bottom-3"></div><br>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"><br>
+<h3 class="govuk-heading-m">Scenario 2: Submit a single transfer</h2><br>
+<h3 class="govuk-heading-s">Request</h3><br>
+<p class="govuk-body">Method:<br>
+<code style="color: #a71d5d; background-color: #f5f5f5">POST</code><br>
+</p><br>
+<p class="govuk-body">Endpoint:<br>
+<code style="color: #a71d5d; background-color: #f5f5f5">/v0/applications</code><br>
+</p><br>
+<p class="govuk-body">Headers:<br>
+<ul class="govuk-list govuk-list--bullet"><br>
+<li><code style="color: #a71d5d; background-color: #f5f5f5">Authorization: &amp;ltany-value&amp;gt<br>
+</code></li><br>
+<li><code style="color: #a71d5d; background-color: #f5f5f5">Idempotency-Key: &amp;ltany-value&amp;gt<br>
+</code></li><br>
+</ul><br>
+</p><br>
+<p class="govuk-body">Note: The idempotency key should be unique for each request (this is not enforced by the<br>
+stubs).</p><br>
+<pre><br>
+<code class="language-json" style="background-color: #f3f2f1"><br>
+{<br>
+“data”: {<br>
+“submission_warning_understood”: true,<br>
+“customer_reference”: “CustomerRef”,<br>
+“addresses”: {<br>
+“transferee_address”: {<br>
+“details”: {<br>
+“type”: “UK”,<br>
+“uprn”: 100040203976,<br>
+“organisation_name”: null,<br>
+“department_name”: null,<br>
+“sub_building_description”: null,<br>
+“building_description”: “Apartment 11”,<br>
+“street”: “113 Newton Street”,<br>
+“dependent_street”: null,<br>
+“dependent_locality”: null,<br>
+“double_dependent_locality”: null,<br>
+“post_town”: “MANCHESTER”,<br>
+“postcode”: “M1 1AE”,<br>
+“full_address”: “Apartment 11 ,113 Newton Street, MANCHESTER, M1 1AE”,<br>
+“care_of_name”: “SP”<br>
+}<br>
+}<br>
+},<br>
+“documents”: {<br>
+“AP1”: {<br>
+“document_id”: “ed4f0f00-ff14-4f95-869b-9b11c9b3ac73”,<br>
+“type”: “AP1”,<br>
+“document_metadata”: {<br>
+“certification_statement_type”: “CERTIFIED”,<br>
+“document_filename”: “e-AP1.pdf”<br>
+}<br>
+},<br>
+“TR1”: {<br>
+“document_id”: “a40d6fe0-bd45-4c49-b72a-0d80cf43db83”,<br>
+“type”: “TR1”,<br>
+“document_metadata”: {<br>
+“certification_statement_type”: “CERTIFIED”,<br>
+“document_filename”: “TR1.pdf”<br>
+}<br>
+}<br>
+},<br>
+“parties”: {<br>
+“Transferee”: {<br>
+“details”: {<br>
+“type”: “PRIVATE_INDIVIDUAL”,<br>
+“forenames”: “John”,<br>
+“surname”: “Smith”<br>
+},<br>
+“address_for_service_option”: “NOT_REQUIRED”,<br>
+“representation_type”: “LODGING_CONVEYANCER”,<br>
+“addresses”: “transferee_address”<br>
+},<br>
+“Transferor1”: {<br>
+“details”: {<br>
+“type”: “PRIVATE_INDIVIDUAL”,<br>
+“forenames”: “Tony”,<br>
+“surname”: “Bonito”<br>
+},<br>
+“address_for_service_option”: “NOT_REQUIRED”,<br>
+“representation_type”: “LODGING_CONVEYANCER”<br>
+},<br>
+“Transferor2”: {<br>
+“details”: {<br>
+“type”: “PRIVATE_INDIVIDUAL”,<br>
+“forenames”: “Toni”,<br>
+“surname”: “Bonito”<br>
+},<br>
+“address_for_service_option”: “NOT_REQUIRED”,<br>
+“representation_type”: “LODGING_CONVEYANCER”<br>
+}<br>
+},<br>
+“applicants”: [<br>
+“Transferee”<br>
+],<br>
+“application_lodger”: {<br>
+“email”: “valid.email@landregistry.gov.uk”,<br>
+“type”: “CONVEYANCER”<br>
+},<br>
+“titles”: {<br>
+“MS312531”: {<br>
+“disclosable_overriding_interests”: “false”,<br>
+“title_number”: “MS312531”,<br>
+“scope_details”: {<br>
+“scope”: “WHOLE”,<br>
+“part_description”: null<br>
+},<br>
+“title_type”: “REGISTER_TITLE”<br>
+}<br>
+},<br>
+“transactions”: {<br>
+“Transfer”: {<br>
+“details”: {<br>
+“type”: “TRANSFER”,<br>
+“title_guarantee_code”: “FULL”,<br>
+“additional_provisions_code”: “NO_PROVISIONS”,<br>
+“consideration_description”: “string”,<br>
+“consideration_type”: “MONETARY_VALUE”,<br>
+“value”: 1300000,<br>
+“date”: “2023-12-12”<br>
+},<br>
+“documents”: [<br>
+“TR1”<br>
+],<br>
+“priority”: 1,<br>
+“fee_in_pence”: 3000,<br>
+“party_roles”: [<br>
+{<br>
+“party_reference”: “Transferee”,<br>
+“role”: “TRANSFEREE”<br>
+},<br>
+{<br>
+“party_reference”: “Transferor1”,<br>
+“role”: “TRANSFEROR”<br>
+},<br>
+{<br>
+“party_reference”: “Transferor2”,<br>
+“role”: “TRANSFEROR”<br>
+}<br>
+],<br>
+“type”: “T”,<br>
+“title_references”: [<br>
+“MS312531”<br>
+]<br>
+}<br>
+},<br>
+“type”: “REGISTER_UPDATE”<br>
+}<br>
+}<br>
+</code><br>
+</pre><br>
+<div class="govuk-!-padding-bottom-6"></div><br>
+<h3 class="govuk-heading-s">Response</h3><br>
+<p class="govuk-body">Status:<br>
+<code style="color: #a71d5d; background-color: #f5f5f5">202</code><br>
+</p><br>
+<pre><br>
+<code class="language-json" style="background-color: #f3f2f1"><br>
+{<br>
+“data”: {<br>
+“application_request_id”: “2563940e-ae95-4e7e-9b33-49a6571abdf6”<br>
+}<br>
+}<br>
+</code><br>
+</pre><br>
+<div class="govuk-!-padding-bottom-3"></div><br>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"><br>
+<h3 class="govuk-heading-m">Scenario 3: Submit an application with Level 1 validation errors</h2><br>
+<h3 class="govuk-heading-s">Request</h3><br>
+<p class="govuk-body">Method:<br>
+<code style="color: #a71d5d; background-color: #f5f5f5">POST</code><br>
+</p><br>
+<p class="govuk-body">Endpoint:<br>
+<code style="color: #a71d5d; background-color: #f5f5f5">/v0/applications</code><br>
+</p><br>
+<p class="govuk-body">Headers:<br>
+<ul class="govuk-list govuk-list--bullet"><br>
+<li><code style="color: #a71d5d; background-color: #f5f5f5">Authorization: &amp;ltany-value&amp;gt<br>
+</code></li><br>
+<li><code style="color: #a71d5d; background-color: #f5f5f5">Idempotency-Key: &amp;ltany-value&amp;gt<br>
+</code></li><br>
+</ul><br>
+</p><br>
+<p class="govuk-body">Note: The idempotency key should be unique for each request (this is not enforced by the<br>
+stubs).</p><br>
+<pre><br>
+<code class="language-json" style="background-color: #f3f2f1"><br>
+{<br>
+“data”: {<br>
+“submission_warning_understood”: true,<br>
+“applicants”: [<br>
+“Borrower1”,<br>
+“Borrower2”<br>
+],<br>
+“customer_reference”: “CustomerRef”,<br>
+“documents”: {<br>
+“AP1”: {<br>
+“type”: “AP1”,<br>
+“document_id”: “4fd53325-d120-4366-b151-b006d0ef9a5d”,<br>
+“document_metadata”: {<br>
+“certification_statement_type”: “CERTIFIED”,<br>
+“document_filename”: “e-AP1.pdf”<br>
+}<br>
+},<br>
+“Deed”: {<br>
+“type”: “MRTG_DEED”,<br>
+“document_id”: “0d7bd3a5-1aec-4862-9fc9-f796dfc11d35”,<br>
+“document_metadata”: {<br>
+“certification_statement_type”: “CERTIFIED”,<br>
+“document_filename”: “Deed.pdf”<br>
+}<br>
+}<br>
+},<br>
+“parties”: {<br>
+“Borrower1”: {<br>
+“representation_type”: “LODGING_CONVEYANCER”,<br>
+“details”: {<br>
+“type”: “PRIVATE_INDIVIDUAL”,<br>
+“forenames”: “Tony”,<br>
+“surname”: “Bonito”<br>
+}<br>
+},<br>
+“Borrower2”: {<br>
+“representation_type”: “LODGING_CONVEYANCER”,<br>
+“details”: {<br>
+“type”: “PRIVATE_INDIVIDUAL”,<br>
+“forenames”: “Toni”,<br>
+“surname”: “Bonito”<br>
+}<br>
+},<br>
+“TheBank”: {<br>
+“representation_type”: “LODGING_CONVEYANCER”,<br>
+“details”: {<br>
+“type”: “UK_COMPANY”,<br>
+“company_number”: “12345”,<br>
+“organisation_name”: “Albion Home Loans Limited”<br>
+}<br>
+}<br>
+},<br>
+“application_lodger”: {<br>
+“email”: “valid.email@landregistry.gov.uk”,<br>
+“type”: “CONVEYANCER”<br>
+},<br>
+“titles”: {<br>
+“MS305610”: {<br>
+“disclosable_overriding_interests”: “false”,<br>
+“title_number”: “MS305610”,<br>
+“scope_details”: {<br>
+“scope”: “WHOLE”,<br>
+“part_description”: null<br>
+},<br>
+“title_type”: “REGISTER_TITLE”<br>
+}<br>
+},<br>
+“transactions”: {<br>
+“Charge”: {<br>
+“documents”: [<br>
+“Deed”<br>
+],<br>
+“type”: “C”,<br>
+“priority”: 1,<br>
+“fee_in_pence”: 3000,<br>
+“details”: {<br>
+“type”: “CHARGE”,<br>
+“date”: “3000-01-01”,<br>
+“mdref”: “MD006A”<br>
+},<br>
+“party_roles”: [<br>
+{<br>
+“party_reference”: “Borrower1”,<br>
+“role”: “BORROWER”<br>
+},<br>
+{<br>
+“party_reference”: “Borrower2”,<br>
+“role”: “BORROWER”<br>
+},<br>
+{<br>
+“party_reference”: “TheBank”,<br>
+“role”: “LENDER”<br>
+}<br>
+]<br>
+}<br>
+},<br>
+“type”: null<br>
+}<br>
+}<br>
+</code><br>
+</pre><br>
+<div class="govuk-!-padding-bottom-6"></div><br>
+<h3 class="govuk-heading-s">Response</h3><br>
+<p class="govuk-body">Status:<br>
+<code style="color: #a71d5d; background-color: #f5f5f5">400</code><br>
+</p><br>
+<pre><br>
+<code class="language-json" style="background-color: #f3f2f1"><br>
+{<br>
+“type”: “https://landregistry.github.io/bgtechdoc/problems/global#bad-request”,<br>
+“title”: “Bad Request”,<br>
+“detail”: “The request is invalid or malformed.”,<br>
+“status”: “400”,<br>
+“errors”: [<br>
+{<br>
+“type”: “OCV_L1A_000”,<br>
+“pointer”: “/data/transactions/Charge/details/date”,<br>
+“detail”: “Date must be in the past or in the present”<br>
+},<br>
+{<br>
+“type”: “OCV_L1A_000”,<br>
+“pointer”: “/data/type”,<br>
+“detail”: “Type must not be null”<br>
+}<br>
+]<br>
+}<br>
+</code><br>
+</pre><br>
+<div class="govuk-!-padding-bottom-3"></div><br>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"><br>
+<h3 class="govuk-heading-m">Scenario 4: Submit an application with Level 2 validation errors</h2><br>
+<h3 class="govuk-heading-s">Request</h3><br>
+<p class="govuk-body">Method:<br>
+<code style="color: #a71d5d; background-color: #f5f5f5">POST</code><br>
+</p><br>
+<p class="govuk-body">Endpoint:<br>
+<code style="color: #a71d5d; background-color: #f5f5f5">/v0/applications</code><br>
+</p><br>
+<p class="govuk-body">Headers:<br>
+<ul class="govuk-list govuk-list--bullet"><br>
+<li><code style="color: #a71d5d; background-color: #f5f5f5">Authorization: &amp;ltany-value&amp;gt<br>
+</code></li><br>
+<li><code style="color: #a71d5d; background-color: #f5f5f5">Idempotency-Key: &amp;ltany-value&amp;gt<br>
+</code></li><br>
+</ul><br>
+</p><br>
+<p class="govuk-body">Note: The idempotency key should be unique for each request (this is not enforced by<br>
+the stubs).</p><br>
+<pre><br>
+<code class="language-json" style="background-color: #f3f2f1"><br>
+{<br>
+“data”: {<br>
+“submission_warning_understood”: true,<br>
+“customer_reference”: “CustomerRef”,<br>
+“addresses”: {<br>
+“transferee_address”: {<br>
+“details”: {<br>
+“type”: “UK”,<br>
+“uprn”: 100040203976,<br>
+“organisation_name”: null,<br>
+“department_name”: null,<br>
+“sub_building_description”: null,<br>
+“building_description”: “Apartment 11”,<br>
+“street”: “113 Newton Street”,<br>
+“dependent_street”: null,<br>
+“dependent_locality”: null,<br>
+“double_dependent_locality”: null,<br>
+“post_town”: “MANCHESTER”,<br>
+“postcode”: “M1 1AE”,<br>
+“full_address”: “Apartment 11 ,113 Newton Street, MANCHESTER, M1 1AE”,<br>
+“care_of_name”: “SP”<br>
+}<br>
+}<br>
+},<br>
+“documents”: {<br>
+“AP1”: {<br>
+“document_id”: “ed4f0f00-ff14-4f95-869b-9b11c9b3ac73”,<br>
+“type”: “AP1”,<br>
+“document_metadata”: {<br>
+“certification_statement_type”: “CERTIFIED”,<br>
+“document_filename”: “e-AP1.pdf”<br>
+}<br>
+},<br>
+“TR1”: {<br>
+“document_id”: “a40d6fe0-bd45-4c49-b72a-0d80cf43db83”,<br>
+“type”: “TR1”,<br>
+“document_metadata”: {<br>
+“certification_statement_type”: “CERTIFIED”,<br>
+“document_filename”: “TR1.pdf”<br>
+}<br>
+},<br>
+“Deed”: {<br>
+“type”: “MRTG_DEED”,<br>
+“document_id”: “e10f5369-a623-43fb-aeaa-5e02625e9f83”,<br>
+“document_metadata”: {<br>
+“certification_statement_type”: “CERTIFIED”,<br>
+“document_filename”: “Deed.pdf”<br>
+}<br>
+}<br>
+},<br>
+“parties”: {<br>
+“Transferee”: {<br>
+“details”: {<br>
+“type”: “PRIVATE_INDIVIDUAL”,<br>
+“forenames”: “John”,<br>
+“surname”: “Smith”<br>
+},<br>
+“addresses”: “transferee_address”,<br>
+“representation_type”: “LODGING_CONVEYANCER”<br>
+},<br>
+“Transferor1”: {<br>
+“details”: {<br>
+“type”: “PRIVATE_INDIVIDUAL”,<br>
+“forenames”: “Tony”,<br>
+“surname”: “Bonito”<br>
+},<br>
+“representation_type”: “LODGING_CONVEYANCER”<br>
+},<br>
+“Transferor2”: {<br>
+“details”: {<br>
+“type”: “PRIVATE_INDIVIDUAL”,<br>
+“forenames”: “Toni”,<br>
+“surname”: “Bonito”<br>
+},<br>
+“representation_type”: “LODGING_CONVEYANCER”<br>
+},<br>
+“TheBank”: {<br>
+“details”: {<br>
+“type”: “UK_COMPANY”,<br>
+“company_number”: “12345”,<br>
+“organisation_name”: “Albion Home Loans Limited”<br>
+},<br>
+“representation_type”: “LODGING_CONVEYANCER”<br>
+}<br>
+},<br>
+“applicants”: [<br>
+“Transferee”<br>
+],<br>
+“application_lodger”: {<br>
+“email”: “valid.email@landregistry.gov.uk”,<br>
+“type”: “CONVEYANCER”<br>
+},<br>
+“titles”: {<br>
+“MS312531”: {<br>
+“disclosable_overriding_interests”: “false”,<br>
+“title_number”: “MS312531”,<br>
+“scope_details”: {<br>
+“scope”: “WHOLE”,<br>
+“part_description”: null<br>
+}<br>
+}<br>
+},<br>
+“transactions”: {<br>
+“Transfer”: {<br>
+“documents”: [],<br>
+“type”: “T”,<br>
+“priority”: 1,<br>
+“fee_in_pence”: 3000,<br>
+“details”: {<br>
+“type”: “TRANSFER”,<br>
+“title_guarantee_code”: “FULL”,<br>
+“additional_provisions_code”: “NO_PROVISIONS”,<br>
+“consideration_description”: “string”,<br>
+“consideration_type”: “MONETARY_VALUE”,<br>
+“value”: 1300000,<br>
+“date”: “2023-12-12”<br>
+},<br>
+“party_roles”: [<br>
+{<br>
+“party_reference”: “Transferee”,<br>
+“role”: “TRANSFEREE”<br>
+},<br>
+{<br>
+“party_reference”: “Transferor1”,<br>
+“role”: “TRANSFEROR”<br>
+},<br>
+{<br>
+“party_reference”: “Transferor2”,<br>
+“role”: “TRANSFEROR”<br>
+}<br>
+],<br>
+“title_references”: [“MS312531”]<br>
+},<br>
+“Charge”: {<br>
+“documents”: [<br>
+“Deed”<br>
+],<br>
+“type”: “C”,<br>
+“priority”: 2,<br>
+“fee_in_pence”: 3000,<br>
+“details”: {<br>
+“type”: “CHARGE”,<br>
+“date”: “2024-01-01”,<br>
+“mdref”: “MD007A”<br>
+},<br>
+“party_roles”: [<br>
+{<br>
+“party_reference”: “Transferee”,<br>
+“role”: “BORROWER”<br>
+},<br>
+{<br>
+“party_reference”: “TheBank”,<br>
+“role”: “LENDER”<br>
+}<br>
+],<br>
+“title_references”: [“MS312531”]<br>
+}<br>
+},<br>
+“type”: “REGISTER_UPDATE”<br>
+}<br>
+}<br>
+</code><br>
+</pre><br>
+<div class="govuk-!-padding-bottom-6"></div><br>
+<h3 class="govuk-heading-s">Response</h3><br>
+<p class="govuk-body">Status:<br>
+<code style="color: #a71d5d; background-color: #f5f5f5">202</code><br>
+</p><br>
+<pre><br>
+<code class="language-json" style="background-color: #f3f2f1"><br>
+{<br>
+“data”: {<br>
+“application_request_id”: “3be62ad3-c542-452d-975e-6cd18d77196f”<br>
+}<br>
+}<br>
+</code><br>
+</pre><br>
+<div class="govuk-!-padding-bottom-3"></div><br>
+</main></p>
+  </div>
+</div></div>
+
+
+
+        </main>
+      </div>
+
+  <footer class="govuk-footer app-footer " role="contentinfo">
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+<svg class="govuk-footer__licence-logo" aria-hidden="true" focusable="false" height="17" width="41" viewBox="0 0 483.2 195.7" xmlns="http://www.w3.org/2000/svg">
+  <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"/>
+</svg>
+          <span class="govuk-footer__licence-description">
+            All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+          </span>
+      </div><div class="govuk-footer__meta-item">            <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">©&nbsp;Crown copyright</a>
+        </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

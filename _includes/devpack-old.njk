@@ -1,1 +1,36 @@
-{% extends "layouts/sub-navigation.njk" %}
+{% extends "layouts/page.njk" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    {% if customSidebar %}
+    <div class="govuk-grid-column-one-third">
+    <nav class="govuk-side-navigation">
+    {% for section in customSidebar %}
+        <h3 class="govuk-heading-s">{{ section.heading }}</h3>
+        <ul class="govuk-list govuk-list--spaced">
+            {% for link in section.links %}
+            <li class="{% if link.url == page.url %}govuk-!-font-weight-bold{% endif %}">
+                <a href="{{ link.url }}" {% if link.url == page.url %}aria-current="page"{% endif %}>
+                    {{ link.text }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    </nav>
+    </div>
+    {% endif %}
+    <div class="govuk-grid-column-two-thirds">
+      {{ appDocumentHeader({
+        title: title,
+        description: description
+      }) }}
+
+      {{ appProseScope(content) if content }}
+
+      {% include "layouts/shared/related.njk" %}
+    </div>
+</div>
+
+{% endblock %}

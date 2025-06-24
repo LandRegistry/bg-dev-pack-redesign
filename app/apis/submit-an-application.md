@@ -2,6 +2,9 @@
 title: Submit an application service API
 layout: devpack.njk
 breadcrumb: false
+eleventyNavigation:
+    key: submit-an-application
+    parent: apis
 ---
 
 <div class="govuk-grid-row">
@@ -88,7 +91,7 @@ The Submit an application API will help users provide the necessary data to HMLR
 
 <ul class="govuk-list">
 <li>
-<a class="govuk-body govuk-link" href="/apis/submit-an-application-technical-guide">Technical guide</a>
+<a class="govuk-body govuk-link" href="/apis/submit-an-application/technical-guide">Technical guide</a>
 </li>
 </ul>
 </div>
@@ -115,7 +118,7 @@ The Submit an application API will help users provide the necessary data to HMLR
 <p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code to demonstrate what you should  expect to see when developing your own services.</p>
 <ul class="govuk-list">
 <li>
-<p class="govuk-body"><a class="govuk-body govuk-link" href="/apis/submit-an-application-test-stubs">View Submit an application test stubs</a>.</p>
+<p class="govuk-body"><a class="govuk-body govuk-link" href="/apis/submit-an-application/test-stubs">View Submit an application test stubs</a>.</p>
 </li>
 </ul>
 <p class="govuk-body">For general testing guidance, visit our <a class="govuk-body govuk-link" href="/a-guide-to-testing">guide to testing</a>.</p>

@@ -2,6 +2,9 @@
 title: Send a Document Service API
 layout: devpack.njk
 breadcrumb: false
+eleventyNavigation:
+    key: send-a-document
+    parent: apis
 ---
 
 <div class="govuk-grid-row">
@@ -56,7 +59,7 @@ breadcrumb: false
 <div>
 <h2 class="govuk-heading-m" id="view-the-technical-guide">View the technical guide</h2>
 <ul class="govuk-list">
-    <li><a class="govuk-body govuk-link" href="/apis/send-a-document-technical-guide">Technical guide</a></li>
+    <li><a class="govuk-body govuk-link" href="/apis/send-a-document/technical-guide">Technical guide</a></li>
 </ul>
 </div>
 
@@ -83,7 +86,7 @@ breadcrumb: false
   <p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code to demonstrate what you should  expect to see when developing your own services.</p>
   <ul class="govuk-list">
     <li>
-    <p class="govuk-body"><a class="govuk-body govuk-link" href="/apis/send-a-document-test-stubs">View Send a document test stubs</a>.</p>
+    <p class="govuk-body"><a class="govuk-body govuk-link" href="/apis/send-a-document/test-stubs">View Send a document test stubs</a>.</p>
     </li>
   </ul>
 

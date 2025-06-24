@@ -1,1 +1,17 @@
 {% extends "layouts/page.njk" %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+      tag: {
+        text: "Prototype",
+        classes: "govuk-tag--pink"
+      },
+      html: 'This is a prototype of a new design for the Business Gateway developer pack. You might experience problems.'
+  }) }}
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-display-none-print",
+    items: breadcrumbItems
+  }) if showBreadcrumbs }}
+{% endblock %}
