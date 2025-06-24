@@ -2,17 +2,18 @@ import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
-    'images': 'assets/images'
+    'images': 'assets/images',
+    'node_modules/@hmlr/frontend/hmlr/assets': 'hmlrassets'
   })
 
   eleventyConfig.addPlugin(govukEleventyPlugin, {
     icons: {
-      mask: "hmlrassets/images/mask-icon.svg",
-      shortcut: "hmlrassets/images/favicon.ico",
-      touch: "hmlrassets/images/apple-touch-icon.png"
+      mask: "/hmlrassets/images/mask-icon.svg",
+      shortcut: "/hmlrassets/images/favicon.ico",
+      touch: "/hmlrassets/images/apple-touch-icon.png"
     },
     showBreadcrumbs: false,
-    opengraphImageUrl: "hmlrassets/images/hmlr-opengraph-image.png",
+    opengraphImageUrl: "/hmlrassets/images/hmlr-opengraph-image.png",
     themeColor: '#789904',
     // rebrand: true,
     stylesheets: ['/assets/styles.css'],
