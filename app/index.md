@@ -1,6 +1,7 @@
 ---
 homepage: true
 layout: page
+noback: true
 ---
 
 <div class="app-width-container">

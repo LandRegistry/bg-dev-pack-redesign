@@ -37,3 +37,10 @@ aside.contents-list li {
 aside.content-list ol.dashed-list, .content-list ul {
   list-style-type: none;
 }
+
+@media (min-width: 40.0625em) {
+  .sticky {
+    position: sticky;
+    top: 25px;
+  }
+}

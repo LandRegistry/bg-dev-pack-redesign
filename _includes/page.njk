@@ -1,4 +1,4 @@
-{% extends "layouts/page.njk" %}
+{% extends "layouts/base.njk" %}
 
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
@@ -11,8 +11,26 @@
       },
       html: 'This is a prototype of a new design for the Business Gateway developer pack. You might experience problems.'
   }) }}
+  {%- if not noback -%}
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
+  {%- endif -%}
+{% endblock %}
+
+{% block content %}
+  {%- if not noheader -%}
+  {{ appDocumentHeader({
+    title: title,
+    description: description
+  }) }}
+  {%- endif -%}
+
+  {{ appProseScope(content) if content }}
+  {%- if not content -%}
+    <p>You need to add content</p>
+  {%- endif -%}
+
+  {% include "layouts/shared/related.njk" %}
 {% endblock %}

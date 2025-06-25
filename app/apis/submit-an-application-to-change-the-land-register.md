@@ -1,174 +1,160 @@
 ---
 title: Submit an Application to change the Land Register service API
-layout: devpack.njk
+layout: page-with-sticky-contents.njk
+noheader: true
 breadcrumb: false
 eleventyNavigation:
     key: submit-an-application-to-change-the-land-register
     parent: apis
+
+contents:
+    - text: Overview
+      href: '#overview'
+    - text: View the API specification
+      href: '#view-the-api-specification'
+    - text: How the service API works
+      href: '#how-the-service-api-works'
 ---
 
-{% set showBreadcrumbs = false %}
-
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds">
-
+<h1 class="govuk-heading-xl">Submit an Application to change the Land Register service API</h1>
 <p class="govuk-body-l">Use this service to help lodge applications with HMLR to update the register or create a new lease or transfer of part.</p>
-
-
-<aside class="contents-list" role="complementary">
-<nav aria-label="Pages in this guide" role="navigation">
-<h2 class="govuk-heading-m">
-Contents
-</h2>
-<ol class="govuk-list dashed-list">
-<li><a href="#overview">Overview</a></li>
-<li><a href="#view-the-api-specification">View the API specification</a></li>
-<li><a href="#how-the-service-api-works">How the service API works</a></li>
-</ol>
-</nav>
-</aside>
-
-</div>
-
-</div>
-
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds">
-
-
 <h2 class="govuk-heading-m" id="overview"><br>Overview</h2>
 <p class="govuk-body">
-The new Submit an application to change the Land Register service API will help to lodge applications with HMLR to update the register or create a new lease or transfer of part. This service can be integrated using the <a class="govuk-body govuk-link" href="/learn-about-the-apis-we-use">REST core API</a>.</p>
+    The new Submit an application to change the Land Register service API will help to lodge applications with
+    HMLR to update the register or create a new lease or transfer of part. This service can be integrated using
+    the <a class="govuk-body govuk-link" href="/learn-about-the-apis-we-use">REST core API</a>.</p>
 <p class="govuk-body">
-The new service will be faster and more responsive than before. It’ll help identify errors prior to acceptance of an application, resulting in fewer requisitions and an improved experience for customers.</p>
-
+    The new service will be faster and more responsive than before. It’ll help identify errors prior to
+    acceptance of an application, resulting in fewer requisitions and an improved experience for customers.</p>
 <h3 class="govuk-heading-s">Important changes</h3>
-<div class="govuk-!-margin-left-0" style="background-color: #f3f2f1 ; padding: 10px;;">
-
-<p class="govuk-body">The new service API will:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li>collect and validate more data than the current version</li>
-<li>increase the number of automated checks on application data prior to submission</li>
-<li>automatically check the format and structure of data</li>
-<li>validate information added to the application against information already on the register</li>
-<li>in future, check, compare and validate the data you provide, and the information contained in the attached documents</li>
-</ul>
-
-
-<p class="govuk-body">In return, you'll benefit from:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li>increased output and data quality: with built-in checks on all application types, including charge or transfer transactions, you’ll face fewer requisitions</li>
-<li>consistent results across services: you’ll get parity of outcomes across our digital services</li>
-<li>greater data confidence and automation: more accurate data will provide opportunities to streamline our processes and improve the service for customers</li>
-<li>error prevention: the system will help you catch and fix administrative errors before submission</li>
-<li>improved attachment process: attaching and classifying deeds will be quicker and more straightforward</li>
-<li>upgraded technology: you’ll benefit from a faster, more responsive platform</li>
-</ul>
+<div class="govuk-!-margin-left-0" style="background-color: #f3f2f1; padding: 10px;">
+    <p class="govuk-body">The new service API will:</p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>collect and validate more data than the current version</li>
+        <li>increase the number of automated checks on application data prior to submission</li>
+        <li>automatically check the format and structure of data</li>
+        <li>validate information added to the application against information already on the register</li>
+        <li>in future, check, compare and validate the data you provide, and the information contained in the
+            attached documents</li>
+    </ul>
+    <p class="govuk-body">In return, you'll benefit from:</p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>increased output and data quality: with built-in checks on all application types, including charge
+            or transfer transactions, you’ll face fewer requisitions</li>
+        <li>consistent results across services: you’ll get parity of outcomes across our digital services</li>
+        <li>greater data confidence and automation: more accurate data will provide opportunities to streamline
+            our processes and improve the service for customers</li>
+        <li>error prevention: the system will help you catch and fix administrative errors before submission
+        </li>
+        <li>improved attachment process: attaching and classifying deeds will be quicker and more
+            straightforward</li>
+        <li>upgraded technology: you’ll benefit from a faster, more responsive platform</li>
+    </ul>
 </div>
-
 <div class="govuk-!-padding-bottom-3"></div>
-
-<p class="govuk-body">Using the new service API will mean that applications are only accepted onto the day list when the data provided is both valid and correct. Applications with validation errors will not be accepted. This will significantly reduce the number of avoidable administrative requisitions, identify common mistakes, such as name discrepancies or missing details, and increase our ability to automate applications.</p>
-
+<p class="govuk-body">Using the new service API will mean that applications are only accepted onto the day list
+    when the data provided is both valid and correct. Applications with validation errors will not be accepted.
+    This will significantly reduce the number of avoidable administrative requisitions, identify common
+    mistakes, such as name discrepancies or missing details, and increase our ability to automate applications.
+</p>
 <div class="govuk-!-margin-left-0" style="background-color: #f3f2f1 ; padding: 10px;;">
-
-<p class="govuk-body">Additional changes include:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li>Document uploads before application submission: you will now need to upload documents before submitting an application</li>
-<li>JSON format: instead of using XML, the request bodies for the new APIs will use the simpler, more efficient JSON format</li>
-<li>Asynchronous application submission: when you submit an application, a successful response means the request has been received. Acceptance and prioritisation will occur after validation has been applied</li>
-<li>Renaming applications to transactions: applications from the SOAP request are now referred to as Transactions</li>
-<li>New fields: transaction specific data has been included, initially for transfer and charge transactions including charge values and information on joint tenancies</li>
-{# <li>Fees will be automatically calculated: this enhancement will come in a later version</li> #}
-<li>Removing notes: the Notes section is no longer included but additional data fields have been added to collect the data commonly found in this field. These include:</li>
-<ul class="govuk-list govuk-list--bullet govuk-!-margin-left-3">
-<li>ROE-ID (Registration of Overseas Entity ID) - this should be attached as a document of type <code style="color: #a71d5d">EVIDENCE</code> for the relevant transaction</li>
-<li>company charges certificate – a new boolean field, <code style="color: #a71d5d">conveyancers_certificate</code>, has been added to capture this information. This value must be provided when a <code style="color: #a71d5d">CERT_REG_CH</code> document is uploaded</li>
-<li>name variation – names are now required to be an exact match</li>
-<li>cover letter – should now be uploaded as a document of type <code style="color: #a71d5d">EVIDENCE</code> with the relevant transaction</li>
-<li>request to merge or close leasehold titles – the appropriate transaction type should now be selected for this purpose</li>
-</ul>
-
+    <p class="govuk-body">Additional changes include:</p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>Document uploads before application submission: you will now need to upload documents before
+            submitting an application</li>
+        <li>JSON format: instead of using XML, the request bodies for the new APIs will use the simpler, more
+            efficient JSON format</li>
+        <li>Asynchronous application submission: when you submit an application, a successful response means the
+            request has been received. Acceptance and prioritisation will occur after validation has been
+            applied</li>
+        <li>Renaming applications to transactions: applications from the SOAP request are now referred to as
+            Transactions</li>
+        <li>New fields: transaction specific data has been included, initially for transfer and charge
+            transactions including charge values and information on joint tenancies</li>
+        <!-- {# <li>Fees will be automatically calculated: this enhancement will come in a later version</li> #} -->
+        <li>Removing notes: the Notes section is no longer included but additional data fields have been added
+            to collect the data commonly found in this field. These include:</li>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-3">
+            <li>ROE-ID (Registration of Overseas Entity ID) - this should be attached as a document of type
+                <code style="color: #a71d5d">EVIDENCE</code> for the relevant transaction</li>
+            <li>company charges certificate – a new boolean field, <code
+                    style="color: #a71d5d">conveyancers_certificate</code>, has been added to capture this
+                information. This value must be provided when a <code style="color: #a71d5d">CERT_REG_CH</code>
+                document is uploaded</li>
+            <li>name variation – names are now required to be an exact match</li>
+            <li>cover letter – should now be uploaded as a document of type <code
+                    style="color: #a71d5d">EVIDENCE</code> with the relevant transaction</li>
+            <li>request to merge or close leasehold titles – the appropriate transaction type should now be
+                selected for this purpose</li>
+        </ul>
 </div>
 <br>
-
-
 <p class="govuk-body">The new service will have endpoints to support:</p>
 <div class="govuk-warning-text">
-<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-<strong class="govuk-warning-text__text">
-<span class="govuk-visually-hidden">Warning</span>
-These API endpoints are not currently live.
-</strong>
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        These API endpoints are not currently live.
+    </strong>
 </div>
 <ul class="govuk-list govuk-list--bullet">
-<li><a class="govuk-body govuk-link" href="/apis/send-a-document">Send a document API</a> - generate an upload URL and request to upload the document</li>
-
-<li><a class="govuk-body govuk-link" href="/apis/submit-an-application">Submit an application API</a> -  request to submit an application to HMLR</li>
-
-<li><a class="govuk-body govuk-link" href="/apis/application-information">Application information API</a> - get information about a specific application</li>
-
-<li><a class="govuk-body govuk-link" href="/apis/notifications">Notifications API</a> - collect notifications about applications that have been submitted</li>
+    <li><a class="govuk-body govuk-link" href="/apis/send-a-document">Send a document API</a> - generate an
+        upload URL and request to upload the document</li>
+    <li><a class="govuk-body govuk-link" href="/apis/submit-an-application">Submit an application API</a> -
+        request to submit an application to HMLR</li>
+    <li><a class="govuk-body govuk-link" href="/apis/application-information">Application information API</a> -
+        get information about a specific application</li>
+    <li><a class="govuk-body govuk-link" href="/apis/notifications">Notifications API</a> - collect
+        notifications about applications that have been submitted</li>
 </ul>
-
 <h3 class="govuk-heading-m" id="view-the-api-specification">View API specification</h3>
-
 <ul class="govuk-list">
-<li>
-<a class="govuk-body govuk-link" href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html" rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
-</li>
-<li>
-<a class="govuk-body govuk-link" href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/openapi.json" rel="noreferrer noopener" target="_blank">JSON version (opens in new tab)</a>
-</li>
+    <li>
+        <a class="govuk-body govuk-link"
+            href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html" rel="noreferrer noopener"
+            target="_blank">Web version (opens in new tab)</a>
+    </li>
+    <li>
+        <a class="govuk-body govuk-link" href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/openapi.json"
+            rel="noreferrer noopener" target="_blank">JSON version (opens in new tab)</a>
+    </li>
 </ul>
-
-
-
 <h3 class="govuk-heading-m" id="how-the-service-api-works">How the service API works</h3>
+<img src="/assets/images/submit-an-application-to-change-the-Land-Register-API.png"
+    alt="A diagram showing the submit an application to change the Land Register API" style="width: 900px">
 
-<img src="/assets/images/submit-an-application-to-change-the-Land-Register-API.png" alt="A diagram showing the submit an application to change the Land Register API" style="width: 900px">
-
-</div>
-
-<div class="govuk-grid-column-one-third">
 
 <aside class="related-items" role="complementary">
-<h2 class="govuk-heading-m" id="subsection-title">
-Related APIs
-</h2>
-<nav role="navigation" aria-labelledby="subsection-title">
-<ul class="govuk-list govuk-!-font-size-16">
-<li>
-<a class="govuk-body govuk-link" href="/apis/send-a-document">
-Send a document API
-</a>
-</li>
-<li>
-<a class="govuk-body govuk-link" href="/apis/submit-an-application">
-Submit an application API
-</a>
-</li>
-<li>
-<a class="govuk-body govuk-link" href="/apis/application-information">
-Application information API
-</a>
-</li>
-<li>
-<a class="govuk-body govuk-link" href="/apis/notifications">
-Notifications API
-</a>
-</li>
-<li>
-<a class="govuk-body govuk-link govuk-!-font-weight-bold" href="/find-a-service-api">
-More <span class="govuk-visually-hidden">in Subsection</span>
-</a>
-</li>
-</ul>
-</nav>
+    <h2 class="govuk-heading-m" id="subsection-title">
+        Related APIs
+    </h2>
+    <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+                <a class="govuk-body govuk-link" href="/apis/send-a-document">
+                    Send a document API
+                </a>
+            </li>
+            <li>
+                <a class="govuk-body govuk-link" href="/apis/submit-an-application">
+                    Submit an application API
+                </a>
+            </li>
+            <li>
+                <a class="govuk-body govuk-link" href="/apis/application-information">
+                    Application information API
+                </a>
+            </li>
+            <li>
+                <a class="govuk-body govuk-link" href="/apis/notifications">
+                    Notifications API
+                </a>
+            </li>
+            <li>
+                <a class="govuk-body govuk-link govuk-!-font-weight-bold" href="/find-a-service-api">
+                    More <span class="govuk-visually-hidden">in Subsection</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </aside>
-
-</div>
-</div>
-</div>
-</div>
-</div>
