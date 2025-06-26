@@ -7,6 +7,7 @@ eleventyNavigation:
     key: submit-an-application-to-change-the-land-register
     parent: apis
 
+spy: true
 sidenav:
     - theme: Contents
       text: Overview

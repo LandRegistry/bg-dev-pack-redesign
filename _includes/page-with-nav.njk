@@ -2,6 +2,7 @@
 
 {% block head %}
 {{super()}}
+{%- if spy -%}
 <script>
     function createThresholds(step) {
         let thresholds = []
@@ -41,6 +42,7 @@
         setupScrollSpy()
     });
 </script>
+{%- endif -%}
 {% endblock %}
 
 {% block content %}
