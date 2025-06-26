@@ -1,28 +1,10 @@
 ---
 homepage: true
-layout: page
+layout: homepage
 noback: true
 ---
 
-<div class="app-width-container">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full-from-desktop">
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-xl app-masthead__title">Create web services using Business Gateway APIs</h1>
-          <p class="app-masthead__description govuk-body">Use HM Land Registry's developer pack to explore APIs, review documentation and check endpoints.</p>
-          <a href="/find-a-service-api" role="button" draggable="false"
-            class="govuk-button govuk-!-margin-top-6 govuk-!-margin-bottom-0 govuk-button--start"
-            data-module="govuk-button">Find an API</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="govuk-grid-row">
-  <div class="govuk-!-padding-top-0"></div>
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-left-3" />
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h2 class="govuk-heading-l govuk-!-margin-left-3">What's new</h2>

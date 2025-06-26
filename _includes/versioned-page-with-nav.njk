@@ -1,0 +1,23 @@
+{% extends 'page-with-nav.njk' %}
+
+{% block head %}
+{{ super() }}
+<script>
+    function setVersion() {
+        let version = document.getElementById('version').value;
+        console.log("location:", window.location.href)
+        if (!window.location.href.includes(version + '/')) {
+            console.log(`Versions were different, navigating to ${version}`)
+            if (window.location.href.match(/\/[0-9.]+\//))
+                window.location.href = window.location.href.replace(/\/[0-9.]+\//, `/${version}/`)
+            else
+                window.location.href = `./${version}`
+        } else {
+            console.log(`Version has not changed`);
+        }
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        setVersion()
+    });
+</script>
+{% endblock %}

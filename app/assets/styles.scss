@@ -7,6 +7,7 @@ $_font-family: Helvetica, Arial, system-ui, sans-serif;
 
 // Use GOV.UK Eleventy Plugin components
 @use "pkg:@x-govuk/govuk-eleventy-plugin";
+@use "govuk-frontend/dist/govuk" as *;
 
 $govuk-brand-colour: #789904;
 
@@ -38,9 +39,34 @@ aside.content-list ol.dashed-list, .content-list ul {
   list-style-type: none;
 }
 
+.x-govuk-sub-navigation__section-item--current {
+  border-left-color: govuk-colour("blue");
+}
+
 @media (min-width: 40.0625em) {
   .sticky {
     position: sticky;
     top: 25px;
   }
+}
+
+.grey {
+  background-color: govuk-colour("light-grey");
+  border-bottom-color: govuk-colour("mid-grey");
+  border-bottom-width: .1em;
+  border-bottom-style: solid;
+}
+
+.version-group {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 0 1em;
+  height: 40px;
+}
+
+.version-label-center-y {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, auto);
+  align-items: center;
+  height: 40px;
 }

@@ -1,24 +1,55 @@
 {% extends "page.njk" %}
 
+{% block head %}
+{{super()}}
+<script>
+    function createThresholds(step) {
+        let thresholds = []
+        for (let i = 0.0; i <= 1.0; i += step) 
+            thresholds.push(i)
+    }
+    function setupScrollSpy() {
+        const options = {
+            rootMargin: "0px",
+            threshold: createThresholds(0.1)
+        };
+
+        let navLinks = document.querySelector(".x-govuk-sub-navigation").querySelectorAll("a");
+
+        function select(target) {
+            navLinks.forEach(el => {
+                el.parentElement.classList.remove("x-govuk-sub-navigation__section-item--current")
+                el.setAttribute("aria-current", false);
+            })
+            target.parentElement.classList.add("x-govuk-sub-navigation__section-item--current")
+            target.setAttribute("aria-current", true)
+        }
+
+        navLinks.forEach(link => {
+            let id = link.href.substring(link.href.lastIndexOf('#')+1);
+            let observer = new IntersectionObserver((entries, obz) => {
+                entries.forEach(entry => {
+                    console.log(entry.target.id, entry.isIntersecting);
+                    if (entry.isIntersecting)
+                        select(link) 
+                })
+            }, options);
+            observer.observe(document.getElementById(id));
+        })
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        setupScrollSpy()
+    });
+</script>
+{% endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third sticky">
         {{ xGovukSubNavigation({ items: sidenav}) }}
     </div>
     <div class="govuk-grid-column-two-thirds">
-        {%- if not noheader -%}
-        {{ appDocumentHeader({
-            title: title,
-            description: description
-        }) }}
-        {%- endif -%}
-
-        {{ appProseScope(content) if content }}
-        {%- if not content -%}
-            <p>You need to add content</p>
-        {%- endif -%}
-
-        {% include "layouts/shared/related.njk" %}
+        {{ super() }}
     </div>
 </div>
 {% endblock %}

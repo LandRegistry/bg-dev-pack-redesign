@@ -14,6 +14,46 @@
 
   <meta property="og:title" content="">
 
+<script>
+    function createThresholds(step) {
+        let thresholds = []
+        for (let i = 0.0; i <= 1.0; i += step) 
+            thresholds.push(i)
+    }
+    function setupScrollSpy() {
+        const options = {
+            rootMargin: "0px",
+            threshold: createThresholds(0.1)
+        };
+
+        let navLinks = document.querySelector(".x-govuk-sub-navigation").querySelectorAll("a");
+
+        function select(target) {
+            navLinks.forEach(el => {
+                el.parentElement.classList.remove("x-govuk-sub-navigation__section-item--current")
+                el.setAttribute("aria-current", false);
+            })
+            target.parentElement.classList.add("x-govuk-sub-navigation__section-item--current")
+            target.setAttribute("aria-current", true)
+        }
+
+        navLinks.forEach(link => {
+            let id = link.href.substring(link.href.lastIndexOf('#')+1);
+            let observer = new IntersectionObserver((entries, obz) => {
+                entries.forEach(entry => {
+                    console.log(entry.target.id, entry.isIntersecting);
+                    if (entry.isIntersecting)
+                        select(link) 
+                })
+            }, options);
+            observer.observe(document.getElementById(id));
+        })
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        setupScrollSpy()
+    });
+</script>
+
     <meta property="og:image" content="/hmlrassets/images/hmlr-opengraph-image.png">
   </head>
   <body class="govuk-template__body">
@@ -106,7 +146,8 @@ data-module="govuk-service-navigation"
 </nav>
 
     </div>
-    <div class="govuk-grid-column-two-thirds"><div class="app-prose-scope"><p class="govuk-body"><span class="govuk-caption-xl">Before you start</span></p>
+    <div class="govuk-grid-column-two-thirds">
+        <div class="app-prose-scope"><p class="govuk-body"><span class="govuk-caption-xl">Before you start</span></p>
 <h1 class="govuk-heading-xl">Terms of use</h1>
 <div class="govuk-grid-row">
   <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">The terms of use policies explain what
@@ -176,6 +217,7 @@ data-module="govuk-service-navigation"
     describe the work we do at HMLR. For a list of commonly used terms and their definitions, visit <a
       class="govuk-link" href="/glossary">our glossary</a>.</p>
 </div></div>
+
 
     </div>
 </div>
