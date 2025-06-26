@@ -2,7 +2,8 @@ import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
-    'node_modules/@hmlr/frontend/hmlr/assets': 'hmlrassets'
+    'node_modules/@hmlr/frontend/hmlr/assets': 'hmlrassets',
+    'app/assets': 'assets'
   })
 
   eleventyConfig.addPlugin(govukEleventyPlugin, {
@@ -18,8 +19,8 @@ export default function (eleventyConfig) {
     stylesheets: ['/assets/styles.css'],
     titleSuffix: "HM Land Registry Developer Pack",
     header: {
-      logotype: {text: "HM Land Registry"},
-      productName: "Developer Pack",
+      logotype: {text: "HM Land Registry Developer Pack"},
+      productType: "",
       search: {
         label: "Search developer pack",
         indexPath: "/search.json",
@@ -60,7 +61,10 @@ export default function (eleventyConfig) {
     nunjucksEnvironmentOptions: {
       paths: [
         "./_includes",
-        "../node_modules/@hmlr/frontend"
+        "../node_modules/@hmlr/frontend",
+        "node_modules/govuk-frontend/dist",
+        "node_modules/govuk-frontend/dist/govuk",
+        "node_modules/govuk-frontend/dist/govuk/components"
       ],
     },
   }

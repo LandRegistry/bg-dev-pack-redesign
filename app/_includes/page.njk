@@ -40,7 +40,25 @@
 
 {% block footer %}
 {{ hmlrFooter({
+  meta: {
+    visuallyHiddenTitle: "These links open in a new tab.",
+    text: "These links open in a new tab.",
+    items: [{
+      text: "Terms and conditions",
+      href: ""
+    }, {
+      text: "Accessibility Statement",
+      href: ""
+    }, {
+      text: "Cookies",
+      href: ""
+    }, {
+      text: "Freedom of information",
+      href: ""
+    }]
+  },
   copyright: {
+    text: "&copy; Crown copyright"
   }
 }) }}
 {% endblock %}
