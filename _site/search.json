@@ -1,24 +1,10 @@
 [  {
-    "title": "",
-    "layout": "homepage",
-    "hasFrontmatterDate": false,
-    "date": "12 June 2025",
-    "templateContent": "what's new 14 march 2025: hm land registry hmlr developing service improve process submitting information submit application change register api will help lodge applications with update create lease transfer part this replace existing e drs soap designed applicants get their right first time < href=\" apis register\">read more about summary changes developer pack changelog\">visit our changelog started what expect from includes who guide how use access business gateway businesses integrate terms policies practices explore learn breakdown types when them find choose servicesm testing best practice support tell us can href=\"https: www.gov.uk guidance join community\">join community  maintained by got question idea suggestion can  contact",
-    "url": "/"
-  },  {
     "title": "Send a Document Service API",
 "section": "apis",    "layout": "devpack.njk",
     "hasFrontmatterDate": false,
     "date": "12 June 2025",
     "templateContent": "use this service attach documents your application ! warning these api endpoints are currently live contents overview view technical guide specification how works test send document should used can integrated using rest core there two steps sending document: request generate upload url will respond with hmlr that only active 10 minutes after creation endpoint also return id when submit uploaded via process subject security scanning have been 180 days which point they removed web version opens new tab does provide environment integrators our business gateway apis instead provided example code demonstrate what expect see developing own services stubs general testing guidance visit related change land register information notifications more subsection",
     "url": "/apis/send-a-document/"
-  },  {
-    "title": "Submit an Application to change the Land Register service API",
-"section": "apis",    "layout": "versioned-page-with-nav.njk",
-    "hasFrontmatterDate": false,
-    "date": "12 June 2025",
-    "templateContent": "submit application change land register service api use this help lodge applications with hmlr update create new lease transfer part version status dropdown v0.3 latest v0.2 v0.1 <button type=\"submit\" class=\"govuk button govuk ! margin 0\" data module=\"govuk button\" onclick=\"setversion \" >view select related apis send document information notifications more subsection",
-    "url": "/apis/submit-an-application-to-change-the-land-register/"
   },  {
     "title": "Submit an application service API",
 "section": "apis",    "layout": "devpack.njk",
@@ -192,8 +178,15 @@
 "section": "apis",    "layout": "versioned-page-with-nav.njk",
     "hasFrontmatterDate": false,
     "date": "26 June 2025",
+    "templateContent": "submit application change land register service api use this help lodge applications with hmlr update create new lease transfer part version status dropdown v0.3 latest v0.2 v0.1 <button type=\"submit\" class=\"govuk button govuk ! margin 0\" data module=\"govuk button\" onclick=\"setversion \" >view select related apis send document information notifications more subsection",
+    "url": "/apis/submit-an-application-to-change-the-land-register/"
+  },  {
+    "title": "Submit an Application to change the Land Register service API",
+"section": "apis",    "layout": "versioned-page-with-nav.njk",
+    "hasFrontmatterDate": false,
+    "date": "26 June 2025",
     "templateContent": "submit application change land register service api use this help lodge applications with hmlr update create new lease transfer part version status dropdown v0.3 latest v0.2 v0.1 <button type=\"submit\" class=\"govuk button govuk ! margin 0\" data module=\"govuk button\" onclick=\"setversion \" >view overview will can integrated using rest core faster more responsive than before identify errors prior acceptance resulting fewer requisitions improved experience customers important changes will: collect validate current increase number automated checks submission automatically check format structure information added against already future compare provide contained attached documents return 'll benefit from: increased output quality: built all types including charge transactions face consistent results across services: get parity outcomes our digital services greater confidence automation: accurate opportunities streamline processes improve error prevention: system catch fix administrative attachment process: attaching classifying deeds quicker straightforward upgraded technology: from platform mean that are only accepted onto day list when provided both valid correct validation significantly reduce avoidable common mistakes such name discrepancies missing details ability automate additional include: document uploads submission: now need upload submitting json format: instead xml request bodies apis simpler efficient asynchronous successful response means been received prioritisation occur after applied renaming transactions: soap referred fields: transaction specific included initially values joint tenancies removing notes: notes section longer fields have commonly found field these roe id registration overseas entity should type evidence relevant company charges certificate boolean <code style=\"color: #a71d5d\">conveyancers_certificate capture value must cert_reg_ch uploaded variation names required exact match cover letter #a71d5d\">evidence merge close leasehold titles appropriate selected purpose endpoints support: warning currently live send generate url about notifications submitted view specification < body link\" href=\"https: landregistry.github.io bgtechdoc vcad v0_3 spec.html\" rel=\"noreferrer noopener\" target=\"_blank\">web opens tab openapi.json\" target=\"_blank\">json how works <img src=\" assets images api.png\" alt=\" diagram showing api\" style=\"width: 900px\"> related subsection",
-    "url": "/apis/submit-an-application-to-change-the-land-register/0.3/"
+    "url": "/apis/submit-an-application-to-change-the-land-register/0.1/"
   },  {
     "title": "Submit an Application to change the Land Register service API",
 "section": "apis",    "layout": "versioned-page-with-nav.njk",
@@ -207,5 +200,12 @@
     "hasFrontmatterDate": false,
     "date": "26 June 2025",
     "templateContent": "submit application change land register service api use this help lodge applications with hmlr update create new lease transfer part version status dropdown v0.3 latest v0.2 v0.1 <button type=\"submit\" class=\"govuk button govuk ! margin 0\" data module=\"govuk button\" onclick=\"setversion \" >view overview will can integrated using rest core faster more responsive than before identify errors prior acceptance resulting fewer requisitions improved experience customers important changes will: collect validate current increase number automated checks submission automatically check format structure information added against already future compare provide contained attached documents return 'll benefit from: increased output quality: built all types including charge transactions face consistent results across services: get parity outcomes our digital services greater confidence automation: accurate opportunities streamline processes improve error prevention: system catch fix administrative attachment process: attaching classifying deeds quicker straightforward upgraded technology: from platform mean that are only accepted onto day list when provided both valid correct validation significantly reduce avoidable common mistakes such name discrepancies missing details ability automate additional include: document uploads submission: now need upload submitting json format: instead xml request bodies apis simpler efficient asynchronous successful response means been received prioritisation occur after applied renaming transactions: soap referred fields: transaction specific included initially values joint tenancies removing notes: notes section longer fields have commonly found field these roe id registration overseas entity should type evidence relevant company charges certificate boolean <code style=\"color: #a71d5d\">conveyancers_certificate capture value must cert_reg_ch uploaded variation names required exact match cover letter #a71d5d\">evidence merge close leasehold titles appropriate selected purpose endpoints support: warning currently live send generate url about notifications submitted view specification < body link\" href=\"https: landregistry.github.io bgtechdoc vcad v0_3 spec.html\" rel=\"noreferrer noopener\" target=\"_blank\">web opens tab openapi.json\" target=\"_blank\">json how works <img src=\" assets images api.png\" alt=\" diagram showing api\" style=\"width: 900px\"> related subsection",
-    "url": "/apis/submit-an-application-to-change-the-land-register/0.1/"
+    "url": "/apis/submit-an-application-to-change-the-land-register/0.3/"
+  },  {
+    "title": "",
+    "layout": "homepage",
+    "hasFrontmatterDate": false,
+    "date": "26 June 2025",
+    "templateContent": "what's new 14 march 2025: hm land registry hmlr developing service improve process submitting information submit application change register api will help lodge applications with update create lease transfer part this replace existing e drs soap designed applicants get their right first time < href=\" apis register\">read more about summary changes developer pack changelog\">visit our changelog started what expect from includes who guide how use access business gateway businesses integrate terms policies practices explore learn breakdown types when them find choose servicesm testing best practice support tell us can href=\"https: www.gov.uk guidance join community\">join community  maintained by got question idea suggestion can  contact",
+    "url": "/"
   }]

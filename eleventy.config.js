@@ -2,7 +2,6 @@ import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
-    'images': 'assets/images',
     'node_modules/@hmlr/frontend/hmlr/assets': 'hmlrassets'
   })
 
@@ -55,9 +54,14 @@ export default function (eleventyConfig) {
     dir: {
       // The folder where all your content will live:
       input: 'app',
-      includes: '../_includes',
-      data: '../_data',
+      includes: '_includes',
       output: '_site'
-    }
+    },
+    nunjucksEnvironmentOptions: {
+      paths: [
+        "./_includes",
+        "../node_modules/@hmlr/frontend"
+      ],
+    },
   }
 };

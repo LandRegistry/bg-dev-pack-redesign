@@ -1,13 +1,16 @@
 // Use GOV.UK Frontend
 $_font-family: Helvetica, Arial, system-ui, sans-serif;
-@use "pkg:govuk-frontend/dist/govuk" with (
-  $govuk-font-family: $_font-family,
-  $govuk-brand-colour: #789904
-);
 
 // Use GOV.UK Eleventy Plugin components
 @use "pkg:@x-govuk/govuk-eleventy-plugin";
 @use "govuk-frontend/dist/govuk" as *;
+
+// Use HMLR Frontend
+@use "../../node_modules/@hmlr/frontend/hmlr/all.scss" with (
+  $hmlr-assets-path: "/hmlrassets/",
+  $govuk-font-family: $_font-family,
+  $govuk-brand-colour: #789904
+);
 
 $govuk-brand-colour: #789904;
 

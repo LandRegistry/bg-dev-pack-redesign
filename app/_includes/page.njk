@@ -2,6 +2,9 @@
 
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{# {% from "hmlr/components/footer/macro.njk" import hmlrFooter %} #}
+{% from "./macros/hmlr/footer/macro.njk" import hmlrFooter %}
+
 
 {% block beforeContent %}
   {{ govukPhaseBanner({
@@ -33,4 +36,11 @@
   {%- endif -%}
 
   {% include "layouts/shared/related.njk" %}
+{% endblock %}
+
+{% block footer %}
+{{ hmlrFooter({
+  copyright: {
+  }
+}) }}
 {% endblock %}
