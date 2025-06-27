@@ -14,6 +14,26 @@
 
   <meta property="og:title" content="">
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let sorter = document.getElementById('sort');
+        let sorted = document.querySelectorAll('[data-sortable]');
+        function updateSortedValues(changedEvent) {
+            console.log("Sorted to show only", sorter.value)
+            if (sorter.value == 'choose-service-api') {
+                sorted.forEach(it => it.classList.add("api-sort-visible"));
+            }
+            else {
+                let selected = document.querySelector(`[data-sortable='${sorter.value}']`);
+                sorted.forEach(it => it.classList.remove("api-sort-visible"))
+                selected.classList.add("api-sort-visible")
+            }
+        }
+        sorter.addEventListener('change', updateSortedValues);
+        updateSortedValues(null);        
+    })
+</script>
+
     <meta property="og:image" content="/hmlrassets/images/hmlr-opengraph-image.png">
   </head>
   <body class="govuk-template__body">
@@ -117,13 +137,16 @@ data-module="govuk-service-navigation"
       <option value="submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</option>
     </select>
   </div>
+  <div data-sortable="notifications">
   <a class="govuk-heading-s govuk-link govuk-!-margin-left-3" href="/apis/notifications">Notifications<strong
       class="govuk-tag govuk-!-margin-left-3 govuk-tag--orange">REST API</strong> </a>
   <p class="govuk-body govuk-!-margin-left-3">Use this service to get updates about multiple applications submitted by the same business unit.</p>
+  </div>
+  <div data-sortable="submit-an-application-to-change-the-land-register">
   <a class="govuk-heading-s govuk-link govuk-!-margin-left-3"
     href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--orange">REST API</strong> </a>
   <p class="govuk-body govuk-!-margin-left-3">Use this service to help lodge applications with HMLR to update the register or create a new lease or transfer of part.</p>
-  <div class="govuk-grid-column-one-third"></div>
+  </div>
 </div></div>
 
 

@@ -86,3 +86,11 @@ aside.content-list ol.dashed-list, .content-list ul {
 .govuk-header__logo {
   width: auto;
 }
+
+[data-sortable] {
+  display: none;
+}
+
+.api-sort-visible[data-sortable] {
+  display: initial;
+}

@@ -1,5 +1,5 @@
 ---
-layout: page-with-nav
+layout: find-an-api-page
 noheader: true
 sidenav:
   - theme: Before you start
@@ -39,11 +39,14 @@ sidenav:
       <option value="submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</option>
     </select>
   </div>
+  <div data-sortable="notifications">
   <a class="govuk-heading-s govuk-link govuk-!-margin-left-3" href="/apis/notifications">Notifications<strong
       class="govuk-tag govuk-!-margin-left-3 govuk-tag--orange">REST API</strong> </a>
   <p class="govuk-body govuk-!-margin-left-3">Use this service to get updates about multiple applications submitted by the same business unit.</p>
+  </div>
+  <div data-sortable="submit-an-application-to-change-the-land-register">
   <a class="govuk-heading-s govuk-link govuk-!-margin-left-3"
     href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--orange">REST API</strong> </a>
   <p class="govuk-body govuk-!-margin-left-3">Use this service to help lodge applications with HMLR to update the register or create a new lease or transfer of part.</p>
-  <div class="govuk-grid-column-one-third"></div>
+  </div>
 </div>
