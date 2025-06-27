@@ -5,6 +5,10 @@
 {# {% from "hmlr/components/footer/macro.njk" import hmlrFooter %} #}
 {% from "./macros/hmlr/footer/macro.njk" import hmlrFooter %}
 
+{% block head %}
+{{super()}}
+<script src="/assets/script.js" />
+{% endblock %}
 
 {% block beforeContent %}
   {{ govukPhaseBanner({
