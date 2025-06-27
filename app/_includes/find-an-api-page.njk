@@ -3,18 +3,28 @@
 {% block head %}
 {{ super() }}
 <script>
+    function hide(element) {
+        element.classList.remove("api-sort-visible");
+        element.setAttribute("aria-hidden", true);
+    }
+
+    function show(element) {
+        element.classList.add("api-sort-visible");
+        element.removeAttribute("aria-hidden");
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
         let sorter = document.getElementById('sort');
         let sorted = document.querySelectorAll('[data-sortable]');
         function updateSortedValues(changedEvent) {
             console.log("Sorted to show only", sorter.value)
             if (sorter.value == 'choose-service-api') {
-                sorted.forEach(it => it.classList.add("api-sort-visible"));
+                sorted.forEach(it => show(it));
             }
             else {
                 let selected = document.querySelector(`[data-sortable='${sorter.value}']`);
-                sorted.forEach(it => it.classList.remove("api-sort-visible"))
-                selected.classList.add("api-sort-visible")
+                sorted.forEach(it => hide(it))
+                show(selected);
             }
         }
         sorter.addEventListener('change', updateSortedValues);
