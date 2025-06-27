@@ -1,21 +1,29 @@
+function resetCopyCodeButton(button) {
+    button.innerText = "Copy Code";
+}
+
+function activateCopyCodeButton(button) {
+    button.innerText = "Code Copied";
+    // Reset in 5 seconds
+    setTimeout(() => resetCopyCodeButton(button), 5e3);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     let copyCodeButtons = document.querySelectorAll("button.copy-code");
+    // copyCodeButtons[0].parentNode.
     console.log(copyCodeButtons)
     copyCodeButtons.forEach(button => {
         button.addEventListener("click", _ => {
-            let targetId = button.getAttribute("target");
-            let target = document.getElementById(targetId);
+            let target = button.parentElement.querySelector("code");
             let code = target.innerText;
             let notCopied = false;
             if (navigator) {
                 try {
                     navigator.clipboard.writeText(code);
-                    button.innerText = "Code Copied";
-                    setTimeout(() => button.innerText = "Copy Code", 5e3)
+                    activateCopyCodeButton(button)
                 } catch {
                     notCopied = true
                 }
-
             } else { notCopied = true }
 
             if (notCopied) {

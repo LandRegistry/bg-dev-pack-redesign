@@ -16,6 +16,32 @@
 
 <script src="/assets/script.js"></script>
 <script>
+    let navigations = {}
+
+    function setNavSelect(target) {
+        let navLinks = document.querySelector(".x-govuk-sub-navigation").querySelectorAll("a");
+        navLinks.forEach(el => {
+            el.parentElement.classList.remove("x-govuk-sub-navigation__section-item--current")
+            el.setAttribute("aria-current", false);
+        })
+        target.parentElement.classList.add("x-govuk-sub-navigation__section-item--current")
+        target.setAttribute("aria-current", true)
+    }
+
+    function updateNavigation() {
+        if (navigations.length == 0) return;
+
+        let max = null;
+        for (summary of Object.values(navigations)) {
+            if (max == null || summary.ratio > max.ratio) {
+                max = summary
+            }
+            console.log(max.ratio, ">", summary.ratio)
+        }
+        navigations = {}
+        max && setNavSelect(max.link)
+    }
+
     function createThresholds(step) {
         let thresholds = []
         for (let i = 0.0; i <= 1.0; i += step) 
@@ -23,35 +49,34 @@
     }
     function setupScrollSpy() {
         const options = {
+            root: null,
             rootMargin: "0px",
-            threshold: createThresholds(0.1)
+            threshold: createThresholds(0.01)
         };
 
-        let navLinks = document.querySelector(".x-govuk-sub-navigation").querySelectorAll("a");
-
-        function select(target) {
-            navLinks.forEach(el => {
-                el.parentElement.classList.remove("x-govuk-sub-navigation__section-item--current")
-                el.setAttribute("aria-current", false);
+        document.querySelector(".x-govuk-sub-navigation")
+            .querySelectorAll("a")
+            .forEach(link => {
+                let id = link.href.substring(link.href.lastIndexOf('#')+1);
+                let observer = new IntersectionObserver((entries, obz) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting)
+                        navigations[link.href] = {
+                            link: link,
+                            ratio: entry.intersectionRatio
+                        }
+                    })
+                }, options);
+                let observed = document.getElementById(id);
+                if (observed.parentNode.tagName === "SECTION") {
+                    observed = observed.parentNode;
+                }
+                observer.observe(observed);
             })
-            target.parentElement.classList.add("x-govuk-sub-navigation__section-item--current")
-            target.setAttribute("aria-current", true)
-        }
-
-        navLinks.forEach(link => {
-            let id = link.href.substring(link.href.lastIndexOf('#')+1);
-            let observer = new IntersectionObserver((entries, obz) => {
-                entries.forEach(entry => {
-                    console.log(entry.target.id, entry.isIntersecting);
-                    if (entry.isIntersecting)
-                        select(link) 
-                })
-            }, options);
-            observer.observe(document.getElementById(id));
-        })
     }
     document.addEventListener("DOMContentLoaded", () => {
         setupScrollSpy()
+        setInterval(updateNavigation)
     });
 </script>
     <meta property="og:image" content="/hmlrassets/images/hmlr-opengraph-image.png">
@@ -115,6 +140,30 @@ data-module="govuk-service-navigation"
     <li class="x-govuk-sub-navigation__section-item">
       <a class="x-govuk-sub-navigation__link" href="#scenario-1">Scenario 1: Get all notifications</a>
     </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-2">Scenario 2: Get all new notifications</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-3">Scenario 3: Get all acknowledged notifications</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-4">Scenario 4: Get all with invalid date filter</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-5">Scenario 5: Acknowledge notifications</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-6">Scenario 6: Application queued notificaton</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-7">Scenario 7: System error notification</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-8">Scenario 8: Application cancelled notification</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-9">Scenario 9: Application completed notification</a>
+    </li>
   </ul>
 </nav>
 
@@ -127,22 +176,19 @@ data-module="govuk-service-navigation"
 
 </header>
 
-<div class="app-prose-scope"><div class="govuk-grid-row">
-  <div class="govuk-prototype-kit-common-templates-mainstream-guide-body">
-<p class="govuk-body"><p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway<br>
-APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see<br>
-when developing your own services.</p><br>
-<p class="govuk-body">Base URL: <code class="x-govuk-code x-govuk-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p><br>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"><br>
-<h2 id="scenario-1" class="govuk-heading-m">Scenario 1: Get all notifications</h2><br>
-<h3 class="govuk-heading-s">Request</h3><br>
-<p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">GET</code></p><br>
-<p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/notifications</code></p><br>
-<p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &lt;any-value&gt;</code></p><br>
-<h3 class="govuk-heading-s">Response</h3><br>
-<p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p></p>
-<div class="copy-code-wrapper">
-<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button" target="code1">
+<div class="app-prose-scope"><p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see when developing your own services.</p>
+<p class="govuk-body">Base URL: <code class="x-govuk-code x-govuk-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<section>
+<h2 id="scenario-1" class="govuk-heading-m">Scenario 1: Get all notifications</h2>
+<h3 class="govuk-heading-s">Request</h3>
+<p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/notifications</code></p>
+<p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy Code
 </button>
 <div id="code1">
@@ -204,371 +250,384 @@ when developing your own services.</p><br>
   <span class="x-govuk-code__punctuation">}</span>
 </code></pre>
 
-</div></div>
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    <h2 class="govuk-heading-m">Scenario 2: Get all new notifications</h2>
-    <h3 class="govuk-heading-s">Request</h3>
-    <p class="govuk-body">Method:
-      <code style="color: #a71d5d; background-color: #f5f5f5">GET</code>
-    </p>
-    <p class="govuk-body">Endpoint:
-      <code style="color: #a71d5d; background-color: #f5f5f5">/v0/notifications?status=NEW</code>
-    </p>
-    <p class="govuk-body">Headers:
-      <code style="color: #a71d5d; background-color: #f5f5f5">Authorization: &ltany-value&gt
-        </code>
-    </p>
-    <h3 class="govuk-heading-s">Response</h3>
-    <p class="govuk-body">Status:
-      <code style="color: #a71d5d; background-color: #f5f5f5">200</code>
-    </p>
-    <pre>
-<code class="language-json" style="background-color: #f3f2f1">
-  {
-    "data": [
-      {
-        "notification_id": "&#123;&#123;ID&#125;&#125;",
-        "created_datetime": "2024-01-01T12:00:00.000",
-        "event_datetime": "2024-01-01T12:00:00.000",
-        "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json",
-        "notification_type": "APPLICATION_ACCEPTED_ON_DAY_LIST",
-        "subject_type": "LAND_REGISTER_APPLICATION",
-        "subject": "2563940e-ae95-4e7e-9b33-49a6571abdf6",
-        "additional_provider_filter": "subUnit1",
-        "status": "NEW",
-        "payload": {
-          "data": {
-            "hmlr_reference": "ABC456B",
-            "status": "ACCEPTED",
-            "priority": "2024-09-20T09:56:46"
-          }
-        }
-      },
-      {
-        "notification_id": "&#123;&#123;ID&#125;&#125;",
-        "created_datetime": "2024-01-01T12:00:00.000",
-        "event_datetime": "2024-01-01T12:00:00.000",
-        "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/validation-failed.json",
-        "notification_type": "APPLICATION_VALIDATION_FAILED",
-        "subject_type": "LAND_REGISTER_APPLICATION",
-        "subject": "3be62ad3-c542-452d-975e-6cd18d77196f",
-        "additional_provider_filter": "subUnit1",
-        "status": "NEW",
-        "payload": {
-          "data": {
-            "status": "VALIDATION_FAILED"
-          }
-        }
-      }
-    ]
-  }
-</code>
-</pre>
-    <div class="govuk-!-padding-bottom-3"></div>
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    <h2 class="govuk-heading-m">Scenario 3: Get all acknowledged notifications</h2>
-    <h3 class="govuk-heading-s">Request</h3>
-    <p class="govuk-body">Method:
-      <code style="color: #a71d5d; background-color: #f5f5f5">GET</code>
-    </p>
-    <p class="govuk-body">Endpoint:
-      <code style="color: #a71d5d; background-color: #f5f5f5">/v0/notifications?status=ACKNOWLEDGED</code>
-    </p>
-    <p class="govuk-body">Headers:
-      <code style="color: #a71d5d; background-color: #f5f5f5">Authorization: &ltany-value&gt
-        </code>
-    </p>
-    <h3 class="govuk-heading-s">Response</h3>
-    <p class="govuk-body">Status:
-      <code style="color: #a71d5d; background-color: #f5f5f5">200</code>
-    </p>
-    <pre>
-<code class="language-json" style="background-color: #f3f2f1">
-  {
-    "data": [
-      {
-        "notification_id": "&#123;&#123;ID&#125;&#125;",
-        "created_datetime": "2024-01-01T12:00:00.000",
-        "event_datetime": "2024-01-01T12:00:00.000",
-        "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json",
-        "notification_type": "APPLICATION_ACCEPTED_ON_DAY_LIST",
-        "subject_type": "LAND_REGISTER_APPLICATION",
-        "subject": "b3ac19be-2b6d-4b8a-971c-e758b0e8e790",
-        "additional_provider_filter": "subUnit1",
-        "status": "ACKNOWLEDGED",
-        "payload": {
-          "data": {
-            "hmlr_reference": "ABC456A",
-            "status": "ACCEPTED",
-            "priority": "2024-09-20T09:56:46"
-          }
-        }
-      }
-    ]
-  }
-</code>
-</pre>
-    <div class="govuk-!-padding-bottom-3"></div>
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    <h2 class="govuk-heading-m">Scenario 4: Get all with invalid date filter</h2>
-    <h3 class="govuk-heading-s">Request</h3>
-    <p class="govuk-body">Method:
-      <code style="color: #a71d5d; background-color: #f5f5f5">GET</code>
-    </p>
-    <p class="govuk-body">Endpoint:
-      <code
-        style="color: #a71d5d; background-color: #f5f5f5">/v0/notifications?created_after=2020-01-01T00:00:00&created_before=2015-01-01T00:00:00</code>
-    </p>
-    <p class="govuk-body">Headers:
-      <code style="color: #a71d5d; background-color: #f5f5f5">Authorization: &ltany-value&gt
-        </code>
-    </p>
-    <h3 class="govuk-heading-s">Response</h3>
-    <p class="govuk-body">Status:
-      <code style="color: #a71d5d; background-color: #f5f5f5">400</code>
-    </p>
-    <pre>
-<code class="language-json" style="background-color: #f3f2f1">
-  {
-    "type": "https://problems-registry.smartbear.com/bad-request/",
-    "title": "Bad Request",
-    "status": 400,
-    "detail": "created_after parameter cannot be after created_before parameter",
-    "instance": "/v0/notifications",
-    "code": "400-01"
-  }
-</code>
-</pre>
-    <div class="govuk-!-padding-bottom-3"></div>
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    <h2 class="govuk-heading-m">Scenario 5: Acknowledge notifications</h2>
-    <h3 class="govuk-heading-s">Request</h3>
-    <p class="govuk-body">Method:
-      <code style="color: #a71d5d; background-color: #f5f5f5">POST</code>
-    </p>
-    <p class="govuk-body">Endpoint:
-      <code style="color: #a71d5d; background-color: #f5f5f5">/v0/notifications/acknowledge</code>
-    </p>
-    <p class="govuk-body">Headers:
-      <code style="color: #a71d5d; background-color: #f5f5f5">Authorization: &ltany-value&gt
-        </code>
-    </p>
-    <pre>
-<code class="language-json" style="background-color: #f3f2f1">
-  {
-    "data": [
-      "b3ac19be-2b6d-4b8a-971c-e758b0e8e790",
-      "87654321-2b6d-4b8a-971c-e758b0e8e790",
-      "12345678-2b6d-4b8a-971c-e758b0e8e790"
-    ]
-  }
-</code>
-</pre>
-    <h3 class="govuk-heading-s">Response</h3>
-    <p class="govuk-body">Status:
-      <code style="color: #a71d5d; background-color: #f5f5f5">200</code>
-    </p>
-    <pre>
-<code class="language-json" style="background-color: #f3f2f1">
-  {
-    "data": {
-      "acknowledged": [
-        "b3ac19be-2b6d-4b8a-971c-e758b0e8e790"
-      ],
-      "not_found": [
-        "87654321-2b6d-4b8a-971c-e758b0e8e790",
-        "12345678-2b6d-4b8a-971c-e758b0e8e790"
-      ]
-    }
-  }
-</code>
-</pre>
-    <div class="govuk-!-padding-bottom-3"></div>
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    <h2 class="govuk-heading-m">Scenario 6: Application queued notification</h2>
-    <h3 class="govuk-heading-s">Request</h3>
-    <p class="govuk-body">Method:
-      <code style="color: #a71d5d; background-color: #f5f5f5">GET</code>
-    </p>
-    <p class="govuk-body">Endpoint:
-      <code
-        style="color: #a71d5d; background-color: #f5f5f5">/v0/notifications?notification_type=APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code>
-    </p>
-    <p class="govuk-body">Headers:
-      <code style="color: #a71d5d; background-color: #f5f5f5">Authorization: &ltany-value&gt
-  </code>
-    </p>
-    <h3 class="govuk-heading-s">Response</h3>
-    <p class="govuk-body">Status:
-      <code style="color: #a71d5d; background-color: #f5f5f5">200</code>
-    </p>
-    <pre>
-<code class="language-json" style="background-color: #f3f2f1">
-  {
-    "data": [{
-      "notification_id": "&#123;&#123;ID&#125;&#125;",
-      "created_datetime": "2024-01-01T12:00:00.000",
-      "event_datetime": "2024-01-01T12:00:00.000",
-      "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-awaiting-priority.json",
-      "notification_type": "APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST",
-      "subject_type": "LAND_REGISTER_APPLICATION",
-      "subject": "45454545-2b6d-4b8a-971c-e758b0e8e790",
-      "additional_provider_filter": "subUnit1",
-      "status": "NEW",
-      "payload": {
-        "data" : {
-          "status": "ACCEPTED_AWAITING_PRIORITY"
-        }
-      }
-    }]
-  }
-</code>
-</pre>
-    <div class="govuk-!-padding-bottom-3"></div>
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    <h2 class="govuk-heading-m">Scenario 7: System error notification</h2>
-    <h3 class="govuk-heading-s">Request</h3>
-    <p class="govuk-body">Method:
-      <code style="color: #a71d5d; background-color: #f5f5f5">GET</code>
-    </p>
-    <p class="govuk-body">Endpoint:
-      <code style="color: #a71d5d; background-color: #f5f5f5">/v0/notifications?notification_type=SYSTEM_ERROR</code>
-    </p>
-    <p class="govuk-body">Headers:
-      <code style="color: #a71d5d; background-color: #f5f5f5">Authorization: &ltany-value&gt
-  </code>
-    </p>
-    <h3 class="govuk-heading-s">Response</h3>
-    <p class="govuk-body">Status:
-      <code style="color: #a71d5d; background-color: #f5f5f5">200</code>
-    </p>
-    <pre>
-<code class="language-json" style="background-color: #f3f2f1">
-  {
-    "data": [{
-      "notification_id": "&#123;&#123;ID&#125;&#125;",
-      "created_datetime": "2024-01-01T12:00:00.000",
-      "event_datetime": "2024-01-01T12:00:00.000",
-      "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/system-error.json",
-      "notification_type": "SYSTEM_ERROR",
-      "subject_type": "LAND_REGISTER_APPLICATION",
-      "subject": "45454545-2b6d-4b8a-971c-e758b0e8e790",
-      "additional_provider_filter": "subUnit1",
-      "status": "NEW",
-      "payload": {
-        "data" : {
-          "status": "SYSTEM_ERROR"
-        }
-      }
-    }]
-  }
-</code>
-</pre>
-    <div class="govuk-!-padding-bottom-3"></div>
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    <h2 class="govuk-heading-m">Scenario 8: Application cancelled notification</h2>
-    <h3 class="govuk-heading-s">Request</h3>
-    <p class="govuk-body">Method:
-      <code style="color: #a71d5d; background-color: #f5f5f5">GET</code>
-    </p>
-    <p class="govuk-body">Endpoint:
-      <code
-        style="color: #a71d5d; background-color: #f5f5f5">/v0/notifications?notification_type=APPLICATION_CANCELLED</code>
-    </p>
-    <p class="govuk-body">Headers:
-      <code style="color: #a71d5d; background-color: #f5f5f5">Authorization: &ltany-value&gt
-  </code>
-    </p>
-    <h3 class="govuk-heading-s">Response</h3>
-    <p class="govuk-body">Status:
-      <code style="color: #a71d5d; background-color: #f5f5f5">200</code>
-    </p>
-    <pre>
-<code class="language-json" style="background-color: #f3f2f1">
-  {
-    "data": [{
-      "notification_id": "&#123;&#123;ID&#125;&#125;",
-      "created_datetime": "2024-01-01T12:00:00.000",
-      "event_datetime": "2024-01-01T12:00:00.000",
-      "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/application-cancelled.json",
-      "notification_type": "APPLICATION_CANCELLED",
-      "subject_type": "LAND_REGISTER_APPLICATION",
-      "subject": "45454545-2b6d-4b8a-971c-e758b0e8e790",
-      "additional_provider_filter": "subUnit1",
-      "status": "NEW",
-      "payload": {
-        "data" : {
-          "status": "CANCELLED"
-        }
-      }
-    }]
-  }
-</code>
-</pre>
-    <div class="govuk-!-padding-bottom-3"></div>
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    <h2 class="govuk-heading-m">Scenario 9: Application completed notification</h2>
-    <h3 class="govuk-heading-s">Request</h3>
-    <p class="govuk-body">Method:
-      <code style="color: #a71d5d; background-color: #f5f5f5">GET</code>
-    </p>
-    <p class="govuk-body">Endpoint:
-      <code
-        style="color: #a71d5d; background-color: #f5f5f5">/v0/notifications?notification_type=APPLICATION_COMPLETED</code>
-    </p>
-    <p class="govuk-body">Headers:
-      <code style="color: #a71d5d; background-color: #f5f5f5">Authorization: &ltany-value&gt
-  </code>
-    </p>
-    <h3 class="govuk-heading-s">Response</h3>
-    <p class="govuk-body">Status:
-      <code style="color: #a71d5d; background-color: #f5f5f5">200</code>
-    </p>
-    <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code>
-{
-  "data": [{
-    "notification_id": "&#123;&#123;ID&#125;&#125;",
-    "created_datetime": "2024-01-01T12:00:00.000",
-    "event_datetime": "2024-01-01T12:00:00.000",
-    "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/application-completed.json",
-    "notification_type": "APPLICATION_COMPLETED",
-    "subject_type": "LAND_REGISTER_APPLICATION",
-    "subject": "45454545-2b6d-4b8a-971c-e758b0e8e790",
-    "additional_provider_filter": "subUnit1",
-    "status": "NEW",
-    "payload": {
-      "data" : {
-        "status": "COMPLETED"
-      }
-    }
-  }]
-}</code>
-</pre>
-    <div class="govuk-!-padding-bottom-3"></div>
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    <h3 class="govuk-heading-m">Related APIs</h3>
-    <ul class="govuk-list">
-      <li>
-        <a class="govuk-link" href="/apis/send-a-document">Send a document API</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="/apis/submit-an-application">Submit an application API</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="/apis/application-information">Application information API</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to
-          change the land register API</a>
-      </li>
-    </ul>
-  </div>
 </div>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--java" tabindex="0"><code><span class="x-govuk-code__keyword">public</span> <span class="x-govuk-code__keyword">static</span> <span class="x-govuk-code__keyword">void</span> <span class="x-govuk-code__title function_">main</span><span class="x-govuk-code__params">(String[] args)</span> {
-  System.out.println(<span class="x-govuk-code__string">&quot;Hello World&quot;</span>);
-}
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<section>
+<h2 id="scenario-2" class="govuk-heading-m">Scenario 2: Get all new notifications</h2>
+<h3 class="govuk-heading-s">Request</h3>
+<p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/notifications?status=NEW</code></p>
+<p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
+<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy Code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span> 
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
+    <span class="x-govuk-code__punctuation">{</span>
+      <span class="x-govuk-code__attr">&quot;notification_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;&amp;#123;&amp;#123;ID&amp;#125;&amp;#125;&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;created_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01T12:00:00.000&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;event_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01T12:00:00.000&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;payload_schema&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;notification_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;APPLICATION_ACCEPTED_ON_DAY_LIST&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;subject_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LAND_REGISTER_APPLICATION&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;subject&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2563940e-ae95-4e7e-9b33-49a6571abdf6&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;additional_provider_filter&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;subUnit1&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;NEW&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;payload&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+        <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+          <span class="x-govuk-code__attr">&quot;hmlr_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;ABC456B&quot;</span><span class="x-govuk-code__punctuation">,</span>
+          <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;ACCEPTED&quot;</span><span class="x-govuk-code__punctuation">,</span>
+          <span class="x-govuk-code__attr">&quot;priority&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-09-20T09:56:46&quot;</span>
+        <span class="x-govuk-code__punctuation">}</span>
+      <span class="x-govuk-code__punctuation">}</span>
+    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__punctuation">{</span>
+      <span class="x-govuk-code__attr">&quot;notification_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;&amp;#123;&amp;#123;ID&amp;#125;&amp;#125;&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;created_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01T12:00:00.000&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;event_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01T12:00:00.000&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;payload_schema&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/validation-failed.json&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;notification_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;APPLICATION_VALIDATION_FAILED&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;subject_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LAND_REGISTER_APPLICATION&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;subject&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;3be62ad3-c542-452d-975e-6cd18d77196f&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;additional_provider_filter&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;subUnit1&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;NEW&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;payload&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+        <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+          <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;VALIDATION_FAILED&quot;</span>
+        <span class="x-govuk-code__punctuation">}</span>
+      <span class="x-govuk-code__punctuation">}</span>
+    <span class="x-govuk-code__punctuation">}</span>
+  <span class="x-govuk-code__punctuation">]</span>
+<span class="x-govuk-code__punctuation">}</span>
 </code></pre>
 
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<section>
+<h2 id="scenario-3" class="govuk-heading-m">Scenario 3: Get all acknowledged notifications</h2>
+<h3 class="govuk-heading-s">Request</h3>
+<p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/notifications?status=ACKNOWLEDGED</code></p>
+<p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
+<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy Code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
+    <span class="x-govuk-code__punctuation">{</span>
+      <span class="x-govuk-code__attr">&quot;notification_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;&amp;#123;&amp;#123;ID&amp;#125;&amp;#125;&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;created_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01T12:00:00.000&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;event_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01T12:00:00.000&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;payload_schema&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;notification_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;APPLICATION_ACCEPTED_ON_DAY_LIST&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;subject_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LAND_REGISTER_APPLICATION&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;subject&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;b3ac19be-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;additional_provider_filter&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;subUnit1&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;ACKNOWLEDGED&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;payload&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+        <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+          <span class="x-govuk-code__attr">&quot;hmlr_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;ABC456A&quot;</span><span class="x-govuk-code__punctuation">,</span>
+          <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;ACCEPTED&quot;</span><span class="x-govuk-code__punctuation">,</span>
+          <span class="x-govuk-code__attr">&quot;priority&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-09-20T09:56:46&quot;</span>
+        <span class="x-govuk-code__punctuation">}</span>
+      <span class="x-govuk-code__punctuation">}</span>
+    <span class="x-govuk-code__punctuation">}</span>
+  <span class="x-govuk-code__punctuation">]</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<section>
+<h2 id="scenario-4" class="govuk-heading-m">Scenario 4: Get all with invalid date filter</h2>
+<h3 class="govuk-heading-s">Request</h3>
+<p class="govuk-body">Method:
+  <code class="x-govuk-code x-govuk-code--inline">GET</code>
+</p>
+<p class="govuk-body">Endpoint:
+  <code class="x-govuk-code x-govuk-code--inline">/v0/notifications?created_after=2020-01-01T00:00:00&created_before=2015-01-01T00:00:00</code>
+</p>
+<p class="govuk-body">Headers:
+  <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+    </code>
+</p>
+<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Status:
+  <code class="x-govuk-code x-govuk-code--inline">400</code>
+</p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy Code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code>  <span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;https://problems-registry.smartbear.com/bad-request/&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;title&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Bad Request&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">400</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;detail&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;created_after parameter cannot be after created_before parameter&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;instance&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;/v0/notifications&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;code&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;400-01&quot;</span>
+  <span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<section>
+<h2 id="scenario-5" class="govuk-heading-m">Scenario 5: Acknowledge notifications</h2>
+<h3 class="govuk-heading-s">Request</h3>
+<p class="govuk-body">Method:
+  <code class="x-govuk-code x-govuk-code--inline">POST</code>
+</p>
+<p class="govuk-body">Endpoint:
+  <code class="x-govuk-code x-govuk-code--inline">/v0/notifications/acknowledge</code>
+</p>
+<p class="govuk-body">Headers:
+  <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+    </code>
+</p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy Code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code>  <span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
+      <span class="x-govuk-code__string">&quot;b3ac19be-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__string">&quot;87654321-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__string">&quot;12345678-2b6d-4b8a-971c-e758b0e8e790&quot;</span>
+    <span class="x-govuk-code__punctuation">]</span>
+  <span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div>
+<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Status:
+  <code class="x-govuk-code x-govuk-code--inline">200</code>
+</p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy Code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;acknowledged&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
+      <span class="x-govuk-code__string">&quot;b3ac19be-2b6d-4b8a-971c-e758b0e8e790&quot;</span>
+    <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;not_found&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
+      <span class="x-govuk-code__string">&quot;87654321-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__string">&quot;12345678-2b6d-4b8a-971c-e758b0e8e790&quot;</span>
+    <span class="x-govuk-code__punctuation">]</span>
+  <span class="x-govuk-code__punctuation">}</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<section>
+<h2 id="scenario-6" class="govuk-heading-m">Scenario 6: Application queued notification</h2>
+<h3 class="govuk-heading-s">Request</h3>
+<p class="govuk-body">Method:
+  <code class="x-govuk-code x-govuk-code--inline">GET</code>
+</p>
+<p class="govuk-body">Endpoint:
+  <code
+    class="x-govuk-code x-govuk-code--inline">/v0/notifications?notification_type=APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code>
+</p>
+<p class="govuk-body">Headers:
+  <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+</code>
+</p>
+<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Status:
+  <code class="x-govuk-code x-govuk-code--inline">200</code>
+</p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy Code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span><span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;notification_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;&amp;#123;&amp;#123;ID&amp;#125;&amp;#125;&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;created_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01T12:00:00.000&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;event_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01T12:00:00.000&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;payload_schema&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-awaiting-priority.json&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;notification_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;subject_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LAND_REGISTER_APPLICATION&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;subject&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;45454545-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;additional_provider_filter&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;subUnit1&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;NEW&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;payload&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+      <span class="x-govuk-code__attr">&quot;data&quot;</span> <span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+        <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;ACCEPTED_AWAITING_PRIORITY&quot;</span>
+      <span class="x-govuk-code__punctuation">}</span>
+    <span class="x-govuk-code__punctuation">}</span>
+  <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">]</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<section>
+<h2 id="scenario-7" class="govuk-heading-m">Scenario 7: System error notification</h2>
+<h3 class="govuk-heading-s">Request</h3>
+<p class="govuk-body">Method:
+  <code class="x-govuk-code x-govuk-code--inline">GET</code>
+</p>
+<p class="govuk-body">Endpoint:
+  <code class="x-govuk-code x-govuk-code--inline">/v0/notifications?notification_type=SYSTEM_ERROR</code>
+</p>
+<p class="govuk-body">Headers:
+  <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+</code>
+</p>
+<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Status:
+  <code class="x-govuk-code x-govuk-code--inline">200</code>
+</p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy Code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span><span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;notification_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;&amp;#123;&amp;#123;ID&amp;#125;&amp;#125;&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;created_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01T12:00:00.000&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;event_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01T12:00:00.000&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;payload_schema&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/system-error.json&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;notification_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;SYSTEM_ERROR&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;subject_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LAND_REGISTER_APPLICATION&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;subject&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;45454545-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;additional_provider_filter&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;subUnit1&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;NEW&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;payload&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+      <span class="x-govuk-code__attr">&quot;data&quot;</span> <span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+        <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;SYSTEM_ERROR&quot;</span>
+      <span class="x-govuk-code__punctuation">}</span>
+    <span class="x-govuk-code__punctuation">}</span>
+  <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">]</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<section>
+<h2 id="scenario-8" class="govuk-heading-m">Scenario 8: Application cancelled notification</h2>
+<h3 class="govuk-heading-s">Request</h3>
+<p class="govuk-body">Method:
+  <code class="x-govuk-code x-govuk-code--inline">GET</code>
+</p>
+<p class="govuk-body">Endpoint:
+  <code
+    class="x-govuk-code x-govuk-code--inline">/v0/notifications?notification_type=APPLICATION_CANCELLED</code>
+</p>
+<p class="govuk-body">Headers:
+  <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+</code>
+</p>
+<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Status:
+  <code class="x-govuk-code x-govuk-code--inline">200</code>
+</p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy Code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span><span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;notification_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;&amp;#123;&amp;#123;ID&amp;#125;&amp;#125;&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;created_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01T12:00:00.000&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;event_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01T12:00:00.000&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;payload_schema&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/application-cancelled.json&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;notification_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;APPLICATION_CANCELLED&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;subject_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LAND_REGISTER_APPLICATION&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;subject&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;45454545-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;additional_provider_filter&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;subUnit1&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;NEW&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;payload&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+      <span class="x-govuk-code__attr">&quot;data&quot;</span> <span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+        <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CANCELLED&quot;</span>
+      <span class="x-govuk-code__punctuation">}</span>
+    <span class="x-govuk-code__punctuation">}</span>
+  <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">]</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<section>
+<h2 id="scenario-9" class="govuk-heading-m">Scenario 9: Application completed notification</h2>
+<h3 class="govuk-heading-s">Request</h3>
+<p class="govuk-body">Method:
+  <code class="x-govuk-code x-govuk-code--inline">GET</code>
+</p>
+<p class="govuk-body">Endpoint:
+  <code
+    class="x-govuk-code x-govuk-code--inline">/v0/notifications?notification_type=APPLICATION_COMPLETED</code>
+</p>
+<p class="govuk-body">Headers:
+  <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+</code>
+</p>
+<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Status:
+  <code class="x-govuk-code x-govuk-code--inline">200</code>
+</p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy Code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span><span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;notification_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;&amp;#123;&amp;#123;ID&amp;#125;&amp;#125;&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;created_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01T12:00:00.000&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;event_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01T12:00:00.000&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;payload_schema&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/application-completed.json&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;notification_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;APPLICATION_COMPLETED&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;subject_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LAND_REGISTER_APPLICATION&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;subject&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;45454545-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;additional_provider_filter&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;subUnit1&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;NEW&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;payload&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+      <span class="x-govuk-code__attr">&quot;data&quot;</span> <span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+        <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;COMPLETED&quot;</span>
+      <span class="x-govuk-code__punctuation">}</span>
+    <span class="x-govuk-code__punctuation">}</span>
+  <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">]</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h3 class="govuk-heading-m">Related APIs</h3>
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="/apis/send-a-document">Send a document API</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="/apis/submit-an-application">Submit an application API</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="/apis/application-information">Application information API</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to
+      change the land register API</a>
+  </li>
+</ul>
 </div>
 
 

@@ -3,7 +3,7 @@ title: Notifications API
 layout: devpack.njk
 breadcrumb: false
 eleventyNavigation:
-    key: notifications
+    key: notifications-api
     parent: apis
 ---
 
