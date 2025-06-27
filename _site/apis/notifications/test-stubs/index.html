@@ -14,8 +14,46 @@
 
   <meta property="og:title" content="Notifications API test stubs">
 
-<script src="/assets/script.js" />
+<script src="/assets/script.js"></script>
+<script>
+    function createThresholds(step) {
+        let thresholds = []
+        for (let i = 0.0; i <= 1.0; i += step) 
+            thresholds.push(i)
+    }
+    function setupScrollSpy() {
+        const options = {
+            rootMargin: "0px",
+            threshold: createThresholds(0.1)
+        };
 
+        let navLinks = document.querySelector(".x-govuk-sub-navigation").querySelectorAll("a");
+
+        function select(target) {
+            navLinks.forEach(el => {
+                el.parentElement.classList.remove("x-govuk-sub-navigation__section-item--current")
+                el.setAttribute("aria-current", false);
+            })
+            target.parentElement.classList.add("x-govuk-sub-navigation__section-item--current")
+            target.setAttribute("aria-current", true)
+        }
+
+        navLinks.forEach(link => {
+            let id = link.href.substring(link.href.lastIndexOf('#')+1);
+            let observer = new IntersectionObserver((entries, obz) => {
+                entries.forEach(entry => {
+                    console.log(entry.target.id, entry.isIntersecting);
+                    if (entry.isIntersecting)
+                        select(link) 
+                })
+            }, options);
+            observer.observe(document.getElementById(id));
+        })
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        setupScrollSpy()
+    });
+</script>
     <meta property="og:image" content="/hmlrassets/images/hmlr-opengraph-image.png">
   </head>
   <body class="govuk-template__body">
@@ -68,7 +106,21 @@ data-module="govuk-service-navigation"
 </div>
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
         <main class="govuk-main-wrapper" id="main-content">
-<header class="app-document-header">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third sticky">
+        <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="sub-navigation-heading">Pages in this section</h2>
+  <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
+  <ul class="x-govuk-sub-navigation__section">
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-1">Scenario 1: Get all notifications</a>
+    </li>
+  </ul>
+</nav>
+
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <header class="app-document-header">
   <h1 class="app-document-header__title govuk-heading-xl">
     Notifications API test stubs
   </h1>
@@ -82,7 +134,7 @@ APIs. Instead, we’ve provided example code for different scenarios to demonstr
 when developing your own services.</p><br>
 <p class="govuk-body">Base URL: <code class="x-govuk-code x-govuk-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p><br>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"><br>
-<h2 class="govuk-heading-m">Scenario 1: Get all notifications</h2><br>
+<h2 id="scenario-1" class="govuk-heading-m">Scenario 1: Get all notifications</h2><br>
 <h3 class="govuk-heading-s">Request</h3><br>
 <p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">GET</code></p><br>
 <p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/notifications</code></p><br>
@@ -519,6 +571,9 @@ when developing your own services.</p><br>
 
 </div>
 
+
+    </div>
+</div>
         </main>
       </div>
 

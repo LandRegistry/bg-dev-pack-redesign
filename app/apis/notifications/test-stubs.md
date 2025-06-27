@@ -1,6 +1,12 @@
 ---
-layout: page
+layout: page-with-nav
 title: Notifications API test stubs
+
+spy: true
+sidenav:
+  - theme: Contents
+    text: 'Scenario 1: Get all notifications'
+    href: '#scenario-1'
 ---
 
 <div class="govuk-grid-row">
@@ -11,7 +17,7 @@ title: Notifications API test stubs
       when developing your own services.</p>
     <p class="govuk-body">Base URL: `https://bgtest.landregistry.gov.uk/bg2test/api`</p>
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    <h2 class="govuk-heading-m">Scenario 1: Get all notifications</h2>
+    <h2 id="scenario-1" class="govuk-heading-m">Scenario 1: Get all notifications</h2>
     <h3 class="govuk-heading-s">Request</h3>
     <p class="govuk-body">Method: `GET`</p>
     <p class="govuk-body">Endpoint: `/v0/notifications`</p>
