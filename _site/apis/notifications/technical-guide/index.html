@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template">
   <head>
     <meta charset="utf-8">
-    <title> - HM Land Registry Developer Pack</title>
+    <title>Notifications API technical guide - HM Land Registry Developer Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
@@ -12,10 +12,73 @@
   <link rel="stylesheet" href="/assets/styles.css">
 
 
-  <meta property="og:title" content="">
+  <meta property="og:title" content="Notifications API technical guide">
 
 <script src="/assets/script.js"></script>
+<script>
+    let navigations = {}
 
+    function setNavSelect(target) {
+        let navLinks = document.querySelector(".x-govuk-sub-navigation").querySelectorAll("a");
+        navLinks.forEach(el => {
+            el.parentElement.classList.remove("x-govuk-sub-navigation__section-item--current")
+            el.setAttribute("aria-current", false);
+        })
+        target.parentElement.classList.add("x-govuk-sub-navigation__section-item--current")
+        target.setAttribute("aria-current", true)
+    }
+
+    function updateNavigation() {
+        if (navigations.length == 0) return;
+
+        let max = null;
+        for (summary of Object.values(navigations)) {
+            if (max == null || summary.ratio > max.ratio) {
+                max = summary
+            }
+            console.log(max.ratio, ">", summary.ratio)
+        }
+        navigations = {}
+        max && setNavSelect(max.link)
+    }
+
+    function createThresholds(step) {
+        let thresholds = []
+        for (let i = 0.0; i <= 1.0; i += step) 
+            thresholds.push(i)
+    }
+    function setupScrollSpy() {
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: createThresholds(0.01)
+        };
+
+        document.querySelector(".x-govuk-sub-navigation")
+            .querySelectorAll("a")
+            .forEach(link => {
+                let id = link.href.substring(link.href.lastIndexOf('#')+1);
+                let observer = new IntersectionObserver((entries, obz) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting)
+                        navigations[link.href] = {
+                            link: link,
+                            ratio: entry.intersectionRatio
+                        }
+                    })
+                }, options);
+                let observed = document.getElementById(id);
+                if (observed.parentNode.tagName === "SECTION") {
+                    observed = observed.parentNode;
+                }
+                observer.observe(observed);
+            })
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        setupScrollSpy()
+        setInterval(updateNavigation)
+    });
+</script>
     <meta property="og:image" content="/hmlrassets/images/hmlr-opengraph-image.png">
   </head>
   <body class="govuk-template__body">
@@ -68,185 +131,174 @@ data-module="govuk-service-navigation"
 </div>
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
         <main class="govuk-main-wrapper" id="main-content">
-<header class="app-document-header">
-  <h1 class="app-document-header__title govuk-heading-xl">
-    
-  </h1>
-
-</header>
-
-<div class="app-prose-scope"><p class="govuk-body"><a href="/apis/notifications" class="govuk-back-link">Back</a></p>
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Notifications API technical guide</h1>
-    <p class="govuk-body-l">Use this service to get updates about multiple applications submitted by the same business unit.</p>
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-visually-hidden">Warning</span>
-        These API endpoints are not currently live.
-      </strong>
+    <div class="govuk-grid-column-one-third sticky">
+        <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="sub-navigation-heading">Pages in this section</h2>
+  <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
+  <ul class="x-govuk-sub-navigation__section">
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#how-to-use-the-notifications-api">How to use the Notifications API</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#validation-rules">Validation rules</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#example-requests-and-responses">Example requests and responses</a>
+    </li>
+  </ul>
+</nav>
+
     </div>
-    <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
-      <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide"
-        role="navigation">
-        <h2 class="govuk-prototype-kit-common-templates-contents-list__title">Contents</h2>
-        <ol class="govuk-prototype-kit-common-templates-contents-list__list">
-          <li
-            class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
-            <a href="#how-to-use-the-notifications-api">How to use the Notifications API</a>
-          </li>
-          <li
-            class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
-            <a href="#validation-rules">Validation rules</a>
-          </li>
-          <li
-            class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
-            <a href="#example-requests-and-responses">Example requests and responses</a>
-          </li>
-        </ol>
-      </nav>
-    </aside>
+    <div class="govuk-grid-column-two-thirds">
+        <div class="app-prose-scope"><div class="govuk-grid-row">
+  <h1 class="govuk-heading-xl">Notifications API technical guide</h1>
+  <p class="govuk-body-l">Use this service to get updates about multiple applications submitted by the same business unit.</p>
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-visually-hidden">Warning</span>
+      These API endpoints are not currently live.
+    </strong>
   </div>
 </div>
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
-    <h2 class="govuk-heading-m" id="how-to-use-the-notifications-api">How to use the Notifications API</h2>
-    <div>
-      <h3 class="govuk-heading-s">Recieve notifications</h3>
-      <p class="govuk-body">The GET request to fetch all notifications takes the following URL query parameters (which
-        are optional):</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <code style="color: #a71d5d; background-color: #f5f5f5">created_after</code> - only retrieve notifications with a <code style="color: #a71d5d; background-color: #f5f5f5">created_timestamp</code> after this date
-        </li>
-        <li>
-          <code style="color: #a71d5d; background-color: #f5f5f5">created_before</code> - only retrieve notifications with a <code style="color: #a71d5d; background-color: #f5f5f5">created_timestamp</code> before this date
-        </li>
-        <li>
-          <code style="color: #a71d5d; background-color: #f5f5f5">status</code> - only retrieve notifications with a specific status, either <code style="color: #a71d5d; background-color: #f5f5f5">NEW</code> or <code style="color: #a71d5d; background-color: #f5f5f5">ACKNOWLEDGED</code>
-        </li>
-        <li>
-          <code style="color: #a71d5d; background-color: #f5f5f5">occured_after</code> - only retrieve notifications with an <code style="color: #a71d5d; background-color: #f5f5f5">event_timestamp</code> after this date
-        </li>
-        <li>
-          <code style="color: #a71d5d; background-color: #f5f5f5">occured_before</code> - only retrieve notifications with an <code style="color: #a71d5d; background-color: #f5f5f5">event_timestamp</code> before this date
-        </li>
-        <li>
-          <code style="color: #a71d5d; background-color: #f5f5f5">notification_type</code> - only retrieve notifications with the specific <code style="color: #a71d5d; background-color: #f5f5f5">notification_type</code>
-        </li>
-        <li>
-          <code style="color: #a71d5d; background-color: #f5f5f5">subject</code> - only retrieve notifications with the specific <code style="color: #a71d5d; background-color: #f5f5f5">subject</code>
-        </li>
-        <li>
-          <code style="color: #a71d5d; background-color: #f5f5f5">additional_provider_filter</code> - only retrieve notifications that match the provided <code style="color: #a71d5d; background-color: #f5f5f5">additional_provider_filter</code>
-        </li>
-        <li>
-          <code style="color: #a71d5d; background-color: #f5f5f5">limit</code> - the maximum number of notifications to return in a single response
-        </li>
-      </ul>
-      <p class="govuk-body">Only notifications related to applications submitted by the business unit ID provided will be returned.</p>
-    </div>
-    <div>
-      <p class="govuk-body">Notification delivery is ‘at least once’, meaning a specific event at a specific time may result in one or more notifications (i.e. duplicate notifications for the same event).</p>
-      <p class="govuk-body">Duplicate events will have the same <code style="color: #a71d5d; background-color: #f5f5f5">event_datetime</code> field and <code style="color: #a71d5d; background-color: #f5f5f5">notification_type</code> which can be used to locate and ignore duplicates when receiving notifications. Notifications will continue to be returned by the endpoint until they are acknowledged.
-      </p>
-<p class="govuk-body"><h3 class="govuk-heading-s">Acknowledge notifications</h3><br>
-<p class="govuk-body">Once a notification has been processed by your system, the notification should be acknowledged. To do this, send a list of <code style="color: #a71d5d; background-color: #f5f5f5">notification_ids</code> to the Acknowledge notifications API as a POST request. This will change the status of those notifications to <code style="color: #a71d5d; background-color: #f5f5f5">ACKNOWLEDGED</code>.<br>
-</p></p>
-<p class="govuk-body"><h2 class="govuk-heading-m" id="validation-rules">Validation rules</h2><br>
-<div><br>
-<p class="govuk-body">There are no validation rules for implementing this API.</p><br>
-<h2 class="govuk-heading-m" id="example-requests-and-responses">Example requests and responses</h2><br>
-<p class="govuk-body">For specific examples of notification payloads produced during application submission, view <a class="govuk-body govuk-link" href="/apis/submit-an-application">Submit an application notifications</a>.<br>
-</p><br>
-<h3 class="govuk-heading-s">Get notifications request</h3></p>
-<pre>
-<code class="language-json" style="background-color: #f3f2f1">
-get /v0/notifications?created_after=2025-01-01t00:00:00 http/1.1
-</code>
-</pre>
-<p class="govuk-body"><div class="govuk-!-padding-bottom-3"></div></p>
-<p class="govuk-body"><h3 class="govuk-heading-s">Get notifications response</h3></p>
-<pre>
-<code class="language-json" style="background-color: #f3f2f1">
-  {
-    "data": [
-      {
-        "notification_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "created_datetime": "2025-03-06t14:32:55.295z",
-        "event_datetime": "2025-03-06t14:32:55.295z",
-        "payload_schema": "https://example.com/",
-        "notification_type": "string",
-        "subject_type": "string",
-        "subject": "string",
-        "additional_provider_filter": "string",
-        "status": "new",
-        "payload": {
-          "additionalprop1": {},
-          "additionalprop2": {},
-          "additionalprop3": {}
-        }
-      }
-    ]
-  }</code>
-</pre>
-<p class="govuk-body"><div class="govuk-!-padding-bottom-3"></div><br>
-<h3 class="govuk-heading-s">Acknowledge notifications request</h3></p>
-<pre>
-<code class="language-json" style="background-color: #f3f2f1">
-  post /v0/notifications/acknowledge http/1.1
+<section>
+<h2 class="govuk-heading-m" id="how-to-use-the-notifications-api">How to use the Notifications API</h2>
+  <h3 class="govuk-heading-s">Recieve notifications</h3>
+  <p class="govuk-body">The GET request to fetch all notifications takes the following URL query parameters (which are optional):</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      <code class="x-govuk-code x-govuk-code--inline">created_after</code> - only retrieve notifications with a <code class="x-govuk-code x-govuk-code--inline">created_timestamp</code> after this date
+    </li>
+    <li>
+      <code class="x-govuk-code x-govuk-code--inline">created_before</code> - only retrieve notifications with a <code class="x-govuk-code x-govuk-code--inline">created_timestamp</code> before this date
+    </li>
+    <li>
+      <code class="x-govuk-code x-govuk-code--inline">status</code> - only retrieve notifications with a specific status, either <code class="x-govuk-code x-govuk-code--inline">NEW</code> or <code class="x-govuk-code x-govuk-code--inline">ACKNOWLEDGED</code>
+    </li>
+    <li>
+      <code class="x-govuk-code x-govuk-code--inline">occured_after</code> - only retrieve notifications with an <code class="x-govuk-code x-govuk-code--inline">event_timestamp</code> after this date
+    </li>
+    <li>
+      <code class="x-govuk-code x-govuk-code--inline">occured_before</code> - only retrieve notifications with an <code class="x-govuk-code x-govuk-code--inline">event_timestamp</code> before this date
+    </li>
+    <li>
+      <code class="x-govuk-code x-govuk-code--inline">notification_type</code> - only retrieve notifications with the specific <code class="x-govuk-code x-govuk-code--inline">notification_type</code>
+    </li>
+    <li>
+      <code class="x-govuk-code x-govuk-code--inline">subject</code> - only retrieve notifications with the specific <code class="x-govuk-code x-govuk-code--inline">subject</code>
+    </li>
+    <li>
+      <code class="x-govuk-code x-govuk-code--inline">additional_provider_filter</code> - only retrieve notifications that match the provided <code class="x-govuk-code x-govuk-code--inline">additional_provider_filter</code>
+    </li>
+    <li>
+      <code class="x-govuk-code x-govuk-code--inline">limit</code> - the maximum number of notifications to return in a single response
+    </li>
+  </ul>
+  <p class="govuk-body">Only notifications related to applications submitted by the business unit ID provided will be returned.</p>
+  <p class="govuk-body">Notification delivery is ‘at least once’, meaning a specific event at a specific time may result in one or more notifications (i.e. duplicate notifications for the same event).</p>
+  <p class="govuk-body">Duplicate events will have the same <code class="x-govuk-code x-govuk-code--inline">event_datetime</code> field and <code class="x-govuk-code x-govuk-code--inline">notification_type</code> which can be used to locate and ignore duplicates when receiving notifications. Notifications will continue to be returned by the endpoint until they are acknowledged.
+  </p>
+  <h3 class="govuk-heading-s">Acknowledge notifications</h3>
+  <p class="govuk-body">Once a notification has been processed by your system, the notification should be acknowledged. To do this, send a list of <code class="x-govuk-code x-govuk-code--inline">notification_ids</code> to the Acknowledge notifications API as a POST request. This will change the status of those notifications to <code class="x-govuk-code x-govuk-code--inline">ACKNOWLEDGED</code>.</p>
+</section>
+<section>
+<h2 class="govuk-heading-m" id="validation-rules">Validation rules</h2>
+<p class="govuk-body">There are no validation rules for implementing this API.</p>
+</section>
+<section>
+<h2 class="govuk-heading-m" id="example-requests-and-responses">Example requests and responses</h2>
+<p class="govuk-body">For specific examples of notification payloads produced during application submission, view <a class="govuk-body govuk-link" href="/apis/submit-an-application">Submit an application notifications</a>.</p>
+<h3 class="govuk-heading-s">Get notifications request</h3>
+<p class="govuk-body"><code class="x-govuk-code x-govuk-code--inline">GET /v0/notifications?created_after=2025-01-01t00:00:00 http/1.1</code></p>
+<h3 class="govuk-heading-s">Get notifications response</h3>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy Code
+</button>
+<div id="code1">
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span><span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;notification_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;created_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2025-03-06t14:32:55.295z&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;event_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2025-03-06t14:32:55.295z&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;payload_schema&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;https://example.com/&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;notification_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;string&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;subject_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;string&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;subject&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;string&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;additional_provider_filter&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;string&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;new&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;payload&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+      <span class="x-govuk-code__attr">&quot;additionalprop1&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span><span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;additionalprop2&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span><span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;additionalprop3&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span><span class="x-govuk-code__punctuation">}</span>
+    <span class="x-govuk-code__punctuation">}</span>
+  <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">]</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
 
-  {
-    "data": [
-      "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-    ]
-  }
-</code>
-</pre>
-<p class="govuk-body"><div class="govuk-!-padding-bottom-3"></div><br>
-<h3 class="govuk-heading-s">Acknowledge notifications response</h3></p>
-<pre>
-<code class="language-json" style="background-color: #f3f2f1">
-  {
-    "data": {
-      "acknowledged": [
-        "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-      ]
-    }
-  }
-</code>
-</pre>
-<p class="govuk-body"><div class="govuk-!-padding-bottom-6"></div><br>
-</div><br>
-</div></p>
-  </div>
-  <div class="govuk-grid-column-one-third">
-    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="related-apis">Related APIs</h2>
-      <nav role="navigation" aria-labelledby="subsection-title">
-        <ul class="govuk-list govuk-!-font-size-16">
-          <li>
-            <a class="govuk-body govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a>
-          </li>
-          <li>
-            <a class="govuk-body govuk-link" href="/apis/application-information"> Application information </a>
-          </li>
-          <li>
-            <a class="govuk-body govuk-link" href="/apis/send-a-document"> Send a document </a>
-          <li>
-            <a class="govuk-body govuk-link" href="/apis/submit-an-application"> Submit an application </a>
-          </li>
-          <li>
-            <a class="govuk-body govuk-link govuk-!-font-weight-bold" href="/find-a-service-api"> More <span class="govuk-visually-hidden">in Subsection</span> </a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-  </div>
-</div>
 </div></div>
+<h3 class="govuk-heading-s">Acknowledge notifications request</h3>
+<p class="govuk-body"><code class="x-govuk-code x-govuk-code--inline">POST /v0/notifications/acknowledge http/1.1</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy Code
+</button>
+<div id="code1">
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
+    <span class="x-govuk-code__string">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span>
+  <span class="x-govuk-code__punctuation">]</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
 
+</div></div>
+<h3 class="govuk-heading-s">Acknowledge notifications response</h3>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy Code
+</button>
+<div id="code1">
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;acknowledged&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
+      <span class="x-govuk-code__string">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span>
+    <span class="x-govuk-code__punctuation">]</span>
+  <span class="x-govuk-code__punctuation">}</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div></div>
+</section>
+</div>
+<div class="govuk-grid-row">
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h2 class="govuk-heading-m" id="related-apis">Related APIs</h2>
+<nav role="navigation" aria-labelledby="subsection-title">
+  <ul class="govuk-list govuk-!-font-size-16">
+    <li>
+      <a class="govuk-body govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a>
+    </li>
+    <li>
+      <a class="govuk-body govuk-link" href="/apis/application-information">Application information </a>
+    </li>
+    <li>
+      <a class="govuk-body govuk-link" href="/apis/send-a-document">Send a document </a>
+    <li>
+      <a class="govuk-body govuk-link" href="/apis/submit-an-application">Submit an application </a>
+    </li>
+    <li>
+      <a class="govuk-body govuk-link govuk-!-font-weight-bold" href="/find-a-service-api">More <span class="govuk-visually-hidden">in Subsection</span></a>
+    </li>
+  </ul>
+</nav>
+</div>
+</div>
+
+
+    </div>
+</div>
         </main>
       </div>
 
