@@ -1,5 +1,5 @@
 ---
-layout: page-with-nav
+layout: page
 noheader: true
 
 sidenav:

@@ -1,6 +1,8 @@
 ---
 title: Submit an Application to change the Land Register service API
-layout: versioned-page-with-nav.njk
+layout: page.njk
+versioned: true
+
 noheader: true
 breadcrumb: false
 eleventyNavigation:

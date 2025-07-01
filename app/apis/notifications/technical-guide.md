@@ -1,5 +1,5 @@
 ---
-layout: page-with-nav
+layout: page
 title: Notifications API technical guide
 noheader: true
 
@@ -136,7 +136,7 @@ sidenav:
   classes: "govuk-button--secondary copy-code"
 }) }}
 
-<div id="code1">
+<div id="code2">
 
 ```json
 {
@@ -155,7 +155,7 @@ sidenav:
   classes: "govuk-button--secondary copy-code"
 }) }}
 
-<div id="code1">
+<div id="code3">
 
 ```json
 {

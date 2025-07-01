@@ -1,5 +1,5 @@
 ---
-layout: page-with-nav
+layout: page
 noheader: true
 
 sidenav:
@@ -50,7 +50,7 @@ sidenav:
     and API information, you may find it useful to jump straight to the Explore APIs section.</p>
   <div class="govuk-inset-text govuk-!-margin-left-3">
     Any updates to the developer pack will appear under What’s new on the <a class="govuk-link"
-      href="/homepage">home page</a>.
+      href="/">home page</a>.
   </div>
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
   <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">We sometimes use technical terms to

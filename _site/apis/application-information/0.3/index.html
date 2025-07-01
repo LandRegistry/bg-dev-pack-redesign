@@ -84,23 +84,20 @@ data-module="govuk-service-navigation"
 </div>
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
         <main class="govuk-main-wrapper" id="main-content">
-<header class="app-document-header">
-  <h1 class="app-document-header__title govuk-heading-xl">
-    Application Information API
-  </h1>
-
-</header>
-
 <div class="app-prose-scope"><div class="govuk-grid-row">
+<h1 class="govuk-heading-xl">Application Information API</h1>
 <p class="govuk-body-l">Use this service to get information about a specific application.</p>
 <div class="govuk-warning-text">
-<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-<strong class="govuk-warning-text__text">
-<span class="govuk-visually-hidden">Warning</span>
-These API endpoints are not currently live.
-</strong>
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    These API endpoints are not currently live.
+    </strong>
 </div>
 </div>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half version-label-center-y">
         <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
@@ -122,8 +119,63 @@ These API endpoints are not currently live.
 </div>
 </div>
 </div>
-<div class="govuk-grid-row">
-    <h3>Select a version</h3>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<section class="govuk-grid-row">
+<h2 class="govuk-heading-m" id="overview"><br>Overview</h2>
+<p class="govuk-body">The Application information service API is used to get detailed information about a specific application. This includes:</p>
+<ul class="govuk-list govuk-list--bullet">
+    <li>the status of an application</li>
+    <li>the <code class="x-govuk-code x-govuk-code--inline">application_request_id</code> used in the request</li>
+    <li>an ID for the accepted application, <code class="x-govuk-code x-govuk-code--inline">hmlr_reference</code>, once accepted (previously known as ABR)</li>
+    <li>the priority of the application, <code class="x-govuk-code x-govuk-code--inline">priority_timestamp</code>, once accepted</li>
+    <li>any errors that prevented application submission</li>
+    <li>any warnings that did not prevent submission but need to be addressed before a caseworker can process the application (otherwise a requisition may occur)</li>
+</ul>
+<p class="govuk-body">This API can be used to get more information after receiving a notification indicating the application has changed. For information about which notifications will be available, visit the notifications section of the <a class="govuk-body govuk-link" href="/apis/submit-an-application">Submit an application</a> service API page.</p>
+</section>
+<section class="govuk-grid-row">
+<h2 class="govuk-heading-m" id="view-the-technical-guide">View the technical guide</h2>
+<ul class="govuk-list">
+    <li><a class="govuk-body govuk-link" href="/apis/application-information/technical-guide">Technical guide</a></li>
+</ul>
+</section>
+<section class="govuk-grid-row">
+<h2 class="govuk-heading-m" id="view-the-api-specification">View the API specification</h2>
+<ul class="govuk-list">
+    <li><a class="govuk-body govuk-link" href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Application-information-API" rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a></li>
+</ul>
+</section>
+<section class="govuk-grid-row">
+<h3 class="govuk-heading-m" id="how-the-service-api-works">How the service API works</h3>
+<h4 class="govuk-heading-m">Interaction</h4>
+<img src="/assets/images/ApplicationInformation_interaction_diagram.png" alt="A diagram showing the interaction of the Application Information service API.">
+<h4 class="govuk-heading-m">State diagram</h4>
+<img src="/assets/images/ApplicationInformation_State_diagram.png" alt="A diagram showing how the Application Information service API works.">
+</section>
+<section class="govuk-grid-row">
+<h3 class="govuk-heading-m" id="how-to-test-this-service-api">How to test this service API</h3>
+<p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code to demonstrate what you should  expect to see when developing your own services.</p>
+<ul class="govuk-list">
+    <li><p class="govuk-body"><a class="govuk-body govuk-link" href="/apis/application-information/test-stubs">View Application information test stubs</a>.</p></li>
+</ul>
+<p class="govuk-body">For general testing guidance, visit our <a class="govuk-body govuk-link" href="/a-guide-to-testing">guide to testing</a>.</p>
+</section>
+</div>
+<div class="govuk-grid-column-one-third">
+<section class="govuk-grid-row">
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-m" id="related-apis">Related APIs</h2>
+<nav role="navigation" aria-labelledby="subsection-title">
+<ul class="govuk-list govuk-!-font-size-16">
+    <li><a class="govuk-body govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a></li>
+    <li><a class="govuk-body govuk-link" href="/apis/send-a-document">Send a document</a></li>
+    <li><a class="govuk-body govuk-link" href="/apis/submit-an-application">Submit an application</a></li>
+    <li><a class="govuk-body govuk-link" href="/apis/notifications">Notifications</a></li>
+    <li><a class="govuk-body govuk-link govuk-!-font-weight-bold" href="/find-a-service-api">More <span class="govuk-visually-hidden">in Subsection</span></a></li>
+</ul>
+</nav>
+</section>
+</div>
 </div></div>
 
         </main>

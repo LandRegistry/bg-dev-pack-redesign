@@ -1,5 +1,5 @@
 ---
-layout: page-with-nav
+layout: page
 title: Notifications API test stubs
 
 eleventyNavigation:

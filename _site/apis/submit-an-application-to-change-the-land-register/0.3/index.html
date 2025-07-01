@@ -14,8 +14,24 @@
 
   <meta property="og:title" content="Submit an Application to change the Land Register service API">
 
-<script src="/assets/script.js"></script>
-<script>
+<script src="/assets/script.js"></script><script>
+    function setVersion() {
+        let version = document.getElementById('version').value;
+        console.log("location:", window.location.href)
+        if (!window.location.href.includes(version + '/')) {
+            console.log(`Versions were different, navigating to ${version}`)
+            if (window.location.href.match(/\/[0-9.]+\//))
+                window.location.href = window.location.href.replace(/\/[0-9.]+\//, `/${version}/`)
+            else
+                window.location.href = `./${version}`
+        } else {
+            console.log(`Version has not changed`);
+        }
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        setVersion()
+    });
+</script><script>
     let navigations = {}
 
     function setNavSelect(target) {
@@ -79,25 +95,6 @@
         setInterval(updateNavigation)
     });
 </script>
-<script>
-    function setVersion() {
-        let version = document.getElementById('version').value;
-        console.log("location:", window.location.href)
-        if (!window.location.href.includes(version + '/')) {
-            console.log(`Versions were different, navigating to ${version}`)
-            if (window.location.href.match(/\/[0-9.]+\//))
-                window.location.href = window.location.href.replace(/\/[0-9.]+\//, `/${version}/`)
-            else
-                window.location.href = `./${version}`
-        } else {
-            console.log(`Version has not changed`);
-        }
-    }
-    document.addEventListener("DOMContentLoaded", () => {
-        setVersion()
-    });
-</script>
-
     <meta property="og:image" content="/hmlrassets/images/hmlr-opengraph-image.png">
   </head>
   <body class="govuk-template__body">
@@ -169,8 +166,7 @@ data-module="govuk-service-navigation"
 </nav>
 
     </div>
-    <div class="govuk-grid-column-two-thirds">
-        <div class="app-prose-scope"><h1 class="govuk-heading-xl">Submit an Application to change the Land Register service API</h1>
+    <div class="govuk-grid-column-two-thirds"><div class="app-prose-scope"><h1 class="govuk-heading-xl">Submit an Application to change the Land Register service API</h1>
 <p class="govuk-body-l">Use this service to help lodge applications with HMLR to update the register or create a new lease or transfer of part.</p>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <div class="govuk-grid-row">
@@ -337,10 +333,7 @@ data-module="govuk-service-navigation"
 </aside>
 </div>
 
-
-    </div>
-</div>
-        </main>
+</div></div>        </main>
       </div>
 
 <footer class="govuk-footer govuk-footer--hmlr " role="contentinfo">
