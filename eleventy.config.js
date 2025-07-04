@@ -3,7 +3,8 @@ import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     'node_modules/@hmlr/frontend/hmlr/assets': 'hmlrassets',
-    'app/assets': 'assets'
+    'app/assets': 'assets',
+    'node_modules/@govuk-prototype-kit/step-by-step/javascripts': 'assets/js'
   })
 
   eleventyConfig.addPlugin(govukEleventyPlugin, {
@@ -16,7 +17,7 @@ export default function (eleventyConfig) {
     opengraphImageUrl: "/hmlrassets/images/hmlr-opengraph-image.png",
     themeColor: '#789904',
     // rebrand: true,
-    stylesheets: ['/assets/styles.css'],
+    stylesheets: ['/assets/application.css'],
     titleSuffix: "HM Land Registry Developer Pack",
     header: {
       logotype: {text: "HM Land Registry Developer Pack"},

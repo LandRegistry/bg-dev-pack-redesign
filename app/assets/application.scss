@@ -1,18 +1,40 @@
 // Use GOV.UK Frontend
-$_font-family: Helvetica, Arial, system-ui, sans-serif;
-
-// Use GOV.UK Eleventy Plugin components
-@use "pkg:@x-govuk/govuk-eleventy-plugin";
-@use "govuk-frontend/dist/govuk" as *;
+$_font-family: 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif !important;
+$_brand-colour: #789904;
 
 // Use HMLR Frontend
-@use "../../node_modules/@hmlr/frontend/hmlr/all.scss" with (
-  $hmlr-assets-path: "/hmlrassets/",
+@use "pkg:@x-govuk/govuk-eleventy-plugin" as *;
+@use "../../node_modules/@hmlr/frontend/hmlr/all.scss" as * with (
+  $govuk-brand-colour: $_brand-colour,
   $govuk-font-family: $_font-family,
-  $govuk-brand-colour: #789904
+  $hmlr-assets-path: "/hmlrassets/"
 );
+@import "../../node_modules/@govuk-prototype-kit/step-by-step/sass/step-by-step-navigation";
+@import "../../node_modules/@govuk-prototype-kit/step-by-step/sass/step-by-step-navigation-related";
+@import "../../node_modules/@govuk-prototype-kit/step-by-step/sass/step-by-step-navigation-header";
 
-$govuk-brand-colour: #789904;
+body,
+input,
+h1,
+h2,
+h3,
+a,
+.govuk-body,
+.govuk-heading-xl,
+.govuk-heading-l,
+.govuk-heading-m,
+.govuk-heading-s,
+.govuk-caption-xl,
+.govuk-caption-l,
+.govuk-caption-m,
+.govuk-caption-s,
+.govuk-link,
+.govuk-list,
+.govuk-related-items,
+.govuk-side-navigation {
+  font-family: $govuk-font-family;
+}
+
 
 aside.contents-list {
   padding-bottom: 15px;
@@ -20,7 +42,7 @@ aside.contents-list {
 }
 
 aside.related-items {
-  border-top: 2px solid $govuk-brand-colour;
+  border-top: 2px solid $_brand-colour;
   padding-top: 10px;
 }
 

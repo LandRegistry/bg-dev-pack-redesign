@@ -2,8 +2,8 @@
 
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{# {% from "hmlr/components/footer/macro.njk" import hmlrFooter %} #}
-{% from "./macros/hmlr/footer/macro.njk" import hmlrFooter %}
+{% from "govuk/components/footer/macro.njk" import hmlrFooter %}
+{# {% from "./macros/hmlr/footer/macro.njk" import hmlrFooter %} #}
 
 {% block head %}
 {{super()}}
@@ -165,4 +165,16 @@
     text: "&copy; Crown copyright"
   }
 }) }}
+{% endblock %}
+
+{% block scripts %}
+{{super()}}
+{%- if stepbystep -%}
+<script src="/assets/js/step-by-step-navigation.js"></script>
+<script src="/assets/js/step-by-step-polyfills.js"></script>
+<script type="text/javascript">
+  var $element = document.querySelector('#step-by-step-navigation')
+  var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
+</script>
+{%- endif -%}
 {% endblock %}

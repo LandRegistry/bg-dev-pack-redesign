@@ -21,6 +21,10 @@ sidenav:
     - theme: Contents
       text: How the service API works
       href: '#how-the-service-api-works'
+
+options:
+    stylesheets:
+        - /assets/side-by-side.css
 ---
 
 <h1 class="govuk-heading-xl">Submit an Application to change the Land Register service API</h1>
