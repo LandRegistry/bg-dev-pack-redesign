@@ -37,7 +37,7 @@ sidenav:
 <h1 class="govuk-heading-xl">Learn about the APIs we use</h1>
 <p class="govuk-body govuk-!-font-weight-regular">Business Gateway provides two API types for developers to use – REST and SOAP. Using one or both types allows developers to integrate different HMLR services with their own platforms.</p>
 <p class="govuk-body govuk-!-font-weight-regular">Learn more about REST and SOAP and how to integrate them below. For a list of APIs, visit <a class="govuk-link" href="/find-a-service-api">Find an API</a>. Here, you’ll find a SOAP or REST tag next to each title. This shows which of the two API types you’ll need to integrate an HMLR service.</p>
-<h3 class="govuk-heading-m">How to use our APIs to build services</h3>
+<h2 class="govuk-heading-m">How to use our APIs to build services</h2>
 <p class="govuk-body">We're working on this section. It will provide an overview of how to use Business Gateway APIs to build HMLR services.</p>
 <h3 class="govuk-heading-m">API limitations</h3>
 <p class="govuk-body">There are limitations to using REST or SOAP when integrating Business Gateway services.</p>
