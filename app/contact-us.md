@@ -37,7 +37,7 @@ sidenav:
 <span class="govuk-caption-xl">Support</span>
 <h1 class="govuk-heading-xl">Contact us</h1>
 <div class="govuk-grid-row">
-  <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-left-3">Email</h3>
+  <h2 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-left-3">Email</h2>
   <p class="govuk-body">
     <a href="mailto:channelpartners@landregistry.gov.uk"
       class="govuk-link govuk-!-margin-left-3">channelpartners@landregistry.gov.uk</a>
