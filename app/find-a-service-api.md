@@ -1,6 +1,13 @@
 ---
+title: Find an API
+
 layout: find-an-api-page
 noheader: true
+
+eleventyNavigation:
+  key: Find an API
+  parent: Explore APIs
+
 sidenav:
   - theme: Before you start
     text: What to expect from the developer pack

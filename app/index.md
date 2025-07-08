@@ -1,4 +1,5 @@
 ---
+title: Home
 homepage: true
 layout: homepage
 noback: true

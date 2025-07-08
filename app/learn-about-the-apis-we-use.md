@@ -1,6 +1,13 @@
 ---
+title: Learn about the APIs we use
+
 layout: page
 noheader: true
+
+eleventyNavigation:
+  key: Learn about the APIs we use
+  parent: Explore APIs
+
 sidenav:
   - theme: Before you start
     text: What to expect from the developer pack

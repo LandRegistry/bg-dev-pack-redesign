@@ -1,5 +1,5 @@
 function resetCopyCodeButton(button) {
-    button.innerText = "Copy Code";
+    button.innerText = "Code code";
 }
 
 function activateCopyCodeButton(button) {

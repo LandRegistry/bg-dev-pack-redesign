@@ -1,6 +1,13 @@
 ---
+title: A guide to testing
+
 layout: page
 noheader: true
+
+eleventyNavigation:
+  key: A guide to testing
+  parent: Explore APIs
+
 sidenav:
   - theme: Before you start
     text: What to expect from the developer pack
@@ -26,7 +33,7 @@ sidenav:
     href: '/contact-us'
 ---
 
-<span class="govuk-caption-xl">Before you start</span>
+<span class="govuk-caption-xl">Explore APIs</span>
 <h1 class="govuk-heading-xl">A guide to testing</h1>
 <div class="govuk-grid-row">
   <h3 class="govuk-heading-m govuk-!-margin-left-3">Testing the Submit an application to change the land register

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template">
+  <head>
+    <meta charset="utf-8">
+    <title>Send a document API - HM Land Registry Developer Pack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#789904">
+
+<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/hmlrassets/images/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
+  <script src="/assets/application.js" type="module" defer></script>
+
+  <link rel="stylesheet" href="/assets/application.css">
+
+
+  <meta property="og:title" content="Send a document API">
+
+<script src="/assets/script.js"></script><script>
+    function setVersion() {
+        let version = document.getElementById('version').value;
+        console.log("location:", window.location.href)
+        if (!window.location.href.includes(version + '/')) {
+            console.log(`Versions were different, navigating to ${version}`)
+            if (window.location.href.match(/\/[0-9.]+\//))
+                window.location.href = window.location.href.replace(/\/[0-9.]+\//, `/${version}/`)
+            else
+                window.location.href = `./${version}`
+        } else {
+            console.log(`Version has not changed`);
+        }
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        setVersion()
+    });
+</script>
+    <meta property="og:image" content="/hmlrassets/images/hmlr-opengraph-image.png">
+  </head>
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+      <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+  <header class="govuk-header app-header govuk-header--full-width-border" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container app-header__container">
+    <div class="govuk-header__logo app-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+          <span class="app-header__logotype">HM Land Registry Developer Pack</span>
+      </a>
+    </div>
+    <site-search class="app-site-search govuk-!-display-none-print" index="/search.json" label="Search developer pack"><a class="app-site-search__link" href="/sitemap">Sitemap</a></site-search>
+
+  </div>
+</header>
+
+  
+
+  <div class="govuk-service-navigation app-service-navigation"
+data-module="govuk-service-navigation"
+>
+      <div class="govuk-width-container">
+
+    <div class="govuk-service-navigation__container">
+      
+
+      
+    </div>
+
+    </div>
+
+  </div>
+
+
+
+      <div class="govuk-width-container">
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag govuk-tag--pink">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a new design for the Business Gateway developer pack. You might experience problems.
+    </span>
+  </p>
+</div>
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper" id="main-content">
+<div class="app-prose-scope"><div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Send a document API
+    </h1>
+    <p class="govuk-body-l">Use this service to attach documents to your application.</p>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        These API endpoints are not currently live.
+      </strong>
+    </div>
+  </div>
+</div>
+<section class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half version-label-center-y">
+        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
+    </div>
+    <div class="govuk-grid-column-one-half">        <div class="govuk-form-group version-group govuk-!-margin-0">
+  <label class="govuk-label govuk-visually-hidden" for="version">
+    Version and Status dropdown
+  </label>
+  <select class="govuk-select" id="version" name="version">
+    <option value="0.3" selected>v0.3 (latest)</option>
+  </select>
+  <button type="submit" 
+                  class="govuk-button govuk-!-margin-0" 
+                  data-module="govuk-button"
+                  onclick="setVersion();"
+                  >View</button>
+</div>
+</div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
+    <div>
+      <h2 class="govuk-heading-m" id="overview">Overview</h2>
+      <p class="govuk-body">
+        The Send a document API should be used to attach documents to your application. This service can be integrated
+        using the REST core API.</p>
+      <p class="govuk-body">There are two steps for sending a document:</p>
+      <ol class="govuk-list govuk-list--number">
+        <li>A request to generate an upload URL</li>
+        <li>A request to upload the document</li>
+      </ol>
+      <p class="govuk-body">The request to generate an upload URL will respond with an HMLR URL that can be used to
+        upload the document to. This URL is only active for 10 minutes after creation. The generate an upload URL
+        endpoint will also return a document ID that can be used when using the Submit an application API. Documents
+        uploaded via this process will be subject to HMLR security scanning.</p>
+      <p class="govuk-body">Documents that have been uploaded can be used for up to 180 days, after which point they
+        will be removed.</p>
+    </div>
+    <div>
+      <h3 class="govuk-heading-m" id="how-the-service-api-works">How the API works</h3>
+      <div class="govuk-!-padding-bottom-3"></div>
+      <img src="/assets/images/SendADocumentSequence.png" alt="A diagram showing how the Send a Document API works.">
+      <h3 class="govuk-heading-s">Send a document API</h3>
+      <ol class="govuk-list govuk-list--number">
+        <li>Using the Send a document API, create an upload URL. This will generate a URL to allow the document to
+          upload.</li>
+        <li>Upload the document using the generated URL</li>
+      </ol>
+    </div>
+    <div>
+      <h2 class="govuk-heading-m" id="view-the-technical-guide">View the technical guide</h2>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-body govuk-link" href="./technical-guide">Technical guide</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="govuk-heading-m" id="view-the-api-specification">View the API specification</h2>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-body govuk-link"
+            href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Send-a-document-API"
+            rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
+        </li>
+      </ul>
+    </div>
+    <br>
+    <div>
+      <h3 class="govuk-heading-m" id="how-to-test-this-service-api">How to test this API</h3>
+      <p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business
+        Gateway APIs. Instead, we’ve provided example code to demonstrate what you should expect to see when developing
+        your own services.</p>
+      <ul class="govuk-list">
+        <li>
+          <p class="govuk-body"><a class="govuk-body govuk-link" href="./test-stubs">View Send a
+              document test stubs</a>.</p>
+        </li>
+      </ul>
+      <p class="govuk-body">For general testing guidance, visit our <a class="govuk-body govuk-link"
+          href="/a-guide-to-testing">guide to testing</a>.</p>
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <aside class="related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="related-apis">
+        Related APIs
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a class="govuk-body govuk-link" href="/apis/submit-an-application-to-change-the-land-register">
+              Submit an application to change the Land Register
+            </a>
+          </li>
+          <li>
+            <a class="govuk-body govuk-link" href="/apis/submit-an-application">
+              Submit an application
+            </a>
+          </li>
+          <li>
+            <a class="govuk-body govuk-link" href="/apis/application-information">
+              Application information
+            </a>
+          </li>
+          <li>
+            <a class="govuk-body govuk-link" href="/apis/notifications">
+              Notifications
+            </a>
+          </li>
+          <li>
+            <a class="govuk-body govuk-link govuk-!-font-weight-bold" href="/find-a-service-api">
+              More <span class="govuk-visually-hidden">in Subsection</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</section>
+</div></div>
+
+        </main>
+      </div>
+
+<footer class="govuk-footer govuk-footer--hmlr " role="contentinfo">
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
+            <ul class="govuk-footer__inline-list">
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="">
+                    Terms and conditions
+                  </a>
+                </li>
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="">
+                    Accessibility Statement
+                  </a>
+                </li>
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="">
+                    Cookies
+                  </a>
+                </li>
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="">
+                    Freedom of information
+                  </a>
+                </li>
+            </ul>
+            <div class="govuk-footer__meta-custom">
+              These links open in a new tab.
+            </div>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <span
+          class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr"
+        >&copy; Crown copyright</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

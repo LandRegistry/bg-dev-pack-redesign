@@ -1,0 +1,78 @@
+{% extends 'page.njk' %}
+
+{% set versioned = true %}
+{% set spy = true %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+{# Sticky Contents #}
+<div class="govuk-grid-column-one-third sticky">
+    {% block contents %}
+    {{ xGovukSubNavigation({ items: sidenav}) }}
+    {% endblock %}
+</div>
+
+<div class="govuk-grid-column-two-thirds">
+{# Title + description #}
+{% block mainHeader %}
+{{ appDocumentHeader({
+    title: title,
+    description: description
+}) }}
+{%- if notlive -%}
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+{{ govukWarningText({
+  text: "These API endpoints are not currently live.",
+  iconFallbackText: "Warning"
+}) }}
+{%- endif -%}
+{% endblock %}
+{# Version Selection #}
+{% block versionSelect %}
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half version-label-center-y">
+        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
+    </div>
+    <div class="govuk-grid-column-one-half">{% from "govuk/components/select/macro.njk" import govukSelect %}{% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukSelect({
+        id: "version",
+        name: "version",
+        label: {
+            text: "Version and Status dropdown",
+            classes: "govuk-visually-hidden"
+        },
+        items: versions,
+        formGroup: {
+            classes: "version-group govuk-!-margin-0",
+            afterInput: {
+                html: '<button type="submit" 
+                class="govuk-button govuk-!-margin-0" 
+                data-module="govuk-button"
+                onclick="setVersion();"
+                >View</button>'
+            }
+        }
+    }) }}</div>
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+{% endblock %}
+{# Main Content #}
+{{ appProseScope(content) if content }}
+
+{# Related Items #}
+{% if relatedAPIs %}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h3 class="govuk-heading-m">Related APIs</h3>
+<ul class="govuk-list govuk-list--bullet">
+{% for item in relatedAPIs %}
+    <li><a class="govuk-link" href="{{item.href}}">{{item.text}}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+
+</div>
+
+</div>
+{% endblock %}

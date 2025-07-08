@@ -84,23 +84,22 @@ data-module="govuk-service-navigation"
 </div>
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
         <main class="govuk-main-wrapper" id="main-content">
-<header class="app-document-header">
-  <h1 class="app-document-header__title govuk-heading-xl">
-    Application Information API
-  </h1>
-
-</header>
-
 <div class="app-prose-scope"><div class="govuk-grid-row">
-<p class="govuk-body-l">Use this service to get information about a specific application.</p>
-<div class="govuk-warning-text">
-<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-<strong class="govuk-warning-text__text">
-<span class="govuk-visually-hidden">Warning</span>
-These API endpoints are not currently live.
-</strong>
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Application Information API
+    </h1>
+    <p class="govuk-body-l">Use this service to get information about a specific application.</p>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+      <span class="govuk-visually-hidden">Warning</span>
+        These API endpoints are not currently live.
+      </strong>
+    </div>
+  </div>
 </div>
-</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half version-label-center-y">
         <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
@@ -111,8 +110,6 @@ These API endpoints are not currently live.
   </label>
   <select class="govuk-select" id="version" name="version">
     <option value="0.3" selected>v0.3 (latest)</option>
-    <option value="0.2">v0.2</option>
-    <option value="0.1">v0.1</option>
   </select>
   <button type="submit" 
                   class="govuk-button govuk-!-margin-0" 
@@ -122,8 +119,10 @@ These API endpoints are not currently live.
 </div>
 </div>
 </div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <div class="govuk-grid-row">
-    <h3>Select a version</h3>
+    <div class="govuk-grid-column-full">
+    <h3>Select a version for content</h3>
 </div></div>
 
         </main>

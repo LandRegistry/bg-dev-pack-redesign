@@ -1,6 +1,13 @@
 ---
+title: How to access Business Gateway
+
 layout: page
 noheader: true
+
+eleventyNavigation:
+  key: How to access Business Gateway
+  parent: Before you start
+
 sidenav:
   - theme: Before you start
     text: What to expect from the developer pack

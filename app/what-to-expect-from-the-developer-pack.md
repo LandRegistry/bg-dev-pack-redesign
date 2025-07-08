@@ -1,6 +1,12 @@
 ---
+title: What to expect from the developer pack
+
 layout: page
 noheader: true
+
+eleventyNavigation:
+  key: What to expect from the developer pack
+  parent: Before you start
 
 sidenav:
   - theme: Before you start

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template">
+  <head>
+    <meta charset="utf-8">
+    <title>Application information API technical guide - HM Land Registry Developer Pack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#789904">
+
+<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/hmlrassets/images/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
+  <script src="/assets/application.js" type="module" defer></script>
+
+  <link rel="stylesheet" href="/assets/application.css">
+
+
+  <meta property="og:title" content="Application information API technical guide">
+<meta property="og:description" name="description" content="Use this service to get information about a specific application.">
+<script src="/assets/script.js"></script><script>
+    function setVersion() {
+        let version = document.getElementById('version').value;
+        console.log("location:", window.location.href)
+        if (!window.location.href.includes(version + '/')) {
+            console.log(`Versions were different, navigating to ${version}`)
+            if (window.location.href.match(/\/[0-9.]+\//))
+                window.location.href = window.location.href.replace(/\/[0-9.]+\//, `/${version}/`)
+            else
+                window.location.href = `./${version}`
+        } else {
+            console.log(`Version has not changed`);
+        }
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        setVersion()
+    });
+</script><script>
+    let navigations = {}
+
+    function setNavSelect(target) {
+        let navLinks = document.querySelector(".x-govuk-sub-navigation").querySelectorAll("a");
+        navLinks.forEach(el => {
+            el.parentElement.classList.remove("x-govuk-sub-navigation__section-item--current")
+            el.setAttribute("aria-current", false);
+        })
+        target.parentElement.classList.add("x-govuk-sub-navigation__section-item--current")
+        target.setAttribute("aria-current", true)
+    }
+
+    function updateNavigation() {
+        if (navigations.length == 0) return;
+
+        let max = null;
+        for (summary of Object.values(navigations)) {
+            if (max == null || summary.ratio > max.ratio) {
+                max = summary
+            }
+            console.log(max.ratio, ">", summary.ratio)
+        }
+        navigations = {}
+        max && setNavSelect(max.link)
+    }
+
+    function createThresholds(step) {
+        let thresholds = []
+        for (let i = 0.0; i <= 1.0; i += step) 
+            thresholds.push(i)
+    }
+    function setupScrollSpy() {
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: createThresholds(0.01)
+        };
+
+        document.querySelector(".x-govuk-sub-navigation")
+            .querySelectorAll("a")
+            .forEach(link => {
+                let id = link.href.substring(link.href.lastIndexOf('#')+1);
+                let observer = new IntersectionObserver((entries, obz) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting)
+                        navigations[link.href] = {
+                            link: link,
+                            ratio: entry.intersectionRatio
+                        }
+                    })
+                }, options);
+                let observed = document.getElementById(id);
+                if (observed.parentNode.tagName === "SECTION") {
+                    observed = observed.parentNode;
+                }
+                observer.observe(observed);
+            })
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        setupScrollSpy()
+        setInterval(updateNavigation)
+    });
+</script>
+    <meta property="og:image" content="/hmlrassets/images/hmlr-opengraph-image.png">
+  </head>
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+      <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+  <header class="govuk-header app-header govuk-header--full-width-border" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container app-header__container">
+    <div class="govuk-header__logo app-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+          <span class="app-header__logotype">HM Land Registry Developer Pack</span>
+      </a>
+    </div>
+    <site-search class="app-site-search govuk-!-display-none-print" index="/search.json" label="Search developer pack"><a class="app-site-search__link" href="/sitemap">Sitemap</a></site-search>
+
+  </div>
+</header>
+
+  
+
+  <div class="govuk-service-navigation app-service-navigation"
+data-module="govuk-service-navigation"
+>
+      <div class="govuk-width-container">
+
+    <div class="govuk-service-navigation__container">
+      
+
+      
+    </div>
+
+    </div>
+
+  </div>
+
+
+
+      <div class="govuk-width-container">
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag govuk-tag--pink">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a new design for the Business Gateway developer pack. You might experience problems.
+    </span>
+  </p>
+</div>
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper" id="main-content">
+<div class="govuk-grid-row">
+
+
+<div class="govuk-grid-column-one-third sticky">
+    <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="sub-navigation-heading">Pages in this section</h2>
+  <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
+  <ul class="x-govuk-sub-navigation__section">
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#how-to-use-the-application-information-api">How to use the Application information API</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#validation-rules">Validation rules</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#example-requests-and-responses">Example requests and responses</a>
+    </li>
+  </ul>
+</nav>
+
+</div>
+
+<div class="govuk-grid-column-two-thirds">
+
+<header class="app-document-header">
+  <h1 class="app-document-header__title govuk-heading-xl">
+    Application information API technical guide
+  </h1>
+    <p class="app-document-header__description govuk-body-l">
+      Use this service to get information about a specific application.
+    </p>
+
+</header>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    These API endpoints are not currently live.
+  </strong>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half version-label-center-y">
+        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
+    </div>
+    <div class="govuk-grid-column-one-half">        <div class="govuk-form-group version-group govuk-!-margin-0">
+  <label class="govuk-label govuk-visually-hidden" for="version">
+    Version and Status dropdown
+  </label>
+  <select class="govuk-select" id="version" name="version">
+    <option value="0.3" selected>v0.3 (latest)</option>
+  </select>
+  <button type="submit" 
+                  class="govuk-button govuk-!-margin-0" 
+                  data-module="govuk-button"
+                  onclick="setVersion();"
+                  >View</button>
+</div>
+</div>
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<div class="app-prose-scope"><section>
+<h2 class="govuk-heading-m" id="how-to-use-the-application-information-api">How to use the Application information API</h2>
+<p class="govuk-body">The Application information API is used to get detailed information about a specific application, using the <code class="x-govuk-code x-govuk-code--inline">application_request_id</code> returned by the Submit an application API request.</p>
+<p class="govuk-body">The status of an application can currently be one of the following:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>
+    <code class="x-govuk-code x-govuk-code--inline">VALIDATING</code> - HM Land Registry is still processing the application, and it has not yet been added to the day list
+  </li>
+  <li>
+    <code class="x-govuk-code x-govuk-code--inline">VALIDATION_FAILED</code> - The application has not been added to the day list due to errors during validation. The errors found are included in the errors section of the response
+  </li>
+  <li>
+    <code class="x-govuk-code x-govuk-code--inline">ACCEPTED_AWAITING_PRIORITY</code> - The application has passed validation but has not yet been added to the day list as it is currently closed. The application will be added to the day list and moved to an <code class="x-govuk-code x-govuk-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> state when the day list reopens
+  </li>
+  <li>
+    <code class="x-govuk-code x-govuk-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> - The application has been accepted onto the day list, and has priority
+  </li>
+  <li>
+    <code class="x-govuk-code x-govuk-code--inline">SYSTEM_ERROR</code> - The application has not been added to the day list due to an HMLR system error. The request should be retried, or the support team contacted
+  </li>
+</ul>
+<p class="govuk-body">This API will always return an HTTP 200 response for a valid request, regardless of the status of the application.</p>
+</section>
+<section>
+<h2 class="govuk-heading-m" id="validation-rules">Validation rules</h2>
+<p class="govuk-body">There are no validation rules for implementing this API.</p>
+</section>
+<section>
+<h2 class="govuk-heading-m" id="example-requests-and-responses">Example requests and responses</h2>
+<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - VALIDATING status</h3>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Code code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;validating&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;application_request_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span>
+  <span class="x-govuk-code__punctuation">}</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div>
+<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - ACCEPTED_PRIORITY_PROTECTED status</h3>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Code code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;application_request_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;hmlr_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;AB1234&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;priority_timestamp&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-09-25T18:18:49.478Z&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;warnings&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
+      <span class="x-govuk-code__string">&quot;You must upload document X&quot;</span>
+    <span class="x-govuk-code__punctuation">]</span>
+  <span class="x-govuk-code__punctuation">}</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div>
+<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - VALIDATION_FAILED status</h3>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Code code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;VALIDATION_FAILED&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;application_request_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;errors&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
+      <span class="x-govuk-code__punctuation">{</span>
+        <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;OC018&quot;</span><span class="x-govuk-code__punctuation">,</span>
+        <span class="x-govuk-code__attr">&quot;detail&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Failed to get document &#x27;00001&#x27;.&quot;</span><span class="x-govuk-code__punctuation">,</span>
+        <span class="x-govuk-code__attr">&quot;pointer&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span>
+      <span class="x-govuk-code__punctuation">}</span>
+    <span class="x-govuk-code__punctuation">]</span>
+  <span class="x-govuk-code__punctuation">}</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div>
+<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - ACCEPTED_AWAITING_PRIORITY status</h3>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Code code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;accepted_awaiting_priority&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;application_request_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span>
+  <span class="x-govuk-code__punctuation">}</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section></div>
+
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h3 class="govuk-heading-m">Related APIs</h3>
+<ul class="govuk-list govuk-list--bullet">
+    <li><a class="govuk-link" href="/apis/send-a-document">Send a document API</a></li>
+    <li><a class="govuk-link" href="/apis/submit-an-application">Submit an application API</a></li>
+    <li><a class="govuk-link" href="/apis/notifications">Notifications API</a></li>
+    <li><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the land register API</a></li>
+</ul>
+
+</div>
+
+</div>
+        </main>
+      </div>
+
+<footer class="govuk-footer govuk-footer--hmlr " role="contentinfo">
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
+            <ul class="govuk-footer__inline-list">
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="">
+                    Terms and conditions
+                  </a>
+                </li>
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="">
+                    Accessibility Statement
+                  </a>
+                </li>
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="">
+                    Cookies
+                  </a>
+                </li>
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="">
+                    Freedom of information
+                  </a>
+                </li>
+            </ul>
+            <div class="govuk-footer__meta-custom">
+              These links open in a new tab.
+            </div>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <span
+          class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr"
+        >&copy; Crown copyright</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,4 +1,10 @@
 ---
+title: Contact us
+
+eleventyNavigation:
+  key: Contact us
+  parent: Support
+
 layout: page
 
 sidenav:

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template">
+  <head>
+    <meta charset="utf-8">
+    <title>Send a document API technical guide - HM Land Registry Developer Pack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#789904">
+
+<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/hmlrassets/images/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
+  <script src="/assets/application.js" type="module" defer></script>
+
+  <link rel="stylesheet" href="/assets/application.css">
+
+
+  <meta property="og:title" content="Send a document API technical guide">
+<meta property="og:description" name="description" content="Use this service to attach documents to your application.">
+<script src="/assets/script.js"></script><script>
+    function setVersion() {
+        let version = document.getElementById('version').value;
+        console.log("location:", window.location.href)
+        if (!window.location.href.includes(version + '/')) {
+            console.log(`Versions were different, navigating to ${version}`)
+            if (window.location.href.match(/\/[0-9.]+\//))
+                window.location.href = window.location.href.replace(/\/[0-9.]+\//, `/${version}/`)
+            else
+                window.location.href = `./${version}`
+        } else {
+            console.log(`Version has not changed`);
+        }
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        setVersion()
+    });
+</script><script>
+    let navigations = {}
+
+    function setNavSelect(target) {
+        let navLinks = document.querySelector(".x-govuk-sub-navigation").querySelectorAll("a");
+        navLinks.forEach(el => {
+            el.parentElement.classList.remove("x-govuk-sub-navigation__section-item--current")
+            el.setAttribute("aria-current", false);
+        })
+        target.parentElement.classList.add("x-govuk-sub-navigation__section-item--current")
+        target.setAttribute("aria-current", true)
+    }
+
+    function updateNavigation() {
+        if (navigations.length == 0) return;
+
+        let max = null;
+        for (summary of Object.values(navigations)) {
+            if (max == null || summary.ratio > max.ratio) {
+                max = summary
+            }
+            console.log(max.ratio, ">", summary.ratio)
+        }
+        navigations = {}
+        max && setNavSelect(max.link)
+    }
+
+    function createThresholds(step) {
+        let thresholds = []
+        for (let i = 0.0; i <= 1.0; i += step) 
+            thresholds.push(i)
+    }
+    function setupScrollSpy() {
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: createThresholds(0.01)
+        };
+
+        document.querySelector(".x-govuk-sub-navigation")
+            .querySelectorAll("a")
+            .forEach(link => {
+                let id = link.href.substring(link.href.lastIndexOf('#')+1);
+                let observer = new IntersectionObserver((entries, obz) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting)
+                        navigations[link.href] = {
+                            link: link,
+                            ratio: entry.intersectionRatio
+                        }
+                    })
+                }, options);
+                let observed = document.getElementById(id);
+                if (observed.parentNode.tagName === "SECTION") {
+                    observed = observed.parentNode;
+                }
+                observer.observe(observed);
+            })
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        setupScrollSpy()
+        setInterval(updateNavigation)
+    });
+</script>
+    <meta property="og:image" content="/hmlrassets/images/hmlr-opengraph-image.png">
+  </head>
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+      <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+  <header class="govuk-header app-header govuk-header--full-width-border" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container app-header__container">
+    <div class="govuk-header__logo app-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+          <span class="app-header__logotype">HM Land Registry Developer Pack</span>
+      </a>
+    </div>
+    <site-search class="app-site-search govuk-!-display-none-print" index="/search.json" label="Search developer pack"><a class="app-site-search__link" href="/sitemap">Sitemap</a></site-search>
+
+  </div>
+</header>
+
+  
+
+  <div class="govuk-service-navigation app-service-navigation"
+data-module="govuk-service-navigation"
+>
+      <div class="govuk-width-container">
+
+    <div class="govuk-service-navigation__container">
+      
+
+      
+    </div>
+
+    </div>
+
+  </div>
+
+
+
+      <div class="govuk-width-container">
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag govuk-tag--pink">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a new design for the Business Gateway developer pack. You might experience problems.
+    </span>
+  </p>
+</div>
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper" id="main-content">
+<div class="govuk-grid-row">
+
+
+<div class="govuk-grid-column-one-third sticky">
+    <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="sub-navigation-heading">Pages in this section</h2>
+  <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
+  <ul class="x-govuk-sub-navigation__section">
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#how-to-use-the-send-a-document-api">How to use the Send a document API</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#validation-rules">Validation rules</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#example-requests-and-responses">Example requests and responses</a>
+    </li>
+  </ul>
+</nav>
+
+</div>
+
+<div class="govuk-grid-column-two-thirds">
+
+<header class="app-document-header">
+  <h1 class="app-document-header__title govuk-heading-xl">
+    Send a document API technical guide
+  </h1>
+    <p class="app-document-header__description govuk-body-l">
+      Use this service to attach documents to your application.
+    </p>
+
+</header>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    These API endpoints are not currently live.
+  </strong>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half version-label-center-y">
+        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
+    </div>
+    <div class="govuk-grid-column-one-half">        <div class="govuk-form-group version-group govuk-!-margin-0">
+  <label class="govuk-label govuk-visually-hidden" for="version">
+    Version and Status dropdown
+  </label>
+  <select class="govuk-select" id="version" name="version">
+    <option value="0.3" selected>v0.3 (latest)</option>
+  </select>
+  <button type="submit" 
+                  class="govuk-button govuk-!-margin-0" 
+                  data-module="govuk-button"
+                  onclick="setVersion();"
+                  >View</button>
+</div>
+</div>
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<div class="app-prose-scope"><h2 class="govuk-heading-m" id="how-to-use-the-send-a-document-api">How to use the Send a document API</h2>
+<div>
+  <p class="govuk-body">This API consists of two endpoints that must be used together to upload a single document.
+  </p>
+  <ol class="govuk-list govuk-list--number">
+    <li>
+      <code class="x-govuk-code x-govuk-code--inline">POST /v0/documents/url</code>
+      - The generate an upload URL endpoint. The HTTP body of the request contains information about the file being
+      uploaded
+    </li>
+    <li>
+      <code class="x-govuk-code x-govuk-code--inline">PUT documentcapture.landregistry.gov.uk/...</code>
+      - The upload a document endpoint. The HTTP body of the request is the bytes of the document
+    </li>
+  </ol>
+</div>
+<div>
+  <h3 class="govuk-heading-s">Generate an upload URL</h3>
+  <p class="govuk-body">Making a POST request to the create upload URL endpoint will result in the following items
+    being returned:</p>
+  <p class="govuk-body">
+  <ul class="govuk-list govuk-list--bullet">
+    <li><code class="x-govuk-code x-govuk-code--inline">upload_url</code>
+      - This is the URL to make the PUT request to. This URL will only be valid for ten minutes after generation.
+      Ten minutes is timed from the generation of the URL to the start of the upload. Neither the size of the
+      document nor the speed of internet
+      connection will cause the upload to timeout</p>
+    </li>
+    <p class="govuk-body">
+      <li><code class="x-govuk-code x-govuk-code--inline">document_id</code>
+        - This is a unique ID for this document, and must be included in the application submission payload
+    </p>
+    </li>
+  </ul>
+  <h3 class="govuk-heading-s">Upload a document</h3>
+  <p class="govuk-body">To upload a document, make a PUT request to the URL returned from the ‘Create an upload URL’
+    POST request above. This request should contain the document as the body content. A 200 HTTP code will be
+    returned if the upload was
+    successful. Documents will asynchronously be virus scanned and validated. Issues found during this process will
+    be surfaced via the Application information API. Do not modify the URL received in the response.</p>
+</div>
+<div>
+  <h2 class="govuk-heading-m" id="validation-rules">Validation rules</h2>
+  <p class="govuk-body">To pass validation, you must follow the guidance for implementing this API below.</p>
+  <h3 class="govuk-heading-s">File types</h3>
+  <p class="govuk-body">Only four file types are supported by HMLR document upload:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>PDFs (must not be password protected)</li>
+    <li>TIFFs</li>
+    <li>GIFs</li>
+    <li>PNGs</li>
+  </ul>
+  <p class="govuk-body">Any other file types are not supported and will cause application submission to fail.</p>
+  <h3 class="govuk-heading-s">File length/SHA-256</h3>
+  <p class="govuk-body">As part of the API to generate an upload URL, the API expects
+    <code class="x-govuk-code x-govuk-code--inline">file_length</code>
+    and
+    <code class="x-govuk-code x-govuk-code--inline">file_sha256</code>
+    parameters. These parameters refer to the file that will be uploaded to the URL.
+  </p>
+  <p class="govuk-body">These values must also be provided when making the PUT request to the upload URL, as
+    headers:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      <code class="x-govuk-code x-govuk-code--inline">Content-Length : &ltvalue of file_length&gt
+        </code>
+    </li>
+    <li>
+      <code class="x-govuk-code x-govuk-code--inline">X-Amz-Checksum-Sha256 : &ltvalue of file_sha256&gt
+        </code>
+    </li>
+  </ul>
+  <p class="govuk-body">Where
+    <code class="x-govuk-code x-govuk-code--inline">
+        &ltvalue of x&gt</code>
+    are the values that were given to the request to generate the upload URL and match the file that is included
+    in the body of the request. If either of these values do not match or are not provided, you will receive a
+    signature verification failure
+    (HTTP 403).
+  </p>
+  <p class="govuk-body">The maximum size permitted for a single document upload is 40MiB (41943040 bytes).</p>
+  <h3 class="govuk-heading-s">File length</h3>
+  <p class="govuk-body">The
+    <code class="x-govuk-code x-govuk-code--inline">file_length</code>
+    should be the size of the file in bytes. See below for code examples in different languages:
+  </p>
+  <p class="govuk-body">Python</p>
+<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Code code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--py" tabindex="0"><code><span class="x-govuk-code__keyword">with</span> <span class="x-govuk-code__built_in">open</span>(<span class="x-govuk-code__string">&quot;test.pdf&quot;</span>, <span class="x-govuk-code__string">&quot;rb&quot;</span>) <span class="x-govuk-code__keyword">as</span> f:
+    file_bytes = f.read()
+    file_length = <span class="x-govuk-code__built_in">len</span>(file_bytes)
+</code></pre>
+
+</div>
+  <p class="govuk-body">Bash</p>
+<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Code code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--sh" tabindex="0"><code><span class="x-govuk-code__built_in">du</span> -b test.pdf
+</code></pre>
+
+</div>
+  <p class="govuk-body">Java</p>
+<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Code code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--java" tabindex="0"><code><span class="x-govuk-code__type">File</span> <span class="x-govuk-code__variable">f</span> <span class="x-govuk-code__operator">=</span> <span class="x-govuk-code__keyword">new</span> <span class="x-govuk-code__title class_">File</span>(<span class="x-govuk-code__string">&quot;test.pdf&quot;</span>);
+<span class="x-govuk-code__type">long</span> <span class="x-govuk-code__variable">fileLength</span> <span class="x-govuk-code__operator">=</span> f.length();
+</code></pre>
+
+</div>
+  <p class="govuk-body">JavaScript (Node)</p>
+<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Code code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code><span class="x-govuk-code__keyword">const</span> fs = <span class="x-govuk-code__built_in">require</span>(<span class="x-govuk-code__string">&quot;fs&quot;</span>);
+<span class="x-govuk-code__keyword">const</span> stats = fs.<span class="x-govuk-code__title function_">statsync</span>(<span class="x-govuk-code__string">&quot;test.pdf&quot;</span>);
+<span class="x-govuk-code__keyword">const</span> filelength = stats.<span class="x-govuk-code__property">size</span>;
+</code></pre>
+
+</div>
+  <h3 class="govuk-heading-s">File Sha256</h3>
+  <p class="govuk-body">The
+    <code class="x-govuk-code x-govuk-code--inline">file_sha256</code>
+    is the base64 encoded 256-bit binary digest of the bytes of the file. This should be exactly 44 characters
+    long, regardless of the length of the file. See below for code examples in several languages:
+  </p>
+  <p class="govuk-body">Python</p>
+<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Code code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--py" tabindex="0"><code><span class="x-govuk-code__keyword">with</span> <span class="x-govuk-code__built_in">open</span>(<span class="x-govuk-code__string">&quot;test.pdf&quot;</span>, <span class="x-govuk-code__string">&quot;rb&quot;</span>) <span class="x-govuk-code__keyword">as</span> f:
+  file_bytes = f.read()
+  <span class="x-govuk-code__built_in">hash</span> = sha256(file_bytes)
+  file_sha256 = b64encode(<span class="x-govuk-code__built_in">hash</span>.digest())
+</code></pre>
+
+</div>
+  <p class="govuk-body">Bash</p>
+<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Code code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--sh" tabindex="0"><code><span class="x-govuk-code__built_in">cat</span> test.pdf | \
+ openssl sha256 -binary | \
+ openssl enc -<span class="x-govuk-code__built_in">base64</span>
+</code></pre>
+
+</div>
+        <p class="govuk-body">Java</p>
+<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Code code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--sh" tabindex="0"><code>File f = new File(<span class="x-govuk-code__string">&quot;test.pdf&quot;</span>);
+byte[] data = Files.readAllBytes(f);
+MessageDigest digester = MessageDigest.getInstance(<span class="x-govuk-code__string">&quot;sha-256&quot;</span>);
+digester.update(data);
+String filesha256 = Base64.getEncoder().encodeToString(digester.digest());
+</code></pre>
+
+</div>
+  <p class="govuk-body">JavaScript (Node)</p>
+<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Code code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code><span class="x-govuk-code__keyword">const</span> fs = <span class="x-govuk-code__built_in">require</span>(<span class="x-govuk-code__string">&quot;fs&quot;</span>);
+<span class="x-govuk-code__keyword">const</span> crypto = <span class="x-govuk-code__built_in">require</span>(<span class="x-govuk-code__string">&quot;crypto&quot;</span>);
+<span class="x-govuk-code__keyword">const</span> shasum = crypto.<span class="x-govuk-code__title function_">createhash</span>(<span class="x-govuk-code__string">&quot;sha256&quot;</span>);
+shasum.<span class="x-govuk-code__title function_">update</span>(fs.<span class="x-govuk-code__title function_">getbytes</span>());
+shasum.<span class="x-govuk-code__title function_">digest</span>(<span class="x-govuk-code__string">&quot;base64&quot;</span>);
+</code></pre>
+
+</div>
+  <h2 class="govuk-heading-m govuk-!-margin-top-6" id="example-requests-and-responses">Example requests and responses</h2>
+  <div class="govuk-!-padding-bottom-3"></div>
+  <h3 class="govuk-heading-s"><code>POST /v0/documents/url</code> - Request</h3>
+<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Code code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;document_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;tr1&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;file_length&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">6362</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;file_sha256&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;xhepsrlehdpshynpjwwarzerivlcpvn8f8pycs7crqa=&quot;</span>
+  <span class="x-govuk-code__punctuation">}</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div>
+  <h3 class="govuk-heading-s"><code>POST /v0/documents/url</code> - Response</h3>
+<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Code code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;upload_url&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;documentcapture.landregistry.gov.uk/04c5c3fe-aa08-473b-9944-64ef5506f8e2&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;document_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;04c5c3fe-aa08-473b-9944-64ef5506f8e2&quot;</span>
+  <span class="x-govuk-code__punctuation">}</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+</div>
+  <p class="govuk-body">Note: The URL in the example may not be representative of the actual URL received.</p>
+  <p class="govuk-body">
+    <b>PUT document - Request</b>
+  </p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>URL matches upload_url in<code class="x-govuk-code x-govuk-code--inline">/v0/documents/url</code>
+      response</li>
+    <li>Body content is the document to upload</li>
+  </ul>
+  <p class="govuk-body">
+    <b>PUT document - Response</b>
+  </p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>HTTP 200 on successful upload</li>
+    <li>HTTP 4xx on failure</li>
+  </ul>
+</div>
+</div>
+
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h3 class="govuk-heading-m">Related APIs</h3>
+<ul class="govuk-list govuk-list--bullet">
+    <li><a class="govuk-link" href="/apis/submit-an-application">Submit an application API</a></li>
+    <li><a class="govuk-link" href="/apis/application-information">Application information API</a></li>
+    <li><a class="govuk-link" href="/apis/notifications">Notifications API</a></li>
+    <li><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the land register API</a></li>
+</ul>
+
+</div>
+
+</div>
+        </main>
+      </div>
+
+<footer class="govuk-footer govuk-footer--hmlr " role="contentinfo">
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
+            <ul class="govuk-footer__inline-list">
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="">
+                    Terms and conditions
+                  </a>
+                </li>
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="">
+                    Accessibility Statement
+                  </a>
+                </li>
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="">
+                    Cookies
+                  </a>
+                </li>
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="">
+                    Freedom of information
+                  </a>
+                </li>
+            </ul>
+            <div class="govuk-footer__meta-custom">
+              These links open in a new tab.
+            </div>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <span
+          class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr"
+        >&copy; Crown copyright</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

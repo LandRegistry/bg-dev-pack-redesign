@@ -1,6 +1,12 @@
 ---
+title: Terms of use
+
 layout: page
 noheader: true
+
+eleventyNavigation:
+  key: Terms of use
+  parent: Before you start
 
 sidenav:
   - theme: Before you start

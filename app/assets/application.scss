@@ -126,9 +126,6 @@ pre, code {
 }
 
 .code-wrapper button {
-  position: absolute;
-  top: govuk-spacing(5);
-  right: govuk-spacing(5);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -148,4 +145,11 @@ pre, code {
   &:active {
     top: govuk-spacing(5);
   }
+
+  @include govuk-media-query($from: tablet) {
+    position: absolute;
+    top: govuk-spacing(3);
+    right: govuk-spacing(3);
+  }
 }
+
