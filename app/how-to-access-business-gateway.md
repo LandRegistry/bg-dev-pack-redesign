@@ -63,7 +63,7 @@ sidenav:
   <h3 class="govuk-heading-s govuk-!-margin-left-3">How to set up access</h3>
   <ol class="govuk-list govuk-list--number govuk-!-margin-left-3">
     <li>Sign the development license which can be requested by emailing <a
-        href="#">channelpartners@landregistry.gov.uk</a>. If you are outsourcing the IT development work, the other
+        href="mailto:channelpartners@landregistry.gov.uk">channelpartners@landregistry.gov.uk</a>. If you are outsourcing the IT development work, the other
       party will need to sign the development licence.</li>
     <br>
     <li>We'll send a test SSL certificate to the technical contact. This gives your IT team connectivity and access
