@@ -30,7 +30,37 @@ eleventyNavigation:
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <hr class="govuk-section-break govuk-section-break--visible">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half version-label-center-y">
+        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
+    </div>
+    <div class="govuk-grid-column-one-half">{% from "govuk/components/select/macro.njk" import govukSelect %}{% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukSelect({
+        id: "version",
+        name: "version",
+        label: {
+            text: "Version and Status dropdown",
+            classes: "govuk-visually-hidden"
+        },
+        items: [{
+            value: "0.3",
+            text: "v0.3 (latest)",
+            selected: true
+        }],
+        formGroup: {
+            classes: "version-group govuk-!-margin-0",
+            afterInput: {
+                html: '<button type="submit" 
+                class="govuk-button govuk-!-margin-0" 
+                data-module="govuk-button"
+                onclick="setVersion();"
+                >View</button>'
+            }
+        }
+        }) }}</div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">  
     <div>
       <h2 class="govuk-heading-m" id="overview"><br>Overview</h2>
       <p class="govuk-body">The Notifications API provides a way of fetching updates about multiple applications
