@@ -84,8 +84,9 @@ aside.content-list ol.dashed-list, .content-list ul {
 
 .version-group {
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 0 1em;
+  grid-template-columns: repeat(2, minmax(max-content, 50%));
+  max-width: 100%;
+  gap: 1em;
   height: 40px;
 }
 
@@ -153,3 +154,21 @@ pre, code {
   }
 }
 
+.bg-version-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  max-width: 100%;
+  height: max-content;
+
+    
+  @media (max-width: 600px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+  > div {
+    height: max-content;
+  }
+}

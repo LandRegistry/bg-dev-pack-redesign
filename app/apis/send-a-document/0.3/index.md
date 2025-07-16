@@ -31,11 +31,11 @@ eleventyNavigation:
 <section class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half version-label-center-y">
+  <div class="bg-version-grid">
+    <div>
         <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
     </div>
-    <div class="govuk-grid-column-one-half">{% from "govuk/components/select/macro.njk" import govukSelect %}{% from "govuk/components/button/macro.njk" import govukButton %}
+    <div>{% from "govuk/components/select/macro.njk" import govukSelect %}{% from "govuk/components/button/macro.njk" import govukButton %}
         {{ govukSelect({
         id: "version",
         name: "version",
