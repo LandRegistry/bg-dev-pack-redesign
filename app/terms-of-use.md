@@ -3,6 +3,7 @@ title: Terms of use
 
 layout: page
 noheader: true
+noback: true
 
 eleventyNavigation:
   key: Terms of use

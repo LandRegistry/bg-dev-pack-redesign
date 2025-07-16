@@ -97,13 +97,13 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
+  {# {{ govukPhaseBanner({
       tag: {
         text: "Prototype",
         classes: "govuk-tag--pink"
       },
       html: 'This is a prototype of a new design for the Business Gateway developer pack. You might experience problems.'
-  }) }}
+  }) }} #}
   {%- if not noback -%}
   {{ govukBackLink({
     text: "Back",

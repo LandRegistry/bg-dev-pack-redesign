@@ -35,7 +35,7 @@
     "url": "/apis/estimate-completion-date/"
   },  {
     "title": "Contact Us",
-"section": "support",    "layout": "devpack-old.njk",
+"section": "support",    "layout": "page.njk",
     "hasFrontmatterDate": false,
     "date": "13 June 2025",
     "templateContent": "email channelpartners@landregistry.gov.uk aim respond emails within 10 working days",
@@ -171,7 +171,7 @@
 "section": "Home",    "layout": "page",
     "hasFrontmatterDate": false,
     "date": "24 June 2025",
-    "templateContent": "developer pack changelog updates include: update notifications documentation new information about transaction types application removing calculated fees from api response fee calculation will shared later date bypassing specific validation schema changing statuses <code style=\"color: #a71d5d background color: #f5f5f5\">accepted_priority_protected #f5f5f5\">accepted_awaiting_priority #f5f5f5\">validation_failed #f5f5f5\">system_error #f5f5f5\">validating addressdetails.type required bypassvalidationdata.validation_type have max length 250 charge.value document type rxcd #f5f5f5\">otherconveyancer.conveyancer_reference added jp1_reference titledetails.title_type #f5f5f5\">titledetails.disclosable_overriding_interests party.address_for_service_option party.representation_type enum value not_required #f5f5f5\">party.representation_type partyrole.party_reference overseasaddress.country ukaddress.postcode ukaddress.post_town ukaddress.building_description all successful objects root level #f5f5f5\">data object schemas notification payload elements error wrapper containing general summary #f5f5f5\">problemdetails bypassvalidationdata.reason values disagree_with_register #f5f5f5\">hmlr_data_incorrect_or_outdated #f5f5f5\">exception_not_covered_by_business_rules",
+    "templateContent": "developer pack changelog updates include: update notifications documentation new information about transaction types application removing calculated fees from api response fee calculation will shared later date bypassing specific validation schema changing statuses <code class=\"x govuk code x inline\">accepted_priority_protected inline\">accepted_awaiting_priority inline\">validation_failed inline\">system_error inline\">validating addressdetails.type required bypassvalidationdata.validation_type have max length 250 charge.value document type rxcd inline\">otherconveyancer.conveyancer_reference added jp1_reference titledetails.title_type inline\">titledetails.disclosable_overriding_interests party.address_for_service_option party.representation_type enum value not_required inline\">party.representation_type partyrole.party_reference overseasaddress.country ukaddress.postcode ukaddress.post_town ukaddress.building_description all successful objects root level inline\">data object schemas notification payload elements error wrapper containing general summary inline\">problemdetails bypassvalidationdata.reason values disagree_with_register inline\">hmlr_data_incorrect_or_outdated inline\">exception_not_covered_by_business_rules",
     "url": "/developer-pack-changelog/"
   },  {
     "title": "Submit an Application to change the Land Register service API",

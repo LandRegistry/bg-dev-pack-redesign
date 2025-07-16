@@ -172,3 +172,13 @@ pre, code {
     height: max-content;
   }
 }
+
+a {
+  &:link {
+    color: #1d70b8
+  }
+
+  &:visited {
+    color: #4c2c92;
+  }
+}

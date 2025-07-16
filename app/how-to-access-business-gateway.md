@@ -3,6 +3,7 @@ title: How to access Business Gateway
 
 layout: page
 noheader: true
+noback: true
 
 eleventyNavigation:
   key: How to access Business Gateway

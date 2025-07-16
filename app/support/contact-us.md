@@ -1,6 +1,7 @@
 ---
+layout: page.njk
 title: Contact Us
-layout: devpack-old.njk
+noback: true
 customSidebar:
     - heading: Before you start
       links:

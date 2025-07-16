@@ -6,18 +6,24 @@
 <div class="grey">
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
-    {{ govukPhaseBanner({
+    {# {{ govukPhaseBanner({
       tag: {
         text: "Prototype",
         classes: "govuk-tag--pink"
       },
       html: 'This is a prototype of a new design for the Business Gateway developer pack. You might experience problems.'
-  }) }}
+  }) }} #}
     <div class="govuk-grid-column-full-from-desktop">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds govuk-!-margin-top-9 govuk-!-margin-bottom-9">
           <h1 class="govuk-heading-xl app-masthead__title">Create web services using Business Gateway APIs</h1>
           <p class="app-masthead__description govuk-body">Use HM Land Registry's developer pack to explore APIs, review documentation and check endpoints.</p>
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Find an API",
+            href: "/find-a-service-api"
+          }) }}
         </div>
       </div>
     </div>
