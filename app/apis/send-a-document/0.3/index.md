@@ -81,7 +81,7 @@ eleventyNavigation:
     <div>
       <h3 class="govuk-heading-m" id="how-the-service-api-works">How the API works</h3>
       <div class="govuk-!-padding-bottom-3"></div>
-      <img src="/assets/images/SendADocumentSequence.png" alt="A diagram showing how the Send a Document API works.">
+      <a target="_blank" href="/assets/images/SendADocumentSequence.png"><img src="/assets/images/SendADocumentSequence.png" alt="A diagram showing how the Send a Document API works."></a>
       <h3 class="govuk-heading-s">Send a document API</h3>
       <ol class="govuk-list govuk-list--number">
         <li>Using the Send a document API, create an upload URL. This will generate a URL to allow the document to

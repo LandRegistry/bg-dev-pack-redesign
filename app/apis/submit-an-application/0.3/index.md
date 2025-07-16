@@ -1,5 +1,5 @@
 ---
-title: Submit an application API v0.3
+title: Submit an application API
 layout: page.njk
 
 noheader: true
@@ -85,8 +85,8 @@ eleventyNavigation:
     <section>
       <h3 class="govuk-heading-m" id="how-the-service-api-works">How the API works</h3>
       <div class="govuk-!-padding-bottom-3"></div>
-      <img src="/assets/images/SubmitAnApplication.png"
-        alt="A diagram showing how the Submit an application API works.">
+      <a target="_blank" href="/assets/images/SubmitAnApplication.png"><img src="/assets/images/SubmitAnApplication.png"
+        alt="A diagram showing how the Submit an application API works."></a>
       <div class="govuk-!-padding-bottom-3"></div>
       <br>
       <h3 class="govuk-heading-s">Submit an application API</h3>

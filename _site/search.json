@@ -209,7 +209,7 @@
     "templateContent": "send document api use this service attach documents your application ! warning these endpoints are currently live version status dropdown v0.3 latest <button type=\"submit\" class=\"govuk button govuk margin 0\" data module=\"govuk button\" onclick=\"setversion \" >view overview should used can integrated using rest core there two steps sending document: request generate upload url will respond with hmlr that only active 10 minutes after creation endpoint also return id when submit uploaded via process subject security scanning have been 180 days which point they removed how works create allow generated view technical guide specification < body link\" href=\"https: landregistry.github.io bgtechdoc vcad v0_3 spec.html#tag api\" rel=\"noreferrer noopener\" target=\"_blank\">web opens new tab test does provide environment integrators our business gateway apis instead provided example code demonstrate what expect see developing own services stubs general testing guidance visit href=\" testing\">guide related change land register information notifications more subsection",
     "url": "/apis/send-a-document/0.3/"
   },  {
-    "title": "Submit an application API v0.3",
+    "title": "Submit an application API",
 "section": "Submit an application API",    "layout": "page.njk",
     "hasFrontmatterDate": false,
     "date": "4 July 2025",

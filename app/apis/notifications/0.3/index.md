@@ -82,8 +82,8 @@ eleventyNavigation:
     <div>
       <h3 class="govuk-heading-m" id="how-the-service-api-works">How the API works</h3>
       <div class="govuk-!-padding-bottom-3"></div>
-      <img src="/assets/images/NotificationInteraction.png"
-        alt="A diagram showing the interaction of the Notification API.">
+      <a target="_blank" href="/assets/images/NotificationInteraction.png"><img src="/assets/images/NotificationInteraction.png"
+        alt="A diagram showing the interaction of the Notification API."></a>
       <h3 class="govuk-heading-s">Notifications API</h3>
       <ol class="govuk-list govuk-list--number">
         <li>Use the Notifications API to receive notifications about the submitted application</li>
