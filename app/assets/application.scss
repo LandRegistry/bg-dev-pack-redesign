@@ -182,3 +182,8 @@ a {
     color: #4c2c92;
   }
 }
+
+.x-govuk-sub-navigation__link[aria-current="false"] 
+{
+    font-weight: normal;
+}
