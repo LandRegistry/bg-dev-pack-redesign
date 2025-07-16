@@ -30,13 +30,14 @@
 {% endblock %}
 {# Version Selection #}
 {% block versionSelect %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <div class="bg-version-grid">
     <div>
         <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
     </div>
-    <div>{% from "govuk/components/select/macro.njk" import govukSelect %}{% from "govuk/components/button/macro.njk" import govukButton %}
-        {{ govukSelect({
+    {{ govukSelect({
         id: "version",
         name: "version",
         label: {
@@ -54,7 +55,7 @@
                 >View</button>'
             }
         }
-    }) }}</div>
+    }) }}
 </div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 {% endblock %}

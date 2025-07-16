@@ -35,32 +35,31 @@ eleventyNavigation:
     <div>
         <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
     </div>
-    <div>{% from "govuk/components/select/macro.njk" import govukSelect %}{% from "govuk/components/button/macro.njk" import govukButton %}
-        {{ govukSelect({
-        id: "version",
-        name: "version",
-        label: {
-            text: "Version and Status dropdown",
-            classes: "govuk-visually-hidden"
-        },
-        items: [{
-            value: "0.3",
-            text: "v0.3 (latest)",
-            selected: true
-        }],
-        formGroup: {
-            classes: "version-group govuk-!-margin-0",
-            afterInput: {
-                html: '<button type="submit" 
-                class="govuk-button govuk-!-margin-0" 
-                data-module="govuk-button"
-                onclick="setVersion();"
-                >View</button>'
-            }
-        }
-        }) }}</div>
-    </div>
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
+{% from "govuk/components/select/macro.njk" import govukSelect %}{% from "govuk/components/button/macro.njk" import govukButton %}{{ govukSelect({
+  id: "version",
+  name: "version",
+  label: {
+      text: "Version and Status dropdown",
+      classes: "govuk-visually-hidden"
+  },
+  items: [{
+      value: "0.3",
+      text: "v0.3 (latest)",
+      selected: true
+  }],
+  formGroup: {
+      classes: "version-group govuk-!-margin-0",
+      afterInput: {
+          html: '<button type="submit" 
+          class="govuk-button govuk-!-margin-0" 
+          data-module="govuk-button"
+          onclick="setVersion();"
+          >View</button>'
+      }
+  }
+}) }}
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
     <div>
       <h2 class="govuk-heading-m" id="overview"><br>Overview</h2>
       <p class="govuk-body">The Application information API is used to get detailed information about a specific

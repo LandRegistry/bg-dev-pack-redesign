@@ -155,21 +155,18 @@ pre, code {
 }
 
 .bg-version-grid {
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
+  flex-wrap: wrap; 
   align-items: center;
   gap: 1rem;
   max-width: 100%;
-  height: max-content;
+  height: auto;
+  overflow: visible;
 
-    
-  @media (max-width: 600px) {
-    .container {
-      grid-template-columns: 1fr;
-    }
-  }
   > div {
-    height: max-content;
+    flex: 1 1 auto;
+    min-width: fit-content;
+    max-width: 100%;
   }
 }
 
