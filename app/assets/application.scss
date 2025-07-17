@@ -158,15 +158,20 @@ pre, code {
   display: flex;
   flex-wrap: wrap; 
   align-items: center;
-  gap: 1rem;
+  gap: 1em;
+  margin: 1em 0;
   max-width: 100%;
   height: auto;
   overflow: visible;
 
   > div {
     flex: 1 1 auto;
+    height: auto;
     min-width: fit-content;
     max-width: 100%;
+  }
+  > div::after {
+    display: none;
   }
 }
 
