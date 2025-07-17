@@ -10,8 +10,6 @@ function activateCopyCodeButton(button) {
 
 document.addEventListener("DOMContentLoaded", () => {
     let copyCodeButtons = document.querySelectorAll("button.copy-code");
-    // copyCodeButtons[0].parentNode.
-    console.log(copyCodeButtons)
     copyCodeButtons.forEach(button => {
         button.addEventListener("click", _ => {
             let target = button.parentElement.querySelector("code");

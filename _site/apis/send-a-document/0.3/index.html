@@ -17,7 +17,6 @@
 <script src="/assets/script.js"></script><script>
     function setVersion() {
         let version = document.getElementById('version').value;
-        console.log("location:", window.location.href)
         if (!window.location.href.includes(version + '/')) {
             console.log(`Versions were different, navigating to ${version}`)
             if (window.location.href.match(/\/[0-9.]+\//))
