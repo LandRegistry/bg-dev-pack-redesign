@@ -1,5 +1,5 @@
 ---
-title: How to access Business Gateway
+title: Glossary of terms
 description: Updated 29 January 2025
 
 layout: page
