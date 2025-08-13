@@ -1,13 +1,13 @@
 ---
 layout: guidance.njk
 
-title: Application information API technical guide
+title: Application information API Technical guide
 description: Use this service to get information about a specific application.
 
 notlive: true
 
 eleventyNavigation:
-  key: Application information API v0.3 technical guide
+  key: Application information API v0.3 Technical guide
   parent: Application information API v0.3
 
 sidenav:

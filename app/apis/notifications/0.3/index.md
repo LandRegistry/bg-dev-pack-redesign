@@ -90,7 +90,7 @@ eleventyNavigation:
       </ol>
     </div>
     <div>
-      <h2 class="govuk-heading-m" id="view-the-technical-guide">View the technical guide</h2>
+      <h2 class="govuk-heading-m" id="view-the-technical-guide">View the Technical guide</h2>
       <ul class="govuk-list">
         <li>
           <a class="govuk-body govuk-link" href="/apis/notifications/0.3/technical-guide">Technical guide</a>

@@ -1,7 +1,7 @@
 ---
 layout: guidance.njk
 
-title: Submit an application API technical guide
+title: Submit an application API Technical guide
 description: Use this service to provide data to HMLR for updating the register.
 
 notlive: true

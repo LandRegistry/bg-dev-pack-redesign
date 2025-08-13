@@ -1,13 +1,13 @@
 ---
 layout: guidance
 
-title: Notifications API technical guide
+title: Notifications API Technical guide
 description: Use this service to get updates about multiple applications submitted by the same business unit.
 
 notlive: true
 
 eleventyNavigation:
-  key: Notifications API v0.3 technical guide
+  key: Notifications API v0.3 Technical guide
   parent: Notifications API v0.3
 
 sidenav:

@@ -1,7 +1,7 @@
 ---
 layout: guidance.njk
 
-title: Send a document API technical guide
+title: Send a document API Technical guide
 description: Use this service to attach documents to your application.
 
 notlive: true
