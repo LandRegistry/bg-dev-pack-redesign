@@ -77,14 +77,6 @@ relatedAPIs:
     ],
     "customer_reference": "CustomerRef",
     "documents": {
-      "AP1": {
-        "type": "AP1",
-        "document_id": "4fd53325-d120-4366-b151-b006d0ef9a5d",
-        "document_metadata": {
-        "certification_statement_type": "CERTIFIED",
-        "document_filename": "e-AP1.pdf"
-        }
-      },
       "Deed": {
         "type": "MRTG_DEED",
         "document_id": "0d7bd3a5-1aec-4862-9fc9-f796dfc11d35",
@@ -146,21 +138,29 @@ relatedAPIs:
           "mdref": "MD006A",
           "value": 120000
         },
-        "documents": ["Deed"],
+        "documents": [
+          "Deed"
+        ],
         "priority": 1,
         "fee_in_pence": 3000,
-        "party_roles": [{
-          "party_reference": "Borrower1",
-          "role": "BORROWER"
-        }, {
-          "party_reference": "Borrower2",
-          "role": "BORROWER"
-        }, {
-          "party_reference": "TheBank",
-          "role": "LENDER"
-        }],
+        "party_roles": [
+          {
+            "party_reference": "Borrower1",
+            "role": "BORROWER"
+          },
+          {
+            "party_reference": "Borrower2",
+            "role": "BORROWER"
+          },
+          {
+            "party_reference": "TheBank",
+            "role": "LENDER"
+          }
+        ],
         "type": "C",
-        "title_references": ["MS305610"]
+        "title_references": [
+          "MS305610"
+        ]
       }
     },
     "type": "REGISTER_UPDATE"
@@ -231,14 +231,6 @@ relatedAPIs:
       }
     },
     "documents": {
-      "AP1": {
-        "document_id": "ed4f0f00-ff14-4f95-869b-9b11c9b3ac73",
-        "type": "AP1",
-        "document_metadata": {
-          "certification_statement_type": "CERTIFIED",
-          "document_filename": "e-AP1.pdf"
-        }
-      },
       "TR1": {
         "document_id": "a40d6fe0-bd45-4c49-b72a-0d80cf43db83",
         "type": "TR1",
@@ -255,7 +247,7 @@ relatedAPIs:
           "forenames": "John",
           "surname": "Smith"
         },
-        "address_for_service_option": "NOT_REQUIRED",
+        "address_for_service_option": "PROVIDED_ADDRESS",
         "representation_type": "LODGING_CONVEYANCER",
         "addresses": "transferee_address"
       },
@@ -265,8 +257,13 @@ relatedAPIs:
           "forenames": "Tony",
           "surname": "Bonito"
         },
+        "other_conveyancer": {
+          "full_name": "ABC Conveyancers",
+          "registered_address": "13 Coral Close, Tuffley, Gloucester, GL4 0RG",
+          "conveyancer_reference": "abc-conveyancers-ref"
+        },
         "address_for_service_option": "NOT_REQUIRED",
-        "representation_type": "LODGING_CONVEYANCER"
+        "representation_type": "OTHER_CONVEYANCER"
       },
       "Transferor2": {
         "details": {
@@ -274,8 +271,13 @@ relatedAPIs:
           "forenames": "Toni",
           "surname": "Bonito"
         },
+        "other_conveyancer": {
+          "full_name": "ABC Conveyancers",
+          "registered_address": "13 Coral Close, Tuffley, Gloucester, GL4 0RG",
+          "conveyancer_reference": "abc-conveyancers-ref"
+        },
         "address_for_service_option": "NOT_REQUIRED",
-        "representation_type": "LODGING_CONVEYANCER"
+        "representation_type": "OTHER_CONVEYANCER"
       }
     },
     "applicants": [
@@ -384,14 +386,6 @@ relatedAPIs:
     ],
     "customer_reference": "CustomerRef",
     "documents": {
-      "AP1": {
-        "type": "AP1",
-        "document_id": "4fd53325-d120-4366-b151-b006d0ef9a5d",
-        "document_metadata": {
-          "certification_statement_type": "CERTIFIED",
-          "document_filename": "e-AP1.pdf"
-        }
-      },
       "Deed": {
         "type": "MRTG_DEED",
         "document_id": "0d7bd3a5-1aec-4862-9fc9-f796dfc11d35",
@@ -552,14 +546,6 @@ relatedAPIs:
       }
     },
     "documents": {
-      "AP1": {
-        "document_id": "ed4f0f00-ff14-4f95-869b-9b11c9b3ac73",
-        "type": "AP1",
-        "document_metadata": {
-          "certification_statement_type": "CERTIFIED",
-          "document_filename": "e-AP1.pdf"
-        }
-      },
       "TR1": {
         "document_id": "a40d6fe0-bd45-4c49-b72a-0d80cf43db83",
         "type": "TR1",
@@ -593,7 +579,12 @@ relatedAPIs:
           "forenames": "Tony",
           "surname": "Bonito"
         },
-        "representation_type": "LODGING_CONVEYANCER"
+        "other_conveyancer": {
+          "full_name": "ABC Conveyancers",
+          "registered_address": "13 Coral Close, Tuffley, Gloucester, GL4 0RG",
+          "conveyancer_reference": "abc-conveyancers-ref"
+        },
+        "representation_type": "OTHER_CONVEYANCER"
       },
       "Transferor2": {
         "details": {
@@ -601,7 +592,12 @@ relatedAPIs:
           "forenames": "Toni",
           "surname": "Bonito"
         },
-        "representation_type": "LODGING_CONVEYANCER"
+        "other_conveyancer": {
+          "full_name": "ABC Conveyancers",
+          "registered_address": "13 Coral Close, Tuffley, Gloucester, GL4 0RG",
+          "conveyancer_reference": "abc-conveyancers-ref"
+        },
+        "representation_type": "OTHER_CONVEYANCER"
       },
       "TheBank": {
         "details": {
@@ -658,7 +654,9 @@ relatedAPIs:
             "role": "TRANSFEROR"
           }
         ],
-        "title_references": ["MS312531"]
+        "title_references": [
+          "MS312531"
+        ]
       },
       "Charge": {
         "documents": [
@@ -682,7 +680,9 @@ relatedAPIs:
             "role": "LENDER"
           }
         ],
-        "title_references": ["MS312531"]
+        "title_references": [
+          "MS312531"
+        ]
       }
     },
     "type": "REGISTER_UPDATE"
