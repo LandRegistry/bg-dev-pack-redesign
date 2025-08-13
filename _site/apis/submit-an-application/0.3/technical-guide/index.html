@@ -6717,6 +6717,7 @@ data-module="govuk-service-navigation"
     <p class="govuk-body">Customer type of conveyancer or non-conveyancer must be present.</p>
     <p class="govuk-body">Error types for this validator will be provided at a later date.</p>
     <h3 class="govuk-heading-s">Declaration of trust validation</h3>
+    <p class="govuk-body">A declaration of trust must be provided for transfers with more than one transferee.</p>
     <p class="govuk-body">The declaration of trust field must include one of the following options:</p>
     <ol class="govuk-list govuk-list--number">
       <li>Joint Tenants</li>
@@ -6724,23 +6725,31 @@ data-module="govuk-service-navigation"
       <li>Trust Details</li>
       <li>Form JO</li>
     </ol>
-    <p class="govuk-body">For option three, details must be provided. For option four, HMLR form JO must be provided
-      as an attachment.</p>
+    <p class="govuk-body">For option three, the "trust details" field must be provided. For option four, HMLR form JO must be provided as an attachment.</p>
     <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--s">Declaration of trust validation error types
-      </caption>
+      <caption class="govuk-table__caption govuk-table__caption--s">Declaration of trust validation error types</caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Error type</th>
           <th scope="col" class="govuk-table__header">Description</th>
-        </tr>
+      </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell govuk-table__cell"><code
-              class="x-govuk-code x-govuk-code--inline">declaration-of-trust</code></td>
-          <td class="govuk-table__cell govuk-table__cell"> The declaration of trust option must be provided for the
-            application</td>
+          <td class="govuk-table__cell govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">declaration-of-trust</code></td>
+          <td class="govuk-table__cell govuk-table__cell">The declaration of trust option must be provided for the application</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">TRUST_DECLARATION_TYPE_MISSING</code></td>
+          <td class="govuk-table__cell govuk-table__cell">The trust declaration type must be provided</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">TRUST_DETAILS_MISSING</code></td>
+          <td class="govuk-table__cell govuk-table__cell">The details of trust must be provided</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">FORM_JO_MISSING</code></td>
+          <td class="govuk-table__cell govuk-table__cell">The JO form must be provided</td>
         </tr>
       </tbody>
     </table>
