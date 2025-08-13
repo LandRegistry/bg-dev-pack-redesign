@@ -31,14 +31,14 @@ eleventyNavigation:
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half version-label-center-y">
-        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and status</h2>
     </div>
     <div class="govuk-grid-column-one-half">{% from "govuk/components/select/macro.njk" import govukSelect %}{% from "govuk/components/button/macro.njk" import govukButton %}
         {{ govukSelect({
         id: "version",
         name: "version",
         label: {
-            text: "Version and Status dropdown",
+            text: "Version and status dropdown",
             classes: "govuk-visually-hidden"
         },
         items: [{
