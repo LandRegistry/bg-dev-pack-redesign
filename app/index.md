@@ -6,23 +6,6 @@ noback: true
 ---
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-l govuk-!-margin-left-3">What's new</h2>
-      <p class="govuk-body govuk-!-margin-left-3"><b>14 March 2025:</b> HM Land Registry (HMLR) is developing a new service to improve the process of submitting information to HMLR.</p>
-      <p class="govuk-body govuk-!-margin-left-3">The new Submit an application to change the Land Register API will help to lodge applications with HMLR to update the register or create a new lease or transfer of part. This new API will replace the existing e-DRS SOAP API and is designed to help applicants get their applications right the first time.</p>
-      <p class="govuk-body govuk-!-margin-left-3"><a
-          href="/apis/submit-an-application-to-change-the-land-register">Read more about the new Submit an
-          application to change the Land Register API</a>.</p>
-      </p>
-      <p class="govuk-body govuk-!-margin-left-3">For a summary of changes, <a
-          href="/developer-pack-changelog">visit our developer pack changelog</a>.</p>
-      </p>
-    </div>
-  </div>
-</div>
-<div class="govuk-!-padding-bottom-7"></div>
-<div class="govuk-grid-row">
   <h3 class="govuk-heading-m govuk-!-margin-bottom-1 govuk-!-margin-left-3">Get started</h3>
 
   <div class="govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-8">
