@@ -1,3 +1,5 @@
+import process from 'node:process'
+
 import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
 export default function (eleventyConfig) {
@@ -68,5 +70,6 @@ export default function (eleventyConfig) {
         "node_modules/govuk-frontend/dist/govuk/components"
       ],
     },
+    pathPrefix: process.env.GITHUB_ACTIONS ? '/api-docs/' : '/',
   }
 };
