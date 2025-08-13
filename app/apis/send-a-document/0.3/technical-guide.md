@@ -125,7 +125,7 @@ relatedAPIs:
     should be the size of the file in bytes. See below for code examples in different languages:
   </p>
   <p class="govuk-body">Python</p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```py
 with open("test.pdf", "rb") as f:
@@ -134,14 +134,14 @@ with open("test.pdf", "rb") as f:
 ```
 </div>
   <p class="govuk-body">Bash</p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```sh
 du -b test.pdf
 ```
 </div>
   <p class="govuk-body">Java</p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```java
 File f = new File("test.pdf");
@@ -149,7 +149,7 @@ long fileLength = f.length();
 ```
 </div>
   <p class="govuk-body">JavaScript (Node)</p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```js
 const fs = require("fs");
@@ -164,7 +164,7 @@ const filelength = stats.size;
     long, regardless of the length of the file. See below for code examples in several languages:
   </p>
   <p class="govuk-body">Python</p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```py
 with open("test.pdf", "rb") as f:
@@ -174,7 +174,7 @@ with open("test.pdf", "rb") as f:
 ```
 </div>
   <p class="govuk-body">Bash</p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```sh
 cat test.pdf | \
@@ -183,7 +183,7 @@ cat test.pdf | \
 ```
 </div>
         <p class="govuk-body">Java</p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```sh
 File f = new File("test.pdf");
@@ -194,7 +194,7 @@ String filesha256 = Base64.getEncoder().encodeToString(digester.digest());
 ```
 </div>
   <p class="govuk-body">JavaScript (Node)</p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```js
 const fs = require("fs");
@@ -207,7 +207,7 @@ shasum.digest("base64");
   <h2 class="govuk-heading-m govuk-!-margin-top-6" id="example-requests-and-responses">Example requests and responses</h2>
   <div class="govuk-!-padding-bottom-3"></div>
   <h3 class="govuk-heading-s"><code>POST /v0/documents/url</code> - Request</h3>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -220,7 +220,7 @@ shasum.digest("base64");
 ```
 </div>
   <h3 class="govuk-heading-s"><code>POST /v0/documents/url</code> - Response</h3>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {

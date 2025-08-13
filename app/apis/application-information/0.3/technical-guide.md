@@ -77,7 +77,7 @@ relatedAPIs:
 <h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - VALIDATING status</h3>
 
 <div class="code-wrapper">
-{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -92,7 +92,7 @@ relatedAPIs:
 <h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - ACCEPTED_PRIORITY_PROTECTED status</h3>
 
 <div class="code-wrapper">
-{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -112,7 +112,7 @@ relatedAPIs:
 <h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - VALIDATION_FAILED status</h3>
 
 <div class="code-wrapper">
-{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -134,7 +134,7 @@ relatedAPIs:
 <h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - ACCEPTED_AWAITING_PRIORITY status</h3>
 
 <div class="code-wrapper">
-{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {

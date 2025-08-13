@@ -71,7 +71,7 @@ relatedAPIs:
 <h3 class="govuk-heading-s">Response</h3>
 <p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
 <div class="code-wrapper">
-{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -148,7 +148,7 @@ relatedAPIs:
 <div class="code-wrapper">
 
 {{ govukButton({
-  text: "Code code",
+  text: "Copy code",
   classes: "govuk-button--secondary copy-code"
 }) }}
 
@@ -209,7 +209,7 @@ relatedAPIs:
 <div class="code-wrapper">
 
 {{ govukButton({
-  text: "Code code",
+  text: "Copy code",
   classes: "govuk-button--secondary copy-code"
 }) }}
 
@@ -261,7 +261,7 @@ relatedAPIs:
 <div class="code-wrapper">
 
 {{ govukButton({
-  text: "Code code",
+  text: "Copy code",
   classes: "govuk-button--secondary copy-code"
 }) }}
 
@@ -295,7 +295,7 @@ relatedAPIs:
 <div class="code-wrapper">
 
 {{ govukButton({
-  text: "Code code",
+  text: "Copy code",
   classes: "govuk-button--secondary copy-code"
 }) }}
 
@@ -317,7 +317,7 @@ relatedAPIs:
 <div class="code-wrapper">
 
 {{ govukButton({
-  text: "Code code",
+  text: "Copy code",
   classes: "govuk-button--secondary copy-code"
 }) }}
 
@@ -358,7 +358,7 @@ relatedAPIs:
 <div class="code-wrapper">
 
 {{ govukButton({
-  text: "Code code",
+  text: "Copy code",
   classes: "govuk-button--secondary copy-code"
 }) }}
 
@@ -405,7 +405,7 @@ relatedAPIs:
 <div class="code-wrapper">
 
 {{ govukButton({
-  text: "Code code",
+  text: "Copy code",
   classes: "govuk-button--secondary copy-code"
 }) }}
 
@@ -454,7 +454,7 @@ relatedAPIs:
 <div class="code-wrapper">
 
 {{ govukButton({
-  text: "Code code",
+  text: "Copy code",
   classes: "govuk-button--secondary copy-code"
 }) }}
 
@@ -503,7 +503,7 @@ relatedAPIs:
 <div class="code-wrapper">
 
 {{ govukButton({
-  text: "Code code",
+  text: "Copy code",
   classes: "govuk-button--secondary copy-code"
 }) }}
 

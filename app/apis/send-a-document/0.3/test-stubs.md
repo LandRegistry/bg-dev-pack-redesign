@@ -56,7 +56,7 @@ relatedAPIs:
   <p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">POST</code></p>
   <p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/documents/url</code></p>
   <p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -71,7 +71,7 @@ relatedAPIs:
 </div>
   <h3 class="govuk-heading-s">Response</h3>
   <p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -92,7 +92,7 @@ relatedAPIs:
   <p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">POST</code></p>
   <p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/documents/url</code></p>
   <p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -108,7 +108,7 @@ relatedAPIs:
   <div class="govuk-!-padding-bottom-6"></div>
   <h3 class="govuk-heading-s">Response</h3>
   <p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">400</code></p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -132,7 +132,7 @@ relatedAPIs:
   <p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">POST</code></p>
   <p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/documents/url</code></p>
   <p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -148,7 +148,7 @@ relatedAPIs:
   <div class="govuk-!-padding-bottom-6"></div>
   <h3 class="govuk-heading-s">Response</h3>
   <p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">400</code></p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -172,7 +172,7 @@ relatedAPIs:
   <p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">POST</code></p>
   <p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/documents/url</code></p>
   <p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -188,7 +188,7 @@ relatedAPIs:
   <div class="govuk-!-padding-bottom-6"></div>
   <h3 class="govuk-heading-s">Response</h3>
   <p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">400</code></p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -212,7 +212,7 @@ relatedAPIs:
   <p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">POST</code></p>
   <p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/documents/url</code></p>
   <p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -228,7 +228,7 @@ relatedAPIs:
   <div class="govuk-!-padding-bottom-6"></div>
   <h3 class="govuk-heading-s">Response</h3>
   <p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">400</code></p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {

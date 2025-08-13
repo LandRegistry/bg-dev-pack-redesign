@@ -65,7 +65,7 @@ relatedAPIs:
 </p>
 <p class="govuk-body">Note: The idempotency key should be unique for each request (this is not enforced by the
   stubs).</p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -173,7 +173,7 @@ relatedAPIs:
 <p class="govuk-body">Status:
   <code class="x-govuk-code x-govuk-code--inline">202</code>
 </p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -203,7 +203,7 @@ relatedAPIs:
 </p>
 <p class="govuk-body">Note: The idempotency key should be unique for each request (this is not enforced by the
   stubs).</p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -344,7 +344,7 @@ relatedAPIs:
 <p class="govuk-body">Status:
   <code class="x-govuk-code x-govuk-code--inline">202</code>
 </p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -374,7 +374,7 @@ relatedAPIs:
 </p>
 <p class="govuk-body">Note: The idempotency key should be unique for each request (this is not enforced by the
   stubs).</p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -475,7 +475,7 @@ relatedAPIs:
 <p class="govuk-body">Status:
   <code class="x-govuk-code x-govuk-code--inline">400</code>
 </p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -518,7 +518,7 @@ relatedAPIs:
 </p>
 <p class="govuk-body">Note: The idempotency key should be unique for each request (this is not enforced by
   the stubs).</p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -695,7 +695,7 @@ relatedAPIs:
 <p class="govuk-body">Status:
   <code class="x-govuk-code x-govuk-code--inline">202</code>
 </p>
-<div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {

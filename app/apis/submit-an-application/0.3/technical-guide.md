@@ -6267,7 +6267,7 @@ relatedAPIs:
       party information must be the new proprietor information. Identity evidence must be provided as documents on
       the transaction.</p>
     <p class="govuk-body">Example:</p>
-    <div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+    <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 "parties": {
@@ -6292,7 +6292,7 @@ relatedAPIs:
       information must be the existing proprietor information. Identity evidence must be provided as documents on
       the transaction.</p>
     <p class="govuk-body">Example:</p>
-    <div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+    <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 "party1": {
@@ -6415,7 +6415,7 @@ relatedAPIs:
       </tbody>
     </table>
     <p class="govuk-body">For an example; if after submitting an application the following error was received:</p>
-    <div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+    <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -6432,7 +6432,7 @@ relatedAPIs:
 </div>
     <p class="govuk-body">The validation rule could then be overridden by submitting the same payload, but with the
       following addition:</p>
-    <div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+    <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -7043,7 +7043,7 @@ relatedAPIs:
     <div class="govuk-!-padding-bottom-6"></div>
     <div>
       <p class="govuk-body">Example:</p>
-      <div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+      <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 "transactions": {
@@ -7071,7 +7071,7 @@ relatedAPIs:
   <h2 class="govuk-heading-m" id="example-requests-and-responses">Example requests and responses</h2>
   <div class="govuk-!-padding-bottom-3"></div>
   <h3 class="govuk-heading-s"><code>APPLICATION_ACCEPTED_ON_DAY_LIST</code> notification</h3>
-  <div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+  <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -7098,7 +7098,7 @@ relatedAPIs:
 ```
 </div>
   <h3 class="govuk-heading-s"><code>APPLICATION_VALIDATION_FAILED</code> notification</h3>
-  <div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+  <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -7123,7 +7123,7 @@ relatedAPIs:
 ```
 </div>
   <h3 class="govuk-heading-s"><code>POST - /v0/applications</code> - Charge</h3>
-  <div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+  <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -7229,7 +7229,7 @@ relatedAPIs:
 ```
 </div>
   <h3 class="govuk-heading-s"><code>POST - /v0/applications</code> - Transfer</h3>
-  <div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+  <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -7475,7 +7475,7 @@ relatedAPIs:
 ```
 </div>
         <h3 class="govuk-heading-s"><code>POST - /v0/applications</code> - Transfer of Part</h3>
-        <div class="code-wrapper">{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+        <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {

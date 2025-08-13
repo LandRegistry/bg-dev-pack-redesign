@@ -57,7 +57,7 @@ relatedAPIs:
 <p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
 
 <div class="code-wrapper">
-{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -87,7 +87,7 @@ relatedAPIs:
 <p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
 
 <div class="code-wrapper">
-{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -117,7 +117,7 @@ relatedAPIs:
 <p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
 
 <div class="code-wrapper">
-{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {

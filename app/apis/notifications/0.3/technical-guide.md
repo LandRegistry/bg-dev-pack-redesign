@@ -98,7 +98,7 @@ relatedAPIs:
 <h3 class="govuk-heading-s">Get notifications response</h3>
 
 <div class="code-wrapper">
-{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -128,7 +128,7 @@ relatedAPIs:
 `POST /v0/notifications/acknowledge http/1.1`
 
 <div class="code-wrapper">
-{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -142,7 +142,7 @@ relatedAPIs:
 <h3 class="govuk-heading-s">Acknowledge notifications response</h3>
 
 <div class="code-wrapper">
-{{ govukButton({ text: "Code code", classes: "govuk-button--secondary copy-code" }) }}
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
