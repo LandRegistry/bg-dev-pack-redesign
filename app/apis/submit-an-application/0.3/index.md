@@ -123,6 +123,7 @@ eleventyNavigation:
               Submit an application test stubs</a>.</p>
         </li>
       </ul>
+      <div class="govuk-inset-text">Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed.</div>
       <p class="govuk-body">For general testing guidance, visit our <a class="govuk-body govuk-link"
           href="/a-guide-to-testing">guide to testing</a>.</p>
     </section>
