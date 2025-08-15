@@ -2554,6 +2554,73 @@ relatedAPIs:
 ```
 </div>
 <div class="govuk-!-padding-bottom-6"></div>
+
+<h3 class="govuk-heading-s">Capacity fields</h3>
+<p class="govuk-body">The capacity field can be applied to Landlords, Tenants, Borrowers and Transferors when they are added as additional parties to transactions.</p>
+<p class="govuk-body">Example request for capacity field:</p>
+<p class="govuk-body">“Select the capacity the Transferor is acting in. You’ll need to evidence of the capacity to act and check whether ID evidence will be required.”</p>
+<p class="govuk-body">The capacity field is currently optional, but it may become mandatory in the future.</p>
+<div class="govuk-inset-text">
+  Field type: This field is a type String, with a set of enumerated values.</div>
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+  <span class="govuk-details__summary-text">
+  Acceptable values
+  </span>
+  </summary>
+  <div class="govuk-details__text">
+  <p class="govuk-body">The following values are acceptable:</p>
+ {{ govukTable({
+    caption: "Transaction/document mapping",
+    captionClasses: "govuk-table__caption--m",
+    head: [{ text: "Transaction type code" }, { text: "Document type code" }, { text: "Document class code" }],
+    rows: [
+      [{ text: "ADDITIONAL_TRUSTEE" },{ text: "Trustee" },{ text: "For example, for the purposes of over-reaching" }],
+      [{ text: "DEPUTY" },{ text: "" },{ text: "Appointed under the Mental Capacity Act 2005" }],
+      [{ text: "ENTITLED_REGISTERED_PROPRIETOR" },{ text: "" },{ text: "Person entitled to be registered as proprietor" }],
+      [{ text: "GUARDIAN" },{ text: "" },{ text: "Appointed under the Guardianship (Missing Persons) Act 2017" }],
+      [{ text: "INSOLVENCY_PRACTITIONER" },{ text: "Trustee" },{ text: "In bankruptcy, liquidator, supervisor, administrator or administrative receiver appointed under the Insolvency Act 1986" }],
+      [{ text: "PERSONAL_REPRESENTATIVE" },{ text: "" },{ text: "Such as an executor, who assents or transfers the land or charge" }],
+      [{ text: "RECEIVER" },{ text: "" },{ text: "Appointed under the Law of Property Act 1925" }],
+      [{ text: "REGISTERED_PROPRIETOR" },{ text: "The proprietor is registered" },{ text: "Default for those already on the Land Register. Applies to any manually entered details" }]
+    ]})
+  }}
+  </div>
+</details>
+
+<p class="govuk-body">Example:</p>
+<p class="govuk-body">The following JSON extract begins at the transactions node for an application’s submission. It is taken from the open API specification Exhaustive Example.</p>
+<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+
+```json
+"transactions": {
+  "discharge-transaction-reference": {
+    "type": "DIS",
+    "documents": [
+      "document-reference"
+    ],
+    "party_roles": [
+      {
+        "party_reference": "private-individual-reference",
+        "role": "ATTORNEY",
+        "capacity": "REGISTERED_PROPRIETOR"
+      }
+    ],
+    "details": {
+      "type": "DISCHARGE",
+      "discharge_submission_type": "ATTACHED"
+    },
+    "fee_in_pence": 0,
+    "relates_to_new_title": false,
+    "priority": 1,
+    "title_references": [
+      "title-ref"
+    ]
+  }
+}
+```
+
+<div class="govuk-!-padding-bottom-6"></div>
 <h3 class="govuk-heading-m">List of validation rules</h3>
 <p class="govuk-body">During application submission, several validation rules will run against the data provided
   to ensure it is valid. A number of these rules run synchronously before an <code

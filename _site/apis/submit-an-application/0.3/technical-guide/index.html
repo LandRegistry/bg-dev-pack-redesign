@@ -6364,6 +6364,108 @@ data-module="govuk-service-navigation"
 
 </div>
 <div class="govuk-!-padding-bottom-6"></div>
+<h3 class="govuk-heading-s">Capacity fields</h3>
+<p class="govuk-body">The capacity field can be applied to Landlords, Tenants, Borrowers and Transferors when they are added as additional parties to transactions.</p>
+<p class="govuk-body">Example request for capacity field:</p>
+<p class="govuk-body">“Select the capacity the Transferor is acting in. You’ll need to evidence of the capacity to act and check whether ID evidence will be required.”</p>
+<p class="govuk-body">The capacity field is currently optional, but it may become mandatory in the future.</p>
+<div class="govuk-inset-text">
+  Field type: This field is a type String, with a set of enumerated values.</div>
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+  <span class="govuk-details__summary-text">
+  Acceptable values
+  </span>
+  </summary>
+  <div class="govuk-details__text">
+  <p class="govuk-body">The following values are acceptable:</p>
+ <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Transaction/document mapping</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Transaction type code</th>
+      <th scope="col" class="govuk-table__header">Document type code</th>
+      <th scope="col" class="govuk-table__header">Document class code</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">ADDITIONAL_TRUSTEE</td>
+      <td class="govuk-table__cell">Trustee</td>
+      <td class="govuk-table__cell">For example, for the purposes of over-reaching</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">DEPUTY</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">Appointed under the Mental Capacity Act 2005</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">ENTITLED_REGISTERED_PROPRIETOR</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">Person entitled to be registered as proprietor</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">GUARDIAN</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">Appointed under the Guardianship (Missing Persons) Act 2017</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">INSOLVENCY_PRACTITIONER</td>
+      <td class="govuk-table__cell">Trustee</td>
+      <td class="govuk-table__cell">In bankruptcy, liquidator, supervisor, administrator or administrative receiver appointed under the Insolvency Act 1986</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">PERSONAL_REPRESENTATIVE</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">Such as an executor, who assents or transfers the land or charge</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">RECEIVER</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">Appointed under the Law of Property Act 1925</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">REGISTERED_PROPRIETOR</td>
+      <td class="govuk-table__cell">The proprietor is registered</td>
+      <td class="govuk-table__cell">Default for those already on the Land Register. Applies to any manually entered details</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</details>
+<p class="govuk-body">Example:</p>
+<p class="govuk-body">The following JSON extract begins at the transactions node for an application’s submission. It is taken from the open API specification Exhaustive Example.</p>
+<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__attr">&quot;transactions&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;discharge-transaction-reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+    <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;DIS&quot;</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;documents&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
+      <span class="x-govuk-code__string">&quot;document-reference&quot;</span>
+    <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;party_roles&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
+      <span class="x-govuk-code__punctuation">{</span>
+        <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;private-individual-reference&quot;</span><span class="x-govuk-code__punctuation">,</span>
+        <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;ATTORNEY&quot;</span><span class="x-govuk-code__punctuation">,</span>
+        <span class="x-govuk-code__attr">&quot;capacity&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;REGISTERED_PROPRIETOR&quot;</span>
+      <span class="x-govuk-code__punctuation">}</span>
+    <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
+      <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;DISCHARGE&quot;</span><span class="x-govuk-code__punctuation">,</span>
+      <span class="x-govuk-code__attr">&quot;discharge_submission_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;ATTACHED&quot;</span>
+    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;fee_in_pence&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">0</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;relates_to_new_title&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">false</span></span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;priority&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">1</span><span class="x-govuk-code__punctuation">,</span>
+    <span class="x-govuk-code__attr">&quot;title_references&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
+      <span class="x-govuk-code__string">&quot;title-ref&quot;</span>
+    <span class="x-govuk-code__punctuation">]</span>
+  <span class="x-govuk-code__punctuation">}</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+<div class="govuk-!-padding-bottom-6"></div>
 <h3 class="govuk-heading-m">List of validation rules</h3>
 <p class="govuk-body">During application submission, several validation rules will run against the data provided
   to ensure it is valid. A number of these rules run synchronously before an <code
