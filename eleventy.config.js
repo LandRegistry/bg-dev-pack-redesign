@@ -70,6 +70,6 @@ export default function (eleventyConfig) {
         "node_modules/govuk-frontend/dist/govuk/components"
       ],
     },
-    pathPrefix: process.env.GITHUB_ACTIONS ? '/api-docs/' : '/',
+    pathPrefix: process.env.GITHUB_ACTIONS ? '/bg-dev-pack-redesign/' : '/',
   }
 };
