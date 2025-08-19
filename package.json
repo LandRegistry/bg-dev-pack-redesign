@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "eleventy --serve --watch",
     "run": "eleventy --serve",
+    "build": "eleventy",
     "build:sass": "sass --style=compressed --quiet-deps --load-path=. assets/scss/main.scss assets/css/main.css"
   },
   "sass": "assets/scss/main.scss",
