@@ -86,14 +86,25 @@ eleventyNavigation:
       <h3 class="govuk-heading-m" id="how-the-service-api-works">How the API works</h3>
       <div class="govuk-!-padding-bottom-3"></div>
       <h4 class="govuk-heading-m">Interaction</h4>
-      <div class="govuk-!-padding-bottom-3"></div>
+      <div class="govuk-!-padding-bottom-5">
       <a target="_blank" href="/assets/images/ApplicationInformation_interaction_diagram.png"><img src="/assets/images/ApplicationInformation_interaction_diagram.png"
-        alt="A diagram showing the interaction of the Application Information API."></a>
+        alt="A diagram showing the interaction of the Application Information API."></a></div>
+      <p class="govuk-body">This diagram demonstrates how the Application information API works to support users. </p>
+      <p class="govuk-body">Using their unique application ID (provided via the Submit an application API), a user can request information about a specific application. Examples of the type of information are listed in the overview section. </p>
+      <p class="govuk-body">The HMLR system will respond with the relevant information. The system may also respond by informing users that their application has been accepted onto the day list or if it has failed validation.</p>
       <h4 class="govuk-heading-m">State diagram</h4>
-      <div class="govuk-!-padding-bottom-3"></div>
+      <div class="govuk-!-margin-bottom-5">
       <a target="_blank" href="/assets/images/ApplicationInformation_State_diagram.png"><img src="/assets/images/ApplicationInformation_State_diagram.png"
-        alt="A diagram showing how the Application Information API works."></a>
+        alt="A diagram showing how the Application Information API works."></a></div>
     </div>
+    <div class="govuk-!-padding-bottom-3"></div>
+    <p class="govuk-body">The state diagram demonstrates how the validation process works once an application has been submitted.</p>
+    <p class="govuk-body">When the system starts the validation process, there are several potential outcomes which can each trigger a different response. A response may include:</p>
+    <ul class="govuk-list--bullet">
+      <li class="govuk-body">informing the user that an application has passed validation and has been added to the day list</li>
+      <li class="govuk-body">informing the user that an application has passed validation but is awaiting priority as the day list is closed. Once the day list reopens, the application will be added</li>
+      <li class="govuk-body">informing the user that an application has not passed validation. In this case, the system will indicate whether a validation or system error has occurred. The user must correct the error and resubmit the application</li>
+    </ul>
     <div class="govuk-!-padding-bottom-3"></div>
     <h4 class="govuk-heading-s">Application information API</h4>
     <ol class="govuk-list govuk-list--number">
