@@ -63,8 +63,8 @@ relatedAPIs:
 </ul>
 <p class="govuk-body">The notifications will contain the following information:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code>, <code class="x-govuk-code x-govuk-code--inline">APPLICATION_VALIDATION_FAILED</code> and <code class="x-govuk-code x-govuk-code--inline">APPLICATION_ERROR</code> will contain the updated order status only</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">APPLICATION_ACCEPTED_ON_DAY_LIST</code> will contain updated order status, the priority of the application and the HMLR reference for the accepted application</li>
+  <li><code class="x-govuk-code x-govuk-code--inline">APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code>, <code class="x-govuk-code x-govuk-code--inline">APPLICATION_VALIDATION_FAILED</code> and <code class="x-govuk-code x-govuk-code--inline">APPLICATION_ERROR</code> will contain the updated application status only</li>
+  <li><code class="x-govuk-code x-govuk-code--inline">APPLICATION_ACCEPTED_ON_DAY_LIST</code> will contain updated application status, the priority of the application and the HMLR reference for the accepted application</li>
 </ul>
 <p class="govuk-body">To get more detailed information about an application that caused the notification, use the <a class="govuk-body govuk-link" href="https://customer-documentation-business-gateway-35cf334e5a1aeb361fcf62d.git.tooling.stp.hmlr.zone/vcad/v0_3/application-information.html">Application information API</a>. For example, after receiving an <code class="x-govuk-code x-govuk-code--inline">APPLICATION_VALIDATION_FAILED</code> notification, use the Application information API to get a list of the validation errors.</p>
 <h3 class="govuk-heading-s">Schemas</h3>
@@ -820,7 +820,7 @@ relatedAPIs:
       [{ text: "LIQ_CERT_3" }, { text: "Liquidator’s certificate that appointment confirmed by a creditor’s qualifying decision procedure" }],
       [{ text: "LNDLD_CNSNT" }, { text: "Landlord’s consent" }],
       [{ text: "LONP" }, { text: "Letter or notice of postponement" }],
-      [{ text: "LR_CORRES" }, { text: "LR Correspondence" }],
+      [{ text: "LR_CORRES" }, { text: "LR Correspondence should only be used for copies of correspondence sent by HMLR" }],
       [{ text: "LTT" }, { text: "Land Transaction Tax" }],
       [{ text: "MARR_CERT" }, { text: "Marriage Certificate" }],
       [{ text: "MEMO" }, { text: "Memorandum" }],
@@ -2366,8 +2366,8 @@ relatedAPIs:
     class="x-govuk-code x-govuk-code--inline">Transaction.details</code> field). This field can be one
   of several different types:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">Transfer</code></li>
-  <li><code class="x-govuk-code x-govuk-code--inline">Charge</code></li>
+  <li><code class="x-govuk-code x-govuk-code--inline">Transfer</code> (dates must not be in the future)</li>
+  <li><code class="x-govuk-code x-govuk-code--inline">Charge</code> (dates must not be in the future)</li>
   <li><code class="x-govuk-code x-govuk-code--inline">Discharge</code></li>
   <li><code class="x-govuk-code x-govuk-code--inline">AmountDetails</code></li>
 </ul>
@@ -2481,82 +2481,41 @@ relatedAPIs:
   term) a single title with type <code class="x-govuk-code x-govuk-code--inline">TENANT_TITLE</code>
   must also be provided, which is related to the tenant on the application.</p>
 <h3 class="govuk-heading-s">Change of name / Death of a joint proprietor (DJP)</h3>
-<p class="govuk-body">HMLR will accept Transfers where the proprietor information does not match the register
-  (in the case of a change of name, or a death of a joint proprietor) without needing to specify the relevant
-  transactions, so long as the correct identity documentation has been supplied with the accompanying
-  transaction(s).</p>
-<p class="govuk-body">To trigger this functionality, the <code
-    class="x-govuk-code x-govuk-code--inline">register_action</code> field on the <code
-    class="x-govuk-code x-govuk-code--inline">party</code> object can be used. This field has two
-  options:</p>
+<p class="govuk-body">HMLR will not accept applications where the registered proprietor information does not match the register
+  (in the case of a change of name, or a death of a joint proprietor). The relevant transaction type must be applied for (ie. Change of name or DJP) with the corresponding evidence attached.</p>
+
+<div class="govuk-!-padding-bottom-6"></div>
+<h3 class="govuk-heading-s">Party roles</h3>
+<p class="govuk-body">
+Each party included in an application should be given a party role for each transaction it is used in. Parties can be given the following roles: </p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">AMEND</code> - the party information is different
-    to the currently held register information</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">REMOVE</code> - The party on the register should
-    be removed</li>
-</ul>
-<h3 class="govuk-heading-s">Amend</h3>
-<p class="govuk-body">A value of amend will trigger a change of name transaction to be created internally. The
-  party information must be the new proprietor information. Identity evidence must be provided as documents on
-  the transaction.</p>
-<p class="govuk-body">Example:</p>
-<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+<li><code class="x-govuk-code x-govuk-code--inline">ATTORNEY</code>  </li>
+<li><code class="x-govuk-code x-govuk-code--inline">TRANSFEROR</code> </li> 
+<li><code class="x-govuk-code x-govuk-code--inline">TRANSFEREE</code> </li>
+<li><code class="x-govuk-code x-govuk-code--inline">LENDER</code> </li>
+<li><code class="x-govuk-code x-govuk-code--inline">BORROWER</code> </li>
+<li><code class="x-govuk-code x-govuk-code--inline">PERSONAL_REPRESENTATIVE</code> </li> 
+<li><code class="x-govuk-code x-govuk-code--inline">ASSENTOR</code>  </li>
+<li><code class="x-govuk-code x-govuk-code--inline">LANDLORD</code>  </li>
+<li><code class="x-govuk-code x-govuk-code--inline">TENANT</code>  </li></ul>
+<p class="govuk-body">A party may be given different roles in different transactions. A party must not be used for multiple party roles within a single transaction, with the exception of the following transactions: ASTT, ASSTTP, ASTC, TOSNV, TOSNVTP, TOSTP, TOSV 
+ </p>
 
-```json
-"parties": {
-  "party1": {
-    "details": {
-      "type": "PRIVATE_INDIVIDUAL",
-      "forenames": "New",
-      "surname": "Doe"
-    },
-    "register_action": "AMEND",
-    "identity_evidence_type": "EVIDENCE",
-    "representation_type": "LODGING_CONVEYANCER",
-    "addresses": "ADDR1",
-    "address_for_service_option": "PROVIDED_ADDRESS"
-  }
-}
-``` 
-</div>
 <div class="govuk-!-padding-bottom-6"></div>
-<h3 class="govuk-heading-s">Remove</h3>
-<p class="govuk-body">A value of remove will trigger a DJP transaction to be created internally. The party
-  information must be the existing proprietor information. Identity evidence must be provided as documents on
-  the transaction.</p>
-<p class="govuk-body">Example:</p>
-<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
-
-```json
-"party1": {
-  "details": {
-    "type": "PRIVATE_INDIVIDUAL",
-    "forenames": "existing",
-    "surname": "doe"
-  },
-  "register_action": "REMOVE",
-  "identity_evidence_type": "EVIDENCE",
-  "representation_type": "LODGING_CONVEYANCER",
-  "addresses": "ADDR1",
-  "address_for_service_option": "PROVIDED_ADDRESS"
-},
-"party2": {
-  "details": {
-    "type": "PRIVATE_INDIVIDUAL",
-    "forenames": "jane",
-    "surname": "doe"
-  },
-  "identity_evidence_type": "EVIDENCE",
-  "representation_type": "LODGING_CONVEYANCER",
-  "addresses": "ADDR1",
-  "address_for_service_option": "PROVIDED_ADDRESS"
-}
-```
-</div>
-<div class="govuk-!-padding-bottom-6"></div>
-
 <h3 class="govuk-heading-s">Capacity fields</h3>
-<p class="govuk-body">The capacity field can be applied to Landlords, Tenants, Borrowers and Transferors when they are added as additional parties to transactions.</p>
+<p class="govuk-body">The capacity field is a data item within the party role object. The capacity field must be provided for Landlords, Tenants and Transferors when they are added as additional parties to transactions. It can be provided for any other party role, but this is optional.</p>
+<p class="govuk-body">The options for the capacity field are: </p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="x-govuk-code x-govuk-code--inline">REGISTERED_PROPRIETOR</code>  </li>
+<li><code class="x-govuk-code x-govuk-code--inline">ENTITLED_REGISTERED_PROPRIETOR</code>  </li>
+<li><code class="x-govuk-code x-govuk-code--inline">ADDITIONAL_TRUSTEE</code>  </li>
+<li><code class="x-govuk-code x-govuk-code--inline">INSOLVENCY_PRACTITIONER</code>  </li>
+<li><code class="x-govuk-code x-govuk-code--inline">RECEIVER</code>  </li>
+<li><code class="x-govuk-code x-govuk-code--inline">DEPUTY</code>  </li>
+<li><code class="x-govuk-code x-govuk-code--inline">GUARDIAN</code>  </li>
+<li><code class="x-govuk-code x-govuk-code--inline">PERSONAL_REPRESENTATIVE</code>  </li> 
+<li><code class="x-govuk-code x-govuk-code--inline">NOT_REQUIRED</code>  </li>
+</ul>
 <p class="govuk-body">Example request for capacity field:</p>
 <p class="govuk-body">“Select the capacity the Transferor is acting in. You’ll need to evidence of the capacity to act and check whether ID evidence will be required.”</p>
 <p class="govuk-body">The capacity field is currently optional, but it may become mandatory in the future.</p>
@@ -2619,23 +2578,34 @@ relatedAPIs:
   }
 }
 ```
-
+<h3 class="govuk-heading-s">Attorneys</h3>
+<p class="govuk-body"> 
+The attorney field is a data item within the party role object. It should be used to add a party reference for the attorney acting on behalf of that party.</p>
+<h3 class="govuk-heading-s">Representation</h3> 
+<p class="govuk-body">All parties require a representation type. The representation type cannot be <code class="x-govuk-code x-govuk-code--inline">NOT_REQUIRED</code> for Borrowers, Transferees and Transferors. The options are as follows:</p> 
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="x-govuk-code x-govuk-code--inline">LODGING_CONVEYANCER</code> - the conveyancer lodging the application </li>
+<li><code class="x-govuk-code x-govuk-code--inline">OTHER_CONVEYANCER</code> - the party is represented by another conveyancer. Details will be included with the application </li>
+<li><code class="x-govuk-code x-govuk-code--inline">NOT_REPRESENTED</code> - the party is not represented by a conveyancer and identity evidence has been provided </li>
+<li><code class="x-govuk-code x-govuk-code--inline">NOT_REQUIRED</code> - the party is not required to have a representation type. This should never be selected for Borrowers, Transferees or Transferors  </li></ul>
 <div class="govuk-!-padding-bottom-6"></div>
+
 <h3 class="govuk-heading-m">List of validation rules</h3>
 <p class="govuk-body">During application submission, several validation rules will run against the data provided
   to ensure it is valid. A number of these rules run synchronously before an <code
     class="x-govuk-code x-govuk-code--inline">application_request_id</code> is returned and they are
   documented in the schema documentation. Other rules run asynchronously, after the <code
     class="x-govuk-code x-govuk-code--inline">application_request_id</code> has been returned.</p>
+
+
 <h3 class="govuk-heading-s">Bypass validation</h3>
-<p class="govuk-body">If an application fails validation, there may be legitimate reasons why you might want
-  HMLR to ignore specific rules. In this case, we provide a <code
-    class="x-govuk-code x-govuk-code--inline">bypass_validation</code> array that can be used to ignore
-  validation rules for specific objects, as defined by the <code
-    class="x-govuk-code x-govuk-code--inline">pointer</code>.</p>
+<p class="govuk-body">If an application fails validation, users should rectify validation errors to avoid the need for bypassing, for example by adding the correct transactions (eg. DJP or Change of name for name discrepancies, and RX1 for restrictions within a transfer). 
+Incorrect use of bypass rules will delay the processing of an application and could result in requisition points. </p>
+<p class="govuk-body">For exceptions to specific rules, we provide a <code class="x-govuk-code x-govuk-code--inline">bypass_validation</code> array that applies to specific objects, as defined by the <code class="x-govuk-code x-govuk-code--inline">pointer</code>.</p>
+
 <p class="govuk-body">Usage of validation bypass will be monitored. To use the bypass functionality, the
   following information is required:</p>
-<p class="govuk-body">Value bands are only applicable to the following transaction types:</p>
+
 <ul class="govuk-list govuk-list--bullet">
   <li><code class="x-govuk-code x-govuk-code--inline">validation_type</code> - the type of validation
     rule you want to bypass. This is returned in the <code
@@ -2712,6 +2682,30 @@ relatedAPIs:
       <td class="govuk-table__cell"><code
           class="x-govuk-code x-govuk-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
     </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">required-identity-evidence-provided</code></td>
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">unique-lender</code></td>
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">no-duplicate-lender-refs-on-charge </code></td>
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">address-for-service-postcode-exists </code></td>
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
+    </tr>
   </tbody>
 </table>
 <p class="govuk-body">For an example; if after submitting an application the following error was received:</p>
@@ -2752,22 +2746,77 @@ relatedAPIs:
 </div>
 <p class="govuk-body">This would resubmit the application, but this time ignoring the validation rule for the
   specific field identified by the pointer.</p>
+
+
 <h3 class="govuk-heading-s">Additional provisions validation</h3>
-<p class="govuk-body">One of the following Additional Provision options must be selected:</p>
+<p class="govuk-body">The additional provisions code is specific to Tranfer transactions and is part of the Transfer object. For transfers, one of the following Additional Provision code options must be selected:</p>
 <ol class="govuk-list govuk-list--number">
   <li>No provisions</li>
   <li>Manual TR1 form</li>
   <li>Details entered</li>
 </ol>
+<p class="govuk-body">For option three, details must be entered in the <code class="x-govuk-code x-govuk-code--inline">additional_provisions</code> field.</p>
 <p class="govuk-body">Error types for this validator will be provided at a later date.</p>
+<h3 class="govuk-heading-s">Address for service validation</h3>
+<p class="govuk-body">Lenders and transferees must have an address for service option of “provided address”, with the exception of lenders which are only on a discharge transaction, or which appear on charge transactions with an MDRef.</p>
+<p class="govuk-body">If a party has an address for service option of “provided address”, at least one postal address must be provided. A maximum of three addresses can be provided per party. </p>
+<p class="govuk-body">The customer provided address will be validated.</p>
+
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">An address for service validation error types</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">address-for-service-postcode-exists</code></td>
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">Postcode provided does not exist in our records </code></td>
+    </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">address-for-service-option-is-valid</code></td>
+      <td class="govuk-table__cell">
+        <code class="x-govuk-code x-govuk-code--inline">Each lender party must provide an address for service option</code></br>
+        <code class="x-govuk-code x-govuk-code--inline">Each lender party must have an address for service option of PROVIDED_ADDRESS, unless an MD Ref is provided</code><br>
+        <code class="x-govuk-code x-govuk-code--inline">Each transferee party must have an address for service option of PROVIDED_ADDRESS </code> <br>
+        <code class="x-govuk-code x-govuk-code--inline">Each party must not have more than three addresses </code><br>
+        <code class="x-govuk-code x-govuk-code--inline">A party with an address for service option of PROVIDED_ADDRESS must contain at least one address of the following types: UK, OVERSEAS, PO_BOX, BFPO </code>
+        </td>
+    </tr>
+    </tbody>
+    </table>
+
 <h3 class="govuk-heading-s">Applicant validation</h3>
-<p class="govuk-body">Applicant name must be present using the English alphabet. Applicant must not have a party
-  type of <code class="x-govuk-code x-govuk-code--inline">UNKNOWN</code>.</p>
-<p class="govuk-body">Error types for this validator will be provided at a later date.</p>
+<p class="govuk-body">Applicant must not have a party type of <code class="x-govuk-code x-govuk-code--inline">UNKNOWN</code>.</p>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Applicant validation error types</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">applicant-not-unknown-type</code></td>
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">Applicant must not be of type UNKNOWN</code></td>
+    </tr>
+    </tbody>
+    </table>
+
+
 <h3 class="govuk-heading-s">Borrower name validation</h3>
-<p class="govuk-body">Customer provided names must match the names in the charge deed. If the borrower is a
-  registered proprietor, the customer provided names must match the register. If they do not then relevant
-  evidence needs to be attached.</p>
+<p class="govuk-body">For charge transactions, all registered proprietors must match to a borrower in the transaction. This does not apply when a transfer transaction is included in the application.</p>
+<p class="govuk-body">If any registered proprietors are not matched, then the appropriate transaction (ie. Change of name or DJP) must be added to the application.</p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Borrower name validation error types</caption>
   <thead class="govuk-table__head">
@@ -2783,20 +2832,23 @@ relatedAPIs:
       <td class="govuk-table__cell">Can apply to one of the following:<ul>
           <li>There must be at least as many borrowers as there are proprietors. There can be more, but no fewer
           </li>
-          <li>Where there has been a change of name and the register needs updating evidence must be provided.
+          <li>A proprietor was not matched to a borrower and the corresponding evidence was not attached. Where there has been a change of name or the death of a joint proprietor and the register needs updating, the user must add the correct transaction and provide the appropriate evidence 
           </li>
         </ul>
       </td>
     </tr>
   </tbody>
 </table>
+
 <h3 class="govuk-heading-s">Borrower representation validation</h3>
-<p class="govuk-body">Representation is always required for the borrower role type.</p>
+<p class="govuk-body">Representation type must be provided for the borrower role type. The respresentation type must not be <code class="x-govuk-code x-govuk-code--inline">NOT-REQUIRED</code>.</p>
 <p class="govuk-body">Error types for this validator will be provided at a later date.</p>
+
+
 <h3 class="govuk-heading-s">Borrower validation</h3>
-<p class="govuk-body">For a charge, borrower names must be present.</p>
+<p class="govuk-body">For a charge or sub-charge transaction, at least one borrower must be present.</p>
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--s">Borrower representation validation error types
+  <caption class="govuk-table__caption govuk-table__caption--s">Borrower validation error types
   </caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -2808,13 +2860,18 @@ relatedAPIs:
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="x-govuk-code x-govuk-code--inline">transaction-has-valid-borrower</code></td>
-      <td class="govuk-table__cell">Subcharge transactions or charge transactions
+      <td class="govuk-table__cell">Sub-charge transactions or charge transactions
         unaccompanied by a transfer transaction must have a borrower</td>
     </tr>
   </tbody>
 </table>
+<h3 class="govuk-heading-s">Capacity validation</h3>
+<p class="govuk-body">The capacity field must be provided for Landlords, Tenants and Transferors when they are added as additional parties to transactions.</p>
+<p class="govuk-body">Error types for this validator will be provided at a later date.  </p>
+
 <h3 class="govuk-heading-s">Charge amount validation</h3>
-<p class="govuk-body">Must be a positive number.</p>
+<p class="govuk-body">All charge transactions must have a charge value of 0 or greater.</p>
+
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Charge amount validation error types</caption>
   <thead class="govuk-table__head">
@@ -2827,22 +2884,96 @@ relatedAPIs:
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="x-govuk-code x-govuk-code--inline">charge-must-have-non-negative-value</code></td>
-      <td class="govuk-table__cell">Charge value must be non-negative</td>
+      <td class="govuk-table__cell">Charge value must be 0 or greater</td>
     </tr>
   </tbody>
 </table>
+
+
 <h3 class="govuk-heading-s">Charge date validation</h3>
 <p class="govuk-body">Charge date must be present and not a date in the future. Customer provided date must
   match the date in the charge deed.</p>
-<p class="govuk-body">Error types for this validator will be provided at a later date.</p>
+
+
+<h3 class="govuk-heading-s">Charge fee validation</h3>
+<p class="govuk-body">The fee for charge transactions must be more than or equal to 2,000 pence, unless it is accompanied by a Scale Fee Transaction. If a charge is accompanied by a Scale Fee transaction then the charge fee must be 0. </p>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Charge fee validation error types</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">CHARGE-FEE</code></td>
+      <td class="govuk-table__cell">Fee for a charge transaction must be at least 2,000 pence <br>
+Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transaction </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="govuk-heading-s">Company number validation</h3>
+<p class="govuk-body">For any party of type UKCompany, the data item <code class="x-govuk-code x-govuk-code--inline">company_number</code> is required, except when any of the following are true: </p>
+<ul class="govuk-list govuk-list--bullet">
+<li>The party is being used as a lender, where a valid MDRef has been provided for the transaction in which it is being used as a lender</li>
+<li>The party is being used as a borrower </li>
+</ul>
+<p class="govuk-body">In these cases the <code class="x-govuk-code x-govuk-code--inline">company_number</code> is optional.</p>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Company number validation error types</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">uk-company-has-company-number</code></td>
+      <td class="govuk-table__cell">A party with type UKCompany didn’t include a company number and it wasn’t a borrower or a lender with a valid MDRef for the transaction on which it is being used as a lender </td>
+    </tr>
+  </tbody>
+</table>
+
+
 <h3 class="govuk-heading-s">Consideration type validation</h3>
-<p class="govuk-body">The request must contain the appropriate statement - Monetary Value, No Monetary Value, or
-  Other. Monetary Value requires a value to be present.</p>
-<p class="govuk-body">Error types for this validator will be provided at a later date.</p>
+<p class="govuk-body">For Transfer transactions, a consideration type of either Monetary Value, No Monetary Value, or
+  Other must be present.</p>
+<p class="govuk-body">When consideration type is <code class="x-govuk-code x-govuk-code--inline">MONETARY_VALUE</code>, a transfer value must be present. When consideration type is <code class="x-govuk-code x-govuk-code--inline">OTHER</code>, a consideration description must be provided. </p>
+<p class="govuk-body">The consideration type must be <code class="x-govuk-code x-govuk-code--inline">MONETARY_VALUE</code> for the following transactions: T, TOSV, TSCV. </p>
+<p class="govuk-body">The consideration type must be either <code class="x-govuk-code x-govuk-code--inline">NO_MONETARY_VALUE</code> or <code class="x-govuk-code x-govuk-code--inline">OTHER</code> for the following transactions: TNV, TOSNV, TSCNV </p>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Consideration type validation error types
+  </caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">consideration-type-is-valid </code></td>
+      <td class="govuk-table__cell">Transactions type was paired with an invalid consideration type  <br>
+ 
+A transfer value must be provided when consideration type is <code class="x-govuk-code x-govuk-code--inline">MONETARY_VALUE</code> </td>
+    </tr>
+  </tbody>
+</table>
+
+
 <h3 class="govuk-heading-s">Conveyancers certificate validation</h3>
-<p class="govuk-body">Checks the <code
-    class="x-govuk-code x-govuk-code--inline">conveyancers_certificate</code> field is set for any
+<p class="govuk-body">Checks the <code class="x-govuk-code x-govuk-code--inline">conveyancers_certificate</code> field is set for any
   document of type <code class="x-govuk-code x-govuk-code--inline">CERT_REG_CH</code>.</p>
+
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Conveyancer certificate validation error types
   </caption>
@@ -2861,12 +2992,38 @@ relatedAPIs:
     </tr>
   </tbody>
 </table>
+
+<h3 class="govuk-heading-s">Customer ID validation</h3>
+<p class="govuk-body">The provided customer ID must exist in the HMLR system.</p>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Customer ID validation error types
+  </caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">customer-id-exists </code></td>
+      <td class="govuk-table__cell">The provided customer ID was not found in HMLR internal systems </td>
+    </tr>
+  </tbody>
+</table>
+
+
 <h3 class="govuk-heading-s">Customer type validation</h3>
 <p class="govuk-body">Customer type of conveyancer or non-conveyancer must be present.</p>
 <p class="govuk-body">Error types for this validator will be provided at a later date.</p>
+
+
+
 <h3 class="govuk-heading-s">Declaration of trust validation</h3>
-<p class="govuk-body">A declaration of trust must be provided for transfers with more than one transferee.</p>
-<p class="govuk-body">The declaration of trust field must include one of the following options:</p>
+<p class="govuk-body">A declaration of trust must be provided for transfers with two or more transferees.</p>
+<p class="govuk-body">The "trust declaration type" field must include one of the following options:</p>
 <ol class="govuk-list govuk-list--number">
   <li>Joint Tenants</li>
   <li>Tenants in Common</li>
@@ -2885,26 +3042,56 @@ relatedAPIs:
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">declaration-of-trust</code></td>
-      <td class="govuk-table__cell">The declaration of trust option must be provided for the application</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">TRUST_DECLARATION_TYPE_MISSING</code></td>
-      <td class="govuk-table__cell">The trust declaration type must be provided</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">TRUST_DETAILS_MISSING</code></td>
-      <td class="govuk-table__cell">The details of trust must be provided</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">FORM_JO_MISSING</code></td>
-      <td class="govuk-table__cell">The JO form must be provided</td>
+      <td class="govuk-table__cell">The trust declaration type must be provided<br><br>The details of trust must be provided where the “trust details” option was selected<br><br>The JO form must be provided where “Form JO was provided” </td>
     </tr>
   </tbody>
 </table>
+
+<h3 class="govuk-heading-s">DFL5 validation</h3>
+<p class="govuk-body">For DFL5 applications (Dispositionary first lease extension of a term) there must be at least one title with type <code class="x-govuk-code x-govuk-code--inline">LANDLORD_TITLE</code> and a single title with type <code class="x-govuk-code x-govuk-code--inline">TENANT_TITLE</code>, which is related to the tenant on the application. </p>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">DFL5 validation error types </caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+  </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">lease-extension-is-valid</code></td>
+      <td class="govuk-table__cell">DFL5 transactions must contain exactly one tenant title <br><br>DFL5 transactions must contain at least one landlord titled</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3 class="govuk-heading-s">Discharge fee validation</h3>
+<p class="govuk-body">The fee provided for discharge transactions must be 0. </p>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Discharge fee validator error types  </caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+  </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">discharge-fee-zero</code></td>
+      <td class="govuk-table__cell">Discharge transaction must have a fee of 0 </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
 <h3 class="govuk-heading-s">Disclosable overriding interests validation</h3>
 <p class="govuk-body">When <code
     class="x-govuk-code x-govuk-code--inline">disclosable_overriding_interests</code> is set to <code
-    class="x-govuk-code x-govuk-code--inline">true</code> on any transaction, a <code
+    class="x-govuk-code x-govuk-code--inline">true</code> on any title, a <code
     class="x-govuk-code x-govuk-code--inline">FORM_DI</code> document must be provided with the
   application.</p>
 <table class="govuk-table">
@@ -2925,19 +3112,70 @@ relatedAPIs:
     </tr>
   </tbody>
 </table>
-<h3 class="govuk-heading-s">Evidence of consent to restriction validation</h3>
-<p class="govuk-body">Evidence of consent to a restriction should be provided where required. If it is not
-  provided, a requisition will be sent.</p>
-<p class="govuk-body">Error types for this validator will be provided at a later date.</p>
-<h3 class="govuk-heading-s">Evidence of discharge validation</h3>
-<p class="govuk-body">If evidence of discharge is not provided and early completion cannot be applied, a
-  requisition will be sent.</p>
-<p class="govuk-body">Error types for this validator will be provided at a later date.</p>
+
+<h3 class="govuk-heading-s">Document type validation</h3>
+<p class="govuk-body">The documents mentioned in the order/submission request must have the same <code
+          class="x-govuk-code x-govuk-code--inline">DocumentType</code> as those uploaded.</p>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Document type validation
+    error types</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">document-type-valid </code></td>
+      <td class="govuk-table__cell">The document type submitted was not the same as the document type uploaded  </td>
+    </tr>
+  </tbody>
+</table>
+
+h3 class="govuk-heading-s">Document validation</h3>
+<p class="govuk-body">The file size of documents must be below 40mb (but must not have a zero size). Files must be either PDF, GIF, TIFF or JPG format. The file must not be encrypted or password protected. If a TIFF file, it must be a valid TIFF file. </p>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Document validation
+    error types</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">document-valid</code></td>
+      <td class="govuk-table__cell">This could be because the document is too large, of zero size, the wrong format, an invalid TIFF file, encrypted or password protected  </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h3 class="govuk-heading-s">Evidence of consent to restriction warning</h3>
+<p class="govuk-body">This warning is displayed when there is a restriction on a title and evidence of consent to that restriction has not been provided. If it is not provided but it is required, there will be delays to the application. </p>
+
+
+
+<h3 class="govuk-heading-s">Evidence of discharge warning</h3>
+<p class="govuk-body">This warning is displayed when evidence of discharge may be required, for example when the application is a transfer and a charge exists on the register, or if certain entries are present on the register. If evidence of discharge is not provided and early completion cannot be applied, there will be delays to the application.  </p>
+
+
+
+
 <h3 class="govuk-heading-s">Identity evidence validation</h3>
-<p class="govuk-body">An HMLR identity form must be provided for each unrepresented party when required - view
+<p class="govuk-body">Identity evidence type must be provided for each party with a representation type of <code
+          class="x-govuk-code x-govuk-code--inline">NOT_REPRESENTED</code> - view
   <a class="govuk-body govuk-link"
     href="https://www.gov.uk/government/publications/evidence-of-identity-conveyancers/practice-guide-67-evidence-of-identity-conveyancers"
     rel="noreferrer noopener" target="_blank">Practice Guide 67 (opens in new tab)</a>.</p>
+    <p class="govuk-body">There must be at least as many evidence documents as the number of parties that have indicated they are providing evidence. </p>
+
+
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Identity evidence validation error types
   </caption>
@@ -2951,7 +3189,7 @@ relatedAPIs:
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="x-govuk-code x-govuk-code--inline">identity-evidence-has-type</code></td>
-      <td class="govuk-table__cell">One of the following options must be provided:
+      <td class="govuk-table__cell">One of the following options must be provided for unrepresented parties:
         <ol class="govuk-list govuk-list--number">
           <li>Evidence</li>
           <li>Verified</li>
@@ -2962,24 +3200,34 @@ relatedAPIs:
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="x-govuk-code x-govuk-code--inline">required-identity-evidence-provided</code></td>
-      <td class="govuk-table__cell">An HMLR identity form must be provided for each
+      <td class="govuk-table__cell">At least one HMLR identity form must be provided for each
         unrepresented party</td>
     </tr>
   </tbody>
 </table>
-<h3 class="govuk-heading-s">Identity type validation</h3>
-<p class="govuk-body">One of the following options must be selected:</p>
-<ol class="govuk-list govuk-list--number">
-  <li>Lodging conveyancer</li>
-  <li>Other conveyancer</li>
-  <li>Not represented</li>
-</ol>
-<p class="govuk-body">Error types for this validator will be provided at a later date.</p>
-<h3 class="govuk-heading-s">Lender address validation</h3>
-<p class="govuk-body">The lender address is not required if a valid MD reference is provided. If the charge does
-  not have an MD reference, a full postal address for the lender is required.</p>
+
+
+<h3 class="govuk-heading-s">JP1 validation</h3>
+<p class="govuk-body">If the application type is “Remove JP1” then there must be exactly one transaction within that application. This must be a JP1 transaction. There must be exactly one title number in this application. A JP1 reference must be provided and this must match a JP1 reference within our records that is attached to the title in the application. </p>
+  <p class="govuk-body">If the application type is not “Remove JP1”, there must not be a JP1 transaction present. A JP1 reference must not be provided.  </p>
+   <p class="govuk-body">Error type for this validator will be provided at a later date. </p>
+
+
+<h3 class="govuk-heading-s">Lease transactions party role validation</h3>
+<p class="govuk-body"> 
+For the following lease transactions, there must be at least one tenant and one landlord party: 
+</p>
+  <ul class="govuk-list govuk-list--bullet">
+<li>DFL1 </li>
+<li>DFL3  </li>
+<li>DFL4  </li>
+<li>DFL5  </li>
+<li>DL  </li>
+<li>DTL  </li>
+  </ul>
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--s">Lender address validation error types</caption>
+  <caption class="govuk-table__caption govuk-table__caption--s">Lease transactions party role validation error types 
+</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Error type</th>
@@ -2989,15 +3237,19 @@ relatedAPIs:
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">charge-has-valid-lender</code></td>
-      <td class="govuk-table__cell">The lender has an invalid address for service when an MD
-        reference was not provided</td>
+          class="x-govuk-code x-govuk-code--inline">lease-extension-has-landlord-and-tenant </code></td>
+      <td class="govuk-table__cell">The lease transaction is missing a landlord and/or tenant party </td>
     </tr>
-  </tbody>
-</table>
+    </tbody>
+    </table>
+
+
+
+
 <h3 class="govuk-heading-s">Lender name validation</h3>
-<p class="govuk-body">The pre-approved MD reference included in the charge should be included in the
-  application.</p>
+<p class="govuk-body">When an MD reference is provided, a charge can only have one lender party. A charge without an MD reference may have more than one lender party. These lenders must be unique parties.  </p>
+
+<p class="govuk-body">Warning: When an MD reference is provided, the lender name associated with the charge must match the lender name associated with the MD reference in HMLR systems.</p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Lender name validation error types</caption>
   <thead class="govuk-table__head">
@@ -3015,7 +3267,7 @@ relatedAPIs:
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="x-govuk-code x-govuk-code--inline">lender-name-matches-records</code></td>
-      <td class="govuk-table__cell">The lender name provided in the application data must
+      <td class="govuk-table__cell">Warning: The lender name provided in the application data must
         match that recorded for the lender in our MD reference database</td>
     </tr>
     <tr class="govuk-table__row">
@@ -3025,9 +3277,12 @@ relatedAPIs:
     </tr>
   </tbody>
 </table>
+
+
+
 <h3 class="govuk-heading-s">Lender validation</h3>
-<p class="govuk-body">All charges require at least one party with the role type of lender. If there is no MD
-  reference on the transaction, all lenders must have at least one address.</p>
+<p class="govuk-body">All charges require at least one party with the role type of lender. The lender address is not required if a valid MD reference is provided. If the charge does not have an MD reference, a full postal address for the lender is required. </p>
+
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Lender validation error types</caption>
   <thead class="govuk-table__head">
@@ -3040,10 +3295,13 @@ relatedAPIs:
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="x-govuk-code x-govuk-code--inline">charge-has-valid-lender</code></td>
-      <td class="govuk-table__cell">There are no lenders on the charge application</td>
+      <td class="govuk-table__cell">This could be due to:
+      <ul class="govuk-list govuk-list--bullet"><li>no lenders on the charge application</li><li>the lender having an invalid address for service when an MD reference was not provided. At least one valid full postal address must be provided</li></ul></td>
     </tr>
   </tbody>
 </table>
+
+
 <h3 class="govuk-heading-s">Mandatory documents validation</h3>
 <p class="govuk-body">Validation will be applied for each transaction to ensure the rules regarding the
   Compulsory and Either document types have been satisfied correctly.</p>
@@ -3060,7 +3318,7 @@ relatedAPIs:
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="x-govuk-code x-govuk-code--inline">all-mandatory-documents-provided</code></td>
-      <td class="govuk-table__cell">Each transaction must have the mandatory deed or document
+      <td class="govuk-table__cell">Each transaction must have the mandatory deed(s) or document(s)
         provided</td>
     </tr>
   </tbody>
@@ -3089,6 +3347,8 @@ relatedAPIs:
 <p class="govuk-body">The HMLR property description associated with customer supplied title number will be
   compared against the property description contained in the charge and/or transfer deeds.</p>
 <p class="govuk-body">Error types for this validator will be provided at a later date.</p>
+
+
 <h3 class="govuk-heading-s">Proprietor address for service validation</h3>
 <p class="govuk-body">Proprietor address for service must be a valid postal address. The customer provided
   address will be validated.</p>
@@ -3110,6 +3370,37 @@ relatedAPIs:
     </tr>
   </tbody>
 </table>
+
+
+<h3 class="govuk-heading-s">Representation type validation</h3>
+<p class="govuk-body">One of the following options must be selected: </p>
+<ul class="govuk-list govuk-list--bullet"><li>Lodging conveyancer </li>
+<li>Other conveyancer </ul>
+<p class="govuk-body">The party roles of borrower, transferor and transferee cannot have the representation type of <code
+          class="x-govuk-code x-govuk-code--inline">NOT_REQUIRED</code>.</p>  
+ 
+<p class="govuk-body">If the application lodger is not a conveyancer, then no parties can use the <code
+          class="x-govuk-code x-govuk-code--inline">LODGING_CONVEYANCER</code> representation type. </p>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Representation validation error
+    types</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">party-representation-type-is-valid</code></td>
+      <td class="govuk-table__cell">For an application lodged by a non-conveyancer, no representation type may be <code
+          class="x-govuk-code x-govuk-code--inline">LODGING_CONVEYANCER</code> </td>
+    </tr>
+  </tbody>
+</table>
+
+
 <h3 class="govuk-heading-s">Submission warning validation</h3>
 <p class="govuk-body">A legal declaration is made when submitting an application with regards dishonesty etc.
   The conveyancer must agree to comply with the warning.</p>
@@ -3131,9 +3422,10 @@ relatedAPIs:
     </tr>
   </tbody>
 </table>
+
+
 <h3 class="govuk-heading-s">Title number validation</h3>
-<p class="govuk-body">The title number in the application must be valid. The title number provided must also
-  match with one of the attached deeds. For multi-title applications please provide each title once.</p>
+<p class="govuk-body">The title number in the application must match a title number in the land register. The title number must be valid - view the <code class="x-govuk-code x-govuk-code--inline">TITLE_NOT_VALID</code> error type below for information on valid titles. For multi-title applications please provide each title once. </p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Title number validation error types</caption>
   <thead class="govuk-table__head">
@@ -3145,14 +3437,7 @@ relatedAPIs:
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">request-has-title-number</code></td>
-      <td class="govuk-table__cell">At least one title number must be provided (including
-        applications for New Lease, Lease Extension or Transfer of Part). In these circumstances, at least a
-        lessor’s or vendor’s title will be required</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">request-has-title-number</code></td>
+          class="x-govuk-code x-govuk-code--inline">unknown-title-number</code></td>
       <td class="govuk-table__cell">Title number not matched to HMLR systems</td>
     </tr>
     <tr class="govuk-table__row">
@@ -3173,8 +3458,11 @@ relatedAPIs:
     </tr>
   </tbody>
 </table>
+
+
+
 <h3 class="govuk-heading-s">Title scope validation</h3>
-<p class="govuk-body">Application of whole or part must be provided for each title number within a transaction.
+<p class="govuk-body">Title scopes of “whole” must not have a part description. Title scopes of “part” must have a part description. 
 </p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Title scope validation error types</caption>
@@ -3188,7 +3476,7 @@ relatedAPIs:
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="x-govuk-code x-govuk-code--inline">title-scope-is-valid</code></td>
-      <td class="govuk-table__cell">Can apply to one of the following:
+      <td class="govuk-table__cell">
         <ul class="govuk-list govuk-list--bullet">
           <li>Title scopes of ‘part’ must have a part description</li>
           <li>Title scopes of ‘whole’ must not have a part description</li>
@@ -3197,17 +3485,16 @@ relatedAPIs:
     </tr>
   </tbody>
 </table>
-<h3 class="govuk-heading-s">Transaction priority validation</h3>
-<p class="govuk-body">Transactions are applied for in priority order, for example:</p>
-<ol class="govuk-list govuk-list--number">
-  <li>Discharge</li>
-  <li>Transfer</li>
-  <li>Charge</li>
-</ol>
-<p class="govuk-body">Each must have a unique, consecutive number.</p>
+
+
+<h3 class="govuk-heading-s">Title type validation</h3>
+<p class="govuk-body">If the title type provided for a title number is <code class="x-govuk-code x-govuk-code--inline">LANDLORD_TITLE</code>, the title tenure on our records for title number must be “freehold”. </p>
+ 
+<p class="govuk-body">If the title type provided for a title number is <code class="x-govuk-code x-govuk-code--inline">TENANT_TITLE</code>, the title tenure on our records for the title number must be “leasehold”. </p>
+ 
+<p class="govuk-body">If the title type provided for a title number is <code class="x-govuk-code x-govuk-code--inline">REGISTER_TITLE</code>, <code class="x-govuk-code x-govuk-code--inline">TRANSFEROR_TITLE</code>, or <code class="x-govuk-code x-govuk-code--inline">ADDITIONAL_TITLE</code>, the title tenure on our records for the title number can be either “freehold” or “leasehold”. </p>
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--s">Transaction priority validation error types
-  </caption>
+  <caption class="govuk-table__caption govuk-table__caption--s">Title type validation error types</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Error type</th>
@@ -3217,19 +3504,29 @@ relatedAPIs:
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">OCV_L1A_005</code></td>
-      <td class="govuk-table__cell">Non unique transaction priorities were found</td>
+          class="x-govuk-code x-govuk-code--inline">title-type-matches-tenure
+	</code></td>
+      <td class="govuk-table__cell">The title type provided does not have the appropriate tenure in our records
+      </td>
     </tr>
   </tbody>
 </table>
+
+
 <h3 class="govuk-heading-s">Transfer amount validation</h3>
 <p class="govuk-body">Value must be provided, either as an exact value or a value band (where transfer is not
   for monetary value).</p>
 <p class="govuk-body">Error types for this validator will be provided at a later date.</p>
+
+
+
 <h3 class="govuk-heading-s">Transfer date validation</h3>
-<p class="govuk-body">The transfer date must match what is on the transfer deed to be correct.</p>
+<p class="govuk-body">The transfer date must match what is on the transfer deed to be correct. It must not be in the future.</p>
+
+<h3 class="govuk-heading-s">Transfer number validation</h3>
+<p class="govuk-body">An application must have a maximum of one transfer transaction. </p>
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--s">Transfer date validation error types</caption>
+  <caption class="govuk-table__caption govuk-table__caption--s">Transfer number validation error types</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Error type</th>
@@ -3239,15 +3536,21 @@ relatedAPIs:
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">transfer-date-not-in-future</code></td>
-      <td class="govuk-table__cell">The date of the transfer must not be in the future</td>
+          class="x-govuk-code x-govuk-code--inline">order-contains-one-transfer
+	</code></td>
+      <td class="govuk-table__cell">Order must contain at most one transfer transaction</td>
     </tr>
+    
   </tbody>
 </table>
+
+
+
 <h3 class="govuk-heading-s">Transferee validation</h3>
-<p class="govuk-body">The transferee name provided in the application must match the transferee name in the
-  transfer deed. The proprietor address for service must be a valid postal address. The customer provided
-  address will be validated. If overseas, the address must have a country.</p>
+<p class="govuk-body">All Transfer transactions must have at least one transferee present. Each transferee must have a representation type that is not <code
+          class="x-govuk-code x-govuk-code--inline">NOT_REQUIRED</code>.  </p>
+ 
+<p class="govuk-body">At least one valid postal address must be provided as the address for service. If overseas, the address must have a country. </p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Transferee validation error types</caption>
   <thead class="govuk-table__head">
@@ -3271,9 +3574,35 @@ relatedAPIs:
     </tr>
   </tbody>
 </table>
+
+
+
+<h3 class="govuk-heading-s">Transferor name validation</h3>
+<p class="govuk-body">For transfer transactions, all registered proprietors must match to a transferor in the transaction. If a registered proprietor does not match a transferor then the appropriate transaction (i./e Change of Name or Death of Joint Proprietor) must be added to the application.</p>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Transferor name error types</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">all-proprietors-matched-to-transferors </code></td>
+      <td class="govuk-table__cell">There must be at least as many transferors as there are proprietors. There can be more, but no fewer <br><br> A proprietor was not matched to a transferor and the corresponding evidence was not attached. Where there has been a change of name or the death of a joint proprietor and the register needs updating evidence must be provided </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
 <h3 class="govuk-heading-s">Transferor validation</h3>
-<p class="govuk-body">For a transfer, there must be at least one transferor name without the register action of
-  <code class="x-govuk-code x-govuk-code--inline">REMOVE</code>.</p>
+<p class="govuk-body">There must be at least one transferor name on each transfer transaction, with the exception of TRM transactions.</p>
+<p class="govuk-body">Each transferor must have a representation type that is not
+  <code class="x-govuk-code x-govuk-code--inline">NOT_REQUIRED</code>.
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Transferor validation error types</caption>
   <thead class="govuk-table__head">
@@ -3291,9 +3620,12 @@ relatedAPIs:
     </tr>
   </tbody>
 </table>
+
+
+
 <h3 class="govuk-heading-s">Value bands</h3>
 <p class="govuk-body">Value bands specify the approximate value of a property, or the equity being transferred,
-  where the full value is not known. The value band fields can be found on the <code
+  where the exact value is not known. The value band fields can be found on the <code
     class="x-govuk-code x-govuk-code--inline">Transfer</code> and <code
     class="x-govuk-code x-govuk-code--inline">AmountDetails</code> objects in the API specification.</p>
 <p class="govuk-body">The valid value bands are as follows (in pounds):</p>
@@ -3321,7 +3653,7 @@ relatedAPIs:
     premium) (Transfer of part)</li>
   <li><code class="x-govuk-code x-govuk-code--inline">TOSNV</code> - Transfer of share (not for value or
     reverse premium)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TSCNVTP</code> - Transfer of share (not for value
+  <li><code class="x-govuk-code x-govuk-code--inline">TOSNVTP</code> - Transfer of share (not for value
     or reverse premium) (Transfer of part)</li>
   <li><code class="x-govuk-code x-govuk-code--inline">TRM</code> - Transfer by operation of law on death
   </li>
@@ -3340,6 +3672,25 @@ relatedAPIs:
     greater than or equal to the <code class="x-govuk-code x-govuk-code--inline">value_band</code> (i.e.
     the value of equity being transferred)</li>
 </ul>
+<div class="govuk-!-padding-bottom-6"></div>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Value band error types</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code
+          class="x-govuk-code x-govuk-code--inline">full-value-of-property-or-band-is-valid 
+	</code></td>
+      <td class="govuk-table__cell">	
+Full value of property must be greater than or equal to property value<br><br>Full value of property band must be greater than or equal to property value band<br><br>Value bands were used for a transaction type that does not allow value band usage </td>
+    </tr>
+  </tbody>
+</table>
 <div class="govuk-!-padding-bottom-6"></div>
 <div>
   <p class="govuk-body">Example:</p>
