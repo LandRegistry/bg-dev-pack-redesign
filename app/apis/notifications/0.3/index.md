@@ -83,11 +83,11 @@ eleventyNavigation:
       <div class="govuk-!-padding-bottom-3"></div>
       <a target="_blank" href="/assets/images/NotificationInteraction.png"><img src="/assets/images/NotificationInteraction.png"
         alt="A diagram showing the interaction of the Notification API."></a>
-      <h3 class="govuk-heading-s">Notifications API</h3>
-      <ol class="govuk-list govuk-list--number">
-        <li>Use the Notifications API to receive notifications about the submitted application</li>
-        <li>Acknowledge receipt of notifications using the same Notifications API</li>
-      </ol>
+      <p class="govuk-body">This diagram demonstrates how the Notifications API works to support users.</p>
+
+<p class="govuk-body">A user may send requests to receive notifications about multiple applications at the same time using the Get notifications API. The HMLR system will respond by providing information relevant to the request.</p>
+
+<p class="govuk-body">A user can also notify HMLR that it has received notifications using the Acknowledge notifications API. The system will acknolwedge this notification.</p>
     </div>
     <div>
       <h2 class="govuk-heading-m" id="view-the-technical-guide">View the Technical guide</h2>

@@ -14,9 +14,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.1",
+    "@11ty/eleventy": "^3.1.2",
+    "@govuk-prototype-kit/step-by-step": "^2.2.3",
     "@hmlr/frontend": "^2.1.0-rc.2",
-    "@x-govuk/govuk-eleventy-plugin": "^7.0.1",
-    "@govuk-prototype-kit/step-by-step": "^2.2.3"
+    "@x-govuk/govuk-eleventy-plugin": "^7.0.1"
   }
 }
