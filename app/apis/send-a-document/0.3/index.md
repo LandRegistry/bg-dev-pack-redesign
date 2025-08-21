@@ -78,17 +78,6 @@ eleventyNavigation:
       will be removed.</p>
   </div>
   <div>
-    <h3 class="govuk-heading-m" id="how-the-service-api-works">How the API works</h3>
-    <div class="govuk-!-padding-bottom-3"></div>
-    <a target="_blank" href="/assets/images/SendADocumentSequence.png"><img src="/assets/images/SendADocumentSequence.png" alt="A diagram showing how the Send a Document API works."></a>
-    <h3 class="govuk-heading-s">Send a document API</h3>
-    <ol class="govuk-list govuk-list--number">
-      <li>Using the Send a document API, create an upload URL. This will generate a URL to allow the document to
-        upload.</li>
-      <li>Upload the document using the generated URL</li>
-    </ol>
-  </div>
-  <div>
     <h2 class="govuk-heading-m" id="view-the-technical-guide">View the Technical guide</h2>
     <ul class="govuk-list">
       <li>
@@ -106,6 +95,15 @@ eleventyNavigation:
       </li>
     </ul>
   </div>
+  <div>
+    <h3 class="govuk-heading-m" id="how-the-service-api-works">How the API works</h3>
+    <div class="govuk-!-padding-bottom-3"></div>
+    <a target="_blank" href="/assets/images/SendADocumentSequence.png"><img src="/assets/images/SendADocumentSequence.png" alt="A diagram showing how the Send a Document API works."></a>
+    <h3 class="govuk-heading-s">Send a document API</h3>
+    <p class="govuk-body">This diagram demonstrates how the Send a document API works to support users.</p>
+    <p class="govuk-body">When the user sends the request to generate an upload URL, the HMLR system will respond with a URL that can be used to upload the document to. </p>
+    <p class="govuk-body">Users can then use this URL to upload the document to the system. </p>
+  </div>
   <br>
   <div>
     <h3 class="govuk-heading-m" id="how-to-test-this-service-api">How to test this API</h3>
@@ -118,6 +116,7 @@ eleventyNavigation:
             document test stubs</a>.</p>
       </li>
     </ul>
+    <div class="govuk-inset-text">Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed.</div>
     <p class="govuk-body">For general testing guidance, visit our <a class="govuk-body govuk-link"
         href="/a-guide-to-testing">guide to testing</a>.</p>
   </div>
