@@ -134,6 +134,25 @@ data-module="govuk-service-navigation"
         page.</p>
     </div>
     <div>
+      <h2 class="govuk-heading-m" id="view-the-technical-guide">View the Technical guide</h2>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-body govuk-link" href="./technical-guide">Technical guide</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="govuk-heading-m" id="view-the-api-specification">View the API specification</h2>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-body govuk-link"
+            href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Application-information-API"
+            rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
+        </li>
+      </ul>
+    </div>
+    <br>
+    <div>
       <h3 class="govuk-heading-m" id="how-the-service-api-works">How the API works</h3>
       <div class="govuk-!-padding-bottom-3"></div>
       <h4 class="govuk-heading-m">Interaction</h4>
@@ -157,41 +176,16 @@ data-module="govuk-service-navigation"
       <li class="govuk-body">informing the user that an application has not passed validation. In this case, the system will indicate whether a validation or system error has occurred. The user must correct the error and resubmit the application</li>
     </ul>
     <div class="govuk-!-padding-bottom-3"></div>
-    <h4 class="govuk-heading-s">Application information API</h4>
-    <ol class="govuk-list govuk-list--number">
-      <li>Using the Application information API, proceed to application information where application details are
-        reviewed or processed OR return to receive notifications if not ready to proceed</li>
-    </ol>
-    <div>
-      <h2 class="govuk-heading-m" id="view-the-technical-guide">View the Technical guide</h2>
-      <ul class="govuk-list">
-        <li>
-          <a class="govuk-body govuk-link" href="./technical-guide">Technical guide</a>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <h2 class="govuk-heading-m" id="view-the-api-specification">View the API specification</h2>
-      <ul class="govuk-list">
-        <li>
-          <a class="govuk-body govuk-link"
-            href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Application-information-API"
-            rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
-        </li>
-      </ul>
-    </div>
-    <br>
     <div>
       <h3 class="govuk-heading-m" id="how-to-test-this-service-api">How to test this API</h3>
-      <p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business
-        Gateway APIs. Instead, we’ve provided example code to demonstrate what you should expect to see when developing
-        your own services.</p>
+      <p class="govuk-body">HMLR has created a test environment for the Application information API. We’ve also provided example code to demonstrate what you should expect when developing your own services.</p>
       <ul class="govuk-list">
         <li>
           <p class="govuk-body"><a class="govuk-body govuk-link" href="./test-stubs">View
               Application information test stubs</a>.</p>
         </li>
       </ul>
+      <div class="govuk-inset-text">Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed.</div>
       <p class="govuk-body">For general testing guidance, visit our <a class="govuk-body govuk-link"
           href="/a-guide-to-testing">guide to testing</a>.</p>
     </div>
