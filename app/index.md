@@ -54,7 +54,6 @@ noback: true
       <p class="govuk-body govuk-!-margin-left-3">Tell us how we can improve Business Gateway and <a
           href="https://www.gov.uk/guidance/join-the-business-gateway-community">join our community</a>.</p>
       <p class="govuk-body govuk-!-margin-left-3">This developer pack is maintained by HMLR. If you’ve got a question, idea or suggestion, you can <a href="./contact-us">contact us</a> or fill in our <a href="https://forms.office.com/e/UjzW2nG3z3">feedback form</a>.</p>
-    
       <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">We sometimes use technical terms to describe the work we do at HMLR. For a list of commonly used terms and their definitions, visit <a class="govuk-link" href="./glossary">our glossary</a>.</p>
     </div>
   </div>
