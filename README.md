@@ -1,6 +1,10 @@
 # Eleventy Dev Pack
 
-# Setup Dev
+# Automatic Dev Setup
+
+This project will be automatically setup by running the `./go.sh` script.
+
+# Manual Dev Setup
 
 This project was built using node 22. You can install this using nvm.
 
