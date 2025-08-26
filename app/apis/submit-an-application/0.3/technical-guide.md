@@ -2517,7 +2517,7 @@ Each party included in an application should be given a party role for each tran
 <li><code class="x-govuk-code x-govuk-code--inline">NOT_REQUIRED</code>  </li>
 </ul>
 <p class="govuk-body">Example request for capacity field:</p>
-<p class="govuk-body">“Select the capacity the Transferor is acting in. You’ll need to evidence of the capacity to act and check whether ID evidence will be required.”</p>
+<p class="govuk-body">“Select the capacity the Transferor is acting in. You’ll need to evidence the capacity to act and check whether ID evidence will be required.”</p>
 <p class="govuk-body">The capacity field is currently optional, but it may become mandatory in the future.</p>
 <div class="govuk-inset-text">
   Field type: This field is a type String, with a set of enumerated values.</div>
@@ -2919,8 +2919,8 @@ Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transact
 <h3 class="govuk-heading-s">Company number validation</h3>
 <p class="govuk-body">For any party of type UKCompany, the data item <code class="x-govuk-code x-govuk-code--inline">company_number</code> is required, except when any of the following are true: </p>
 <ul class="govuk-list govuk-list--bullet">
-<li>The party is being used as a lender, where a valid MDRef has been provided for the transaction in which it is being used as a lender</li>
-<li>The party is being used as a borrower </li>
+<li>The party is being used as a lender on a transaction with a valid MDRef</li>
+<li>The party is being used as a borrower</li>
 </ul>
 <p class="govuk-body">In these cases the <code class="x-govuk-code x-govuk-code--inline">company_number</code> is optional.</p>
 
@@ -3017,7 +3017,6 @@ A transfer value must be provided when consideration type is <code class="x-govu
 
 <h3 class="govuk-heading-s">Customer type validation</h3>
 <p class="govuk-body">Customer type of conveyancer or non-conveyancer must be present.</p>
-<p class="govuk-body">Error types for this validator will be provided at a later date.</p>
 
 
 
@@ -3514,10 +3513,7 @@ For the following lease transactions, there must be at least one tenant and one 
 
 
 <h3 class="govuk-heading-s">Transfer amount validation</h3>
-<p class="govuk-body">Value must be provided, either as an exact value or a value band (where transfer is not
-  for monetary value).</p>
-<p class="govuk-body">Error types for this validator will be provided at a later date.</p>
-
+<p class="govuk-body">Value must be provided, either as an exact value or a value band (where transfer is not for monetary value).</p>
 
 
 <h3 class="govuk-heading-s">Transfer date validation</h3>
