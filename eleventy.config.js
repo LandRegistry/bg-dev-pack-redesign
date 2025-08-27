@@ -26,8 +26,8 @@ export default function (eleventyConfig) {
       productType: "",
       search: {
         label: "Search developer pack",
-        indexPath: "/search.json",
-        sitemapPath: "/sitemap"
+        indexPath: `${process.env.GITHUB_ACTIONS ? '/bg-dev-pack-redesign' : ''}/search.json`,
+        sitemapPath: `${process.env.GITHUB_ACTIONS ? '/bg-dev-pack-redesign' : ''}/sitemap`
       }
     },
     serviceNavigation: true,
