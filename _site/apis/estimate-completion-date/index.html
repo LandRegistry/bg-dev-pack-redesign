@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="govuk-template">
+<html lang="en" class="govuk-template govuk-template--rebranded">
   <head>
     <meta charset="utf-8">
     <title>Estimated Completion Date - HM Land Registry Developer Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
-<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/hmlrassets/images/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
-  <script src="/assets/application.js" type="module" defer></script>
+<link rel="icon" href="/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
+  <script src="/assets/application.js" type="module"></script>
 
   <link rel="stylesheet" href="/assets/application.css">
 
@@ -29,7 +29,7 @@
           <span class="app-header__logotype">HM Land Registry Developer Pack</span>
       </a>
     </div>
-    <site-search class="app-site-search govuk-!-display-none-print" index="/search.json" label="Search developer pack"><a class="app-site-search__link" href="/sitemap">Sitemap</a></site-search>
+    <app-search class="app-search govuk-!-display-none-print" index="/search-index.json" label="Search developer pack"><a class="app-search__link" href="/sitemap">Sitemap</a></app-search>
 
   </div>
 </header>
@@ -59,11 +59,9 @@ data-module="govuk-service-navigation"
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <header class="app-document-header">
-  <h1 class="app-document-header__title govuk-heading-xl">
-    Estimated Completion Date
-  </h1>
-
+      
+<header class="app-document-header">
+  <h1 class="govuk-heading-xl">Estimated Completion Date</h1>
 </header>
 
 
@@ -83,11 +81,11 @@ data-module="govuk-service-navigation"
 <h2 id="application-types" tabindex="-1" class="govuk-heading-l">Application Types</h2>
 <p class="govuk-body">To use the ECD service you will need to know the application reference of the application you wish to find out the ECD for. If you do not know the application reference, please use the <a href="../application_enquiry/index.html" class="govuk-link">application enquiry</a> service to obtain this.</p>
 <p class="govuk-body">This service is for applications that change the register i.e. register create and register update applications only. This is denoted by the format of the application reference (you may also see this referred to as the ABR or HMLR reference):</p>
-<p class="govuk-body"><code class="x-govuk-code x-govuk-code--inline">A999AAA</code> or <code class="x-govuk-code x-govuk-code--inline">AAXXXXX</code></p>
+<p class="govuk-body"><code class="app-code app-code--inline">A999AAA</code> or <code class="app-code app-code--inline">AAXXXXX</code></p>
 <p class="govuk-body">Where:<br>
-<code class="x-govuk-code x-govuk-code--inline">A = [A-Z]</code><br>
-<code class="x-govuk-code x-govuk-code--inline">9 = [0-9]</code><br>
-<code class="x-govuk-code x-govuk-code--inline">X = [0-9A-F]</code></p>
+<code class="app-code app-code--inline">A = [A-Z]</code><br>
+<code class="app-code app-code--inline">9 = [0-9]</code><br>
+<code class="app-code app-code--inline">X = [0-9A-F]</code></p>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <h2 id="process-flow" tabindex="-1" class="govuk-heading-l">Process Flow</h2>
 <p class="govuk-body">To request the Estimated Completion Date of an application, you will need to input the Application Reference into your Case Management Software:</p>
@@ -200,8 +198,8 @@ data-module="govuk-service-navigation"
 <h2 id="customer-test-stubs" tabindex="-1" class="govuk-heading-l">Customer Test Stubs</h2>
 <h3 id="customer-test-endpoint" tabindex="-1" class="govuk-heading-m">Customer Test Endpoint</h3>
 <p class="govuk-body">The test environment can be accessed at:</p>
-<p class="govuk-body"><code class="x-govuk-code x-govuk-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api/v1/applications/{application_reference}/estimate-completion-date</code></p>
-<p class="govuk-body">Where <code class="x-govuk-code x-govuk-code--inline">{application_reference}</code> is replaced by the application reference you need to use.</p>
+<p class="govuk-body"><code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api/v1/applications/{application_reference}/estimate-completion-date</code></p>
+<p class="govuk-body">Where <code class="app-code app-code--inline">{application_reference}</code> is replaced by the application reference you need to use.</p>
 <p class="govuk-body">This requires a customer test certificate (this is different to the production client certificates)</p>
 <h3 id="scenarios-when-ecd-is-returned" tabindex="-1" class="govuk-heading-m">Scenarios when ECD is returned</h3>
 <p class="govuk-body">Scenario 1 - Application reference is valid and matches an application. ECD is provided.</p>

@@ -1,8 +1,8 @@
 ---
+caption: Before you start
 title: How to access Business Gateway
 
 layout: page
-noheader: true
 noback: true
 
 eleventyNavigation:
@@ -34,8 +34,6 @@ sidenav:
     href: '/contact-us'
 ---
 
-<span class="govuk-caption-xl">Before you start</span>
-<h1 class="govuk-heading-xl">How to access Business Gateway</h1>
 <div class="govuk-grid-row">
   <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">Business Gateway allows you to integrate
     your data directly with HMLR systems. You can tailor how you work with us to fit neatly into your existing

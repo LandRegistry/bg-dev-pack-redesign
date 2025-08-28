@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="govuk-template">
+<html lang="en" class="govuk-template govuk-template--rebranded">
   <head>
     <meta charset="utf-8">
     <title>Submit an application API test stubs - HM Land Registry Developer Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
-<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/hmlrassets/images/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
-  <script src="/assets/application.js" type="module" defer></script>
+<link rel="icon" href="/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
+  <script src="/assets/application.js" type="module"></script>
 
   <link rel="stylesheet" href="/assets/application.css">
 
@@ -95,7 +95,7 @@
           <span class="app-header__logotype">HM Land Registry Developer Pack</span>
       </a>
     </div>
-    <site-search class="app-site-search govuk-!-display-none-print" index="/search.json" label="Search developer pack"><a class="app-site-search__link" href="/sitemap">Sitemap</a></site-search>
+    <app-search class="app-search govuk-!-display-none-print" index="/search-index.json" label="Search developer pack"><a class="app-search__link" href="/sitemap">Sitemap</a></app-search>
 
   </div>
 </header>
@@ -149,11 +149,9 @@ data-module="govuk-service-navigation"
 
 <div class="govuk-grid-column-two-thirds">
 
-<header class="app-document-header">
-  <h1 class="app-document-header__title govuk-heading-xl">
-    Submit an application API test stubs
-  </h1>
 
+<header class="app-document-header">
+  <h1 class="govuk-heading-xl">Submit an application API test stubs</h1>
 </header>
 
 <div class="govuk-warning-text">
@@ -214,104 +212,104 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
-  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-    <span class="x-govuk-code__attr">&quot;submission_warning_understood&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">true</span></span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;applicants&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-      <span class="x-govuk-code__string">&quot;Borrower1&quot;</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__string">&quot;Borrower2&quot;</span>
-    <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;customer_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CustomerRef&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;documents&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;Deed&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;MRTG_DEED&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;document_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;0d7bd3a5-1aec-4862-9fc9-f796dfc11d35&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;document_metadata&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;certification_statement_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CERTIFIED&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;document_filename&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Deed.pdf&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;application_lodger&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;email&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;valid.email@landregistry.gov.uk&quot;</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CONVEYANCER&quot;</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;parties&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;Borrower1&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;address_for_service_option&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;NOT_REQUIRED&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;representation_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;forenames&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Tony&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;surname&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Bonito&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span>
-      <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;Borrower2&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;address_for_service_option&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;NOT_REQUIRED&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;representation_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;forenames&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Toni&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;surname&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Bonito&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span>
-      <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;TheBank&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;address_for_service_option&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;NOT_REQUIRED&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;representation_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;UK_COMPANY&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;company_number&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;12345&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;organisation_name&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Albion Home Loans Limited&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;titles&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;MS305610&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;disclosable_overriding_interests&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;false&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;title_number&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;MS305610&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;scope_details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;scope&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;WHOLE&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;part_description&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;title_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;REGISTER_TITLE&quot;</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;transactions&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;Charge&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CHARGE&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;date&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;mdref&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;MD006A&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;value&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">120000</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;documents&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-          <span class="x-govuk-code__string">&quot;Deed&quot;</span>
-        <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;priority&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">1</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;fee_in_pence&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">3000</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;party_roles&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-          <span class="x-govuk-code__punctuation">{</span>
-            <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Borrower1&quot;</span><span class="x-govuk-code__punctuation">,</span>
-            <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;BORROWER&quot;</span>
-          <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__punctuation">{</span>
-            <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Borrower2&quot;</span><span class="x-govuk-code__punctuation">,</span>
-            <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;BORROWER&quot;</span>
-          <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__punctuation">{</span>
-            <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TheBank&quot;</span><span class="x-govuk-code__punctuation">,</span>
-            <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LENDER&quot;</span>
-          <span class="x-govuk-code__punctuation">}</span>
-        <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;C&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;title_references&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-          <span class="x-govuk-code__string">&quot;MS305610&quot;</span>
-        <span class="x-govuk-code__punctuation">]</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;REGISTER_UPDATE&quot;</span>
-  <span class="x-govuk-code__punctuation">}</span>
-<span class="x-govuk-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;submission_warning_understood&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">true</span></span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;applicants&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+      <span class="app-code__string">&quot;Borrower1&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__string">&quot;Borrower2&quot;</span>
+    <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;customer_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CustomerRef&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;Deed&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MRTG_DEED&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;document_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;0d7bd3a5-1aec-4862-9fc9-f796dfc11d35&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;document_metadata&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;certification_statement_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CERTIFIED&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;document_filename&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Deed.pdf&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_lodger&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;email&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;valid.email@landregistry.gov.uk&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CONVEYANCER&quot;</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;parties&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;Borrower1&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;address_for_service_option&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NOT_REQUIRED&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;forenames&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Tony&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;surname&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Bonito&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;Borrower2&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;address_for_service_option&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NOT_REQUIRED&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;forenames&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Toni&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;surname&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Bonito&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;TheBank&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;address_for_service_option&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NOT_REQUIRED&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;UK_COMPANY&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;company_number&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;12345&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;organisation_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Albion Home Loans Limited&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;titles&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;MS305610&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;disclosable_overriding_interests&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;false&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;title_number&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MS305610&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;scope_details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;scope&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;WHOLE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;part_description&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;title_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REGISTER_TITLE&quot;</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;transactions&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;Charge&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CHARGE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;date&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;mdref&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MD006A&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;value&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">120000</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__string">&quot;Deed&quot;</span>
+        <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;priority&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">1</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;fee_in_pence&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">3000</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;party_roles&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Borrower1&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BORROWER&quot;</span>
+          <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Borrower2&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BORROWER&quot;</span>
+          <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TheBank&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LENDER&quot;</span>
+          <span class="app-code__punctuation">}</span>
+        <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;C&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;title_references&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__string">&quot;MS305610&quot;</span>
+        <span class="app-code__punctuation">]</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REGISTER_UPDATE&quot;</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>
@@ -323,11 +321,11 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
-  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-    <span class="x-govuk-code__attr">&quot;application_request_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;b3ac19be-2b6d-4b8a-971c-e758b0e8e790&quot;</span>
-  <span class="x-govuk-code__punctuation">}</span>
-<span class="x-govuk-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;b3ac19be-2b6d-4b8a-971c-e758b0e8e790&quot;</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>
@@ -354,137 +352,137 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
-  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-    <span class="x-govuk-code__attr">&quot;submission_warning_understood&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">true</span></span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;customer_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CustomerRef&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;addresses&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;transferee_address&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;UK&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;uprn&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">100040203976</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;organisation_name&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;department_name&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;sub_building_description&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;building_description&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Apartment 11&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;street&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;113 Newton Street&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;dependent_street&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;dependent_locality&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;double_dependent_locality&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;post_town&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;MANCHESTER&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;postcode&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;M1 1AE&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;full_address&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Apartment 11 ,113 Newton Street, MANCHESTER, M1 1AE&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;care_of_name&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;SP&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;documents&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;TR1&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;document_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;a40d6fe0-bd45-4c49-b72a-0d80cf43db83&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TR1&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;document_metadata&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;certification_statement_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CERTIFIED&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;document_filename&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TR1.pdf&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;parties&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;Transferee&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;forenames&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;John&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;surname&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Smith&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;address_for_service_option&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;PROVIDED_ADDRESS&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;representation_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;addresses&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;transferee_address&quot;</span>
-      <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;Transferor1&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;forenames&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Tony&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;surname&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Bonito&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;other_conveyancer&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;full_name&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;ABC Conveyancers&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;registered_address&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;13 Coral Close, Tuffley, Gloucester, GL4 0RG&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;conveyancer_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;abc-conveyancers-ref&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;address_for_service_option&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;NOT_REQUIRED&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;representation_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;OTHER_CONVEYANCER&quot;</span>
-      <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;Transferor2&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;forenames&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Toni&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;surname&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Bonito&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;other_conveyancer&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;full_name&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;ABC Conveyancers&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;registered_address&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;13 Coral Close, Tuffley, Gloucester, GL4 0RG&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;conveyancer_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;abc-conveyancers-ref&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;address_for_service_option&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;NOT_REQUIRED&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;representation_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;OTHER_CONVEYANCER&quot;</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;applicants&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-      <span class="x-govuk-code__string">&quot;Transferee&quot;</span>
-    <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;application_lodger&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;email&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;valid.email@landregistry.gov.uk&quot;</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CONVEYANCER&quot;</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;titles&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;MS312531&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;disclosable_overriding_interests&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;false&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;title_number&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;MS312531&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;scope_details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;scope&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;WHOLE&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;part_description&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;title_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;REGISTER_TITLE&quot;</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;transactions&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;Transfer&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TRANSFER&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;title_guarantee_code&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;FULL&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;additional_provisions_code&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;NO_PROVISIONS&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;consideration_description&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;string&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;consideration_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;MONETARY_VALUE&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;value&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">1300000</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;date&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2023-12-12&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;documents&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-          <span class="x-govuk-code__string">&quot;TR1&quot;</span>
-        <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;priority&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">1</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;fee_in_pence&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">3000</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;party_roles&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-          <span class="x-govuk-code__punctuation">{</span>
-            <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Transferee&quot;</span><span class="x-govuk-code__punctuation">,</span>
-            <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TRANSFEREE&quot;</span>
-          <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__punctuation">{</span>
-            <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Transferor1&quot;</span><span class="x-govuk-code__punctuation">,</span>
-            <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TRANSFEROR&quot;</span>
-          <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__punctuation">{</span>
-            <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Transferor2&quot;</span><span class="x-govuk-code__punctuation">,</span>
-            <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TRANSFEROR&quot;</span>
-          <span class="x-govuk-code__punctuation">}</span>
-        <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;T&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;title_references&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-          <span class="x-govuk-code__string">&quot;MS312531&quot;</span>
-        <span class="x-govuk-code__punctuation">]</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;REGISTER_UPDATE&quot;</span>
-  <span class="x-govuk-code__punctuation">}</span>
-<span class="x-govuk-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;submission_warning_understood&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">true</span></span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;customer_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CustomerRef&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;addresses&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;transferee_address&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;UK&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;uprn&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">100040203976</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;organisation_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;department_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;sub_building_description&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;building_description&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Apartment 11&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;street&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;113 Newton Street&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;dependent_street&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;dependent_locality&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;double_dependent_locality&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;post_town&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MANCHESTER&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;postcode&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;M1 1AE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;full_address&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Apartment 11 ,113 Newton Street, MANCHESTER, M1 1AE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;care_of_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;SP&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;TR1&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;document_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;a40d6fe0-bd45-4c49-b72a-0d80cf43db83&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TR1&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;document_metadata&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;certification_statement_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CERTIFIED&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;document_filename&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TR1.pdf&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;parties&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;Transferee&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;forenames&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;John&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;surname&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Smith&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;address_for_service_option&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PROVIDED_ADDRESS&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;addresses&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;transferee_address&quot;</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;Transferor1&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;forenames&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Tony&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;surname&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Bonito&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;other_conveyancer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;full_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ABC Conveyancers&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;registered_address&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;13 Coral Close, Tuffley, Gloucester, GL4 0RG&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;conveyancer_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abc-conveyancers-ref&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;address_for_service_option&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NOT_REQUIRED&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;OTHER_CONVEYANCER&quot;</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;Transferor2&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;forenames&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Toni&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;surname&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Bonito&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;other_conveyancer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;full_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ABC Conveyancers&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;registered_address&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;13 Coral Close, Tuffley, Gloucester, GL4 0RG&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;conveyancer_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abc-conveyancers-ref&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;address_for_service_option&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NOT_REQUIRED&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;OTHER_CONVEYANCER&quot;</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;applicants&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+      <span class="app-code__string">&quot;Transferee&quot;</span>
+    <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_lodger&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;email&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;valid.email@landregistry.gov.uk&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CONVEYANCER&quot;</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;titles&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;MS312531&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;disclosable_overriding_interests&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;false&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;title_number&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MS312531&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;scope_details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;scope&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;WHOLE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;part_description&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;title_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REGISTER_TITLE&quot;</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;transactions&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;Transfer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TRANSFER&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;title_guarantee_code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;FULL&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;additional_provisions_code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NO_PROVISIONS&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;consideration_description&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;string&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;consideration_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MONETARY_VALUE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;value&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">1300000</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;date&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2023-12-12&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__string">&quot;TR1&quot;</span>
+        <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;priority&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">1</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;fee_in_pence&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">3000</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;party_roles&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Transferee&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TRANSFEREE&quot;</span>
+          <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Transferor1&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TRANSFEROR&quot;</span>
+          <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Transferor2&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TRANSFEROR&quot;</span>
+          <span class="app-code__punctuation">}</span>
+        <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;T&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;title_references&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__string">&quot;MS312531&quot;</span>
+        <span class="app-code__punctuation">]</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REGISTER_UPDATE&quot;</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>
@@ -496,11 +494,11 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
-  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-    <span class="x-govuk-code__attr">&quot;application_request_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2563940e-ae95-4e7e-9b33-49a6571abdf6&quot;</span>
-  <span class="x-govuk-code__punctuation">}</span>
-<span class="x-govuk-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2563940e-ae95-4e7e-9b33-49a6571abdf6&quot;</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>
@@ -527,97 +525,97 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
-  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-    <span class="x-govuk-code__attr">&quot;submission_warning_understood&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">true</span></span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;applicants&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-      <span class="x-govuk-code__string">&quot;Borrower1&quot;</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__string">&quot;Borrower2&quot;</span>
-    <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;customer_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CustomerRef&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;documents&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;Deed&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;MRTG_DEED&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;document_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;0d7bd3a5-1aec-4862-9fc9-f796dfc11d35&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;document_metadata&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;certification_statement_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CERTIFIED&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;document_filename&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Deed.pdf&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;parties&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;Borrower1&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;representation_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;forenames&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Tony&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;surname&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Bonito&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span>
-      <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;Borrower2&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;representation_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;forenames&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Toni&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;surname&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Bonito&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span>
-      <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;TheBank&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;representation_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;UK_COMPANY&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;company_number&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;12345&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;organisation_name&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Albion Home Loans Limited&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;application_lodger&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;email&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;valid.email@landregistry.gov.uk&quot;</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CONVEYANCER&quot;</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;titles&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;MS305610&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;disclosable_overriding_interests&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;false&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;title_number&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;MS305610&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;scope_details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;scope&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;WHOLE&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;part_description&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;title_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;REGISTER_TITLE&quot;</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;transactions&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;Charge&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;documents&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-          <span class="x-govuk-code__string">&quot;Deed&quot;</span>
-        <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;C&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;priority&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">1</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;fee_in_pence&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">3000</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CHARGE&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;date&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;3000-01-01&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;mdref&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;MD006A&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;party_roles&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-          <span class="x-govuk-code__punctuation">{</span>
-            <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Borrower1&quot;</span><span class="x-govuk-code__punctuation">,</span>
-            <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;BORROWER&quot;</span>
-          <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__punctuation">{</span>
-            <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Borrower2&quot;</span><span class="x-govuk-code__punctuation">,</span>
-            <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;BORROWER&quot;</span>
-          <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__punctuation">{</span>
-            <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TheBank&quot;</span><span class="x-govuk-code__punctuation">,</span>
-            <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LENDER&quot;</span>
-          <span class="x-govuk-code__punctuation">}</span>
-        <span class="x-govuk-code__punctuation">]</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span>
-  <span class="x-govuk-code__punctuation">}</span>
-<span class="x-govuk-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;submission_warning_understood&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">true</span></span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;applicants&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+      <span class="app-code__string">&quot;Borrower1&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__string">&quot;Borrower2&quot;</span>
+    <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;customer_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CustomerRef&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;Deed&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MRTG_DEED&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;document_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;0d7bd3a5-1aec-4862-9fc9-f796dfc11d35&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;document_metadata&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;certification_statement_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CERTIFIED&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;document_filename&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Deed.pdf&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;parties&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;Borrower1&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;forenames&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Tony&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;surname&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Bonito&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;Borrower2&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;forenames&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Toni&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;surname&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Bonito&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;TheBank&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;UK_COMPANY&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;company_number&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;12345&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;organisation_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Albion Home Loans Limited&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_lodger&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;email&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;valid.email@landregistry.gov.uk&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CONVEYANCER&quot;</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;titles&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;MS305610&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;disclosable_overriding_interests&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;false&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;title_number&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MS305610&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;scope_details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;scope&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;WHOLE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;part_description&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;title_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REGISTER_TITLE&quot;</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;transactions&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;Charge&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__string">&quot;Deed&quot;</span>
+        <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;C&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;priority&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">1</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;fee_in_pence&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">3000</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CHARGE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;date&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3000-01-01&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;mdref&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MD006A&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;party_roles&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Borrower1&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BORROWER&quot;</span>
+          <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Borrower2&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BORROWER&quot;</span>
+          <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TheBank&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LENDER&quot;</span>
+          <span class="app-code__punctuation">}</span>
+        <span class="app-code__punctuation">]</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>
@@ -629,24 +627,24 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
-  <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;https://landregistry.github.io/bgtechdoc/problems/global#bad-request&quot;</span><span class="x-govuk-code__punctuation">,</span>
-  <span class="x-govuk-code__attr">&quot;title&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Bad Request&quot;</span><span class="x-govuk-code__punctuation">,</span>
-  <span class="x-govuk-code__attr">&quot;detail&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;The request is invalid or malformed.&quot;</span><span class="x-govuk-code__punctuation">,</span>
-  <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;400&quot;</span><span class="x-govuk-code__punctuation">,</span>
-  <span class="x-govuk-code__attr">&quot;errors&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-    <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;OCV_L1A_000&quot;</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;pointer&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;/data/transactions/Charge/details/date&quot;</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;detail&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Date must be in the past or in the present&quot;</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;OCV_L1A_000&quot;</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;pointer&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;/data/type&quot;</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;detail&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Type must not be null&quot;</span>
-    <span class="x-govuk-code__punctuation">}</span>
-  <span class="x-govuk-code__punctuation">]</span>
-<span class="x-govuk-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://landregistry.github.io/bgtechdoc/problems/global#bad-request&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;title&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Bad Request&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;detail&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;The request is invalid or malformed.&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;400&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+    <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;OCV_L1A_000&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;pointer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;/data/transactions/Charge/details/date&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;detail&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Date must be in the past or in the present&quot;</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;OCV_L1A_000&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;pointer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;/data/type&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;detail&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Type must not be null&quot;</span>
+    <span class="app-code__punctuation">}</span>
+  <span class="app-code__punctuation">]</span>
+<span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>
@@ -673,173 +671,173 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
-  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-    <span class="x-govuk-code__attr">&quot;submission_warning_understood&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">true</span></span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;customer_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CustomerRef&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;addresses&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;transferee_address&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;UK&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;uprn&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">100040203976</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;organisation_name&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;department_name&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;sub_building_description&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;building_description&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Apartment 11&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;street&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;113 Newton Street&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;dependent_street&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;dependent_locality&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;double_dependent_locality&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;post_town&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;MANCHESTER&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;postcode&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;M1 1AE&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;full_address&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Apartment 11 ,113 Newton Street, MANCHESTER, M1 1AE&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;care_of_name&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;SP&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;documents&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;TR1&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;document_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;a40d6fe0-bd45-4c49-b72a-0d80cf43db83&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TR1&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;document_metadata&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;certification_statement_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CERTIFIED&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;document_filename&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TR1.pdf&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span>
-      <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;Deed&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;MRTG_DEED&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;document_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;e10f5369-a623-43fb-aeaa-5e02625e9f83&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;document_metadata&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;certification_statement_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CERTIFIED&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;document_filename&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Deed.pdf&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;parties&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;Transferee&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;forenames&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;John&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;surname&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Smith&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;addresses&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;transferee_address&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;representation_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LODGING_CONVEYANCER&quot;</span>
-      <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;Transferor1&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;forenames&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Tony&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;surname&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Bonito&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;other_conveyancer&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;full_name&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;ABC Conveyancers&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;registered_address&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;13 Coral Close, Tuffley, Gloucester, GL4 0RG&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;conveyancer_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;abc-conveyancers-ref&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;representation_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;OTHER_CONVEYANCER&quot;</span>
-      <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;Transferor2&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;forenames&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Toni&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;surname&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Bonito&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;other_conveyancer&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;full_name&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;ABC Conveyancers&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;registered_address&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;13 Coral Close, Tuffley, Gloucester, GL4 0RG&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;conveyancer_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;abc-conveyancers-ref&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;representation_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;OTHER_CONVEYANCER&quot;</span>
-      <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;TheBank&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;UK_COMPANY&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;company_number&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;12345&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;organisation_name&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Albion Home Loans Limited&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;representation_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LODGING_CONVEYANCER&quot;</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;applicants&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-      <span class="x-govuk-code__string">&quot;Transferee&quot;</span>
-    <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;application_lodger&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;email&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;valid.email@landregistry.gov.uk&quot;</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CONVEYANCER&quot;</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;titles&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;MS312531&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;disclosable_overriding_interests&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;false&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;title_number&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;MS312531&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;scope_details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;scope&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;WHOLE&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;part_description&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__literal"><span class="x-govuk-code__keyword">null</span></span>
-        <span class="x-govuk-code__punctuation">}</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;transactions&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;Transfer&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;documents&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span><span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;T&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;priority&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">1</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;fee_in_pence&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">3000</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TRANSFER&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;title_guarantee_code&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;FULL&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;additional_provisions_code&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;NO_PROVISIONS&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;consideration_description&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;string&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;consideration_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;MONETARY_VALUE&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;value&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">1300000</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;date&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2023-12-12&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;party_roles&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-          <span class="x-govuk-code__punctuation">{</span>
-            <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Transferee&quot;</span><span class="x-govuk-code__punctuation">,</span>
-            <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TRANSFEREE&quot;</span>
-          <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__punctuation">{</span>
-            <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Transferor1&quot;</span><span class="x-govuk-code__punctuation">,</span>
-            <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TRANSFEROR&quot;</span>
-          <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__punctuation">{</span>
-            <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Transferor2&quot;</span><span class="x-govuk-code__punctuation">,</span>
-            <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TRANSFEROR&quot;</span>
-          <span class="x-govuk-code__punctuation">}</span>
-        <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;title_references&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-          <span class="x-govuk-code__string">&quot;MS312531&quot;</span>
-        <span class="x-govuk-code__punctuation">]</span>
-      <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;Charge&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-        <span class="x-govuk-code__attr">&quot;documents&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-          <span class="x-govuk-code__string">&quot;Deed&quot;</span>
-        <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;C&quot;</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;priority&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">2</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;fee_in_pence&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">3000</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;details&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-          <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;CHARGE&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;date&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2024-01-01&quot;</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__attr">&quot;mdref&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;MD007A&quot;</span>
-        <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;party_roles&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-          <span class="x-govuk-code__punctuation">{</span>
-            <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Transferee&quot;</span><span class="x-govuk-code__punctuation">,</span>
-            <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;BORROWER&quot;</span>
-          <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-          <span class="x-govuk-code__punctuation">{</span>
-            <span class="x-govuk-code__attr">&quot;party_reference&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;TheBank&quot;</span><span class="x-govuk-code__punctuation">,</span>
-            <span class="x-govuk-code__attr">&quot;role&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;LENDER&quot;</span>
-          <span class="x-govuk-code__punctuation">}</span>
-        <span class="x-govuk-code__punctuation">]</span><span class="x-govuk-code__punctuation">,</span>
-        <span class="x-govuk-code__attr">&quot;title_references&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-          <span class="x-govuk-code__string">&quot;MS312531&quot;</span>
-        <span class="x-govuk-code__punctuation">]</span>
-      <span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;REGISTER_UPDATE&quot;</span>
-  <span class="x-govuk-code__punctuation">}</span>
-<span class="x-govuk-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;submission_warning_understood&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">true</span></span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;customer_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CustomerRef&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;addresses&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;transferee_address&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;UK&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;uprn&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">100040203976</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;organisation_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;department_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;sub_building_description&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;building_description&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Apartment 11&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;street&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;113 Newton Street&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;dependent_street&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;dependent_locality&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;double_dependent_locality&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;post_town&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MANCHESTER&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;postcode&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;M1 1AE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;full_address&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Apartment 11 ,113 Newton Street, MANCHESTER, M1 1AE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;care_of_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;SP&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;TR1&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;document_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;a40d6fe0-bd45-4c49-b72a-0d80cf43db83&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TR1&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;document_metadata&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;certification_statement_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CERTIFIED&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;document_filename&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TR1.pdf&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;Deed&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MRTG_DEED&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;document_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;e10f5369-a623-43fb-aeaa-5e02625e9f83&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;document_metadata&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;certification_statement_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CERTIFIED&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;document_filename&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Deed.pdf&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;parties&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;Transferee&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;forenames&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;John&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;surname&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Smith&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;addresses&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;transferee_address&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LODGING_CONVEYANCER&quot;</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;Transferor1&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;forenames&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Tony&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;surname&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Bonito&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;other_conveyancer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;full_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ABC Conveyancers&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;registered_address&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;13 Coral Close, Tuffley, Gloucester, GL4 0RG&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;conveyancer_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abc-conveyancers-ref&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;OTHER_CONVEYANCER&quot;</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;Transferor2&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;forenames&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Toni&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;surname&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Bonito&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;other_conveyancer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;full_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ABC Conveyancers&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;registered_address&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;13 Coral Close, Tuffley, Gloucester, GL4 0RG&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;conveyancer_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abc-conveyancers-ref&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;OTHER_CONVEYANCER&quot;</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;TheBank&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;UK_COMPANY&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;company_number&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;12345&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;organisation_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Albion Home Loans Limited&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LODGING_CONVEYANCER&quot;</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;applicants&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+      <span class="app-code__string">&quot;Transferee&quot;</span>
+    <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_lodger&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;email&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;valid.email@landregistry.gov.uk&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CONVEYANCER&quot;</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;titles&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;MS312531&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;disclosable_overriding_interests&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;false&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;title_number&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MS312531&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;scope_details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;scope&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;WHOLE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;part_description&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;transactions&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;Transfer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;T&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;priority&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">1</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;fee_in_pence&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">3000</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TRANSFER&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;title_guarantee_code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;FULL&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;additional_provisions_code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NO_PROVISIONS&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;consideration_description&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;string&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;consideration_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MONETARY_VALUE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;value&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">1300000</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;date&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2023-12-12&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;party_roles&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Transferee&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TRANSFEREE&quot;</span>
+          <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Transferor1&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TRANSFEROR&quot;</span>
+          <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Transferor2&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TRANSFEROR&quot;</span>
+          <span class="app-code__punctuation">}</span>
+        <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;title_references&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__string">&quot;MS312531&quot;</span>
+        <span class="app-code__punctuation">]</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;Charge&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__string">&quot;Deed&quot;</span>
+        <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;C&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;priority&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">2</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;fee_in_pence&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">3000</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CHARGE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;date&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;mdref&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MD007A&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;party_roles&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Transferee&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BORROWER&quot;</span>
+          <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;TheBank&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LENDER&quot;</span>
+          <span class="app-code__punctuation">}</span>
+        <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;title_references&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__string">&quot;MS312531&quot;</span>
+        <span class="app-code__punctuation">]</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REGISTER_UPDATE&quot;</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>
@@ -851,11 +849,11 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
-  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-    <span class="x-govuk-code__attr">&quot;application_request_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;3be62ad3-c542-452d-975e-6cd18d77196f&quot;</span>
-  <span class="x-govuk-code__punctuation">}</span>
-<span class="x-govuk-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3be62ad3-c542-452d-975e-6cd18d77196f&quot;</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>

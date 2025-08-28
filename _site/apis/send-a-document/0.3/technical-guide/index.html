@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="govuk-template">
+<html lang="en" class="govuk-template govuk-template--rebranded">
   <head>
     <meta charset="utf-8">
     <title>Send a document API Technical guide - HM Land Registry Developer Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
-<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/hmlrassets/images/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
-  <script src="/assets/application.js" type="module" defer></script>
+<link rel="icon" href="/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
+  <script src="/assets/application.js" type="module"></script>
 
   <link rel="stylesheet" href="/assets/application.css">
 
@@ -95,7 +95,7 @@
           <span class="app-header__logotype">HM Land Registry Developer Pack</span>
       </a>
     </div>
-    <site-search class="app-site-search govuk-!-display-none-print" index="/search.json" label="Search developer pack"><a class="app-site-search__link" href="/sitemap">Sitemap</a></site-search>
+    <app-search class="app-search govuk-!-display-none-print" index="/search-index.json" label="Search developer pack"><a class="app-search__link" href="/sitemap">Sitemap</a></app-search>
 
   </div>
 </header>
@@ -146,14 +146,9 @@ data-module="govuk-service-navigation"
 
 <div class="govuk-grid-column-two-thirds">
 
-<header class="app-document-header">
-  <h1 class="app-document-header__title govuk-heading-xl">
-    Send a document API Technical guide
-  </h1>
-    <p class="app-document-header__description govuk-body-l">
-      Use this service to attach documents to your application.
-    </p>
 
+<header class="app-document-header">
+  <h1 class="govuk-heading-xl">Send a document API Technical guide</h1><p class="govuk-body-l">Use this service to attach documents to your&nbsp;application.</p>
 </header>
 
 <div class="govuk-warning-text">
@@ -276,9 +271,9 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--py" tabindex="0"><code><span class="x-govuk-code__keyword">with</span> <span class="x-govuk-code__built_in">open</span>(<span class="x-govuk-code__string">&quot;test.pdf&quot;</span>, <span class="x-govuk-code__string">&quot;rb&quot;</span>) <span class="x-govuk-code__keyword">as</span> f:
+<pre class="app-code app-code--block app-code__language--py" tabindex="0"><code><span class="app-code__keyword">with</span> <span class="app-code__built_in">open</span>(<span class="app-code__string">&quot;test.pdf&quot;</span>, <span class="app-code__string">&quot;rb&quot;</span>) <span class="app-code__keyword">as</span> f:
     file_bytes = f.read()
-    file_length = <span class="x-govuk-code__built_in">len</span>(file_bytes)
+    file_length = <span class="app-code__built_in">len</span>(file_bytes)
 </code></pre>
 
 </div>
@@ -286,7 +281,7 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--sh" tabindex="0"><code><span class="x-govuk-code__built_in">du</span> -b test.pdf
+<pre class="app-code app-code--block app-code__language--sh" tabindex="0"><code><span class="app-code__built_in">du</span> -b test.pdf
 </code></pre>
 
 </div>
@@ -294,8 +289,8 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--java" tabindex="0"><code><span class="x-govuk-code__type">File</span> <span class="x-govuk-code__variable">f</span> <span class="x-govuk-code__operator">=</span> <span class="x-govuk-code__keyword">new</span> <span class="x-govuk-code__title class_">File</span>(<span class="x-govuk-code__string">&quot;test.pdf&quot;</span>);
-<span class="x-govuk-code__type">long</span> <span class="x-govuk-code__variable">fileLength</span> <span class="x-govuk-code__operator">=</span> f.length();
+<pre class="app-code app-code--block app-code__language--java" tabindex="0"><code><span class="app-code__type">File</span> <span class="app-code__variable">f</span> <span class="app-code__operator">=</span> <span class="app-code__keyword">new</span> <span class="app-code__title class_">File</span>(<span class="app-code__string">&quot;test.pdf&quot;</span>);
+<span class="app-code__type">long</span> <span class="app-code__variable">fileLength</span> <span class="app-code__operator">=</span> f.length();
 </code></pre>
 
 </div>
@@ -303,9 +298,9 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code><span class="x-govuk-code__keyword">const</span> fs = <span class="x-govuk-code__built_in">require</span>(<span class="x-govuk-code__string">&quot;fs&quot;</span>);
-<span class="x-govuk-code__keyword">const</span> stats = fs.<span class="x-govuk-code__title function_">statsync</span>(<span class="x-govuk-code__string">&quot;test.pdf&quot;</span>);
-<span class="x-govuk-code__keyword">const</span> filelength = stats.<span class="x-govuk-code__property">size</span>;
+<pre class="app-code app-code--block app-code__language--js" tabindex="0"><code><span class="app-code__keyword">const</span> fs = <span class="app-code__built_in">require</span>(<span class="app-code__string">&quot;fs&quot;</span>);
+<span class="app-code__keyword">const</span> stats = fs.<span class="app-code__title function_">statsync</span>(<span class="app-code__string">&quot;test.pdf&quot;</span>);
+<span class="app-code__keyword">const</span> filelength = stats.<span class="app-code__property">size</span>;
 </code></pre>
 
 </div>
@@ -319,10 +314,10 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--py" tabindex="0"><code><span class="x-govuk-code__keyword">with</span> <span class="x-govuk-code__built_in">open</span>(<span class="x-govuk-code__string">&quot;test.pdf&quot;</span>, <span class="x-govuk-code__string">&quot;rb&quot;</span>) <span class="x-govuk-code__keyword">as</span> f:
+<pre class="app-code app-code--block app-code__language--py" tabindex="0"><code><span class="app-code__keyword">with</span> <span class="app-code__built_in">open</span>(<span class="app-code__string">&quot;test.pdf&quot;</span>, <span class="app-code__string">&quot;rb&quot;</span>) <span class="app-code__keyword">as</span> f:
   file_bytes = f.read()
-  <span class="x-govuk-code__built_in">hash</span> = sha256(file_bytes)
-  file_sha256 = b64encode(<span class="x-govuk-code__built_in">hash</span>.digest())
+  <span class="app-code__built_in">hash</span> = sha256(file_bytes)
+  file_sha256 = b64encode(<span class="app-code__built_in">hash</span>.digest())
 </code></pre>
 
 </div>
@@ -330,9 +325,9 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--sh" tabindex="0"><code><span class="x-govuk-code__built_in">cat</span> test.pdf | \
+<pre class="app-code app-code--block app-code__language--sh" tabindex="0"><code><span class="app-code__built_in">cat</span> test.pdf | \
  openssl sha256 -binary | \
- openssl enc -<span class="x-govuk-code__built_in">base64</span>
+ openssl enc -<span class="app-code__built_in">base64</span>
 </code></pre>
 
 </div>
@@ -340,9 +335,9 @@ data-module="govuk-service-navigation"
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--sh" tabindex="0"><code>File f = new File(<span class="x-govuk-code__string">&quot;test.pdf&quot;</span>);
+<pre class="app-code app-code--block app-code__language--sh" tabindex="0"><code>File f = new File(<span class="app-code__string">&quot;test.pdf&quot;</span>);
 byte[] data = Files.readAllBytes(f);
-MessageDigest digester = MessageDigest.getInstance(<span class="x-govuk-code__string">&quot;sha-256&quot;</span>);
+MessageDigest digester = MessageDigest.getInstance(<span class="app-code__string">&quot;sha-256&quot;</span>);
 digester.update(data);
 String filesha256 = Base64.getEncoder().encodeToString(digester.digest());
 </code></pre>
@@ -352,11 +347,11 @@ String filesha256 = Base64.getEncoder().encodeToString(digester.digest());
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code><span class="x-govuk-code__keyword">const</span> fs = <span class="x-govuk-code__built_in">require</span>(<span class="x-govuk-code__string">&quot;fs&quot;</span>);
-<span class="x-govuk-code__keyword">const</span> crypto = <span class="x-govuk-code__built_in">require</span>(<span class="x-govuk-code__string">&quot;crypto&quot;</span>);
-<span class="x-govuk-code__keyword">const</span> shasum = crypto.<span class="x-govuk-code__title function_">createhash</span>(<span class="x-govuk-code__string">&quot;sha256&quot;</span>);
-shasum.<span class="x-govuk-code__title function_">update</span>(fs.<span class="x-govuk-code__title function_">getbytes</span>());
-shasum.<span class="x-govuk-code__title function_">digest</span>(<span class="x-govuk-code__string">&quot;base64&quot;</span>);
+<pre class="app-code app-code--block app-code__language--js" tabindex="0"><code><span class="app-code__keyword">const</span> fs = <span class="app-code__built_in">require</span>(<span class="app-code__string">&quot;fs&quot;</span>);
+<span class="app-code__keyword">const</span> crypto = <span class="app-code__built_in">require</span>(<span class="app-code__string">&quot;crypto&quot;</span>);
+<span class="app-code__keyword">const</span> shasum = crypto.<span class="app-code__title function_">createhash</span>(<span class="app-code__string">&quot;sha256&quot;</span>);
+shasum.<span class="app-code__title function_">update</span>(fs.<span class="app-code__title function_">getbytes</span>());
+shasum.<span class="app-code__title function_">digest</span>(<span class="app-code__string">&quot;base64&quot;</span>);
 </code></pre>
 
 </div>
@@ -366,13 +361,13 @@ shasum.<span class="x-govuk-code__title function_">digest</span>(<span class="x-
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
-  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-    <span class="x-govuk-code__attr">&quot;document_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;tr1&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;file_length&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">6362</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;file_sha256&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;xhepsrlehdpshynpjwwarzerivlcpvn8f8pycs7crqa=&quot;</span>
-  <span class="x-govuk-code__punctuation">}</span>
-<span class="x-govuk-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;document_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;tr1&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;file_length&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">6362</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;file_sha256&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;xhepsrlehdpshynpjwwarzerivlcpvn8f8pycs7crqa=&quot;</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>
@@ -380,12 +375,12 @@ shasum.<span class="x-govuk-code__title function_">digest</span>(<span class="x-
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
-  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-    <span class="x-govuk-code__attr">&quot;upload_url&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;documentcapture.landregistry.gov.uk/04c5c3fe-aa08-473b-9944-64ef5506f8e2&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;document_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;04c5c3fe-aa08-473b-9944-64ef5506f8e2&quot;</span>
-  <span class="x-govuk-code__punctuation">}</span>
-<span class="x-govuk-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;upload_url&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;documentcapture.landregistry.gov.uk/04c5c3fe-aa08-473b-9944-64ef5506f8e2&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;document_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;04c5c3fe-aa08-473b-9944-64ef5506f8e2&quot;</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>

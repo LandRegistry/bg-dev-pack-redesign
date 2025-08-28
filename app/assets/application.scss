@@ -3,12 +3,17 @@ $_font-family: 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif !import
 $_brand-colour: #789904;
 
 // Use HMLR Frontend
-@use "pkg:@x-govuk/govuk-eleventy-plugin" as *;
 @use "../../node_modules/@hmlr/frontend/hmlr/all.scss" as * with (
-  $govuk-brand-colour: $_brand-colour,
   $govuk-font-family: $_font-family,
+  $govuk-brand-colour: $_brand-colour,
   $hmlr-assets-path: "/hmlrassets/"
 );
+@use "pkg:govuk-frontend/dist/govuk" with (
+  $govuk-font-family: $_font-family,
+  $govuk-brand-colour: $_brand-colour
+);
+@use "pkg:@x-govuk/govuk-eleventy-plugin";
+
 @import "../../node_modules/@govuk-prototype-kit/step-by-step/sass/step-by-step-navigation";
 @import "../../node_modules/@govuk-prototype-kit/step-by-step/sass/step-by-step-navigation-related";
 @import "../../node_modules/@govuk-prototype-kit/step-by-step/sass/step-by-step-navigation-header";
@@ -99,7 +104,7 @@ aside.content-list ol.dashed-list, .content-list ul {
 
 .govuk-footer__copyright-logo--hmlr{
   display: block;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;  
 }
 
 .govuk-footer__copyright-logo::before {

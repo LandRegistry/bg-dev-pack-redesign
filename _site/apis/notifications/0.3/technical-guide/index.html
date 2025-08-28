@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="govuk-template">
+<html lang="en" class="govuk-template govuk-template--rebranded">
   <head>
     <meta charset="utf-8">
     <title>Notifications API Technical guide - HM Land Registry Developer Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
-<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/hmlrassets/images/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
-  <script src="/assets/application.js" type="module" defer></script>
+<link rel="icon" href="/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
+  <script src="/assets/application.js" type="module"></script>
 
   <link rel="stylesheet" href="/assets/application.css">
 
@@ -95,7 +95,7 @@
           <span class="app-header__logotype">HM Land Registry Developer Pack</span>
       </a>
     </div>
-    <site-search class="app-site-search govuk-!-display-none-print" index="/search.json" label="Search developer pack"><a class="app-site-search__link" href="/sitemap">Sitemap</a></site-search>
+    <app-search class="app-search govuk-!-display-none-print" index="/search-index.json" label="Search developer pack"><a class="app-search__link" href="/sitemap">Sitemap</a></app-search>
 
   </div>
 </header>
@@ -146,14 +146,9 @@ data-module="govuk-service-navigation"
 
 <div class="govuk-grid-column-two-thirds">
 
-<header class="app-document-header">
-  <h1 class="app-document-header__title govuk-heading-xl">
-    Notifications API Technical guide
-  </h1>
-    <p class="app-document-header__description govuk-body-l">
-      Use this service to get updates about multiple applications submitted by the same business unit.
-    </p>
 
+<header class="app-document-header">
+  <h1 class="govuk-heading-xl">Notifications API Technical guide</h1><p class="govuk-body-l">Use this service to get updates about multiple applications submitted by the same business&nbsp;unit.</p>
 </header>
 
 <div class="govuk-warning-text">
@@ -234,44 +229,44 @@ data-module="govuk-service-navigation"
 <h2 class="govuk-heading-m" id="example-requests-and-responses">Example requests and responses</h2>
 <p class="govuk-body">For specific examples of notification payloads produced during application submission, view <a class="govuk-body govuk-link" href="/apis/submit-an-application">Submit an application notifications</a>.</p>
 <h3 class="govuk-heading-s">Get notifications request</h3>
-<p class="govuk-body"><code class="x-govuk-code x-govuk-code--inline">GET /v0/notifications?created_after=2025-01-01t00:00:00 http/1.1</code></p>
+<p class="govuk-body"><code class="app-code app-code--inline">GET /v0/notifications?created_after=2025-01-01t00:00:00 http/1.1</code></p>
 <h3 class="govuk-heading-s">Get notifications response</h3>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
-  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span><span class="x-govuk-code__punctuation">{</span>
-    <span class="x-govuk-code__attr">&quot;notification_id&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;created_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2025-03-06t14:32:55.295z&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;event_datetime&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;2025-03-06t14:32:55.295z&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;payload_schema&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;https://example.com/&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;notification_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;string&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;subject_type&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;string&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;subject&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;string&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;additional_provider_filter&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;string&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;status&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;new&quot;</span><span class="x-govuk-code__punctuation">,</span>
-    <span class="x-govuk-code__attr">&quot;payload&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-      <span class="x-govuk-code__attr">&quot;additionalprop1&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span><span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;additionalprop2&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span><span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">,</span>
-      <span class="x-govuk-code__attr">&quot;additionalprop3&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span><span class="x-govuk-code__punctuation">}</span>
-    <span class="x-govuk-code__punctuation">}</span>
-  <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">]</span>
-<span class="x-govuk-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-03-06t14:32:55.295z&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-03-06t14:32:55.295z&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://example.com/&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;string&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;string&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;string&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;additional_provider_filter&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;string&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;new&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;additionalprop1&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span><span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;additionalprop2&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span><span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;additionalprop3&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span><span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span>
+  <span class="app-code__punctuation">}</span><span class="app-code__punctuation">]</span>
+<span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>
 <h3 class="govuk-heading-s">Acknowledge notifications request</h3>
-<p class="govuk-body"><code class="x-govuk-code x-govuk-code--inline">POST /v0/notifications/acknowledge http/1.1</code></p>
+<p class="govuk-body"><code class="app-code app-code--inline">POST /v0/notifications/acknowledge http/1.1</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
-  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-    <span class="x-govuk-code__string">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span>
-  <span class="x-govuk-code__punctuation">]</span>
-<span class="x-govuk-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+    <span class="app-code__string">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span>
+  <span class="app-code__punctuation">]</span>
+<span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>
@@ -280,13 +275,13 @@ data-module="govuk-service-navigation"
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
-  <span class="x-govuk-code__attr">&quot;data&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">{</span>
-    <span class="x-govuk-code__attr">&quot;acknowledged&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__punctuation">[</span>
-      <span class="x-govuk-code__string">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span>
-    <span class="x-govuk-code__punctuation">]</span>
-  <span class="x-govuk-code__punctuation">}</span>
-<span class="x-govuk-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;acknowledged&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+      <span class="app-code__string">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span>
+    <span class="app-code__punctuation">]</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>

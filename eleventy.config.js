@@ -2,6 +2,14 @@ import process from 'node:process'
 
 import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
+function getStyleSheets() {
+  let it = ['/assets/application.css'];
+  if (process.env.GITHUB_ACTIONS) {
+    it.push('/assets/github.css');
+  }
+  return it
+}
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     'node_modules/@hmlr/frontend/hmlr/assets': 'hmlrassets',
@@ -19,14 +27,14 @@ export default function (eleventyConfig) {
     opengraphImageUrl: "/hmlrassets/images/hmlr-opengraph-image.png",
     themeColor: '#789904',
     // rebrand: true,
-    stylesheets: ['/assets/application.css'],
+    stylesheets: getStyleSheets(),
     titleSuffix: "HM Land Registry Developer Pack",
     header: {
       logotype: {text: "HM Land Registry Developer Pack"},
       productType: "",
       search: {
         label: "Search developer pack",
-        indexPath: `${process.env.GITHUB_ACTIONS ? '/bg-dev-pack-redesign' : ''}/search.json`,
+        indexPath: `${process.env.GITHUB_ACTIONS ? '/bg-dev-pack-redesign' : ''}/search-index.json`,
         sitemapPath: `${process.env.GITHUB_ACTIONS ? '/bg-dev-pack-redesign' : ''}/sitemap`
       }
     },
@@ -36,6 +44,10 @@ export default function (eleventyConfig) {
       // copyright: {
       //     text: "&copy; HM Land Registry"
       // }
+    },
+    templates: {
+      searchIndex: true,
+      sitemap: true
     }
   })
 
