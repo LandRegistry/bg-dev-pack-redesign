@@ -31,7 +31,7 @@ noback: true
 
   <div class="govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-8">
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
-    <h4 class="govuk-heading-s govuk-!-font-weight-bold"><a href="./learn-about-the-apis-we-use">Learn about the APIs we use</a></h4>
+    <h4 class="govuk-heading-s govuk-!-font-weight-bold"><a href="./a-guide-to-soap-and-rest-api-types">A guide to SOAP and REST API types</a></h4>
     <p class="govuk-body">A breakdown of API types and when to use them</p>
   </div>
   <div class="govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-8">

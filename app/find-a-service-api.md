@@ -20,8 +20,8 @@ sidenav:
     text: Terms of use
     href: '/terms-of-use'
   - theme: Explore APIs
-    text: Learn about the APIs we use
-    href: '/learn-about-the-apis-we-use'
+    text: A guide to SOAP and REST API types
+    href: '/a-guide-to-soap-and-rest-api-types'
   - theme: Explore APIs
     text: Find an API
     href: '/find-a-service-api'
@@ -38,7 +38,7 @@ sidenav:
 <h1 class="govuk-heading-xl">Find an API</h1>
 <div class="govuk-grid-row">
   <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">View documentation for our Business Gateway APIs below.</p>
-  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">To read more about the types of APIs we use visit <a class="govuk-link" href="/learn-about-the-apis-we-use">Learn about the APIs we use</a>. For a list of HMLR terms and their definitions, visit <a class="govuk-link" href="/glossary">our glossary</a>.</p>
+  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">To read more about the types of APIs we use visit <a class="govuk-link" href="/a-guide-to-soap-and-rest-api-types">A guide to SOAP and REST API types</a>. For a list of HMLR terms and their definitions, visit <a class="govuk-link" href="/glossary">our glossary</a>.</p>
   <div class="govuk-form-group govuk-!-margin-left-3">
     <label class="govuk-label" for="sort">Service</label>
     <select class="govuk-select" id="sort" name="sort">
