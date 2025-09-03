@@ -59,11 +59,11 @@ sidenav:
       <option value="online-owner-verification">Online Owner Verification</option>
       <option value="outstanding-requests-service">Outstanding Requests Service</option>
       <option value="poll-request-service">Poll Request Service</option>
+      <option value="register-extract-service">Register Extract Service</option>
+      <option value="registered-proprietor-names">Registered Proprietor Names</option>
       <option value="search-by-property-description">Search by Property Description</option>
       <option value="search-of-the-index-map">Search of the Index Map</option>
       <option value="submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</option>
-      <option value="register-extract-service">Register Extract Service</option>
-      <option value="registered-proprietor-names">Registered Proprietor Names</option>
     </select>
   </div>
 </div>
@@ -153,6 +153,16 @@ sidenav:
   <p class="govuk-body govuk-!-margin-left-3">Use this service to collect responses for applications that have been manually processed or submitted outside of working hours.</p>
 </div>
 
+<div class="govuk-grid-row" data-sortable="register-extract-service">
+  <a class="govuk-heading-s govuk-link govuk-!-margin-left-3" href="https://landregistry.github.io/bgtechdoc/services/register_extract_service/">Register Extract Service <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--blue">SOAP API</strong></a>
+  <p class="govuk-body govuk-!-margin-left-3">Use this service to get source data from the Land Register in an electronic data stream (alongside the usual supply of the official copy).</p>
+</div>
+
+<div class="govuk-grid-row" data-sortable="registered-proprietor-names">
+  <a class="govuk-heading-s govuk-link govuk-!-margin-left-3" href="https://landregistry.github.io/bgtechdoc/services/registered_proprietor_names/">Registered Proprietor Names <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--orange">REST API</strong></a>
+  <p class="govuk-body govuk-!-margin-left-3">Use this service to check the name and type of registered proprietors of a registered title throughout the process from instruction to application submission.</p>
+</div>
+
 <div class="govuk-grid-row" data-sortable="search-by-property-description">
   <a class="govuk-heading-s govuk-link govuk-!-margin-left-3" href="https://landregistry.github.io/bgtechdoc/services/search_property_description/">Search by Property Description <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--blue">SOAP API</strong></a>
   <p class="govuk-body govuk-!-margin-left-3">Use this service to find out the title number and tenure of a property based on the address supplied.</p>
@@ -166,14 +176,4 @@ sidenav:
 <div class="govuk-grid-row" data-sortable="submit-an-application-to-change-the-land-register">
   <a class="govuk-heading-s govuk-link govuk-!-margin-left-3" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--orange">REST API</strong></a>
   <p class="govuk-body govuk-!-margin-left-3">Use this service to help lodge applications with HMLR to update the register or create a new lease or transfer of part.</p>
-</div>
-
-<div class="govuk-grid-row" data-sortable="register-extract-service">
-  <a class="govuk-heading-s govuk-link govuk-!-margin-left-3" href="https://landregistry.github.io/bgtechdoc/services/register_extract_service/">Register Extract Service <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--blue">SOAP API</strong></a>
-  <p class="govuk-body govuk-!-margin-left-3">Use this service to get source data from the Land Register in an electronic data stream (alongside the usual supply of the official copy).</p>
-</div>
-
-<div class="govuk-grid-row" data-sortable="registered-proprietor-names">
-  <a class="govuk-heading-s govuk-link govuk-!-margin-left-3" href="https://landregistry.github.io/bgtechdoc/services/registered_proprietor_names/">Registered Proprietor Names <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--orange">REST API</strong></a>
-  <p class="govuk-body govuk-!-margin-left-3">Use this service to check the name and type of registered proprietors of a registered title throughout the process from instruction to application submission.</p>
 </div>
