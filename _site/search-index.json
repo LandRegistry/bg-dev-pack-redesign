@@ -3,8 +3,27 @@
     "title": "Application information API Technical guide",
     "description": "Use this service to get information about a specific application.",
     "section": "Application information API v0.3",
+    "url": "/apis/application-information copy/0.3/technical-guide/",
+    "tokens": "how use application information api used get detailed about specific using request id returned by submit status can currently one following validating hm land registry still processing yet been added day list validation failed due errors during found are included section response accepted awaiting priority passed closed will moved protected state when reopens onto system error hmlr should retried support team contacted this always return http 200 valid regardless rules there implementing example requests responses v0 applications copy code data 3e4f6da2 ada7 4081 957c b23542466715 reference ab1234 timestamp 2024 09 25t18 18 49 478z warnings must upload document x type oc018 detail 00001 pointer null"
+  },
+  {
+    "title": "Application information API Technical guide",
+    "description": "Use this service to get information about a specific application.",
+    "section": "Application information API v0.3",
     "url": "/apis/application-information/0.3/technical-guide/",
     "tokens": "how use application information api used get detailed about specific using request id returned by submit status can currently one following validating hm land registry still processing yet been added day list validation failed due errors during found are included section response accepted awaiting priority passed closed will moved protected state when reopens onto system error hmlr should retried support team contacted this always return http 200 valid regardless rules there implementing example requests responses v0 applications copy code data 3e4f6da2 ada7 4081 957c b23542466715 reference ab1234 timestamp 2024 09 25t18 18 49 478z warnings must upload document x type oc018 detail 00001 pointer null"
+  },
+  {
+    "title": "Application Information API test stubs",
+    "section": "Application information v0.3",
+    "url": "/apis/application-information copy/0.3/test-stubs/",
+    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 information applicaiton with single charge request method get endpoint v0 applications b3ac19be 2b6d 4b8a 971c e758b0e8e790 headers authorization ltany value gt response status 200 copy data application id accepted priority protected timestamp 2024 09 25t18 18 49z reference a123aaa errors 2 transfer 2563940e ae95 4e7e 9b33 49a6571abdf6 b123bbb 3 level validation 3be62ad3 c542 452d 975e 6cd18d77196f failed null type mdref record detail md ref md007a exist pointer lender name matches records found all mandatory documents missing transactions t transferee representation must have warnings"
+  },
+  {
+    "title": "Application Information API",
+    "section": "apis",
+    "url": "/apis/application-information copy/",
+    "tokens": "application information api use this service get about specific warning these endpoints are currently live version status dropdown v0 3 latest button type submit class govuk margin 0 data module onclick setversion view select content"
   },
   {
     "title": "Application Information API test stubs",
@@ -112,6 +131,12 @@
     "tokens": "application information api use this service get about specific warning these endpoints are currently live version status dropdown v0 3 latest button type submit class govuk margin 0 data module onclick setversion view overview used detailed includes request id accepted code x inline hmlr reference once previously known abr priority timestamp any errors that prevented submission warnings did prevent need addressed before caseworker can process otherwise requisition may occur more after receiving notification indicating changed which notifications will available visit section page technical guide specification body link href https landregistry github io bgtechdoc vcad spec html tag rel noreferrer noopener target blank web opens new tab how works interaction img src assets images applicationinformation diagram png alt showing demonstrates support users using their unique provided via user examples listed system respond with relevant also by informing been onto day list failed validation state submitted when starts there several potential outcomes each trigger different response include passed added awaiting closed reopens case indicate whether error occurred must correct resubmit test created environment ve example demonstrate what should expect developing your own services stubs please note plans release sandbox developers future exact date confirmed general testing guidance our related apis change land register send document subsection"
   },
   {
+    "title": "Application Information API",
+    "section": "apis",
+    "url": "/apis/application-information copy/0.3/",
+    "tokens": "application information api use this service get about specific warning these endpoints are currently live version status dropdown v0 3 latest button type submit class govuk margin 0 data module onclick setversion view overview used detailed includes request id accepted code x inline hmlr reference once previously known abr priority timestamp any errors that prevented submission warnings did prevent need addressed before caseworker can process otherwise requisition may occur more after receiving notification indicating changed which notifications will available visit section page technical guide specification body link href https landregistry github io bgtechdoc vcad spec html tag rel noreferrer noopener target blank web opens new tab how works interaction img src assets images applicationinformation diagram png alt showing demonstrates support users using their unique provided via user examples listed system respond with relevant also by informing been onto day list failed validation state submitted when starts there several potential outcomes each trigger different response include passed added awaiting closed reopens case indicate whether error occurred must correct resubmit test created environment ve example demonstrate what should expect developing your own services stubs please note plans release sandbox developers future exact date confirmed general testing guidance our related apis change land register send document subsection"
+  },
+  {
     "title": "Notifications API",
     "section": "apis",
     "url": "/apis/notifications/0.3/",
@@ -189,5 +214,30 @@
     "section": "Before you start",
     "url": "/what-to-expect-from-the-developer-pack/",
     "tokens": "business gateway developer pack provides set tools documentation examples developers who create software applications customers although designed support may also help others looking understand how works this ll find guide accessing our terms use policies list apis access them available integrate testing what ve created additional contact information are new would like overview useful explore before start section first specific service api jump straight sometimes technical describe work hmlr commonly used their definitions visit glossary"
+  },
+  {
+    "title": "Download a document API",
+    "section": "apis",
+    "url": "/apis/download-a-document copy/",
+    "tokens": "download document api use this service get information about specific application warning these endpoints are currently live version status dropdown v0 3 latest button type submit class govuk margin 0 data module onclick setversion view select content"
+  },
+  {
+    "title": "Download a document API",
+    "section": "apis",
+    "url": "/apis/download-a-document copy/0.3/",
+    "tokens": "download document api use this service get information about specific application warning these endpoints are currently live version status dropdown v0 3 latest button type submit class govuk margin 0 data module onclick setversion view overview used includes one two three somemore info technical guide specification body link href https landregistry github io bgtechdoc vcad spec html tag rel noreferrer noopener target blank web opens new tab how works text test hmlr created environment ve also provided example code demonstrate what should expect when developing your own services stubs please note there plans release sandbox developers future exact date confirmed general testing guidance visit our related apis change land register send notifications more subsection"
+  },
+  {
+    "title": "Download a document API Technical guide",
+    "description": "Use this service to get information about a specific application.",
+    "section": "Download a document API v0.3",
+    "url": "/apis/download-a-document copy/0.3/technical-guide/",
+    "tokens": "how use download document api application information used get detailed about specific using request id returned by submit status can currently one following validating hm land registry still processing yet been added day list validation failed due errors during found are included section response accepted awaiting priority passed closed will moved protected state when reopens onto system error hmlr should retried support team contacted this always return http 200 valid regardless rules there implementing example requests responses v0 applications copy code data 3e4f6da2 ada7 4081 957c b23542466715 reference ab1234 timestamp 2024 09 25t18 18 49 478z warnings must upload x type oc018 detail 00001 pointer null"
+  },
+  {
+    "title": "Download a document API test stubs",
+    "section": "Download a document v0.3",
+    "url": "/apis/download-a-document copy/0.3/test-stubs/",
+    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 information applicaiton with single charge request method get endpoint v0 applications b3ac19be 2b6d 4b8a 971c e758b0e8e790 headers authorization ltany value gt response status 200 copy data application id accepted priority protected timestamp 2024 09 25t18 18 49z reference a123aaa errors 2 transfer 2563940e ae95 4e7e 9b33 49a6571abdf6 b123bbb 3 level validation 3be62ad3 c542 452d 975e 6cd18d77196f failed null type mdref record detail md ref md007a exist pointer lender name matches records found all mandatory documents missing transactions t transferee representation must have warnings"
   }
 ]
