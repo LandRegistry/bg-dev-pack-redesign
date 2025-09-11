@@ -938,7 +938,7 @@ relatedAPIs:
       [{ text: "" }, { text: "DEED" }, { text: "Suggested" }],
       [{ text: "" }, { text: "EVIDENCE" }, { text: "Suggested" }],
       [{ text: "" }, { text: "POA" }, { text: "Suggested" }],
-      [{ text: "AML" }, { text: "CORRES" }, { text: "Compulsory" }],
+      [{ text: "AML" }, { text: "CORRES" }, { text: "Suggested" }],
       [{ text: "APLC" }, { text: "CRWALIQ" }, { text: "Suggested" }],
       [{ text: "" }, { text: "FORM_600" }, { text: "Either" }],
       [{ text: "" }, { text: "FORM_600CH" }, { text: "Either" }],
