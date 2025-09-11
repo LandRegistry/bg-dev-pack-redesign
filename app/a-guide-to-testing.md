@@ -20,11 +20,11 @@ sidenav:
     text: Terms of use
     href: '/terms-of-use'
   - theme: Explore APIs
-    text: A guide to SOAP and REST API types
-    href: '/a-guide-to-soap-and-rest-api-types'
-  - theme: Explore APIs
     text: Find an API
     href: '/find-a-service-api'
+  - theme: Explore APIs
+    text: A guide to SOAP and REST API types
+    href: '/a-guide-to-soap-and-rest-api-types'
   - theme: Explore APIs
     text: A guide to testing
     href: '/a-guide-to-testing'

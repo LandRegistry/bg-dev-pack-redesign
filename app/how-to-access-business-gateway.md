@@ -21,11 +21,11 @@ sidenav:
     text: Terms of use
     href: '/terms-of-use'
   - theme: Explore APIs
-    text: A guide to SOAP and REST API types
-    href: '/a-guide-to-soap-and-rest-api-types'
-  - theme: Explore APIs
     text: Find an API
     href: '/find-a-service-api'
+  - theme: Explore APIs
+    text: A guide to SOAP and REST API types
+    href: '/a-guide-to-soap-and-rest-api-types'
   - theme: Explore APIs
     text: A guide to testing
     href: '/a-guide-to-testing'
@@ -63,7 +63,7 @@ sidenav:
   <ol class="govuk-list govuk-list--number govuk-!-margin-left-3">
     <li>Sign the development license which can be requested by emailing <a
         href="mailto:channelpartners@landregistry.gov.uk">channelpartners@landregistry.gov.uk</a>. If you are outsourcing the IT development work, the other
-      party will need to sign the development licence.</li>
+      party will need to sign the development license.</li>
     <br>
     <li>We'll send a test SSL certificate to the technical contact. This gives your IT team connectivity and access
       to the test environment so they can start the integration process. Once you have gained connectivity, the
