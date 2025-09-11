@@ -9,6 +9,26 @@ eleventyNavigation:
   key: Submit an application API v0.3 test stubs
   parent: Submit an application API v0.3
 
+versions:
+  - value: "0.3"
+    text: "v0.3 (latest)"
+    selected: true
+    
+relatedAPIs:
+  - text: Submit an application to change the Land Register
+    href: /apis/submit-an-application-to-change-the-land-register 
+  - text: Send a document
+    href: /apis/send-a-document
+  - text: Application information
+    href: /apis/application-information
+  - text: Notifications
+    href: /apis/notifications
+  - text: Download a document
+    href: /apis/download-a-document
+  - text: More
+    href: /find-a-service-api
+    classes: govuk-!-font-weight-bold
+
 sidenav:
   - theme: Contents
     text: "Scenario 1: Submit a single charge"
@@ -22,52 +42,31 @@ sidenav:
   - theme: Contents
     text: "Scenario 4: Submit an application with Level 2 validation errors"
     href: '#scenario-4'
-
-versions:
-  - value: "0.3"
-    text: "v0.3 (latest)"
-    selected: true
-
-relatedAPIs:
-  - text: Send a document API
-    href: /apis/send-a-document
-  - text: Application information API
-    href: /apis/application-information
-  - text: Notifications API
-    href: /apis/notifications
-  - text: Submit an application to change the land register API
-    href: /apis/submit-an-application-to-change-the-land-register
-  - text: Download a document API
-    href: /apis/download-a-document
 ---
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
-<p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway
-  APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see
-  when developing your own services.</p>
-<p class="govuk-body">Base URL:
-  <code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code>
-</p>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<h3 id="scenario-1" class="govuk-heading-m">Scenario 1: Submit a single charge</h3>
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method:
-  <code class="app-code app-code--inline">POST</code>
-</p>
-<p class="govuk-body">Endpoint:
-  <code class="app-code app-code--inline">/v0/applications</code>
-</p>
-<p class="govuk-body">Headers:
-<ul class="govuk-list govuk-list--bullet">
-  <li><code class="app-code app-code--inline">Authorization: &ltany-value&gt
-      </code></li>
-  <li><code class="app-code app-code--inline">Idempotency-Key: &ltany-value&gt
-      </code></li>
-</ul>
-</p>
-<p class="govuk-body">Note: The idempotency key should be unique for each request (this is not enforced by the
-  stubs).</p>
-<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see when developing your own services.
+
+Base URL: `https://bgtest.landregistry.gov.uk/bg2test/api`
+
+--- {.govuk-section-break--l}
+
+## Scenario 1: Submit a single charge {.govuk-heading-m #scenario-1}
+### Request {.govuk-heading-s}
+
+Method: `POST`
+
+Endpoint: `/v0/applications`
+
+Headers:
+
+- `Authorization: <any-value>`
+- `Idempotency-Key: <any-value>`
+
+Note: The idempotency key should be unique for each request (this is not enforced by the stubs).
+
+<div class="code-wrapper">
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -170,12 +169,13 @@ relatedAPIs:
 }
 ```
 </div>
-<div class="govuk-!-padding-bottom-6"></div>
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status:
-  <code class="app-code app-code--inline">202</code>
-</p>
-<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+
+### Response {.govuk-heading-s .govuk-!-margin-top-6}
+
+Status: `202`
+
+<div class="code-wrapper">
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -185,27 +185,25 @@ relatedAPIs:
 }
 ```
 </div>
-<div class="govuk-!-padding-bottom-3"></div>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<h3 id="scenario-2" class="govuk-heading-m">Scenario 2: Submit a single transfer</h3>
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method:
-  <code class="app-code app-code--inline">POST</code>
-</p>
-<p class="govuk-body">Endpoint:
-  <code class="app-code app-code--inline">/v0/applications</code>
-</p>
-<p class="govuk-body">Headers:
-<ul class="govuk-list govuk-list--bullet">
-  <li><code class="app-code app-code--inline">Authorization: &ltany-value&gt
-    </code></li>
-  <li><code class="app-code app-code--inline">Idempotency-Key: &ltany-value&gt
-    </code></li>
-</ul>
-</p>
-<p class="govuk-body">Note: The idempotency key should be unique for each request (this is not enforced by the
-  stubs).</p>
-<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+
+--- {.govuk-section-break--l}
+
+## Scenario 2: Submit a single transfer {.govuk-heading-m #scenario-2}
+### Request {.govuk-heading-s}
+
+Method: `POST`
+
+Endpoint: `/v0/applications`
+
+Headers:
+
+- `Authorization: <any-value>`
+- `Idempotency-Key: <any-value>`
+
+Note: The idempotency key should be unique for each request (this is not enforced by the stubs).
+
+<div class="code-wrapper">
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -341,12 +339,15 @@ relatedAPIs:
 }
 ```
 </div>
+
 <div class="govuk-!-padding-bottom-6"></div>
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status:
-  <code class="app-code app-code--inline">202</code>
-</p>
-<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+
+### Response {.govuk-heading-s .govuk-!-margin-top-6}
+
+Status: `202`
+
+<div class="code-wrapper">
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -356,27 +357,25 @@ relatedAPIs:
 }
 ```
 </div>
-<div class="govuk-!-padding-bottom-3"></div>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<h3 id="scenario-3" class="govuk-heading-m">Scenario 3: Submit an application with Level 1 validation errors</h3>
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method:
-  <code class="app-code app-code--inline">POST</code>
-</p>
-<p class="govuk-body">Endpoint:
-  <code class="app-code app-code--inline">/v0/applications</code>
-</p>
-<p class="govuk-body">Headers:
-<ul class="govuk-list govuk-list--bullet">
-  <li><code class="app-code app-code--inline">Authorization: &ltany-value&gt
-      </code></li>
-  <li><code class="app-code app-code--inline">Idempotency-Key: &ltany-value&gt
-      </code></li>
-</ul>
-</p>
-<p class="govuk-body">Note: The idempotency key should be unique for each request (this is not enforced by the
-  stubs).</p>
-<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+
+--- {.govuk-section-break--l}
+
+## Scenario 3: Submit an application with Level 1 validation errors {.govuk-heading-m #scenario-3}
+### Request {.govuk-heading-s}
+
+Method: `POST`
+
+Endpoint: `/v0/applications`
+
+Headers:
+
+- `Authorization: <any-value>`
+- `Idempotency-Key: <any-value>`
+
+Note: The idempotency key should be unique for each request (this is not enforced by the stubs).
+
+<div class="code-wrapper">
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -472,12 +471,13 @@ relatedAPIs:
 }
 ```
 </div>
-<div class="govuk-!-padding-bottom-6"></div>
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status:
-  <code class="app-code app-code--inline">400</code>
-</p>
-<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+
+### Response {.govuk-heading-s .govuk-!-margin-top-6}
+
+Status: `400`
+
+<div class="code-wrapper">
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -500,27 +500,25 @@ relatedAPIs:
 }
 ```
 </div>
-<div class="govuk-!-padding-bottom-3"></div>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<h3 id="scenario-4" class="govuk-heading-m">Scenario 4: Submit an application with Level 2 validation errors</h3>
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method:
-  <code class="app-code app-code--inline">POST</code>
-</p>
-<p class="govuk-body">Endpoint:
-  <code class="app-code app-code--inline">/v0/applications</code>
-</p>
-<p class="govuk-body">Headers:
-<ul class="govuk-list govuk-list--bullet">
-  <li><code class="app-code app-code--inline">Authorization: &ltany-value&gt
-      </code></li>
-  <li><code class="app-code app-code--inline">Idempotency-Key: &ltany-value&gt
-      </code></li>
-</ul>
-</p>
-<p class="govuk-body">Note: The idempotency key should be unique for each request (this is not enforced by
-  the stubs).</p>
-<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+
+--- {.govuk-section-break--l}
+
+## Scenario 4: Submit an application with Level 2 validation errors {.govuk-heading-m #scenario-4}
+### Request {.govuk-heading-s}
+
+Method: `POST`
+
+Endpoint: `/v0/applications`
+
+Headers:
+
+- `Authorization: <any-value>`
+- `Idempotency-Key: <any-value>`
+
+Note: The idempotency key should be unique for each request (this is not enforced by the stubs).
+
+<div class="code-wrapper">
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -692,12 +690,13 @@ relatedAPIs:
 }
 ```
 </div>
-<div class="govuk-!-padding-bottom-6"></div>
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status:
-  <code class="app-code app-code--inline">202</code>
-</p>
-<div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+
+### Response {.govuk-heading-s .govuk-!-margin-top-6}
+
+Status: `202`
+
+<div class="code-wrapper">
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
 {
@@ -707,4 +706,3 @@ relatedAPIs:
 }
 ```
 </div>
-<div class="govuk-!-padding-bottom-3"></div>

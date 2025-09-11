@@ -5,7 +5,7 @@ title: Application Information API
 description: Use this service to get information about a specific application.
 
 eleventyNavigation:
-  key: Application Information API v0.3
+  key: Application Information API v1.0
   parent: Application Information API
 
 notlive: true
@@ -13,9 +13,9 @@ notlive: true
 versions:
   - value: "1.0"
     text: "v1.0 (upcoming)"
+    selected: true
   - value: "0.3"
     text: "v0.3 (latest)"
-    selected: true
 
 relatedAPIs:
   - text: Submit an application to change the Land Register

@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template govuk-template--rebranded">
   <head>
     <meta charset="utf-8">
-    <title>Download a document - HM Land Registry Developer Pack</title>
+    <title>Application Information API - HM Land Registry Developer Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="/assets/application.css">
 
 
-  <meta property="og:title" content="Download a document">
-<meta property="og:description" name="description" content="Use this service to download documents.">
+  <meta property="og:title" content="Application Information API">
+<meta property="og:description" name="description" content="Use this service to get information about a specific application.">
 <script src="/assets/script.js"></script><script>
     function setVersion() {
         let version = document.getElementById('version').value;
@@ -78,7 +78,7 @@ data-module="govuk-service-navigation"
 <div class="govuk-grid-column-full">
 
 <header class="app-document-header">
-  <h1 class="govuk-heading-xl">Download a document</h1><p class="govuk-body-l">Use this service to download&nbsp;documents.</p>
+  <h1 class="govuk-heading-xl">Application Information API</h1><p class="govuk-body-l">Use this service to get information about a specific&nbsp;application.</p>
 </header>
 
 <div class="govuk-warning-text">
@@ -103,6 +103,7 @@ data-module="govuk-service-navigation"
   </label>
   <select class="govuk-select" id="version" name="version">
     <option value="1.0" selected>v1.0 (upcoming)</option>
+    <option value="0.3">v0.3 (latest)</option>
   </select>
   <button type="submit" 
                   class="govuk-button govuk-!-margin-0" 
@@ -115,47 +116,58 @@ data-module="govuk-service-navigation"
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 <div class="app-prose-scope"><h2 class="govuk-heading-m" id="overview" tabindex="-1" class="govuk-heading-l">Overview</h2>
-<p class="govuk-body">The Download a document API provides a way to download documents that have been created by HM Land Registry for your consumption.</p>
-<p class="govuk-body">This API has one endpoints:</p>
+<p class="govuk-body">The Application information API is used to get detailed information about a specific application. This includes:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">GET /v0/documents/{download_id}</code> - get the binary content of the document.</li>
+<li>the status of an application</li>
+<li>the <code class="app-code app-code--inline">application_request_id</code> used in the request</li>
+<li>an ID for the accepted application, <code class="app-code app-code--inline">hmlr_reference</code>, once accepted (previously known as ABR)</li>
+<li>the priority of the application, <code class="app-code app-code--inline">priority_timestamp</code>, once accepted</li>
+<li>any errors that prevented application submission</li>
+<li>any warnings that did not prevent submission but need to be addressed before a caseworker can process the application (otherwise a requisition may occur)</li>
 </ul>
-<p class="govuk-body">You may obtain a <code class="app-code app-code--inline">download_id</code> from any of the following:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li>Completion notifications</li>
-<li>Cancellation notifications</li>
-<li>Requisition correspondence notifications</li>
-<li>The <code class="app-code app-code--inline">/correspondence</code> array in an <a href="/apis/application-information" class="govuk-link">application information</a> response</li>
-</ul>
+<p class="govuk-body">This API can be used to get more information after receiving a notification indicating the application has changed. For information about which notifications will be available, visit the notifications section of the <a href="/apis/submit-an-application" class="govuk-link">Submit an application</a> API page.</p>
 </section>
-<section>
-<h2 class="govuk-heading-m" id="view-the-technical-guide" tabindex="-1" class="govuk-heading-l">View the Technical Guide</h2>
-<p class="govuk-body"><a href="/apis/download-a-document/1.0/technical-guide" class="govuk-link">Technical guide</a></p>
+<section id="view-the-technical-guide">
+<h2 class="govuk-heading-m" id="view-the-technical-guide" tabindex="-1" class="govuk-heading-l">View the Technical guide</h2>
+<p class="govuk-body"><a href="./technical-guide" class="govuk-link">Technical guide</a></p>
 </section>
-<!-- <section>
-## View the API specification {.govuk-heading-m}
-
-[Web version (opens in a new tab)](https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Notifications-API){rel="noreferrer noopener" target="_blank"}
-
-</section> -->
-<section>
+<section id="view-the-api-specification">
+<h2 class="govuk-heading-m" id="view-the-api-specification" tabindex="-1" class="govuk-heading-l">View the API specification</h2>
+<p class="govuk-body"><a href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Application-information-API" rel="noreferrer noopener" target="_blank" class="govuk-link">Web version (opens in new tab)</a></p>
+</section>
+<section id="how-the-api-works">
 <h2 class="govuk-heading-m" id="how-the-api-works" tabindex="-1" class="govuk-heading-l">How the API works</h2>
-<!-- <a target="_blank" href="/assets/images/NotificationInteraction.png">
-  <img src="/assets/images/NotificationInteraction.png" alt="A diagram showing the interaction of the Notification API.">
-</a> -->
-<!-- < INSERT IMAGE HERE > -->
-<!-- This diagram demonstrates how the download a document API works. -->
-<p class="govuk-body">A user may obtain a <code class="app-code app-code--inline">download_id</code> from either a notification or application information.</p>
-<p class="govuk-body">The user may then use that <code class="app-code app-code--inline">download_id</code> in their request to <code class="app-code app-code--inline">GET /v0/documents/{download_id}</code> to obtain the document binary.</p>
+<h3 class="govuk-heading-s" id="interaction" tabindex="-1" class="govuk-heading-m">Interaction</h3>
+<a target="_blank" href="/assets/images/ApplicationInformation_interaction_diagram.png">
+  <img src="/assets/images/ApplicationInformation_interaction_diagram.png" alt="A diagram showing the interaction of the Application Information API.">
+</a>
+<p class="govuk-body">This diagram demonstrates how the Application information API works to support users.</p>
+<p class="govuk-body">Using their unique application ID (provided via the Submit an application API), a user can request information about a specific application. Examples of the type of information are listed in the overview section.</p>
+<p class="govuk-body">The HMLR system will respond with the relevant information. The system may also respond by informing users that their application has been accepted onto the day list or if it has failed validation.</p>
+<h3 class="govuk-heading-s" id="state-diagram" tabindex="-1" class="govuk-heading-m">State diagram</h3>
+<a markdown="1" target="_blank" href="/assets/images/ApplicationInformation_State_diagram.png">
+  <img alt="A diagram showing how the Application Information API works." src="/assets/images/ApplicationInformation_State_diagram.png">
+</a>
+<p class="govuk-body">The state diagram demonstrates how the validation process works once an application has been submitted.</p>
+<p class="govuk-body">When the system starts the validation process, there are several potential outcomes which can each trigger a different response. A response may include:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>informing the user that an application has passed validation and has been added to the day list</li>
+<li>informing the user that an application has passed validation but is awaiting priority as the day list is closed. Once the day list reopens, the application will be added</li>
+<li>informing the user that an application has not passed validation. In this case, the system will indicate whether a validation or system error has occurred. The user must correct the error and resubmit the application</li>
+</ul>
 </section>
-<section>
+<section id="how-to-test-this-service-api">
 <h2 class="govuk-heading-m" id="how-to-test-this-api" tabindex="-1" class="govuk-heading-l">How to test this API</h2>
-<p class="govuk-body">HMLR has created a test environment for the Download a document API. We’ve also provided example code to demonstrate what you should expect when developing your own services.</p>
-<p class="govuk-body"><a href="/apis/download-a-document/1.0/test-stubs" class="govuk-link">View Download a document test stubs</a>.</p>
+<p class="govuk-body">HMLR has created a test environment for the Application information API. We’ve also provided example code to demonstrate what you should expect when developing your own services.</p>
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="./test-stubs">View Application information test stubs.</a>
+  </li>
+</ul>
 <div class="govuk-inset-text">
   Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed.
 </div>
-<p class="govuk-body">For general testing guidance, visit our <a href="/a-guide-to-testing" class="govuk-link">guide to testing</a></p>
+<p class="govuk-body">For general testing guidance, visit our <a href="/a-guide-to-testing" class="govuk-link">guide to testing</a>.</p>
 </section>
 </div>
 
@@ -173,8 +185,8 @@ data-module="govuk-service-navigation"
         <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a></li>
         <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/send-a-document">Send a document</a></li>
         <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/submit-an-application">Submit an application</a></li>
-        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/application-information">Application information</a></li>
         <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/notifications">Notifications</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/download-a-document">Download a document</a></li>
         <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link govuk-!-font-weight-bold" href="/find-a-service-api">More</a></li>
     </ul>
     </nav>

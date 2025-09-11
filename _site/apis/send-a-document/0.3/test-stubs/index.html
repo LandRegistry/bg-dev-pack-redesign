@@ -188,18 +188,19 @@ data-module="govuk-service-navigation"
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 <div class="app-prose-scope"><section>
-  <p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to seewhen developing your own services.</p>
-  <p class="govuk-body">Due to technical limitations, these stubs will only allow you to get an upload url. The URL won’t work and the <code class="app-code app-code--inline">PUT</code> endpoint is not stubbed.</p>
-  <p class="govuk-body">Base URL: <code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to seewhen developing your own services.</p>
+<p class="govuk-body">Due to technical limitations, these stubs will only allow you to get an upload url. The URL won’t work and the <code class="app-code app-code--inline">PUT</code> endpoint is not stubbed.</p>
+<p class="govuk-body">Base URL: <code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
 </section>
+<hr class="govuk-section-break--l govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-  <h2 id="scenario-1" class="govuk-heading-m">Scenario 1: Success</h2>
-  <h3 class="govuk-heading-s">Request</h3>
-  <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
-  <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
-  <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
-<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+<h2 class="govuk-heading-m" id="scenario-1" tabindex="-1" class="govuk-heading-l">Scenario 1: Success</h2>
+<h3 class="govuk-heading-s" id="request" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
@@ -213,9 +214,10 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
-  <h3 class="govuk-heading-s">Response</h3>
-  <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
-<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+<h3 class="govuk-heading-s" id="response" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
@@ -227,16 +229,17 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
-  <p class="govuk-body">Note: This response body may contain any random UUID.</p>
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<p class="govuk-body">Note: This response body may contain any random UUID.</p>
 </section>
+<hr class="govuk-section-break--l govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-  <h2 id="scenario-2" class="govuk-heading-m">Scenario 2: Invalid Document Type</h2>
-  <h3 class="govuk-heading-s">Request</h3>
-  <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
-  <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
-  <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
-<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+<h2 class="govuk-heading-m" id="scenario-2" tabindex="-1" class="govuk-heading-l">Scenario 2: Invalid Document Type</h2>
+<h3 class="govuk-heading-s" id="request-1" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
@@ -250,10 +253,10 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
-  <div class="govuk-!-padding-bottom-6"></div>
-  <h3 class="govuk-heading-s">Response</h3>
-  <p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
-<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+<h3 class="govuk-heading-s" id="response-1" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
@@ -269,15 +272,16 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 </section>
+<hr class="govuk-section-break--l govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-  <h2 id="scenario-3" class="govuk-heading-m">Scenario 3: Invalid file length (too small)</h2>
-  <h3 class="govuk-heading-s">Request</h3>
-  <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
-  <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
-  <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
-<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+<h2 class="govuk-heading-m" id="scenario-3" tabindex="-1" class="govuk-heading-l">Scenario 3: Invalid file length (too small)</h2>
+<h3 class="govuk-heading-s" id="request-2" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
@@ -291,10 +295,10 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
-  <div class="govuk-!-padding-bottom-6"></div>
-  <h3 class="govuk-heading-s">Response</h3>
-  <p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
-<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+<h3 class="govuk-heading-s" id="response-2" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
@@ -310,15 +314,16 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 </section>
+<hr class="govuk-section-break--l govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-  <h2 id="scenario-4" class="govuk-heading-m">Scenario 4: Invalid file length (too large)</h2>
-  <h3 class="govuk-heading-s">Request</h3>
-  <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
-  <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
-  <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
-<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+<h2 class="govuk-scenario-m" id="scenario-4" tabindex="-1" class="govuk-heading-l">Scenario 4: Invalid file length (too large)</h2>
+<h3 class="govuk-heading-s" id="request-3" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
@@ -332,10 +337,10 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
-  <div class="govuk-!-padding-bottom-6"></div>
-  <h3 class="govuk-heading-s">Response</h3>
-  <p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
-<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+<h3 class="govuk-heading-s" id="response-3" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
@@ -351,15 +356,16 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 </section>
+<hr class="govuk-section-break--l govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-  <h2 id="scenario-5" class="govuk-heading-m">Scenario 5: Invalid File_SHA256</h2>
-  <h3 class="govuk-heading-s">Request</h3>
-  <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
-  <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
-  <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
-<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+<h2 class="govuk-heading-m" id="scenario-5" tabindex="-1" class="govuk-heading-l">Scenario 5: Invalid File_SHA256</h2>
+<h3 class="govuk-heading-s" id="request-4" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
@@ -373,10 +379,10 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
-  <div class="govuk-!-padding-bottom-6"></div>
-  <h3 class="govuk-heading-s">Response</h3>
-  <p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
-<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+<h3 class="govuk-heading-s" id="response-4" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
@@ -400,11 +406,12 @@ data-module="govuk-service-navigation"
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <h3 class="govuk-heading-m">Related APIs</h3>
 <ul class="govuk-list govuk-list--bullet">
-    <li><a class="govuk-link" href="/apis/submit-an-application">Submit an application API</a></li>
-    <li><a class="govuk-link" href="/apis/application-information">Application information API</a></li>
-    <li><a class="govuk-link" href="/apis/notifications">Notifications API</a></li>
-    <li><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the land register API</a></li>
-    <li><a class="govuk-link" href="/apis/download-a-document">Download a document API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application">Submit an application</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/application-information">Application information</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/notifications">Notifications</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/download-a-document">Download a document</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/find-a-service-api">More</a></li>
 </ul>
 
 </div>

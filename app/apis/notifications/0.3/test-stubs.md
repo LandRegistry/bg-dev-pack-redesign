@@ -3,11 +3,31 @@ layout: guidance.njk
 
 title: Notifications API test stubs
 
+eleventyNavigation:
+  key: Notifications API v0.3 Test stubs
+  parent: Notifications API v0.3
+
 notlive: true
 
-eleventyNavigation:
-  key: Notifications API v0.3 test stubs
-  parent: Notifications API v0.3
+versions:
+  - value: "0.3"
+    text: "v0.3 (latest)"
+    selected: true
+
+relatedAPIs:
+  - text: Submit an application to change the Land Register
+    href: /apis/submit-an-application-to-change-the-land-register 
+  - text: Send a document
+    href: /apis/send-a-document
+  - text: Submit an application
+    href: /apis/submit-an-application
+  - text: Application information
+    href: /apis/application-information
+  - text: Download a document
+    href: /apis/download-a-document
+  - text: More
+    href: /find-a-service-api
+    classes: govuk-!-font-weight-bold
 
 sidenav:
   - theme: Contents
@@ -32,47 +52,39 @@ sidenav:
     text: 'Scenario 7: System error notification'
     href: '#scenario-7'
   - theme: Contents
-    text: 'Scenario 8: Application cancelled notification'
+    text: 'Scenario 8: Cancelled notification'
     href: '#scenario-8'
   - theme: Contents
-    text: 'Scenario 9: Application completed notification'
+    text: 'Scenario 9: Completed notification'
     href: '#scenario-9'
-
-versions:
-  - value: "0.3"
-    text: "v0.3 (latest)"
-    selected: true
-
-relatedAPIs:
-  - text: Send a document API
-    href: /apis/send-a-document
-  - text: Application information API
-    href: /apis/application-information
-  - text: Notifications API
-    href: /apis/notifications
-  - text: Submit an application to change the land register API
-    href: /apis/submit-an-application-to-change-the-land-register
-  - text: Download a document API
-    href: /apis/download-a-document 
+  - theme: Contents
+    text: 'Scenario 10: Requisitioned notification'
+    href: '#scenario-10'
 ---
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
-<p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see when developing your own services.</p>
-<p class="govuk-body">Base URL: <code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
+HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see when developing your own services.
 
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+Base URL: `https://bgtest.landregistry.gov.uk/bg2test/api`
+
+---
 
 <section>
-<h2 id="scenario-1" class="govuk-heading-m">Scenario 1: Get all notifications</h2>
 
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications</code></p>
-<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+## Scenario 1: Get all notifications {.govuk-heading-m #scenario-1}
+### Request {.govuk-heading-s}
 
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
-<div class="code-wrapper">
+Method: `GET`
+
+Endpoint: `/v0/notifications`
+
+Headers: `Authorization: <any-value>`
+
+### Response {.govuk-heading-s}
+
+Status: `200`
+
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
@@ -136,18 +148,25 @@ relatedAPIs:
 </div>
 
 </section>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<section>
-<h2 id="scenario-2" class="govuk-heading-m">Scenario 2: Get all new notifications</h2>
 
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications?status=NEW</code></p>
-<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+---
 
-<div class="code-wrapper">
+<section id="scenario-2">
+
+## Scenario 2: Get all new notifications {.govuk-heading-m #scenario-2}
+### Request {.govuk-heading-s}
+
+Method: `GET`
+
+Endpoint: `/v0/notifications?status=NEW`
+
+Headers: `Authorization: <any-value>`
+
+### Response {.govuk-heading-s}
+
+Status: `200`
+
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
 
 {{ govukButton({
   text: "Copy code",
@@ -158,7 +177,7 @@ relatedAPIs:
 { 
   "data": [
     {
-      "notification_id": "&#123;&#123;ID&#125;&#125;",
+      "notification_id": "{{"{{ID}}"}}",
       "created_datetime": "2024-01-01T12:00:00.000",
       "event_datetime": "2024-01-01T12:00:00.000",
       "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json",
@@ -176,7 +195,7 @@ relatedAPIs:
       }
     },
     {
-      "notification_id": "&#123;&#123;ID&#125;&#125;",
+      "notification_id": "{{"{{ID}}"}}",
       "created_datetime": "2024-01-01T12:00:00.000",
       "event_datetime": "2024-01-01T12:00:00.000",
       "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/validation-failed.json",
@@ -197,18 +216,25 @@ relatedAPIs:
 
 </div>
 </section>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<section>
-<h2 id="scenario-3" class="govuk-heading-m">Scenario 3: Get all acknowledged notifications</h2>
 
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications?status=ACKNOWLEDGED</code></p>
-<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+---
 
-<div class="code-wrapper">
+<section id="scenario-3">
+
+## Scenario 3: Get all acknowledged notifications {.govuk-heading-m #scenario-3}
+### Request {.govuk-heading-s}
+
+Method: `GET`
+
+Endpoint: `/v0/notifications?status=ACKNOWLEDGED`
+
+Headers: `Authorization: <any-value>`
+
+### Response {.govuk-heading-s}
+
+Status: `200`
+
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
 
 {{ govukButton({
   text: "Copy code",
@@ -219,7 +245,7 @@ relatedAPIs:
 {
   "data": [
     {
-      "notification_id": "&#123;&#123;ID&#125;&#125;",
+      "notification_id": "{{"{{ID}}"}}",
       "created_datetime": "2024-01-01T12:00:00.000",
       "event_datetime": "2024-01-01T12:00:00.000",
       "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json",
@@ -242,25 +268,25 @@ relatedAPIs:
 
 </div>
 </section>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<section>
-<h2 id="scenario-4" class="govuk-heading-m">Scenario 4: Get all with invalid date filter</h2>
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method:
-  <code class="app-code app-code--inline">GET</code>
-</p>
-<p class="govuk-body">Endpoint:
-  <code class="app-code app-code--inline">/v0/notifications?created_after=2020-01-01T00:00:00&created_before=2015-01-01T00:00:00</code>
-</p>
-<p class="govuk-body">Headers:
-  <code class="app-code app-code--inline">Authorization: &ltany-value&gt
-    </code>
-</p>
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status:
-  <code class="app-code app-code--inline">400</code>
-</p>
-<div class="code-wrapper">
+
+---
+
+<section id="scenario-4">
+
+### Scenario 4: Get all with invalid date filter {.govuk-heading-s #scenario-4}
+### Request {.govuk-heading-s}
+
+Method: `GET`
+
+Endpoint: `/v0/notifications?created_after=2020-01-01T00:00:00&created_before=2015-01-01T00:00:00`
+
+Headers: `Authorization: <any-value>`
+
+### Response {.govuk-heading-s}
+
+Status: `400`
+
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
 
 {{ govukButton({
   text: "Copy code",
@@ -280,21 +306,21 @@ relatedAPIs:
 
 </div>
 </section>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<section>
-<h2 id="scenario-5" class="govuk-heading-m">Scenario 5: Acknowledge notifications</h2>
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method:
-  <code class="app-code app-code--inline">POST</code>
-</p>
-<p class="govuk-body">Endpoint:
-  <code class="app-code app-code--inline">/v0/notifications/acknowledge</code>
-</p>
-<p class="govuk-body">Headers:
-  <code class="app-code app-code--inline">Authorization: &ltany-value&gt
-    </code>
-</p>
-<div class="code-wrapper">
+
+---
+
+<section id="scenario-5">
+
+## Scenario 5: Acknowledge notifications {.govuk-heading-m #scenario-5}
+### Request {.govuk-heading-s}
+
+Method: `POST`
+
+Endpoint: `/v0/notifications/acknowledge`
+
+Headers: `Authorization: <any-value>`
+
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
 
 {{ govukButton({
   text: "Copy code",
@@ -312,11 +338,11 @@ relatedAPIs:
 ```
 </div>
 
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status:
-  <code class="app-code app-code--inline">200</code>
-</p>
-<div class="code-wrapper">
+### Response {.govuk-heading-s}
+
+Status: `200`
+
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
 
 {{ govukButton({
   text: "Copy code",
@@ -338,26 +364,25 @@ relatedAPIs:
 ```
 </div>
 </section>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+---
+
 <section>
-<h2 id="scenario-6" class="govuk-heading-m">Scenario 6: Application queued notification</h2>
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method:
-  <code class="app-code app-code--inline">GET</code>
-</p>
-<p class="govuk-body">Endpoint:
-  <code
-    class="app-code app-code--inline">/v0/notifications?notification_type=APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code>
-</p>
-<p class="govuk-body">Headers:
-  <code class="app-code app-code--inline">Authorization: &ltany-value&gt
-</code>
-</p>
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status:
-  <code class="app-code app-code--inline">200</code>
-</p>
-<div class="code-wrapper">
+
+## Scenario 6: Application queued notification {.govuk-heading-m #scenario-6}
+### Request {.govuk-heading-s}
+
+Method: `GET`
+
+Endpoint: `/v0/notifications?notification_type=APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST`
+
+Headers: `Authorization: <any-value>`
+
+### Response {.govuk-heading-s}
+
+Status: `200`
+
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
 
 {{ govukButton({
   text: "Copy code",
@@ -367,7 +392,7 @@ relatedAPIs:
 ```json
 {
   "data": [{
-    "notification_id": "&#123;&#123;ID&#125;&#125;",
+    "notification_id": "{{"{{ID}}"}}",
     "created_datetime": "2024-01-01T12:00:00.000",
     "event_datetime": "2024-01-01T12:00:00.000",
     "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-awaiting-priority.json",
@@ -386,25 +411,25 @@ relatedAPIs:
 ```
 </div>
 </section>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<section>
-<h2 id="scenario-7" class="govuk-heading-m">Scenario 7: System error notification</h2>
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method:
-  <code class="app-code app-code--inline">GET</code>
-</p>
-<p class="govuk-body">Endpoint:
-  <code class="app-code app-code--inline">/v0/notifications?notification_type=SYSTEM_ERROR</code>
-</p>
-<p class="govuk-body">Headers:
-  <code class="app-code app-code--inline">Authorization: &ltany-value&gt
-</code>
-</p>
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status:
-  <code class="app-code app-code--inline">200</code>
-</p>
-<div class="code-wrapper">
+
+---
+
+<section id="scenario-7">
+
+## Scenario 7: System error notification {.govuk-heading-m #scenario-7}
+### Request {.govuk-heading-s}
+
+Method: `GET`
+
+Endpoint: `/v0/notifications?notification_type=SYSTEM_ERROR`
+
+Headers: `Authorization: <any-value>`
+
+### Response {.govuk-heading-s}
+
+Status: `200`
+
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
 
 {{ govukButton({
   text: "Copy code",
@@ -414,7 +439,7 @@ relatedAPIs:
 ```json
 {
   "data": [{
-    "notification_id": "&#123;&#123;ID&#125;&#125;",
+    "notification_id": "{{"{{ID}}"}}",
     "created_datetime": "2024-01-01T12:00:00.000",
     "event_datetime": "2024-01-01T12:00:00.000",
     "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/system-error.json",
@@ -435,25 +460,22 @@ relatedAPIs:
 </section>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<section>
-<h2 id="scenario-8" class="govuk-heading-m">Scenario 8: Application cancelled notification</h2>
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method:
-  <code class="app-code app-code--inline">GET</code>
-</p>
-<p class="govuk-body">Endpoint:
-  <code
-    class="app-code app-code--inline">/v0/notifications?notification_type=APPLICATION_CANCELLED</code>
-</p>
-<p class="govuk-body">Headers:
-  <code class="app-code app-code--inline">Authorization: &ltany-value&gt
-</code>
-</p>
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status:
-  <code class="app-code app-code--inline">200</code>
-</p>
-<div class="code-wrapper">
+<section id="scenario-8">
+
+## Scenario 8: Cancelled notification {.govuk-heading-m #scenario-8}
+### Request {.govuk-heading-s}
+
+Method: `GET`
+
+Endpoint: `/v0/notifications?subject=<uuid ending with 'can'>`
+
+Headers: `Authorization: <any-value>`
+
+### Response {.govuk-heading-s}
+
+Status: `200`
+
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
 
 {{ govukButton({
   text: "Copy code",
@@ -462,47 +484,55 @@ relatedAPIs:
 
 ```json
 {
-  "data": [{
-    "notification_id": "&#123;&#123;ID&#125;&#125;",
-    "created_datetime": "2024-01-01T12:00:00.000",
-    "event_datetime": "2024-01-01T12:00:00.000",
-    "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/application-cancelled.json",
-    "notification_type": "APPLICATION_CANCELLED",
-    "subject_type": "LAND_REGISTER_APPLICATION",
-    "subject": "45454545-2b6d-4b8a-971c-e758b0e8e790",
-    "additional_provider_filter": "subUnit1",
-    "status": "NEW",
-    "payload": {
-      "data" : {
-        "status": "CANCELLED"
-      }
+  "notification_id": "{{"{{ID}}"}}",
+  "created_datetime": "2024-01-01T12:00:00.000",
+  "event_datetime": "2024-01-01T12:00:00.000",
+  "payload_schema": "https://landregistry.github.io/bg-dev-pack-redesign/schemas/v1/application/correspondence-despatched.json",
+  "notification_type": "application.correspondence-despatched",
+  "subject_type": "LAND_REGISTER_APPLICATION",
+  "subject": "a97679c9-624f-4680-ae8b-15b7-r411can",
+  "additional_provider_filter": null,
+  "status": "NEW",
+  "payload": {
+    "data": {
+      "status": "CANCELLED",
+      "documents": [
+        {
+          "type": {
+            "code": "CAN",
+            "name": "CANCELLATION LETTER"
+          },
+          "created_at": "2025-09-05T08:20:04.050Z",
+          "download_id": "can_62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385"
+        }
+      ],
+      "hmlr_reference": "R411CAN",
+      "application_request_id": "a97679c9-624f-4680-ae8b-15b7-r411can"
     }
-  }]
+  }
 }
 ```
 </div>
 </section>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<section>
-<h2 id="scenario-9" class="govuk-heading-m">Scenario 9: Application completed notification</h2>
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method:
-  <code class="app-code app-code--inline">GET</code>
-</p>
-<p class="govuk-body">Endpoint:
-  <code
-    class="app-code app-code--inline">/v0/notifications?notification_type=APPLICATION_COMPLETED</code>
-</p>
-<p class="govuk-body">Headers:
-  <code class="app-code app-code--inline">Authorization: &ltany-value&gt
-</code>
-</p>
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status:
-  <code class="app-code app-code--inline">200</code>
-</p>
-<div class="code-wrapper">
+---
+
+<section id="scenario-9">
+
+## Scenario 9: Completed notification {.govuk-heading-m #scenario-9}
+### Request {.govuk-heading-s}
+
+Method: `GET`
+
+Endpoint: `/v0/notifications?subject=<uuid ending with 'cmp'>`
+
+Headers: `Authorization: <any-value>`
+
+### Response {.govuk-heading-s}
+
+Status: `200`
+
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
 
 {{ govukButton({
   text: "Copy code",
@@ -511,23 +541,95 @@ relatedAPIs:
 
 ```json
 {
-  "data": [{
-    "notification_id": "&#123;&#123;ID&#125;&#125;",
-    "created_datetime": "2024-01-01T12:00:00.000",
-    "event_datetime": "2024-01-01T12:00:00.000",
-    "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/application-completed.json",
-    "notification_type": "APPLICATION_COMPLETED",
-    "subject_type": "LAND_REGISTER_APPLICATION",
-    "subject": "45454545-2b6d-4b8a-971c-e758b0e8e790",
-    "additional_provider_filter": "subUnit1",
-    "status": "NEW",
-    "payload": {
-      "data" : {
-        "status": "COMPLETED"
-      }
+  "notification_id": "{{"{{ID}}"}}",
+  "created_datetime": "2024-01-01T12:00:00.000",
+  "event_datetime": "2024-01-01T12:00:00.000",
+  "payload_schema": "https://landregistry.github.io/bg-dev-pack-redesign/schemas/v1/application/correspondence-despatched.json",
+  "notification_type": "application.correspondence-despatched",
+  "subject_type": "LAND_REGISTER_APPLICATION",
+  "subject": "28a01655-544a-48c5-9e40-4ac2-p311cmp",
+  "additional_provider_filter": null,
+  "status": "NEW",
+  "payload": {
+    "data": {
+      "status": "COMPLETED",
+      "documents": [
+        {
+          "type": {
+            "code": "LTR",
+            "name": "LETTER"
+          },
+          "created_at": "2025-09-05T08:15:01.281Z",
+          "download_id": "ltr_6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549"
+        },
+        {
+          "type": {
+            "code": "RCS",
+            "name": "REGISTRATION COMPLETION SHEET"
+          },
+          "created_at": "2025-09-05T08:15:01.319Z",
+          "download_id": "rcs_4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a"
+        },
+        {
+          "type": {
+            "code": "REG",
+            "name": "COPY OF UPDATED REGISTER"
+          },
+          "created_at": "2025-09-05T08:15:01.343Z",
+          "download_id": "reg_7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038"
+        }
+      ],
+      "hmlr_reference": "P311CMP",
+      "application_request_id": "28a01655-544a-48c5-9e40-4ac2-p311cmp",
+      "was_subject_to_early_completion": false
     }
-  }]
+  }
 }
 ```
 </div>
+</section>
+
+---
+
+<section>
+
+## Scenario 10: Requisitioned notification {.govuk-heading-m #scenario-10}
+### Request {.govuk-heading-s}
+
+Method: `GET`
+
+Endpoint: `/v0/notifications?subject=<uuid ending with 'ltr'>`
+
+Headers: `Authorization: <any-value>`
+
+### Response {.govuk-heading-s}
+
+```json
+{
+  "notification_id": "{{"{{ID}}"}}",
+  "created_datetime": "2024-01-01T12:00:00.000",
+  "event_datetime": "2024-01-01T12:00:00.000",
+  "payload_schema": "https://landregistry.github.io/bg-dev-pack-redesign/schemas/v1/application/correspondence-despatched.json",
+  "notification_type": "application.correspondence-despatched",
+  "subject_type": "LAND_REGISTER_APPLICATION",
+  "subject": "28a01655-544a-48c5-9e40-4ac2-p311app",
+  "additional_provider_filter": null,
+  "status": "NEW",
+  "payload": {
+    "data": {
+      "documents": [{
+        "type": {
+          "code": "LTR",
+          "name": "LETTER"
+        },
+        "created_at": "2025-09-05T08:15:01.281Z",
+        "download_id": "ltr_6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549"
+      }],
+      "hmlr_reference": "P311APP",
+      "application_request_id": "28a01655-544a-48c5-9e40-4ac2-p311app"
+    }
+  }
+}
+```
+
 </section>

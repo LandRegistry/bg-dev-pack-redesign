@@ -1,25 +1,16 @@
 {% extends 'page.njk' %}
 
 {% set versioned = true %}
-{% set spy = true %}
+{% set spy = false %}
 
 {% block content %}
 <div class="govuk-grid-row">
-
-{# Sticky Contents #}
-<div class="govuk-grid-column-one-third sticky">
-    {% block contents %}
-    {{ xGovukSubNavigation({ items: sidenav}) }}
-    {% endblock %}
-</div>
-
-<div class="govuk-grid-column-two-thirds">
 {# Title + description #}
 {% block mainHeader %}
+<div class="govuk-grid-column-full">
 {{ appDocumentHeader({
     title: title,
-    description: description,
-    caption: caption
+    description: description
 }) }}
 {%- if notlive -%}
 {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
@@ -28,12 +19,15 @@
   iconFallbackText: "Warning"
 }) }}
 {%- endif -%}
+</div>
 {% endblock %}
+
+<div class="govuk-grid-column-two-thirds">
 {# Version Selection #}
 {% block versionSelect %}
 {% from "govuk/components/select/macro.njk" import govukSelect %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-0">
 <div class="bg-version-grid">
     <div>
         <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
@@ -63,17 +57,22 @@
 {# Main Content #}
 {{ appProseScope(content) if content }}
 
-{# Related Items #}
-{% if relatedAPIs %}
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-<h3 class="govuk-heading-m">Related APIs</h3>
-<ul class="govuk-list govuk-list--bullet">
-{% for item in relatedAPIs %}
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="{{item.href}}">{{item.text}}</a></li>
-{% endfor %}
-</ul>
-{% endif %}
+</div>
 
+{# Related Items #}
+<div class="govuk-grid-column-one-third">
+<aside class="related-items" role="complementary">
+    <h2 class="govuk-heading-m" id="related-apis">
+    Related APIs
+    </h2>
+    <nav role="navigation" aria-labelledby="related-apis">
+    <ul class="govuk-list">
+    {% for item in relatedAPIs %}
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link {{item.classes}}" href="{{item.href}}">{{item.text}}</a></li>
+    {% endfor %}
+    </ul>
+    </nav>
+</aside>
 </div>
 
 </div>
