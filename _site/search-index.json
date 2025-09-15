@@ -54,7 +54,7 @@
     "title": "Download a document API",
     "section": "apis",
     "url": "/apis/download-a-document/",
-    "tokens": "download document api use this service get information about specific application warning these endpoints are currently live version status dropdown v0 3 latest button type submit class govuk margin 0 data module onclick setversion view select content"
+    "tokens": "download document api use this service get information about specific application warning these endpoints are currently live version status dropdown v0 1 latest button type submit class govuk margin 0 data module onclick setversion view select content"
   },
   {
     "title": "Estimated Completion Date",
@@ -159,7 +159,7 @@
     "title": "Download a document API",
     "section": "apis",
     "url": "/apis/download-a-document/0.3/",
-    "tokens": "download document api use this service get information about specific application warning these endpoints are currently live version status dropdown v0 3 latest button type submit class govuk margin 0 data module onclick setversion view overview used includes one two three somemore info technical guide specification body link href https landregistry github io bgtechdoc vcad spec html tag rel noreferrer noopener target blank web opens new tab how works text test hmlr created environment ve also provided example code demonstrate what should expect when developing your own services stubs please note there plans release sandbox developers future exact date confirmed general testing guidance visit our related apis change land register send notifications more subsection"
+    "tokens": "download document api use this service documents that have been created by hm land registry your consumption warning these endpoints are currently live version status dropdown v0 1 latest button type submit class govuk margin 0 data module onclick setversion view overview provides way one endpoint get id binary content may obtain from any following completion notifications cancellation requisition correspondence array application information apis response technical guide specification body link href https landregistry github io bgtechdoc vcad 3 spec html tag rel noreferrer noopener target blank web opens new tab how works text test hmlr environment ve also provided example code demonstrate what should expect when developing own services stubs please note there plans release sandbox developers future exact date confirmed general testing guidance visit our related change register send more subsection"
   },
   {
     "title": "Notifications API",
@@ -289,5 +289,11 @@
     "section": "Download a document v0.3",
     "url": "/apis/download-a-document copy/0.3/test-stubs/",
     "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 information applicaiton with single charge request method get endpoint v0 applications b3ac19be 2b6d 4b8a 971c e758b0e8e790 headers authorization ltany value gt response status 200 copy data application id accepted priority protected timestamp 2024 09 25t18 18 49z reference a123aaa errors 2 transfer 2563940e ae95 4e7e 9b33 49a6571abdf6 b123bbb 3 level validation 3be62ad3 c542 452d 975e 6cd18d77196f failed null type mdref record detail md ref md007a exist pointer lender name matches records found all mandatory documents missing transactions t transferee representation must have warnings"
+  },
+  {
+    "title": "Download a document API",
+    "section": "apis",
+    "url": "/apis/download-a-document/0.1/",
+    "tokens": "download document api use this service documents that have been created by hm land registry your consumption warning these endpoints are currently live version status dropdown v0 1 latest button type submit class govuk margin 0 data module onclick setversion view overview provides way one endpoint get id binary content may obtain from any following completion notifications cancellation requisition correspondence array application information apis response technical guide specification body link href https landregistry github io bgtechdoc vcad 3 spec html tag rel noreferrer noopener target blank web opens new tab how works put image here diagram demonstrates user either notification then their request test hmlr environment ve also provided example code demonstrate what should expect when developing own services stubs please note there plans release sandbox developers future exact date confirmed general testing guidance visit our related change register send more subsection"
   }
 ]

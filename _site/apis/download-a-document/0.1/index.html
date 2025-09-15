@@ -116,14 +116,14 @@ data-module="govuk-service-navigation"
       <p class="govuk-body">The Download a document API provides a way to download documents that have been created by HM Land Registry for your consumption.</p>
       <p class="govuk-body">This API has one endpoint:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li><code class="x-govuk-code x-govuk-code--inline">GET /v0/documents/{download_id}</code> - get the binary content of the document.</li>
+        <li><code class="app-code app-code--inline">`GET /v0/documents/{download_id}`</code> - get the binary content of the document.</li>
       </ul>
-      <p class="govuk-body">You may obtain a <code class="x-govuk-code x-govuk-code--inline">`download_id`</code> from any of the following:</p>
+      <p class="govuk-body">You may obtain a <code class="app-code app-code--inline">`download_id`</code> from any of the following:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>Completion notifications</li>
         <li>Cancellation notifications</li>
         <li>Requisition correspondence notifications</li>
-        <li>The `/correspondence` array in an [application information](/apis/application-information) response</li>
+        <li>The <code class="app-code app-code--inline">`/correspondence`</code> array in an [application information](/apis/application-information) response</li>
       </ul>
     </div>
     <div>
@@ -139,7 +139,7 @@ data-module="govuk-service-navigation"
       <ul class="govuk-list">
         <li>
           <a class="govuk-body govuk-link"
-            href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Application-information-API"
+            href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Notifications-API"
             rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
         </li>
       </ul>
@@ -148,8 +148,11 @@ data-module="govuk-service-navigation"
     <div>
       <h3 class="govuk-heading-m" id="how-the-service-api-works">How the API works</h3>
       <div class="govuk-!-padding-bottom-3"></div>
+      <p>put an image here</p>
     <div class="govuk-!-padding-bottom-3"></div>
-    <p class="govuk-body">Body text</p>
+    <p class="govuk-body">This diagram demonstrates how the download a document API works.</p>
+    <p class="govuk-body">A user may obtain a <code class="app-code app-code--inline">`download_id`</code> from either a notification or application information.</p>
+    <p class="govuk-body">The user may then use that `download_id` in their request to <code class="app-code app-code--inline">`GET /v0/documents/{download_id}`</code> to obtain the document binary.</p>
     <div class="govuk-!-padding-bottom-3"></div>
     <div>
       <h3 class="govuk-heading-m" id="how-to-test-this-service-api">How to test this API</h3>
@@ -157,7 +160,7 @@ data-module="govuk-service-navigation"
       <ul class="govuk-list">
         <li>
           <p class="govuk-body"><a class="govuk-body govuk-link" href="./test-stubs">View
-              Application information test stubs</a>.</p>
+              Download a document test stubs</a>.</p>
         </li>
       </ul>
       <div class="govuk-inset-text">Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed.</div>
