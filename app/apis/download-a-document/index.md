@@ -42,8 +42,8 @@ eleventyNavigation:
             classes: "govuk-visually-hidden"
         },
         items: [{
-            value: "0.1",
-            text: "v0.1 (latest)",
+            value: "1.0",
+            text: "v1.0 (latest)",
             selected: true
         }],
         formGroup: {

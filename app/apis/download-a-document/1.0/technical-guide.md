@@ -7,8 +7,8 @@ description: Use this service to download documents that have been created by HM
 notlive: true
 
 eleventyNavigation:
-  key: Download a document API v0.1 Technical guide
-  parent: Download a document API v0.1
+  key: Download a document API v1.0 Technical guide
+  parent: Download a document API v1.0
 
 sidenav:
   - theme: Contents
@@ -22,8 +22,8 @@ sidenav:
     href: '#example-requests-and-responses'
 
 versions:
-  - value: "0.1"
-    text: "v0.1 (latest)"
+  - value: "1.0"
+    text: "v1.0 (latest)"
     selected: true
 
 relatedAPIs:
