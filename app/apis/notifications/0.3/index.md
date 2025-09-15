@@ -68,9 +68,9 @@ eleventyNavigation:
       shared in future.</p>
     <p class="govuk-body">This API has two endpoints:</p>
     <ul class="govuk-list govuk-list--bullet">
-      <li><code class="x-govuk-code x-govuk-code--inline">GET /v0/notifications</code> get all notifications
+      <li><code class="app-code app-code--inline">GET /v0/notifications</code> get all notifications
         that match the provided filters</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">POST /v0/notifications/acknowledge</code> - notify
+      <li><code class="app-code app-code--inline">POST /v0/notifications/acknowledge</code> - notify
         HMLR that notifications have been received</li>
     </ul>
     <p class="govuk-body">This API can be used to get more information after receiving a notification indicating the

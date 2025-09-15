@@ -44,9 +44,9 @@ relatedAPIs:
 <h2 class="govuk-heading-m">How to use the Submit an application API</h2>
 <p class="govuk-body">To submit an application request, make an HTTP POST request to the application request
   endpoint, the body of which contains the information about the application using the <code
-    class="x-govuk-code x-govuk-code--inline">application/json</code> content type.</p>
+    class="app-code app-code--inline">application/json</code> content type.</p>
 <p class="govuk-body">This endpoint will return an object containing a unique ID for the request, <code
-    class="x-govuk-code x-govuk-code--inline">application_request_id</code>, which is then used when
+    class="app-code app-code--inline">application_request_id</code>, which is then used when
   fetching the status of the application. Any errors in the schema will be rejected as a 400 HTTP error. Any other
   validation errors will be returned in the application information response.</p>
 
@@ -56,17 +56,17 @@ relatedAPIs:
 <p class="govuk-body">During application submission, notifications will be available from the notifications API
   about changes that happen to the application. These notifications currently include:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">APPLICATION_ACCEPTED_ON_DAY_LIST</code> - the application has been accepted and is on the day list</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code> - the application has been accepted and is queuing for the day list</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">APPLICATION_VALIDATION_FAILED</code> - the application submission has failed</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">APPLICATION_ERROR</code> - the application has not been added to the day list due to an error</li>
+  <li><code class="app-code app-code--inline">APPLICATION_ACCEPTED_ON_DAY_LIST</code> - the application has been accepted and is on the day list</li>
+  <li><code class="app-code app-code--inline">APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code> - the application has been accepted and is queuing for the day list</li>
+  <li><code class="app-code app-code--inline">APPLICATION_VALIDATION_FAILED</code> - the application submission has failed</li>
+  <li><code class="app-code app-code--inline">APPLICATION_ERROR</code> - the application has not been added to the day list due to an error</li>
 </ul>
 <p class="govuk-body">The notifications will contain the following information:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code>, <code class="x-govuk-code x-govuk-code--inline">APPLICATION_VALIDATION_FAILED</code> and <code class="x-govuk-code x-govuk-code--inline">APPLICATION_ERROR</code> will contain the updated application status only</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">APPLICATION_ACCEPTED_ON_DAY_LIST</code> will contain updated application status, the priority of the application and the HMLR reference for the accepted application</li>
+  <li><code class="app-code app-code--inline">APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code>, <code class="app-code app-code--inline">APPLICATION_VALIDATION_FAILED</code> and <code class="app-code app-code--inline">APPLICATION_ERROR</code> will contain the updated application status only</li>
+  <li><code class="app-code app-code--inline">APPLICATION_ACCEPTED_ON_DAY_LIST</code> will contain updated application status, the priority of the application and the HMLR reference for the accepted application</li>
 </ul>
-<p class="govuk-body">To get more detailed information about an application that caused the notification, use the <a class="govuk-body govuk-link" href="https://customer-documentation-business-gateway-35cf334e5a1aeb361fcf62d.git.tooling.stp.hmlr.zone/vcad/v0_3/application-information.html">Application information API</a>. For example, after receiving an <code class="x-govuk-code x-govuk-code--inline">APPLICATION_VALIDATION_FAILED</code> notification, use the Application information API to get a list of the validation errors.</p>
+<p class="govuk-body">To get more detailed information about an application that caused the notification, use the <a class="govuk-body govuk-link" href="https://customer-documentation-business-gateway-35cf334e5a1aeb361fcf62d.git.tooling.stp.hmlr.zone/vcad/v0_3/application-information.html">Application information API</a>. For example, after receiving an <code class="app-code app-code--inline">APPLICATION_VALIDATION_FAILED</code> notification, use the Application information API to get a list of the validation errors.</p>
 <h3 class="govuk-heading-s">Schemas</h3>
 <p class="govuk-body">JSON schemas can be found below:</p>
 <ul class="govuk-list govuk-list--bullet">
@@ -91,21 +91,21 @@ relatedAPIs:
   rows: [
     [{ text: "AddressForService" }, { text: "full_address" }, { html: '' }],
     [{ text: "AP1WarningUnderstood" }, { text: "submission_warning_understood" }, { html: '' }],
-    [{ text: "ApplicationAffectsContent" }, { text: "scope" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">TitleScopeDetails</code> object' }],
+    [{ text: "ApplicationAffectsContent" }, { text: "scope" }, { html: 'Field on <code class="app-code app-code--inline">TitleScopeDetails</code> object' }],
     [{ text: "Applications" }, { text: "Transaction" }, { html: '' }],
     [{ text: "CareOfReference" }, { text: "" }, { text: "Care of reference should not be sent" }],
-    [{ text: "CertifiedCopy" }, { text: "certification_statement_type" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">DocumentDetails.DocumentMetadata</code> object' }],
-    [{ text: "ChargeDate" }, { text: "date" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">Charge</code> object' }],
-    [{ text: "CompanyName" }, { text: "organisation_name" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">OverseasCompany</code>, <code class="x-govuk-code x-govuk-code--inline">UKCompany</code> and <code class="x-govuk-code x-govuk-code--inline">OtherOrganisation</code> objects' }],
+    [{ text: "CertifiedCopy" }, { text: "certification_statement_type" }, { html: 'Field on <code class="app-code app-code--inline">DocumentDetails.DocumentMetadata</code> object' }],
+    [{ text: "ChargeDate" }, { text: "date" }, { html: 'Field on <code class="app-code app-code--inline">Charge</code> object' }],
+    [{ text: "CompanyName" }, { text: "organisation_name" }, { html: 'Field on <code class="app-code app-code--inline">OverseasCompany</code>, <code class="app-code app-code--inline">UKCompany</code> and <code class="app-code app-code--inline">OtherOrganisation</code> objects' }],
     [{ text: "CompanyRegistrationNumber" }, { text: "company_number" }, { html: '' }],
-    [{ text: "ConveyancerName" }, { text: "full_name" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">OtherConveyancer</code> object' }],
+    [{ text: "ConveyancerName" }, { text: "full_name" }, { html: 'Field on <code class="app-code app-code--inline">OtherConveyancer</code> object' }],
     [{ text: "Dealing" }, { text: "REGISTER_UPDATE type" }, { html: 'Service title type corresponds to the application type' }],
-    [{ text: "DisclosableOveridingInterests" }, { text: "disclosable_overriding_interests" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">TitleDetails</code> object' }],
-    [{ text: "DocumentNameContent" }, { text: "type" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">DocumentDetails</code> object' }],
-    [{ text: "DXExchange" }, { text: "exchange_name" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">DxAddress</code> object' }],
-    [{ text: "DXNumber" }, { text: "number" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">DxAddress</code> object' }],
-    [{ text: "EmailAddress.Email" }, { text: "email" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">Address</code> object, where type is <code class="x-govuk-code x-govuk-code--inline">Email</code>' }],
-    [{ text: "IsApplicant" }, { text: "applicants[]" }, { html: 'Array containing <code class="x-govuk-code x-govuk-code--inline">PartyReferences</code> for applicants' }],
+    [{ text: "DisclosableOveridingInterests" }, { text: "disclosable_overriding_interests" }, { html: 'Field on <code class="app-code app-code--inline">TitleDetails</code> object' }],
+    [{ text: "DocumentNameContent" }, { text: "type" }, { html: 'Field on <code class="app-code app-code--inline">DocumentDetails</code> object' }],
+    [{ text: "DXExchange" }, { text: "exchange_name" }, { html: 'Field on <code class="app-code app-code--inline">DxAddress</code> object' }],
+    [{ text: "DXNumber" }, { text: "number" }, { html: 'Field on <code class="app-code app-code--inline">DxAddress</code> object' }],
+    [{ text: "EmailAddress.Email" }, { text: "email" }, { html: 'Field on <code class="app-code app-code--inline">Address</code> object, where type is <code class="app-code app-code--inline">Email</code>' }],
+    [{ text: "IsApplicant" }, { text: "applicants[]" }, { html: 'Array containing <code class="app-code app-code--inline">PartyReferences</code> for applicants' }],
     [{ text: "LeaseExtension" }, { text: "DISPOSITIONARY_FIRST_LEASE" }, { html: 'Service title type corresponds to the application type' }],
     [{ text: "LesseeTitles" }, { text: "TENANT_TITLE" }, { html: '' }],
     [{ text: "LessorTitles" }, { text: "LANDLORD_TITLE" }, { html: '' }],
@@ -114,16 +114,16 @@ relatedAPIs:
     [{ text: "NewLease" }, { text: "DISPOSITIONARY_FIRST_LEASE type" }, { html: 'Service title type corresponds to the application type' }],
     [{ text: "NoMDRef" }, { text: "" }, { html: 'If the MDref is not sent, it is assumed the MDRef is not known and lender information must be provided' }],
     [{ text: "OverseasTerritory" }, { text: "incorporation_territory" }, { html: '' }],
-    [{ text: "PostalAddress" }, { text: "UKAddress" }, { html: 'A type on the <code class="x-govuk-code x-govuk-code--inline">Address</code> object' }],
-    [{ text: "PostcodeOfProperty" }, { text: "postcode" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">UKAddress</code> object' }],
-    [{ text: "Product.Email" }, { text: "email" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">ApplicationLodger</code> object' }],
+    [{ text: "PostalAddress" }, { text: "UKAddress" }, { html: 'A type on the <code class="app-code app-code--inline">Address</code> object' }],
+    [{ text: "PostcodeOfProperty" }, { text: "postcode" }, { html: 'Field on <code class="app-code app-code--inline">UKAddress</code> object' }],
+    [{ text: "Product.Email" }, { text: "email" }, { html: 'Field on <code class="app-code app-code--inline">ApplicationLodger</code> object' }],
     [{ text: "Reference" }, { text: "customer_reference" }, { html: '' }],
-    [{ text: "Reference" }, { text: "conveyancer_reference" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">OtherConveyancer</code> object' }],
-    [{ text: "RoleType" }, { text: "Role" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">PartyRole</code> object' }],
-    [{ text: "ServiceTitlesType" }, { text: "type" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">substantiveOrderV5Data</code> object' }],
+    [{ text: "Reference" }, { text: "conveyancer_reference" }, { html: 'Field on <code class="app-code app-code--inline">OtherConveyancer</code> object' }],
+    [{ text: "RoleType" }, { text: "Role" }, { html: 'Field on <code class="app-code app-code--inline">PartyRole</code> object' }],
+    [{ text: "ServiceTitlesType" }, { text: "type" }, { html: 'Field on <code class="app-code app-code--inline">substantiveOrderV5Data</code> object' }],
     [{ text: "SortCode" }, { text: "" }, { html: 'Sort code should not be sent' }],
-    [{ text: "TelephoneNumber" }, { text: "telephone" }, { html: 'Field on <code class="x-govuk-code x-govuk-code--inline">ApplicationLodger</code> object' }],
-    [{ text: "TitleType" }, { text: "title_type" }, { html: 'Changed from an object containing a title number to a enum on the <code class="x-govuk-code x-govuk-code--inline">titleDetails</code> object</td>' }],
+    [{ text: "TelephoneNumber" }, { text: "telephone" }, { html: 'Field on <code class="app-code app-code--inline">ApplicationLodger</code> object' }],
+    [{ text: "TitleType" }, { text: "title_type" }, { html: 'Changed from an object containing a title number to a enum on the <code class="app-code app-code--inline">titleDetails</code> object</td>' }],
     [{ text: "TransferOfPart" }, { text: "TRANSFER_OF_PART type" }, { html: 'Service title type corresponds to the application type' }],
     [{ text: "UK-LLPRegistrationNumber" }, { text: "company_number" }, { html: '' }]
   ]
@@ -894,11 +894,11 @@ relatedAPIs:
   <li><b>Either</b> - at least one of the documents marked as Either must be submitted with the transaction</li>
   <li><b>Suggested</b> - these documents are not required, but are commonly attached alongside the transaction</li>
 </ul>
-<p class="govuk-body">For example, for an <code class="x-govuk-code x-govuk-code--inline">ADV1</code> transaction type, the following documents need to be uploaded:</p>
+<p class="govuk-body">For example, for an <code class="app-code app-code--inline">ADV1</code> transaction type, the following documents need to be uploaded:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li>An <code class="x-govuk-code x-govuk-code--inline">ADV1</code> document must be uploaded</li>
-  <li>At least one of an <code class="x-govuk-code x-govuk-code--inline">SOT</code> or <code class="x-govuk-code x-govuk-code--inline">STAT_DEC</code> document must be uploaded</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">COSR</code>, <code class="x-govuk-code x-govuk-code--inline">EVIDENCE</code>, <code class="x-govuk-code x-govuk-code--inline">PLAN</code> and <code class="x-govuk-code x-govuk-code--inline">POA</code> documents are not required, but may help when processing your application</p></li>
+  <li>An <code class="app-code app-code--inline">ADV1</code> document must be uploaded</li>
+  <li>At least one of an <code class="app-code app-code--inline">SOT</code> or <code class="app-code app-code--inline">STAT_DEC</code> document must be uploaded</li>
+  <li><code class="app-code app-code--inline">COSR</code>, <code class="app-code app-code--inline">EVIDENCE</code>, <code class="app-code app-code--inline">PLAN</code> and <code class="app-code app-code--inline">POA</code> documents are not required, but may help when processing your application</p></li>
 </ul>
 <p class="govuk-body">During application submission, validation will be applied for each transaction to ensure the rules regarding the Compulsory and Either document types have been satisfied correctly:</p>
 <details class="govuk-details">
@@ -1642,7 +1642,7 @@ relatedAPIs:
   </div>
 </details>
 <h3 class="govuk-heading-s">Valid transaction types per application type</h3>
-<p class="govuk-body">For each application type (<code class="x-govuk-code x-govuk-code--inline">REGISTER_UPDATE</code>, <code class="x-govuk-code x-govuk-code--inline">DISPOSITIONARY_FIRST_LEASE</code>, <code class="x-govuk-code x-govuk-code--inline">TRANSFER_OF_PART</code> and <code class="x-govuk-code x-govuk-code--inline">REMOVE_JP1</code>), only certain transaction types can be supplied. The sections below detail which transaction types are valid for each application type.</p>
+<p class="govuk-body">For each application type (<code class="app-code app-code--inline">REGISTER_UPDATE</code>, <code class="app-code app-code--inline">DISPOSITIONARY_FIRST_LEASE</code>, <code class="app-code app-code--inline">TRANSFER_OF_PART</code> and <code class="app-code app-code--inline">REMOVE_JP1</code>), only certain transaction types can be supplied. The sections below detail which transaction types are valid for each application type.</p>
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
@@ -1652,340 +1652,340 @@ relatedAPIs:
   <div class="govuk-details__text">
     <h3 class="govuk-heading-s"><code>REGISTER_UPDATE</code></h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li><code class="x-govuk-code x-govuk-code--inline">ADV1</code> - First notice of adverse
+      <li><code class="app-code app-code--inline">ADV1</code> - First notice of adverse
         possession</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ADV2</code> - Adverse possession: notification
+      <li><code class="app-code app-code--inline">ADV2</code> - Adverse possession: notification
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">AGN</code> - Agreed notice (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">APLC</code> - Appointment of liquidator
+      <li><code class="app-code app-code--inline">AGN</code> - Agreed notice (AN1)</li>
+      <li><code class="app-code app-code--inline">APLC</code> - Appointment of liquidator
         (creditor’s voluntary winding up)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">APLCO</code> - Appointment of liquidator
+      <li><code class="app-code app-code--inline">APLCO</code> - Appointment of liquidator
         (compulsory winding up)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">APLM</code> - Appointment of liquidator
+      <li><code class="app-code app-code--inline">APLM</code> - Appointment of liquidator
         (members’ voluntary winding up)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">APR</code> - Apportionment of rent</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">APT</code> - Appointment of new trustee</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ASTC</code> - Assent of charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ATP</code> - Amendment to title plan</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">AUN</code> - Amendment of unilateral notice
+      <li><code class="app-code app-code--inline">APR</code> - Apportionment of rent</li>
+      <li><code class="app-code app-code--inline">APT</code> - Appointment of new trustee</li>
+      <li><code class="app-code app-code--inline">ASTC</code> - Assent of charge</li>
+      <li><code class="app-code app-code--inline">ATP</code> - Amendment to title plan</li>
+      <li><code class="app-code app-code--inline">AUN</code> - Amendment of unilateral notice
         (UN3)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">BKN</code> - Bankruptcy notice/Creditors’
+      <li><code class="app-code app-code--inline">BKN</code> - Bankruptcy notice/Creditors’
         notice</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">BKR</code> - Bankruptcy restriction/Bankruptcy
+      <li><code class="app-code app-code--inline">BKR</code> - Bankruptcy restriction/Bankruptcy
         inhibition</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">C</code> - Charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CAG</code> - Cancellation of notice (not
+      <li><code class="app-code app-code--inline">C</code> - Charge</li>
+      <li><code class="app-code app-code--inline">CAG</code> - Cancellation of notice (not
         unilateral) (CN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CANI</code> - Cancellation of inhibition (RX3)
+      <li><code class="app-code app-code--inline">CANI</code> - Cancellation of inhibition (RX3)
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CANR</code> - Cancellation of restriction
+      <li><code class="app-code app-code--inline">CANR</code> - Cancellation of restriction
         (RX3)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CANU</code> - Cancellation of unilateral
+      <li><code class="app-code app-code--inline">CANU</code> - Cancellation of unilateral
         notice (UN4)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CBKN</code> - Cancellation of bankruptcy
+      <li><code class="app-code app-code--inline">CBKN</code> - Cancellation of bankruptcy
         notice</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CBKR</code> - Cancellation of bankruptcy
+      <li><code class="app-code app-code--inline">CBKR</code> - Cancellation of bankruptcy
         restriction</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CCT</code> - Cancellation of a caution (CCD)
+      <li><code class="app-code app-code--inline">CCT</code> - Cancellation of a caution (CCD)
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CH2</code> - Obligation to make further
+      <li><code class="app-code app-code--inline">CH2</code> - Obligation to make further
         advances (CH2)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CH3</code> - Agreed maximum amount of security
+      <li><code class="app-code app-code--inline">CH3</code> - Agreed maximum amount of security
         (CH3)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CHOA</code> - Charging order - Agreed notice
+      <li><code class="app-code app-code--inline">CHOA</code> - Charging order - Agreed notice
         (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CHOU</code> - Charging order - Unilateral
+      <li><code class="app-code app-code--inline">CHOU</code> - Charging order - Unilateral
         notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CHR</code> - Cancellation of home rights (HR4)
+      <li><code class="app-code app-code--inline">CHR</code> - Cancellation of home rights (HR4)
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CN</code> - Change of name</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CNC</code> - Change of name - chargee</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CNL</code> - Cancellation of an unregistered
+      <li><code class="app-code app-code--inline">CN</code> - Change of name</li>
+      <li><code class="app-code app-code--inline">CNC</code> - Change of name - chargee</li>
+      <li><code class="app-code app-code--inline">CNL</code> - Cancellation of an unregistered
         noted lease (CN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">COA</code> - Change of address for service
+      <li><code class="app-code app-code--inline">COA</code> - Change of address for service
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">COAC</code> - Change of address for service -
+      <li><code class="app-code app-code--inline">COAC</code> - Change of address for service -
         chargee</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CON</code> - Consolidation of charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">COP</code> - Charge of part</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CPD</code> - Change of property description
+      <li><code class="app-code app-code--inline">CON</code> - Consolidation of charge</li>
+      <li><code class="app-code app-code--inline">COP</code> - Charge of part</li>
+      <li><code class="app-code app-code--inline">CPD</code> - Change of property description
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CPVK</code> - Compulsory purchase (property
+      <li><code class="app-code app-code--inline">CPVK</code> - Compulsory purchase (property
         value known)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CTD</code> - Commonhold transitional dealing
+      <li><code class="app-code app-code--inline">CTD</code> - Commonhold transitional dealing
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CUR</code> - Cancellation of notice of
+      <li><code class="app-code app-code--inline">CUR</code> - Cancellation of notice of
         unregistered Rentcharge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DB</code> - Determined boundary (DB)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DCLN</code> - Disclaimer - notification</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DCLV</code> - Disclaimer - notice</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DFL1</code> - New lease - other</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DFT</code> - Defect in title s64(1) LRA 2002
+      <li><code class="app-code app-code--inline">DB</code> - Determined boundary (DB)</li>
+      <li><code class="app-code app-code--inline">DCLN</code> - Disclaimer - notification</li>
+      <li><code class="app-code app-code--inline">DCLV</code> - Disclaimer - notice</li>
+      <li><code class="app-code app-code--inline">DFL1</code> - New lease - other</li>
+      <li><code class="app-code app-code--inline">DFT</code> - Defect in title s64(1) LRA 2002
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DIS</code> - Discharge of charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DJP</code> - Death of a joint proprietor</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DL</code> - Discontinuous lease -
+      <li><code class="app-code app-code--inline">DIS</code> - Discharge of charge</li>
+      <li><code class="app-code app-code--inline">DJP</code> - Death of a joint proprietor</li>
+      <li><code class="app-code app-code--inline">DL</code> - Discontinuous lease -
         non-timeshare</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DMR</code> - Disapplication of restriction
+      <li><code class="app-code app-code--inline">DMR</code> - Disapplication of restriction
         (RX2)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DOG</code> - Deed of grant of easement</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DP</code> - Discharge of part</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DSP</code> - Death of a sole proprietor</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">JP1</code> - Removal of default Form A
+      <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement</li>
+      <li><code class="app-code app-code--inline">DP</code> - Discharge of part</li>
+      <li><code class="app-code app-code--inline">DSP</code> - Death of a sole proprietor</li>
+      <li><code class="app-code app-code--inline">JP1</code> - Removal of default Form A
         restriction</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCATCO</code> - Lease closure - of assured
+      <li><code class="app-code app-code--inline">LCATCO</code> - Lease closure - of assured
         tenancies following court order</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCBD</code> - Lease closure - by disclaimer
+      <li><code class="app-code app-code--inline">LCBD</code> - Lease closure - by disclaimer
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCBET</code> - Lease closure - by effluxion of
+      <li><code class="app-code app-code--inline">LCBET</code> - Lease closure - by effluxion of
         time</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCBN</code> - Lease closure - by notice</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCF</code> - Lease closure - forfeiture</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCMRE</code> - Lease closure - merger with
+      <li><code class="app-code app-code--inline">LCBN</code> - Lease closure - by notice</li>
+      <li><code class="app-code app-code--inline">LCF</code> - Lease closure - forfeiture</li>
+      <li><code class="app-code app-code--inline">LCMRE</code> - Lease closure - merger with
         reversionary estate</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCOE</code> - Lease closure - on enlargement
+      <li><code class="app-code app-code--inline">LCOE</code> - Lease closure - on enlargement
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCOF</code> - Lease closure - on frustration
+      <li><code class="app-code app-code--inline">LCOF</code> - Lease closure - on frustration
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCSD</code> - Lease closure - surrender by
+      <li><code class="app-code app-code--inline">LCSD</code> - Lease closure - surrender by
         deed (not for value or reverse premium)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCSDM</code> - Lease closure - surrender by
+      <li><code class="app-code app-code--inline">LCSDM</code> - Lease closure - surrender by
         deed</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCSDMWT</code> - Lease closure - surrender by
+      <li><code class="app-code app-code--inline">LCSDMWT</code> - Lease closure - surrender by
         deed (together with transfer)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCSDWT</code> - Lease closure - surrender by
+      <li><code class="app-code app-code--inline">LCSDWT</code> - Lease closure - surrender by
         deed with a transfer (not for value or reverse premium)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCSOL</code> - Lease closure - surrender by
+      <li><code class="app-code app-code--inline">LCSOL</code> - Lease closure - surrender by
         operation of law (not for value or reverse premium)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCSOLM</code> - Lease closure - surrender by
+      <li><code class="app-code app-code--inline">LCSOLM</code> - Lease closure - surrender by
         operation of law</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">MDR</code> - Modification of Restriction</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">NCT</code> - Caution amendment</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">NDC</code> - Notification of dissolution of
+      <li><code class="app-code app-code--inline">MDR</code> - Modification of Restriction</li>
+      <li><code class="app-code app-code--inline">NCT</code> - Caution amendment</li>
+      <li><code class="app-code app-code--inline">NDC</code> - Notification of dissolution of
         company</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">NFR</code> - Noting of an affecting franchise
+      <li><code class="app-code app-code--inline">NFR</code> - Noting of an affecting franchise
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">NOE</code> - Noting an easement</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">NOL</code> - Noting a lease</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">NPR</code> - Noting of a profit</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">NRT</code> - Notice of rentcharge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">PC</code> - Postponement of charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">PRO</code> - Provisions</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RC</code> - Restrictive covenants - entry of
+      <li><code class="app-code app-code--inline">NOE</code> - Noting an easement</li>
+      <li><code class="app-code app-code--inline">NOL</code> - Noting a lease</li>
+      <li><code class="app-code app-code--inline">NPR</code> - Noting of a profit</li>
+      <li><code class="app-code app-code--inline">NRT</code> - Notice of rentcharge</li>
+      <li><code class="app-code app-code--inline">PC</code> - Postponement of charge</li>
+      <li><code class="app-code app-code--inline">PRO</code> - Provisions</li>
+      <li><code class="app-code app-code--inline">RC</code> - Restrictive covenants - entry of
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RFN</code> - Deed of rectification</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RHR</code> - Renewal of home rights (HR2)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RNT</code> - Overriding lease granted under
+      <li><code class="app-code app-code--inline">RFN</code> - Deed of rectification</li>
+      <li><code class="app-code app-code--inline">RHR</code> - Renewal of home rights (HR2)</li>
+      <li><code class="app-code app-code--inline">RNT</code> - Overriding lease granted under
         s.19</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ROCA</code> - Release of covenants - agreed
+      <li><code class="app-code app-code--inline">ROCA</code> - Release of covenants - agreed
         notice (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ROCC</code> - Release of covenants -
+      <li><code class="app-code app-code--inline">ROCC</code> - Release of covenants -
         cancellation (CN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ROCU</code> - Release of covenants -
+      <li><code class="app-code app-code--inline">ROCU</code> - Release of covenants -
         unilateral notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ROE</code> - Release of easements</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RRD</code> - Removal of a right to determine
+      <li><code class="app-code app-code--inline">ROE</code> - Release of easements</li>
+      <li><code class="app-code app-code--inline">RRD</code> - Removal of a right to determine
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RTM</code> - Acquisition of right to manage
+      <li><code class="app-code app-code--inline">RTM</code> - Acquisition of right to manage
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RUN</code> - Removal of unilateral notice
+      <li><code class="app-code app-code--inline">RUN</code> - Removal of unilateral notice
         (UN2)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RXL</code> - Form || restriction entered -
+      <li><code class="app-code app-code--inline">RXL</code> - Form || restriction entered -
         simple request</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RXN</code> - Restriction (non-standard
+      <li><code class="app-code app-code--inline">RXN</code> - Restriction (non-standard
         wording) (RX1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RXS</code> - Restriction (standard wording)
+      <li><code class="app-code app-code--inline">RXS</code> - Restriction (standard wording)
         (RX1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">SBC</code> - Sub charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">SHO</code> - Shared ownership - additional
+      <li><code class="app-code app-code--inline">SBC</code> - Sub charge</li>
+      <li><code class="app-code app-code--inline">SHO</code> - Shared ownership - additional
         share</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">SJT</code> - Severance of joint tenancy (SEV)
+      <li><code class="app-code app-code--inline">SJT</code> - Severance of joint tenancy (SEV)
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">STVC</code> - Statutory vestings charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">STVL</code> - Statutory vestings land</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">T</code> - Transfer for value</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TNV</code> - Transfer (not for value or
+      <li><code class="app-code app-code--inline">STVC</code> - Statutory vestings charge</li>
+      <li><code class="app-code app-code--inline">STVL</code> - Statutory vestings land</li>
+      <li><code class="app-code app-code--inline">T</code> - Transfer for value</li>
+      <li><code class="app-code app-code--inline">TNV</code> - Transfer (not for value or
         reverse premium)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TOC</code> - Transfer of charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TOSNV</code> - Transfer of share (not for
+      <li><code class="app-code app-code--inline">TOC</code> - Transfer of charge</li>
+      <li><code class="app-code app-code--inline">TOSNV</code> - Transfer of share (not for
         value or reverse premium)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TOSV</code> - Transfer of share for value</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TPS</code> - Transfer under power of sale</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TRC</code> - Termination of commonhold</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TRM</code> - Transfer by operation of law on
+      <li><code class="app-code app-code--inline">TOSV</code> - Transfer of share for value</li>
+      <li><code class="app-code app-code--inline">TPS</code> - Transfer under power of sale</li>
+      <li><code class="app-code app-code--inline">TRC</code> - Termination of commonhold</li>
+      <li><code class="app-code app-code--inline">TRM</code> - Transfer by operation of law on
         death</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TSCNV</code> - Transfer subject to a charge
+      <li><code class="app-code app-code--inline">TSCNV</code> - Transfer subject to a charge
         (not for value or reverse premium)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TSCV</code> - Transfer subject to a charge for
+      <li><code class="app-code app-code--inline">TSCV</code> - Transfer subject to a charge for
         value</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TVR</code> - Transfer for value RTB/RTA</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">UNN</code> - Unilateral notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">UPT</code> - Upgrade class of title (UT1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VC</code> - Variation of charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VLAN</code> - Variation of lease - agreed
+      <li><code class="app-code app-code--inline">TVR</code> - Transfer for value RTB/RTA</li>
+      <li><code class="app-code app-code--inline">UNN</code> - Unilateral notice (UN1)</li>
+      <li><code class="app-code app-code--inline">UPT</code> - Upgrade class of title (UT1)</li>
+      <li><code class="app-code app-code--inline">VC</code> - Variation of charge</li>
+      <li><code class="app-code app-code--inline">VLAN</code> - Variation of lease - agreed
         notice (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VLAP</code> - Deed of variation of a lease -
+      <li><code class="app-code app-code--inline">VLAP</code> - Deed of variation of a lease -
         not increasing the term of or adding new land to the extent demised</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VLUN</code> - Variation of lease - unilateral
+      <li><code class="app-code app-code--inline">VLUN</code> - Variation of lease - unilateral
         notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VO</code> - Vesting order</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOC</code> - Variation of covenants</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOCA</code> - Variation of covenants - agreed
+      <li><code class="app-code app-code--inline">VO</code> - Vesting order</li>
+      <li><code class="app-code app-code--inline">VOC</code> - Variation of covenants</li>
+      <li><code class="app-code app-code--inline">VOCA</code> - Variation of covenants - agreed
         notice (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOCU</code> - Variation of covenants -
+      <li><code class="app-code app-code--inline">VOCU</code> - Variation of covenants -
         unilateral notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOE</code> - Variation of easements</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOEA</code> - Variation of easements - agreed
+      <li><code class="app-code app-code--inline">VOE</code> - Variation of easements</li>
+      <li><code class="app-code app-code--inline">VOEA</code> - Variation of easements - agreed
         notice (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOEU</code> - Variation of easements -
+      <li><code class="app-code app-code--inline">VOEU</code> - Variation of easements -
         unilateral notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">WCT</code> - Withdrawal of caution</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">WDR</code> - Withdraw a restriction (RX4)</li>
+      <li><code class="app-code app-code--inline">WCT</code> - Withdrawal of caution</li>
+      <li><code class="app-code app-code--inline">WDR</code> - Withdraw a restriction (RX4)</li>
     </ul>
     <h3 class="govuk-heading-s"><code>TRANSFER_OF_PART</code></h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li><code class="x-govuk-code x-govuk-code--inline">ADV1</code> - First notice of adverse
+      <li><code class="app-code app-code--inline">ADV1</code> - First notice of adverse
         possession</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ADV2</code> - Adverse possession: notification
+      <li><code class="app-code app-code--inline">ADV2</code> - Adverse possession: notification
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">AGN</code> - Agreed notice (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">APLM</code> - Appointment of liquidator
+      <li><code class="app-code app-code--inline">AGN</code> - Agreed notice (AN1)</li>
+      <li><code class="app-code app-code--inline">APLM</code> - Appointment of liquidator
         (members’ voluntary winding up)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">APR</code> - Apportionment of rent</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ASSTTP</code> - Assent (Transfer of Part)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">C</code> - Charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CAG</code> - Cancellation of notice (not
+      <li><code class="app-code app-code--inline">APR</code> - Apportionment of rent</li>
+      <li><code class="app-code app-code--inline">ASSTTP</code> - Assent (Transfer of Part)</li>
+      <li><code class="app-code app-code--inline">C</code> - Charge</li>
+      <li><code class="app-code app-code--inline">CAG</code> - Cancellation of notice (not
         unilateral) (CN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CANI</code> - Cancellation of inhibition (RX3)
+      <li><code class="app-code app-code--inline">CANI</code> - Cancellation of inhibition (RX3)
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CANR</code> - Cancellation of restriction
+      <li><code class="app-code app-code--inline">CANR</code> - Cancellation of restriction
         (RX3)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CANU</code> - Cancellation of unilateral
+      <li><code class="app-code app-code--inline">CANU</code> - Cancellation of unilateral
         notice (UN4)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CBKN</code> - Cancellation of bankruptcy
+      <li><code class="app-code app-code--inline">CBKN</code> - Cancellation of bankruptcy
         notice</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CBKR</code> - Cancellation of bankruptcy
+      <li><code class="app-code app-code--inline">CBKR</code> - Cancellation of bankruptcy
         restriction</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CCT</code> - Cancellation of a caution (CCD)
+      <li><code class="app-code app-code--inline">CCT</code> - Cancellation of a caution (CCD)
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CH2</code> - Obligation to make further
+      <li><code class="app-code app-code--inline">CH2</code> - Obligation to make further
         advances (CH2)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CH3</code> - Agreed maximum amount of security
+      <li><code class="app-code app-code--inline">CH3</code> - Agreed maximum amount of security
         (CH3)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CHOA</code> - Charging order - Agreed notice
+      <li><code class="app-code app-code--inline">CHOA</code> - Charging order - Agreed notice
         (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CHOU</code> - Charging order - Unilateral
+      <li><code class="app-code app-code--inline">CHOU</code> - Charging order - Unilateral
         notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CHR</code> - Cancellation of home rights (HR4)
+      <li><code class="app-code app-code--inline">CHR</code> - Cancellation of home rights (HR4)
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CNL</code> - Cancellation of an unregistered
+      <li><code class="app-code app-code--inline">CNL</code> - Cancellation of an unregistered
         noted lease (CN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CON</code> - Consolidation of charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">COP</code> - Charge of part</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CPVU</code> - Compulsory purchase (property
+      <li><code class="app-code app-code--inline">CON</code> - Consolidation of charge</li>
+      <li><code class="app-code app-code--inline">COP</code> - Charge of part</li>
+      <li><code class="app-code app-code--inline">CPVU</code> - Compulsory purchase (property
         value unknown)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CTD</code> - Commonhold transitional dealing
+      <li><code class="app-code app-code--inline">CTD</code> - Commonhold transitional dealing
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CUR</code> - Cancellation of notice of
+      <li><code class="app-code app-code--inline">CUR</code> - Cancellation of notice of
         unregistered Rentcharge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DB</code> - Determined boundary (DB)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DCLN</code> - Disclaimer - notification</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DFL1</code> - New lease - other</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DFT</code> - Defect in title s64(1) LRA 2002
+      <li><code class="app-code app-code--inline">DB</code> - Determined boundary (DB)</li>
+      <li><code class="app-code app-code--inline">DCLN</code> - Disclaimer - notification</li>
+      <li><code class="app-code app-code--inline">DFL1</code> - New lease - other</li>
+      <li><code class="app-code app-code--inline">DFT</code> - Defect in title s64(1) LRA 2002
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DIS</code> - Discharge of charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DL</code> - Discontinuous lease -
+      <li><code class="app-code app-code--inline">DIS</code> - Discharge of charge</li>
+      <li><code class="app-code app-code--inline">DL</code> - Discontinuous lease -
         non-timeshare</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DMR</code> - Disapplication of restriction
+      <li><code class="app-code app-code--inline">DMR</code> - Disapplication of restriction
         (RX2)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DOG</code> - Deed of grant of easement</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DP</code> - Discharge of part</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DSP</code> - Death of a sole proprietor</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCATCO</code> - Lease closure - of assured
+      <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement</li>
+      <li><code class="app-code app-code--inline">DP</code> - Discharge of part</li>
+      <li><code class="app-code app-code--inline">DSP</code> - Death of a sole proprietor</li>
+      <li><code class="app-code app-code--inline">LCATCO</code> - Lease closure - of assured
         tenancies following court order</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCBD</code> - Lease closure - by disclaimer
+      <li><code class="app-code app-code--inline">LCBD</code> - Lease closure - by disclaimer
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCBET</code> - Lease closure - by effluxion of
+      <li><code class="app-code app-code--inline">LCBET</code> - Lease closure - by effluxion of
         time</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCF</code> - Lease closure - forfeiture</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCSDWT</code> - Lease closure - surrender by
+      <li><code class="app-code app-code--inline">LCF</code> - Lease closure - forfeiture</li>
+      <li><code class="app-code app-code--inline">LCSDWT</code> - Lease closure - surrender by
         deed with a transfer (not for value or reverse premium)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCSOL</code> - Lease closure - surrender by
+      <li><code class="app-code app-code--inline">LCSOL</code> - Lease closure - surrender by
         operation of law (not for value or reverse premium)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCSOLM</code> - Lease closure - surrender by
+      <li><code class="app-code app-code--inline">LCSOLM</code> - Lease closure - surrender by
         operation of law</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">MDR</code> - Modification of Restriction</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">NFR</code> - Noting of an affecting franchise
+      <li><code class="app-code app-code--inline">MDR</code> - Modification of Restriction</li>
+      <li><code class="app-code app-code--inline">NFR</code> - Noting of an affecting franchise
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">NOE</code> - Noting an easement</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">NOL</code> - Noting a lease</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">NPR</code> - Noting of a profit</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">NRT</code> - Notice of rentcharge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">PRO</code> - Provisions</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RC</code> - Restrictive covenants - entry of
+      <li><code class="app-code app-code--inline">NOE</code> - Noting an easement</li>
+      <li><code class="app-code app-code--inline">NOL</code> - Noting a lease</li>
+      <li><code class="app-code app-code--inline">NPR</code> - Noting of a profit</li>
+      <li><code class="app-code app-code--inline">NRT</code> - Notice of rentcharge</li>
+      <li><code class="app-code app-code--inline">PRO</code> - Provisions</li>
+      <li><code class="app-code app-code--inline">RC</code> - Restrictive covenants - entry of
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RFN</code> - Deed of rectification</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RNT</code> - Overriding lease granted under
+      <li><code class="app-code app-code--inline">RFN</code> - Deed of rectification</li>
+      <li><code class="app-code app-code--inline">RNT</code> - Overriding lease granted under
         s.19</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ROCC</code> - Release of covenants -
+      <li><code class="app-code app-code--inline">ROCC</code> - Release of covenants -
         cancellation (CN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ROCU</code> - Release of covenants -
+      <li><code class="app-code app-code--inline">ROCU</code> - Release of covenants -
         unilateral notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ROE</code> - Release of easements</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RRD</code> - Removal of a right to determine
+      <li><code class="app-code app-code--inline">ROE</code> - Release of easements</li>
+      <li><code class="app-code app-code--inline">RRD</code> - Removal of a right to determine
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RUN</code> - Removal of unilateral notice
+      <li><code class="app-code app-code--inline">RUN</code> - Removal of unilateral notice
         (UN2)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RXL</code> - Form || restriction entered -
+      <li><code class="app-code app-code--inline">RXL</code> - Form || restriction entered -
         simple request</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RXN</code> - Restriction (non-standard
+      <li><code class="app-code app-code--inline">RXN</code> - Restriction (non-standard
         wording) (RX1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RXS</code> - Restriction (standard wording)
+      <li><code class="app-code app-code--inline">RXS</code> - Restriction (standard wording)
         (RX1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">SBC</code> - Sub charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">SJT</code> - Severance of joint tenancy (SEV)
+      <li><code class="app-code app-code--inline">SBC</code> - Sub charge</li>
+      <li><code class="app-code app-code--inline">SJT</code> - Severance of joint tenancy (SEV)
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">STVC</code> - Statutory vestings charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">STVL</code> - Statutory vestings land</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TNVTP</code> - Transfer (not for value or
+      <li><code class="app-code app-code--inline">STVC</code> - Statutory vestings charge</li>
+      <li><code class="app-code app-code--inline">STVL</code> - Statutory vestings land</li>
+      <li><code class="app-code app-code--inline">TNVTP</code> - Transfer (not for value or
         reverse premium) (Transfer of part)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TOSNVTP</code> - Transfer of share (not for
+      <li><code class="app-code app-code--inline">TOSNVTP</code> - Transfer of share (not for
         value or reverse premium) (Transfer of part)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TOSTP</code> - Transfer of share for value
+      <li><code class="app-code app-code--inline">TOSTP</code> - Transfer of share for value
         (Transfer of part)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TPSTP</code> - Transfer under power of sale
+      <li><code class="app-code app-code--inline">TPSTP</code> - Transfer under power of sale
         (Transfer of part)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TRC</code> - Termination of commonhold</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TSCNVTP</code> - Transfer subject to a charge
+      <li><code class="app-code app-code--inline">TRC</code> - Termination of commonhold</li>
+      <li><code class="app-code app-code--inline">TSCNVTP</code> - Transfer subject to a charge
         (not for value or reverse premium) (Transfer of part)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TSCVTP</code> - Transfer subject to a charge
+      <li><code class="app-code app-code--inline">TSCVTP</code> - Transfer subject to a charge
         for value (Transfer of part)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TTP</code> - Transfer for value (Transfer of
+      <li><code class="app-code app-code--inline">TTP</code> - Transfer for value (Transfer of
         part)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">TVRTP</code> - Transfer for value RTB/RTA
+      <li><code class="app-code app-code--inline">TVRTP</code> - Transfer for value RTB/RTA
         (Transfer of part)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">UNN</code> - Unilateral notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">UPT</code> - Upgrade class of title (UT1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VC</code> - Variation of charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VLAN</code> - Variation of lease - agreed
+      <li><code class="app-code app-code--inline">UNN</code> - Unilateral notice (UN1)</li>
+      <li><code class="app-code app-code--inline">UPT</code> - Upgrade class of title (UT1)</li>
+      <li><code class="app-code app-code--inline">VC</code> - Variation of charge</li>
+      <li><code class="app-code app-code--inline">VLAN</code> - Variation of lease - agreed
         notice (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VLAP</code> - Deed of variation of a lease -
+      <li><code class="app-code app-code--inline">VLAP</code> - Deed of variation of a lease -
         not increasing the term of or adding new land to the extent demised</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VLUN</code> - Variation of lease - unilateral
+      <li><code class="app-code app-code--inline">VLUN</code> - Variation of lease - unilateral
         notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VO</code> - Vesting order</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOC</code> - Variation of covenants</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOCA</code> - Variation of covenants - agreed
+      <li><code class="app-code app-code--inline">VO</code> - Vesting order</li>
+      <li><code class="app-code app-code--inline">VOC</code> - Variation of covenants</li>
+      <li><code class="app-code app-code--inline">VOCA</code> - Variation of covenants - agreed
         notice (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOCU</code> - Variation of covenants -
+      <li><code class="app-code app-code--inline">VOCU</code> - Variation of covenants -
         unilateral notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOE</code> - Variation of easements</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOEA</code> - Variation of easements - agreed
+      <li><code class="app-code app-code--inline">VOE</code> - Variation of easements</li>
+      <li><code class="app-code app-code--inline">VOEA</code> - Variation of easements - agreed
         notice (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOEU</code> - Variation of easements -
+      <li><code class="app-code app-code--inline">VOEU</code> - Variation of easements -
         unilateral notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">WCT</code> - Withdrawal of caution</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">WDR</code> - Withdraw a restriction (RX4)</li>
+      <li><code class="app-code app-code--inline">WCT</code> - Withdrawal of caution</li>
+      <li><code class="app-code app-code--inline">WDR</code> - Withdraw a restriction (RX4)</li>
     </ul>
     <h3 class="govuk-heading-s">
       <code>DISPOSITIONARY_FIRST_LEASE</code>
@@ -1993,574 +1993,574 @@ relatedAPIs:
     <p class="govuk-body">New leases</p>
     <ul class="govuk-list govuk-list--bullet">
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">ADV1</code>
+        <code class="app-code app-code--inline">ADV1</code>
         - First notice of adverse possession
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">AGN</code>
+        <code class="app-code app-code--inline">AGN</code>
         - Agreed notice (AN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">AUN</code>
+        <code class="app-code app-code--inline">AUN</code>
         - Amendment of unilateral notice (UN3)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">BKR</code>
+        <code class="app-code app-code--inline">BKR</code>
         - Bankruptcy restriction/Bankruptcy inhibition
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">C</code>
+        <code class="app-code app-code--inline">C</code>
         - Charge
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CAG</code>
+        <code class="app-code app-code--inline">CAG</code>
         - Cancellation of notice (not unilateral) (CN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CANI</code>
+        <code class="app-code app-code--inline">CANI</code>
         - Cancellation of inhibition (RX3)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CANR</code>
+        <code class="app-code app-code--inline">CANR</code>
         - Cancellation of restriction (RX3)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CANU</code>
+        <code class="app-code app-code--inline">CANU</code>
         - Cancellation of unilateral notice (UN4)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CBKN</code>
+        <code class="app-code app-code--inline">CBKN</code>
         - Cancellation of bankruptcy notice
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CBKR</code>
+        <code class="app-code app-code--inline">CBKR</code>
         - Cancellation of bankruptcy restriction
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CCT</code>
+        <code class="app-code app-code--inline">CCT</code>
         - Cancellation of a caution (CCD)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CH2</code>
+        <code class="app-code app-code--inline">CH2</code>
         - Obligation to make further advances (CH2)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CH3</code>
+        <code class="app-code app-code--inline">CH3</code>
         - Agreed maximum amount of security (CH3)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CHOA</code>
+        <code class="app-code app-code--inline">CHOA</code>
         - Charging order - Agreed notice (AN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CHOU</code>
+        <code class="app-code app-code--inline">CHOU</code>
         - Charging order - Unilateral notice (UN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CHR</code>
+        <code class="app-code app-code--inline">CHR</code>
         - Cancellation of home rights (HR4)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CN</code>
+        <code class="app-code app-code--inline">CN</code>
         - Change of name
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CNC</code>
+        <code class="app-code app-code--inline">CNC</code>
         - Change of name- chargee
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CNL</code>
+        <code class="app-code app-code--inline">CNL</code>
         - Cancellation of an unregistered noted lease (CN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">COA</code>
+        <code class="app-code app-code--inline">COA</code>
         - Change of address for service
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">COAC</code>
+        <code class="app-code app-code--inline">COAC</code>
         - Change of address for service - chargee
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">COP</code>
+        <code class="app-code app-code--inline">COP</code>
         - Charge of part
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">CUR</code>
+        <code class="app-code app-code--inline">CUR</code>
         - Cancellation of notice of unregistered Rentcharge
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">DCLV</code>
+        <code class="app-code app-code--inline">DCLV</code>
         - Disclaimer - notice
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">DFL1</code>
+        <code class="app-code app-code--inline">DFL1</code>
         - New lease - other
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">DFL3</code>
+        <code class="app-code app-code--inline">DFL3</code>
         - New lease - shared ownership
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">DFL4</code>
+        <code class="app-code app-code--inline">DFL4</code>
         - New lease - right to buy or right to acquire
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">DFT</code>
+        <code class="app-code app-code--inline">DFT</code>
         - Defect in title s64(1) LRA 2002
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">DIS</code>
+        <code class="app-code app-code--inline">DIS</code>
         - Discharge of charge
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">DJP</code>
+        <code class="app-code app-code--inline">DJP</code>
         - Death of a joint proprietor
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">DMR</code>
+        <code class="app-code app-code--inline">DMR</code>
         - Disapplication of restriction (RX2)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">DOG</code>
+        <code class="app-code app-code--inline">DOG</code>
         - Deed of grant of easement
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">DP</code>
+        <code class="app-code app-code--inline">DP</code>
         - Discharge of part
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">DSP</code>
+        <code class="app-code app-code--inline">DSP</code>
         - Death of a sole proprietor
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">DTL</code>
+        <code class="app-code app-code--inline">DTL</code>
         - Discontinuous lease - timeshare
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">HR</code>
+        <code class="app-code app-code--inline">HR</code>
         - Notice of home rights (HR1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">LCBD</code>
+        <code class="app-code app-code--inline">LCBD</code>
         - Lease closure - by disclaimer
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">LCBN</code>
+        <code class="app-code app-code--inline">LCBN</code>
         - Lease closure - by notice
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">LCF</code>
+        <code class="app-code app-code--inline">LCF</code>
         - Lease closure - forfeiture
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">LCMRE</code>
+        <code class="app-code app-code--inline">LCMRE</code>
         - Lease closure - merger with reversionary estate
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">LCOE</code>
+        <code class="app-code app-code--inline">LCOE</code>
         - Lease closure - on enlargement
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">LCSD</code>
+        <code class="app-code app-code--inline">LCSD</code>
         - Lease closure - surrender by deed (not for value or reverse premium)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">LCSDM</code>
+        <code class="app-code app-code--inline">LCSDM</code>
         - Lease closure - surrender by deed
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">LCSDMWT</code>
+        <code class="app-code app-code--inline">LCSDMWT</code>
         - Lease closure - surrender by deed (together with transfer)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">LCSOL</code>
+        <code class="app-code app-code--inline">LCSOL</code>
         - Lease closure - surrender by operation of law (not for value or reverse premium)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">MDR</code>
+        <code class="app-code app-code--inline">MDR</code>
         - Modification of Restriction
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">NDC</code>
+        <code class="app-code app-code--inline">NDC</code>
         - Notification of dissolution of company
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">NFR</code>
+        <code class="app-code app-code--inline">NFR</code>
         - Noting of an affecting franchise
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">NOL</code>
+        <code class="app-code app-code--inline">NOL</code>
         - Noting a lease
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">NPR</code>
+        <code class="app-code app-code--inline">NPR</code>
         - Noting of a profit
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">NRT</code>
+        <code class="app-code app-code--inline">NRT</code>
         - Notice of rentcharge
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">PC</code>
+        <code class="app-code app-code--inline">PC</code>
         - Postponement of charge
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">PER</code>
+        <code class="app-code app-code--inline">PER</code>
         - Personal covenants
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">PRO</code>
+        <code class="app-code app-code--inline">PRO</code>
         - Provisions
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">RC</code>
+        <code class="app-code app-code--inline">RC</code>
         - Restrictive covenants - entry of
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">RFN</code>
+        <code class="app-code app-code--inline">RFN</code>
         - Deed of rectification
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">RHR</code>
+        <code class="app-code app-code--inline">RHR</code>
         - Renewal of home rights (HR2)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">RNT</code>
+        <code class="app-code app-code--inline">RNT</code>
         - Overriding lease granted under s.19
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">ROCA</code>
+        <code class="app-code app-code--inline">ROCA</code>
         - Release of covenants - agreed notice (AN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">ROCC</code>
+        <code class="app-code app-code--inline">ROCC</code>
         - Release of covenants - cancellation (CN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">ROCU</code>
+        <code class="app-code app-code--inline">ROCU</code>
         - Release of covenants - unilateral notice (UN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">ROE</code>
+        <code class="app-code app-code--inline">ROE</code>
         - Release of easements
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">RRD</code>
+        <code class="app-code app-code--inline">RRD</code>
         - Removal of a right to determine
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">RUN</code>
+        <code class="app-code app-code--inline">RUN</code>
         - Removal of unilateral notice (UN2)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">RXN</code>
+        <code class="app-code app-code--inline">RXN</code>
         - Restriction (non-standard wording) (RX1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">RXS</code>
+        <code class="app-code app-code--inline">RXS</code>
         - Restriction (standard wording) (RX1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">SBC</code>
+        <code class="app-code app-code--inline">SBC</code>
         - Sub charge
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">SJT</code>
+        <code class="app-code app-code--inline">SJT</code>
         - Severance of joint tenancy (SEV)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">UNN</code>
+        <code class="app-code app-code--inline">UNN</code>
         - Unilateral notice (UN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">UPT</code>
+        <code class="app-code app-code--inline">UPT</code>
         - Upgrade class of title (UT1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">VC</code>
+        <code class="app-code app-code--inline">VC</code>
         - Variation of charge
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">VLAN</code>
+        <code class="app-code app-code--inline">VLAN</code>
         - Variation of lease - agreed notice (AN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">VLAP</code>
+        <code class="app-code app-code--inline">VLAP</code>
         - Deed of variation of a lease - not increasing the term of or adding new land to the extent demised
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">VLUN</code>
+        <code class="app-code app-code--inline">VLUN</code>
         - Variation of lease - unilateral notice (UN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">VOC</code>
+        <code class="app-code app-code--inline">VOC</code>
         - Variation of covenants
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">VOCA</code>
+        <code class="app-code app-code--inline">VOCA</code>
         - Variation of covenants - agreed notice (AN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">VOCU</code>
+        <code class="app-code app-code--inline">VOCU</code>
         - Variation of covenants - unilateral notice (UN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">VOE</code>
+        <code class="app-code app-code--inline">VOE</code>
         - Variation of easements
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">VOEA</code>
+        <code class="app-code app-code--inline">VOEA</code>
         - Variation of easements - agreed notice (AN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">VOEU</code>
+        <code class="app-code app-code--inline">VOEU</code>
         - Variation of easements - unilateral notice (UN1)
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">WCT</code>
+        <code class="app-code app-code--inline">WCT</code>
         - Withdrawal of caution
       </li>
       <li>
-        <code class="x-govuk-code x-govuk-code--inline">WDR</code>
+        <code class="app-code app-code--inline">WDR</code>
         - Withdraw a restriction (RX4)
       </li>
     </ul>
     <p class="govuk-body">Lease extensions</p>
     <p class="govuk-body">For a lease extension application, the <code
-        class="x-govuk-code x-govuk-code--inline">DFL5</code> (Dispositionary first lease extension of a
+        class="app-code app-code--inline">DFL5</code> (Dispositionary first lease extension of a
       term) transaction type must be used.</p>
     <ul class="govuk-list govuk-list--bullet">
-      <li><code class="x-govuk-code x-govuk-code--inline">ADV1</code> - First notice of adverse
+      <li><code class="app-code app-code--inline">ADV1</code> - First notice of adverse
         possession</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">AGN</code> - Agreed notice (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">APLC</code> - Appointment of liquidator
+      <li><code class="app-code app-code--inline">AGN</code> - Agreed notice (AN1)</li>
+      <li><code class="app-code app-code--inline">APLC</code> - Appointment of liquidator
         (creditor’s voluntary winding up)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">APLCO</code> - Appointment of liquidator
+      <li><code class="app-code app-code--inline">APLCO</code> - Appointment of liquidator
         (compulsory winding up)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">APLM</code> - Appointment of liquidator
+      <li><code class="app-code app-code--inline">APLM</code> - Appointment of liquidator
         (members’ voluntary winding up)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">AUN</code> - Amendment of unilateral notice
+      <li><code class="app-code app-code--inline">AUN</code> - Amendment of unilateral notice
         (UN3)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">C</code> - Charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CAG</code> - Cancellation of notice (not
+      <li><code class="app-code app-code--inline">C</code> - Charge</li>
+      <li><code class="app-code app-code--inline">CAG</code> - Cancellation of notice (not
         unilateral) (CN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CANI</code> - Cancellation of inhibition (RX3)
+      <li><code class="app-code app-code--inline">CANI</code> - Cancellation of inhibition (RX3)
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CANR</code> - Cancellation of restriction
+      <li><code class="app-code app-code--inline">CANR</code> - Cancellation of restriction
         (RX3)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CANU</code> - Cancellation of unilateral
+      <li><code class="app-code app-code--inline">CANU</code> - Cancellation of unilateral
         notice (UN4)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CBKN</code> - Cancellation of bankruptcy
+      <li><code class="app-code app-code--inline">CBKN</code> - Cancellation of bankruptcy
         notice</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CBKR</code> - Cancellation of bankruptcy
+      <li><code class="app-code app-code--inline">CBKR</code> - Cancellation of bankruptcy
         restriction</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CCT</code> - Cancellation of a caution (CCD)
+      <li><code class="app-code app-code--inline">CCT</code> - Cancellation of a caution (CCD)
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CH3</code> - Agreed maximum amount of security
+      <li><code class="app-code app-code--inline">CH3</code> - Agreed maximum amount of security
         (CH3)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CHOA</code> - Charging order - Agreed notice
+      <li><code class="app-code app-code--inline">CHOA</code> - Charging order - Agreed notice
         (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CHOU</code> - Charging order - Unilateral
+      <li><code class="app-code app-code--inline">CHOU</code> - Charging order - Unilateral
         notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CHR</code> - Cancellation of home rights (HR4)
+      <li><code class="app-code app-code--inline">CHR</code> - Cancellation of home rights (HR4)
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CN</code> - Change of name</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CNC</code> - Change of name- chargee</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CNL</code> - Cancellation of an unregistered
+      <li><code class="app-code app-code--inline">CN</code> - Change of name</li>
+      <li><code class="app-code app-code--inline">CNC</code> - Change of name- chargee</li>
+      <li><code class="app-code app-code--inline">CNL</code> - Cancellation of an unregistered
         noted lease (CN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">COA</code> - Change of address for service
+      <li><code class="app-code app-code--inline">COA</code> - Change of address for service
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">COAC</code> - Change of address for service -
+      <li><code class="app-code app-code--inline">COAC</code> - Change of address for service -
         chargee</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">COP</code> - Charge of part</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">CUR</code> - Cancellation of notice of
+      <li><code class="app-code app-code--inline">COP</code> - Charge of part</li>
+      <li><code class="app-code app-code--inline">CUR</code> - Cancellation of notice of
         unregistered Rentcharge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DCLN</code> - Disclaimer - notification</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DCLV</code> - Disclaimer - notice</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DFL1</code> - New lease - other</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DFL5</code> - Dispositionary first lease
+      <li><code class="app-code app-code--inline">DCLN</code> - Disclaimer - notification</li>
+      <li><code class="app-code app-code--inline">DCLV</code> - Disclaimer - notice</li>
+      <li><code class="app-code app-code--inline">DFL1</code> - New lease - other</li>
+      <li><code class="app-code app-code--inline">DFL5</code> - Dispositionary first lease
         extension of a term</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DFT</code> - Defect in title s64(1) LRA 2002
+      <li><code class="app-code app-code--inline">DFT</code> - Defect in title s64(1) LRA 2002
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DIS</code> - Discharge of charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DJP</code> - Death of a joint proprietor</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DL</code> - Discontinuous lease -
+      <li><code class="app-code app-code--inline">DIS</code> - Discharge of charge</li>
+      <li><code class="app-code app-code--inline">DJP</code> - Death of a joint proprietor</li>
+      <li><code class="app-code app-code--inline">DL</code> - Discontinuous lease -
         non-timeshare</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DMR</code> - Disapplication of restriction
+      <li><code class="app-code app-code--inline">DMR</code> - Disapplication of restriction
         (RX2)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DOG</code> - Deed of grant of easement</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DP</code> - Discharge of part</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">DSP</code> - Death of a sole proprietor</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">EXR</code> - Extinguishment of rentcharge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">LCBD</code> - Lease closure - by disclaimer
+      <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement</li>
+      <li><code class="app-code app-code--inline">DP</code> - Discharge of part</li>
+      <li><code class="app-code app-code--inline">DSP</code> - Death of a sole proprietor</li>
+      <li><code class="app-code app-code--inline">EXR</code> - Extinguishment of rentcharge</li>
+      <li><code class="app-code app-code--inline">LCBD</code> - Lease closure - by disclaimer
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">NRT</code> - Notice of rentcharge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">PRO</code> - Provisions</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RFN</code> - Deed of rectification</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RNT</code> - Overriding lease granted under
+      <li><code class="app-code app-code--inline">NRT</code> - Notice of rentcharge</li>
+      <li><code class="app-code app-code--inline">PRO</code> - Provisions</li>
+      <li><code class="app-code app-code--inline">RFN</code> - Deed of rectification</li>
+      <li><code class="app-code app-code--inline">RNT</code> - Overriding lease granted under
         s.19</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ROCC</code> - Release of covenants -
+      <li><code class="app-code app-code--inline">ROCC</code> - Release of covenants -
         cancellation (CN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ROCU</code> - Release of covenants -
+      <li><code class="app-code app-code--inline">ROCU</code> - Release of covenants -
         unilateral notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">ROE</code> - Release of easements</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RRD</code> - Removal of a right to determine
+      <li><code class="app-code app-code--inline">ROE</code> - Release of easements</li>
+      <li><code class="app-code app-code--inline">RRD</code> - Removal of a right to determine
       </li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RUN</code> - Removal of unilateral notice
+      <li><code class="app-code app-code--inline">RUN</code> - Removal of unilateral notice
         (UN2)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RXN</code> - Restriction (non-standard
+      <li><code class="app-code app-code--inline">RXN</code> - Restriction (non-standard
         wording) (RX1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">RXS</code> - Restriction (standard wording)
+      <li><code class="app-code app-code--inline">RXS</code> - Restriction (standard wording)
         (RX1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">SBC</code> - Sub charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">STVC</code> - Statutory vestings charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">STVL</code> - Statutory vestings land</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">UNN</code> - Unilateral notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">UPT</code> - Upgrade class of title (UT1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VC</code> - Variation of charge</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VLAN</code> - Variation of lease - agreed
+      <li><code class="app-code app-code--inline">SBC</code> - Sub charge</li>
+      <li><code class="app-code app-code--inline">STVC</code> - Statutory vestings charge</li>
+      <li><code class="app-code app-code--inline">STVL</code> - Statutory vestings land</li>
+      <li><code class="app-code app-code--inline">UNN</code> - Unilateral notice (UN1)</li>
+      <li><code class="app-code app-code--inline">UPT</code> - Upgrade class of title (UT1)</li>
+      <li><code class="app-code app-code--inline">VC</code> - Variation of charge</li>
+      <li><code class="app-code app-code--inline">VLAN</code> - Variation of lease - agreed
         notice (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VLUN</code> - Variation of lease - unilateral
+      <li><code class="app-code app-code--inline">VLUN</code> - Variation of lease - unilateral
         notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VO</code> - Vesting order</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOC</code> - Variation of covenants</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOCA</code> - Variation of covenants - agreed
+      <li><code class="app-code app-code--inline">VO</code> - Vesting order</li>
+      <li><code class="app-code app-code--inline">VOC</code> - Variation of covenants</li>
+      <li><code class="app-code app-code--inline">VOCA</code> - Variation of covenants - agreed
         notice (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOCU</code> - Variation of covenants -
+      <li><code class="app-code app-code--inline">VOCU</code> - Variation of covenants -
         unilateral notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOE</code> - Variation of easements</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOEA</code> - Variation of easements - agreed
+      <li><code class="app-code app-code--inline">VOE</code> - Variation of easements</li>
+      <li><code class="app-code app-code--inline">VOEA</code> - Variation of easements - agreed
         notice (AN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">VOEU</code> - Variation of easements -
+      <li><code class="app-code app-code--inline">VOEU</code> - Variation of easements -
         unilateral notice (UN1)</li>
-      <li><code class="x-govuk-code x-govuk-code--inline">WDR</code> - Withdraw a restriction (RX4)</li>
+      <li><code class="app-code app-code--inline">WDR</code> - Withdraw a restriction (RX4)</li>
     </ul>
     <h3 class="govuk-heading-s"><code>REMOVE_JP1</code></h3>
     <p class="govuk-body">The only valid transaction type for the <code
-        class="x-govuk-code x-govuk-code--inline">REMOVE_JP1</code> application type is <code
-        class="x-govuk-code x-govuk-code--inline">JP1</code>. This must be the only transaction, and
-      there must only be a single <code class="x-govuk-code x-govuk-code--inline">JP1</code> transaction
+        class="app-code app-code--inline">REMOVE_JP1</code> application type is <code
+        class="app-code app-code--inline">JP1</code>. This must be the only transaction, and
+      there must only be a single <code class="app-code app-code--inline">JP1</code> transaction
       per application.</p>
   </div>
 </details>
 <h3 class="govuk-heading-s">Additional transaction details</h3>
 <p class="govuk-body">For certain transaction types, more detailed information is needed (via the <code
-    class="x-govuk-code x-govuk-code--inline">Transaction.details</code> field). This field can be one
+    class="app-code app-code--inline">Transaction.details</code> field). This field can be one
   of several different types:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">Transfer</code> (dates must not be in the future)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">Charge</code> (dates must not be in the future)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">Discharge</code></li>
-  <li><code class="x-govuk-code x-govuk-code--inline">AmountDetails</code></li>
+  <li><code class="app-code app-code--inline">Transfer</code> (dates must not be in the future)</li>
+  <li><code class="app-code app-code--inline">Charge</code> (dates must not be in the future)</li>
+  <li><code class="app-code app-code--inline">Discharge</code></li>
+  <li><code class="app-code app-code--inline">AmountDetails</code></li>
 </ul>
 <p class="govuk-body">The data below details which transactions require which details type. If a transaction is
   not listed, it does not require additional details.</p>
 <p class="govuk-body"><code>Transfer</code></p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">T</code> - Transfer for value</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TNV</code> - Transfer (not for value or reverse
+  <li><code class="app-code app-code--inline">T</code> - Transfer for value</li>
+  <li><code class="app-code app-code--inline">TNV</code> - Transfer (not for value or reverse
     premium)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TOSNV</code> - Transfer of share (not for value or
+  <li><code class="app-code app-code--inline">TOSNV</code> - Transfer of share (not for value or
     reverse premium)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TSCNV</code> - Transfer subject to a charge (not
+  <li><code class="app-code app-code--inline">TSCNV</code> - Transfer subject to a charge (not
     for value or reverse premium)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TSCV</code> - Transfer subject to a charge for
+  <li><code class="app-code app-code--inline">TSCV</code> - Transfer subject to a charge for
     value</li>
 </ul>
 <p class="govuk-body"><code>Charge</code></p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">C</code> - Charge</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">COP</code> - Charge of part</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">SBC</code> - Sub charge</li>
+  <li><code class="app-code app-code--inline">C</code> - Charge</li>
+  <li><code class="app-code app-code--inline">COP</code> - Charge of part</li>
+  <li><code class="app-code app-code--inline">SBC</code> - Sub charge</li>
 </ul>
 <p class="govuk-body"><code>Discharge</code></p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">DIS</code> - Discharge</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">DP</code> - Discharge of part</li>
+  <li><code class="app-code app-code--inline">DIS</code> - Discharge</li>
+  <li><code class="app-code app-code--inline">DP</code> - Discharge of part</li>
 </ul>
 <p class="govuk-body"><code>AmountDetails</code></p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">ASTT</code> - Assent</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">ASTC</code> - Assent of charge</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">APT</code> - Appointment of new trustee</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">ASSTTP</code> - Assent (Transfer of part)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">CPVK</code> - Compulsory purchase (property value
+  <li><code class="app-code app-code--inline">ASTT</code> - Assent</li>
+  <li><code class="app-code app-code--inline">ASTC</code> - Assent of charge</li>
+  <li><code class="app-code app-code--inline">APT</code> - Appointment of new trustee</li>
+  <li><code class="app-code app-code--inline">ASSTTP</code> - Assent (Transfer of part)</li>
+  <li><code class="app-code app-code--inline">CPVK</code> - Compulsory purchase (property value
     known)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">CPVU</code> - Compulsory purchase (property value
+  <li><code class="app-code app-code--inline">CPVU</code> - Compulsory purchase (property value
     unknown)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">DFL1</code> - New lease - other</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">DFL3</code> - New lease - shared ownership</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">DFL4</code> - New lease - right to buy or right to
+  <li><code class="app-code app-code--inline">DFL1</code> - New lease - other</li>
+  <li><code class="app-code app-code--inline">DFL3</code> - New lease - shared ownership</li>
+  <li><code class="app-code app-code--inline">DFL4</code> - New lease - right to buy or right to
     acquire</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">DFL5</code> - Dispositionary first lease extension
+  <li><code class="app-code app-code--inline">DFL5</code> - Dispositionary first lease extension
     of a term</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">DL</code> - Discontinuous lease - non-timeshare
+  <li><code class="app-code app-code--inline">DL</code> - Discontinuous lease - non-timeshare
   </li>
-  <li><code class="x-govuk-code x-govuk-code--inline">DTL</code> - Discontinuous lease - timeshare</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">LCSD</code> - Lease closure - surrender by deed
+  <li><code class="app-code app-code--inline">DTL</code> - Discontinuous lease - timeshare</li>
+  <li><code class="app-code app-code--inline">LCSD</code> - Lease closure - surrender by deed
     (not for value or reverse premium)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">LCSDM</code> - Lease closure - surrender by deed
+  <li><code class="app-code app-code--inline">LCSDM</code> - Lease closure - surrender by deed
   </li>
-  <li><code class="x-govuk-code x-govuk-code--inline">LCSDWT</code> - Lease closure - surrender by deed
+  <li><code class="app-code app-code--inline">LCSDWT</code> - Lease closure - surrender by deed
     with a transfer (not for value or reverse premium)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">LCSDMWT</code> - Lease closure - surrender by deed
+  <li><code class="app-code app-code--inline">LCSDMWT</code> - Lease closure - surrender by deed
     (together with transfer)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">LCSOL</code> - Lease closure - surrender by
+  <li><code class="app-code app-code--inline">LCSOL</code> - Lease closure - surrender by
     operation of law (not for value or reverse premium)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">LCSOLM</code> - Lease closure - surrender by
+  <li><code class="app-code app-code--inline">LCSOLM</code> - Lease closure - surrender by
     operation of law</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">RNT</code> - Overriding lease granted under s.19,
+  <li><code class="app-code app-code--inline">RNT</code> - Overriding lease granted under s.19,
     Landlord & Tenant (Covenants) Act 1995</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TNVTP</code> - Transfer (not for value or reverse
+  <li><code class="app-code app-code--inline">TNVTP</code> - Transfer (not for value or reverse
     premium) (Transfer of part)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TOC</code> - Transfer of charge</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TOSNVTP</code> - Transfer of share (not for value
+  <li><code class="app-code app-code--inline">TOC</code> - Transfer of charge</li>
+  <li><code class="app-code app-code--inline">TOSNVTP</code> - Transfer of share (not for value
     or reverse premium) (Transfer of part)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TOSTP</code> - Transfer of share for value
+  <li><code class="app-code app-code--inline">TOSTP</code> - Transfer of share for value
     (Transfer of part)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TOSV</code> - Transfer of share for value</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TPS</code> - Transfer under power of sale</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TPSTP</code> - Transfer under power of sale
+  <li><code class="app-code app-code--inline">TOSV</code> - Transfer of share for value</li>
+  <li><code class="app-code app-code--inline">TPS</code> - Transfer under power of sale</li>
+  <li><code class="app-code app-code--inline">TPSTP</code> - Transfer under power of sale
     (Transfer of part)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TRM</code> - Transfer by operation of law on death
+  <li><code class="app-code app-code--inline">TRM</code> - Transfer by operation of law on death
   </li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TSCNVTP</code> - Transfer subject to a charge (not
+  <li><code class="app-code app-code--inline">TSCNVTP</code> - Transfer subject to a charge (not
     for value or reverse premium) (Transfer of part)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TSCTP</code> - Transfer subject to a charge for
+  <li><code class="app-code app-code--inline">TSCTP</code> - Transfer subject to a charge for
     value (Transfer of part)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TTP</code> - Transfer for value (Transfer of part)
+  <li><code class="app-code app-code--inline">TTP</code> - Transfer for value (Transfer of part)
   </li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TVR</code> - Transfer for value RTB/RTA </li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TVRTP</code> - Transfer for value RTB/RTA
+  <li><code class="app-code app-code--inline">TVR</code> - Transfer for value RTB/RTA </li>
+  <li><code class="app-code app-code--inline">TVRTP</code> - Transfer for value RTB/RTA
     (Transfer of part)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">VO</code> - Vesting order</li>
+  <li><code class="app-code app-code--inline">VO</code> - Vesting order</li>
 </ul>
 <h3 class="govuk-heading-s">Title types</h3>
 <p class="govuk-body">Titles included as part of submission have a <code
-    class="x-govuk-code x-govuk-code--inline">type</code> field that informs HMLR how to process the
+    class="app-code app-code--inline">type</code> field that informs HMLR how to process the
   application. This type depends on the application type, and the usage of the title within the application.</p>
 <h3 class="govuk-heading-s"><code>REGISTER_UPDATE</code> and <code>REMOVE_JP1</code> application types</h3>
 <p class="govuk-body">Only title types of <code
-    class="x-govuk-code x-govuk-code--inline">REGISTER_TITLE</code> are supported.</p>
+    class="app-code app-code--inline">REGISTER_TITLE</code> are supported.</p>
 <h3 class="govuk-heading-s"><code>TRANSFER_OF_PART</code> application types</h3>
 <p class="govuk-body">The following title types are supported:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">TRANSFEROR_TITLE</code> - titles related to the
+  <li><code class="app-code app-code--inline">TRANSFEROR_TITLE</code> - titles related to the
     transferor(s) on the application</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">ADDITIONAL_TITLE</code> - any other titles on the
+  <li><code class="app-code app-code--inline">ADDITIONAL_TITLE</code> - any other titles on the
     application</li>
 </ul>
 <h3 class="govuk-heading-s"><code>DISPOSITIONARY_FIRST_LEASE</code> application types</h3>
 <p class="govuk-body">The following title types are supported:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">LANDLORD_TITLES</code> - titles related to the
+  <li><code class="app-code app-code--inline">LANDLORD_TITLES</code> - titles related to the
     landlord(s) on the application</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">ADDITIONAL_TITLE</code> - any other titles on the
+  <li><code class="app-code app-code--inline">ADDITIONAL_TITLE</code> - any other titles on the
     application</li>
 </ul>
 <p class="govuk-body">For a lease extension application (where the transaction type is <code
-    class="x-govuk-code x-govuk-code--inline">DFL5</code> Dispositionary first lease extension of a
-  term) a single title with type <code class="x-govuk-code x-govuk-code--inline">TENANT_TITLE</code>
+    class="app-code app-code--inline">DFL5</code> Dispositionary first lease extension of a
+  term) a single title with type <code class="app-code app-code--inline">TENANT_TITLE</code>
   must also be provided, which is related to the tenant on the application.</p>
 <h3 class="govuk-heading-s">Change of name / Death of a joint proprietor (DJP)</h3>
 <p class="govuk-body">HMLR will not accept applications where the registered proprietor information does not match the register
@@ -2571,15 +2571,15 @@ relatedAPIs:
 <p class="govuk-body">
 Each party included in an application should be given a party role for each transaction it is used in. Parties can be given the following roles: </p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="x-govuk-code x-govuk-code--inline">ATTORNEY</code>  </li>
-<li><code class="x-govuk-code x-govuk-code--inline">TRANSFEROR</code> </li> 
-<li><code class="x-govuk-code x-govuk-code--inline">TRANSFEREE</code> </li>
-<li><code class="x-govuk-code x-govuk-code--inline">LENDER</code> </li>
-<li><code class="x-govuk-code x-govuk-code--inline">BORROWER</code> </li>
-<li><code class="x-govuk-code x-govuk-code--inline">PERSONAL_REPRESENTATIVE</code> </li> 
-<li><code class="x-govuk-code x-govuk-code--inline">ASSENTOR</code>  </li>
-<li><code class="x-govuk-code x-govuk-code--inline">LANDLORD</code>  </li>
-<li><code class="x-govuk-code x-govuk-code--inline">TENANT</code>  </li></ul>
+<li><code class="app-code app-code--inline">ATTORNEY</code>  </li>
+<li><code class="app-code app-code--inline">TRANSFEROR</code> </li> 
+<li><code class="app-code app-code--inline">TRANSFEREE</code> </li>
+<li><code class="app-code app-code--inline">LENDER</code> </li>
+<li><code class="app-code app-code--inline">BORROWER</code> </li>
+<li><code class="app-code app-code--inline">PERSONAL_REPRESENTATIVE</code> </li> 
+<li><code class="app-code app-code--inline">ASSENTOR</code>  </li>
+<li><code class="app-code app-code--inline">LANDLORD</code>  </li>
+<li><code class="app-code app-code--inline">TENANT</code>  </li></ul>
 <p class="govuk-body">A party may be given different roles in different transactions. A party must not be used for multiple party roles within a single transaction, with the exception of the following transactions: ASTT, ASSTTP, ASTC, TOSNV, TOSNVTP, TOSTP, TOSV 
  </p>
 
@@ -2588,15 +2588,15 @@ Each party included in an application should be given a party role for each tran
 <p class="govuk-body">The capacity field is a data item within the party role object. The capacity field must be provided for Landlords, Tenants and Transferors when they are added as additional parties to transactions. It can be provided for any other party role, but this is optional.</p>
 <p class="govuk-body">The options for the capacity field are: </p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="x-govuk-code x-govuk-code--inline">REGISTERED_PROPRIETOR</code>  </li>
-<li><code class="x-govuk-code x-govuk-code--inline">ENTITLED_REGISTERED_PROPRIETOR</code>  </li>
-<li><code class="x-govuk-code x-govuk-code--inline">ADDITIONAL_TRUSTEE</code>  </li>
-<li><code class="x-govuk-code x-govuk-code--inline">INSOLVENCY_PRACTITIONER</code>  </li>
-<li><code class="x-govuk-code x-govuk-code--inline">RECEIVER</code>  </li>
-<li><code class="x-govuk-code x-govuk-code--inline">DEPUTY</code>  </li>
-<li><code class="x-govuk-code x-govuk-code--inline">GUARDIAN</code>  </li>
-<li><code class="x-govuk-code x-govuk-code--inline">PERSONAL_REPRESENTATIVE</code>  </li> 
-<li><code class="x-govuk-code x-govuk-code--inline">NOT_REQUIRED</code>  </li>
+<li><code class="app-code app-code--inline">REGISTERED_PROPRIETOR</code>  </li>
+<li><code class="app-code app-code--inline">ENTITLED_REGISTERED_PROPRIETOR</code>  </li>
+<li><code class="app-code app-code--inline">ADDITIONAL_TRUSTEE</code>  </li>
+<li><code class="app-code app-code--inline">INSOLVENCY_PRACTITIONER</code>  </li>
+<li><code class="app-code app-code--inline">RECEIVER</code>  </li>
+<li><code class="app-code app-code--inline">DEPUTY</code>  </li>
+<li><code class="app-code app-code--inline">GUARDIAN</code>  </li>
+<li><code class="app-code app-code--inline">PERSONAL_REPRESENTATIVE</code>  </li> 
+<li><code class="app-code app-code--inline">NOT_REQUIRED</code>  </li>
 </ul>
 <p class="govuk-body">Example request for capacity field:</p>
 <p class="govuk-body">“Select the capacity the Transferor is acting in. You’ll need to evidence the capacity to act and check whether ID evidence will be required.”</p>
@@ -2664,48 +2664,48 @@ Each party included in an application should be given a party role for each tran
 <p class="govuk-body"> 
 The attorney field is a data item within the party role object. It should be used to add a party reference for the attorney acting on behalf of that party.</p>
 <h3 class="govuk-heading-s">Representation</h3> 
-<p class="govuk-body">All parties require a representation type. The representation type cannot be <code class="x-govuk-code x-govuk-code--inline">NOT_REQUIRED</code> for Borrowers, Transferees and Transferors. The options are as follows:</p> 
+<p class="govuk-body">All parties require a representation type. The representation type cannot be <code class="app-code app-code--inline">NOT_REQUIRED</code> for Borrowers, Transferees and Transferors. The options are as follows:</p> 
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="x-govuk-code x-govuk-code--inline">LODGING_CONVEYANCER</code> - the conveyancer lodging the application </li>
-<li><code class="x-govuk-code x-govuk-code--inline">OTHER_CONVEYANCER</code> - the party is represented by another conveyancer. Details will be included with the application </li>
-<li><code class="x-govuk-code x-govuk-code--inline">NOT_REPRESENTED</code> - the party is not represented by a conveyancer and identity evidence has been provided </li>
-<li><code class="x-govuk-code x-govuk-code--inline">NOT_REQUIRED</code> - the party is not required to have a representation type. This should never be selected for Borrowers, Transferees or Transferors  </li></ul>
+<li><code class="app-code app-code--inline">LODGING_CONVEYANCER</code> - the conveyancer lodging the application </li>
+<li><code class="app-code app-code--inline">OTHER_CONVEYANCER</code> - the party is represented by another conveyancer. Details will be included with the application </li>
+<li><code class="app-code app-code--inline">NOT_REPRESENTED</code> - the party is not represented by a conveyancer and identity evidence has been provided </li>
+<li><code class="app-code app-code--inline">NOT_REQUIRED</code> - the party is not required to have a representation type. This should never be selected for Borrowers, Transferees or Transferors  </li></ul>
 <div class="govuk-!-padding-bottom-6"></div>
 
 <h3 class="govuk-heading-m">List of validation rules</h3>
 <p class="govuk-body">During application submission, several validation rules will run against the data provided
   to ensure it is valid. A number of these rules run synchronously before an <code
-    class="x-govuk-code x-govuk-code--inline">application_request_id</code> is returned and they are
+    class="app-code app-code--inline">application_request_id</code> is returned and they are
   documented in the schema documentation. Other rules run asynchronously, after the <code
-    class="x-govuk-code x-govuk-code--inline">application_request_id</code> has been returned.</p>
+    class="app-code app-code--inline">application_request_id</code> has been returned.</p>
 
 
 <h3 class="govuk-heading-s">Bypass validation</h3>
 <p class="govuk-body">If an application fails validation, users should rectify validation errors to avoid the need for bypassing, for example by adding the correct transactions (eg. DJP or Change of name for name discrepancies, and RX1 for restrictions within a transfer). 
 Incorrect use of bypass rules will delay the processing of an application and could result in requisition points. </p>
-<p class="govuk-body">For exceptions to specific rules, we provide a <code class="x-govuk-code x-govuk-code--inline">bypass_validation</code> array that applies to specific objects, as defined by the <code class="x-govuk-code x-govuk-code--inline">pointer</code>.</p>
+<p class="govuk-body">For exceptions to specific rules, we provide a <code class="app-code app-code--inline">bypass_validation</code> array that applies to specific objects, as defined by the <code class="app-code app-code--inline">pointer</code>.</p>
 
 <p class="govuk-body">Usage of validation bypass will be monitored. To use the bypass functionality, the
   following information is required:</p>
 
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">validation_type</code> - the type of validation
+  <li><code class="app-code app-code--inline">validation_type</code> - the type of validation
     rule you want to bypass. This is returned in the <code
-      class="x-govuk-code x-govuk-code--inline">type</code> field from any validation erro</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">validation_pointer</code> - the location of the
+      class="app-code app-code--inline">type</code> field from any validation erro</li>
+  <li><code class="app-code app-code--inline">validation_pointer</code> - the location of the
     object in the payload structure. This is returned in the <code
-      class="x-govuk-code x-govuk-code--inline">pointer</code>field from some validation errors</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">reason</code> - the specific reason the bypass was
+      class="app-code app-code--inline">pointer</code>field from some validation errors</li>
+  <li><code class="app-code app-code--inline">reason</code> - the specific reason the bypass was
     required. Must be one of:</li>
   <ul class="govuk-list govuk-list--bullet">
-    <li><code class="x-govuk-code x-govuk-code--inline">DISAGREE_WITH_REGISTER</code> - the validation
+    <li><code class="app-code app-code--inline">DISAGREE_WITH_REGISTER</code> - the validation
       rule is incorrect because the data on the register is incorrect</li>
-    <li><code class="x-govuk-code x-govuk-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code> - there
+    <li><code class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code> - there
       is missing, outdated or incorrect data in a comparison database</li>
-    <li><code class="x-govuk-code x-govuk-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code> -
+    <li><code class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code> -
       the application is valid. An exception should apply but is not covered by current business rules</li>
   </ul>
-  <li><code class="x-govuk-code x-govuk-code--inline">comment</code> - a user inputted description of
+  <li><code class="app-code app-code--inline">comment</code> - a user inputted description of
     why the validation is being bypassed</li>
 </ul>
 <p class="govuk-body">Bypassing validation can only be done for specific rules, and each rule is only permitted
@@ -2722,71 +2722,71 @@ Incorrect use of bypass rules will delay the processing of an application and co
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">all-proprietors-matched-to-borrowers</code></td>
+          class="app-code app-code--inline">all-proprietors-matched-to-borrowers</code></td>
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">DISAGREE_WITH_REGISTER</code><br><code
-          class="x-govuk-code x-govuk-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
+          class="app-code app-code--inline">DISAGREE_WITH_REGISTER</code><br><code
+          class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">lender-name-matches-records</code></td>
+          class="app-code app-code--inline">lender-name-matches-records</code></td>
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
+          class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">mdref-on-record</code></td>
+          class="app-code app-code--inline">mdref-on-record</code></td>
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
+          class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">all-proprietors-matched-to-transferors</code></td>
+          class="app-code app-code--inline">all-proprietors-matched-to-transferors</code></td>
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">DISAGREE_WITH_REGISTER</code><br><code
-          class="x-govuk-code x-govuk-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
+          class="app-code app-code--inline">DISAGREE_WITH_REGISTER</code><br><code
+          class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">transferee-has-a-valid-address</code></td>
+          class="app-code app-code--inline">transferee-has-a-valid-address</code></td>
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
+          class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">all-mandatory-documents-provided</code></td>
+          class="app-code app-code--inline">all-mandatory-documents-provided</code></td>
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
+          class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">identity-evidence-has-type</code></td>
+          class="app-code app-code--inline">identity-evidence-has-type</code></td>
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
+          class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">required-identity-evidence-provided</code></td>
+          class="app-code app-code--inline">required-identity-evidence-provided</code></td>
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
+          class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">unique-lender</code></td>
+          class="app-code app-code--inline">unique-lender</code></td>
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
+          class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">no-duplicate-lender-refs-on-charge </code></td>
+          class="app-code app-code--inline">no-duplicate-lender-refs-on-charge </code></td>
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
+          class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">address-for-service-postcode-exists </code></td>
+          class="app-code app-code--inline">address-for-service-postcode-exists </code></td>
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
+          class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
     </tr>
   </tbody>
 </table>
@@ -2837,7 +2837,7 @@ Incorrect use of bypass rules will delay the processing of an application and co
   <li>Manual TR1 form</li>
   <li>Details entered</li>
 </ol>
-<p class="govuk-body">For option three, details must be entered in the <code class="x-govuk-code x-govuk-code--inline">additional_provisions</code> field.</p>
+<p class="govuk-body">For option three, details must be entered in the <code class="app-code app-code--inline">additional_provisions</code> field.</p>
 <p class="govuk-body">Error types for this validator will be provided at a later date.</p>
 <h3 class="govuk-heading-s">Address for service validation</h3>
 <p class="govuk-body">Lenders and transferees must have an address for service option of “provided address”, with the exception of lenders which are only on a discharge transaction, or which appear on charge transactions with an MDRef.</p>
@@ -2856,26 +2856,26 @@ Incorrect use of bypass rules will delay the processing of an application and co
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">address-for-service-postcode-exists</code></td>
+          class="app-code app-code--inline">address-for-service-postcode-exists</code></td>
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">Postcode provided does not exist in our records </code></td>
+          class="app-code app-code--inline">Postcode provided does not exist in our records </code></td>
     </tr>
       <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">address-for-service-option-is-valid</code></td>
+          class="app-code app-code--inline">address-for-service-option-is-valid</code></td>
       <td class="govuk-table__cell">
-        <code class="x-govuk-code x-govuk-code--inline">Each lender party must provide an address for service option</code></br>
-        <code class="x-govuk-code x-govuk-code--inline">Each lender party must have an address for service option of PROVIDED_ADDRESS, unless an MD Ref is provided</code><br>
-        <code class="x-govuk-code x-govuk-code--inline">Each transferee party must have an address for service option of PROVIDED_ADDRESS </code> <br>
-        <code class="x-govuk-code x-govuk-code--inline">Each party must not have more than three addresses </code><br>
-        <code class="x-govuk-code x-govuk-code--inline">A party with an address for service option of PROVIDED_ADDRESS must contain at least one address of the following types: UK, OVERSEAS, PO_BOX, BFPO </code>
+        <code class="app-code app-code--inline">Each lender party must provide an address for service option</code></br>
+        <code class="app-code app-code--inline">Each lender party must have an address for service option of PROVIDED_ADDRESS, unless an MD Ref is provided</code><br>
+        <code class="app-code app-code--inline">Each transferee party must have an address for service option of PROVIDED_ADDRESS </code> <br>
+        <code class="app-code app-code--inline">Each party must not have more than three addresses </code><br>
+        <code class="app-code app-code--inline">A party with an address for service option of PROVIDED_ADDRESS must contain at least one address of the following types: UK, OVERSEAS, PO_BOX, BFPO </code>
         </td>
     </tr>
     </tbody>
     </table>
 
 <h3 class="govuk-heading-s">Applicant validation</h3>
-<p class="govuk-body">Applicant must not have a party type of <code class="x-govuk-code x-govuk-code--inline">UNKNOWN</code>.</p>
+<p class="govuk-body">Applicant must not have a party type of <code class="app-code app-code--inline">UNKNOWN</code>.</p>
 
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Applicant validation error types</caption>
@@ -2888,9 +2888,9 @@ Incorrect use of bypass rules will delay the processing of an application and co
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">applicant-not-unknown-type</code></td>
+          class="app-code app-code--inline">applicant-not-unknown-type</code></td>
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">Applicant must not be of type UNKNOWN</code></td>
+          class="app-code app-code--inline">Applicant must not be of type UNKNOWN</code></td>
     </tr>
     </tbody>
     </table>
@@ -2910,7 +2910,7 @@ Incorrect use of bypass rules will delay the processing of an application and co
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">all-proprietors-matched-to-borrowers</code></td>
+          class="app-code app-code--inline">all-proprietors-matched-to-borrowers</code></td>
       <td class="govuk-table__cell">Can apply to one of the following:<ul>
           <li>There must be at least as many borrowers as there are proprietors. There can be more, but no fewer
           </li>
@@ -2923,7 +2923,7 @@ Incorrect use of bypass rules will delay the processing of an application and co
 </table>
 
 <h3 class="govuk-heading-s">Borrower representation validation</h3>
-<p class="govuk-body">Representation type must be provided for the borrower role type. The respresentation type must not be <code class="x-govuk-code x-govuk-code--inline">NOT-REQUIRED</code>.</p>
+<p class="govuk-body">Representation type must be provided for the borrower role type. The respresentation type must not be <code class="app-code app-code--inline">NOT-REQUIRED</code>.</p>
 <p class="govuk-body">Error types for this validator will be provided at a later date.</p>
 
 
@@ -2941,7 +2941,7 @@ Incorrect use of bypass rules will delay the processing of an application and co
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">transaction-has-valid-borrower</code></td>
+          class="app-code app-code--inline">transaction-has-valid-borrower</code></td>
       <td class="govuk-table__cell">Sub-charge transactions or charge transactions
         unaccompanied by a transfer transaction must have a borrower</td>
     </tr>
@@ -2965,7 +2965,7 @@ Incorrect use of bypass rules will delay the processing of an application and co
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">charge-must-have-non-negative-value</code></td>
+          class="app-code app-code--inline">charge-must-have-non-negative-value</code></td>
       <td class="govuk-table__cell">Charge value must be 0 or greater</td>
     </tr>
   </tbody>
@@ -2991,7 +2991,7 @@ Incorrect use of bypass rules will delay the processing of an application and co
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">CHARGE-FEE</code></td>
+          class="app-code app-code--inline">CHARGE-FEE</code></td>
       <td class="govuk-table__cell">Fee for a charge transaction must be at least 2,000 pence <br>
 Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transaction </td>
     </tr>
@@ -2999,12 +2999,12 @@ Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transact
 </table>
 
 <h3 class="govuk-heading-s">Company number validation</h3>
-<p class="govuk-body">For any party of type UKCompany, the data item <code class="x-govuk-code x-govuk-code--inline">company_number</code> is required, except when any of the following are true: </p>
+<p class="govuk-body">For any party of type UKCompany, the data item <code class="app-code app-code--inline">company_number</code> is required, except when any of the following are true: </p>
 <ul class="govuk-list govuk-list--bullet">
 <li>The party is being used as a lender on a transaction with a valid MDRef</li>
 <li>The party is being used as a borrower</li>
 </ul>
-<p class="govuk-body">In these cases the <code class="x-govuk-code x-govuk-code--inline">company_number</code> is optional.</p>
+<p class="govuk-body">In these cases the <code class="app-code app-code--inline">company_number</code> is optional.</p>
 
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Company number validation error types</caption>
@@ -3017,7 +3017,7 @@ Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transact
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">uk-company-has-company-number</code></td>
+          class="app-code app-code--inline">uk-company-has-company-number</code></td>
       <td class="govuk-table__cell">A party with type UKCompany didn’t include a company number and it wasn’t a borrower or a lender with a valid MDRef for the transaction on which it is being used as a lender </td>
     </tr>
   </tbody>
@@ -3027,9 +3027,9 @@ Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transact
 <h3 class="govuk-heading-s">Consideration type validation</h3>
 <p class="govuk-body">For Transfer transactions, a consideration type of either Monetary Value, No Monetary Value, or
   Other must be present.</p>
-<p class="govuk-body">When consideration type is <code class="x-govuk-code x-govuk-code--inline">MONETARY_VALUE</code>, a transfer value must be present. When consideration type is <code class="x-govuk-code x-govuk-code--inline">OTHER</code>, a consideration description must be provided. </p>
-<p class="govuk-body">The consideration type must be <code class="x-govuk-code x-govuk-code--inline">MONETARY_VALUE</code> for the following transactions: T, TOSV, TSCV. </p>
-<p class="govuk-body">The consideration type must be either <code class="x-govuk-code x-govuk-code--inline">NO_MONETARY_VALUE</code> or <code class="x-govuk-code x-govuk-code--inline">OTHER</code> for the following transactions: TNV, TOSNV, TSCNV </p>
+<p class="govuk-body">When consideration type is <code class="app-code app-code--inline">MONETARY_VALUE</code>, a transfer value must be present. When consideration type is <code class="app-code app-code--inline">OTHER</code>, a consideration description must be provided. </p>
+<p class="govuk-body">The consideration type must be <code class="app-code app-code--inline">MONETARY_VALUE</code> for the following transactions: T, TOSV, TSCV. </p>
+<p class="govuk-body">The consideration type must be either <code class="app-code app-code--inline">NO_MONETARY_VALUE</code> or <code class="app-code app-code--inline">OTHER</code> for the following transactions: TNV, TOSNV, TSCNV </p>
 
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Consideration type validation error types
@@ -3043,18 +3043,18 @@ Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transact
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">consideration-type-is-valid </code></td>
+          class="app-code app-code--inline">consideration-type-is-valid </code></td>
       <td class="govuk-table__cell">Transactions type was paired with an invalid consideration type  <br>
  
-A transfer value must be provided when consideration type is <code class="x-govuk-code x-govuk-code--inline">MONETARY_VALUE</code> </td>
+A transfer value must be provided when consideration type is <code class="app-code app-code--inline">MONETARY_VALUE</code> </td>
     </tr>
   </tbody>
 </table>
 
 
 <h3 class="govuk-heading-s">Conveyancers certificate validation</h3>
-<p class="govuk-body">Checks the <code class="x-govuk-code x-govuk-code--inline">conveyancers_certificate</code> field is set for any
-  document of type <code class="x-govuk-code x-govuk-code--inline">CERT_REG_CH</code>.</p>
+<p class="govuk-body">Checks the <code class="app-code app-code--inline">conveyancers_certificate</code> field is set for any
+  document of type <code class="app-code app-code--inline">CERT_REG_CH</code>.</p>
 
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Conveyancer certificate validation error types
@@ -3068,7 +3068,7 @@ A transfer value must be provided when consideration type is <code class="x-govu
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">conveyancers-certificate-provided</code></td>
+          class="app-code app-code--inline">conveyancers-certificate-provided</code></td>
       <td class="govuk-table__cell">Conveyancers certificate was not provided for Certificate
         of registration issued by Companies House documents</td>
     </tr>
@@ -3090,7 +3090,7 @@ A transfer value must be provided when consideration type is <code class="x-govu
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">customer-id-exists </code></td>
+          class="app-code app-code--inline">customer-id-exists </code></td>
       <td class="govuk-table__cell">The provided customer ID was not found in HMLR internal systems </td>
     </tr>
   </tbody>
@@ -3122,14 +3122,14 @@ A transfer value must be provided when consideration type is <code class="x-govu
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">declaration-of-trust</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">declaration-of-trust</code></td>
       <td class="govuk-table__cell">The trust declaration type must be provided<br><br>The details of trust must be provided where the “trust details” option was selected<br><br>The JO form must be provided where “Form JO was provided” </td>
     </tr>
   </tbody>
 </table>
 
 <h3 class="govuk-heading-s">DFL5 validation</h3>
-<p class="govuk-body">For DFL5 applications (Dispositionary first lease extension of a term) there must be at least one title with type <code class="x-govuk-code x-govuk-code--inline">LANDLORD_TITLE</code> and a single title with type <code class="x-govuk-code x-govuk-code--inline">TENANT_TITLE</code>, which is related to the tenant on the application. </p>
+<p class="govuk-body">For DFL5 applications (Dispositionary first lease extension of a term) there must be at least one title with type <code class="app-code app-code--inline">LANDLORD_TITLE</code> and a single title with type <code class="app-code app-code--inline">TENANT_TITLE</code>, which is related to the tenant on the application. </p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">DFL5 validation error types </caption>
   <thead class="govuk-table__head">
@@ -3140,7 +3140,7 @@ A transfer value must be provided when consideration type is <code class="x-govu
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">lease-extension-is-valid</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">lease-extension-is-valid</code></td>
       <td class="govuk-table__cell">DFL5 transactions must contain exactly one tenant title <br><br>DFL5 transactions must contain at least one landlord titled</td>
     </tr>
   </tbody>
@@ -3159,7 +3159,7 @@ A transfer value must be provided when consideration type is <code class="x-govu
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">discharge-fee-zero</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">discharge-fee-zero</code></td>
       <td class="govuk-table__cell">Discharge transaction must have a fee of 0 </td>
     </tr>
   </tbody>
@@ -3171,9 +3171,9 @@ A transfer value must be provided when consideration type is <code class="x-govu
 
 <h3 class="govuk-heading-s">Disclosable overriding interests validation</h3>
 <p class="govuk-body">When <code
-    class="x-govuk-code x-govuk-code--inline">disclosable_overriding_interests</code> is set to <code
-    class="x-govuk-code x-govuk-code--inline">true</code> on any title, a <code
-    class="x-govuk-code x-govuk-code--inline">FORM_DI</code> document must be provided with the
+    class="app-code app-code--inline">disclosable_overriding_interests</code> is set to <code
+    class="app-code app-code--inline">true</code> on any title, a <code
+    class="app-code app-code--inline">FORM_DI</code> document must be provided with the
   application.</p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Disclosable overriding interests validation
@@ -3187,7 +3187,7 @@ A transfer value must be provided when consideration type is <code class="x-govu
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">di-form-required</code></td>
+          class="app-code app-code--inline">di-form-required</code></td>
       <td class="govuk-table__cell">A Disclosable Overriding Interests (DI) Form is required
         but has not been provided</td>
     </tr>
@@ -3196,7 +3196,7 @@ A transfer value must be provided when consideration type is <code class="x-govu
 
 <h3 class="govuk-heading-s">Document type validation</h3>
 <p class="govuk-body">The documents mentioned in the order/submission request must have the same <code
-          class="x-govuk-code x-govuk-code--inline">DocumentType</code> as those uploaded.</p>
+          class="app-code app-code--inline">DocumentType</code> as those uploaded.</p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Document type validation
     error types</caption>
@@ -3209,7 +3209,7 @@ A transfer value must be provided when consideration type is <code class="x-govu
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">document-type-valid </code></td>
+          class="app-code app-code--inline">document-type-valid </code></td>
       <td class="govuk-table__cell">The document type submitted was not the same as the document type uploaded  </td>
     </tr>
   </tbody>
@@ -3229,7 +3229,7 @@ h3 class="govuk-heading-s">Document validation</h3>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">document-valid</code></td>
+          class="app-code app-code--inline">document-valid</code></td>
       <td class="govuk-table__cell">This could be because the document is too large, of zero size, the wrong format, an invalid TIFF file, encrypted or password protected  </td>
     </tr>
   </tbody>
@@ -3250,7 +3250,7 @@ h3 class="govuk-heading-s">Document validation</h3>
 
 <h3 class="govuk-heading-s">Identity evidence validation</h3>
 <p class="govuk-body">Identity evidence type must be provided for each party with a representation type of <code
-          class="x-govuk-code x-govuk-code--inline">NOT_REPRESENTED</code> - view
+          class="app-code app-code--inline">NOT_REPRESENTED</code> - view
   <a class="govuk-body govuk-link"
     href="https://www.gov.uk/government/publications/evidence-of-identity-conveyancers/practice-guide-67-evidence-of-identity-conveyancers"
     rel="noreferrer noopener" target="_blank">Practice Guide 67 (opens in new tab)</a>.</p>
@@ -3269,7 +3269,7 @@ h3 class="govuk-heading-s">Document validation</h3>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">identity-evidence-has-type</code></td>
+          class="app-code app-code--inline">identity-evidence-has-type</code></td>
       <td class="govuk-table__cell">One of the following options must be provided for unrepresented parties:
         <ol class="govuk-list govuk-list--number">
           <li>Evidence</li>
@@ -3280,7 +3280,7 @@ h3 class="govuk-heading-s">Document validation</h3>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">required-identity-evidence-provided</code></td>
+          class="app-code app-code--inline">required-identity-evidence-provided</code></td>
       <td class="govuk-table__cell">At least one HMLR identity form must be provided for each
         unrepresented party</td>
     </tr>
@@ -3318,7 +3318,7 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">lease-extension-has-landlord-and-tenant </code></td>
+          class="app-code app-code--inline">lease-extension-has-landlord-and-tenant </code></td>
       <td class="govuk-table__cell">The lease transaction is missing a landlord and/or tenant party </td>
     </tr>
     </tbody>
@@ -3342,18 +3342,18 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">unique-lender</code></td>
+          class="app-code app-code--inline">unique-lender</code></td>
       <td class="govuk-table__cell">Each charge should only have one lender</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">lender-name-matches-records</code></td>
+          class="app-code app-code--inline">lender-name-matches-records</code></td>
       <td class="govuk-table__cell">Warning: The lender name provided in the application data must
         match that recorded for the lender in our MD reference database</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">no-duplicate-lender-refs-on-charge</code></td>
+          class="app-code app-code--inline">no-duplicate-lender-refs-on-charge</code></td>
       <td class="govuk-table__cell">Lender references must be unique</td>
     </tr>
   </tbody>
@@ -3375,7 +3375,7 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">charge-has-valid-lender</code></td>
+          class="app-code app-code--inline">charge-has-valid-lender</code></td>
       <td class="govuk-table__cell">This could be due to:
       <ul class="govuk-list govuk-list--bullet"><li>no lenders on the charge application</li><li>the lender having an invalid address for service when an MD reference was not provided. At least one valid full postal address must be provided</li></ul></td>
     </tr>
@@ -3398,7 +3398,7 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">all-mandatory-documents-provided</code></td>
+          class="app-code app-code--inline">all-mandatory-documents-provided</code></td>
       <td class="govuk-table__cell">Each transaction must have the mandatory deed(s) or document(s)
         provided</td>
     </tr>
@@ -3418,7 +3418,7 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">mdref-on-record</code></td>
+          class="app-code app-code--inline">mdref-on-record</code></td>
       <td class="govuk-table__cell">The MD reference supplied cannot be found in our database
       </td>
     </tr>
@@ -3445,7 +3445,7 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">address-for-service-option-is-valid</code></td>
+          class="app-code app-code--inline">address-for-service-option-is-valid</code></td>
       <td class="govuk-table__cell">The address for service option provided for the party is
         invalid</td>
     </tr>
@@ -3458,10 +3458,10 @@ For the following lease transactions, there must be at least one tenant and one 
 <ul class="govuk-list govuk-list--bullet"><li>Lodging conveyancer </li>
 <li>Other conveyancer </ul>
 <p class="govuk-body">The party roles of borrower, transferor and transferee cannot have the representation type of <code
-          class="x-govuk-code x-govuk-code--inline">NOT_REQUIRED</code>.</p>  
+          class="app-code app-code--inline">NOT_REQUIRED</code>.</p>  
  
 <p class="govuk-body">If the application lodger is not a conveyancer, then no parties can use the <code
-          class="x-govuk-code x-govuk-code--inline">LODGING_CONVEYANCER</code> representation type. </p>
+          class="app-code app-code--inline">LODGING_CONVEYANCER</code> representation type. </p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Representation validation error
     types</caption>
@@ -3474,9 +3474,9 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">party-representation-type-is-valid</code></td>
+          class="app-code app-code--inline">party-representation-type-is-valid</code></td>
       <td class="govuk-table__cell">For an application lodged by a non-conveyancer, no representation type may be <code
-          class="x-govuk-code x-govuk-code--inline">LODGING_CONVEYANCER</code> </td>
+          class="app-code app-code--inline">LODGING_CONVEYANCER</code> </td>
     </tr>
   </tbody>
 </table>
@@ -3497,7 +3497,7 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">submission-warning-understood</code></td>
+          class="app-code app-code--inline">submission-warning-understood</code></td>
       <td class="govuk-table__cell">A legal declaration is made when submitting an application
         with regards dishonesty etc. The conveyancer must agree to comply with the warning</td>
     </tr>
@@ -3506,7 +3506,7 @@ For the following lease transactions, there must be at least one tenant and one 
 
 
 <h3 class="govuk-heading-s">Title number validation</h3>
-<p class="govuk-body">The title number in the application must match a title number in the land register. The title number must be valid - view the <code class="x-govuk-code x-govuk-code--inline">TITLE_NOT_VALID</code> error type below for information on valid titles. For multi-title applications please provide each title once. </p>
+<p class="govuk-body">The title number in the application must match a title number in the land register. The title number must be valid - view the <code class="app-code app-code--inline">TITLE_NOT_VALID</code> error type below for information on valid titles. For multi-title applications please provide each title once. </p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Title number validation error types</caption>
   <thead class="govuk-table__head">
@@ -3518,12 +3518,12 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">unknown-title-number</code></td>
+          class="app-code app-code--inline">unknown-title-number</code></td>
       <td class="govuk-table__cell">Title number not matched to HMLR systems</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">title-must-be-valid</code></td>
+          class="app-code app-code--inline">title-must-be-valid</code></td>
       <td class="govuk-table__cell">Can apply to one of the following:
         <ul class="govuk-list govuk-list--bullet">
           <li>For an application type of ‘Transfer of Part’, ‘Removal of default form A restriction’ or
@@ -3556,7 +3556,7 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">title-scope-is-valid</code></td>
+          class="app-code app-code--inline">title-scope-is-valid</code></td>
       <td class="govuk-table__cell">
         <ul class="govuk-list govuk-list--bullet">
           <li>Title scopes of ‘part’ must have a part description</li>
@@ -3569,11 +3569,11 @@ For the following lease transactions, there must be at least one tenant and one 
 
 
 <h3 class="govuk-heading-s">Title type validation</h3>
-<p class="govuk-body">If the title type provided for a title number is <code class="x-govuk-code x-govuk-code--inline">LANDLORD_TITLE</code>, the title tenure on our records for title number must be “freehold”. </p>
+<p class="govuk-body">If the title type provided for a title number is <code class="app-code app-code--inline">LANDLORD_TITLE</code>, the title tenure on our records for title number must be “freehold”. </p>
  
-<p class="govuk-body">If the title type provided for a title number is <code class="x-govuk-code x-govuk-code--inline">TENANT_TITLE</code>, the title tenure on our records for the title number must be “leasehold”. </p>
+<p class="govuk-body">If the title type provided for a title number is <code class="app-code app-code--inline">TENANT_TITLE</code>, the title tenure on our records for the title number must be “leasehold”. </p>
  
-<p class="govuk-body">If the title type provided for a title number is <code class="x-govuk-code x-govuk-code--inline">REGISTER_TITLE</code>, <code class="x-govuk-code x-govuk-code--inline">TRANSFEROR_TITLE</code>, or <code class="x-govuk-code x-govuk-code--inline">ADDITIONAL_TITLE</code>, the title tenure on our records for the title number can be either “freehold” or “leasehold”. </p>
+<p class="govuk-body">If the title type provided for a title number is <code class="app-code app-code--inline">REGISTER_TITLE</code>, <code class="app-code app-code--inline">TRANSFEROR_TITLE</code>, or <code class="app-code app-code--inline">ADDITIONAL_TITLE</code>, the title tenure on our records for the title number can be either “freehold” or “leasehold”. </p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Title type validation error types</caption>
   <thead class="govuk-table__head">
@@ -3585,7 +3585,7 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">title-type-matches-tenure
+          class="app-code app-code--inline">title-type-matches-tenure
 	</code></td>
       <td class="govuk-table__cell">The title type provided does not have the appropriate tenure in our records
       </td>
@@ -3614,7 +3614,7 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">order-contains-one-transfer
+          class="app-code app-code--inline">order-contains-one-transfer
 	</code></td>
       <td class="govuk-table__cell">Order must contain at most one transfer transaction</td>
     </tr>
@@ -3626,7 +3626,7 @@ For the following lease transactions, there must be at least one tenant and one 
 
 <h3 class="govuk-heading-s">Transferee validation</h3>
 <p class="govuk-body">All Transfer transactions must have at least one transferee present. Each transferee must have a representation type that is not <code
-          class="x-govuk-code x-govuk-code--inline">NOT_REQUIRED</code>.  </p>
+          class="app-code app-code--inline">NOT_REQUIRED</code>.  </p>
  
 <p class="govuk-body">At least one valid postal address must be provided as the address for service. If overseas, the address must have a country. </p>
 <table class="govuk-table">
@@ -3640,13 +3640,13 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">transfer-has-transferee</code></td>
+          class="app-code app-code--inline">transfer-has-transferee</code></td>
       <td class="govuk-table__cell">A transfer involves a change of proprietor(s). If making
         an application for a transfer, there must be at least one transferee</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">transferee-has-valid-address</code></td>
+          class="app-code app-code--inline">transferee-has-valid-address</code></td>
       <td class="govuk-table__cell">At least one postal address must be provided in the
         application</td>
     </tr>
@@ -3668,7 +3668,7 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">all-proprietors-matched-to-transferors </code></td>
+          class="app-code app-code--inline">all-proprietors-matched-to-transferors </code></td>
       <td class="govuk-table__cell">There must be at least as many transferors as there are proprietors. There can be more, but no fewer <br><br> A proprietor was not matched to a transferor and the corresponding evidence was not attached. Where there has been a change of name or the death of a joint proprietor and the register needs updating evidence must be provided </td>
     </tr>
   </tbody>
@@ -3680,7 +3680,7 @@ For the following lease transactions, there must be at least one tenant and one 
 <h3 class="govuk-heading-s">Transferor validation</h3>
 <p class="govuk-body">There must be at least one transferor name on each transfer transaction, with the exception of TRM transactions.</p>
 <p class="govuk-body">Each transferor must have a representation type that is not
-  <code class="x-govuk-code x-govuk-code--inline">NOT_REQUIRED</code>.
+  <code class="app-code app-code--inline">NOT_REQUIRED</code>.
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Transferor validation error types</caption>
   <thead class="govuk-table__head">
@@ -3692,7 +3692,7 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">transfer-has-transferors</code></td>
+          class="app-code app-code--inline">transfer-has-transferors</code></td>
       <td class="govuk-table__cell">A transfer involves a change of proprietor(s). If making
         an application for a transfer, there must be at least one transferor</td>
     </tr>
@@ -3704,50 +3704,50 @@ For the following lease transactions, there must be at least one tenant and one 
 <h3 class="govuk-heading-s">Value bands</h3>
 <p class="govuk-body">Value bands specify the approximate value of a property, or the equity being transferred,
   where the exact value is not known. The value band fields can be found on the <code
-    class="x-govuk-code x-govuk-code--inline">Transfer</code> and <code
-    class="x-govuk-code x-govuk-code--inline">AmountDetails</code> objects in the API specification.</p>
+    class="app-code app-code--inline">Transfer</code> and <code
+    class="app-code app-code--inline">AmountDetails</code> objects in the API specification.</p>
 <p class="govuk-body">The valid value bands are as follows (in pounds):</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">lower_band</code>: 0, <code
-      class="x-govuk-code x-govuk-code--inline">upper_band</code>: 100,000</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">lower_band</code>: 100,001, <code
-      class="x-govuk-code x-govuk-code--inline">upper_band</code>: 200,000</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">lower_band</code>: 200,001, <code
-      class="x-govuk-code x-govuk-code--inline">upper_band</code>: 500,000</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">lower_band</code>: 500,001, <code
-      class="x-govuk-code x-govuk-code--inline">upper_band</code>: 1,000,000</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">lower_band</code>: 1,000,001, <code
-      class="x-govuk-code x-govuk-code--inline">upper_band</code>: <code
-      class="x-govuk-code x-govuk-code--inline">null</code></li>
+  <li><code class="app-code app-code--inline">lower_band</code>: 0, <code
+      class="app-code app-code--inline">upper_band</code>: 100,000</li>
+  <li><code class="app-code app-code--inline">lower_band</code>: 100,001, <code
+      class="app-code app-code--inline">upper_band</code>: 200,000</li>
+  <li><code class="app-code app-code--inline">lower_band</code>: 200,001, <code
+      class="app-code app-code--inline">upper_band</code>: 500,000</li>
+  <li><code class="app-code app-code--inline">lower_band</code>: 500,001, <code
+      class="app-code app-code--inline">upper_band</code>: 1,000,000</li>
+  <li><code class="app-code app-code--inline">lower_band</code>: 1,000,001, <code
+      class="app-code app-code--inline">upper_band</code>: <code
+      class="app-code app-code--inline">null</code></li>
 </ul>
 <p class="govuk-body">Value bands are only applicable to the following transaction types:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">APT</code> - Appointment of new trustee</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">ASTT</code> - Assent</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">ASSTTP</code> - Assent (Transfer of part)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TNV</code> - Transfer (not for value or reverse
+  <li><code class="app-code app-code--inline">APT</code> - Appointment of new trustee</li>
+  <li><code class="app-code app-code--inline">ASTT</code> - Assent</li>
+  <li><code class="app-code app-code--inline">ASSTTP</code> - Assent (Transfer of part)</li>
+  <li><code class="app-code app-code--inline">TNV</code> - Transfer (not for value or reverse
     premium)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TNVTP</code> - Transfer (not for value or reverse
+  <li><code class="app-code app-code--inline">TNVTP</code> - Transfer (not for value or reverse
     premium) (Transfer of part)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TOSNV</code> - Transfer of share (not for value or
+  <li><code class="app-code app-code--inline">TOSNV</code> - Transfer of share (not for value or
     reverse premium)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TOSNVTP</code> - Transfer of share (not for value
+  <li><code class="app-code app-code--inline">TOSNVTP</code> - Transfer of share (not for value
     or reverse premium) (Transfer of part)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TRM</code> - Transfer by operation of law on death
+  <li><code class="app-code app-code--inline">TRM</code> - Transfer by operation of law on death
   </li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TSCNV</code> - Transfer subject to a charge (not
+  <li><code class="app-code app-code--inline">TSCNV</code> - Transfer subject to a charge (not
     for value or reverse premium)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">TSCNVTP</code> - Transfer subject to a charge (not
+  <li><code class="app-code app-code--inline">TSCNVTP</code> - Transfer subject to a charge (not
     for value or reverse premium) (Transfer of part)</li>
-  <li><code class="x-govuk-code x-govuk-code--inline">VO</code> - Vesting order</li>
+  <li><code class="app-code app-code--inline">VO</code> - Vesting order</li>
 </ul>
 <p class="govuk-body">There are several rules regarding value band usage:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li>Both <code class="x-govuk-code x-govuk-code--inline">value</code> (i.e. value of equity being
-    transferred) and <code class="x-govuk-code x-govuk-code--inline">full_value_of_property</code> must
+  <li>Both <code class="app-code app-code--inline">value</code> (i.e. value of equity being
+    transferred) and <code class="app-code app-code--inline">full_value_of_property</code> must
     be either value bands, or exact values</li>
-  <li>The <code class="x-govuk-code x-govuk-code--inline">full_value_of_property_band</code> must be
-    greater than or equal to the <code class="x-govuk-code x-govuk-code--inline">value_band</code> (i.e.
+  <li>The <code class="app-code app-code--inline">full_value_of_property_band</code> must be
+    greater than or equal to the <code class="app-code app-code--inline">value_band</code> (i.e.
     the value of equity being transferred)</li>
 </ul>
 <div class="govuk-!-padding-bottom-6"></div>
@@ -3762,7 +3762,7 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="x-govuk-code x-govuk-code--inline">full-value-of-property-or-band-is-valid 
+          class="app-code app-code--inline">full-value-of-property-or-band-is-valid 
 	</code></td>
       <td class="govuk-table__cell">	
 Full value of property must be greater than or equal to property value<br><br>Full value of property band must be greater than or equal to property value band<br><br>Value bands were used for a transaction type that does not allow value band usage </td>

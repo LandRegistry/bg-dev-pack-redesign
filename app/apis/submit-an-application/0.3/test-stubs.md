@@ -44,22 +44,22 @@ relatedAPIs:
   APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see
   when developing your own services.</p>
 <p class="govuk-body">Base URL:
-  <code class="x-govuk-code x-govuk-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code>
+  <code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code>
 </p>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <h3 id="scenario-1" class="govuk-heading-m">Scenario 1: Submit a single charge</h3>
 <h3 class="govuk-heading-s">Request</h3>
 <p class="govuk-body">Method:
-  <code class="x-govuk-code x-govuk-code--inline">POST</code>
+  <code class="app-code app-code--inline">POST</code>
 </p>
 <p class="govuk-body">Endpoint:
-  <code class="x-govuk-code x-govuk-code--inline">/v0/applications</code>
+  <code class="app-code app-code--inline">/v0/applications</code>
 </p>
 <p class="govuk-body">Headers:
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+  <li><code class="app-code app-code--inline">Authorization: &ltany-value&gt
       </code></li>
-  <li><code class="x-govuk-code x-govuk-code--inline">Idempotency-Key: &ltany-value&gt
+  <li><code class="app-code app-code--inline">Idempotency-Key: &ltany-value&gt
       </code></li>
 </ul>
 </p>
@@ -171,7 +171,7 @@ relatedAPIs:
 <div class="govuk-!-padding-bottom-6"></div>
 <h3 class="govuk-heading-s">Response</h3>
 <p class="govuk-body">Status:
-  <code class="x-govuk-code x-govuk-code--inline">202</code>
+  <code class="app-code app-code--inline">202</code>
 </p>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
@@ -188,16 +188,16 @@ relatedAPIs:
 <h3 id="scenario-2" class="govuk-heading-m">Scenario 2: Submit a single transfer</h3>
 <h3 class="govuk-heading-s">Request</h3>
 <p class="govuk-body">Method:
-  <code class="x-govuk-code x-govuk-code--inline">POST</code>
+  <code class="app-code app-code--inline">POST</code>
 </p>
 <p class="govuk-body">Endpoint:
-  <code class="x-govuk-code x-govuk-code--inline">/v0/applications</code>
+  <code class="app-code app-code--inline">/v0/applications</code>
 </p>
 <p class="govuk-body">Headers:
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+  <li><code class="app-code app-code--inline">Authorization: &ltany-value&gt
     </code></li>
-  <li><code class="x-govuk-code x-govuk-code--inline">Idempotency-Key: &ltany-value&gt
+  <li><code class="app-code app-code--inline">Idempotency-Key: &ltany-value&gt
     </code></li>
 </ul>
 </p>
@@ -342,7 +342,7 @@ relatedAPIs:
 <div class="govuk-!-padding-bottom-6"></div>
 <h3 class="govuk-heading-s">Response</h3>
 <p class="govuk-body">Status:
-  <code class="x-govuk-code x-govuk-code--inline">202</code>
+  <code class="app-code app-code--inline">202</code>
 </p>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
@@ -359,16 +359,16 @@ relatedAPIs:
 <h3 id="scenario-3" class="govuk-heading-m">Scenario 3: Submit an application with Level 1 validation errors</h3>
 <h3 class="govuk-heading-s">Request</h3>
 <p class="govuk-body">Method:
-  <code class="x-govuk-code x-govuk-code--inline">POST</code>
+  <code class="app-code app-code--inline">POST</code>
 </p>
 <p class="govuk-body">Endpoint:
-  <code class="x-govuk-code x-govuk-code--inline">/v0/applications</code>
+  <code class="app-code app-code--inline">/v0/applications</code>
 </p>
 <p class="govuk-body">Headers:
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+  <li><code class="app-code app-code--inline">Authorization: &ltany-value&gt
       </code></li>
-  <li><code class="x-govuk-code x-govuk-code--inline">Idempotency-Key: &ltany-value&gt
+  <li><code class="app-code app-code--inline">Idempotency-Key: &ltany-value&gt
       </code></li>
 </ul>
 </p>
@@ -473,7 +473,7 @@ relatedAPIs:
 <div class="govuk-!-padding-bottom-6"></div>
 <h3 class="govuk-heading-s">Response</h3>
 <p class="govuk-body">Status:
-  <code class="x-govuk-code x-govuk-code--inline">400</code>
+  <code class="app-code app-code--inline">400</code>
 </p>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
@@ -503,16 +503,16 @@ relatedAPIs:
 <h3 id="scenario-4" class="govuk-heading-m">Scenario 4: Submit an application with Level 2 validation errors</h3>
 <h3 class="govuk-heading-s">Request</h3>
 <p class="govuk-body">Method:
-  <code class="x-govuk-code x-govuk-code--inline">POST</code>
+  <code class="app-code app-code--inline">POST</code>
 </p>
 <p class="govuk-body">Endpoint:
-  <code class="x-govuk-code x-govuk-code--inline">/v0/applications</code>
+  <code class="app-code app-code--inline">/v0/applications</code>
 </p>
 <p class="govuk-body">Headers:
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+  <li><code class="app-code app-code--inline">Authorization: &ltany-value&gt
       </code></li>
-  <li><code class="x-govuk-code x-govuk-code--inline">Idempotency-Key: &ltany-value&gt
+  <li><code class="app-code app-code--inline">Idempotency-Key: &ltany-value&gt
       </code></li>
 </ul>
 </p>
@@ -693,7 +693,7 @@ relatedAPIs:
 <div class="govuk-!-padding-bottom-6"></div>
 <h3 class="govuk-heading-s">Response</h3>
 <p class="govuk-body">Status:
-  <code class="x-govuk-code x-govuk-code--inline">202</code>
+  <code class="app-code app-code--inline">202</code>
 </p>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
