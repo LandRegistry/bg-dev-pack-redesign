@@ -41,23 +41,23 @@ relatedAPIs:
 <section>
 
 <h2 class="govuk-heading-m" id="how-to-use-the-application-information-api">How to use the Application information API</h2>
-<p class="govuk-body">The Application information API is used to get detailed information about a specific application, using the <code class="x-govuk-code x-govuk-code--inline">application_request_id</code> returned by the Submit an application API request.</p>
+<p class="govuk-body">The Application information API is used to get detailed information about a specific application, using the <code class="app-code app-code--inline">application_request_id</code> returned by the Submit an application API request.</p>
 <p class="govuk-body">The status of an application can currently be one of the following:</p>
 <ul class="govuk-list govuk-list--bullet">
   <li>
-    <code class="x-govuk-code x-govuk-code--inline">VALIDATING</code> - HM Land Registry is still processing the application, and it has not yet been added to the day list
+    <code class="app-code app-code--inline">VALIDATING</code> - HM Land Registry is still processing the application, and it has not yet been added to the day list
   </li>
   <li>
-    <code class="x-govuk-code x-govuk-code--inline">VALIDATION_FAILED</code> - The application has not been added to the day list due to errors during validation. The errors found are included in the errors section of the response
+    <code class="app-code app-code--inline">VALIDATION_FAILED</code> - The application has not been added to the day list due to errors during validation. The errors found are included in the errors section of the response
   </li>
   <li>
-    <code class="x-govuk-code x-govuk-code--inline">ACCEPTED_AWAITING_PRIORITY</code> - The application has passed validation but has not yet been added to the day list as it is currently closed. The application will be added to the day list and moved to an <code class="x-govuk-code x-govuk-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> state when the day list reopens
+    <code class="app-code app-code--inline">ACCEPTED_AWAITING_PRIORITY</code> - The application has passed validation but has not yet been added to the day list as it is currently closed. The application will be added to the day list and moved to an <code class="app-code app-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> state when the day list reopens
   </li>
   <li>
-    <code class="x-govuk-code x-govuk-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> - The application has been accepted onto the day list, and has priority
+    <code class="app-code app-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> - The application has been accepted onto the day list, and has priority
   </li>
   <li>
-    <code class="x-govuk-code x-govuk-code--inline">SYSTEM_ERROR</code> - The application has not been added to the day list due to an HMLR system error. The request should be retried, or the support team contacted
+    <code class="app-code app-code--inline">SYSTEM_ERROR</code> - The application has not been added to the day list due to an HMLR system error. The request should be retried, or the support team contacted
   </li>
 </ul>
 <p class="govuk-body">This API will always return an HTTP 200 response for a valid request, regardless of the status of the application.</p>

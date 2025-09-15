@@ -66,13 +66,13 @@ eleventyNavigation:
         application. This includes:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>the status of an application</li>
-        <li>the <code class="x-govuk-code x-govuk-code--inline">application_request_id</code> used in the
+        <li>the <code class="app-code app-code--inline">application_request_id</code> used in the
           request</li>
         <li>an ID for the accepted application, <code
-            class="x-govuk-code x-govuk-code--inline">hmlr_reference</code>, once accepted (previously known as
+            class="app-code app-code--inline">hmlr_reference</code>, once accepted (previously known as
           ABR)</li>
         <li>the priority of the application, <code
-            class="x-govuk-code x-govuk-code--inline">priority_timestamp</code>, once accepted</li>
+            class="app-code app-code--inline">priority_timestamp</code>, once accepted</li>
         <li>any errors that prevented application submission</li>
         <li>any warnings that did not prevent submission but need to be addressed before a caseworker can process the
           application (otherwise a requisition may occur)</li>

@@ -187,39 +187,39 @@ data-module="govuk-service-navigation"
   <p class="govuk-body">The GET request to fetch all notifications takes the following URL query parameters (which are optional):</p>
   <ul class="govuk-list govuk-list--bullet">
     <li>
-      <code class="x-govuk-code x-govuk-code--inline">created_after</code> - only retrieve notifications with a <code class="x-govuk-code x-govuk-code--inline">created_timestamp</code> after this date
+      <code class="app-code app-code--inline">created_after</code> - only retrieve notifications with a <code class="app-code app-code--inline">created_timestamp</code> after this date
     </li>
     <li>
-      <code class="x-govuk-code x-govuk-code--inline">created_before</code> - only retrieve notifications with a <code class="x-govuk-code x-govuk-code--inline">created_timestamp</code> before this date
+      <code class="app-code app-code--inline">created_before</code> - only retrieve notifications with a <code class="app-code app-code--inline">created_timestamp</code> before this date
     </li>
     <li>
-      <code class="x-govuk-code x-govuk-code--inline">status</code> - only retrieve notifications with a specific status, either <code class="x-govuk-code x-govuk-code--inline">NEW</code> or <code class="x-govuk-code x-govuk-code--inline">ACKNOWLEDGED</code>
+      <code class="app-code app-code--inline">status</code> - only retrieve notifications with a specific status, either <code class="app-code app-code--inline">NEW</code> or <code class="app-code app-code--inline">ACKNOWLEDGED</code>
     </li>
     <li>
-      <code class="x-govuk-code x-govuk-code--inline">occured_after</code> - only retrieve notifications with an <code class="x-govuk-code x-govuk-code--inline">event_timestamp</code> after this date
+      <code class="app-code app-code--inline">occured_after</code> - only retrieve notifications with an <code class="app-code app-code--inline">event_timestamp</code> after this date
     </li>
     <li>
-      <code class="x-govuk-code x-govuk-code--inline">occured_before</code> - only retrieve notifications with an <code class="x-govuk-code x-govuk-code--inline">event_timestamp</code> before this date
+      <code class="app-code app-code--inline">occured_before</code> - only retrieve notifications with an <code class="app-code app-code--inline">event_timestamp</code> before this date
     </li>
     <li>
-      <code class="x-govuk-code x-govuk-code--inline">notification_type</code> - only retrieve notifications with the specific <code class="x-govuk-code x-govuk-code--inline">notification_type</code>
+      <code class="app-code app-code--inline">notification_type</code> - only retrieve notifications with the specific <code class="app-code app-code--inline">notification_type</code>
     </li>
     <li>
-      <code class="x-govuk-code x-govuk-code--inline">subject</code> - only retrieve notifications with the specific <code class="x-govuk-code x-govuk-code--inline">subject</code>
+      <code class="app-code app-code--inline">subject</code> - only retrieve notifications with the specific <code class="app-code app-code--inline">subject</code>
     </li>
     <li>
-      <code class="x-govuk-code x-govuk-code--inline">additional_provider_filter</code> - only retrieve notifications that match the provided <code class="x-govuk-code x-govuk-code--inline">additional_provider_filter</code>
+      <code class="app-code app-code--inline">additional_provider_filter</code> - only retrieve notifications that match the provided <code class="app-code app-code--inline">additional_provider_filter</code>
     </li>
     <li>
-      <code class="x-govuk-code x-govuk-code--inline">limit</code> - the maximum number of notifications to return in a single response
+      <code class="app-code app-code--inline">limit</code> - the maximum number of notifications to return in a single response
     </li>
   </ul>
   <p class="govuk-body">Only notifications related to applications submitted by the business unit ID provided will be returned.</p>
   <p class="govuk-body">Notification delivery is ‘at least once’, meaning a specific event at a specific time may result in one or more notifications (i.e. duplicate notifications for the same event).</p>
-  <p class="govuk-body">Duplicate events will have the same <code class="x-govuk-code x-govuk-code--inline">event_datetime</code> field and <code class="x-govuk-code x-govuk-code--inline">notification_type</code> which can be used to locate and ignore duplicates when receiving notifications. Notifications will continue to be returned by the endpoint until they are acknowledged.
+  <p class="govuk-body">Duplicate events will have the same <code class="app-code app-code--inline">event_datetime</code> field and <code class="app-code app-code--inline">notification_type</code> which can be used to locate and ignore duplicates when receiving notifications. Notifications will continue to be returned by the endpoint until they are acknowledged.
   </p>
   <h3 class="govuk-heading-s">Acknowledge notifications</h3>
-  <p class="govuk-body">Once a notification has been processed by your system, the notification should be acknowledged. To do this, send a list of <code class="x-govuk-code x-govuk-code--inline">notification_ids</code> to the Acknowledge notifications API as a POST request. This will change the status of those notifications to <code class="x-govuk-code x-govuk-code--inline">ACKNOWLEDGED</code>.</p>
+  <p class="govuk-body">Once a notification has been processed by your system, the notification should be acknowledged. To do this, send a list of <code class="app-code app-code--inline">notification_ids</code> to the Acknowledge notifications API as a POST request. This will change the status of those notifications to <code class="app-code app-code--inline">ACKNOWLEDGED</code>.</p>
 </section>
 <section>
 <h2 class="govuk-heading-m" id="validation-rules">Validation rules</h2>

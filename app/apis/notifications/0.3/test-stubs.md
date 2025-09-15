@@ -56,7 +56,7 @@ relatedAPIs:
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 <p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see when developing your own services.</p>
-<p class="govuk-body">Base URL: <code class="x-govuk-code x-govuk-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
+<p class="govuk-body">Base URL: <code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -64,12 +64,12 @@ relatedAPIs:
 <h2 id="scenario-1" class="govuk-heading-m">Scenario 1: Get all notifications</h2>
 
 <h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/notifications</code></p>
-<p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
 
 <h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
@@ -139,11 +139,11 @@ relatedAPIs:
 <h2 id="scenario-2" class="govuk-heading-m">Scenario 2: Get all new notifications</h2>
 
 <h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/notifications?status=NEW</code></p>
-<p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications?status=NEW</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
 <h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 
 <div class="code-wrapper">
 
@@ -200,11 +200,11 @@ relatedAPIs:
 <h2 id="scenario-3" class="govuk-heading-m">Scenario 3: Get all acknowledged notifications</h2>
 
 <h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/notifications?status=ACKNOWLEDGED</code></p>
-<p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications?status=ACKNOWLEDGED</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
 <h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 
 <div class="code-wrapper">
 
@@ -245,18 +245,18 @@ relatedAPIs:
 <h2 id="scenario-4" class="govuk-heading-m">Scenario 4: Get all with invalid date filter</h2>
 <h3 class="govuk-heading-s">Request</h3>
 <p class="govuk-body">Method:
-  <code class="x-govuk-code x-govuk-code--inline">GET</code>
+  <code class="app-code app-code--inline">GET</code>
 </p>
 <p class="govuk-body">Endpoint:
-  <code class="x-govuk-code x-govuk-code--inline">/v0/notifications?created_after=2020-01-01T00:00:00&created_before=2015-01-01T00:00:00</code>
+  <code class="app-code app-code--inline">/v0/notifications?created_after=2020-01-01T00:00:00&created_before=2015-01-01T00:00:00</code>
 </p>
 <p class="govuk-body">Headers:
-  <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+  <code class="app-code app-code--inline">Authorization: &ltany-value&gt
     </code>
 </p>
 <h3 class="govuk-heading-s">Response</h3>
 <p class="govuk-body">Status:
-  <code class="x-govuk-code x-govuk-code--inline">400</code>
+  <code class="app-code app-code--inline">400</code>
 </p>
 <div class="code-wrapper">
 
@@ -283,13 +283,13 @@ relatedAPIs:
 <h2 id="scenario-5" class="govuk-heading-m">Scenario 5: Acknowledge notifications</h2>
 <h3 class="govuk-heading-s">Request</h3>
 <p class="govuk-body">Method:
-  <code class="x-govuk-code x-govuk-code--inline">POST</code>
+  <code class="app-code app-code--inline">POST</code>
 </p>
 <p class="govuk-body">Endpoint:
-  <code class="x-govuk-code x-govuk-code--inline">/v0/notifications/acknowledge</code>
+  <code class="app-code app-code--inline">/v0/notifications/acknowledge</code>
 </p>
 <p class="govuk-body">Headers:
-  <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+  <code class="app-code app-code--inline">Authorization: &ltany-value&gt
     </code>
 </p>
 <div class="code-wrapper">
@@ -312,7 +312,7 @@ relatedAPIs:
 
 <h3 class="govuk-heading-s">Response</h3>
 <p class="govuk-body">Status:
-  <code class="x-govuk-code x-govuk-code--inline">200</code>
+  <code class="app-code app-code--inline">200</code>
 </p>
 <div class="code-wrapper">
 
@@ -341,19 +341,19 @@ relatedAPIs:
 <h2 id="scenario-6" class="govuk-heading-m">Scenario 6: Application queued notification</h2>
 <h3 class="govuk-heading-s">Request</h3>
 <p class="govuk-body">Method:
-  <code class="x-govuk-code x-govuk-code--inline">GET</code>
+  <code class="app-code app-code--inline">GET</code>
 </p>
 <p class="govuk-body">Endpoint:
   <code
-    class="x-govuk-code x-govuk-code--inline">/v0/notifications?notification_type=APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code>
+    class="app-code app-code--inline">/v0/notifications?notification_type=APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code>
 </p>
 <p class="govuk-body">Headers:
-  <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+  <code class="app-code app-code--inline">Authorization: &ltany-value&gt
 </code>
 </p>
 <h3 class="govuk-heading-s">Response</h3>
 <p class="govuk-body">Status:
-  <code class="x-govuk-code x-govuk-code--inline">200</code>
+  <code class="app-code app-code--inline">200</code>
 </p>
 <div class="code-wrapper">
 
@@ -389,18 +389,18 @@ relatedAPIs:
 <h2 id="scenario-7" class="govuk-heading-m">Scenario 7: System error notification</h2>
 <h3 class="govuk-heading-s">Request</h3>
 <p class="govuk-body">Method:
-  <code class="x-govuk-code x-govuk-code--inline">GET</code>
+  <code class="app-code app-code--inline">GET</code>
 </p>
 <p class="govuk-body">Endpoint:
-  <code class="x-govuk-code x-govuk-code--inline">/v0/notifications?notification_type=SYSTEM_ERROR</code>
+  <code class="app-code app-code--inline">/v0/notifications?notification_type=SYSTEM_ERROR</code>
 </p>
 <p class="govuk-body">Headers:
-  <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+  <code class="app-code app-code--inline">Authorization: &ltany-value&gt
 </code>
 </p>
 <h3 class="govuk-heading-s">Response</h3>
 <p class="govuk-body">Status:
-  <code class="x-govuk-code x-govuk-code--inline">200</code>
+  <code class="app-code app-code--inline">200</code>
 </p>
 <div class="code-wrapper">
 
@@ -437,19 +437,19 @@ relatedAPIs:
 <h2 id="scenario-8" class="govuk-heading-m">Scenario 8: Application cancelled notification</h2>
 <h3 class="govuk-heading-s">Request</h3>
 <p class="govuk-body">Method:
-  <code class="x-govuk-code x-govuk-code--inline">GET</code>
+  <code class="app-code app-code--inline">GET</code>
 </p>
 <p class="govuk-body">Endpoint:
   <code
-    class="x-govuk-code x-govuk-code--inline">/v0/notifications?notification_type=APPLICATION_CANCELLED</code>
+    class="app-code app-code--inline">/v0/notifications?notification_type=APPLICATION_CANCELLED</code>
 </p>
 <p class="govuk-body">Headers:
-  <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+  <code class="app-code app-code--inline">Authorization: &ltany-value&gt
 </code>
 </p>
 <h3 class="govuk-heading-s">Response</h3>
 <p class="govuk-body">Status:
-  <code class="x-govuk-code x-govuk-code--inline">200</code>
+  <code class="app-code app-code--inline">200</code>
 </p>
 <div class="code-wrapper">
 
@@ -486,19 +486,19 @@ relatedAPIs:
 <h2 id="scenario-9" class="govuk-heading-m">Scenario 9: Application completed notification</h2>
 <h3 class="govuk-heading-s">Request</h3>
 <p class="govuk-body">Method:
-  <code class="x-govuk-code x-govuk-code--inline">GET</code>
+  <code class="app-code app-code--inline">GET</code>
 </p>
 <p class="govuk-body">Endpoint:
   <code
-    class="x-govuk-code x-govuk-code--inline">/v0/notifications?notification_type=APPLICATION_COMPLETED</code>
+    class="app-code app-code--inline">/v0/notifications?notification_type=APPLICATION_COMPLETED</code>
 </p>
 <p class="govuk-body">Headers:
-  <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt
+  <code class="app-code app-code--inline">Authorization: &ltany-value&gt
 </code>
 </p>
 <h3 class="govuk-heading-s">Response</h3>
 <p class="govuk-body">Status:
-  <code class="x-govuk-code x-govuk-code--inline">200</code>
+  <code class="app-code app-code--inline">200</code>
 </p>
 <div class="code-wrapper">
 

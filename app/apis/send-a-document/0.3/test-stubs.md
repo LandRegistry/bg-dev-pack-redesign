@@ -45,17 +45,17 @@ relatedAPIs:
 
 <section>
   <p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to seewhen developing your own services.</p>
-  <p class="govuk-body">Due to technical limitations, these stubs will only allow you to get an upload url. The URL won’t work and the <code class="x-govuk-code x-govuk-code--inline">PUT</code> endpoint is not stubbed.</p>
-  <p class="govuk-body">Base URL: <code class="x-govuk-code x-govuk-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
+  <p class="govuk-body">Due to technical limitations, these stubs will only allow you to get an upload url. The URL won’t work and the <code class="app-code app-code--inline">PUT</code> endpoint is not stubbed.</p>
+  <p class="govuk-body">Base URL: <code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 </section>
   
 <section>
   <h2 id="scenario-1" class="govuk-heading-m">Scenario 1: Success</h2>
   <h3 class="govuk-heading-s">Request</h3>
-  <p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">POST</code></p>
-  <p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/documents/url</code></p>
-  <p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
+  <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
+  <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
+  <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
@@ -70,7 +70,7 @@ relatedAPIs:
 ```
 </div>
   <h3 class="govuk-heading-s">Response</h3>
-  <p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
+  <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
@@ -89,9 +89,9 @@ relatedAPIs:
 <section>
   <h2 id="scenario-2" class="govuk-heading-m">Scenario 2: Invalid Document Type</h2>
   <h3 class="govuk-heading-s">Request</h3>
-  <p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">POST</code></p>
-  <p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/documents/url</code></p>
-  <p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
+  <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
+  <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
+  <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
@@ -107,7 +107,7 @@ relatedAPIs:
 </div>
   <div class="govuk-!-padding-bottom-6"></div>
   <h3 class="govuk-heading-s">Response</h3>
-  <p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">400</code></p>
+  <p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
@@ -129,9 +129,9 @@ relatedAPIs:
 <section>
   <h2 id="scenario-3" class="govuk-heading-m">Scenario 3: Invalid file length (too small)</h2>
   <h3 class="govuk-heading-s">Request</h3>
-  <p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">POST</code></p>
-  <p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/documents/url</code></p>
-  <p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
+  <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
+  <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
+  <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
@@ -147,7 +147,7 @@ relatedAPIs:
 </div>
   <div class="govuk-!-padding-bottom-6"></div>
   <h3 class="govuk-heading-s">Response</h3>
-  <p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">400</code></p>
+  <p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
@@ -169,9 +169,9 @@ relatedAPIs:
 <section>
   <h2 id="scenario-4" class="govuk-heading-m">Scenario 4: Invalid file length (too large)</h2>
   <h3 class="govuk-heading-s">Request</h3>
-  <p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">POST</code></p>
-  <p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/documents/url</code></p>
-  <p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
+  <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
+  <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
+  <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
@@ -187,7 +187,7 @@ relatedAPIs:
 </div>
   <div class="govuk-!-padding-bottom-6"></div>
   <h3 class="govuk-heading-s">Response</h3>
-  <p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">400</code></p>
+  <p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
@@ -209,9 +209,9 @@ relatedAPIs:
 <section>
   <h2 id="scenario-5" class="govuk-heading-m">Scenario 5: Invalid File_SHA256</h2>
   <h3 class="govuk-heading-s">Request</h3>
-  <p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">POST</code></p>
-  <p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/documents/url</code></p>
-  <p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
+  <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
+  <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/documents/url</code></p>
+  <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
@@ -227,7 +227,7 @@ relatedAPIs:
 </div>
   <div class="govuk-!-padding-bottom-6"></div>
   <h3 class="govuk-heading-s">Response</h3>
-  <p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">400</code></p>
+  <p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
