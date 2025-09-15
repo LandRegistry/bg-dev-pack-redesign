@@ -2,13 +2,13 @@
 layout: guidance.njk
 
 title: Download a document API Technical guide
-description: Use this service to get information about a specific application.
+description: Use this service to download documents that have been created by HM Land Registry for your consumption.
 
 notlive: true
 
 eleventyNavigation:
-  key: Download a document API v0.3 Technical guide
-  parent: Download a document API v0.3
+  key: Download a document API v0.1 Technical guide
+  parent: Download a document API v0.1
 
 sidenav:
   - theme: Contents
@@ -22,8 +22,8 @@ sidenav:
     href: '#example-requests-and-responses'
 
 versions:
-  - value: "0.3"
-    text: "v0.3 (latest)"
+  - value: "0.1"
+    text: "v0.1 (latest)"
     selected: true
 
 relatedAPIs:
@@ -38,112 +38,96 @@ relatedAPIs:
 ---
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
+## How to use Download a document {.govuk-heading-m}
+
+### Obtain a `download id` {.govuk-heading-s}
+
+Before you can use this service, you will need to obtain a `download id` from somewhere. Currently the only way to do this is via submiting an application to change the Land Register. This process will result in one of the following types of document being generated:
+
+- Requisition documents
+- Cancellation documents
+- Completion documents
+
+The generation of each of these documents would trigger a notification to be sent via the [Notifications API](/apis/notifications), which would contain a `download id`. Once this notification has been sent, the document will be available for download.
+
+Note: A `download id` may be available in the [application information API's](/apis/application-information) response before the notification is sent, under the `/correspondences` array. The document is not guarenteed to be available for download until the notification has been issued.
+
+### Downloading a document {.govuk-heading-s}
+
+Once you've obtained that `download id` you can use it in a `GET` request to this service. The request is simple and will result in the document binary being returned so long as your request method allows redirects.
+
+</section>
+</br>
 <section>
 
-<h2 class="govuk-heading-m" id="how-to-use-the-download-a-document-api">How to use the Download a document API</h2>
-<p class="govuk-body">The Application information API is used to get detailed information about a specific application, using the <code class="x-govuk-code x-govuk-code--inline">application_request_id</code> returned by the Submit an application API request.</p>
-<p class="govuk-body">The status of an application can currently be one of the following:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>
-    <code class="x-govuk-code x-govuk-code--inline">VALIDATING</code> - HM Land Registry is still processing the application, and it has not yet been added to the day list
-  </li>
-  <li>
-    <code class="x-govuk-code x-govuk-code--inline">VALIDATION_FAILED</code> - The application has not been added to the day list due to errors during validation. The errors found are included in the errors section of the response
-  </li>
-  <li>
-    <code class="x-govuk-code x-govuk-code--inline">ACCEPTED_AWAITING_PRIORITY</code> - The application has passed validation but has not yet been added to the day list as it is currently closed. The application will be added to the day list and moved to an <code class="x-govuk-code x-govuk-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> state when the day list reopens
-  </li>
-  <li>
-    <code class="x-govuk-code x-govuk-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> - The application has been accepted onto the day list, and has priority
-  </li>
-  <li>
-    <code class="x-govuk-code x-govuk-code--inline">SYSTEM_ERROR</code> - The application has not been added to the day list due to an HMLR system error. The request should be retried, or the support team contacted
-  </li>
-</ul>
-<p class="govuk-body">This API will always return an HTTP 200 response for a valid request, regardless of the status of the application.</p>
+## Validation rules {.govuk-heading-m}
+
+There are no validation rules for implementing this API.
 
 </section>
 
 <section>
 
-<h2 class="govuk-heading-m" id="validation-rules">Validation rules</h2>
-<p class="govuk-body">There are no validation rules for implementing this API.</p>
+## Example requests and responses {.govuk-heading-m}
+
+For specific examples of notification payloads produced during application submission, view [Submit an application notifications](/apis/submit-an-application).
+
+### Download a document (redirection enabled) {.govuk-heading-s}
+
+*Request*
+
+<div class="code-wrapper">
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+
+```sh
+curl --method GET \ 
+  --url {base_url}/v1/documents/{download id}
+  -u {username}:{password}
+```
+</div>
+
+*Response*
+
+Status: `200`
+
+Body: *document binary*
+
+### Download a document (redirection disabled) {.govuk-heading-s}
+
+*Request 1*
+
+<div class="code-wrapper">
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+
+```sh
+curl --method GET \ 
+  --url {base_url}/v1/documents/{download id}
+  -u {username}:{password}
+```
+</div>
+
+*Response 1*
+
+Status: 302
+
+Header: `Location: <download  url>`
+
+*Request 2*
+
+<div class="code-wrapper">
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+
+```sh
+curl --method GET \ 
+  --url {download url}
+```
+</div>
+
+*Response 2*
+
+Status: 200
+
+Body: *document binary*
 
 </section>
 
-<section>
-
-<h2 class="govuk-heading-m" id="example-requests-and-responses">Example requests and responses</h2>
-<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - VALIDATING status</h3>
-
-<div class="code-wrapper">
-{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
-
-```json
-{
-  "data": {
-    "status": "validating",
-    "application_request_id": "3e4f6da2-ada7-4081-957c-b23542466715"
-  }
-}
-```
-</div>
-
-<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - ACCEPTED_PRIORITY_PROTECTED status</h3>
-
-<div class="code-wrapper">
-{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
-
-```json
-{
-  "data": {
-    "status": "ACCEPTED_PRIORITY_PROTECTED",
-    "application_request_id": "3e4f6da2-ada7-4081-957c-b23542466715",
-    "hmlr_reference": "AB1234",
-    "priority_timestamp": "2024-09-25T18:18:49.478Z",
-    "warnings": [
-      "You must upload document X"
-    ]
-  }
-}
-```
-</div>
-
-<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - VALIDATION_FAILED status</h3>
-
-<div class="code-wrapper">
-{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
-
-```json
-{
-  "data": {
-    "status": "VALIDATION_FAILED",
-    "application_request_id": "3e4f6da2-ada7-4081-957c-b23542466715",
-    "errors": [
-      {
-        "type": "OC018",
-        "detail": "Failed to get document '00001'.",
-        "pointer": null
-      }
-    ]
-  }
-}
-```
-</div>
-
-<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - ACCEPTED_AWAITING_PRIORITY status</h3>
-
-<div class="code-wrapper">
-{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
-
-```json
-{
-  "data": {
-    "status": "accepted_awaiting_priority",
-    "application_request_id": "3e4f6da2-ada7-4081-957c-b23542466715"
-  }
-}
-```
-
-</div>
-</section>

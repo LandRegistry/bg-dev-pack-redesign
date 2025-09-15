@@ -1,151 +1,189 @@
 ---
 layout: guidance.njk
 
-title: Download a document API test stubs
+
+title: Download a document test stubs
+
+eleventyNavigation:
+    key: Download a Document API v1.0 Test stubs
+    parent: Download a Document API API v1.0
+    hide: true
 
 notlive: true
 
-eleventyNavigation:
-  key: Download a document v0.3 test stubs
-  parent: Download a document v0.3
-
-sidenav:
-  - theme: Contents
-    text: 'Scenario 1: Information of applicaiton with single charge'
-    href: '#scenario-1'
-  - theme: Contents
-    text: 'Scenario 2: Information of application with single transfer'
-    href: '#scenario-2'
-  - theme: Contents
-    text: 'Scenario 3: Information of application with level 2 validation errors'
-    href: '#scenario-3'
-
 versions:
-  - value: "0.3"
-    text: "v0.3 (latest)"
+  - value: "1.0"
+    text: "v1.0 (upcoming)"
     selected: true
 
 relatedAPIs:
-  - text: Send a document API
-    href: /apis/send-a-document
-  - text: Submit an application API
-    href: /apis/submit-an-application
-  - text: Notifications API
-    href: /apis/notifications
-  - text: Submit an application to change the land register API
+  - text: todo
+    href: about:blank
+  - text: Submit an application to change the Land Register
     href: /apis/submit-an-application-to-change-the-land-register 
+  - text: Send a document
+    href: /apis/send-a-document
+  - text: Submit an application
+    href: /apis/submit-an-application
+  - text: Application information
+    href: /apis/application-information
+  - text: More
+    href: /find-a-service-api
+    classes: govuk-!-font-weight-bold
+
+sidenav:
+  - theme: Contents
+    text: 'Scenario 1: Download a cancellation document'
+    href: '#scenario-1'
+  - theme: Contents
+    text: 'Scenario 2: Download a letter'
+    href: '#scenario-2'
+  - theme: Contents
+    text: 'Scenario 3: Download a register completion sheet'
+    href: '#scenario-3'
+  - theme: Contents
+    text: 'Scenario 4: Download a copy of the register'
+    href: '#scenario-4'
 ---
 {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+
+{% set redirects %}
+<!-- this is here for the parser -->
+
+Status: `200` 
+
+Body: Document binary
+
+{% endset -%}
+
+{% set noRedirects %}
+<!-- this is here for the parser -->
+
+Status: `302`
+
+Headers: `Location: <download url>`
+
+{% endset -%}
 
 
-<p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway
-  APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see
-  when developing your own services.</p>
-<p class="govuk-body">Base URL: <code class="x-govuk-code x-govuk-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
+HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see when developing your own services.
 
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+Base URL: `https://bgtest.landregistry.gov.uk/bg2test/api`
 
-<section>
-<h3 id="scenario-1" class="govuk-heading-m">Scenario 1: Information of applicaiton with single charge</h2>
-
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/applications/b3ac19be-2b6d-4b8a-971c-e758b0e8e790/information</code></p>
-<p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
-
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
-
-<div class="code-wrapper">
-{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
-
-```json
-{
-  "data": {
-    "application_request_id": "b3ac19be-2b6d-4b8a-971c-e758b0e8e790",
-    "status": "ACCEPTED_PRIORITY_PROTECTED",
-    "priority_timestamp": "2024-09-25T18:18:49Z",
-    "hmlr_reference": "A123AAA",
-    "errors": []
-  }
-}
-```
-</div>
-</section>
-
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+---
 
 <section>
-<h3 id="scenario-2" class="govuk-heading-m">Scenario 2: Information of application with single transfer</h2>
 
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/applications/2563940e-ae95-4e7e-9b33-49a6571abdf6/information</code></p>
-<p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
+## Scenario 1: Download a cancellation document {.govuk-heading-m #scenario-1}
+### Request {.govuk-heading-s}
 
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
+Method: `GET`
 
-<div class="code-wrapper">
-{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+Endpoint: `/v1/documents/can_62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385`
 
-```json
-{
-  "data": {
-    "application_request_id": "2563940e-ae95-4e7e-9b33-49a6571abdf6",
-    "status": "ACCEPTED_PRIORITY_PROTECTED",
-    "priority_timestamp": "2024-09-25T18:18:49Z",
-    "hmlr_reference": "B123BBB",
-    "errors": []
-  }
-}
-```
-</div>
+Headers: `Authorization: <any-value>`
+
+### Response {.govuk-heading-s}
+
+{{ govukTabs({
+  items: [{
+    label: "Following Redirects",
+    id: "s1-redirects",
+    panel: { html: redirects }
+  }, {
+    label: "Not Following Redirects",
+    id: "s1-no-redirects",
+    panel: { html: noRedirects }
+  }]
+}) }}
+
 </section>
 
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+---
 
 <section>
-<h3 id="scenario-3" class="govuk-heading-m">Scenario 3: Information of application with level 2 validation errors</h2>
 
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/applications/3be62ad3-c542-452d-975e-6cd18d77196f/information</code></p>
-<p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
+## Scenario 2: Download a letter {.govuk-heading-m #scenario-2}
+### Request {.govuk-heading-s}
 
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
+Method: `GET`
 
-<div class="code-wrapper">
-{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+Endpoint: `/v1/documents/ltr_6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549`
 
-```json
-{
-  "data": {
-    "status": "VALIDATION_FAILED",
-    "hmlr_reference": null,
-    "priority_timestamp": null,
-    "errors": [{
-      "type": "mdref-on-record",
-      "detail": "MD Ref MD007A does not exist on record",
-      "pointer": null
-    }, {
-      "type": "lender-name-matches-records",
-      "detail": "MD Ref MD007A not found on record",
-      "pointer": null
-    }, {
-      "type": "all-mandatory-documents-provided",
-      "detail": "Mandatory documents missing for transactions of type [T]",
-      "pointer": null
-    }, {
-      "type": "transferee-has-representation-type",
-      "detail": "Transferee Transferee must have a representation type",
-      "pointer": null
-    }],
-    "warnings": [],
-    "application_request_id": "3be62ad3-c542-452d-975e-6cd18d77196f"
-  }
-}
-```
-</div>
+Headers: `Authorization: <any-value>`
+
+### Response {.govuk-heading-s}
+
+{{ govukTabs({
+  items: [{
+    label: "Following Redirects",
+    id: "s2-redirects",
+    panel: { html: redirects }
+  }, {
+    label: "Not Following Redirects",
+    id: "s2-no-redirects",
+    panel: { html: noRedirects }
+  }]
+}) }}
+
 </section>
+
+---
+
+<section id="scenario-3">
+
+## Scenario 3: Download a register completion sheet {.govuk-heading-m #scenario-3}
+### Request {.govuk-heading-s}
+
+Method: `GET`
+
+Endpoint: `/v1/documents/rcs_efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a`
+
+Headers: `Authorization: <any-value>`
+
+### Response {.govuk-heading-s}
+
+{{ govukTabs({
+  items: [{
+    label: "Following Redirects",
+    id: "s3-redirects",
+    panel: { html: redirects }
+  }, {
+    label: "Not Following Redirects",
+    id: "s3-no-redirects",
+    panel: { html: noRedirects }
+  }]
+}) }}
+
+</section>
+
+---
+
+<section id="scenario-4">
+
+### Scenario 4: Scenario 4: Download a copy of the register {.govuk-heading-s #scenario-4}
+### Request {.govuk-heading-s}
+
+Method: `GET`
+
+Endpoint: `/v1/documents/reg_7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038`
+
+Headers: `Authorization: <any-value>`
+
+### Response {.govuk-heading-s}
+
+{{ govukTabs({
+  items: [{
+    label: "Following Redirects",
+    id: "s4-redirects",
+    panel: { html: redirects }
+  }, {
+    label: "Not Following Redirects",
+    id: "s4-no-redirects",
+    panel: { html: noRedirects }
+  }]
+}) }}
+
+</section>
+
