@@ -17,8 +17,6 @@ versions:
     selected: true
 
 relatedAPIs:
-  - text: todo
-    href: about:blank
   - text: Submit an application to change the Land Register
     href: /apis/submit-an-application-to-change-the-land-register 
   - text: Send a document

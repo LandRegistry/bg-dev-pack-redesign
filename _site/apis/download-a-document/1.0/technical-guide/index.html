@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template govuk-template--rebranded">
   <head>
     <meta charset="utf-8">
-    <title>Application information API Technical guide - HM Land Registry Developer Pack</title>
+    <title>Download a document API Technical guide - HM Land Registry Developer Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="/assets/application.css">
 
 
-  <meta property="og:title" content="Application information API Technical guide">
-<meta property="og:description" name="description" content="Use this service to get information about a specific application.">
+  <meta property="og:title" content="Download a document API Technical guide">
+<meta property="og:description" name="description" content="Use this service to download documents that have been created by HM Land Registry for your consumption.">
 <script src="/assets/script.js"></script><script>
     function setVersion() {
         let version = document.getElementById('version').value;
@@ -131,7 +131,7 @@ data-module="govuk-service-navigation"
   <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
   <ul class="x-govuk-sub-navigation__section">
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="#how-to-use-the-application-information-api">How to use the Application information API</a>
+      <a class="x-govuk-sub-navigation__link" href="#how-to-use-the-download-a-document-api">How to use the Download a document API</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
       <a class="x-govuk-sub-navigation__link" href="#validation-rules">Validation rules</a>
@@ -148,7 +148,7 @@ data-module="govuk-service-navigation"
 
 
 <header class="app-document-header">
-  <h1 class="govuk-heading-xl">Application information API Technical guide</h1><p class="govuk-body-l">Use this service to get information about a specific&nbsp;application.</p>
+  <h1 class="govuk-heading-xl">Download a document API Technical guide</h1><p class="govuk-body-l">Use this service to download documents that have been created by HM Land Registry for your&nbsp;consumption.</p>
 </header>
 
 <div class="govuk-warning-text">
@@ -169,7 +169,7 @@ data-module="govuk-service-navigation"
     Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="0.3" selected>v0.3 (latest)</option>
+    <option value="1.0" selected>v1.0 (latest)</option>
   </select>
   <button type="submit" 
                   class="govuk-button govuk-!-margin-0" 
@@ -181,104 +181,72 @@ data-module="govuk-service-navigation"
 </div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<div class="app-prose-scope"><section>
-<h2 class="govuk-heading-m" id="how-to-use-the-application-information-api">How to use the Application information API</h2>
-<p class="govuk-body">The Application information API is used to get detailed information about a specific application, using the <code class="app-code app-code--inline">application_request_id</code> returned by the Submit an application API request.</p>
-<p class="govuk-body">The status of an application can currently be one of the following:</p>
+<div class="app-prose-scope"><h2 class="govuk-heading-m" id="how-to-use-download-a-document" tabindex="-1" class="govuk-heading-l">How to use Download a document</h2>
+<h3 class="govuk-heading-s" id="obtain-a-download-id" tabindex="-1" class="govuk-heading-m">Obtain a <code class="app-code app-code--inline">download id</code></h3>
+<p class="govuk-body">Before you can use this service, you will need to obtain a <code class="app-code app-code--inline">download id</code> from somewhere. Currently the only way to do this is via submiting an application to change the Land Register. This process will result in one of the following types of document being generated:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li>
-    <code class="app-code app-code--inline">VALIDATING</code> - HM Land Registry is still processing the application, and it has not yet been added to the day list
-  </li>
-  <li>
-    <code class="app-code app-code--inline">VALIDATION_FAILED</code> - The application has not been added to the day list due to errors during validation. The errors found are included in the errors section of the response
-  </li>
-  <li>
-    <code class="app-code app-code--inline">ACCEPTED_AWAITING_PRIORITY</code> - The application has passed validation but has not yet been added to the day list as it is currently closed. The application will be added to the day list and moved to an <code class="app-code app-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> state when the day list reopens
-  </li>
-  <li>
-    <code class="app-code app-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> - The application has been accepted onto the day list, and has priority
-  </li>
-  <li>
-    <code class="app-code app-code--inline">SYSTEM_ERROR</code> - The application has not been added to the day list due to an HMLR system error. The request should be retried, or the support team contacted
-  </li>
+<li>Requisition documents</li>
+<li>Cancellation documents</li>
+<li>Completion documents</li>
 </ul>
-<p class="govuk-body">This API will always return an HTTP 200 response for a valid request, regardless of the status of the application.</p>
+<p class="govuk-body">The generation of each of these documents would trigger a notification to be sent via the <a href="/apis/notifications" class="govuk-link">Notifications API</a>, which would contain a <code class="app-code app-code--inline">download id</code>. Once this notification has been sent, the document will be available for download.</p>
+<p class="govuk-body">Note: A <code class="app-code app-code--inline">download id</code> may be available in the <a href="/apis/application-information" class="govuk-link">application information API’s</a> response before the notification is sent, under the <code class="app-code app-code--inline">/correspondences</code> array. The document is not guarenteed to be available for download until the notification has been issued.</p>
+<h3 class="govuk-heading-s" id="downloading-a-document" tabindex="-1" class="govuk-heading-m">Downloading a document</h3>
+<p class="govuk-body">Once you’ve obtained that <code class="app-code app-code--inline">download id</code> you can use it in a <code class="app-code app-code--inline">GET</code> request to this service. The request is simple and will result in the document binary being returned so long as your request method allows redirects.</p>
 </section>
+</br>
 <section>
-<h2 class="govuk-heading-m" id="validation-rules">Validation rules</h2>
+<h2 class="govuk-heading-m" id="validation-rules" tabindex="-1" class="govuk-heading-l">Validation rules</h2>
 <p class="govuk-body">There are no validation rules for implementing this API.</p>
 </section>
 <section>
-<h2 class="govuk-heading-m" id="example-requests-and-responses">Example requests and responses</h2>
-<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - VALIDATING status</h3>
+<h2 class="govuk-heading-m" id="example-requests-and-responses" tabindex="-1" class="govuk-heading-l">Example requests and responses</h2>
+<p class="govuk-body">For specific examples of notification payloads produced during application submission, view <a href="/apis/submit-an-application" class="govuk-link">Submit an application notifications</a>.</p>
+<h3 class="govuk-heading-s" id="download-a-document-redirection-enabled" tabindex="-1" class="govuk-heading-m">Download a document (redirection enabled)</h3>
+<p class="govuk-body"><em>Request</em></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
-  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;validating&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span>
-  <span class="app-code__punctuation">}</span>
-<span class="app-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--sh" tabindex="0"><code>curl --method GET \ 
+  --url {base_url}/v1/documents/{download <span class="app-code__built_in">id</span>}
+  -u {username}:{password}
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - ACCEPTED_PRIORITY_PROTECTED status</h3>
+<p class="govuk-body"><em>Response</em></p>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+<p class="govuk-body">Body: <em>document binary</em></p>
+<h3 class="govuk-heading-s" id="download-a-document-redirection-disabled" tabindex="-1" class="govuk-heading-m">Download a document (redirection disabled)</h3>
+<p class="govuk-body"><em>Request 1</em></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
-  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;AB1234&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-09-25T18:18:49.478Z&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;warnings&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
-      <span class="app-code__string">&quot;You must upload document X&quot;</span>
-    <span class="app-code__punctuation">]</span>
-  <span class="app-code__punctuation">}</span>
-<span class="app-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--sh" tabindex="0"><code>curl --method GET \ 
+  --url {base_url}/v1/documents/{download <span class="app-code__built_in">id</span>}
+  -u {username}:{password}
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - VALIDATION_FAILED status</h3>
+<p class="govuk-body"><em>Response 1</em></p>
+<p class="govuk-body">Status: 302</p>
+<p class="govuk-body">Header: <code class="app-code app-code--inline">Location: &lt;download  url&gt;</code></p>
+<p class="govuk-body"><em>Request 2</em></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
-  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;VALIDATION_FAILED&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
-      <span class="app-code__punctuation">{</span>
-        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;OC018&quot;</span><span class="app-code__punctuation">,</span>
-        <span class="app-code__attr">&quot;detail&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Failed to get document &#x27;00001&#x27;.&quot;</span><span class="app-code__punctuation">,</span>
-        <span class="app-code__attr">&quot;pointer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span>
-      <span class="app-code__punctuation">}</span>
-    <span class="app-code__punctuation">]</span>
-  <span class="app-code__punctuation">}</span>
-<span class="app-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--sh" tabindex="0"><code>curl --method GET \ 
+  --url {download url}
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - ACCEPTED_AWAITING_PRIORITY status</h3>
-<div class="code-wrapper">
-<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
-  Copy code
-</button>
-<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
-  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;accepted_awaiting_priority&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span>
-  <span class="app-code__punctuation">}</span>
-<span class="app-code__punctuation">}</span>
-</code></pre>
-
+<p class="govuk-body"><em>Response 2</em></p>
+<p class="govuk-body">Status: 200</p>
+<p class="govuk-body">Body: <em>document binary</em></p>
+</section>
 </div>
-</section></div>
 
 
 
@@ -289,7 +257,6 @@ data-module="govuk-service-navigation"
     <li><a class="govuk-link" href="/apis/submit-an-application">Submit an application API</a></li>
     <li><a class="govuk-link" href="/apis/notifications">Notifications API</a></li>
     <li><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the land register API</a></li>
-    <li><a class="govuk-link" href="/apis/download-a-document">Download a document API</a></li>
 </ul>
 
 </div>
