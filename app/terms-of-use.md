@@ -1,8 +1,8 @@
 ---
+caption: Before you start
 title: Terms of use
 
 layout: page
-noheader: true
 noback: true
 
 eleventyNavigation:
@@ -34,8 +34,6 @@ sidenav:
     href: '/contact-us'
 ---
 
-<span class="govuk-caption-xl">Before you start</span>
-<h1 class="govuk-heading-xl">Terms of use</h1>
 <div class="govuk-grid-row">
   <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">The terms of use policies explain what
     users can expect when creating and operating software services that use Business Gateway APIs.</p>

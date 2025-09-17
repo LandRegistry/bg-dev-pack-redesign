@@ -7,7 +7,6 @@ title: Download a document test stubs
 eleventyNavigation:
     key: Download a Document API v1.0 Test stubs
     parent: Download a Document API API v1.0
-    hide: true
 
 notlive: true
 
@@ -25,6 +24,8 @@ relatedAPIs:
     href: /apis/submit-an-application
   - text: Application information
     href: /apis/application-information
+  - text: Notifications
+    href: /apis/notifications
   - text: More
     href: /find-a-service-api
     classes: govuk-!-font-weight-bold
@@ -184,4 +185,3 @@ Headers: `Authorization: <any-value>`
 }) }}
 
 </section>
-

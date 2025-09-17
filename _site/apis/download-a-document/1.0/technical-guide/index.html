@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template govuk-template--rebranded">
   <head>
     <meta charset="utf-8">
-    <title>Download a document API Technical guide - HM Land Registry Developer Pack</title>
+    <title>Download a document Technical guide - HM Land Registry Developer Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="/assets/application.css">
 
 
-  <meta property="og:title" content="Download a document API Technical guide">
-<meta property="og:description" name="description" content="Use this service to download documents that have been created by HM Land Registry for your consumption.">
+  <meta property="og:title" content="Download a document Technical guide">
+<meta property="og:description" name="description" content="Use this service to download documents provided by HM Land Registry.">
 <script src="/assets/script.js"></script><script>
     function setVersion() {
         let version = document.getElementById('version').value;
@@ -131,7 +131,7 @@ data-module="govuk-service-navigation"
   <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
   <ul class="x-govuk-sub-navigation__section">
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="#how-to-use-the-download-a-document-api">How to use the Download a document API</a>
+      <a class="x-govuk-sub-navigation__link" href="#how-to-use-download-a-document">How to use download a document</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
       <a class="x-govuk-sub-navigation__link" href="#validation-rules">Validation rules</a>
@@ -148,7 +148,7 @@ data-module="govuk-service-navigation"
 
 
 <header class="app-document-header">
-  <h1 class="govuk-heading-xl">Download a document API Technical guide</h1><p class="govuk-body-l">Use this service to download documents that have been created by HM Land Registry for your&nbsp;consumption.</p>
+  <h1 class="govuk-heading-xl">Download a document Technical guide</h1><p class="govuk-body-l">Use this service to download documents provided by HM Land&nbsp;Registry.</p>
 </header>
 
 <div class="govuk-warning-text">
@@ -169,7 +169,7 @@ data-module="govuk-service-navigation"
     Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="1.0" selected>v1.0 (latest)</option>
+    <option value="1.0" selected>v1.0 (upcoming)</option>
   </select>
   <button type="submit" 
                   class="govuk-button govuk-!-margin-0" 
@@ -181,7 +181,8 @@ data-module="govuk-service-navigation"
 </div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<div class="app-prose-scope"><h2 class="govuk-heading-m" id="how-to-use-download-a-document" tabindex="-1" class="govuk-heading-l">How to use Download a document</h2>
+<div class="app-prose-scope"><section>
+<h2 class="govuk-heading-m" id="how-to-use-download-a-document" tabindex="-1" class="govuk-heading-l">How to use download a document</h2>
 <h3 class="govuk-heading-s" id="obtain-a-download-id" tabindex="-1" class="govuk-heading-m">Obtain a <code class="app-code app-code--inline">download id</code></h3>
 <p class="govuk-body">Before you can use this service, you will need to obtain a <code class="app-code app-code--inline">download id</code> from somewhere. Currently the only way to do this is via submiting an application to change the Land Register. This process will result in one of the following types of document being generated:</p>
 <ul class="govuk-list govuk-list--bullet">
@@ -194,7 +195,6 @@ data-module="govuk-service-navigation"
 <h3 class="govuk-heading-s" id="downloading-a-document" tabindex="-1" class="govuk-heading-m">Downloading a document</h3>
 <p class="govuk-body">Once you’ve obtained that <code class="app-code app-code--inline">download id</code> you can use it in a <code class="app-code app-code--inline">GET</code> request to this service. The request is simple and will result in the document binary being returned so long as your request method allows redirects.</p>
 </section>
-</br>
 <section>
 <h2 class="govuk-heading-m" id="validation-rules" tabindex="-1" class="govuk-heading-l">Validation rules</h2>
 <p class="govuk-body">There are no validation rules for implementing this API.</p>
@@ -253,10 +253,12 @@ data-module="govuk-service-navigation"
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <h3 class="govuk-heading-m">Related APIs</h3>
 <ul class="govuk-list govuk-list--bullet">
-    <li><a class="govuk-link" href="/apis/send-a-document">Send a document API</a></li>
-    <li><a class="govuk-link" href="/apis/submit-an-application">Submit an application API</a></li>
-    <li><a class="govuk-link" href="/apis/notifications">Notifications API</a></li>
-    <li><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the land register API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/send-a-document">Send a document</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application">Submit an application</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/application-information">Application information</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/notifications">Notifications</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/find-a-service-api">More</a></li>
 </ul>
 
 </div>

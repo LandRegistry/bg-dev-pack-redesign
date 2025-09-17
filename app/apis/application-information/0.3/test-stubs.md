@@ -3,11 +3,33 @@ layout: guidance.njk
 
 title: Application Information API test stubs
 
+eleventyNavigation:
+  key: Application Information v0.3 Test stubs
+  parent: Application Information v0.3
+
 notlive: true
 
-eleventyNavigation:
-  key: Application information v0.3 test stubs
-  parent: Application information v0.3
+versions:
+  - value: "1.0"
+    text: "v1.0 (upcoming)"
+  - value: "0.3"
+    text: "v0.3 (latest)"
+    selected: true
+
+relatedAPIs:
+  - text: Submit an application to change the Land Register
+    href: /apis/submit-an-application-to-change-the-land-register 
+  - text: Send a document
+    href: /apis/send-a-document
+  - text: Submit an application
+    href: /apis/submit-an-application
+  - text: Notifications
+    href: /apis/notifications
+  - text: Download a document
+    href: /apis/download-a-document
+  - text: More
+    href: /find-a-service-api
+    classes: govuk-!-font-weight-bold
 
 sidenav:
   - theme: Contents
@@ -19,44 +41,30 @@ sidenav:
   - theme: Contents
     text: 'Scenario 3: Information of application with level 2 validation errors'
     href: '#scenario-3'
-
-versions:
-  - value: "0.3"
-    text: "v0.3 (latest)"
-    selected: true
-
-relatedAPIs:
-  - text: Send a document API
-    href: /apis/send-a-document
-  - text: Submit an application API
-    href: /apis/submit-an-application
-  - text: Notifications API
-    href: /apis/notifications
-  - text: Submit an application to change the land register API
-    href: /apis/submit-an-application-to-change-the-land-register
-  - text: Download a document API
-    href: /apis/download-a-document 
 ---
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
+HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see when developing your own services.
 
-<p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway
-  APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see
-  when developing your own services.</p>
-<p class="govuk-body">Base URL: <code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
+Base URL: `https://bgtest.landregistry.gov.uk/bg2test/api`
 
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+---
 
 <section>
-<h3 id="scenario-1" class="govuk-heading-m">Scenario 1: Information of applicaiton with single charge</h2>
 
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/applications/b3ac19be-2b6d-4b8a-971c-e758b0e8e790/information</code></p>
-<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
+## Scenario 1: Information of applicaiton with single charge {.govuk-heading-m #scenario-1}
 
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+### Request {.govuk-heading-s}
+
+Method: `GET`
+
+Endpoint: `/v0/applications/b3ac19be-2b6d-4b8a-971c-e758b0e8e790/information`
+
+Headers: `Authorization: <any-value>`
+
+### Response {.govuk-heading-s}
+
+Status: `200`
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -68,6 +76,7 @@ relatedAPIs:
     "status": "ACCEPTED_PRIORITY_PROTECTED",
     "priority_timestamp": "2024-09-25T18:18:49Z",
     "hmlr_reference": "A123AAA",
+    "warnings": [],
     "errors": []
   }
 }
@@ -75,18 +84,23 @@ relatedAPIs:
 </div>
 </section>
 
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+---
 
 <section>
-<h3 id="scenario-2" class="govuk-heading-m">Scenario 2: Information of application with single transfer</h2>
 
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/applications/2563940e-ae95-4e7e-9b33-49a6571abdf6/information</code></p>
-<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
+##  Scenario 2: Information of application with single transfer {.govuk-heading-m #scenario-2}
 
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+###  Request {.govuk-heading-s}
+
+Method: `GET`
+
+Endpoint: `/v0/applications/2563940e-ae95-4e7e-9b33-49a6571abdf6/information`
+
+Headers: `Authorization: <any-value>`
+
+###  Response {.govuk-heading-s}
+
+Status: `200`
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -98,6 +112,7 @@ relatedAPIs:
     "status": "ACCEPTED_PRIORITY_PROTECTED",
     "priority_timestamp": "2024-09-25T18:18:49Z",
     "hmlr_reference": "B123BBB",
+    "warnings": [],
     "errors": []
   }
 }
@@ -105,18 +120,23 @@ relatedAPIs:
 </div>
 </section>
 
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+---
 
 <section>
-<h3 id="scenario-3" class="govuk-heading-m">Scenario 3: Information of application with level 2 validation errors</h2>
 
-<h3 class="govuk-heading-s">Request</h3>
-<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/applications/3be62ad3-c542-452d-975e-6cd18d77196f/information</code></p>
-<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
+##  Scenario 3: Information of application with level 2 validation errors {.govuk-heading-m #scenario-3}
 
-<h3 class="govuk-heading-s">Response</h3>
-<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+###  Request {.govuk-heading-s}
+
+Method: `GET`
+
+Endpoint: `/v0/applications/3be62ad3-c542-452d-975e-6cd18d77196f/information`
+
+Headers: `Authorization: <any-value>`
+
+###  Response {.govuk-heading-s}
+
+Status: `200`
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}

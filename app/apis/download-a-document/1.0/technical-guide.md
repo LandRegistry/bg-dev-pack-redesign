@@ -1,44 +1,51 @@
 ---
-layout: guidance.njk
+layout: guidance
 
-title: Download a document API Technical guide
-description: Use this service to download documents that have been created by HM Land Registry for your consumption.
+title: Download a document Technical guide
+description: Use this service to download documents provided by HM Land Registry.
+
+eleventyNavigation:
+  key: Download a Document v1.0 Technical guide
+  parent: Download a Document v1.0
 
 notlive: true
 
-eleventyNavigation:
-  key: Download a document API v1.0 Technical guide
-  parent: Download a document API v1.0
+versions:
+  - value: "1.0"
+    text: "v1.0 (upcoming)"
+    selected: true
+
+relatedAPIs:
+  - text: Submit an application to change the Land Register
+    href: /apis/submit-an-application-to-change-the-land-register 
+  - text: Send a document
+    href: /apis/send-a-document
+  - text: Submit an application
+    href: /apis/submit-an-application
+  - text: Application information
+    href: /apis/application-information
+  - text: Notifications
+    href: /apis/notifications
+  - text: More
+    href: /find-a-service-api
+    classes: govuk-!-font-weight-bold
 
 sidenav:
   - theme: Contents
-    text: 'How to use the Download a document API'
-    href: '#how-to-use-the-download-a-document-api'
+    text: 'How to use download a document'
+    href: '#how-to-use-download-a-document'
   - theme: Contents
     text: 'Validation rules'
     href: '#validation-rules'
   - theme: Contents
     text: 'Example requests and responses'
     href: '#example-requests-and-responses'
-
-versions:
-  - value: "1.0"
-    text: "v1.0 (latest)"
-    selected: true
-
-relatedAPIs:
-  - text: Send a document API
-    href: /apis/send-a-document
-  - text: Submit an application API
-    href: /apis/submit-an-application
-  - text: Notifications API
-    href: /apis/notifications
-  - text: Submit an application to change the land register API
-    href: /apis/submit-an-application-to-change-the-land-register 
 ---
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
-## How to use Download a document {.govuk-heading-m}
+<section>
+
+## How to use download a document {.govuk-heading-m}
 
 ### Obtain a `download id` {.govuk-heading-s}
 
@@ -57,7 +64,6 @@ Note: A `download id` may be available in the [application information API's](/a
 Once you've obtained that `download id` you can use it in a `GET` request to this service. The request is simple and will result in the document binary being returned so long as your request method allows redirects.
 
 </section>
-</br>
 <section>
 
 ## Validation rules {.govuk-heading-m}
@@ -65,7 +71,6 @@ Once you've obtained that `download id` you can use it in a `GET` request to thi
 There are no validation rules for implementing this API.
 
 </section>
-
 <section>
 
 ## Example requests and responses {.govuk-heading-m}
@@ -130,4 +135,3 @@ Status: 200
 Body: *document binary*
 
 </section>
-

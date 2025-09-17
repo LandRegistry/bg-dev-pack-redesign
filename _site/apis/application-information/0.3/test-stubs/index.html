@@ -169,6 +169,7 @@ data-module="govuk-service-navigation"
     Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
+    <option value="1.0">v1.0 (upcoming)</option>
     <option value="0.3" selected>v0.3 (latest)</option>
   </select>
   <button type="submit" 
@@ -181,18 +182,16 @@ data-module="govuk-service-navigation"
 </div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<div class="app-prose-scope"><p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway
-  APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see
-  when developing your own services.</p>
+<div class="app-prose-scope"><p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see when developing your own services.</p>
 <p class="govuk-body">Base URL: <code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h3 id="scenario-1" class="govuk-heading-m">Scenario 1: Information of applicaiton with single charge</h2>
-<h3 class="govuk-heading-s">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-1" tabindex="-1" class="govuk-heading-l">Scenario 1: Information of applicaiton with single charge</h2>
+<h3 class="govuk-heading-s" id="request" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/applications/b3ac19be-2b6d-4b8a-971c-e758b0e8e790/information</code></p>
-<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
-<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<h3 class="govuk-heading-s" id="response" tabindex="-1" class="govuk-heading-m">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -204,6 +203,7 @@ data-module="govuk-service-navigation"
     <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-09-25T18:18:49Z&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;A123AAA&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;warnings&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span>
   <span class="app-code__punctuation">}</span>
 <span class="app-code__punctuation">}</span>
@@ -211,14 +211,14 @@ data-module="govuk-service-navigation"
 
 </div>
 </section>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h3 id="scenario-2" class="govuk-heading-m">Scenario 2: Information of application with single transfer</h2>
-<h3 class="govuk-heading-s">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-2" tabindex="-1" class="govuk-heading-l">Scenario 2: Information of application with single transfer</h2>
+<h3 class="govuk-heading-s" id="request-1" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/applications/2563940e-ae95-4e7e-9b33-49a6571abdf6/information</code></p>
-<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
-<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<h3 class="govuk-heading-s" id="response-1" tabindex="-1" class="govuk-heading-m">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -230,6 +230,7 @@ data-module="govuk-service-navigation"
     <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-09-25T18:18:49Z&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;B123BBB&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;warnings&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span>
   <span class="app-code__punctuation">}</span>
 <span class="app-code__punctuation">}</span>
@@ -237,14 +238,14 @@ data-module="govuk-service-navigation"
 
 </div>
 </section>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h3 id="scenario-3" class="govuk-heading-m">Scenario 3: Information of application with level 2 validation errors</h2>
-<h3 class="govuk-heading-s">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-3" tabindex="-1" class="govuk-heading-l">Scenario 3: Information of application with level 2 validation errors</h2>
+<h3 class="govuk-heading-s" id="request-2" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/applications/3be62ad3-c542-452d-975e-6cd18d77196f/information</code></p>
-<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &ltany-value&gt</code></p>
-<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<h3 class="govuk-heading-s" id="response-2" tabindex="-1" class="govuk-heading-m">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -287,11 +288,12 @@ data-module="govuk-service-navigation"
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <h3 class="govuk-heading-m">Related APIs</h3>
 <ul class="govuk-list govuk-list--bullet">
-    <li><a class="govuk-link" href="/apis/send-a-document">Send a document API</a></li>
-    <li><a class="govuk-link" href="/apis/submit-an-application">Submit an application API</a></li>
-    <li><a class="govuk-link" href="/apis/notifications">Notifications API</a></li>
-    <li><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the land register API</a></li>
-    <li><a class="govuk-link" href="/apis/download-a-document">Download a document API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/send-a-document">Send a document</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application">Submit an application</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/notifications">Notifications</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/download-a-document">Download a document</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/find-a-service-api">More</a></li>
 </ul>
 
 </div>

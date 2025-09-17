@@ -20,3 +20,7 @@ Now when you navigate to `http://localhost:8080/` you'll see your changes reflec
 ## Pushing with dual remotes
 
 When developing with a non-github remote, you can use the `./push-to-all.sh` script to push to both to ensure the non-github remote and github are both kept up-to-date with changes.
+
+## Snippets
+
+see [snippts.md](./snippets.md)

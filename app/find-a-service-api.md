@@ -1,7 +1,8 @@
 ---
+layout: find-an-api-page
+
 title: Find an API
 
-layout: find-an-api-page
 noheader: true
 noback: true
 
@@ -21,7 +22,7 @@ sidenav:
     href: '/terms-of-use'
   - theme: Explore APIs
     text: Find an API
-    href: '/find-a-service-api'
+    href: '/apis'
     current: true
   - theme: Explore APIs
     text: A guide to SOAP and REST API types

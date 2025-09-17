@@ -13,7 +13,7 @@
 
 
   <meta property="og:title" content="Notifications API">
-
+<meta property="og:description" name="description" content="Use this service to get updates about multiple applications submitted by the same business unit.">
 <script src="/assets/script.js"></script><script>
     function setVersion() {
         let version = document.getElementById('version').value;
@@ -73,27 +73,33 @@ data-module="govuk-service-navigation"
       <div class="govuk-width-container">
   <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
         <main class="govuk-main-wrapper" id="main-content">
-<div class="app-prose-scope"><div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">Notifications API</h1>
-    <p class="govuk-body-l">Use this service to get updates about multiple applications submitted by the same business unit.</p>
-    <div class="govuk-warning-text">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-        <span class="govuk-visually-hidden">Warning</span>
-            These API endpoints are not currently live.
-        </strong>
-    </div>
-  </div>
-</div>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half version-label-center-y">
-        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and status</h2>
+
+<div class="govuk-grid-column-full">
+
+<header class="app-document-header">
+  <h1 class="govuk-heading-xl">Notifications API</h1><p class="govuk-body-l">Use this service to get updates about multiple applications submitted by the same business&nbsp;unit.</p>
+</header>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    These API endpoints are not currently live.
+  </strong>
+</div>
+</div>
+
+<div class="govuk-grid-column-two-thirds">
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-0">
+<div class="bg-version-grid">
+    <div>
+        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
     </div>
-    <div class="govuk-grid-column-one-half">        <div class="govuk-form-group version-group govuk-!-margin-0">
+    <div class="govuk-form-group version-group govuk-!-margin-0">
   <label class="govuk-label govuk-visually-hidden" for="version">
-    Version and status dropdown
+    Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
     <option value="0.3" selected>v0.3 (latest)</option>
@@ -104,15 +110,36 @@ data-module="govuk-service-navigation"
                   onclick="setVersion();"
                   >View</button>
 </div>
-</div>
+
 </div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-    <h3>Select a version for content</h3>
-</div>
+
+<div class="app-prose-scope"><h2 class="govuk-heading-m" id="select-a-version-for-content" tabindex="-1" class="govuk-heading-l">Select a version for content</h2>
 </div>
 
+
+</div>
+
+
+<div class="govuk-grid-column-one-third">
+<aside class="related-items" role="complementary">
+    <h2 class="govuk-heading-m" id="related-apis">
+    Related APIs
+    </h2>
+    <nav role="navigation" aria-labelledby="related-apis">
+    <ul class="govuk-list">
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/send-a-document">Send a document</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/submit-an-application">Submit an application</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/application-information">Application information</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/download-a-document">Download a document</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link govuk-!-font-weight-bold" href="/find-a-service-api">More</a></li>
+    </ul>
+    </nav>
+</aside>
+</div>
+
+</div>
         </main>
       </div>
 
