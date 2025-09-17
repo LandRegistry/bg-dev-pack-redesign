@@ -52,13 +52,13 @@ sidenav:
     text: 'Scenario 7: System error notification'
     href: '#scenario-7'
   - theme: Contents
-    text: 'Scenario 8: Cancelled notification'
+    text: 'Scenario 8: Application cancelled notification'
     href: '#scenario-8'
   - theme: Contents
-    text: 'Scenario 9: Completed notification'
+    text: 'Scenario 9: Application completed notification'
     href: '#scenario-9'
   - theme: Contents
-    text: 'Scenario 10: Requisitioned notification'
+    text: 'Scenario 10: Application requisitioned notification'
     href: '#scenario-10'
 ---
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -462,7 +462,7 @@ Status: `200`
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <section id="scenario-8">
 
-## Scenario 8: Cancelled notification {.govuk-heading-m #scenario-8}
+## Scenario 8: Application cancelled notification {.govuk-heading-m #scenario-8}
 ### Request {.govuk-heading-s}
 
 Method: `GET`
@@ -519,7 +519,7 @@ Status: `200`
 
 <section id="scenario-9">
 
-## Scenario 9: Completed notification {.govuk-heading-m #scenario-9}
+## Scenario 9: Application completed notification {.govuk-heading-m #scenario-9}
 ### Request {.govuk-heading-s}
 
 Method: `GET`
@@ -593,7 +593,7 @@ Status: `200`
 
 <section>
 
-## Scenario 10: Requisitioned notification {.govuk-heading-m #scenario-10}
+## Scenario 10: Application requisitioned notification {.govuk-heading-m #scenario-10}
 ### Request {.govuk-heading-s}
 
 Method: `GET`
