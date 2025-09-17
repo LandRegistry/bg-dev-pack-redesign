@@ -224,14 +224,14 @@ data-module="govuk-service-navigation"
             to collect the data commonly found in this field. These include:</li>
         <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-3">
             <li>ROE-ID (Registration of Overseas Entity ID) - this should be attached as a document of type
-                <code class="x-govuk-code x-govuk-code--inline">EVIDENCE</code> for the relevant transaction</li>
+                <code class="app-code app-code--inline">EVIDENCE</code> for the relevant transaction</li>
             <li>company charges certificate – a new boolean field, <code
-                    class="x-govuk-code x-govuk-code--inline">conveyancers_certificate</code>, has been added to capture this
-                information. This value must be provided when a <code class="x-govuk-code x-govuk-code--inline">CERT_REG_CH</code>
+                    class="app-code app-code--inline">conveyancers_certificate</code>, has been added to capture this
+                information. This value must be provided when a <code class="app-code app-code--inline">CERT_REG_CH</code>
                 document is uploaded</li>
             <li>name variation – names are now required to be an exact match</li>
             <li>cover letter – should now be uploaded as a document of type <code
-                    class="x-govuk-code x-govuk-code--inline">EVIDENCE</code> with the relevant transaction</li>
+                    class="app-code app-code--inline">EVIDENCE</code> with the relevant transaction</li>
             <li>request to merge or close leasehold titles – the appropriate transaction type should now be
                 selected for this purpose</li>
         </ul>
@@ -388,6 +388,38 @@ data-module="govuk-service-navigation"
               </li>
               <li class="app-step-nav__list-item js-list-item ">
                 <a data-position="4.3" class="app-step-nav__link js-link" href="/apis/notifications/0.3/test-stubs">Test
+                  stubs </a>
+              </li>
+            </ol>
+          </div>
+        </li>
+        <li class="app-step-nav__step js-step" id="notifications-api">
+          <div class="app-step-nav__header js-toggle-panel" data-position="5">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 5<span
+                      class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+              <span class="js-step-title">
+                Download a document API
+              </span>
+            </h2>
+          </div>
+          <div class="app-step-nav__panel js-panel" id="step-panel-notifications-api">
+            <ol class="app-step-nav__list " data-length="3">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.1" class="app-step-nav__link js-link" href="/apis/download-a-document/1.0">Overview</a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.2" class="app-step-nav__link js-link"
+                  href="/apis/download-a-document/1.0/technical-guide">Technical guide </a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.3" class="app-step-nav__link js-link" href="/apis/download-a-document/1.0/test-stubs">Test
                   stubs </a>
               </li>
             </ol>

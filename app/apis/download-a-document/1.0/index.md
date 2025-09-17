@@ -1,23 +1,22 @@
 ---
-title: Submit an application API
+title: Download a document API
 layout: page.njk
+versioned: true
 
 noheader: true
-versioned: true
 
 breadcrumb: false
 eleventyNavigation:
-    key: Submit an application API v0.3
-    parent: Submit an application API
-    hide: true
+    key: download-a-document-api
+    parent: apis
 ---
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Submit an application API
+      Download a document API
     </h1>
-    <p class="govuk-body-l">Use this service to provide data to HMLR for updating the register.</p>
+    <p class="govuk-body-l">Use this service to download documents that have been created by HM Land Registry for your consumption.</p>
     <div class="govuk-warning-text">
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
@@ -25,15 +24,17 @@ eleventyNavigation:
         These API endpoints are not currently live.
       </strong>
     </div>
+    <hr class="govuk-section-break govuk-section-break--visible">
   </div>
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-0">
-    <div class="bg-version-grid">
-        <div>
-            <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and status</h2>
-        </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
+
+  <div class="bg-version-grid">
+    <div>
+        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and status</h2>
+    </div>
 {% from "govuk/components/select/macro.njk" import govukSelect %}{% from "govuk/components/button/macro.njk" import govukButton %}{{ govukSelect({
   id: "version",
   name: "version",
@@ -42,8 +43,8 @@ eleventyNavigation:
       classes: "govuk-visually-hidden"
   },
   items: [{
-      value: "0.3",
-      text: "v0.3 (latest)",
+      value: "1.0",
+      text: "v1.0 (latest)",
       selected: true
   }],
   formGroup: {
@@ -58,72 +59,66 @@ eleventyNavigation:
   }
 }) }}
   </div>
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    <section>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
+    <div>
       <h2 class="govuk-heading-m" id="overview"><br>Overview</h2>
-      <p class="govuk-body">
-        The Submit an application API will help users provide the necessary data to HMLR for updating the register. This
-        API is asynchronous, returning a unique ID for the submission request which can be used when fetching the
-        application status.</p>
-      <p class="govuk-body">This API supports the following application types:</p>
+      <p class="govuk-body">The Download a document API provides a way to download documents that have been created by HM Land Registry for your consumption.</p>
+      <p class="govuk-body">This API has one endpoint:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>Register update</li>
-        <li>Transfer of part</li>
-        <li>Dipositionary first lease (includes new lease and lease extension)</li>
-        <li>Removing a default Form A restriction (JP1)</li>
+        <li><code class="app-code app-code--inline">`GET /v0/documents/{download_id}`</code> - get the binary content of the document.</li>
       </ul>
-      <p class="govuk-body">The data in the request content contains information about:</p>
+      <p class="govuk-body">You may obtain a <code class="app-code app-code--inline">`download_id`</code> from any of the following:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>Addresses</li>
-        <li>Documents</li>
-        <li>Parties</li>
-        <li>Transactions</li>
-        <li>Titles</li>
+        <li>Completion notifications</li>
+        <li>Cancellation notifications</li>
+        <li>Requisition correspondence notifications</li>
+        <li>The <code class="app-code app-code--inline">`/correspondence`</code> array in an [application information](/apis/application-information) response</li>
       </ul>
-    </section>
-    <section>
+    </div>
+    <div>
       <h2 class="govuk-heading-m" id="view-the-technical-guide">View the Technical guide</h2>
       <ul class="govuk-list">
         <li>
-          <a class="govuk-body govuk-link" href="/apis/submit-an-application/0.3/technical-guide">Technical guide</a>
+          <a class="govuk-body govuk-link" href="./technical-guide">Technical guide</a>
         </li>
       </ul>
-    </section>
-    <section>
+    </div>
+    <div>
       <h2 class="govuk-heading-m" id="view-the-api-specification">View the API specification</h2>
       <ul class="govuk-list">
         <li>
           <a class="govuk-body govuk-link"
-            href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Submit-an-application-API"
+            href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Notifications-API"
             rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
         </li>
       </ul>
-    </section>
-    <section>
+    </div>
+    <br>
+    <div>
       <h3 class="govuk-heading-m" id="how-the-service-api-works">How the API works</h3>
       <div class="govuk-!-padding-bottom-3"></div>
-      <a target="_blank" href="/assets/images/SubmitAnApplication.png"><img src="/assets/images/SubmitAnApplication.png"
-        alt="A diagram showing how the Submit an application API works."></a>
-      <div class="govuk-!-padding-bottom-3"></div>
-      <br>
-      <p class="govuk-body">This diagram demonstrates how the Send a document API works to support users.</p>
-      <p class="govuk-body">When a user submits information to update the register, the HMLR system will respond by sending a unique application ID. Users can use this ID to receive information about the status of their application.</p>
-    </section>
-    <br>
-    <section>
+      <p>put an image here</p>
+    <div class="govuk-!-padding-bottom-3"></div>
+    <p class="govuk-body">This diagram demonstrates how the download a document API works.</p>
+    <p class="govuk-body">A user may obtain a <code class="app-code app-code--inline">`download_id`</code> from either a notification or application information.</p>
+    <p class="govuk-body">The user may then use that `download_id` in their request to <code class="app-code app-code--inline">`GET /v0/documents/{download_id}`</code> to obtain the document binary.</p>
+    <div class="govuk-!-padding-bottom-3"></div>
+    <div>
       <h3 class="govuk-heading-m" id="how-to-test-this-service-api">How to test this API</h3>
-      <p class="govuk-body">HMLR has created a test environment for the Submit an application API. We’ve also provided example code to demonstrate what you should expect when developing your own services.</p>
+      <p class="govuk-body">HMLR has created a test environment for the Download a document API. We’ve also provided example code to demonstrate what you should expect when developing your own services.</p>
       <ul class="govuk-list">
         <li>
-          <p class="govuk-body"><a class="govuk-body govuk-link" href="/apis/submit-an-application/0.3/test-stubs">View
-              Submit an application test stubs</a>.</p>
+          <p class="govuk-body"><a class="govuk-body govuk-link" href="./test-stubs">View
+              Download a document test stubs</a>.</p>
         </li>
       </ul>
       <div class="govuk-inset-text">Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed.</div>
       <p class="govuk-body">For general testing guidance, visit our <a class="govuk-body govuk-link"
           href="/a-guide-to-testing">guide to testing</a>.</p>
-    </section>
+    </div>
   </div>
+  </div>
+
   <div class="govuk-grid-column-one-third">
     <aside class="related-items" role="complementary">
       <h2 class="govuk-heading-m" id="related-apis">
@@ -142,18 +137,13 @@ eleventyNavigation:
             </a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/application-information">
-              Application information
+            <a class="govuk-body govuk-link" href="/apis/submit-an-application">
+              Submit an application
             </a>
           </li>
           <li>
             <a class="govuk-body govuk-link" href="/apis/notifications">
               Notifications
-            </a>
-          </li>
-          <li>
-            <a class="govuk-body govuk-link" href="/apis/download-a-document">
-              Download a document
             </a>
           </li>
           <li>

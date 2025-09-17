@@ -169,6 +169,11 @@ eleventyNavigation:
             </a>
           </li>
           <li>
+            <a class="govuk-body govuk-link" href="/apis/download-a-document">
+              Download a document
+            </a>
+          </li>
+          <li>
             <a class="govuk-body govuk-link govuk-!-font-weight-bold" href="/find-a-service-api">
               More <span class="govuk-visually-hidden">in Subsection</span>
             </a>

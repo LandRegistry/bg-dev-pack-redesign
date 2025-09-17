@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template govuk-template--rebranded">
   <head>
     <meta charset="utf-8">
-    <title>Application information API Technical guide - HM Land Registry Developer Pack</title>
+    <title>Additional attachments and reply API test stubs - HM Land Registry Developer Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="/assets/application.css">
 
 
-  <meta property="og:title" content="Application information API Technical guide">
-<meta property="og:description" name="description" content="Use this service to get information about a specific application.">
+  <meta property="og:title" content="Additional attachments and reply API test stubs">
+
 <script src="/assets/script.js"></script><script>
     function setVersion() {
         let version = document.getElementById('version').value;
@@ -131,13 +131,13 @@ data-module="govuk-service-navigation"
   <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
   <ul class="x-govuk-sub-navigation__section">
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="#how-to-use-the-application-information-api">How to use the Application information API</a>
+      <a class="x-govuk-sub-navigation__link" href="#scenario-1">Scenario 1: Information of applicaiton with single charge</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="#validation-rules">Validation rules</a>
+      <a class="x-govuk-sub-navigation__link" href="#scenario-2">Scenario 2: Information of application with single transfer</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="#example-requests-and-responses">Example requests and responses</a>
+      <a class="x-govuk-sub-navigation__link" href="#scenario-3">Scenario 3: Information of application with level 2 validation errors</a>
     </li>
   </ul>
 </nav>
@@ -148,7 +148,7 @@ data-module="govuk-service-navigation"
 
 
 <header class="app-document-header">
-  <h1 class="govuk-heading-xl">Application information API Technical guide</h1><p class="govuk-body-l">Use this service to get information about a specific&nbsp;application.</p>
+  <h1 class="govuk-heading-xl">Additional attachments and reply API test stubs</h1>
 </header>
 
 <div class="govuk-warning-text">
@@ -181,69 +181,71 @@ data-module="govuk-service-navigation"
 </div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<div class="app-prose-scope"><section>
-<h2 class="govuk-heading-m" id="how-to-use-the-application-information-api">How to use the Application information API</h2>
-<p class="govuk-body">The Application information API is used to get detailed information about a specific application, using the <code class="app-code app-code--inline">application_request_id</code> returned by the Submit an application API request.</p>
-<p class="govuk-body">The status of an application can currently be one of the following:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>
-    <code class="app-code app-code--inline">VALIDATING</code> - HM Land Registry is still processing the application, and it has not yet been added to the day list
-  </li>
-  <li>
-    <code class="app-code app-code--inline">VALIDATION_FAILED</code> - The application has not been added to the day list due to errors during validation. The errors found are included in the errors section of the response
-  </li>
-  <li>
-    <code class="app-code app-code--inline">ACCEPTED_AWAITING_PRIORITY</code> - The application has passed validation but has not yet been added to the day list as it is currently closed. The application will be added to the day list and moved to an <code class="app-code app-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> state when the day list reopens
-  </li>
-  <li>
-    <code class="app-code app-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> - The application has been accepted onto the day list, and has priority
-  </li>
-  <li>
-    <code class="app-code app-code--inline">SYSTEM_ERROR</code> - The application has not been added to the day list due to an HMLR system error. The request should be retried, or the support team contacted
-  </li>
-</ul>
-<p class="govuk-body">This API will always return an HTTP 200 response for a valid request, regardless of the status of the application.</p>
-</section>
+<div class="app-prose-scope"><p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway
+  APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see
+  when developing your own services.</p>
+<p class="govuk-body">Base URL: <code class="x-govuk-code x-govuk-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="validation-rules">Validation rules</h2>
-<p class="govuk-body">There are no validation rules for implementing this API.</p>
-</section>
-<section>
-<h2 class="govuk-heading-m" id="example-requests-and-responses">Example requests and responses</h2>
-<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - VALIDATING status</h3>
+<h3 id="scenario-1" class="govuk-heading-m">Scenario 1: Information of applicaiton with single charge</h2>
+<h3 class="govuk-heading-s">Request</h3>
+<p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/applications/b3ac19be-2b6d-4b8a-971c-e758b0e8e790/information</code></p>
+<p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
+<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;validating&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span>
-  <span class="app-code__punctuation">}</span>
-<span class="app-code__punctuation">}</span>
-</code></pre>
-
-</div>
-<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - ACCEPTED_PRIORITY_PROTECTED status</h3>
-<div class="code-wrapper">
-<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
-  Copy code
-</button>
-<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
-  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;b3ac19be-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;AB1234&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-09-25T18:18:49.478Z&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;warnings&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
-      <span class="app-code__string">&quot;You must upload document X&quot;</span>
-    <span class="app-code__punctuation">]</span>
+    <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-09-25T18:18:49Z&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;A123AAA&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span>
   <span class="app-code__punctuation">}</span>
 <span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - VALIDATION_FAILED status</h3>
+</section>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<section>
+<h3 id="scenario-2" class="govuk-heading-m">Scenario 2: Information of application with single transfer</h2>
+<h3 class="govuk-heading-s">Request</h3>
+<p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/applications/2563940e-ae95-4e7e-9b33-49a6571abdf6/information</code></p>
+<p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
+<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2563940e-ae95-4e7e-9b33-49a6571abdf6&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-09-25T18:18:49Z&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;B123BBB&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<section>
+<h3 id="scenario-3" class="govuk-heading-m">Scenario 3: Information of application with level 2 validation errors</h2>
+<h3 class="govuk-heading-s">Request</h3>
+<p class="govuk-body">Method: <code class="x-govuk-code x-govuk-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="x-govuk-code x-govuk-code--inline">/v0/applications/3be62ad3-c542-452d-975e-6cd18d77196f/information</code></p>
+<p class="govuk-body">Headers: <code class="x-govuk-code x-govuk-code--inline">Authorization: &ltany-value&gt</code></p>
+<h3 class="govuk-heading-s">Response</h3>
+<p class="govuk-body">Status: <code class="x-govuk-code x-govuk-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -251,34 +253,34 @@ data-module="govuk-service-navigation"
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
     <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;VALIDATION_FAILED&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
-      <span class="app-code__punctuation">{</span>
-        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;OC018&quot;</span><span class="app-code__punctuation">,</span>
-        <span class="app-code__attr">&quot;detail&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Failed to get document &#x27;00001&#x27;.&quot;</span><span class="app-code__punctuation">,</span>
-        <span class="app-code__attr">&quot;pointer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span>
-      <span class="app-code__punctuation">}</span>
-    <span class="app-code__punctuation">]</span>
+    <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;mdref-on-record&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;detail&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MD Ref MD007A does not exist on record&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;pointer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;lender-name-matches-records&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;detail&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MD Ref MD007A not found on record&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;pointer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;all-mandatory-documents-provided&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;detail&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Mandatory documents missing for transactions of type [T]&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;pointer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;transferee-has-representation-type&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;detail&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Transferee Transferee must have a representation type&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;pointer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;warnings&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3be62ad3-c542-452d-975e-6cd18d77196f&quot;</span>
   <span class="app-code__punctuation">}</span>
 <span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s"><code>GET /v0/applications/{id}/status</code> - ACCEPTED_AWAITING_PRIORITY status</h3>
-<div class="code-wrapper">
-<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
-  Copy code
-</button>
-<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
-  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;accepted_awaiting_priority&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span>
-  <span class="app-code__punctuation">}</span>
-<span class="app-code__punctuation">}</span>
-</code></pre>
-
+</section>
 </div>
-</section></div>
 
 
 
@@ -289,7 +291,7 @@ data-module="govuk-service-navigation"
     <li><a class="govuk-link" href="/apis/submit-an-application">Submit an application API</a></li>
     <li><a class="govuk-link" href="/apis/notifications">Notifications API</a></li>
     <li><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the land register API</a></li>
-    <li><a class="govuk-link" href="/apis/download-a-document">Download a document API</a></li>
+    <li><a class="govuk-link" href="/apis/download-a-document">Download a document</a></li>
 </ul>
 
 </div>

@@ -35,6 +35,8 @@ relatedAPIs:
     href: /apis/notifications
   - text: Submit an application to change the land register API
     href: /apis/submit-an-application-to-change-the-land-register
+  - text: Download a document API
+    href: /apis/download-a-document
 ---
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/table/macro.njk" import govukTable %}
