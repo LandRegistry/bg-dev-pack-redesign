@@ -124,6 +124,13 @@ data-module="govuk-service-navigation"
 <li>the priority of the application, <code class="app-code app-code--inline">priority_timestamp</code>, once accepted</li>
 <li>any errors that prevented application submission</li>
 <li>any warnings that did not prevent submission but need to be addressed before a caseworker can process the application (otherwise a requisition may occur)</li>
+<li>a list of correspondence records associated with the application including:
+<ul class="govuk-list govuk-list--bullet">
+<li>Completion documents</li>
+<li>Cancellation documents</li>
+<li>Requsition documents</li>
+</ul>
+</li>
 </ul>
 <p class="govuk-body">This API can be used to get more information after receiving a notification indicating the application has changed. For information about which notifications will be available, visit the notifications section of the <a href="/apis/submit-an-application" class="govuk-link">Submit an application</a> API page.</p>
 </section>

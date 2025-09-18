@@ -192,6 +192,8 @@ data-module="govuk-service-navigation"
 <li><code class="app-code app-code--inline">ACCEPTED_AWAITING_PRIORITY</code> - The application has passed validation but has not yet been added to the day list as it is currently closed. The application will be added to the day list and moved to an <code class="app-code app-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> state when the day list reopens</li>
 <li><code class="app-code app-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> - The application has been accepted onto the day list, and has priority</li>
 <li><code class="app-code app-code--inline">SYSTEM_ERROR</code> - The application has not been added to the day list due to an HMLR system error. The request should be retried, or the support team contacted</li>
+<li><code class="app-code app-code--inline">CANCELLED</code> - The application has been cancelled. Futher information should be available in the correspondence documents.</li>
+<li><code class="app-code app-code--inline">COMPLETED</code> - The application has been completed. Further information should be available in correspondence documents.</li>
 </ul>
 <p class="govuk-body">This API will always return an HTTP 200 response for a valid request, regardless of the status of the application.</p>
 </section>

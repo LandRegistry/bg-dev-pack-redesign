@@ -58,6 +58,8 @@ The status of an application can currently be one of the following:
 - `ACCEPTED_AWAITING_PRIORITY` - The application has passed validation but has not yet been added to the day list as it is currently closed. The application will be added to the day list and moved to an `ACCEPTED_PRIORITY_PROTECTED` state when the day list reopens
 - `ACCEPTED_PRIORITY_PROTECTED` - The application has been accepted onto the day list, and has priority
 - `SYSTEM_ERROR` - The application has not been added to the day list due to an HMLR system error. The request should be retried, or the support team contacted
+- `CANCELLED` - The application has been cancelled. Futher information should be available in the correspondence documents.
+- `COMPLETED` - The application has been completed. Further information should be available in correspondence documents.
 
 This API will always return an HTTP 200 response for a valid request, regardless of the status of the application.
 
