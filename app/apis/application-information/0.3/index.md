@@ -43,7 +43,7 @@ The Application information API is used to get detailed information about a spec
 - any errors that prevented application submission
 - any warnings that did not prevent submission but need to be addressed before a caseworker can process the application (otherwise a requisition may occur)
 
-This API can be used to get more information after receiving a notification indicating the application has changed. For information about which notifications will be available, visit the notifications section of the [Submit an application](/apis/submit-an-application) API page.
+This API can be used to get more information after receiving a notification indicating the application has changed. For information about which notifications will be available, visit the notifications section of the [Submit an application](/apis/submit-an-application/0.3/technical-guide) API page.
 
 </section>
 
