@@ -193,11 +193,15 @@ data-module="govuk-service-navigation"
 <li><code class="app-code app-code--inline">APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code> - the application has been accepted and is queuing for the day list</li>
 <li><code class="app-code app-code--inline">APPLICATION_VALIDATION_FAILED</code> - the application submission has failed</li>
 <li><code class="app-code app-code--inline">APPLICATION_ERROR</code> - the application has not been added to the day list due to an error</li>
+<li><code class="app-code app-code--inline">application.correspondence-despatched</code> - the application has had a correspondence raised against it</li>
+<li><code class="app-code app-code--inline">application.cancelled</code> - the application has been cancelled</li>
+<li><code class="app-code app-code--inline">application.completed</code> - the application has been completed</li>
 </ul>
 <p class="govuk-body">The notifications will contain the following information:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li><code class="app-code app-code--inline">APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code>, <code class="app-code app-code--inline">APPLICATION_VALIDATION_FAILED</code> and <code class="app-code app-code--inline">APPLICATION_ERROR</code> will contain the updated application status only</li>
 <li><code class="app-code app-code--inline">APPLICATION_ACCEPTED_ON_DAY_LIST</code> will contain updated application status, the priority of the application and the HMLR reference for the accepted application</li>
+<li><code class="app-code app-code--inline">application.correspondence-despatched</code>, <code class="app-code app-code--inline">application.cancelled</code> and <code class="app-code app-code--inline">application.completed</code> will contain a list of correspondence documents that can be downloaded using the <a href="/apis/download-a-document" class="govuk-link">download a document API</a>.</li>
 </ul>
 <p class="govuk-body">To get more detailed information about an application that caused the notification, use the <a href="/apis/application-information" class="govuk-link">Application information API</a>. For example, after receiving an <code class="app-code app-code--inline">APPLICATION_VALIDATION_FAILED</code> notification, use the Application information API to get a list of the validation errors.</p>
 <h3 class="govuk-heading-s" id="schemas" tabindex="-1" class="govuk-heading-m">Schemas</h3>
@@ -207,6 +211,9 @@ data-module="govuk-service-navigation"
 <li><a href="https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-awaiting-priority.json" class="govuk-link"><code class="app-code app-code--inline">APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code></a></li>
 <li><a href="https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/validation-failed.json" class="govuk-link"><code class="app-code app-code--inline">APPLICATION_VALIDATION_FAILED</code></a></li>
 <li><a href="https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/system-error.json" class="govuk-link"><code class="app-code app-code--inline">APPLICATION_ERROR</code></a></li>
+<li><code class="app-code app-code--inline">application.correspondence-despatched</code> (WIP)</li>
+<li><code class="app-code app-code--inline">application.cancelled</code> (WIP)</li>
+<li><code class="app-code app-code--inline">application.completed</code> (WIP)</li>
 </ul>
 </section>
 <section id="validation-rules">
