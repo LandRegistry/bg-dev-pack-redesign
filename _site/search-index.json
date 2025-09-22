@@ -91,13 +91,6 @@
     "tokens": "overview application information api used get detailed about specific this includes status request id accepted hmlr reference once previously known abr priority timestamp any errors that prevented submission warnings did prevent need addressed before caseworker can process otherwise requisition may occur more after receiving notification indicating changed which notifications will available visit section submit page view technical guide specification web version opens new tab how works interaction diagram demonstrates support users using their unique provided via user examples type are listed system respond with relevant also by informing been onto day list failed validation state submitted when starts there several potential outcomes each trigger different response include passed added awaiting closed reopens case indicate whether error occurred must correct resubmit test created environment ve example code demonstrate what should expect developing your own services stubs please note plans release sandbox developers future exact date confirmed general testing guidance our"
   },
   {
-    "title": "Application information API Technical guide",
-    "description": "Use this service to get information about a specific application.",
-    "section": "Application Information API v0.3",
-    "url": "/apis/application-information/0.3/technical-guide/",
-    "tokens": "how use application information api used get detailed about specific using request id returned by submit status can currently one following validating hm land registry still processing yet been added day list validation failed due errors during found are included section response accepted awaiting priority passed closed will moved protected state when reopens onto system error hmlr should retried support team contacted this always return http 200 valid regardless rules there implementing example requests responses v0 applications copy code data 3e4f6da2 ada7 4081 957c b23542466715 correspondence warnings type oc018 detail document 00001 pointer null reference ab123fc timestamp 2024 09 25t18 18 49 478z must upload x"
-  },
-  {
     "title": "Application Information API test stubs",
     "section": "Application Information v0.3",
     "url": "/apis/application-information/0.3/test-stubs/",
@@ -149,12 +142,6 @@
     "section": "Notifications API v0.3",
     "url": "/apis/notifications/0.3/technical-guide/",
     "tokens": "how use notifications api recieve get request fetch all takes following url query parameters which are optional created after only retrieve with timestamp this date before status specific either new acknowledged occured event notification type subject additional provider filter that match provided limit maximum number return single response related applications submitted by business unit id will returned delivery least once meaning time may result one more e duplicate same events have datetime field can used locate ignore duplicates when receiving continue endpoint until they acknowledge been processed your system should send list ids post change those validation rules there implementing example requests responses examples payloads produced during application submission view submit v0 2025 01 01t00 00 http 1 copy code data 3fa85f64 5717 4562 b3fc 2c963f66afa6 03 06t14 32 55 295z payload schema https com string additionalprop1 additionalprop2 additionalprop3"
-  },
-  {
-    "title": "Notifications API test stubs",
-    "section": "Notifications API v0.3",
-    "url": "/apis/notifications/0.3/test-stubs/",
-    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 get all notifications request method endpoint v0 headers authorization any value response status 200 copy data notification id created datetime 2024 01 01t12 00 000 event payload schema github io bgtechdoc vcad schemas v1 accepted priority protected json type application day list subject land register b3ac19be 2b6d 4b8a 971c e758b0e8e790 additional provider filter subunit1 acknowledged reference abc456a 09 20t09 56 46 2563940e ae95 4e7e 9b33 49a6571abdf6 new abc456b validation failed 3be62ad3 c542 452d 975e 6cd18d77196f 2 3 4 with invalid date after 2020 01t00 before 2015 400 problems registry smartbear com bad title detail parameter cannot instance 5 acknowledge post 87654321 12345678 found 6 queued awaiting 45454545 7 system error 8 cancelled uuid ending can bg dev pack redesign correspondence despatched a97679c9 624f 4680 ae8b 15b7 r411can null documents name cancellation letter 2025 05t08 20 04 050z download 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 9 completed cmp 28a01655 544a 48c5 9e40 4ac2 p311cmp ltr 15 281z 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 rcs registration completion sheet 319z 4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a reg updated 343z 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 early false 10 requisitioned p311app"
   },
   {
     "title": "Notifications API",
@@ -244,5 +231,18 @@
     "section": "APIs",
     "url": "/apis/application-information/",
     "tokens": "select version content"
+  },
+  {
+    "title": "Application information API Technical guide",
+    "description": "Use this service to get information about a specific application.",
+    "section": "Application Information API v0.3",
+    "url": "/apis/application-information/0.3/technical-guide/",
+    "tokens": "how use application information api used get detailed about specific using request id returned by submit status can currently one following validating hm land registry still processing yet been added day list validation failed due errors during found are included section response accepted awaiting priority passed closed will moved protected state when reopens onto system error hmlr should retried support team contacted this always return http 200 valid regardless rules there implementing example requests responses v0 applications copy code data 3e4f6da2 ada7 4081 957c b23542466715 correspondence warnings type oc018 detail document 00001 pointer null reference ab123fc timestamp 2024 09 25t18 18 49 478z must upload x"
+  },
+  {
+    "title": "Notifications API test stubs",
+    "section": "Notifications API v0.3",
+    "url": "/apis/notifications/0.3/test-stubs/",
+    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 get all notifications request method endpoint v0 headers authorization any value response status 200 copy data notification id created datetime 2024 01 01t12 00 000 event payload schema github io bgtechdoc vcad schemas v1 accepted priority protected json type application day list subject land register b3ac19be 2b6d 4b8a 971c e758b0e8e790 additional provider filter subunit1 acknowledged reference abc456a 09 20t09 56 46 2563940e ae95 4e7e 9b33 49a6571abdf6 new abc456b validation failed 3be62ad3 c542 452d 975e 6cd18d77196f 2 3 4 with invalid date after 2020 01t00 before 2015 400 problems registry smartbear com bad title detail parameter cannot instance 5 acknowledge post 87654321 12345678 found 6 queued awaiting 45454545 7 system error 8 cancelled uuid ending can bg dev pack redesign correspondence despatched a97679c9 624f 4680 ae8b 15b7 r411can null documents name cancellation letter 2025 05t08 20 04 050z download 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 9 completed cmp 28a01655 544a 48c5 9e40 4ac2 p311cmp ltr 15 281z 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 rcs registration completion sheet 319z 4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a reg updated 343z 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 early false 10 requisitioned p311app"
   }
 ]

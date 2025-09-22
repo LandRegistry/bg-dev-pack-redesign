@@ -74,8 +74,8 @@ This API can be used to get more information after receiving a notification indi
 
 ### Interaction {.govuk-heading-s}
 
-<a target="_blank" href="/assets/images/ApplicationInformation_interaction_diagram.png">
-  <img src="/assets/images/ApplicationInformation_interaction_diagram.png" alt="A diagram showing the interaction of the Application Information API.">
+<a target="_blank" href="/assets/images/application-information/1.0/interaction-diagram.drawio.svg">
+  <img src="/assets/images/application-information/1.0/interaction-diagram.drawio.svg" alt="A diagram showing the interaction of the Application Information API.">
 </a>
 
 This diagram demonstrates how the Application information API works to support users.
@@ -85,8 +85,8 @@ Using their unique application ID (provided via the Submit an application API), 
 The HMLR system will respond with the relevant information. The system may also respond by informing users that their application has been accepted onto the day list or if it has failed validation.
 
 ### State diagram {.govuk-heading-s}
-<a markdown="1" target="_blank" href="/assets/images/ApplicationInformation_State_diagram.png">
-  <img alt="A diagram showing how the Application Information API works." src="/assets/images/ApplicationInformation_State_diagram.png">
+<a markdown="1" target="_blank" href="/assets/images/application-information/1.0/state-diagram.drawio.svg">
+  <img alt="A diagram showing how the Application Information API works." src="/assets/images/application-information/1.0/state-diagram.drawio.svg">
 </a>
 
 The state diagram demonstrates how the validation process works once an application has been submitted.
