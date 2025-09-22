@@ -80,13 +80,13 @@ To get more detailed information about an application that caused the notificati
 
 JSON schemas can be found below:
 
-- [`APPLICATION_ACCEPTED_ON_DAY_LIST`](https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json)
-- [`APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST`](https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-awaiting-priority.json)
-- [`APPLICATION_VALIDATION_FAILED`](https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/validation-failed.json)
-- [`APPLICATION_ERROR`](https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/system-error.json)
-- `application.correspondence-despatched` (WIP)
-- `application.cancelled` (WIP)
-- `application.completed` (WIP)
+- [`APPLICATION_ACCEPTED_ON_DAY_LIST`](/schemas/v1/application/accepted-priority-protected.json)
+- [`APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST`](/schemas/v1/application/accepted-awaiting-priority.json)
+- [`APPLICATION_VALIDATION_FAILED`](/schemas/v1/application/application-error.json)
+- [`APPLICATION_ERROR`](/schemas/v1/application/validation-error.json)
+- [`application.correspondence-despatched`](/schemas/v1/application/correspondence-despatched.json)
+- [`application.cancelled`](/schemas/v1/application/cancelled.json)
+- [`application.completed`](/schemas/v1/application/completed.json)
 </section>
 
 <section id="validation-rules">
