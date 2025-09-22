@@ -14,6 +14,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     'node_modules/@hmlr/frontend/hmlr/assets': 'hmlrassets',
     'app/assets': 'assets',
+    'app/schemas': 'schemas',
     'node_modules/@govuk-prototype-kit/step-by-step/javascripts': 'assets/js'
   })
 
