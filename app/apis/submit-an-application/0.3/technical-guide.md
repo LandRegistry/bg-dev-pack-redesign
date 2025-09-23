@@ -2323,7 +2323,6 @@ Bypassing validation can only be done for specific rules, and each rule is only 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">identity-evidence-has-type</code></td>
-          class="app-code app-code--inline">identity-evidence-has-type</code></td>
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
     </tr>
@@ -2777,7 +2776,8 @@ A transfer value must be provided when consideration type is <code class="app-co
   </tbody>
 </table>
 
-h3 class="govuk-heading-s">Document validation</h3>
+### Document validation {.govuk-heading-s}
+
 <p class="govuk-body">The file size of documents must be below 40mb (but must not have a zero size). Files must be either PDF, GIF, TIFF or JPG format. The file must not be encrypted or password protected. If a TIFF file, it must be a valid TIFF file. </p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Document validation
