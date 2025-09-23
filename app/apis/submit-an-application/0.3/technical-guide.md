@@ -82,8 +82,8 @@ JSON schemas can be found below:
 
 - [`APPLICATION_ACCEPTED_ON_DAY_LIST`](/schemas/v1/application/accepted-priority-protected.json)
 - [`APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST`](/schemas/v1/application/accepted-awaiting-priority.json)
-- [`APPLICATION_VALIDATION_FAILED`](/schemas/v1/application/application-error.json)
-- [`APPLICATION_ERROR`](/schemas/v1/application/validation-error.json)
+- [`APPLICATION_VALIDATION_FAILED`](/schemas/v1/application/validation-error.json)
+- [`APPLICATION_ERROR`](/schemas/v1/application/application-error.json)
 - [`application.correspondence-despatched`](/schemas/v1/application/correspondence-despatched.json)
 - [`application.cancelled`](/schemas/v1/application/cancelled.json)
 - [`application.completed`](/schemas/v1/application/completed.json)
@@ -2285,53 +2285,39 @@ Bypassing validation can only be done for specific rules, and each rule is only 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">all-proprietors-matched-to-borrowers</code></td>
-          class="app-code app-code--inline">all-proprietors-matched-to-borrowers</code></td>
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">DISAGREE_WITH_REGISTER</code><br><code
-          class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
           class="app-code app-code--inline">DISAGREE_WITH_REGISTER</code><br><code
           class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">lender-name-matches-records</code></td>
-          class="app-code app-code--inline">lender-name-matches-records</code></td>
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
           class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">mdref-on-record</code></td>
-          class="app-code app-code--inline">mdref-on-record</code></td>
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
           class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">all-proprietors-matched-to-transferors</code></td>
-          class="app-code app-code--inline">all-proprietors-matched-to-transferors</code></td>
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">DISAGREE_WITH_REGISTER</code><br><code
-          class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
           class="app-code app-code--inline">DISAGREE_WITH_REGISTER</code><br><code
           class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">transferee-has-a-valid-address</code></td>
-          class="app-code app-code--inline">transferee-has-a-valid-address</code></td>
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
           class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">all-mandatory-documents-provided</code></td>
-          class="app-code app-code--inline">all-mandatory-documents-provided</code></td>
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
           class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
     </tr>
     <tr class="govuk-table__row">
@@ -2340,38 +2326,29 @@ Bypassing validation can only be done for specific rules, and each rule is only 
           class="app-code app-code--inline">identity-evidence-has-type</code></td>
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
-          class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">required-identity-evidence-provided</code></td>
-          class="app-code app-code--inline">required-identity-evidence-provided</code></td>
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
           class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">unique-lender</code></td>
-          class="app-code app-code--inline">unique-lender</code></td>
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
           class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">no-duplicate-lender-refs-on-charge </code></td>
-          class="app-code app-code--inline">no-duplicate-lender-refs-on-charge </code></td>
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
           class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">address-for-service-postcode-exists </code></td>
-          class="app-code app-code--inline">address-for-service-postcode-exists </code></td>
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
           class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code></td>
     </tr>
   </tbody>
@@ -2424,7 +2401,6 @@ Bypassing validation can only be done for specific rules, and each rule is only 
   <li>Details entered</li>
 </ol>
 <p class="govuk-body">For option three, details must be entered in the <code class="app-code app-code--inline">additional_provisions</code> field.</p>
-<p class="govuk-body">For option three, details must be entered in the <code class="app-code app-code--inline">additional_provisions</code> field.</p>
 <p class="govuk-body">Error types for this validator will be provided at a later date.</p>
 <h3 class="govuk-heading-s">Address for service validation</h3>
 <p class="govuk-body">Lenders and transferees must have an address for service option of “provided address”, with the exception of lenders which are only on a discharge transaction, or which appear on charge transactions with an MDRef.</p>
@@ -2444,21 +2420,13 @@ Bypassing validation can only be done for specific rules, and each rule is only 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">address-for-service-postcode-exists</code></td>
-          class="app-code app-code--inline">address-for-service-postcode-exists</code></td>
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">Postcode provided does not exist in our records </code></td>
           class="app-code app-code--inline">Postcode provided does not exist in our records </code></td>
     </tr>
       <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">address-for-service-option-is-valid</code></td>
-          class="app-code app-code--inline">address-for-service-option-is-valid</code></td>
       <td class="govuk-table__cell">
-        <code class="app-code app-code--inline">Each lender party must provide an address for service option</code></br>
-        <code class="app-code app-code--inline">Each lender party must have an address for service option of PROVIDED_ADDRESS, unless an MD Ref is provided</code><br>
-        <code class="app-code app-code--inline">Each transferee party must have an address for service option of PROVIDED_ADDRESS </code> <br>
-        <code class="app-code app-code--inline">Each party must not have more than three addresses </code><br>
-        <code class="app-code app-code--inline">A party with an address for service option of PROVIDED_ADDRESS must contain at least one address of the following types: UK, OVERSEAS, PO_BOX, BFPO </code>
         <code class="app-code app-code--inline">Each lender party must provide an address for service option</code></br>
         <code class="app-code app-code--inline">Each lender party must have an address for service option of PROVIDED_ADDRESS, unless an MD Ref is provided</code><br>
         <code class="app-code app-code--inline">Each transferee party must have an address for service option of PROVIDED_ADDRESS </code> <br>
@@ -2470,7 +2438,6 @@ Bypassing validation can only be done for specific rules, and each rule is only 
     </table>
 
 <h3 class="govuk-heading-s">Applicant validation</h3>
-<p class="govuk-body">Applicant must not have a party type of <code class="app-code app-code--inline">UNKNOWN</code>.</p>
 <p class="govuk-body">Applicant must not have a party type of <code class="app-code app-code--inline">UNKNOWN</code>.</p>
 
 <table class="govuk-table">
@@ -2485,9 +2452,7 @@ Bypassing validation can only be done for specific rules, and each rule is only 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">applicant-not-unknown-type</code></td>
-          class="app-code app-code--inline">applicant-not-unknown-type</code></td>
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">Applicant must not be of type UNKNOWN</code></td>
           class="app-code app-code--inline">Applicant must not be of type UNKNOWN</code></td>
     </tr>
     </tbody>
@@ -2509,7 +2474,6 @@ Bypassing validation can only be done for specific rules, and each rule is only 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">all-proprietors-matched-to-borrowers</code></td>
-          class="app-code app-code--inline">all-proprietors-matched-to-borrowers</code></td>
       <td class="govuk-table__cell">Can apply to one of the following:<ul>
           <li>There must be at least as many borrowers as there are proprietors. There can be more, but no fewer
           </li>
@@ -2522,7 +2486,6 @@ Bypassing validation can only be done for specific rules, and each rule is only 
 </table>
 
 <h3 class="govuk-heading-s">Borrower representation validation</h3>
-<p class="govuk-body">Representation type must be provided for the borrower role type. The respresentation type must not be <code class="app-code app-code--inline">NOT-REQUIRED</code>.</p>
 <p class="govuk-body">Representation type must be provided for the borrower role type. The respresentation type must not be <code class="app-code app-code--inline">NOT-REQUIRED</code>.</p>
 <p class="govuk-body">Error types for this validator will be provided at a later date.</p>
 
@@ -2541,7 +2504,6 @@ Bypassing validation can only be done for specific rules, and each rule is only 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">transaction-has-valid-borrower</code></td>
           class="app-code app-code--inline">transaction-has-valid-borrower</code></td>
       <td class="govuk-table__cell">Sub-charge transactions or charge transactions
         unaccompanied by a transfer transaction must have a borrower</td>
@@ -2566,7 +2528,6 @@ Bypassing validation can only be done for specific rules, and each rule is only 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">charge-must-have-non-negative-value</code></td>
           class="app-code app-code--inline">charge-must-have-non-negative-value</code></td>
       <td class="govuk-table__cell">Charge value must be 0 or greater</td>
     </tr>
@@ -2594,7 +2555,6 @@ Bypassing validation can only be done for specific rules, and each rule is only 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">CHARGE-FEE</code></td>
-          class="app-code app-code--inline">CHARGE-FEE</code></td>
       <td class="govuk-table__cell">Fee for a charge transaction must be at least 2,000 pence <br>
 Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transaction </td>
     </tr>
@@ -2603,12 +2563,10 @@ Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transact
 
 <h3 class="govuk-heading-s">Company number validation</h3>
 <p class="govuk-body">For any party of type UKCompany, the data item <code class="app-code app-code--inline">company_number</code> is required, except when any of the following are true: </p>
-<p class="govuk-body">For any party of type UKCompany, the data item <code class="app-code app-code--inline">company_number</code> is required, except when any of the following are true: </p>
 <ul class="govuk-list govuk-list--bullet">
 <li>The party is being used as a lender on a transaction with a valid MDRef</li>
 <li>The party is being used as a borrower</li>
 </ul>
-<p class="govuk-body">In these cases the <code class="app-code app-code--inline">company_number</code> is optional.</p>
 <p class="govuk-body">In these cases the <code class="app-code app-code--inline">company_number</code> is optional.</p>
 
 <table class="govuk-table">
@@ -2623,7 +2581,6 @@ Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transact
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">uk-company-has-company-number</code></td>
-          class="app-code app-code--inline">uk-company-has-company-number</code></td>
       <td class="govuk-table__cell">A party with type UKCompany didn’t include a company number and it wasn’t a borrower or a lender with a valid MDRef for the transaction on which it is being used as a lender </td>
     </tr>
   </tbody>
@@ -2633,9 +2590,6 @@ Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transact
 <h3 class="govuk-heading-s">Consideration type validation</h3>
 <p class="govuk-body">For Transfer transactions, a consideration type of either Monetary Value, No Monetary Value, or
   Other must be present.</p>
-<p class="govuk-body">When consideration type is <code class="app-code app-code--inline">MONETARY_VALUE</code>, a transfer value must be present. When consideration type is <code class="app-code app-code--inline">OTHER</code>, a consideration description must be provided. </p>
-<p class="govuk-body">The consideration type must be <code class="app-code app-code--inline">MONETARY_VALUE</code> for the following transactions: T, TOSV, TSCV. </p>
-<p class="govuk-body">The consideration type must be either <code class="app-code app-code--inline">NO_MONETARY_VALUE</code> or <code class="app-code app-code--inline">OTHER</code> for the following transactions: TNV, TOSNV, TSCNV </p>
 <p class="govuk-body">When consideration type is <code class="app-code app-code--inline">MONETARY_VALUE</code>, a transfer value must be present. When consideration type is <code class="app-code app-code--inline">OTHER</code>, a consideration description must be provided. </p>
 <p class="govuk-body">The consideration type must be <code class="app-code app-code--inline">MONETARY_VALUE</code> for the following transactions: T, TOSV, TSCV. </p>
 <p class="govuk-body">The consideration type must be either <code class="app-code app-code--inline">NO_MONETARY_VALUE</code> or <code class="app-code app-code--inline">OTHER</code> for the following transactions: TNV, TOSNV, TSCNV </p>
@@ -2653,10 +2607,8 @@ Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transact
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">consideration-type-is-valid </code></td>
-          class="app-code app-code--inline">consideration-type-is-valid </code></td>
       <td class="govuk-table__cell">Transactions type was paired with an invalid consideration type  <br>
  
-A transfer value must be provided when consideration type is <code class="app-code app-code--inline">MONETARY_VALUE</code> </td>
 A transfer value must be provided when consideration type is <code class="app-code app-code--inline">MONETARY_VALUE</code> </td>
     </tr>
   </tbody>
@@ -2664,8 +2616,6 @@ A transfer value must be provided when consideration type is <code class="app-co
 
 
 <h3 class="govuk-heading-s">Conveyancers certificate validation</h3>
-<p class="govuk-body">Checks the <code class="app-code app-code--inline">conveyancers_certificate</code> field is set for any
-  document of type <code class="app-code app-code--inline">CERT_REG_CH</code>.</p>
 <p class="govuk-body">Checks the <code class="app-code app-code--inline">conveyancers_certificate</code> field is set for any
   document of type <code class="app-code app-code--inline">CERT_REG_CH</code>.</p>
 
@@ -2681,7 +2631,6 @@ A transfer value must be provided when consideration type is <code class="app-co
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">conveyancers-certificate-provided</code></td>
           class="app-code app-code--inline">conveyancers-certificate-provided</code></td>
       <td class="govuk-table__cell">Conveyancers certificate was not provided for Certificate
         of registration issued by Companies House documents</td>
@@ -2704,7 +2653,6 @@ A transfer value must be provided when consideration type is <code class="app-co
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">customer-id-exists </code></td>
           class="app-code app-code--inline">customer-id-exists </code></td>
       <td class="govuk-table__cell">The provided customer ID was not found in HMLR internal systems </td>
     </tr>
@@ -2738,14 +2686,12 @@ A transfer value must be provided when consideration type is <code class="app-co
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code class="app-code app-code--inline">declaration-of-trust</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">declaration-of-trust</code></td>
       <td class="govuk-table__cell">The trust declaration type must be provided<br><br>The details of trust must be provided where the “trust details” option was selected<br><br>The JO form must be provided where “Form JO was provided” </td>
     </tr>
   </tbody>
 </table>
 
 <h3 class="govuk-heading-s">DFL5 validation</h3>
-<p class="govuk-body">For DFL5 applications (Dispositionary first lease extension of a term) there must be at least one title with type <code class="app-code app-code--inline">LANDLORD_TITLE</code> and a single title with type <code class="app-code app-code--inline">TENANT_TITLE</code>, which is related to the tenant on the application. </p>
 <p class="govuk-body">For DFL5 applications (Dispositionary first lease extension of a term) there must be at least one title with type <code class="app-code app-code--inline">LANDLORD_TITLE</code> and a single title with type <code class="app-code app-code--inline">TENANT_TITLE</code>, which is related to the tenant on the application. </p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">DFL5 validation error types </caption>
@@ -2757,7 +2703,6 @@ A transfer value must be provided when consideration type is <code class="app-co
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">lease-extension-is-valid</code></td>
       <td class="govuk-table__cell"><code class="app-code app-code--inline">lease-extension-is-valid</code></td>
       <td class="govuk-table__cell">DFL5 transactions must contain exactly one tenant title <br><br>DFL5 transactions must contain at least one landlord titled</td>
     </tr>
@@ -2778,7 +2723,6 @@ A transfer value must be provided when consideration type is <code class="app-co
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code class="app-code app-code--inline">discharge-fee-zero</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">discharge-fee-zero</code></td>
       <td class="govuk-table__cell">Discharge transaction must have a fee of 0 </td>
     </tr>
   </tbody>
@@ -2792,11 +2736,7 @@ A transfer value must be provided when consideration type is <code class="app-co
 <p class="govuk-body">When <code
     class="app-code app-code--inline">disclosable_overriding_interests</code> is set to <code
     class="app-code app-code--inline">true</code> on any title, a <code
-    class="app-code app-code--inline">FORM_DI</code> document must be provided with the
-    class="app-code app-code--inline">disclosable_overriding_interests</code> is set to <code
-    class="app-code app-code--inline">true</code> on any title, a <code
-    class="app-code app-code--inline">FORM_DI</code> document must be provided with the
-  application.</p>
+    class="app-code app-code--inline">FORM_DI</code> document must be provided with the application.</p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Disclosable overriding interests validation
     error types</caption>
@@ -2810,7 +2750,6 @@ A transfer value must be provided when consideration type is <code class="app-co
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">di-form-required</code></td>
-          class="app-code app-code--inline">di-form-required</code></td>
       <td class="govuk-table__cell">A Disclosable Overriding Interests (DI) Form is required
         but has not been provided</td>
     </tr>
@@ -2819,7 +2758,6 @@ A transfer value must be provided when consideration type is <code class="app-co
 
 <h3 class="govuk-heading-s">Document type validation</h3>
 <p class="govuk-body">The documents mentioned in the order/submission request must have the same <code
-          class="app-code app-code--inline">DocumentType</code> as those uploaded.</p>
           class="app-code app-code--inline">DocumentType</code> as those uploaded.</p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Document type validation
@@ -2833,7 +2771,6 @@ A transfer value must be provided when consideration type is <code class="app-co
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">document-type-valid </code></td>
           class="app-code app-code--inline">document-type-valid </code></td>
       <td class="govuk-table__cell">The document type submitted was not the same as the document type uploaded  </td>
     </tr>
@@ -2854,7 +2791,6 @@ h3 class="govuk-heading-s">Document validation</h3>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">document-valid</code></td>
           class="app-code app-code--inline">document-valid</code></td>
       <td class="govuk-table__cell">This could be because the document is too large, of zero size, the wrong format, an invalid TIFF file, encrypted or password protected  </td>
     </tr>
@@ -2877,7 +2813,6 @@ h3 class="govuk-heading-s">Document validation</h3>
 <h3 class="govuk-heading-s">Identity evidence validation</h3>
 <p class="govuk-body">Identity evidence type must be provided for each party with a representation type of <code
           class="app-code app-code--inline">NOT_REPRESENTED</code> - view
-          class="app-code app-code--inline">NOT_REPRESENTED</code> - view
   <a class="govuk-body govuk-link"
     href="https://www.gov.uk/government/publications/evidence-of-identity-conveyancers/practice-guide-67-evidence-of-identity-conveyancers"
     rel="noreferrer noopener" target="_blank">Practice Guide 67 (opens in new tab)</a>.</p>
@@ -2897,7 +2832,6 @@ h3 class="govuk-heading-s">Document validation</h3>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">identity-evidence-has-type</code></td>
-          class="app-code app-code--inline">identity-evidence-has-type</code></td>
       <td class="govuk-table__cell">One of the following options must be provided for unrepresented parties:
         <ol class="govuk-list govuk-list--number">
           <li>Evidence</li>
@@ -2908,7 +2842,6 @@ h3 class="govuk-heading-s">Document validation</h3>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">required-identity-evidence-provided</code></td>
           class="app-code app-code--inline">required-identity-evidence-provided</code></td>
       <td class="govuk-table__cell">At least one HMLR identity form must be provided for each
         unrepresented party</td>
@@ -2948,7 +2881,6 @@ For the following lease transactions, there must be at least one tenant and one 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">lease-extension-has-landlord-and-tenant </code></td>
-          class="app-code app-code--inline">lease-extension-has-landlord-and-tenant </code></td>
       <td class="govuk-table__cell">The lease transaction is missing a landlord and/or tenant party </td>
     </tr>
     </tbody>
@@ -2973,19 +2905,16 @@ For the following lease transactions, there must be at least one tenant and one 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">unique-lender</code></td>
-          class="app-code app-code--inline">unique-lender</code></td>
       <td class="govuk-table__cell">Each charge should only have one lender</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">lender-name-matches-records</code></td>
           class="app-code app-code--inline">lender-name-matches-records</code></td>
       <td class="govuk-table__cell">Warning: The lender name provided in the application data must
         match that recorded for the lender in our MD reference database</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">no-duplicate-lender-refs-on-charge</code></td>
           class="app-code app-code--inline">no-duplicate-lender-refs-on-charge</code></td>
       <td class="govuk-table__cell">Lender references must be unique</td>
     </tr>
@@ -3008,7 +2937,6 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">charge-has-valid-lender</code></td>
           class="app-code app-code--inline">charge-has-valid-lender</code></td>
       <td class="govuk-table__cell">This could be due to:
       <ul class="govuk-list govuk-list--bullet"><li>no lenders on the charge application</li><li>the lender having an invalid address for service when an MD reference was not provided. At least one valid full postal address must be provided</li></ul></td>
@@ -3033,7 +2961,6 @@ For the following lease transactions, there must be at least one tenant and one 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">all-mandatory-documents-provided</code></td>
-          class="app-code app-code--inline">all-mandatory-documents-provided</code></td>
       <td class="govuk-table__cell">Each transaction must have the mandatory deed(s) or document(s)
         provided</td>
     </tr>
@@ -3053,7 +2980,6 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">mdref-on-record</code></td>
           class="app-code app-code--inline">mdref-on-record</code></td>
       <td class="govuk-table__cell">The MD reference supplied cannot be found in our database
       </td>
@@ -3082,7 +3008,6 @@ For the following lease transactions, there must be at least one tenant and one 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">address-for-service-option-is-valid</code></td>
-          class="app-code app-code--inline">address-for-service-option-is-valid</code></td>
       <td class="govuk-table__cell">The address for service option provided for the party is
         invalid</td>
     </tr>
@@ -3096,10 +3021,8 @@ For the following lease transactions, there must be at least one tenant and one 
 <li>Other conveyancer </ul>
 <p class="govuk-body">The party roles of borrower, transferor and transferee cannot have the representation type of <code
           class="app-code app-code--inline">NOT_REQUIRED</code>.</p>  
-          class="app-code app-code--inline">NOT_REQUIRED</code>.</p>  
  
 <p class="govuk-body">If the application lodger is not a conveyancer, then no parties can use the <code
-          class="app-code app-code--inline">LODGING_CONVEYANCER</code> representation type. </p>
           class="app-code app-code--inline">LODGING_CONVEYANCER</code> representation type. </p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Representation validation error
@@ -3114,9 +3037,7 @@ For the following lease transactions, there must be at least one tenant and one 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">party-representation-type-is-valid</code></td>
-          class="app-code app-code--inline">party-representation-type-is-valid</code></td>
       <td class="govuk-table__cell">For an application lodged by a non-conveyancer, no representation type may be <code
-          class="app-code app-code--inline">LODGING_CONVEYANCER</code> </td>
           class="app-code app-code--inline">LODGING_CONVEYANCER</code> </td>
     </tr>
   </tbody>
@@ -3139,7 +3060,6 @@ For the following lease transactions, there must be at least one tenant and one 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">submission-warning-understood</code></td>
-          class="app-code app-code--inline">submission-warning-understood</code></td>
       <td class="govuk-table__cell">A legal declaration is made when submitting an application
         with regards dishonesty etc. The conveyancer must agree to comply with the warning</td>
     </tr>
@@ -3148,7 +3068,6 @@ For the following lease transactions, there must be at least one tenant and one 
 
 
 <h3 class="govuk-heading-s">Title number validation</h3>
-<p class="govuk-body">The title number in the application must match a title number in the land register. The title number must be valid - view the <code class="app-code app-code--inline">TITLE_NOT_VALID</code> error type below for information on valid titles. For multi-title applications please provide each title once. </p>
 <p class="govuk-body">The title number in the application must match a title number in the land register. The title number must be valid - view the <code class="app-code app-code--inline">TITLE_NOT_VALID</code> error type below for information on valid titles. For multi-title applications please provide each title once. </p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Title number validation error types</caption>
@@ -3162,12 +3081,10 @@ For the following lease transactions, there must be at least one tenant and one 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">unknown-title-number</code></td>
-          class="app-code app-code--inline">unknown-title-number</code></td>
       <td class="govuk-table__cell">Title number not matched to HMLR systems</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">title-must-be-valid</code></td>
           class="app-code app-code--inline">title-must-be-valid</code></td>
       <td class="govuk-table__cell">Can apply to one of the following:
         <ul class="govuk-list govuk-list--bullet">
@@ -3202,7 +3119,6 @@ For the following lease transactions, there must be at least one tenant and one 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">title-scope-is-valid</code></td>
-          class="app-code app-code--inline">title-scope-is-valid</code></td>
       <td class="govuk-table__cell">
         <ul class="govuk-list govuk-list--bullet">
           <li>Title scopes of ‘part’ must have a part description</li>
@@ -3216,12 +3132,9 @@ For the following lease transactions, there must be at least one tenant and one 
 
 <h3 class="govuk-heading-s">Title type validation</h3>
 <p class="govuk-body">If the title type provided for a title number is <code class="app-code app-code--inline">LANDLORD_TITLE</code>, the title tenure on our records for title number must be “freehold”. </p>
-<p class="govuk-body">If the title type provided for a title number is <code class="app-code app-code--inline">LANDLORD_TITLE</code>, the title tenure on our records for title number must be “freehold”. </p>
  
 <p class="govuk-body">If the title type provided for a title number is <code class="app-code app-code--inline">TENANT_TITLE</code>, the title tenure on our records for the title number must be “leasehold”. </p>
-<p class="govuk-body">If the title type provided for a title number is <code class="app-code app-code--inline">TENANT_TITLE</code>, the title tenure on our records for the title number must be “leasehold”. </p>
  
-<p class="govuk-body">If the title type provided for a title number is <code class="app-code app-code--inline">REGISTER_TITLE</code>, <code class="app-code app-code--inline">TRANSFEROR_TITLE</code>, or <code class="app-code app-code--inline">ADDITIONAL_TITLE</code>, the title tenure on our records for the title number can be either “freehold” or “leasehold”. </p>
 <p class="govuk-body">If the title type provided for a title number is <code class="app-code app-code--inline">REGISTER_TITLE</code>, <code class="app-code app-code--inline">TRANSFEROR_TITLE</code>, or <code class="app-code app-code--inline">ADDITIONAL_TITLE</code>, the title tenure on our records for the title number can be either “freehold” or “leasehold”. </p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Title type validation error types</caption>
@@ -3234,7 +3147,6 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">title-type-matches-tenure
           class="app-code app-code--inline">title-type-matches-tenure
 	</code></td>
       <td class="govuk-table__cell">The title type provided does not have the appropriate tenure in our records
@@ -3265,7 +3177,6 @@ For the following lease transactions, there must be at least one tenant and one 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">order-contains-one-transfer
-          class="app-code app-code--inline">order-contains-one-transfer
 	</code></td>
       <td class="govuk-table__cell">Order must contain at most one transfer transaction</td>
     </tr>
@@ -3277,7 +3188,6 @@ For the following lease transactions, there must be at least one tenant and one 
 
 <h3 class="govuk-heading-s">Transferee validation</h3>
 <p class="govuk-body">All Transfer transactions must have at least one transferee present. Each transferee must have a representation type that is not <code
-          class="app-code app-code--inline">NOT_REQUIRED</code>.  </p>
           class="app-code app-code--inline">NOT_REQUIRED</code>.  </p>
  
 <p class="govuk-body">At least one valid postal address must be provided as the address for service. If overseas, the address must have a country. </p>
@@ -3293,13 +3203,11 @@ For the following lease transactions, there must be at least one tenant and one 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">transfer-has-transferee</code></td>
-          class="app-code app-code--inline">transfer-has-transferee</code></td>
       <td class="govuk-table__cell">A transfer involves a change of proprietor(s). If making
         an application for a transfer, there must be at least one transferee</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">transferee-has-valid-address</code></td>
           class="app-code app-code--inline">transferee-has-valid-address</code></td>
       <td class="govuk-table__cell">At least one postal address must be provided in the
         application</td>
@@ -3323,19 +3231,15 @@ For the following lease transactions, there must be at least one tenant and one 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">all-proprietors-matched-to-transferors </code></td>
-          class="app-code app-code--inline">all-proprietors-matched-to-transferors </code></td>
       <td class="govuk-table__cell">There must be at least as many transferors as there are proprietors. There can be more, but no fewer <br><br> A proprietor was not matched to a transferor and the corresponding evidence was not attached. Where there has been a change of name or the death of a joint proprietor and the register needs updating evidence must be provided </td>
     </tr>
   </tbody>
 </table>
 
 
-
-
 <h3 class="govuk-heading-s">Transferor validation</h3>
 <p class="govuk-body">There must be at least one transferor name on each transfer transaction, with the exception of TRM transactions.</p>
 <p class="govuk-body">Each transferor must have a representation type that is not
-  <code class="app-code app-code--inline">NOT_REQUIRED</code>.
   <code class="app-code app-code--inline">NOT_REQUIRED</code>.
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Transferor validation error types</caption>
@@ -3349,7 +3253,6 @@ For the following lease transactions, there must be at least one tenant and one 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
           class="app-code app-code--inline">transfer-has-transferors</code></td>
-          class="app-code app-code--inline">transfer-has-transferors</code></td>
       <td class="govuk-table__cell">A transfer involves a change of proprietor(s). If making
         an application for a transfer, there must be at least one transferor</td>
     </tr>
@@ -3357,27 +3260,13 @@ For the following lease transactions, there must be at least one tenant and one 
 </table>
 
 
-
 <h3 class="govuk-heading-s">Value bands</h3>
 <p class="govuk-body">Value bands specify the approximate value of a property, or the equity being transferred,
   where the exact value is not known. The value band fields can be found on the <code
     class="app-code app-code--inline">Transfer</code> and <code
     class="app-code app-code--inline">AmountDetails</code> objects in the API specification.</p>
-    class="app-code app-code--inline">Transfer</code> and <code
-    class="app-code app-code--inline">AmountDetails</code> objects in the API specification.</p>
 <p class="govuk-body">The valid value bands are as follows (in pounds):</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><code class="app-code app-code--inline">lower_band</code>: 0, <code
-      class="app-code app-code--inline">upper_band</code>: 100,000</li>
-  <li><code class="app-code app-code--inline">lower_band</code>: 100,001, <code
-      class="app-code app-code--inline">upper_band</code>: 200,000</li>
-  <li><code class="app-code app-code--inline">lower_band</code>: 200,001, <code
-      class="app-code app-code--inline">upper_band</code>: 500,000</li>
-  <li><code class="app-code app-code--inline">lower_band</code>: 500,001, <code
-      class="app-code app-code--inline">upper_band</code>: 1,000,000</li>
-  <li><code class="app-code app-code--inline">lower_band</code>: 1,000,001, <code
-      class="app-code app-code--inline">upper_band</code>: <code
-      class="app-code app-code--inline">null</code></li>
   <li><code class="app-code app-code--inline">lower_band</code>: 0, <code
       class="app-code app-code--inline">upper_band</code>: 100,000</li>
   <li><code class="app-code app-code--inline">lower_band</code>: 100,001, <code
@@ -3395,45 +3284,20 @@ For the following lease transactions, there must be at least one tenant and one 
   <li><code class="app-code app-code--inline">APT</code> - Appointment of new trustee</li>
   <li><code class="app-code app-code--inline">ASTT</code> - Assent</li>
   <li><code class="app-code app-code--inline">ASSTTP</code> - Assent (Transfer of part)</li>
-  <li><code class="app-code app-code--inline">TNV</code> - Transfer (not for value or reverse
-  <li><code class="app-code app-code--inline">APT</code> - Appointment of new trustee</li>
-  <li><code class="app-code app-code--inline">ASTT</code> - Assent</li>
-  <li><code class="app-code app-code--inline">ASSTTP</code> - Assent (Transfer of part)</li>
-  <li><code class="app-code app-code--inline">TNV</code> - Transfer (not for value or reverse
-    premium)</li>
-  <li><code class="app-code app-code--inline">TNVTP</code> - Transfer (not for value or reverse
-  <li><code class="app-code app-code--inline">TNVTP</code> - Transfer (not for value or reverse
-    premium) (Transfer of part)</li>
-  <li><code class="app-code app-code--inline">TOSNV</code> - Transfer of share (not for value or
-  <li><code class="app-code app-code--inline">TOSNV</code> - Transfer of share (not for value or
-    reverse premium)</li>
-  <li><code class="app-code app-code--inline">TOSNVTP</code> - Transfer of share (not for value
-  <li><code class="app-code app-code--inline">TOSNVTP</code> - Transfer of share (not for value
-    or reverse premium) (Transfer of part)</li>
-  <li><code class="app-code app-code--inline">TRM</code> - Transfer by operation of law on death
-  <li><code class="app-code app-code--inline">TRM</code> - Transfer by operation of law on death
-  </li>
-  <li><code class="app-code app-code--inline">TSCNV</code> - Transfer subject to a charge (not
-  <li><code class="app-code app-code--inline">TSCNV</code> - Transfer subject to a charge (not
-    for value or reverse premium)</li>
-  <li><code class="app-code app-code--inline">TSCNVTP</code> - Transfer subject to a charge (not
-  <li><code class="app-code app-code--inline">TSCNVTP</code> - Transfer subject to a charge (not
-    for value or reverse premium) (Transfer of part)</li>
-  <li><code class="app-code app-code--inline">VO</code> - Vesting order</li>
+  <li><code class="app-code app-code--inline">TNV</code> - Transfer (not for value or reverse premium)</li>
+  <li><code class="app-code app-code--inline">TNVTP</code> - Transfer (not for value or reverse premium) (Transfer of part)</li>
+  <li><code class="app-code app-code--inline">TOSNV</code> - Transfer of share (not for value or reverse premium)</li>
+  <li><code class="app-code app-code--inline">TOSNVTP</code> - Transfer of share (not for value or reverse premium) (Transfer of part)</li>
+  <li><code class="app-code app-code--inline">TRM</code> - Transfer by operation of law on death</li>
+  <li><code class="app-code app-code--inline">TSCNV</code> - Transfer subject to a charge (not for value or reverse premium)</li>
+  <li><code class="app-code app-code--inline">TSCNVTP</code> - Transfer subject to a charge (not for value or reverse premium) (Transfer of part)</li>
   <li><code class="app-code app-code--inline">VO</code> - Vesting order</li>
 </ul>
 <p class="govuk-body">There are several rules regarding value band usage:</p>
 <ul class="govuk-list govuk-list--bullet">
   <li>Both <code class="app-code app-code--inline">value</code> (i.e. value of equity being
-    transferred) and <code class="app-code app-code--inline">full_value_of_property</code> must
-  <li>Both <code class="app-code app-code--inline">value</code> (i.e. value of equity being
-    transferred) and <code class="app-code app-code--inline">full_value_of_property</code> must
-    be either value bands, or exact values</li>
-  <li>The <code class="app-code app-code--inline">full_value_of_property_band</code> must be
-    greater than or equal to the <code class="app-code app-code--inline">value_band</code> (i.e.
-  <li>The <code class="app-code app-code--inline">full_value_of_property_band</code> must be
-    greater than or equal to the <code class="app-code app-code--inline">value_band</code> (i.e.
-    the value of equity being transferred)</li>
+    transferred) and <code class="app-code app-code--inline">full_value_of_property</code> must be either value bands, or exact values</li>
+  <li>The <code class="app-code app-code--inline">full_value_of_property_band</code> must be greater than or equal to the <code class="app-code app-code--inline">value_band</code> (i.e. the value of equity being transferred)</li>
 </ul>
 <div class="govuk-!-padding-bottom-6"></div>
 <table class="govuk-table">
@@ -3447,7 +3311,6 @@ For the following lease transactions, there must be at least one tenant and one 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code
-          class="app-code app-code--inline">full-value-of-property-or-band-is-valid 
           class="app-code app-code--inline">full-value-of-property-or-band-is-valid 
 	</code></td>
       <td class="govuk-table__cell">	
