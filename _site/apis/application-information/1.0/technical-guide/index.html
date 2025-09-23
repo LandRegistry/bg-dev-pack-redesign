@@ -192,6 +192,8 @@ data-module="govuk-service-navigation"
 <li><code class="app-code app-code--inline">ACCEPTED_AWAITING_PRIORITY</code> - The application has passed validation but has not yet been added to the day list as it is currently closed. The application will be added to the day list and moved to an <code class="app-code app-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> state when the day list reopens</li>
 <li><code class="app-code app-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> - The application has been accepted onto the day list, and has priority</li>
 <li><code class="app-code app-code--inline">SYSTEM_ERROR</code> - The application has not been added to the day list due to an HMLR system error. The request should be retried, or the support team contacted</li>
+<li><code class="app-code app-code--inline">CANCELLED</code> - The application has been cancelled. Futher information should be available in the correspondence documents.</li>
+<li><code class="app-code app-code--inline">COMPLETED</code> - The application has been completed. Further information should be available in correspondence documents.</li>
 </ul>
 <p class="govuk-body">This API will always return an HTTP 200 response for a valid request, regardless of the status of the application.</p>
 </section>
@@ -243,6 +245,24 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
+<h3 class="govuk-heading-s" id="system-error-status" tabindex="-1" class="govuk-heading-m">SYSTEM ERROR status</h3>
+<p class="govuk-body"><code>GET /v0/applications/{id}/information</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;SYSTEM_ERROR&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;correspondence&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;warnings&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
 <h3 class="govuk-heading-s" id="accepted-awaiting-priority-status" tabindex="-1" class="govuk-heading-m">ACCEPTED_AWAITING_PRIORITY status</h3>
 <p class="govuk-body"><code>GET /v0/applications/{id}/information</code></p>
 <div class="code-wrapper">
@@ -251,7 +271,7 @@ data-module="govuk-service-navigation"
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;accepted_awaiting_priority&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_AWAITING_PRIORITY&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;correspondence&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
@@ -278,6 +298,80 @@ data-module="govuk-service-navigation"
     <span class="app-code__attr">&quot;warnings&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
       <span class="app-code__string">&quot;You must upload document X&quot;</span>
     <span class="app-code__punctuation">]</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+<h3 class="govuk-heading-s" id="cancelled-status" tabindex="-1" class="govuk-heading-m">CANCELLED status</h3>
+<p class="govuk-body"><code>GET /v0/applications/{id}/information</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CANCELLED&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;AB123FC&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-09-25T18:18:49.478Z&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;correspondence&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;record_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:20:03.996Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;created_at&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:20:04.050Z&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;download_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;can_62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CAN&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CANCELLATION LETTER&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">]</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;warnings&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+<h3 class="govuk-heading-s" id="completed-status" tabindex="-1" class="govuk-heading-m">COMPLETED status</h3>
+<p class="govuk-body"><code>GET /v0/applications/{id}/information</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;COMPLETED&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;AB123FC&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-09-25T18:18:49.478Z&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;correspondence&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;record_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:15:01.259Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;created_at&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:15:01.281Z&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;download_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ltr_6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LTR&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LETTER&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;created_at&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:15:01.319Z&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;download_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;rcs_efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;RCS&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REGISTRATION COMPLETION SHEET&quot;</span>
+          <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;created_at&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:15:01.343Z&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;download_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;reg_7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REG&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;COPY OF UPDATED REGISTER&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">]</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;warnings&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span>
   <span class="app-code__punctuation">}</span>
 <span class="app-code__punctuation">}</span>
 </code></pre>

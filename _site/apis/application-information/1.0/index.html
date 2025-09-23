@@ -124,8 +124,15 @@ data-module="govuk-service-navigation"
 <li>the priority of the application, <code class="app-code app-code--inline">priority_timestamp</code>, once accepted</li>
 <li>any errors that prevented application submission</li>
 <li>any warnings that did not prevent submission but need to be addressed before a caseworker can process the application (otherwise a requisition may occur)</li>
+<li>a list of correspondence records associated with the application including:
+<ul class="govuk-list govuk-list--bullet">
+<li>Completion documents</li>
+<li>Cancellation documents</li>
+<li>Requsition documents</li>
 </ul>
-<p class="govuk-body">This API can be used to get more information after receiving a notification indicating the application has changed. For information about which notifications will be available, visit the notifications section of the <a href="/apis/submit-an-application" class="govuk-link">Submit an application</a> API page.</p>
+</li>
+</ul>
+<p class="govuk-body">This API can be used to get more information after receiving a notification indicating the application has changed. For information about which notifications will be available, visit the notifications section of the <a href="/apis/submit-an-application/0.3/technical-guide" class="govuk-link">Submit an application</a> API page.</p>
 </section>
 <section id="view-the-technical-guide">
 <h2 class="govuk-heading-m" id="view-the-technical-guide" tabindex="-1" class="govuk-heading-l">View the Technical guide</h2>
@@ -138,15 +145,15 @@ data-module="govuk-service-navigation"
 <section id="how-the-api-works">
 <h2 class="govuk-heading-m" id="how-the-api-works" tabindex="-1" class="govuk-heading-l">How the API works</h2>
 <h3 class="govuk-heading-s" id="interaction" tabindex="-1" class="govuk-heading-m">Interaction</h3>
-<a target="_blank" href="/assets/images/ApplicationInformation_interaction_diagram.png">
-  <img src="/assets/images/ApplicationInformation_interaction_diagram.png" alt="A diagram showing the interaction of the Application Information API.">
+<a target="_blank" href="/assets/images/application-information/1.0/interaction-diagram.drawio.svg">
+  <img src="/assets/images/application-information/1.0/interaction-diagram.drawio.svg" alt="A diagram showing the interaction of the Application Information API.">
 </a>
 <p class="govuk-body">This diagram demonstrates how the Application information API works to support users.</p>
 <p class="govuk-body">Using their unique application ID (provided via the Submit an application API), a user can request information about a specific application. Examples of the type of information are listed in the overview section.</p>
 <p class="govuk-body">The HMLR system will respond with the relevant information. The system may also respond by informing users that their application has been accepted onto the day list or if it has failed validation.</p>
 <h3 class="govuk-heading-s" id="state-diagram" tabindex="-1" class="govuk-heading-m">State diagram</h3>
-<a markdown="1" target="_blank" href="/assets/images/ApplicationInformation_State_diagram.png">
-  <img alt="A diagram showing how the Application Information API works." src="/assets/images/ApplicationInformation_State_diagram.png">
+<a markdown="1" target="_blank" href="/assets/images/application-information/1.0/state-diagram.drawio.svg">
+  <img alt="A diagram showing how the Application Information API works." src="/assets/images/application-information/1.0/state-diagram.drawio.svg">
 </a>
 <p class="govuk-body">The state diagram demonstrates how the validation process works once an application has been submitted.</p>
 <p class="govuk-body">When the system starts the validation process, there are several potential outcomes which can each trigger a different response. A response may include:</p>

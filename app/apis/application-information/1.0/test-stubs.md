@@ -85,7 +85,7 @@ Base URL: `https://bgtest.landregistry.gov.uk/bg2test/api`
 
 Method: `GET`
 
-Endpoint: `/v0/applications/abababab-abab-abab-abab-ababababavng/information`
+Endpoint: `/v1/applications/abababab-abab-abab-abab-ababababavng/information`
 
 Headers: `Authorization: <any-value>`
 
@@ -123,7 +123,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/applications/abababab-abab-abab-abab-ababababavlf/information`
+Endpoint: `/v1/applications/abababab-abab-abab-abab-ababababavlf/information`
 
 Headers: `Authorization: <any-value>`
 
@@ -174,7 +174,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/applications/abababab-abab-abab-abab-ababababasye/information`
+Endpoint: `/v1/applications/abababab-abab-abab-abab-ababababasye/information`
 
 Headers: `Authorization: <any-value>`
 
@@ -211,7 +211,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/applications/abababab-abab-abab-abab-ababababaaap/information`
+Endpoint: `/v1/applications/abababab-abab-abab-abab-ababababaaap/information`
 
 Headers: `Authorization: <any-value>`
 
@@ -248,7 +248,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/applications/abababab-abab-abab-abab-ababababaapp/information`
+Endpoint: `/v1/applications/abababab-abab-abab-abab-ababababaapp/information`
 
 Headers: `Authorization: <any-value>`
 
@@ -299,7 +299,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/applications/abababab-abab-abab-abab-ababababacan/information`
+Endpoint: `/v1/applications/abababab-abab-abab-abab-ababababacan/information`
 
 Headers: `Authorization: <any-value>`
 
@@ -350,7 +350,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/applications/abababab-abab-abab-abab-ababababacmp/information`
+Endpoint: `/v1/applications/abababab-abab-abab-abab-ababababacmp/information`
 
 Headers: `Authorization: <any-value>`
 
@@ -417,7 +417,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/applications/BABAAAP/information`
+Endpoint: `/v1/applications/BABAAAP/information`
 
 Headers: `Authorization: <any-value>`
 
@@ -454,7 +454,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/applications/BABAAPP/information`
+Endpoint: `/v1/applications/BABAAPP/information`
 
 Headers: `Authorization: <any-value>`
 
@@ -505,7 +505,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/applications/BABACAN/information`
+Endpoint: `/v1/applications/BABACAN/information`
 
 Headers: `Authorization: <any-value>`
 
@@ -556,7 +556,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/applications/BABACMP/information`
+Endpoint: `/v1/applications/BABACMP/information`
 
 Headers: `Authorization: <any-value>`
 
