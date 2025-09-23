@@ -22,7 +22,7 @@ sidenav:
     href: '/terms-of-use'
   - theme: Explore APIs
     text: Find an API
-    href: '/apis'
+    href: '/find-a-service-api'
     current: true
   - theme: Explore APIs
     text: A guide to SOAP and REST API types

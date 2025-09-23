@@ -64,11 +64,15 @@ During application submission, notifications will be available from the notifica
 - `APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST` - the application has been accepted and is queuing for the day list
 - `APPLICATION_VALIDATION_FAILED` - the application submission has failed
 - `APPLICATION_ERROR` - the application has not been added to the day list due to an error
+- `application.correspondence-despatched` - the application has had a correspondence raised against it
+- `application.cancelled` - the application has been cancelled
+- `application.completed` - the application has been completed
 
 The notifications will contain the following information:
 
 - `APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST`, `APPLICATION_VALIDATION_FAILED` and `APPLICATION_ERROR` will contain the updated application status only
 - `APPLICATION_ACCEPTED_ON_DAY_LIST` will contain updated application status, the priority of the application and the HMLR reference for the accepted application
+- `application.correspondence-despatched`, `application.cancelled` and `application.completed` will contain a list of correspondence documents that can be downloaded using the [download a document API](/apis/download-a-document).
 
 To get more detailed information about an application that caused the notification, use the [Application information API](/apis/application-information). For example, after receiving an `APPLICATION_VALIDATION_FAILED` notification, use the Application information API to get a list of the validation errors.
 
@@ -76,11 +80,13 @@ To get more detailed information about an application that caused the notificati
 
 JSON schemas can be found below:
 
-- [`APPLICATION_ACCEPTED_ON_DAY_LIST`](https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json)
-- [`APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST`](https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-awaiting-priority.json)
-- [`APPLICATION_VALIDATION_FAILED`](https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/validation-failed.json)
-- [`APPLICATION_ERROR`](https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/system-error.json)
-
+- [`APPLICATION_ACCEPTED_ON_DAY_LIST`](/schemas/v1/application/accepted-priority-protected.json)
+- [`APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST`](/schemas/v1/application/accepted-awaiting-priority.json)
+- [`APPLICATION_VALIDATION_FAILED`](/schemas/v1/application/application-error.json)
+- [`APPLICATION_ERROR`](/schemas/v1/application/validation-error.json)
+- [`application.correspondence-despatched`](/schemas/v1/application/correspondence-despatched.json)
+- [`application.cancelled`](/schemas/v1/application/cancelled.json)
+- [`application.completed`](/schemas/v1/application/completed.json)
 </section>
 
 <section id="validation-rules">
