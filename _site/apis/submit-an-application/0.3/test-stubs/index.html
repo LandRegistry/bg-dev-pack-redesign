@@ -154,13 +154,6 @@ data-module="govuk-service-navigation"
   <h1 class="govuk-heading-xl">Submit an application API test stubs</h1>
 </header>
 
-<div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-visually-hidden">Warning</span>
-    These API endpoints are not currently live.
-  </strong>
-</div>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <div class="bg-version-grid">
@@ -172,7 +165,8 @@ data-module="govuk-service-navigation"
     Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="0.3" selected>v0.3 (latest)</option>
+    <option value="1.0">v1.0 (latest)</option>
+    <option value="0.3">v0.3</option>
   </select>
   <button type="submit" 
                   class="govuk-button govuk-!-margin-0" 
@@ -203,7 +197,7 @@ data-module="govuk-service-navigation"
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;submission_warning_understood&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">true</span></span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;submission_warning_understood&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;applicants&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
       <span class="app-code__string">&quot;Borrower1&quot;</span><span class="app-code__punctuation">,</span>
       <span class="app-code__string">&quot;Borrower2&quot;</span>
@@ -333,7 +327,7 @@ data-module="govuk-service-navigation"
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;submission_warning_understood&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">true</span></span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;submission_warning_understood&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;customer_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CustomerRef&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;addresses&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
       <span class="app-code__attr">&quot;transferee_address&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
@@ -497,7 +491,7 @@ data-module="govuk-service-navigation"
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;submission_warning_understood&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">true</span></span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;submission_warning_understood&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;applicants&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
       <span class="app-code__string">&quot;Borrower1&quot;</span><span class="app-code__punctuation">,</span>
       <span class="app-code__string">&quot;Borrower2&quot;</span>
@@ -633,7 +627,7 @@ data-module="govuk-service-navigation"
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;submission_warning_understood&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">true</span></span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;submission_warning_understood&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;customer_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CustomerRef&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;addresses&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
       <span class="app-code__attr">&quot;transferee_address&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>

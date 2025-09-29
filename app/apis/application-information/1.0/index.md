@@ -12,10 +12,10 @@ notlive: true
 
 versions:
   - value: "1.0"
-    text: "v1.0 (upcoming)"
+    text: "v1.0 (latest)"
     selected: true
   - value: "0.3"
-    text: "v0.3 (latest)"
+    text: "v0.3"
 
 relatedAPIs:
   - text: Submit an application to change the Land Register
@@ -24,6 +24,10 @@ relatedAPIs:
     href: /apis/send-a-document
   - text: Submit an application
     href: /apis/submit-an-application
+  - text: Attach a document
+    href: /apis/attach-a-document
+  - text: Attach a message
+    href: /apis/attach-a-message
   - text: Notifications
     href: /apis/notifications
   - text: Download a document

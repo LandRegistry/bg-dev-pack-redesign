@@ -3,16 +3,18 @@ layout: guidance.njk
 
 title: Submit an application API test stubs
 
-notlive: true
+notlive: 
 
 eleventyNavigation:
   key: Submit an application API v0.3 test stubs
   parent: Submit an application API v0.3
 
 versions:
+  - value: "1.0"
+    text: "v1.0 (latest)"
   - value: "0.3"
-    text: "v0.3 (latest)"
-    selected: true
+    text: "v0.3"
+    selected: 
     
 relatedAPIs:
   - text: Submit an application to change the Land Register
@@ -71,7 +73,7 @@ Note: The idempotency key should be unique for each request (this is not enforce
 ```json
 {
   "data": {
-    "submission_warning_understood": true,
+    "submission_warning_understood": ,
     "applicants": [
       "Borrower1",
       "Borrower2"
@@ -208,7 +210,7 @@ Note: The idempotency key should be unique for each request (this is not enforce
 ```json
 {
   "data": {
-    "submission_warning_understood": true,
+    "submission_warning_understood": ,
     "customer_reference": "CustomerRef",
     "addresses": {
       "transferee_address": {
@@ -380,7 +382,7 @@ Note: The idempotency key should be unique for each request (this is not enforce
 ```json
 {
   "data": {
-    "submission_warning_understood": true,
+    "submission_warning_understood": ,
     "applicants": [
       "Borrower1",
       "Borrower2"
@@ -523,7 +525,7 @@ Note: The idempotency key should be unique for each request (this is not enforce
 ```json
 {
   "data": {
-    "submission_warning_understood": true,
+    "submission_warning_understood": ,
     "customer_reference": "CustomerRef",
     "addresses": {
       "transferee_address": {
