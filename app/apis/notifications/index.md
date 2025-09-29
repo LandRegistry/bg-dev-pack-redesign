@@ -11,9 +11,11 @@ eleventyNavigation:
 notlive: true
 
 versions:
-  - value: "0.3"
-    text: "v0.3 (latest)"
+  - value: "1.0"
+    text: "v1.0 (latest)"
     selected: true
+  - value: "0.3"
+    text: "v0.3"
 
 relatedAPIs:
   - text: Submit an application to change the Land Register

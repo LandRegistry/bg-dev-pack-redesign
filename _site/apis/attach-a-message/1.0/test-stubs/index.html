@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template govuk-template--rebranded">
+  <head>
+    <meta charset="utf-8">
+    <title>Attach a message API test stubs - HM Land Registry Developer Pack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#789904">
+
+<link rel="icon" href="/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
+  <script src="/assets/application.js" type="module"></script>
+
+  <link rel="stylesheet" href="/assets/application.css">
+
+
+  <meta property="og:title" content="Attach a message API test stubs">
+
+<script src="/assets/script.js"></script><script>
+    function setVersion() {
+        let version = document.getElementById('version').value;
+        if (!window.location.href.includes(version + '/')) {
+            console.log(`Versions were different, navigating to ${version}`)
+            if (window.location.href.match(/\/[0-9.]+\//))
+                window.location.href = window.location.href.replace(/\/[0-9.]+\//, `/${version}/`)
+            else
+                window.location.href = `./${version}`
+        } else {
+            console.log(`Version has not changed`);
+        }
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        setVersion()
+    });
+</script><script>
+    let rangeToElement = []
+    let navigations = {}
+
+    function initialize(navItems) {
+      navItems.forEach(element => {
+        let href = element.href.split('#')[1];
+        let related = document.querySelector("#"+href);
+        let scrollY = related.offsetTop;
+        rangeToElement.push({
+          scroll: scrollY,
+          element: element
+        });
+      });
+      rangeToElement = rangeToElement.sort((a, b) => a.scroll - b.scroll)
+      update();
+    }
+
+    function update() {
+      let scrollY = window.scrollY;
+      let selected = rangeToElement[0];
+      for (let scroller of rangeToElement) {
+        if (scroller.scroll > scrollY) {
+          break;
+        }
+        selected = scroller;
+      }
+      select(selected.element);
+    }
+
+    function select(selectedElement) {
+      if (selectedElement.classList.contains("x-govuk-sub-navigation__section-item--current")) return;
+      for (let el of rangeToElement) {
+        if (el.element == selectedElement) continue;
+        unselect(el.element)
+      }
+      selectedElement.classList.add("x-govuk-sub-navigation__section-item--current")
+      selectedElement.setAttribute("aria-current", true);
+    }
+
+    function unselect(element) {
+      element.classList.remove("x-govuk-sub-navigation__section-item--current")
+      element.setAttribute("aria-current", false);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        initialize(document.querySelectorAll(".x-govuk-sub-navigation a"))
+        document.addEventListener("scroll", (event) => update());
+    });
+</script>
+    <meta property="og:image" content="/hmlrassets/images/hmlr-opengraph-image.png">
+  </head>
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+      <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+  <header class="govuk-header app-header govuk-header--full-width-border" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container app-header__container">
+    <div class="govuk-header__logo app-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+          <span class="app-header__logotype">HM Land Registry Developer Pack</span>
+      </a>
+    </div>
+    <app-search class="app-search govuk-!-display-none-print" index="/search-index.json" label="Search developer pack"><a class="app-search__link" href="/sitemap">Sitemap</a></app-search>
+
+  </div>
+</header>
+
+  
+
+  <div class="govuk-service-navigation app-service-navigation"
+data-module="govuk-service-navigation"
+>
+      <div class="govuk-width-container">
+
+    <div class="govuk-service-navigation__container">
+      
+
+      
+    </div>
+
+    </div>
+
+  </div>
+
+
+
+      <div class="govuk-width-container">
+  <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper" id="main-content">
+<div class="govuk-grid-row">
+
+
+<div class="govuk-grid-column-one-third sticky">
+    <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="sub-navigation-heading">Pages in this section</h2>
+  <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
+  <ul class="x-govuk-sub-navigation__section">
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-1">Scenario 1: Lorem Ipsum</a>
+    </li>
+  </ul>
+</nav>
+
+</div>
+
+<div class="govuk-grid-column-two-thirds">
+
+
+<header class="app-document-header">
+  <h1 class="govuk-heading-xl">Attach a message API test stubs</h1>
+</header>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    These API endpoints are not currently live.
+  </strong>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<div class="bg-version-grid">
+    <div>
+        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
+    </div>
+    <div class="govuk-form-group version-group govuk-!-margin-0">
+  <label class="govuk-label govuk-visually-hidden" for="version">
+    Version and Status dropdown
+  </label>
+  <select class="govuk-select" id="version" name="version">
+    <option value="1.0" selected>v1.0</option>
+  </select>
+  <button type="submit" 
+                  class="govuk-button govuk-!-margin-0" 
+                  data-module="govuk-button"
+                  onclick="setVersion();"
+                  >View</button>
+</div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<div class="app-prose-scope"><p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see when developing your own services.</p>
+<p class="govuk-body">Base URL: <code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<section>
+<h2 class="govuk-heading-m" id="scenario-1" tabindex="-1" class="govuk-heading-l">Scenario 1: Lorem ipsum</h2>
+<h3 class="govuk-heading-s" id="request" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h3 class="govuk-heading-s" id="response" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+</div>
+
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h3 class="govuk-heading-m">Related APIs</h3>
+<ul class="govuk-list govuk-list--bullet">
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/send-a-document">Send a document</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application">Submit an application</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/application-information">Application information</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/attach-a-message">Attach a message</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/download-a-document">Download a document</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/find-a-service-api">More</a></li>
+</ul>
+
+</div>
+
+</div>
+        </main>
+      </div>
+
+<footer class="govuk-footer govuk-footer--hmlr " role="contentinfo">
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
+            <ul class="govuk-footer__inline-list">
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">
+                    Accessibility Statement
+                  </a>
+                </li>
+            </ul>
+            <div class="govuk-footer__meta-custom">
+              These links open in a new tab.
+            </div>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <span
+          class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr"
+        >&copy; Crown copyright</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

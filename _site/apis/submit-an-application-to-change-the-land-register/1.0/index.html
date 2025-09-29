@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template govuk-template--rebranded">
+  <head>
+    <meta charset="utf-8">
+    <title>Submit an Application to change the Land Register APIs - HM Land Registry Developer Pack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#789904">
+
+<link rel="icon" href="/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
+  <script src="/assets/application.js" type="module"></script>
+
+  <link rel="stylesheet" href="/assets/application.css">
+
+
+  <meta property="og:title" content="Submit an Application to change the Land Register APIs">
+<meta property="og:description" name="description" content="Use this service to help lodge applications with HMLR to update the register or create a new lease or transfer of part.">
+<script src="/assets/script.js"></script><script>
+    function setVersion() {
+        let version = document.getElementById('version').value;
+        if (!window.location.href.includes(version + '/')) {
+            console.log(`Versions were different, navigating to ${version}`)
+            if (window.location.href.match(/\/[0-9.]+\//))
+                window.location.href = window.location.href.replace(/\/[0-9.]+\//, `/${version}/`)
+            else
+                window.location.href = `./${version}`
+        } else {
+            console.log(`Version has not changed`);
+        }
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        setVersion()
+    });
+</script><script>
+    let rangeToElement = []
+    let navigations = {}
+
+    function initialize(navItems) {
+      navItems.forEach(element => {
+        let href = element.href.split('#')[1];
+        let related = document.querySelector("#"+href);
+        let scrollY = related.offsetTop;
+        rangeToElement.push({
+          scroll: scrollY,
+          element: element
+        });
+      });
+      rangeToElement = rangeToElement.sort((a, b) => a.scroll - b.scroll)
+      update();
+    }
+
+    function update() {
+      let scrollY = window.scrollY;
+      let selected = rangeToElement[0];
+      for (let scroller of rangeToElement) {
+        if (scroller.scroll > scrollY) {
+          break;
+        }
+        selected = scroller;
+      }
+      select(selected.element);
+    }
+
+    function select(selectedElement) {
+      if (selectedElement.classList.contains("x-govuk-sub-navigation__section-item--current")) return;
+      for (let el of rangeToElement) {
+        if (el.element == selectedElement) continue;
+        unselect(el.element)
+      }
+      selectedElement.classList.add("x-govuk-sub-navigation__section-item--current")
+      selectedElement.setAttribute("aria-current", true);
+    }
+
+    function unselect(element) {
+      element.classList.remove("x-govuk-sub-navigation__section-item--current")
+      element.setAttribute("aria-current", false);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        initialize(document.querySelectorAll(".x-govuk-sub-navigation a"))
+        document.addEventListener("scroll", (event) => update());
+    });
+</script>
+    <meta property="og:image" content="/hmlrassets/images/hmlr-opengraph-image.png">
+  </head>
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+      <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+  <header class="govuk-header app-header govuk-header--full-width-border" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container app-header__container">
+    <div class="govuk-header__logo app-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+          <span class="app-header__logotype">HM Land Registry Developer Pack</span>
+      </a>
+    </div>
+    <app-search class="app-search govuk-!-display-none-print" index="/search-index.json" label="Search developer pack"><a class="app-search__link" href="/sitemap">Sitemap</a></app-search>
+
+  </div>
+</header>
+
+  
+
+  <div class="govuk-service-navigation app-service-navigation"
+data-module="govuk-service-navigation"
+>
+      <div class="govuk-width-container">
+
+    <div class="govuk-service-navigation__container">
+      
+
+      
+    </div>
+
+    </div>
+
+  </div>
+
+
+
+      <div class="govuk-width-container">
+  <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper" id="main-content">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third sticky">
+        <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="sub-navigation-heading">Pages in this section</h2>
+  <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
+  <ul class="x-govuk-sub-navigation__section">
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#overview">Overview</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#how-the-api-works">How the API works</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#view-the-api-specification">View the API specification</a>
+    </li>
+  </ul>
+</nav>
+
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+<header class="app-document-header">
+  <h1 class="govuk-heading-xl">Submit an Application to change the Land Register APIs</h1><p class="govuk-body-l">Use this service to help lodge applications with HMLR to update the register or create a new lease or transfer of&nbsp;part.</p>
+</header>
+
+<div class="app-prose-scope"><hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<div class="bg-version-grid">
+    <div>
+        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and status</h2>
+    </div>
+<div class="govuk-form-group version-group govuk-!-margin-0">
+  <label class="govuk-label govuk-visually-hidden" for="version">
+    Version and status dropdown
+  </label>
+  <select class="govuk-select" id="version" name="version">
+    <option value="1.0" selected>v1.0 (latest)</option>
+    <option value="0.3">v0.3</option>
+  </select>
+  <button type="submit" 
+            class="govuk-button govuk-!-margin-0" 
+            data-module="govuk-button"
+            onclick="setVersion();"
+            >View</button>
+</div>
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<div class="govuk-grid-row">
+<section class="govuk-!-margin-top-5 govuk-grid-column-full">
+<h2 class="govuk-heading-m" id="overview">Overview</h2>
+<p class="govuk-body">
+    The new Submit an application to change the Land Register API will help to lodge applications with HMLR to update the register or create a new lease or transfer of part.</p>
+<p class="govuk-body">
+    The new service will be faster and more responsive than before. It’ll help identify errors prior to
+    acceptance of an application, resulting in fewer requisitions and an improved experience for customers.</p>
+<h3 class="govuk-heading-s">Important changes</h3>
+<div class="govuk-!-margin-left-0" style="background-color: #f3f2f1; padding: 10px;">
+    <p class="govuk-body">The new service API will:</p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>collect and validate more data than the current version</li>
+        <li>increase the number of automated checks on application data prior to submission</li>
+        <li>automatically check the format and structure of data</li>
+        <li>validate information added to the application against information already on the register</li>
+        <li>in future, check, compare and validate the data you provide, and the information contained in the
+            attached documents</li>
+    </ul>
+    <p class="govuk-body">In return, you'll benefit from:</p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>increased output and data quality: with built-in checks on all application types, including charge
+            or transfer transactions, you’ll face fewer requisitions</li>
+        <li>consistent results across services: you’ll get parity of outcomes across our digital services</li>
+        <li>greater data confidence and automation: more accurate data will provide opportunities to streamline
+            our processes and improve the service for customers</li>
+        <li>error prevention: the system will help you catch and fix administrative errors before submission
+        </li>
+        <li>improved attachment process: attaching and classifying deeds will be quicker and more
+            straightforward</li>
+        <li>upgraded technology: you’ll benefit from a faster, more responsive platform</li>
+    </ul>
+</div>
+<div class="govuk-!-padding-bottom-3"></div>
+<p class="govuk-body">Using the new service API will mean that applications are only accepted onto the day list
+    when the data provided is both valid and correct. Applications with validation errors will not be accepted.
+    This will significantly reduce the number of avoidable administrative requisitions, identify common
+    mistakes, such as name discrepancies or missing details, and increase our ability to automate applications.
+</p>
+<div class="govuk-!-margin-left-0" style="background-color: #f3f2f1 ; padding: 10px;;">
+    <p class="govuk-body">Additional changes include:</p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>Document uploads before application submission: you will now need to upload documents before
+            submitting an application</li>
+        <li>JSON format: instead of using XML, the request bodies for the new APIs will use the simpler, more
+            efficient JSON format</li>
+        <li>Asynchronous application submission: when you submit an application, a successful response means the
+            request has been received. Acceptance and prioritisation will occur after validation has been
+            applied</li>
+        <li>Renaming applications to transactions: applications from the SOAP request are now referred to as
+            Transactions</li>
+        <li>New fields: transaction specific data has been included, initially for transfer and charge
+            transactions including charge values and information on joint tenancies</li>
+        <li>Removing notes: the Notes section is no longer included but additional data fields have been added
+            to collect the data commonly found in this field. These include:</li>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-3">
+            <li>ROE-ID (Registration of Overseas Entity ID) - this should be attached as a document of type
+                <code class="app-code app-code--inline">EVIDENCE</code> for the relevant transaction</li>
+            <li>company charges certificate – a new boolean field, <code
+                    class="app-code app-code--inline">conveyancers_certificate</code>, has been added to capture this
+                information. This value must be provided when a <code class="app-code app-code--inline">CERT_REG_CH</code>
+                document is uploaded</li>
+            <li>name variation – names are now required to be an exact match</li>
+            <li>cover letter – should now be uploaded as a document of type <code
+                    class="app-code app-code--inline">EVIDENCE</code> with the relevant transaction</li>
+            <li>request to merge or close leasehold titles – the appropriate transaction type should now be
+                selected for this purpose</li>
+        </ul>
+    </ul>
+</div>
+<br>
+<h3 class="govuk-heading-m govuk-!-margin-top-5" id="how-the-api-works">How the API works</h3>
+<!-- <p class="govuk-body">This diagram demonstrates how the Submit an application to change the land register group of APIs work to support users.</p>
+<a target="_blank" href="/assets/images/submit-an-application-to-change-the-Land-Register-API.png"><img class=" govuk-!-margin-top-5" src="/assets/images/submit-an-application-to-change-the-Land-Register-API.png"
+  alt="A diagram showing the submit an application to change the Land Register API" style="width: 900px"></a> -->
+<p class="govuk-body">The Send a document API allows users to create an upload URL and use it to upload their documents to the HMLR system.</p>
+<p class="govuk-body">Once uploaded, the Submit an application API allows the application (complete with documentation) to be submitted.</p>
+<p class="govuk-body">After submitting their applications, users are then able to receive and acknowledge notifications about the submitted applications through the Notifications API.
+</p>
+<p class="govuk-body">The application information API allows submitted applications to be reviewed or processed. Alternatively, users can return to receive notifications if they're not ready to proceed.
+</p>
+<p class="govuk-body">Finally, the Download a document API provides a way to download documents related to an application that have been created by HM Land Registry.</p>
+<p class="govuk-heading-m govuk-!-margin-top-5" id="how-to-integrate">How to integrate the Submit an application to change the land register
+  API: step by step</p>
+<div class="govuk-warning-text govuk-!-margin-top-5">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    These API endpoints are not currently live.
+  </strong>
+</div>
+<section class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div data-module="appstepnav" id="step-by-step-navigation" class="app-step-nav app-step-nav--large"
+      data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps"
+      data-hide-all-text="Hide all steps" title="Submit an application to change the land register API: step by step">
+      <ol class="app-step-nav__steps">
+        <li class="app-step-nav__step js-step" id="send-a-document-api">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 1<span
+                      class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+              <span class="js-step-title">
+                Send a document API
+              </span>
+            </h2>
+          </div>
+          <div class="app-step-nav__panel js-panel" id="send-a-document-api">
+            <ol class="app-step-nav__list " data-length="3">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="1.1" class="app-step-nav__link js-link" href="/apis/send-a-document/1.0">Overview </a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="1.2" class="app-step-nav__link js-link"
+                  href="/apis/send-a-document/1.0/technical-guide">Technical guide </a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="1.3" class="app-step-nav__link js-link" href="/apis/send-a-document/1.0/test-stubs">Test
+                  stubs </a>
+              </li>
+            </ol>
+          </div>
+        </li>
+        <li class="app-step-nav__step js-step" id="step-panel-submit-an-application">
+          <div class="app-step-nav__header js-toggle-panel" data-position="2">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 2<span
+                      class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+              <span class="js-step-title">
+                Submit an application API
+              </span>
+            </h2>
+          </div>
+          <div class="app-step-nav__panel js-panel" id="step-panel-submit-an-application">
+            <ol class="app-step-nav__list " data-length="3">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="2.1" class="app-step-nav__link js-link"
+                  href="/apis/submit-an-application/1.0">Overview</a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="2.2" class="app-step-nav__link js-link"
+                  href="/apis/submit-an-application/1.0/technical-guide">Technical guide </a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="2.3" class="app-step-nav__link js-link"
+                  href="/apis/submit-an-application/1.0/test-stubs">Test stubs </a>
+              </li>
+            </ol>
+          </div>
+        </li>
+        <li class="app-step-nav__step js-step" id="application-information-api">
+          <div class="app-step-nav__header js-toggle-panel" data-position="3">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 3<span
+                      class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+              <span class="js-step-title">
+                Application information API
+              </span>
+            </h2>
+          </div>
+          <div class="app-step-nav__panel js-panel" id="step-panel-application-information-api">
+            <ol class="app-step-nav__list " data-length="3">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="3.1" class="app-step-nav__link js-link"
+                  href="/apis/application-information/1.0">Overview</a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="3.2" class="app-step-nav__link js-link"
+                  href="/apis/application-information/1.0/technical-guide">Technical guide </a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="3.3" class="app-step-nav__link js-link"
+                  href="/apis/application-information/1.0/test-stubs">Test stubs </a>
+              </li>
+            </ol>
+          </div>
+        </li>
+                <li class="app-step-nav__step js-step" id="notifications-api">
+          <div class="app-step-nav__header js-toggle-panel" data-position="4">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 4<span
+                      class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+              <span class="js-step-title">
+                Attach a document
+              </span>
+            </h2>
+          </div>
+          <div class="app-step-nav__panel js-panel" id="step-panel-notifications-api">
+            <ol class="app-step-nav__list " data-length="3">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.1" class="app-step-nav__link js-link" href="/apis/attach-a-document/1.0">Overview</a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.2" class="app-step-nav__link js-link"
+                  href="/apis/attach-a-document/1.0/technical-guide">Technical guide </a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.3" class="app-step-nav__link js-link" href="/apis/attach-a-document/1.0/test-stubs">Test
+                  stubs </a>
+              </li>
+            </ol>
+          </div>
+        </li>
+                <li class="app-step-nav__step js-step" id="notifications-api">
+          <div class="app-step-nav__header js-toggle-panel" data-position="5">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 5<span
+                      class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+              <span class="js-step-title">
+                Attach a message
+              </span>
+            </h2>
+          </div>
+          <div class="app-step-nav__panel js-panel" id="step-panel-notifications-api">
+            <ol class="app-step-nav__list " data-length="3">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.1" class="app-step-nav__link js-link" href="/apis/attach-a-message/1.0">Overview</a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.2" class="app-step-nav__link js-link"
+                  href="/apis/attach-a-message/1.0/technical-guide">Technical guide </a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.3" class="app-step-nav__link js-link" href="/apis/attach-a-message/1.0/test-stubs">Test
+                  stubs </a>
+              </li>
+            </ol>
+          </div>
+        </li>
+        <li class="app-step-nav__step js-step" id="notifications-api">
+          <div class="app-step-nav__header js-toggle-panel" data-position="6">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 6<span
+                      class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+              <span class="js-step-title">
+                Notifications API
+              </span>
+            </h2>
+          </div>
+          <div class="app-step-nav__panel js-panel" id="step-panel-notifications-api">
+            <ol class="app-step-nav__list " data-length="3">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.1" class="app-step-nav__link js-link" href="/apis/notifications/1.0">Overview</a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.2" class="app-step-nav__link js-link"
+                  href="/apis/notifications/1.0/technical-guide">Technical guide </a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.3" class="app-step-nav__link js-link" href="/apis/notifications/1.0/test-stubs">Test
+                  stubs </a>
+              </li>
+            </ol>
+          </div>
+        </li>
+        <li class="app-step-nav__step js-step" id="notifications-api">
+          <div class="app-step-nav__header js-toggle-panel" data-position="7">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 7<span
+                      class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+              <span class="js-step-title">
+                Download a document API
+              </span>
+            </h2>
+          </div>
+          <div class="app-step-nav__panel js-panel" id="step-panel-notifications-api">
+            <ol class="app-step-nav__list " data-length="3">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.1" class="app-step-nav__link js-link" href="/apis/download-a-document/1.0">Overview</a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.2" class="app-step-nav__link js-link"
+                  href="/apis/download-a-document/1.0/technical-guide">Technical guide </a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.3" class="app-step-nav__link js-link" href="/apis/download-a-document/1.0/test-stubs">Test
+                  stubs </a>
+              </li>
+            </ol>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+<h3 class="govuk-heading-m" id="view-the-api-specification">View API specification</h3>
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-body govuk-link" href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html"
+      rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
+  </li>
+  <li>
+    <a class="govuk-body govuk-link" href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/openapi.json"
+      rel="noreferrer noopener" target="_blank">JSON version (opens in new tab)</a>
+  </li>
+</ul>
+</section>
+</div>
+</div>
+
+</div></div>        </main>
+      </div>
+
+<footer class="govuk-footer govuk-footer--hmlr " role="contentinfo">
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
+            <ul class="govuk-footer__inline-list">
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">
+                    Accessibility Statement
+                  </a>
+                </li>
+            </ul>
+            <div class="govuk-footer__meta-custom">
+              These links open in a new tab.
+            </div>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <span
+          class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr"
+        >&copy; Crown copyright</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/step-by-step-navigation.js"></script>
+<script src="/assets/js/step-by-step-polyfills.js"></script>
+<script type="text/javascript">
+  var $element = document.querySelector('#step-by-step-navigation')
+  var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
+</script>  </body>
+</html>
