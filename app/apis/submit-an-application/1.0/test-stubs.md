@@ -3,7 +3,7 @@ layout: guidance.njk
 
 title: Submit an application API test stubs
 
-notlive: true
+notlive: false
 
 eleventyNavigation:
   key: Submit an application API v1.0 test stubs

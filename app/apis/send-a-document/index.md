@@ -8,7 +8,7 @@ eleventyNavigation:
   key: Send a Document API
   parent: APIs
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"

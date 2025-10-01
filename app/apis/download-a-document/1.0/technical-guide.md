@@ -8,7 +8,7 @@ eleventyNavigation:
   key: Download a Document v1.0 Technical guide
   parent: Download a Document v1.0
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"

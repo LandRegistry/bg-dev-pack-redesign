@@ -8,7 +8,7 @@ eleventyNavigation:
   key: Attach a message API v1.0
   parent: Attach a message API
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"
@@ -43,7 +43,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 <section>
 
-## View the Technical guide {.govuk-heading-m}
+## View the technical guide {.govuk-heading-m}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 

@@ -7,7 +7,7 @@ eleventyNavigation:
   key: Notifications API v0.3 Test stubs
   parent: Notifications API v0.3
 
-notlive: true
+notlive: false
 
 versions:
   - value: "0.3"

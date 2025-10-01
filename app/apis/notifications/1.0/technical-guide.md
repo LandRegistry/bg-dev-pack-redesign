@@ -8,7 +8,7 @@ eleventyNavigation:
   key: Notifications API v1.0 Technical guide
   parent: Notifications API v1.0
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"

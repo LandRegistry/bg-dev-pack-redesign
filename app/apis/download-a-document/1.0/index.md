@@ -8,7 +8,7 @@ eleventyNavigation:
     key: Download a Document v1.0
     parent: Download a Document
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"
@@ -49,7 +49,7 @@ You may obtain a `download_id` from any of the following:
 </section>
 <section>
 
-## View the Technical Guide {.govuk-heading-m}
+## View the technical guide {.govuk-heading-m}
 
 [Technical guide](/apis/download-a-document/1.0/technical-guide)
 

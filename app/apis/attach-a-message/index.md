@@ -8,7 +8,7 @@ eleventyNavigation:
     key: Attach a document
     parent: APIs
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"

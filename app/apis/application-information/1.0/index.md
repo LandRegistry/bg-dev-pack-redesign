@@ -8,7 +8,7 @@ eleventyNavigation:
   key: Application Information API v1.0
   parent: Application Information API
 
-notlive: true
+notlive: false 
 
 versions:
   - value: "1.0"
@@ -57,7 +57,7 @@ This API can be used to get more information after receiving a notification indi
 
 <section id="view-the-technical-guide">
 
-## View the Technical guide {.govuk-heading-m}
+## View the technical guide {.govuk-heading-m}
 
 [Technical guide](./technical-guide)
 

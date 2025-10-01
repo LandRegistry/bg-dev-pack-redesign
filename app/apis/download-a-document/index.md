@@ -9,7 +9,7 @@ eleventyNavigation:
     parent: APIs
     hide: true
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"

@@ -8,7 +8,7 @@ eleventyNavigation:
     key: Submit an Application API v1.0 Technical guide
     parent: Submit an Application API
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"

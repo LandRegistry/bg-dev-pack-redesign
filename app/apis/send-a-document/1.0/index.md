@@ -8,7 +8,7 @@ eleventyNavigation:
   key: Send a Document API v1.0
   parent: Send a Document API
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"
@@ -55,7 +55,7 @@ Documents that have been uploaded can be used for up to 180 days, after which po
 </section>
 <section>
 
-## View the Technical guide {.govuk-heading-m}
+## View the technical guide {.govuk-heading-m}
 
 <ul class="govuk-list">
   <li>

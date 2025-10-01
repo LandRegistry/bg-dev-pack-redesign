@@ -8,7 +8,7 @@ eleventyNavigation:
   key: Notifications API v0.3
   parent: Notifications API
 
-notlive: true
+notlive: false
 
 versions:
   - value: "0.3"
@@ -48,7 +48,7 @@ This API can be used to get more information after receiving a notification indi
 
 <section>
 
-## View the Technical guide {.govuk-heading-m}
+## View the technical guide {.govuk-heading-m}
 
 <ul class="govuk-list">
   <li>

@@ -7,7 +7,7 @@ eleventyNavigation:
   key: Send a Document API v1.0 Test stubs
   parent: Send a Document API v1.0
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"

@@ -7,7 +7,7 @@ eleventyNavigation:
   key: Application Information v1.0 Test stubs
   parent: Application Information v1.0
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"

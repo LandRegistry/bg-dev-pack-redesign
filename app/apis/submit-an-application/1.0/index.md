@@ -8,7 +8,7 @@ eleventyNavigation:
     key: Submit an Application API v1.0
     parent: Submit an Application API
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"
@@ -64,7 +64,7 @@ The data in the request content contains information about:
 </section>
 <section>
 
-## View the Technical guide {.govuk-heading-m}
+## View the technical guide {.govuk-heading-m}
 
 <ul class="govuk-list"> <!-- Default render for `- list` style lists is to add bullet points, which we don't want here. -->
   <li>
