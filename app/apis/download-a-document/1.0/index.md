@@ -2,7 +2,7 @@
 layout: api-overview.njk
 
 title: Download a document
-description: Use this service to download documents.
+description: Use this service to download documents created by HM Land Registry.
 
 eleventyNavigation:
     key: Download a Document v1.0
@@ -33,9 +33,9 @@ relatedAPIs:
 
 ## Overview {.govuk-heading-m}
 
-The Download a document API provides a way to download documents that have been created by HM Land Registry for your consumption.
+The Download a document API provides a way to download documents created by HMLR. 
 
-This API has one endpoints:
+This API has one endpoint:
 
 - `GET /v0/documents/{download_id}` - get the binary content of the document.
 
@@ -44,7 +44,7 @@ You may obtain a `download_id` from any of the following:
 - Completion notifications
 - Cancellation notifications
 - Requisition correspondence notifications
-- The `/correspondence` array in an [application information](/apis/application-information) response
+- The `/correspondence` array in an [Application information API](/apis/application-information) response
 
 </section>
 <section>
@@ -72,26 +72,26 @@ You may obtain a `download_id` from any of the following:
 <!-- < INSERT IMAGE HERE > -->
 <!-- This diagram demonstrates how the download a document API works. -->
 
-A user may obtain a `download_id` from either a notification or application information. 
+A user may obtain a `download_id` from either the Notifications or Application information API. 
 
-The user may then use that `download_id` in their request to `GET /v0/documents/{download_id}` to obtain the document binary.
+The user can use that `download_id` in their request to `GET /v0/documents/{download_id}` to obtain the document binary.
  
 </section>
 <section>
 
 ## How to test this API {.govuk-heading-m}
 
-HMLR has created a test environment for the Download a document API. We’ve also provided example code to demonstrate what you should expect when developing your own services.
+HMLR has created a test environment for the Download a document API. We’ve also provided example code to demonstrate what you should expect when developing your own services. 
 
-[View Download a document test stubs](/apis/download-a-document/1.0/test-stubs).
+[View Download a document API test stubs](/apis/download-a-document/1.0/test-stubs).
 
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
 {{ govukInsetText({
-  text: "Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed."
+  text: "Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed. "
 }) }}
 
-For general testing guidance, visit our [guide to testing](/a-guide-to-testing)
+For general testing guidance, visit our [guide to testing](/a-guide-to-testing).
 
 </section>
 

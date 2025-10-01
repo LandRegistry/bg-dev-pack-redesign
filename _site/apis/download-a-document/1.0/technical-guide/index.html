@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template govuk-template--rebranded">
   <head>
     <meta charset="utf-8">
-    <title>Download a document Technical guide - HM Land Registry Developer Pack</title>
+    <title>Download a document API technical guide - HM Land Registry Developer Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/assets/application.css">
 
 
-  <meta property="og:title" content="Download a document Technical guide">
+  <meta property="og:title" content="Download a document API technical guide">
 <meta property="og:description" name="description" content="Use this service to download documents provided by HM Land Registry.">
 <script src="/assets/script.js"></script><script>
     function setVersion() {
@@ -148,7 +148,7 @@ data-module="govuk-service-navigation"
 
 
 <header class="app-document-header">
-  <h1 class="govuk-heading-xl">Download a document Technical guide</h1><p class="govuk-body-l">Use this service to download documents provided by HM Land&nbsp;Registry.</p>
+  <h1 class="govuk-heading-xl">Download a document API technical guide</h1><p class="govuk-body-l">Use this service to download documents provided by HM Land&nbsp;Registry.</p>
 </header>
 
 
@@ -175,18 +175,18 @@ data-module="govuk-service-navigation"
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 <div class="app-prose-scope"><section>
-<h2 class="govuk-heading-m" id="how-to-use-download-a-document" tabindex="-1" class="govuk-heading-l">How to use download a document</h2>
+<h2 class="govuk-heading-m" id="how-to-use-the-download-a-document-api" tabindex="-1" class="govuk-heading-l">How to use the Download a document API</h2>
 <h3 class="govuk-heading-s" id="obtain-a-download-id" tabindex="-1" class="govuk-heading-m">Obtain a <code class="app-code app-code--inline">download id</code></h3>
-<p class="govuk-body">Before you can use this service, you will need to obtain a <code class="app-code app-code--inline">download id</code> from somewhere. Currently the only way to do this is via submiting an application to change the Land Register. This process will result in one of the following types of document being generated:</p>
+<p class="govuk-body">Before you can use this service, you will need to obtain a <code class="app-code app-code--inline">download id</code>. Currently the only way to do this is to submit an application to change the Land Register. This process will result in one of the following types of document being generated:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li>Requisition documents</li>
-<li>Cancellation documents</li>
-<li>Completion documents</li>
+<li>requisition</li>
+<li>cancellation</li>
+<li>completion</li>
 </ul>
-<p class="govuk-body">The generation of each of these documents would trigger a notification to be sent via the <a href="/apis/notifications" class="govuk-link">Notifications API</a>, which would contain a <code class="app-code app-code--inline">download id</code>. Once this notification has been sent, the document will be available for download.</p>
-<p class="govuk-body">Note: A <code class="app-code app-code--inline">download id</code> may be available in the <a href="/apis/application-information" class="govuk-link">application information API’s</a> response before the notification is sent, under the <code class="app-code app-code--inline">/correspondences</code> array. The document is not guarenteed to be available for download until the notification has been issued.</p>
+<p class="govuk-body">The generation of each of these documents would trigger a notification to be sent via the <a href="/apis/notifications" class="govuk-link">Notifications API</a>, which would contain a <code class="app-code app-code--inline">download id</code>. Once this notification is sent, the document will be available for download.</p>
+<p class="govuk-body">Note: A <code class="app-code app-code--inline">download id</code> may be available in the <a href="/apis/application-information" class="govuk-link">Application information API’s</a> response before the notification is sent, under the <code class="app-code app-code--inline">/correspondences</code> array. The document is not guaranteed to be available for download until the notification has been issued.</p>
 <h3 class="govuk-heading-s" id="downloading-a-document" tabindex="-1" class="govuk-heading-m">Downloading a document</h3>
-<p class="govuk-body">Once you’ve obtained that <code class="app-code app-code--inline">download id</code> you can use it in a <code class="app-code app-code--inline">GET</code> request to this service. The request is simple and will result in the document binary being returned so long as your request method allows redirects.</p>
+<p class="govuk-body">Once you’ve obtained the <code class="app-code app-code--inline">download id</code> you can use it in a <code class="app-code app-code--inline">GET</code> request to this service. The request is simple and will result in the document binary being returned (as long as your request method allows redirects).</p>
 </section>
 <section>
 <h2 class="govuk-heading-m" id="validation-rules" tabindex="-1" class="govuk-heading-l">Validation rules</h2>
@@ -196,7 +196,7 @@ data-module="govuk-service-navigation"
 <h2 class="govuk-heading-m" id="example-requests-and-responses" tabindex="-1" class="govuk-heading-l">Example requests and responses</h2>
 <p class="govuk-body">For specific examples of notification payloads produced during application submission, view <a href="/apis/submit-an-application" class="govuk-link">Submit an application notifications</a>.</p>
 <h3 class="govuk-heading-s" id="download-a-document-redirection-enabled" tabindex="-1" class="govuk-heading-m">Download a document (redirection enabled)</h3>
-<p class="govuk-body"><em>Request</em></p>
+<p class="govuk-body">Request</p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -207,11 +207,11 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
-<p class="govuk-body"><em>Response</em></p>
+<p class="govuk-body">Response</p>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
-<p class="govuk-body">Body: <em>document binary</em></p>
+<p class="govuk-body">Body: document binary</p>
 <h3 class="govuk-heading-s" id="download-a-document-redirection-disabled" tabindex="-1" class="govuk-heading-m">Download a document (redirection disabled)</h3>
-<p class="govuk-body"><em>Request 1</em></p>
+<p class="govuk-body">Request 1</p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -222,10 +222,10 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
-<p class="govuk-body"><em>Response 1</em></p>
+<p class="govuk-body">Response 1</p>
 <p class="govuk-body">Status: 302</p>
 <p class="govuk-body">Header: <code class="app-code app-code--inline">Location: &lt;download  url&gt;</code></p>
-<p class="govuk-body"><em>Request 2</em></p>
+<p class="govuk-body">Request 2</p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -235,9 +235,9 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
-<p class="govuk-body"><em>Response 2</em></p>
+<p class="govuk-body">Response 2</p>
 <p class="govuk-body">Status: 200</p>
-<p class="govuk-body">Body: <em>document binary</em></p>
+<p class="govuk-body">Body: document binary</p>
 </section>
 </div>
 

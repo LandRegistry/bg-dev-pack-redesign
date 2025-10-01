@@ -13,7 +13,7 @@
 
 
   <meta property="og:title" content="Download a document">
-<meta property="og:description" name="description" content="Use this service to download documents.">
+<meta property="og:description" name="description" content="Use this service to download documents created by HM Land Registry.">
 <script src="/assets/script.js"></script><script>
     function setVersion() {
         let version = document.getElementById('version').value;
@@ -78,7 +78,7 @@ data-module="govuk-service-navigation"
 <div class="govuk-grid-column-full">
 
 <header class="app-document-header">
-  <h1 class="govuk-heading-xl">Download a document</h1><p class="govuk-body-l">Use this service to download&nbsp;documents.</p>
+  <h1 class="govuk-heading-xl">Download a document</h1><p class="govuk-body-l">Use this service to download documents created by HM Land&nbsp;Registry.</p>
 </header>
 
 </div>
@@ -108,8 +108,8 @@ data-module="govuk-service-navigation"
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 <div class="app-prose-scope"><h2 class="govuk-heading-m" id="overview" tabindex="-1" class="govuk-heading-l">Overview</h2>
-<p class="govuk-body">The Download a document API provides a way to download documents that have been created by HM Land Registry for your consumption.</p>
-<p class="govuk-body">This API has one endpoints:</p>
+<p class="govuk-body">The Download a document API provides a way to download documents created by HMLR.</p>
+<p class="govuk-body">This API has one endpoint:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li><code class="app-code app-code--inline">GET /v0/documents/{download_id}</code> - get the binary content of the document.</li>
 </ul>
@@ -118,7 +118,7 @@ data-module="govuk-service-navigation"
 <li>Completion notifications</li>
 <li>Cancellation notifications</li>
 <li>Requisition correspondence notifications</li>
-<li>The <code class="app-code app-code--inline">/correspondence</code> array in an <a href="/apis/application-information" class="govuk-link">application information</a> response</li>
+<li>The <code class="app-code app-code--inline">/correspondence</code> array in an <a href="/apis/application-information" class="govuk-link">Application information API</a> response</li>
 </ul>
 </section>
 <section>
@@ -138,17 +138,17 @@ data-module="govuk-service-navigation"
 </a> -->
 <!-- < INSERT IMAGE HERE > -->
 <!-- This diagram demonstrates how the download a document API works. -->
-<p class="govuk-body">A user may obtain a <code class="app-code app-code--inline">download_id</code> from either a notification or application information.</p>
-<p class="govuk-body">The user may then use that <code class="app-code app-code--inline">download_id</code> in their request to <code class="app-code app-code--inline">GET /v0/documents/{download_id}</code> to obtain the document binary.</p>
+<p class="govuk-body">A user may obtain a <code class="app-code app-code--inline">download_id</code> from either the Notifications or Application information API.</p>
+<p class="govuk-body">The user can use that <code class="app-code app-code--inline">download_id</code> in their request to <code class="app-code app-code--inline">GET /v0/documents/{download_id}</code> to obtain the document binary.</p>
 </section>
 <section>
 <h2 class="govuk-heading-m" id="how-to-test-this-api" tabindex="-1" class="govuk-heading-l">How to test this API</h2>
 <p class="govuk-body">HMLR has created a test environment for the Download a document API. We’ve also provided example code to demonstrate what you should expect when developing your own services.</p>
-<p class="govuk-body"><a href="/apis/download-a-document/1.0/test-stubs" class="govuk-link">View Download a document test stubs</a>.</p>
+<p class="govuk-body"><a href="/apis/download-a-document/1.0/test-stubs" class="govuk-link">View Download a document API test stubs</a>.</p>
 <div class="govuk-inset-text">
-  Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed.
+  Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed. 
 </div>
-<p class="govuk-body">For general testing guidance, visit our <a href="/a-guide-to-testing" class="govuk-link">guide to testing</a></p>
+<p class="govuk-body">For general testing guidance, visit our <a href="/a-guide-to-testing" class="govuk-link">guide to testing</a>.</p>
 </section>
 </div>
 
