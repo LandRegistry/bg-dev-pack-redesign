@@ -97,7 +97,7 @@ Users can then use this URL to upload the document to the system.
 HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code to demonstrate what you should expect to see when developing your own services.
 <ul class="govuk-list">
   <li>
-    <a class="govuk-link" href="./test-stubs">View Send a document test stubs</a>.
+    <a class="govuk-link" href="./test-stubs">View Send a document test stubs</a>
   </li>
 </ul>
 

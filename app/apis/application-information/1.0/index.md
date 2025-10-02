@@ -111,7 +111,7 @@ HMLR has created a test environment for the Application information API. We’ve
 
 <ul class="govuk-list">
   <li>
-    <a class="govuk-link" href="./test-stubs">View Application information test stubs.</a>
+    <a class="govuk-link" href="./test-stubs">View Application information test stubs</a>
   </li>
 </ul>
 

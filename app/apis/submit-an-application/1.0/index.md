@@ -105,7 +105,7 @@ HMLR has created a test environment for the Submit an application API. We’ve a
 
 <ul class="govuk-list">
   <li>
-    <a class="govuk-link" href="/apis/submit-an-application/1.0/test-stubs">View Submit an application test stubs.</a>
+    <a class="govuk-link" href="/apis/submit-an-application/1.0/test-stubs">View Submit an application test stubs</a>
   </li>
 </ul>
 
