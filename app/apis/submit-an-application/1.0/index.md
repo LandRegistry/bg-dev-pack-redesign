@@ -92,7 +92,7 @@ The data in the request content contains information about:
   <img class="govuk-!-margin-bottom-3" src="/assets/images/SubmitAnApplication.png" alt="A diagram showing how the Submit an application API works.">
 </a>
 
-This diagram demonstrates how the Send a document API works to support users.
+This diagram demonstrates how the Submit an application API works to support users.
 
 When a user submits information to update the register, the HMLR system will respond by sending a unique application ID. Users can use this ID to receive information about the status of their application.
 
