@@ -111,7 +111,7 @@ data-module="govuk-service-navigation"
 <p class="govuk-body">The Download a document API provides a way to download documents created by HMLR.</p>
 <p class="govuk-body">This API has one endpoint:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">GET /v0/documents/{download_id}</code> - get the binary content of the document.</li>
+<li><code class="app-code app-code--inline">GET /v1/documents/{download_id}</code> - get the binary content of the document.</li>
 </ul>
 <p class="govuk-body">You may obtain a <code class="app-code app-code--inline">download_id</code> from any of the following:</p>
 <ul class="govuk-list govuk-list--bullet">
@@ -139,7 +139,7 @@ data-module="govuk-service-navigation"
 <!-- < INSERT IMAGE HERE > -->
 <!-- This diagram demonstrates how the download a document API works. -->
 <p class="govuk-body">A user may obtain a <code class="app-code app-code--inline">download_id</code> from either the Notifications or Application information API.</p>
-<p class="govuk-body">The user can use that <code class="app-code app-code--inline">download_id</code> in their request to <code class="app-code app-code--inline">GET /v0/documents/{download_id}</code> to obtain the document binary.</p>
+<p class="govuk-body">The user can use that <code class="app-code app-code--inline">download_id</code> in their request to <code class="app-code app-code--inline">GET /v1/documents/{download_id}</code> to obtain the document binary.</p>
 </section>
 <section>
 <h2 class="govuk-heading-m" id="how-to-test-this-api" tabindex="-1" class="govuk-heading-l">How to test this API</h2>
