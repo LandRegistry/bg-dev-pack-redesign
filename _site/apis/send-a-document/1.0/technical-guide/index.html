@@ -179,7 +179,7 @@ data-module="govuk-service-navigation"
 <h2 class="govuk-heading-m" id="how-to-use-the-send-a-document-api" tabindex="-1" class="govuk-heading-l">How to use the Send a document API</h2>
 <p class="govuk-body">This API consists of two endpoints that must be used together to upload a single document.</p>
 <ol class="govuk-list govuk-list--number">
-<li><code class="app-code app-code--inline">POST /v0/documents/url</code> - The generate an upload URL endpoint. The HTTP body of the request contains information about the file being uploaded</li>
+<li><code class="app-code app-code--inline">POST /v1/documents/url</code> - The generate an upload URL endpoint. The HTTP body of the request contains information about the file being uploaded</li>
 <li><code class="app-code app-code--inline">PUT documentcapture.landregistry.gov.uk/...</code> - The upload a document endpoint. The HTTP body of the request is the bytes of the document</li>
 </ol>
 <h3 class="govuk-heading-s" id="generate-an-upload-url" tabindex="-1" class="govuk-heading-m">Generate an upload URL</h3>
@@ -308,7 +308,7 @@ shasum.<span class="app-code__title function_">digest</span>(<span class="app-co
 </div>
 </section>
 <h2 class="govuk-heading-m" id="example-requests-and-responses" tabindex="-1" class="govuk-heading-l">Example requests and responses</h2>
-<h3 class="govuk-heading-s" id="post-v0-documents-url-request" tabindex="-1" class="govuk-heading-m"><code>POST /v0/documents/url</code> - Request</h3>
+<h3 class="govuk-heading-s" id="post-v1-documents-url-request" tabindex="-1" class="govuk-heading-m"><code>POST /v1/documents/url</code> - Request</h3>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -323,7 +323,7 @@ shasum.<span class="app-code__title function_">digest</span>(<span class="app-co
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s" id="post-v0-documents-url-response" tabindex="-1" class="govuk-heading-m"><code>POST /v0/documents/url</code> - Response</h3>
+<h3 class="govuk-heading-s" id="post-v1-documents-url-response" tabindex="-1" class="govuk-heading-m"><code>POST /v1/documents/url</code> - Response</h3>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -340,7 +340,7 @@ shasum.<span class="app-code__title function_">digest</span>(<span class="app-co
 <p class="govuk-body">Note: The URL in the example may not be representative of the actual URL received.</p>
 <p class="govuk-body"><strong>PUT document - Request</strong></p>
 <ul class="govuk-list govuk-list--bullet">
-<li>URL matches upload_url in <code class="app-code app-code--inline">/v0/documents/url</code> response</li>
+<li>URL matches upload_url in <code class="app-code app-code--inline">/v1/documents/url</code> response</li>
 <li>Body content is the document to upload</li>
 </ul>
 <p class="govuk-body"><strong>PUT document - Response</strong></p>

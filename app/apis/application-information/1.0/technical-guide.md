@@ -82,7 +82,7 @@ There are no validation rules for implementing this API.
 ## Example requests and responses {.govuk-heading-m}
 ### VALIDATING status {.govuk-heading-s}
 
-<code>GET /v0/applications/{id}/information</code>
+<code>GET /v1/applications/{id}/information</code>
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -102,7 +102,7 @@ There are no validation rules for implementing this API.
 
 ### VALIDATION_FAILED status {.govuk-heading-s}
 
-<code>GET /v0/applications/{id}/information</code>
+<code>GET /v1/applications/{id}/information</code>
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -128,7 +128,7 @@ There are no validation rules for implementing this API.
 
 ### SYSTEM ERROR status {.govuk-heading-s}
 
-<code>GET /v0/applications/{id}/information</code>
+<code>GET /v1/applications/{id}/information</code>
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -148,7 +148,7 @@ There are no validation rules for implementing this API.
 
 ### ACCEPTED_AWAITING_PRIORITY status {.govuk-heading-s}
 
-<code>GET /v0/applications/{id}/information</code> 
+<code>GET /v1/applications/{id}/information</code> 
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -168,7 +168,7 @@ There are no validation rules for implementing this API.
 
 ### ACCEPTED_PRIORITY_PROTECTED status {.govuk-heading-s}
 
-<code>GET /v0/applications/{id}/information</code>
+<code>GET /v1/applications/{id}/information</code>
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -192,7 +192,7 @@ There are no validation rules for implementing this API.
 
 ### CANCELLED status {.govuk-heading-s}
 
-<code>GET /v0/applications/{id}/information</code>
+<code>GET /v1/applications/{id}/information</code>
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -224,7 +224,7 @@ There are no validation rules for implementing this API.
 
 ### COMPLETED status {.govuk-heading-s}
 
-<code>GET /v0/applications/{id}/information</code>
+<code>GET /v1/applications/{id}/information</code>
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}

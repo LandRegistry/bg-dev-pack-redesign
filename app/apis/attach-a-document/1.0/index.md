@@ -37,7 +37,10 @@ relatedAPIs:
 
 ## Overview {.govuk-heading-m}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+The Attach a Document API will allow users to attach additional documents to an existing application. The Application Information API can then be used to see if the attachment has been successful or not.
+
+Note that this API is specifically for attaching documents to an application. To attach a text message to an application, refer to the Attach a Message API.
+
 
 </section>
 

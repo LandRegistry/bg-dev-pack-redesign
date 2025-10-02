@@ -47,7 +47,7 @@ sidenav:
 
 <section>
 
-## How to use the Notifications API {.govuk-heading-m}
+## How to use the Attach a Document API {.govuk-heading-m}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 </section>

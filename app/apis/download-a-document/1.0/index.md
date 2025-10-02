@@ -37,7 +37,7 @@ The Download a document API provides a way to download documents created by HMLR
 
 This API has one endpoint:
 
-- `GET /v0/documents/{download_id}` - get the binary content of the document.
+- `GET /v1/documents/{download_id}` - get the binary content of the document.
 
 You may obtain a `download_id` from any of the following:
 
@@ -74,7 +74,7 @@ You may obtain a `download_id` from any of the following:
 
 A user may obtain a `download_id` from either the Notifications or Application information API. 
 
-The user can use that `download_id` in their request to `GET /v0/documents/{download_id}` to obtain the document binary.
+The user can use that `download_id` in their request to `GET /v1/documents/{download_id}` to obtain the document binary.
  
 </section>
 <section>

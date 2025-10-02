@@ -55,7 +55,7 @@ sidenav:
 
 This API consists of two endpoints that must be used together to upload a single document.
 
-1. `POST /v0/documents/url` - The generate an upload URL endpoint. The HTTP body of the request contains information about the file being uploaded
+1. `POST /v1/documents/url` - The generate an upload URL endpoint. The HTTP body of the request contains information about the file being uploaded
 2. `PUT documentcapture.landregistry.gov.uk/...` - The upload a document endpoint. The HTTP body of the request is the bytes of the document
 
 ### Generate an upload URL {.govuk-heading-s}
@@ -211,7 +211,7 @@ shasum.digest("base64");
 
 ## Example requests and responses {.govuk-heading-m}
 
-### <code>POST /v0/documents/url</code> - Request {.govuk-heading-s}
+### <code>POST /v1/documents/url</code> - Request {.govuk-heading-s}
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -227,7 +227,7 @@ shasum.digest("base64");
 ```
 </div>
 
-### <code>POST /v0/documents/url</code> - Response {.govuk-heading-s}
+### <code>POST /v1/documents/url</code> - Response {.govuk-heading-s}
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -246,7 +246,7 @@ Note: The URL in the example may not be representative of the actual URL receive
 
 **PUT document - Request**
 
-- URL matches upload_url in `/v0/documents/url` response
+- URL matches upload_url in `/v1/documents/url` response
 - Body content is the document to upload
 
 **PUT document - Response**

@@ -90,7 +90,7 @@ For specific examples of notification payloads produced during application submi
 
 ### Get notifications request {.govuk-heading-s}
 
-`GET /v0/notifications?created_after=2025-01-01t00:00:00 http/1.1`
+`GET /v1/notifications?created_after=2025-01-01t00:00:00 http/1.1`
 
 ### Get notifications response {.govuk-heading-s}
 
@@ -122,7 +122,7 @@ For specific examples of notification payloads produced during application submi
 
 ### Acknowledge notifications request {.govuk-heading-s}
 
-`POST /v0/notifications/acknowledge http/1.1`
+`POST /v1/notifications/acknowledge http/1.1`
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}

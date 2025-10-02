@@ -73,7 +73,7 @@ Base URL: `https://bgtest.landregistry.gov.uk/bg2test/api`
 
 Method: `POST`
 
-Endpoint: `/v0/documents/url`
+Endpoint: `/v1/documents/url`
 
 Headers: `Authorization: <any-value>`
 
@@ -122,7 +122,7 @@ Note: This response body may contain any random UUID.
 
 Method: `POST`
 
-Endpoint: `/v0/documents/url`
+Endpoint: `/v1/documents/url`
 
 Headers: `Authorization: <any-value>`
 
@@ -173,7 +173,7 @@ Status: `400`
 
 Method: `POST`
 
-Endpoint: `/v0/documents/url`
+Endpoint: `/v1/documents/url`
 
 Headers: `Authorization: <any-value>`
 
@@ -224,7 +224,7 @@ Status: `400`
 
 Method: `POST`
 
-Endpoint: `/v0/documents/url`
+Endpoint: `/v1/documents/url`
 
 Headers: `Authorization: <any-value>`
 
@@ -275,7 +275,7 @@ Status: `400`
 
 Method: `POST`
 
-Endpoint: `/v0/documents/url`
+Endpoint: `/v1/documents/url`
 
 Headers: `Authorization: <any-value>`
 

@@ -204,7 +204,7 @@ data-module="govuk-service-navigation"
 <h2 class="govuk-heading-m" id="example-requests-and-responses" tabindex="-1" class="govuk-heading-l">Example requests and responses</h2>
 <p class="govuk-body">For specific examples of notification payloads produced during application submission, view <a href="/apis/submit-an-application" class="govuk-link">Submit an application notifications</a>.</p>
 <h3 class="govuk-heading-s" id="get-notifications-request" tabindex="-1" class="govuk-heading-m">Get notifications request</h3>
-<p class="govuk-body"><code class="app-code app-code--inline">GET /v1/notifications?created_after=2025-01-01T00:00:00 http/1.1</code></p>
+<p class="govuk-body"><code class="app-code app-code--inline">GET /v1/notifications?created_after=2025-01-01t00:00:00 http/1.1</code></p>
 <h3 class="govuk-heading-s" id="get-notifications-response" tabindex="-1" class="govuk-heading-m">Get notifications response</h3>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -213,8 +213,8 @@ data-module="govuk-service-navigation"
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">{</span>
     <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-03-06t14:32:55.295Z&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-03-06t14:32:55.295Z&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-03-06t14:32:55.295z&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-03-06t14:32:55.295z&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://example.com/&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;string&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;string&quot;</span><span class="app-code__punctuation">,</span>
