@@ -18,15 +18,19 @@ versions:
     text: "v0.3"
     
 relatedAPIs:
-  - text: Submit an application to change the Land Register
+  - text: Submit an application to change the Land Register API
     href: /apis/submit-an-application-to-change-the-land-register 
-  - text: Send a document
+  - text: Send a document API
     href: /apis/send-a-document
-  - text: Application information
+  - text: Application information API
     href: /apis/application-information
-  - text: Notifications
+  - text: Attach a document API
+    href: /apis/attach-a-document
+  - text: Attach a message API
+    href: /apis/attach-a-message
+  - text: Notifications API
     href: /apis/notifications
-  - text: Download a document
+  - text: Download a document API
     href: /apis/download-a-document
   - text: More
     href: /find-a-service-api

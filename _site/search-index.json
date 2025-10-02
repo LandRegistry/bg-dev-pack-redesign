@@ -12,7 +12,7 @@
     "tokens": "explore apis guide testing submit application change land register hmlr provides test environment ve also provided example code demonstrate what should expect when developing your own services ll find stub examples our api pages request response technical guides please note there are plans release sandbox developers future exact date confirmed additional support contact integration team soap rest information about will added later sometimes use terms describe work list commonly used their definitions visit glossary"
   },
   {
-    "title": "Download a document",
+    "title": "Download a document API",
     "description": "Use this service to download documents created by HM Land Registry.",
     "section": "Download a Document",
     "url": "/apis/download-a-document/1.0/",
