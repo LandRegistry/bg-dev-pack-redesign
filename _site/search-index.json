@@ -122,14 +122,14 @@
     "description": "Use this service to attach a document to a submitted order.",
     "section": "Attach a document API",
     "url": "/apis/attach-a-document/1.0/",
-    "tokens": "overview attach document api will allow users additional documents existing application information can then used see attachment been successful note that this specifically attaching text message refer view technical guide lorem ipsum dolor sit amet consectetur adipiscing elit specification how works test general testing guidance visit our"
+    "tokens": "overview attach document api will allow users additional documents existing application information can then used see attachment been successful note that this specifically attaching text message refer view technical guide specification web version opens new tab how works diagram demonstrates support when user submits hmlr system initially respond with empty 202 accepted response receive notification stating whether test created environment ve also provided example code demonstrate what should expect developing your own services submit stubs please there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
   },
   {
     "title": "Attach a document Technical guide",
     "description": "Use this service to attach a document to a submitted order.",
     "section": "Attach a document API v1.0",
     "url": "/apis/attach-a-document/1.0/technical-guide/",
-    "tokens": "how use attach document api lorem ipsum dolor sit amet consectetur adipiscing elit validation rules example requests responses"
+    "tokens": "how use attach document api upload attached before attaching application must uploaded this step see send existing make http post request endpoint body contains id that will retrieved when uploading certification statement type one certified by another once been validated empty 202 accepted response returned success validation fails 400 containing details error after attachment begins completes successfully otherwise notification sent notifications note general information view page process finishes available from about status failed rules exists provided exist hmlr s systems found 404 being pending state have completed cancelled business unit customer are directly computed sending match those either values example requests responses get v1 applications copy code data 38e7eba4 35bf 41a2 a7a2 7aaf2faa2b3b"
   },
   {
     "title": "Attach a document API test stubs",
@@ -149,7 +149,7 @@
     "description": "Use this service to attach a message to a submitted order.",
     "section": "Attach a message API",
     "url": "/apis/attach-a-message/1.0/",
-    "tokens": "overview lorem ipsum dolor sit amet consectetur adipiscing elit view technical guide api specification how works test this general testing guidance visit our"
+    "tokens": "overview attach message api will allow users send existing application view technical guide specification web version opens new tab how works lorem ipsum dolor sit amet consectetur adipiscing elit test this submit document stubs general testing guidance visit our"
   },
   {
     "title": "Attach a message Technical guide",

@@ -48,20 +48,77 @@ sidenav:
 <section>
 
 ## How to use the Attach a Document API {.govuk-heading-m}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+### Upload a document to be attached
+
+Before attaching a document to an application, it must be uploaded. For this step, see the [Send a Document API](/apis/send-a-document).
+
+### Attach the document
+
+To attach a document to an existing application, make an HTTP POST request to the attach document endpoint. 
+
+The body of the request contains: 
+
+- The id of the document that will be attached to the application. The document id is retrieved when uploading the document to be attached.
+- The certification statement type. This must be one of `CERTIFIED`, `CERTIFIED_BY_ANOTHER`, or `NOT_CERTIFIED`
+
+Once the request to attach a document has been validated, an empty 202 Accepted response will be returned on success. If validation fails, a 400 response will be returned containing details of the error.
+
+After the request has been accepted, document attachment begins. Once this completes (successfully or otherwise) a notification will be sent.
+
+
+### Notifications
+
+Note: For general information, view the [notifications API page](/apis/notifications).
+
+==Once the document attachment process finishes, notifications will be available from the notifications API about the status of the attached document:
+
+- application.document-success - the document has successfully been attached to the application
+- application.document-failed - the document failed to attach to the application
+
+
+
 
 </section>
 <section>
 
 ## Validation rules {.govuk-heading-m}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+### Application exists
+
+The provided application id must exist in HMLR's systems. If the application is not found, a HTTP 404 response is returned.
+
+### Application Status
+
+The application the document is being attached to must be in a pending state. That is, it must not have been completed or cancelled.
+
+Business Unit ID and Customer ID validation
+
+The business unit id and customer id are not provided in the request directly but are computed when sending the request. The customer id and business unit id and customer id must match those on the application a document is being attached to.
+
+If either the business unit id or customer id values do not match the values on the application, a HTTP 400 response is returned.
+
 
 </section>
 <section>
 
 ## Example requests and responses {.govuk-heading-m}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+### Attach a document {.govuk-heading-s}
+
+<code>GET /v1/applications/{id}/{}</code>
+
+<div class="code-wrapper">
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+
+```json
+{
+  "data": {
+    "document_id": "38e7eba4-35bf-41a2-a7a2-7aaf2faa2b3b",
+    "certification_statement_type": "NOT_CERTIFIED"
+  }
+}
+```
+</div>
 
 </section>

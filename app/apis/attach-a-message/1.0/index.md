@@ -37,7 +37,7 @@ relatedAPIs:
 
 ## Overview {.govuk-heading-m}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+The Attach a Message API will allow users to send and attach a message to an existing application.
 
 </section>
 
@@ -45,7 +45,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 ## View the technical guide {.govuk-heading-m}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+[Technical guide](./technical-guide)
 
 </section>
 
@@ -53,7 +53,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 ## View the API specification {.govuk-heading-m}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+[Web version (opens in new tab)](https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Application-information-API){rel="noreferrer noopener" target="_blank"}
 
 </section>
   
@@ -70,6 +70,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ## How to test this API {.govuk-heading-m}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="./test-stubs">View Submit a document test stubs.</a>
+  </li>
+</ul>
 
 For general testing guidance, visit our [guide to testing](/a-guide-to-testing).
 

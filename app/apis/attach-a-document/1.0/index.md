@@ -48,7 +48,7 @@ Note that this API is specifically for attaching documents to an application. To
 
 ## View the technical guide {.govuk-heading-m}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+[Technical guide](./technical-guide)
 
 </section>
 
@@ -56,7 +56,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 ## View the API specification {.govuk-heading-m}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+[Web version (opens in new tab)](https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Application-information-API){rel="noreferrer noopener" target="_blank"}
 
 </section>
   
@@ -64,7 +64,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 ## How the API works {.govuk-heading-m}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+The diagram demonstrates how the Attach a Document API works to support users. 
+
+When a user submits a document, the HMLR system will initially respond with an empty 202 Accepted response.  Users will then receive a notification  stating whether the attachment has been successful or not.
+
 
 </section>
 
@@ -72,7 +75,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 ## How to test this API {.govuk-heading-m}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+HMLR has created a test environment for the Attach a Document API. We’ve also provided example code to demonstrate what you should expect when developing your own services.
+
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="./test-stubs">View Submit a document test stubs.</a>
+  </li>
+</ul>
+
+
+Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed.
+For general testing guidance, visit our guide to testing.
+
 
 For general testing guidance, visit our [guide to testing](/a-guide-to-testing).
 
