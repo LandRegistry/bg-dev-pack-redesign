@@ -113,8 +113,8 @@ data-module="govuk-service-navigation"
 <p class="govuk-body">The Notifications API provides a way of fetching updates about multiple applications submitted by the same business unit. Currently, this service only supports a pull interaction model, where notifications must be requested periodically. However, more information about a push interaction model will be shared in future.</p></p>
 <p class="govuk-body">This API has two endpoints:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">GET /v0/notifications</code> get all notifications that match the provided filters</li>
-<li><code class="app-code app-code--inline">POST /v0/notifications/acknowledge</code> - notify HMLR that notifications have been received</li>
+<li><code class="app-code app-code--inline">GET /v1/notifications</code> get all notifications that match the provided filters</li>
+<li><code class="app-code app-code--inline">POST /v1/notifications/acknowledge</code> - notify HMLR that notifications have been received</li>
 </ul>
 <p class="govuk-body">This API can be used to get more information after receiving a notification indicating the application has changed. For information about which notifications will be available, visit the notifications section of the <a href="/apis/submit-an-application" class="govuk-link">Submit an application</a> API page.</p>
 </section>

@@ -41,8 +41,8 @@ The Notifications API provides a way of fetching updates about multiple applicat
 
 This API has two endpoints:
 
-- `GET /v0/notifications` get all notifications that match the provided filters
-- `POST /v0/notifications/acknowledge` - notify HMLR that notifications have been received
+- `GET /v1/notifications` get all notifications that match the provided filters
+- `POST /v1/notifications/acknowledge` - notify HMLR that notifications have been received
 
 This API can be used to get more information after receiving a notification indicating the application has changed. For information about which notifications will be available, visit the notifications section of the [Submit an application](/apis/submit-an-application) API page.
 
