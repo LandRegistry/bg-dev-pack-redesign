@@ -96,7 +96,7 @@ HMLR has created a test environment for the Notifications API. We’ve also prov
 
 <ul class="govuk-list">
   <li>
-    <a class="govuk-link" href="/apis/notifications/0.3/test-stubs">View notifications API test stubs.</a>
+    <a class="govuk-link" href="/apis/notifications/1.0/test-stubs">View notifications API test stubs</a>
   </li>
 </ul>
 
