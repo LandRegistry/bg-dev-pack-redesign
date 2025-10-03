@@ -33,7 +33,7 @@ relatedAPIs:
 
 sidenav:
   - theme: Contents
-    text: 'Scenario 1: Lorem Ipsum'
+    text: 'Scenario 1: Attach a Document'
     href: '#scenario-1'
 ---
 {% from "govuk/components/button/macro.njk" import govukButton %}
