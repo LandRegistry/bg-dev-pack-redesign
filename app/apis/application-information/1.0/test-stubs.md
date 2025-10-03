@@ -104,7 +104,7 @@ Status: `200`
 
 {
     "data": {
-        "order_request_id": "abababab-abab-abab-abab-ababababavng",
+        "application_request_id": "abababab-abab-abab-abab-ababababavng",
         "hmlr_reference": null,
         "priority_timestamp": null,
         "status": "VALIDATING",
@@ -141,7 +141,7 @@ Status: `200`
 ```json
 {
   "data": {
-    "order_request_id": "abababab-abab-abab-abab-ababababavlf",
+    "application_request_id": "abababab-abab-abab-abab-ababababavlf",
     "hmlr_reference": null,
     "priority_timestamp": null,
     "status": "VALIDATION_FAILED",
@@ -192,7 +192,7 @@ Status: `200`
 ```json
 {
     "data": {
-        "order_request_id": "abababab-abab-abab-abab-ababababasye",
+        "application_request_id": "abababab-abab-abab-abab-ababababasye",
         "hmlr_reference": null,
         "priority_timestamp": null,
         "status": "SYSTEM_ERROR",
@@ -229,7 +229,7 @@ Status: `200`
 ```json
 {
     "data": {
-        "order_request_id": "abababab-abab-abab-abab-ababababaaap",
+        "application_request_id": "abababab-abab-abab-abab-ababababaaap",
         "hmlr_reference": "BABAAAP",
         "priority_timestamp": null,
         "status": "ACCEPTED_AWAITING_PRIORITY",
@@ -266,7 +266,7 @@ Status: `200`
 ```json
 {
   "data": {
-    "order_request_id": "abababab-abab-abab-abab-ababababaapp",
+    "application_request_id": "abababab-abab-abab-abab-ababababaapp",
     "hmlr_reference": "BABAAPP",
     "priority_timestamp": "2025-08-27T14:40:35.23071Z",
     "status": "ACCEPTED_PRIORITY_PROTECTED",
@@ -317,7 +317,7 @@ Status: `200`
 ```json
 {
   "data": {
-    "order_request_id": "abababab-abab-abab-abab-ababababacan",
+    "application_request_id": "abababab-abab-abab-abab-ababababacan",
     "hmlr_reference": "BABACAN",
     "priority_timestamp": "2025-08-27T14:40:35.23071Z",
     "status": "CANCELLED",
@@ -368,7 +368,7 @@ Status: `200`
 ```json
 {
   "data": {
-    "order_request_id": "abababab-abab-abab-abab-ababababacmp",
+    "application_request_id": "abababab-abab-abab-abab-ababababacmp",
     "hmlr_reference": "BABACMP",
     "priority_timestamp": "2025-08-27T14:40:35.23071Z",
     "status": "COMPLETED",
@@ -435,7 +435,7 @@ Status: `200`
 ```json
 {
     "data": {
-        "order_request_id": "abababab-abab-abab-abab-ababababaaap",
+        "application_request_id": "abababab-abab-abab-abab-ababababaaap",
         "hmlr_reference": "BABAAAP",
         "priority_timestamp": null,
         "status": "ACCEPTED_AWAITING_PRIORITY",
@@ -472,7 +472,7 @@ Status: `200`
 ```json
 {
   "data": {
-    "order_request_id": "abababab-abab-abab-abab-ababababaapp",
+    "application_request_id": "abababab-abab-abab-abab-ababababaapp",
     "hmlr_reference": "BABAAPP",
     "priority_timestamp": "2025-08-27T14:40:35.23071Z",
     "status": "ACCEPTED_PRIORITY_PROTECTED",
@@ -523,7 +523,7 @@ Status: `200`
 ```json
 {
   "data": {
-    "order_request_id": "abababab-abab-abab-abab-ababababacan",
+    "application_request_id": "abababab-abab-abab-abab-ababababacan",
     "hmlr_reference": "BABACAN",
     "priority_timestamp": "2025-08-27T14:40:35.23071Z",
     "status": "CANCELLED",
@@ -574,7 +574,7 @@ Status: `200`
 ```json
 {
   "data": {
-    "order_request_id": "abababab-abab-abab-abab-ababababacmp",
+    "application_request_id": "abababab-abab-abab-abab-ababababacmp",
     "hmlr_reference": "BABACMP",
     "priority_timestamp": "2025-08-27T14:40:35.23071Z",
     "status": "COMPLETED",
