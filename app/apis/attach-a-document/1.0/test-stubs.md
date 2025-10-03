@@ -46,17 +46,36 @@ Base URL: `https://bgtest.landregistry.gov.uk/bg2test/api`
 
 <section>
 
-## Scenario 1: Lorem ipsum {.govuk-heading-m #scenario-1}
+## Scenario 1: Attach a document {.govuk-heading-m #scenario-1}
 ### Request {.govuk-heading-s}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Method: `POST`
+
+Endpoint: `/v1/applications/<id>/attachments`
+
+Headers: `Authorization: <any-value>`
+
+<div class="code-wrapper">
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+
+```json
+{
+  "data": {
+    "document_id": "fa8c395b-ce64-4cb4-a188-d7f91f4c3139",
+    "certification_statement_type": "CERTIFIED"
+  }
+}
+```
 
 ### Response {.govuk-heading-s}
 
-Status: `200`
+Status: `202`
 
-<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<div class="code-wrapper">
+{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
+
+```json
+```
 </div>
 
 </section>

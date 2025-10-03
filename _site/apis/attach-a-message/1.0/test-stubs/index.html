@@ -172,13 +172,30 @@ data-module="govuk-service-navigation"
 <p class="govuk-body">Base URL: <code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-1" tabindex="-1" class="govuk-heading-l">Scenario 1: Lorem ipsum</h2>
+<h2 class="govuk-heading-m" id="scenario-1" tabindex="-1" class="govuk-heading-l">Scenario 1: Attach a message</h2>
 <h3 class="govuk-heading-s" id="request" tabindex="-1" class="govuk-heading-m">Request</h3>
-<p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications/&lt;id&gt;/attachments</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;message_text&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;this is a message!&quot;</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
 <h3 class="govuk-heading-s" id="response" tabindex="-1" class="govuk-heading-m">Response</h3>
-<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
-<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<p class="govuk-body">Status: <code class="app-code app-code--inline">202</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code></code></pre>
+
 </div>
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
