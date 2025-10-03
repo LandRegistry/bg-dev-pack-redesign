@@ -160,7 +160,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/notifications?status=NEW`
+Endpoint: `/v1/notifications?status=NEW`
 
 Headers: `Authorization: <any-value>`
 
@@ -228,7 +228,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/notifications?status=ACKNOWLEDGED`
+Endpoint: `/v1/notifications?status=ACKNOWLEDGED`
 
 Headers: `Authorization: <any-value>`
 
@@ -280,7 +280,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/notifications?created_after=2020-01-01T00:00:00&created_before=2015-01-01T00:00:00`
+Endpoint: `/v1/notifications?created_after=2020-01-01T00:00:00&created_before=2015-01-01T00:00:00`
 
 Headers: `Authorization: <any-value>`
 
@@ -301,7 +301,7 @@ Status: `400`
   "title": "Bad Request",
   "status": 400,
   "detail": "created_after parameter cannot be after created_before parameter",
-  "instance": "/v0/notifications",
+  "instance": "/v1/notifications",
   "code": "400-01"
 }
 ```
@@ -318,7 +318,7 @@ Status: `400`
 
 Method: `POST`
 
-Endpoint: `/v0/notifications/acknowledge`
+Endpoint: `/v1/notifications/acknowledge`
 
 Headers: `Authorization: <any-value>`
 
@@ -376,7 +376,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/notifications?notification_type=application.accepted-priority-pending`
+Endpoint: `/v1/notifications?notification_type=application.accepted-priority-pending`
 
 Headers: `Authorization: <any-value>`
 
@@ -423,7 +423,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/notifications?notification_type=application.error`
+Endpoint: `/v1/notifications?notification_type=application.error`
 
 Headers: `Authorization: <any-value>`
 
@@ -469,7 +469,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/notifications?subject=<uuid ending with 'can'>`
+Endpoint: `/v1/notifications?subject=<uuid ending with 'can'>`
 
 Headers: `Authorization: <any-value>`
 
@@ -526,7 +526,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/notifications?subject=<uuid ending with 'cmp'>`
+Endpoint: `/v1/notifications?subject=<uuid ending with 'cmp'>`
 
 Headers: `Authorization: <any-value>`
 
@@ -600,7 +600,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/notifications?subject=<uuid ending with 'app'>`
+Endpoint: `/v1/notifications?subject=<uuid ending with 'app'>`
 
 Headers: `Authorization: <any-value>`
 
