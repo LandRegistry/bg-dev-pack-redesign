@@ -2443,7 +2443,7 @@ Bypassing validation can only be done for specific rules, and each rule is only 
     </table>
 
 <h3 class="govuk-heading-s">Applicant validation</h3>
-<p class="govuk-body">Applicant must not have a party type of <code class="app-code app-code--inline">UNKNOWN</code>.</p>
+<p class="govuk-body">Applicant must not have a party type of <code class="app-code app-code--inline">UNKNOWN</code>. Applicants must be provided for all order types, except for the “Remove JP1” order type. For “Remove JP1” orders, applicants must not be included. </p>
 
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Applicant validation error types</caption>
@@ -2516,7 +2516,9 @@ Bypassing validation can only be done for specific rules, and each rule is only 
   </tbody>
 </table>
 <h3 class="govuk-heading-s">Capacity validation</h3>
-<p class="govuk-body">The capacity field must be provided for Landlords, Tenants and Transferors when they are added as additional parties to transactions.</p>
+<p class="govuk-body">The capacity field is a data item within the party role object. The capacity field must be provided for Landlords, Tenants and Transferors when they are added as additional parties to transactions. It can be provided for any other party role, but this is optional. The exception to this rule is for Transferors on assent transactions. </p>
+
+<p class="govuk-body">Certain capacities will require specific documents to be included.  </p>
 <p class="govuk-body">Error types for this validator will be provided at a later date.  </p>
 
 <h3 class="govuk-heading-s">Charge amount validation</h3>
@@ -2571,6 +2573,7 @@ Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transact
 <ul class="govuk-list govuk-list--bullet">
 <li>The party is being used as a lender on a transaction with a valid MDRef</li>
 <li>The party is being used as a borrower</li>
+<li>That party is being used as a lender in a discharge transaction </li>
 </ul>
 <p class="govuk-body">In these cases the <code class="app-code app-code--inline">company_number</code> is optional.</p>
 
