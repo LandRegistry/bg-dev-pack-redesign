@@ -1,7 +1,7 @@
 ---
 layout: api-overview.njk
 
-title: Attach a document
+title: Attach a document API
 description: Use this service to attach a document to a submitted order.
 
 eleventyNavigation:

@@ -37,9 +37,9 @@ relatedAPIs:
 
 ## Overview {.govuk-heading-m}
 
-The Attach a Document API allows users to attach additional documents to an existing application. The [Notifications API](/apis/notifications) can then be used to understand if the document has been successfully attached to the application. 
+The Attach a document API allows users to attach additional documents to an existing application. The [Notifications API](/apis/notifications) can then be used to understand if the document has been successfully attached to the application. 
 
-If users want to attach a message to an application, they will need to use the Attach a message API. 
+If users want to attach a message to an application, they will need to use the [Attach a message API](apis/attach-a-message). 
 
 
 </section>
@@ -78,7 +78,7 @@ When a user submits a document, the HMLR system will initially respond with an e
 
 ## How to test this API {.govuk-heading-m}
 
-HMLR has created a test environment for the Attach a Document API. We’ve also provided example code to demonstrate what you should expect when developing your own services.
+HMLR has created a test environment for the Attach a document API. We’ve also provided example code to demonstrate what you should expect when developing your own services.
 
 <ul class="govuk-list">
   <li>

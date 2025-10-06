@@ -38,6 +38,13 @@
     "tokens": "overview estimated completion date ecd by which application likely completed based individual estimate when majority 90 that type will order retain parity with our portal customer experience require anyone integrating this service refer timeframes can found https www gov uk guidance hm land registry also see benefit end users being familiar above url insights provided are reduce need contact therefore ask make your customers aware calculated from day received hmlr may take hour displayed after submission updated every 30 calendar days until cancelled correspondence issued first item only types use know reference wish find out please enquiry obtain applications change register e create update denoted format referred abr a999aaa aaxxxxx where z 9 0 x 9a f process flow request input into case management software login details output status priority note openapi specification further link diagram working hours available 24 7 access control existing business gateway user ensure have least one following role codes collection ids l1 l2 l3 wm1 wm2 wm5 c4 vs1 z1 z2 would like integrate apply services rate limiting rest schemas schema yaml file suitable assistive technology download error developing exception handling http table listed subject code title detail 400 parameter invalid bg40001 401 unauthorized bg40004 credentials account active 403 forbidden bg40005 incorrect organisation permitted 404 bg40002 does exist 429 limit exceeded bg40006 too many requests wait try again 500 occurred bg50001 internal server 504 timeout bg50004 timed test stubs endpoint environment accessed bgtest landregistry bg2test api v1 replaced requires certificate different production client certificates scenarios returned scenario 1 valid matches x000xxx data 20 08 2021 dates 17 03 2023 probability 2 delayed x001xxx 19 01 13 05 2024 3 x002xxx 12 02 2022 4 yet x003xxx 04 calculating 5 unavailable x004xxx 23 side 6 005xxxx errors trace id c62e9b3f e523 4f04 a941 c6cf0d60c080 match x006xxx"
   },
   {
+    "title": "Notifications API",
+    "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
+    "section": "Notifications API",
+    "url": "/apis/notifications/0.3/",
+    "tokens": "overview notifications api provides way fetching updates about multiple applications submitted by same business unit currently this service only supports pull interaction model where must requested periodically however more information push will shared future two endpoints get v0 all that match provided filters post acknowledge notify hmlr have been received can used after receiving notification indicating application changed which available visit section submit page view technical guide specification web version opens new tab how works diagram demonstrates support users user may send requests receive time using system respond providing relevant request also acknolwedge test created environment ve example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers exact date confirmed general testing guidance our"
+  },
+  {
     "title": "Notifications API Technical guide",
     "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
     "section": "Notifications API v0.3",
@@ -145,7 +152,7 @@
     "tokens": "select version content"
   },
   {
-    "title": "Attach a document",
+    "title": "Attach a document API",
     "description": "Use this service to attach a document to a submitted order.",
     "section": "APIs",
     "url": "/apis/attach-a-document/",
@@ -358,12 +365,5 @@
     "section": "apis",
     "url": "/apis/submit-an-application-to-change-the-land-register/1.0/",
     "tokens": "version status dropdown v1 0 latest v0 3 button type submit class govuk margin data module onclick setversion view overview this new service will help lodge applications with hmlr update register create lease transfer part faster more responsive than before identify errors prior acceptance application result fewer requisitions improved experience customers using api mean that are only accepted onto day list when provided both valid correct validation significantly reduce number avoidable administrative common mistakes such name discrepancies missing details increase our ability automate how integrate enable users hm land registry must build following apis send document allows upload url use their documents system learn about technical guide test complete documentation submitted notifications receive acknowledge throughout submission process information reviewed processed alternatively can return they re ready proceed attach message reply correspondence received from replies sent download provides way created by work together diagram below shows all should used change start finish specification body link href https landregistry github io bgtechdoc vcad spec html rel noreferrer noopener target blank web opens tab openapi json"
-  },
-  {
-    "title": "Notifications API",
-    "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
-    "section": "Notifications API",
-    "url": "/apis/notifications/0.3/",
-    "tokens": "overview notifications api provides way fetching updates about multiple applications submitted by same business unit currently this service only supports pull interaction model where must requested periodically however more information push will shared future two endpoints get v0 all that match provided filters post acknowledge notify hmlr have been received can used after receiving notification indicating application changed which available visit section submit page view technical guide specification web version opens new tab how works diagram demonstrates support users user may send requests receive time using system respond providing relevant request also acknolwedge test created environment ve example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers exact date confirmed general testing guidance our"
   }
 ]

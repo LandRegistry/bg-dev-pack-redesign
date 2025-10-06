@@ -64,7 +64,7 @@ If users want to attach a document to an application, they will need to use the 
 ## How the API works {.govuk-heading-m}
 
 <a target="_blank" href="/assets/images/attach-message-with-notifications.png">
-  <img src="/assets/images/attach-document-with-notifications.png" alt="A diagram showing the interaction of the Attach a document API."></a>
+  <img src="/assets/images/attach-message-with-notifications.png" alt="A diagram showing the interaction of the Attach a message API."></a>
 
 This diagram demonstrates how the Attach a message API works to support users.  
 
@@ -78,7 +78,7 @@ When a user submits a message, the HMLR system will initially respond with an em
 
 HMLR has created a test environment for the Attach a message API. We’ve also provided example code to demonstrate what you should expect when developing your own services. 
 
-[View Attach a message API test stubs](./test-stubs.md) 
+[View Attach a message API test stubs](./test-stubs) 
 
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
