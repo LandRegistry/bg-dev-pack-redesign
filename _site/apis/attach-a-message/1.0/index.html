@@ -13,7 +13,7 @@
 
 
   <meta property="og:title" content="Attach a message API">
-<meta property="og:description" name="description" content="Use this service to attach a message to a submitted order.">
+<meta property="og:description" name="description" content="Use this service to attach text messages to an existing application.">
 <script src="/assets/script.js"></script><script>
     function setVersion() {
         let version = document.getElementById('version').value;
@@ -78,7 +78,7 @@ data-module="govuk-service-navigation"
 <div class="govuk-grid-column-full">
 
 <header class="app-document-header">
-  <h1 class="govuk-heading-xl">Attach a message API</h1><p class="govuk-body-l">Use this service to attach a message to a submitted&nbsp;order.</p>
+  <h1 class="govuk-heading-xl">Attach a message API</h1><p class="govuk-body-l">Use this service to attach text messages to an existing&nbsp;application.</p>
 </header>
 
 </div>
@@ -109,7 +109,8 @@ data-module="govuk-service-navigation"
 
 <div class="app-prose-scope"><section>
 <h2 class="govuk-heading-m" id="overview" tabindex="-1" class="govuk-heading-l">Overview</h2>
-<p class="govuk-body">The Attach a Message API will allow users to send and attach a message to an existing application.</p>
+<p class="govuk-body">The Attach a message API allows users to attach text messages to an existing application. The <a href="apis/notifications" class="govuk-link">Notifications API</a> can then be used to understand if the message has been successfully attached to the application.</p>
+<p class="govuk-body">If users want to attach a document to an application, they will need to use the <a href="/apis/attach-a-document" class="govuk-link">Attach a document API</a>.</p>
 </section>
 <section>
 <h2 class="govuk-heading-m" id="view-the-technical-guide" tabindex="-1" class="govuk-heading-l">View the technical guide</h2>
@@ -121,16 +122,18 @@ data-module="govuk-service-navigation"
 </section>
 <section>
 <h2 class="govuk-heading-m" id="how-the-api-works" tabindex="-1" class="govuk-heading-l">How the API works</h2>
-<p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<a target="_blank" href="/assets/images/attach-message-with-notifications.png">
+  <img src="/assets/images/attach-document-with-notifications.png" alt="A diagram showing the interaction of the Attach a document API."></a>
+<p class="govuk-body">This diagram demonstrates how the Attach a message API works to support users.</p>
+<p class="govuk-body">When a user submits a message, the HMLR system will initially respond with an empty ‘202 Accepted’ response. Users will then receive a notification stating whether the attached message has been successful or not.</p>
 </section>
 <section>
 <h2 class="govuk-heading-m" id="how-to-test-this-api" tabindex="-1" class="govuk-heading-l">How to test this API</h2>
-<p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<ul class="govuk-list">
-  <li>
-    <a class="govuk-link" href="./test-stubs">View Submit a document test stubs.</a>
-  </li>
-</ul>
+<p class="govuk-body">HMLR has created a test environment for the Attach a message API. We’ve also provided example code to demonstrate what you should expect when developing your own services.</p>
+<p class="govuk-body"><a href="./test-stubs.md" class="govuk-link">View Attach a message API test stubs</a></p>
+<div class="govuk-inset-text">
+  Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed. 
+</div>
 <p class="govuk-body">For general testing guidance, visit our <a href="/a-guide-to-testing" class="govuk-link">guide to testing</a>.</p>
 </section>
 </div>

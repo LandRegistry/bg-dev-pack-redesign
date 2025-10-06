@@ -38,7 +38,7 @@ sidenav:
 ---
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
-HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see when developing your own services.
+HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see when developing your own services. 
 
 Base URL: `https://bgtest.landregistry.gov.uk/bg2test/api`
 
@@ -51,7 +51,7 @@ Base URL: `https://bgtest.landregistry.gov.uk/bg2test/api`
 
 Method: `POST`
 
-Endpoint: `/v1/applications/<id>/attachments`
+Endpoint: `/v1/applications/faed15d-7ec8-4e7d-866c-9c25874d2b42/attachments`
 
 Headers: `Authorization: <any-value>`
 
@@ -69,13 +69,6 @@ Headers: `Authorization: <any-value>`
 ### Response {.govuk-heading-s}
 
 Status: `202`
-
-<div class="code-wrapper">
-{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
-
-```json
-```
-</div>
 
 </section>
 

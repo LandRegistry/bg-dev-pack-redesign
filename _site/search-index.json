@@ -159,11 +159,11 @@
     "tokens": "select version content"
   },
   {
-    "title": "Attach a message Technical guide",
-    "description": "Use this service to attach a message to a submitted order.",
+    "title": "Attach a message API technical guide",
+    "description": "Use this service to attach text messages to an existing application.",
     "section": "Attach a message API v1.0",
     "url": "/apis/attach-a-message/1.0/technical-guide/",
-    "tokens": "how use notifications api lorem ipsum dolor sit amet consectetur adipiscing elit validation rules example requests responses"
+    "tokens": "how use attach message api existing application make http post request endpoint body contains text attached once been validated empty 202 accepted response will returned success validation fails 400 containing details error after attachment begins this completes successfully otherwise notification sent notifications process finishes available from about status failed rules pass provided id must exist hmlr s system found 404 also pending state have completed cancelled business unit customer ids are directly computed when sending match those being either values more than 4034 characters example requests responses copy code data upon successful return errors type oc200 detail order creation pointer null already oc036 7788bfb3 02f2 4c9b be58 94e9df010ac8 created datetime 2025 02 25t16 17 19 120585661z payload schema https landregistry github io bgtechdoc schemas v1 json subject 3d4b51cf 76ab 40ad 9b09 099323034adf event 20t09 06 29 new 123 failure reason occurred"
   },
   {
     "title": "Attach a document",
@@ -308,16 +308,16 @@
   },
   {
     "title": "Attach a message API",
-    "description": "Use this service to attach a message to a submitted order.",
+    "description": "Use this service to attach text messages to an existing application.",
     "section": "Attach a message API",
     "url": "/apis/attach-a-message/1.0/",
-    "tokens": "overview attach message api will allow users send existing application view technical guide specification web version opens new tab how works lorem ipsum dolor sit amet consectetur adipiscing elit test this submit document stubs general testing guidance visit our"
+    "tokens": "overview attach message api allows users text messages existing application notifications can then used understand been successfully attached want document they will need use view technical guide specification web version opens new tab how works this diagram demonstrates support when user submits hmlr system initially respond with empty 202 accepted response receive notification stating whether successful test created environment ve also provided example code demonstrate what should expect developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
   },
   {
     "title": "Attach a message API test stubs",
     "section": "Attach a message API v1.0",
     "url": "/apis/attach-a-message/1.0/test-stubs/",
-    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 attach message request method post endpoint v1 applications id attachments headers authorization any value copy data text this response status 202"
+    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 attach message request method post endpoint v1 applications faed15d 7ec8 4e7d 866c 9c25874d2b42 attachments headers authorization any value copy data text this response status 202"
   },
   {
     "title": "Download a document API",
