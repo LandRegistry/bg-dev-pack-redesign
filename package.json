@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "eleventy --serve --watch",
+    "dev-linux": "NODE_ENV=dev && npm run dev",
     "run": "eleventy --serve",
     "build": "eleventy",
     "build:sass": "sass --style=compressed --quiet-deps --load-path=. assets/scss/main.scss assets/css/main.css"
