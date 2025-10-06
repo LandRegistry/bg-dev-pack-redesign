@@ -11,8 +11,10 @@ eleventyNavigation:
 notlive: false
 
 versions:
+  - value: "1.0"
+    text: "v1.0"
   - value: "0.3"
-    text: "v0.3 (latest)"
+    text: "v0.3"
     selected: true
 
 relatedAPIs:
