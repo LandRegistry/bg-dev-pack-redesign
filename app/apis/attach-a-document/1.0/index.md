@@ -37,9 +37,9 @@ relatedAPIs:
 
 ## Overview {.govuk-heading-m}
 
-The Attach a Document API will allow users to attach additional documents to an existing application. The Application Information API can then be used to see if the attachment has been successful or not.
+The Attach a Document API allows users to attach additional documents to an existing application. The [Notifications API](/apis/notifications) can then be used to understand if the document has been successfully attached to the application. 
 
-Note that this API is specifically for attaching documents to an application. To attach a text message to an application, refer to the Attach a Message API.
+If users want to attach a message to an application, they will need to use the Attach a message API. 
 
 
 </section>
@@ -64,9 +64,12 @@ Note that this API is specifically for attaching documents to an application. To
 
 ## How the API works {.govuk-heading-m}
 
-The diagram demonstrates how the Attach a Document API works to support users. 
+<a target="_blank" href="/assets/images/attach-document-with-notifications.png">
+  <img src="/assets/images/attach-document-with-notifications.png" alt="A diagram showing the interaction of the Attach a document API."></a>
 
-When a user submits a document, the HMLR system will initially respond with an empty 202 Accepted response.  Users will then receive a notification  stating whether the attachment has been successful or not.
+This diagram demonstrates how the Attach a document API works to support users.  
+
+When a user submits a document, the HMLR system will initially respond with an empty ‘202 Accepted’ response.  Users will then receive a notification stating whether the attachment has been successful or not. 
 
 
 </section>
@@ -79,13 +82,16 @@ HMLR has created a test environment for the Attach a Document API. We’ve also 
 
 <ul class="govuk-list">
   <li>
-    <a class="govuk-link" href="./test-stubs">View Submit a document test stubs.</a>
+    <a class="govuk-link" href="./test-stubs">View Submit a document test stubs</a>
   </li>
 </ul>
 
 
-Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed.
-For general testing guidance, visit our guide to testing.
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{{ govukInsetText({
+  text: "Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed. "
+}) }}
 
 
 For general testing guidance, visit our [guide to testing](/a-guide-to-testing).

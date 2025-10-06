@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template govuk-template--rebranded">
   <head>
     <meta charset="utf-8">
-    <title>Attach a document Technical guide - HM Land Registry Developer Pack</title>
+    <title>Attach a document API technical guide - HM Land Registry Developer Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="/assets/application.css">
 
 
-  <meta property="og:title" content="Attach a document Technical guide">
-<meta property="og:description" name="description" content="Use this service to attach a document to a submitted order.">
+  <meta property="og:title" content="Attach a document API technical guide">
+<meta property="og:description" name="description" content="Use this service to attach additional documents to an existing application.">
 <script src="/assets/script.js"></script><script>
     function setVersion() {
         let version = document.getElementById('version').value;
@@ -131,7 +131,7 @@ data-module="govuk-service-navigation"
   <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
   <ul class="x-govuk-sub-navigation__section">
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="#how-to-use-the-notifications-api">How to use the Notifications API</a>
+      <a class="x-govuk-sub-navigation__link" href="#how-to-use-the-attach-a-document-api">How to use the Attach a document API</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
       <a class="x-govuk-sub-navigation__link" href="#validation-rules">Validation rules</a>
@@ -148,7 +148,7 @@ data-module="govuk-service-navigation"
 
 
 <header class="app-document-header">
-  <h1 class="govuk-heading-xl">Attach a document Technical guide</h1><p class="govuk-body-l">Use this service to attach a document to a submitted&nbsp;order.</p>
+  <h1 class="govuk-heading-xl">Attach a document API technical guide</h1><p class="govuk-body-l">Use this service to attach additional documents to an existing&nbsp;application.</p>
 </header>
 
 
@@ -176,49 +176,190 @@ data-module="govuk-service-navigation"
 
 <div class="app-prose-scope"><section>
 <h2 class="govuk-heading-m" id="how-to-use-the-attach-a-document-api" tabindex="-1" class="govuk-heading-l">How to use the Attach a Document API</h2>
-<h3 id="upload-a-document-to-be-attached" tabindex="-1" class="govuk-heading-m">Upload a document to be attached</h3>
-<p class="govuk-body">Before attaching a document to an application, it must be uploaded. For this step, see the <a href="/apis/send-a-document" class="govuk-link">Send a Document API</a>.</p>
+<p class="govuk-body">Before attaching a document to an application, it must be uploaded. For this step, read the <a href="/apiss/send-a-document/technical-guide" class="govuk-link">Send a document API technical guide</a>.</p>
+<p class="govuk-body">To attach an uploaded document to an existing application, make an HTTP POST request to the attach document endpoint.</p>
 <h3 id="attach-the-document" tabindex="-1" class="govuk-heading-m">Attach the document</h3>
-<p class="govuk-body">To attach a document to an existing application, make an HTTP POST request to the attach document endpoint.</p>
 <p class="govuk-body">The body of the request contains:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li>The id of the document that will be attached to the application. The document id is retrieved when uploading the document to be attached.</li>
-<li>The certification statement type. This must be one of <code class="app-code app-code--inline">CERTIFIED</code>, <code class="app-code app-code--inline">CERTIFIED_BY_ANOTHER</code>, or <code class="app-code app-code--inline">NOT_CERTIFIED</code></li>
-</ul>
-<p class="govuk-body">Once the request to attach a document has been validated, an empty 202 Accepted response will be returned on success. If validation fails, a 400 response will be returned containing details of the error.</p>
+<p class="govuk-body">the id of the document attached to the application. The document id is retrieved when uploading the document to be attached</p>
+<p class="govuk-body">the certification statement type. This must be one of <code class="app-code app-code--inline">CERTIFIED</code>, <code class="app-code app-code--inline">CERTIFIED_BY_ANOTHER</code>, or <code class="app-code app-code--inline">NOT_CERTIFIED</code></p>
+<p class="govuk-body">Once the request to attach a document has been validated, an empty ‘202 Accepted’ response will be returned. If validation fails, a ‘400’ response will be returned containing details of the error.</p>
 <p class="govuk-body">After the request has been accepted, document attachment begins. Once this completes (successfully or otherwise) a notification will be sent.</p>
 <h3 id="notifications" tabindex="-1" class="govuk-heading-m">Notifications</h3>
-<p class="govuk-body">Note: For general information, view the <a href="/apis/notifications" class="govuk-link">notifications API page</a>.</p>
-<p class="govuk-body">==Once the document attachment process finishes, notifications will be available from the notifications API about the status of the attached document:</p>
+<p class="govuk-body">Once the document attachment process finishes, notifications will be available about the status of the attached document via the <a href="apis/notifications" class="govuk-link">Notifications API</a>. Notifications may include:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li>application.document-success - the document has successfully been attached to the application</li>
-<li>application.document-failed - the document failed to attach to the application</li>
+<li>
+<p class="govuk-body"><code class="app-code app-code--inline">application.document-success</code> - the document has successfully been attached to the application</p>
+</li>
+<li>
+<p class="govuk-body"><code class="app-code app-code--inline">application.document-failed</code> - the document failed to attach to the application</p>
+</li>
 </ul>
 </section>
 <section>
 <h2 class="govuk-heading-m" id="validation-rules" tabindex="-1" class="govuk-heading-l">Validation rules</h2>
-<h3 id="application-exists" tabindex="-1" class="govuk-heading-m">Application exists</h3>
-<p class="govuk-body">The provided application id must exist in HMLR’s systems. If the application is not found, a HTTP 404 response is returned.</p>
-<h3 id="application-status" tabindex="-1" class="govuk-heading-m">Application Status</h3>
-<p class="govuk-body">The application the document is being attached to must be in a pending state. That is, it must not have been completed or cancelled.</p>
-<p class="govuk-body">Business Unit ID and Customer ID validation</p>
-<p class="govuk-body">The business unit id and customer id are not provided in the request directly but are computed when sending the request. The customer id and business unit id and customer id must match those on the application a document is being attached to.</p>
-<p class="govuk-body">If either the business unit id or customer id values do not match the values on the application, a HTTP 400 response is returned.</p>
+<p class="govuk-body">To pass validation, the provided application id must exist in HMLR’s system. If the application is not found, a ‘HTTP 404’ response will be returned.</p>
+<p class="govuk-body">The application must also be in a pending state. It must not have been completed or cancelled.</p>
+<p class="govuk-body">Business unit and customer ids are not provided in the request directly but are computed when sending the request. The ids must match those on the application the document is being attached to. If either id values do not match the values on the application, a ‘HTTP 400’ response will be returned.</p>
 </section>
 <section>
 <h2 class="govuk-heading-m" id="example-requests-and-responses" tabindex="-1" class="govuk-heading-l">Example requests and responses</h2>
 <h3 class="govuk-heading-s" id="attach-a-document" tabindex="-1" class="govuk-heading-m">Attach a document</h3>
-<p class="govuk-body"><code>GET /v1/applications/{id}/{}</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
-  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;document_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;38e7eba4-35bf-41a2-a7a2-7aaf2faa2b3b&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;certification_statement_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NOT_CERTIFIED&quot;</span>
-  <span class="app-code__punctuation">}</span>
-<span class="app-code__punctuation">}</span>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>  
+
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
+
+    <span class="app-code__attr">&quot;document_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;38e7eba4-35bf-41a2-a7a2-7aaf2faa2b3b&quot;</span><span class="app-code__punctuation">,</span>  
+
+    <span class="app-code__attr">&quot;certification_statement_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NOT_CERTIFIED&quot;</span>  
+
+  <span class="app-code__punctuation">}</span>  
+
+<span class="app-code__punctuation">}</span>  
+</code></pre>
+
+</div>
+<p class="govuk-body">Upon successful validation, this request will return an empty 202 Accepted response.</p>
+<p class="govuk-body">If the application is not found, a 404 response will be returned:</p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>  
+
+  <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>  
+
+    <span class="app-code__punctuation">{</span>  
+
+      “type”<span class="app-code__punctuation">:</span> “OC200”<span class="app-code__punctuation">,</span>  
+
+      “detail”<span class="app-code__punctuation">:</span> “Order creation request not found in the system for request id ‘application-id’”<span class="app-code__punctuation">,</span>  
+
+      “pointer”<span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span>  
+
+    <span class="app-code__punctuation">}</span>  
+
+  <span class="app-code__punctuation">]</span>  
+
+<span class="app-code__punctuation">}</span>    
+</code></pre>
+
+</div>
+<p class="govuk-body">If the application has already been completed or cancelled, a 400 response will be returned:</p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>  
+
+  <span class="app-code__attr">&quot;errors &quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>  
+
+    <span class="app-code__punctuation">{</span>  
+
+      “type”<span class="app-code__punctuation">:</span> “OC036”<span class="app-code__punctuation">,</span>  
+
+      “detail”<span class="app-code__punctuation">:</span> “Application status is not PENDING”<span class="app-code__punctuation">,</span>  
+
+      “pointer”<span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span>  
+
+    <span class="app-code__punctuation">}</span>  
+
+  <span class="app-code__punctuation">]</span>  
+
+<span class="app-code__punctuation">}</span>     
+</code></pre>
+
+</div>
+<p class="govuk-body">Attach a document success notification</p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>  
+
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>  
+
+    <span class="app-code__punctuation">{</span>  
+
+      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;7788bfb3-02f2-4c9b-be58-94e9df010ac8&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-25T16:17:19.120585661Z&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://landregistry.github.io/bgtechdoc/schemas/v1/application/document-success.json&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.document-success&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3d4b51cf-76ab-40ad-9b09-099323034adf&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-20T09:06:29.120585661Z&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
+
+        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
+
+          <span class="app-code__attr">&quot;attachment_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">123</span>  
+
+        <span class="app-code__punctuation">}</span>  
+
+      <span class="app-code__punctuation">}</span>  
+
+    <span class="app-code__punctuation">}</span>  
+
+  <span class="app-code__punctuation">]</span>  
+
+<span class="app-code__punctuation">}</span>      
+</code></pre>
+
+</div>
+<p class="govuk-body">Attach a document failed notification</p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>  
+
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>  
+
+    <span class="app-code__punctuation">{</span>  
+
+      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;7788bfb3-02f2-4c9b-be58-94e9df010ac8&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-25T16:17:19.120585661Z&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot; https://landregistry.github.io/bgtechdoc/schemas/v1/application/document-failed.json &quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot; application.document-failed&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3d4b51cf-76ab-40ad-9b09-099323034adf&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-20T09:06:29.120585661Z&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>  
+
+      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
+
+        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
+
+          <span class="app-code__attr">&quot;failure_reason&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;An error occurred&quot;</span>  
+
+        <span class="app-code__punctuation">}</span>  
+
+      <span class="app-code__punctuation">}</span>  
+
+    <span class="app-code__punctuation">}</span>  
+
+  <span class="app-code__punctuation">]</span>  
+
+<span class="app-code__punctuation">}</span>     
 </code></pre>
 
 </div>
