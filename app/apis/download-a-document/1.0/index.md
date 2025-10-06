@@ -65,12 +65,13 @@ You may obtain a `download_id` from any of the following:
 
 ## How the API works {.govuk-heading-m}
 
-<!-- <a target="_blank" href="/assets/images/NotificationInteraction.png">
-  <img src="/assets/images/NotificationInteraction.png" alt="A diagram showing the interaction of the Notification API.">
-</a> -->
+<a target="_blank" href="/assets/images/Download-a-document-sequence-light.png">
+  <img src="/assets/images/Download-a-document-sequence-light.png" alt="A diagram showing the interaction of the Download a document API.">
+</a>
 
-<!-- < INSERT IMAGE HERE > -->
-<!-- This diagram demonstrates how the download a document API works. -->
+<br>
+
+This diagram demonstrates how the download a document API works.
 
 A user may obtain a `download_id` from either the Notifications or Application information API. 
 

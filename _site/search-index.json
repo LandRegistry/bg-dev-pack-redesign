@@ -324,7 +324,7 @@
     "description": "Use this service to download documents created by HM Land Registry.",
     "section": "Download a Document",
     "url": "/apis/download-a-document/1.0/",
-    "tokens": "overview download document api provides way documents created by hmlr this one endpoint get v1 id binary content may obtain from any following completion notifications cancellation requisition correspondence array application information response view technical guide specification govuk heading m web version opens new tab https landregistry github io bgtechdoc vcad v0 3 spec html tag rel noreferrer noopener target blank how works user either can use that their request test environment ve also provided example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
+    "tokens": "overview download document api provides way documents created by hmlr this one endpoint get v1 id binary content may obtain from any following completion notifications cancellation requisition correspondence array application information response view technical guide specification govuk heading m web version opens new tab https landregistry github io bgtechdoc vcad v0 3 spec html tag rel noreferrer noopener target blank how works diagram demonstrates user either can use that their request test environment ve also provided example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
   },
   {
     "title": "Notifications API",
