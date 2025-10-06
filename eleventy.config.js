@@ -64,6 +64,21 @@ export default function (eleventyConfig) {
     ]).sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
   )
 
+  // eleventyConfig.addFilter("withOriginalDomain", function (path) {
+  //   const domain = process.env.SITE_ORIGINAL_DOMAIN || "https://landregistry.github.io/bgtechdoc/";
+  //   return `${domain}${path}`;
+  // });
+
+  if(!process.env.GITHUB_ACTIONS){
+    eleventyConfig.addPlugin( eleventyConfig => {
+      eleventyConfig.addTransform("rewrite-original-domain", async function (content) {
+        const domainOverride = "https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/";
+        return content.replaceAll("https://landregistry.github.io/bgtechdoc/", domainOverride);
+      });
+  })
+  }
+
+
   return {
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
