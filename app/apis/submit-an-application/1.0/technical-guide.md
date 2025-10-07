@@ -2167,7 +2167,44 @@ A party may be given different roles in different transactions. A party must not
 
 ### Capacity fields {.govuk-heading-s}
 
-The capacity field is a data item within the party role object. The capacity field must be provided for Landlords, Tenants and Transferors when they are added as additional parties to transactions. It can be provided for any other party role, but this is optional.
+The capacity field is a data item within the party role object. The capacity field must be provided for Landlords, Tenants and Transferors when they are added as additional parties to transactions. It can be provided for any other party role, but this is optional. The exception to this rule is for Transferors on assent transactions. 
+
+Certain capacities will require specific documents to be included.
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Capacity</th>
+      <th scope="col" class="govuk-table__header">Documents required</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-width-one-half">A trustee in bankruptcy, liquidator, supervisor, administrator or administrative receiver appointed under the Insolvency Act 1986</td>
+      <td class="govuk-table__cell">Court order or evidence</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">A receiver under the Law of Property Act 1925</td>
+      <td class="govuk-table__cell">Court order or evidence</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">A deputy appointed under the Mental Capacity Act 2005</td>
+      <td class="govuk-table__cell">Court order</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">A guardian appointed under the Guardianship (Missing Persons) Act 2017</td>
+      <td class="govuk-table__cell">Court order</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">An additional trustee</td>
+      <td class="govuk-table__cell">No change</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">A personal representative (such as an executor) who assents or transfers the law</td>
+      <td class="govuk-table__cell">Letters of administration or probate (which can appear in suggested as well)</td>
+    </tr>
+  </tbody>
+</table>
 
 The options for the capacity field are: 
 
@@ -2534,9 +2571,7 @@ Bypassing validation can only be done for specific rules, and each rule is only 
   </tbody>
 </table>
 <h3 class="govuk-heading-s">Capacity validation</h3>
-<p class="govuk-body">The capacity field is a data item within the party role object. The capacity field must be provided for Landlords, Tenants and Transferors when they are added as additional parties to transactions. It can be provided for any other party role, but this is optional. The exception to this rule is for Transferors on assent transactions. </p>
-
-<p class="govuk-body">Certain capacities will require specific documents to be included.  </p>
+<p class="govuk-body">The capacity field must be provided for Landlords, Tenants and Transferors when they are added as additional parties to transactions. </p>
 <p class="govuk-body">Error types for this validator will be provided at a later date.  </p>
 
 <h3 class="govuk-heading-s">Charge amount validation</h3>
