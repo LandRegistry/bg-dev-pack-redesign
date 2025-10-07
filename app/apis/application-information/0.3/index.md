@@ -59,7 +59,7 @@ This API can be used to get more information after receiving a notification indi
 
 ## View the API specification {.govuk-heading-m}
 
-[Web version (opens in new tab)](https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Application-information-API){rel="noreferrer noopener" target="_blank"}
+[Web version (opens in new tab)](https://landregistry.github.io/bgtechdoc/documents/submit-an-application-to-change-the-register/v0.3/openapi.html#tag/Application-information-API){rel="noreferrer noopener" target="_blank"}
 
 </section>
 

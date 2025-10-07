@@ -66,7 +66,7 @@ This API can be used to get more information after receiving a notification indi
 
 <ul class="govuk-list">
   <li>
-    <a class="govuk-link" href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Notifications-API" rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
+    <a class="govuk-link" href="https://landregistry.github.io/bgtechdoc/documents/submit-an-application-to-change-the-register/v0.3/openapi.html#tag/Notifications-API" rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
   </li>
 </ul>
 

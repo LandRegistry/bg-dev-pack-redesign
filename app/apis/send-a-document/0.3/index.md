@@ -66,7 +66,7 @@ Documents that have been uploaded can be used for up to 180 days, after which po
 
 <ul class="govuk-list">
   <li>
-    <a class="govuk-link" href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Send-a-document-API" rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
+    <a class="govuk-link" href="https://landregistry.github.io/bgtechdoc/documents/submit-an-application-to-change-the-register/v0.3/openapi.html#tag/Send-a-document-API" rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
   </li>
 </ul>
 
