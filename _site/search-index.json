@@ -6,72 +6,22 @@
     "tokens": "explore apis guide soap rest api types business gateway provides two developers use using one both allows integrate different hmlr services with their own platforms learn more about how them below list visit find here ll tag next each title this shows which need service our build re working section will provide overview read developer legacy xml can also system works json limitations there are when integrating rate limiting may restrict usage protect from excessive these limits subject change based expected loads uptake limit exceeded get http 429 response too many requests headers provided inform request made currently promote sliding window policy ensures initial burst sent slowly replenished over time where possible spreading out highly advised concerned class govuk link href contact us discuss whether increasing appropriate error registry systems detect problem capture problems headings pages primers solve share within 500 errors although measures have been taken ensure robust readily available cases cannot respond correctly such internal server meaning could process due issue much detail externally alert member support team investigate receive should wait short period then retry after few retries still receiving same please note that does indicate correct incorrect only retried https mozilla org en docs web status rel noreferrer noopener target blank documentation opens new tab information codes 400 sometimes missing parts incorrectly logical happens return series most common include 401 403 404 what mean high level further result bad means either accept understand generic used any client usually field header parameter related authentication authorisation login successfully accepted unauthorised valid details access instead forbidden check your attempting typically url wrong entered resource s accessing exist numbers references calling quickly often limited call number times given timeframe prevent overuse keep all make seconds message ids internet protocols truly reliable known losing messages between messaging rely produce unique id every retrieve back case original lost possibly network combination user type by software cms forms key uniquely identified outstanding obtain responses offered corresponding poll full technical terms describe work commonly definitions glossary"
   },
   {
-    "title": "A guide to testing",
-    "section": "Explore APIs",
-    "url": "/a-guide-to-testing/",
-    "tokens": "explore apis guide testing submit application change land register hmlr provides test environment ve also provided example code demonstrate what should expect when developing your own services ll find stub examples our api pages request response technical guides please note there are plans release sandbox developers future exact date confirmed additional support contact integration team soap rest information about will added later sometimes use terms describe work list commonly used their definitions visit glossary"
-  },
-  {
-    "title": "Download a document API technical guide",
-    "description": "Use this service to download documents provided by HM Land Registry.",
-    "section": "Download a Document v1.0",
-    "url": "/apis/download-a-document/1.0/technical-guide/",
-    "tokens": "how use download document api obtain id before can this service will need currently only way submit application change land register process result one following types being generated requisition cancellation completion generation each these documents would trigger notification sent via notifications which contain once available note may information s response under correspondences array guaranteed until been issued downloading ve obtained get request simple binary returned long your method allows redirects validation rules there are implementing example requests responses specific examples payloads produced during submission view redirection enabled copy code curl url base v1 u username password status 200 body disabled 1 302 header location 2"
-  },
-  {
-    "title": "Download a document API test stubs",
-    "section": "Download a Document API API v1.0",
-    "url": "/apis/download-a-document/1.0/test-stubs/",
-    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 download cancellation document request method get endpoint v1 documents can 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 headers authorization any value response contents following redirects status 200 body binary 302 location 2 letter ltr 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 3 register completion sheet rcs efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a 4 copy reg 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038"
-  },
-  {
-    "title": "Download a document",
-    "description": "Use this service to download documents.",
-    "section": "APIs",
-    "url": "/apis/download-a-document/",
-    "tokens": "select version content"
-  },
-  {
     "title": "Estimated Completion Date",
     "section": "apis",
     "url": "/apis/estimate-completion-date/",
     "tokens": "overview estimated completion date ecd by which application likely completed based individual estimate when majority 90 that type will order retain parity with our portal customer experience require anyone integrating this service refer timeframes can found https www gov uk guidance hm land registry also see benefit end users being familiar above url insights provided are reduce need contact therefore ask make your customers aware calculated from day received hmlr may take hour displayed after submission updated every 30 calendar days until cancelled correspondence issued first item only types use know reference wish find out please enquiry obtain applications change register e create update denoted format referred abr a999aaa aaxxxxx where z 9 0 x 9a f process flow request input into case management software login details output status priority note openapi specification further link diagram working hours available 24 7 access control existing business gateway user ensure have least one following role codes collection ids l1 l2 l3 wm1 wm2 wm5 c4 vs1 z1 z2 would like integrate apply services rate limiting rest schemas schema yaml file suitable assistive technology download error developing exception handling http table listed subject code title detail 400 parameter invalid bg40001 401 unauthorized bg40004 credentials account active 403 forbidden bg40005 incorrect organisation permitted 404 bg40002 does exist 429 limit exceeded bg40006 too many requests wait try again 500 occurred bg50001 internal server 504 timeout bg50004 timed test stubs endpoint environment accessed bgtest landregistry bg2test api v1 replaced requires certificate different production client certificates scenarios returned scenario 1 valid matches x000xxx data 20 08 2021 dates 17 03 2023 probability 2 delayed x001xxx 19 01 13 05 2024 3 x002xxx 12 02 2022 4 yet x003xxx 04 calculating 5 unavailable x004xxx 23 side 6 005xxxx errors trace id c62e9b3f e523 4f04 a941 c6cf0d60c080 match x006xxx"
   },
   {
-    "title": "Notifications API",
-    "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
-    "section": "Notifications API",
-    "url": "/apis/notifications/0.3/",
-    "tokens": "overview notifications api provides way fetching updates about multiple applications submitted by same business unit currently this service only supports pull interaction model where must requested periodically however more information push will shared future two endpoints get v0 all that match provided filters post acknowledge notify hmlr have been received can used after receiving notification indicating application changed which available visit section submit page view technical guide specification web version opens new tab how works diagram demonstrates support users user may send requests receive time using system respond providing relevant request also acknolwedge test created environment ve example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers exact date confirmed general testing guidance our"
-  },
-  {
-    "title": "Notifications API Technical guide",
-    "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
-    "section": "Notifications API v0.3",
-    "url": "/apis/notifications/0.3/technical-guide/",
-    "tokens": "how use notifications api recieve get request fetch all takes following url query parameters which are optional created after only retrieve with timestamp this date before status specific either new acknowledged occured event notification type subject additional provider filter that match provided limit maximum number return single response related applications submitted by business unit id will returned delivery least once meaning time may result one more e duplicate same events have datetime field can used locate ignore duplicates when receiving continue endpoint until they acknowledge been processed your system should send list ids post change those validation rules there implementing example requests responses examples payloads produced during application submission view submit v0 2025 01 01t00 00 http 1 copy code data 3fa85f64 5717 4562 b3fc 2c963f66afa6 03 06t14 32 55 295z payload schema https com string additionalprop1 additionalprop2 additionalprop3"
-  },
-  {
-    "title": "Notifications API test stubs",
-    "section": "Notifications API v0.3",
-    "url": "/apis/notifications/0.3/test-stubs/",
-    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 get all notifications request method endpoint v1 headers authorization any value response status 200 copy data notification id created datetime 2024 01 01t12 00 000z event payload schema github io bgtechdoc schemas application accepted priority protected json type subject b3ac19be 2b6d 4b8a 971c e758b0e8e790 additional provider filter subunit1 acknowledged reference abc456a 09 20t09 56 46 123123z 2563940e ae95 4e7e 9b33 49a6571abdf6 new abc456b validation failed 3be62ad3 c542 452d 975e 6cd18d77196f 2 3 4 with invalid date after 2020 01t00 before 2015 400 problems registry smartbear com bad title detail parameter cannot instance 5 acknowledge post 87654321 12345678 found 6 queued pending 45454545 awaiting 7 error system 8 cancelled uuid ending can a97679c9 624f 4680 ae8b 15b7 r411can null documents name cancellation letter 2025 05t08 20 04 050z download 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 9 completed cmp 28a01655 544a 48c5 9e40 4ac2 p311cmp ltr 15 281z 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 rcs registration completion sheet 319z 4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a reg updated register 343z 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 early false 10 requisitioned app correspondence despatched p311app"
-  },
-  {
-    "title": "Contact us",
-    "section": "Support",
-    "url": "/contact-us/",
-    "tokens": "support contact us email href mailto channelpartners landregistry gov uk class govuk link margin left 3 aim respond emails within 10 working days"
-  },
-  {
-    "url": "/developer-pack-changelog/",
-    "tokens": "developer pack changelog updates include update notifications documentation new information about transaction types application removing calculated fees from api response fee calculation will shared later date bypassing specific validation schema changing statuses code class x govuk inline accepted priority protected awaiting failed system error validating addressdetails type required bypassvalidationdata have max length 250 charge value document rxcd otherconveyancer conveyancer reference added jp1 titledetails title disclosable overriding interests party address service option representation enum partyrole overseasaddress country ukaddress postcode post town building description all successful objects root level data object schemas notification payload elements wrapper containing general summary problemdetails reason values disagree with register hmlr incorrect outdated exception covered by business rules"
-  },
-  {
-    "title": "Find an API",
+    "title": "A guide to testing",
     "section": "Explore APIs",
-    "url": "/find-a-service-api/",
-    "tokens": "explore apis find api view documentation our business gateway below read more about types use visit guide soap rest list hmlr terms their definitions glossary service choose application enquiry discharge activity e document registration estimated completion date land charges full search bankruptcy local official copy availability v1 v2 title known whole with priority data part online owner verification outstanding requests poll request register extract registered proprietor names by property description index map submit change this applications that are yet completed check any have been removed previous 30 days send automate collection correspondence responses receive ecd which likely details entries relating notifications get updates multiple submitted same unit order plan conveyance referred deed lease when your relates protect transfers leases mortgages verify ownership against titles real time return obtain new response collect manually processed outside working hours source from electronic stream alongside usual supply name type proprietors throughout process instruction submission out number tenure based address supplied help lodge update create transfer"
+    "url": "/a-guide-to-testing/",
+    "tokens": "explore apis guide testing submit application change land register hmlr provides test environment ve also provided example code demonstrate what should expect when developing your own services ll find stub examples our api pages request response technical guides please note there are plans release sandbox developers future exact date confirmed additional support contact integration team soap rest information about will added later sometimes use terms describe work list commonly used their definitions visit glossary"
+  },
+  {
+    "title": "Terms of use",
+    "section": "Before you start",
+    "url": "/terms-of-use/",
+    "tokens": "terms use policies explain what users can expect when creating operating software services that business gateway apis breaking change policy currently being drafted will available here soon bug fix releases notification emergency through service desk new version number incorporated into existing web name replaced example 1 0 become this withdrawn becomes live vendor test facility stub go same time itself integrated vendors notified they before put information schemas due impact delivering endeavour schedule maximum one release per year only replace immediately there major functionality delivery standard customer communication channels forum all technical details published developer pack prior include stubs data workflows providing rules message outputs schema validation sheets scheduled upgrade changes made from run simultaneously with old until deprecated avoid need applications perform hard cutover 2 contained notes landing page system security network are responsible maintaining date patches updates anti virus other countermeasures protect their systems any could interact hm land registry should thoroughly tested must have your own testing procedures place apply them rigorously some free beta programs contain bugs viruses which pose threat implemented operational after extensive successful done secure environment non sensitive access files program source code controlled deprecation removal come normal six months may vary exceptional circumstances receive final reminder month discontinued additions relating sometimes describe work hmlr list commonly used definitions visit class govuk link href glossary our"
   },
   {
     "title": "Glossary of terms",
@@ -81,19 +31,31 @@
     "tokens": "this glossary provides list commonly used hmlr terms their definitions will help understand how they relate business relevant legislation absolute title class highest level awarded piece registered land whether freehold leasehold adverse possession conveyancing term when person taken property without permission legal owner cases where continued any challenge by 12 years more may possible occupier possessor claim type which called possessory application programming interface api set routines protocols tools building software applications b bankruptcy search carried out purchaser s solicitors against full name purchasing client during process purchase funded with aid mortgage reveal entries surname alias beneficial joint tenants way two parties can choose hold trust themselves holding ensures that event death one deceased interest automatically pass surviving tenant form part estate distributed after who entitled benefits ownership including proceeds sale sold always model bpm graphical representation specific processes within enterprise collection activities designed produce output particular market b2b electronic communications between businesses usually direct machine interfaces c certificate authority ca cryptography public key infrastructure entity issues certificates use third case management system cms firms manage matters charge document creates financial burden been security loan computerised register entry cre registry template creating standard such restriction lender customer contact centre ccc centralised point all customers technical cannot answered are logged passed service desk e registration drs group services allow users submit change along supporting documents deed md lenders have defined templates each forms f field plan official filed represents extent boundaries h hypertext transfer protocol http requests information servers browsers index map revealing number j means owners share would revert only require certified copy update l charges k16 individual k15 company local m message id unique identifier digital o known oc1 copies other oc2 deeds specified whole priority os1 also secures impending transactions os2 p proprietor current shown r rate limiting control sent received network controller representational state rest rules guidelines about should build web secure sockets layer ssl developed transmitting private via internet uses asymmetric encrypt data everyone recipient agreement sla contract formally supplier user sim find what simple object access soap specification exchanging structured implementation u uniform resource locator url string supplies address site accessed v variable debit vdd payment method enters into merchant giving directly nominated account goods w description language wsdl readable xml complete definition contains necessary invoke x extensible markup widely defining complex structures becomes easier exchange xmlns namespace namespaces providing uniquely named elements attributes instance schema xsd specifying grammar mark allowed file typically extension"
   },
   {
-    "title": "How to access Business Gateway",
-    "section": "Before you start",
-    "url": "/how-to-access-business-gateway/",
-    "tokens": "business gateway allows integrate your data directly with hmlr systems can tailor how work us fit neatly into existing processes including using client information already case management system cms create applications save time reduce errors use need streamline automate then submit our class govuk link href https www gov uk government publications digital registration service rel noreferrer noopener target blank portal opens new tab there are two ways set direct access means when links its own creates that integrates this route often most suitable companies have designated resource development capability customised specifically needs creating bespoke platform timeline setting integration depends internal complexity services integrating recommend review requirements process team before starting application they guidance developer pack read technical specification get understanding what required sign license which requested by emailing mailto channelpartners landregistry outsourcing other party will ll send test ssl certificate contact gives connectivity environment start once gained support provide onboarding throughout build going live push content from should only request form installed machines servers developing house e account place third lots suppliers developed software through shared customers way all platforms core usually preferred businesses provider might find out more about sometimes terms describe list commonly used their definitions visit glossary"
-  },
-  {
     "title": "Home",
     "url": "/",
     "tokens": "get started what expect from developer pack includes who this guide how use access business gateway help businesses integrate with hm land registry hmlr terms our policies practices explore apis find api choose right services soap rest types breakdown when them testing information best practice support tell us can improve href https www gov uk guidance join community maintained by ve got question idea suggestion contact fill feedback form sometimes technical describe work list commonly used their definitions visit glossary"
   },
   {
+    "title": "Contact us",
+    "section": "Support",
+    "url": "/contact-us/",
+    "tokens": "support contact us email href mailto channelpartners landregistry gov uk class govuk link margin left 3 aim respond emails within 10 working days"
+  },
+  {
+    "title": "What to expect from the developer pack",
+    "section": "Before you start",
+    "url": "/what-to-expect-from-the-developer-pack/",
+    "tokens": "business gateway developer pack provides set tools documentation examples developers who create software applications customers although designed support may also help others looking understand how works this ll find guide accessing our terms use policies list apis access them available integrate testing what ve created additional contact information are new would like overview useful explore before start section first specific service api jump straight sometimes technical describe work hmlr commonly used their definitions visit glossary"
+  },
+  {
     "url": "/mainstream-guidance/",
     "tokens": "page title nav class govuk prototype kit common templates contents list aria label pages this guide role navigation li item dashed active 1 current true 2 3 content heading goes here previous next view printable version whole subsection related link more"
+  },
+  {
+    "title": "Find an API",
+    "section": "Explore APIs",
+    "url": "/find-a-service-api/",
+    "tokens": "explore apis find api view documentation our business gateway below read more about types use visit guide soap rest list hmlr terms their definitions glossary service choose application enquiry discharge activity e document registration estimated completion date land charges full search bankruptcy local official copy availability v1 v2 title known whole with priority data part online owner verification outstanding requests poll request register extract registered proprietor names by property description index map submit change this applications that are yet completed check any have been removed previous 30 days send automate collection correspondence responses receive ecd which likely details entries relating notifications get updates multiple submitted same unit order plan conveyance referred deed lease when your relates protect transfers leases mortgages verify ownership against titles real time return obtain new response collect manually processed outside working hours source from electronic stream alongside usual supply name type proprietors throughout process instruction submission out number tenure based address supplied help lodge update create transfer"
   },
   {
     "title": "Contact Us",
@@ -106,16 +68,14 @@
     "url": "/support/"
   },
   {
-    "title": "Terms of use",
-    "section": "Before you start",
-    "url": "/terms-of-use/",
-    "tokens": "terms use policies explain what users can expect when creating operating software services that business gateway apis breaking change policy currently being drafted will available here soon bug fix releases notification emergency through service desk new version number incorporated into existing web name replaced example 1 0 become this withdrawn becomes live vendor test facility stub go same time itself integrated vendors notified they before put information schemas due impact delivering endeavour schedule maximum one release per year only replace immediately there major functionality delivery standard customer communication channels forum all technical details published developer pack prior include stubs data workflows providing rules message outputs schema validation sheets scheduled upgrade changes made from run simultaneously with old until deprecated avoid need applications perform hard cutover 2 contained notes landing page system security network are responsible maintaining date patches updates anti virus other countermeasures protect their systems any could interact hm land registry should thoroughly tested must have your own testing procedures place apply them rigorously some free beta programs contain bugs viruses which pose threat implemented operational after extensive successful done secure environment non sensitive access files program source code controlled deprecation removal come normal six months may vary exceptional circumstances receive final reminder month discontinued additions relating sometimes describe work hmlr list commonly used definitions visit class govuk link href glossary our"
+    "url": "/developer-pack-changelog/",
+    "tokens": "developer pack changelog updates include update notifications documentation new information about transaction types application removing calculated fees from api response fee calculation will shared later date bypassing specific validation schema changing statuses code class x govuk inline accepted priority protected awaiting failed system error validating addressdetails type required bypassvalidationdata have max length 250 charge value document rxcd otherconveyancer conveyancer reference added jp1 titledetails title disclosable overriding interests party address service option representation enum partyrole overseasaddress country ukaddress postcode post town building description all successful objects root level data object schemas notification payload elements wrapper containing general summary problemdetails reason values disagree with register hmlr incorrect outdated exception covered by business rules"
   },
   {
-    "title": "What to expect from the developer pack",
+    "title": "How to access Business Gateway",
     "section": "Before you start",
-    "url": "/what-to-expect-from-the-developer-pack/",
-    "tokens": "business gateway developer pack provides set tools documentation examples developers who create software applications customers although designed support may also help others looking understand how works this ll find guide accessing our terms use policies list apis access them available integrate testing what ve created additional contact information are new would like overview useful explore before start section first specific service api jump straight sometimes technical describe work hmlr commonly used their definitions visit glossary"
+    "url": "/how-to-access-business-gateway/",
+    "tokens": "business gateway allows integrate your data directly with hmlr systems can tailor how work us fit neatly into existing processes including using client information already case management system cms create applications save time reduce errors use need streamline automate then submit our class govuk link href https www gov uk government publications digital registration service rel noreferrer noopener target blank portal opens new tab there are two ways set direct access means when links its own creates that integrates this route often most suitable companies have designated resource development capability customised specifically needs creating bespoke platform timeline setting integration depends internal complexity services integrating recommend review requirements process team before starting application they guidance developer pack read technical specification get understanding what required sign license which requested by emailing mailto channelpartners landregistry outsourcing other party will ll send test ssl certificate contact gives connectivity environment start once gained support provide onboarding throughout build going live push content from should only request form installed machines servers developing house e account place third lots suppliers developed software through shared customers way all platforms core usually preferred businesses provider might find out more about sometimes terms describe list commonly used their definitions visit glossary"
   },
   {
     "title": "Application Information API",
@@ -138,11 +98,17 @@
     "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 information applicaiton with single charge request method get endpoint v0 applications b3ac19be 2b6d 4b8a 971c e758b0e8e790 headers authorization any value response status 200 copy data application id accepted priority protected timestamp 2024 09 25t18 18 49z reference a123aaa warnings errors 2 transfer 2563940e ae95 4e7e 9b33 49a6571abdf6 b123bbb 3 level validation 3be62ad3 c542 452d 975e 6cd18d77196f failed null type mdref record detail md ref md007a exist pointer lender name matches records found all mandatory documents missing transactions t transferee representation must have"
   },
   {
-    "title": "Application Information API",
+    "title": "Application information API Technical guide",
     "description": "Use this service to get information about a specific application.",
-    "section": "Application Information API",
-    "url": "/apis/application-information/1.0/",
-    "tokens": "overview application information api used get detailed about specific this includes status request id accepted hmlr reference once previously known abr priority timestamp any errors that prevented submission warnings did prevent need addressed before caseworker can process otherwise requisition may occur list correspondence records associated with including completion documents cancellation requsition more after receiving notification indicating changed which notifications will available visit section submit page view technical guide specification web version opens new tab how works interaction diagram demonstrates support users using their unique provided via user examples type are listed system respond relevant also by informing been onto day failed validation state submitted when starts there several potential outcomes each trigger different response include passed added awaiting closed reopens case indicate whether error occurred must correct resubmit test created environment ve example code demonstrate what should expect developing your own services stubs please note plans release sandbox developers future exact date confirmed general testing guidance our"
+    "section": "Application Information API v1.0",
+    "url": "/apis/application-information/1.0/technical-guide/",
+    "tokens": "how use application information api used get detailed about specific using request id returned by submit status can currently one following validating hm land registry still processing yet been added day list validation failed due errors during found are included section response accepted awaiting priority passed closed will moved protected state when reopens onto system error hmlr should retried support team contacted cancelled futher available correspondence documents completed further this always return http 200 valid regardless rules there implementing example requests responses v1 applications copy code data 3e4f6da2 ada7 4081 957c b23542466715 warnings type oc018 detail document 00001 pointer null reference ab123fc timestamp 2024 09 25t18 18 49 478z must upload x record 2025 05t08 20 03 996z created 04 050z download 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 name cancellation letter 15 01 259z 281z ltr 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 319z rcs efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a registration completion sheet 343z reg 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 updated register"
+  },
+  {
+    "title": "Application Information API test stubs",
+    "section": "Application Information v1.0",
+    "url": "/apis/application-information/1.0/test-stubs/",
+    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api note all application request ids used this are modifiable only need last 3 letters match values references scenario 1 information that validating method get endpoint v1 applications abababab abab ababababavng headers authorization any value response status 200 copy data id reference null priority timestamp correspondences errors warnings 2 failed validation ababababavlf type mdref record detail md ref md123a exist lender name matches records found mandatory documents missing transactions t transferee representation must have please ensure relevant evidence attached system errored ababababasye error 4 accepted awaiting ababababaaap babaaap 5 protected ababababaapp babaapp 2025 08 27t14 40 35 23071z 09 05t08 15 01 259z created 281z download ltr 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 letter 6 cancelled ababababacan babacan 20 03 996z 04 050z can 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 cancellation 7 completed ababababacmp babacmp 319z rcs efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a registration completion sheet 343z reg 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 updated register 8 9 10 11"
   },
   {
     "title": "Application Information API",
@@ -159,18 +125,72 @@
     "tokens": "select version content"
   },
   {
-    "title": "Attach a message API technical guide",
-    "description": "Use this service to attach text messages to an existing application.",
-    "section": "Attach a message API v1.0",
-    "url": "/apis/attach-a-message/1.0/technical-guide/",
-    "tokens": "how use attach message api existing application make http post request endpoint body contains text attached once been validated empty 202 accepted response will returned success validation fails 400 containing details error after attachment begins this completes successfully otherwise notification sent notifications process finishes available from about status failed rules pass provided id must exist hmlr s system found 404 also pending state have completed cancelled business unit customer ids are directly computed when sending match those being either values more than 4034 characters example requests responses copy code data upon successful return errors type oc200 detail order creation pointer null already oc036 7788bfb3 02f2 4c9b be58 94e9df010ac8 created datetime 2025 02 25t16 17 19 120585661z payload schema https landregistry github io bgtechdoc schemas v1 json subject 3d4b51cf 76ab 40ad 9b09 099323034adf event 20t09 06 29 new 123 failure reason occurred"
-  },
-  {
     "title": "Attach a document",
     "description": "Use this service to attach a document to a submitted order.",
     "section": "APIs",
     "url": "/apis/attach-a-message/",
     "tokens": "select version content"
+  },
+  {
+    "title": "Download a document API",
+    "description": "Use this service to download documents created by HM Land Registry.",
+    "section": "Download a Document",
+    "url": "/apis/download-a-document/1.0/",
+    "tokens": "overview download document api provides way documents created by hmlr this one endpoint get v1 id binary content may obtain from any following completion notifications cancellation requisition correspondence array application information response view technical guide specification govuk heading m web version opens new tab https landregistry github io bgtechdoc vcad v0 3 spec html tag rel noreferrer noopener target blank how works diagram demonstrates user either can use that their request test environment ve also provided example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
+  },
+  {
+    "title": "Download a document API technical guide",
+    "description": "Use this service to download documents provided by HM Land Registry.",
+    "section": "Download a Document v1.0",
+    "url": "/apis/download-a-document/1.0/technical-guide/",
+    "tokens": "how use download document api obtain id before can this service will need currently only way submit application change land register process result one following types being generated requisition cancellation completion generation each these documents would trigger notification sent via notifications which contain once available note may information s response under correspondences array guaranteed until been issued downloading ve obtained get request simple binary returned long your method allows redirects validation rules there are implementing example requests responses specific examples payloads produced during submission view redirection enabled copy code curl url base v1 u username password status 200 body disabled 1 302 header location 2"
+  },
+  {
+    "title": "Download a document API test stubs",
+    "section": "Download a Document API API v1.0",
+    "url": "/apis/download-a-document/1.0/test-stubs/",
+    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 download cancellation document request method get endpoint v1 documents can 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 headers authorization any value response contents following redirects status 200 body binary 302 location 2 letter ltr 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 3 register completion sheet rcs efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a 4 copy reg 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038"
+  },
+  {
+    "title": "Download a document",
+    "description": "Use this service to download documents.",
+    "section": "APIs",
+    "url": "/apis/download-a-document/",
+    "tokens": "select version content"
+  },
+  {
+    "title": "Notifications API",
+    "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
+    "section": "Notifications API",
+    "url": "/apis/notifications/0.3/",
+    "tokens": "overview notifications api provides way fetching updates about multiple applications submitted by same business unit currently this service only supports pull interaction model where must requested periodically however more information push will shared future two endpoints get v0 all that match provided filters post acknowledge notify hmlr have been received can used after receiving notification indicating application changed which available visit section submit page view technical guide specification web version opens new tab how works diagram demonstrates support users user may send requests receive time using system respond providing relevant request also acknolwedge test created environment ve example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers exact date confirmed general testing guidance our"
+  },
+  {
+    "title": "Notifications API Technical guide",
+    "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
+    "section": "Notifications API v0.3",
+    "url": "/apis/notifications/0.3/technical-guide/",
+    "tokens": "how use notifications api recieve get request fetch all takes following url query parameters which are optional created after only retrieve with timestamp this date before status specific either new acknowledged occured event notification type subject additional provider filter that match provided limit maximum number return single response related applications submitted by business unit id will returned delivery least once meaning time may result one more e duplicate same events have datetime field can used locate ignore duplicates when receiving continue endpoint until they acknowledge been processed your system should send list ids post change those validation rules there implementing example requests responses examples payloads produced during application submission view submit v0 2025 01 01t00 00 http 1 copy code data 3fa85f64 5717 4562 b3fc 2c963f66afa6 03 06t14 32 55 295z payload schema https com string additionalprop1 additionalprop2 additionalprop3"
+  },
+  {
+    "title": "Notifications API test stubs",
+    "section": "Notifications API v0.3",
+    "url": "/apis/notifications/0.3/test-stubs/",
+    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 get all notifications request method endpoint v1 headers authorization any value response status 200 copy data notification id created datetime 2024 01 01t12 00 000z event payload schema github io bgtechdoc schemas application accepted priority protected json type subject b3ac19be 2b6d 4b8a 971c e758b0e8e790 additional provider filter subunit1 acknowledged reference abc456a 09 20t09 56 46 123123z 2563940e ae95 4e7e 9b33 49a6571abdf6 new abc456b validation failed 3be62ad3 c542 452d 975e 6cd18d77196f 2 3 4 with invalid date after 2020 01t00 before 2015 400 problems registry smartbear com bad title detail parameter cannot instance 5 acknowledge post 87654321 12345678 found 6 queued pending 45454545 awaiting 7 error system 8 cancelled uuid ending can a97679c9 624f 4680 ae8b 15b7 r411can null documents name cancellation letter 2025 05t08 20 04 050z download 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 9 completed cmp 28a01655 544a 48c5 9e40 4ac2 p311cmp ltr 15 281z 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 rcs registration completion sheet 319z 4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a reg updated register 343z 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 early false 10 requisitioned app correspondence despatched p311app"
+  },
+  {
+    "title": "Notifications API",
+    "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
+    "section": "Notifications API",
+    "url": "/apis/notifications/1.0/",
+    "tokens": "overview notifications api provides way fetching updates about multiple applications submitted by same business unit currently this service only supports pull interaction model where must requested periodically however more information push will shared future two endpoints get v1 all that match provided filters post acknowledge notify hmlr have been received can used after receiving notification indicating application changed which available visit section submit page view technical guide specification web version opens new tab how works diagram demonstrates support users user may send requests receive time using system respond providing relevant request also acknolwedge test created environment ve example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers exact date confirmed general testing guidance our"
+  },
+  {
+    "title": "Notifications API Technical guide",
+    "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
+    "section": "Notifications API v1.0",
+    "url": "/apis/notifications/1.0/technical-guide/",
+    "tokens": "how use notifications api recieve get request fetch all takes following url query parameters which are optional created after only retrieve with timestamp this date before status specific either new acknowledged occured event notification type subject additional provider filter that match provided limit maximum number return single response related applications submitted by business unit id will returned delivery least once meaning time may result one more e duplicate same events have datetime field can used locate ignore duplicates when receiving continue endpoint until they acknowledge been processed your system should send list ids post change those validation rules there implementing example requests responses examples payloads produced during application submission view submit v1 2025 01 01t00 00 http 1 copy code data 3fa85f64 5717 4562 b3fc 2c963f66afa6 03 06t14 32 55 295z payload schema https com string additionalprop1 additionalprop2 additionalprop3"
   },
   {
     "title": "Notifications API",
@@ -200,11 +220,17 @@
     "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect seewhen developing your own services due technical limitations these stubs will only allow get upload url won t work put endpoint stubbed base https bgtest landregistry gov uk bg2test api scenario 1 success request method post v0 documents headers authorization any value copy data document type charge additional provider filter string file length 123123 sha256 this 44 character blah bla response status 200 www would here com id 12345678 1234 123456789abc note body may contain random uuid 2 invalid 400 github io bgtechdoc problems global bad title detail malformed errors l1a json parse error 3 too small 0 schema validation there are with must greater than equal 4 large 419430401 less 41943040 5 characters size between"
   },
   {
-    "title": "Send a document API",
+    "title": "Send a document API Technical guide",
     "description": "Use this service to attach documents to your application.",
-    "section": "Send a Document API",
-    "url": "/apis/send-a-document/1.0/",
-    "tokens": "overview send document api should used attach documents your application there are two steps sending request generate upload url will respond with hmlr that can this only active 10 minutes after creation endpoint also return id when using submit uploaded via process subject security scanning have been 180 days which point they removed view technical guide specification web version opens new tab how works diagram demonstrates support users user sends system then use test does currently provide environment integrators our business gateway apis instead ve provided example code demonstrate what expect see developing own services stubs please note plans release sandbox developers future exact date confirmed general testing guidance visit"
+    "section": "Send a Document API v1.0",
+    "url": "/apis/send-a-document/1.0/technical-guide/",
+    "tokens": "how use send document api this consists two endpoints that must used together upload single post v1 documents url generate endpoint http body request contains information about file being uploaded put documentcapture landregistry gov uk bytes making create will result following items returned make only valid ten minutes after generation timed from start neither size nor speed internet connection cause timeout id unique included application submission payload above should contain content 200 code successful asynchronously virus scanned validated issues found during process surfaced via modify received response validation rules pass follow guidance implementing below types four are supported by hmlr pdfs password protected tiffs gifs pngs any other fail length sha 256 part expects sha256 parameters these refer values also provided when headers value x amz checksum where were given match either receive signature verification failure 403 maximum permitted 40mib 41943040 see examples different languages python copy with open test pdf rb f read len bash du b java new long filelength javascript node const fs require stats statsync base64 encoded bit binary digest exactly 44 characters regardless several hash b64encode cat openssl enc byte data files readallbytes messagedigest digester getinstance update string filesha256 getencoder encodetostring crypto shasum createhash getbytes example requests responses type tr1 6362 xhepsrlehdpshynpjwwarzerivlcpvn8f8pycs7crqa 04c5c3fe aa08 473b 9944 64ef5506f8e2 note may representative actual matches 4xx"
+  },
+  {
+    "title": "Send a document API test stubs",
+    "section": "Send a Document API v1.0",
+    "url": "/apis/send-a-document/1.0/test-stubs/",
+    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect seewhen developing your own services due technical limitations these stubs will only allow get upload url won t work put endpoint stubbed base https bgtest landregistry gov uk bg2test api scenario 1 success request method post v1 documents headers authorization any value copy data document type charge additional provider filter string file length 123123 sha256 this 44 character blah bla response status 200 www would here com id 12345678 1234 123456789abc note body may contain random uuid 2 invalid 400 github io bgtechdoc problems global bad title detail malformed errors l1a json parse error 3 too small 0 schema validation there are with must greater than equal 4 large 419430401 less 41943040 5 characters size between"
   },
   {
     "title": "Send a document API",
@@ -247,13 +273,6 @@
     "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 submit single charge request method post endpoint v0 applications headers authorization any value idempotency key note unique each this enforced by stubs copy data submission warning understood applicants borrower1 borrower2 customer reference customerref documents deed type mrtg document id 0d7bd3a5 1aec 4862 9fc9 f796dfc11d35 metadata certification statement certified filename pdf application lodger email valid conveyancer parties address service option required representation lodging details private individual forenames tony surname bonito toni thebank company number 12345 organisation name albion home loans limited titles ms305610 disclosable overriding interests false title scope whole part description null register transactions date 2024 01 mdref md006a 120000 priority fee pence 3000 party roles role borrower lender c references update response status 202 b3ac19be 2b6d 4b8a 971c e758b0e8e790 2 transfer addresses transferee uprn 100040203976 department sub building apartment 11 street 113 newton dependent locality double town manchester postcode m1 1ae full care sp tr1 a40d6fe0 bd45 4c49 b72a 0d80cf43db83 john smith transferor1 other abc conveyancers registered 13 coral close tuffley gloucester gl4 0rg ref transferor2 ms312531 guarantee additional provisions consideration string monetary 1300000 2023 12 transferor t 2563940e ae95 4e7e 9b33 49a6571abdf6 3 with level validation errors 400 github io bgtechdoc problems global bad detail invalid malformed ocv l1a 000 pointer must past present 4 e10f5369 a623 43fb aeaa 5e02625e9f83 md007a 3be62ad3 c542 452d 975e 6cd18d77196f"
   },
   {
-    "title": "Submit an application API",
-    "description": "Use this service to provide data to HMLR for updating the register.",
-    "section": "Submit an Application API",
-    "url": "/apis/submit-an-application/1.0/",
-    "tokens": "overview submit application api will help users provide necessary data hmlr updating register this asynchronous returning unique id submission request which can used when fetching status supports following types update transfer part dipositionary first lease includes new extension removing default form restriction jp1 content contains information about addresses documents parties transactions titles view technical guide specification web version opens tab how works diagram demonstrates support user submits system respond by sending use receive their test created environment ve also provided example code demonstrate what should expect developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
-  },
-  {
     "title": "Submit an application API Technical guide",
     "description": "Use this service to provide data to HMLR for updating the register.",
     "section": "Submit an Application API",
@@ -274,17 +293,38 @@
     "tokens": "select version content"
   },
   {
-    "title": "Application information API Technical guide",
+    "title": "Application Information API",
     "description": "Use this service to get information about a specific application.",
-    "section": "Application Information API v1.0",
-    "url": "/apis/application-information/1.0/technical-guide/",
-    "tokens": "how use application information api used get detailed about specific using request id returned by submit status can currently one following validating hm land registry still processing yet been added day list validation failed due errors during found are included section response accepted awaiting priority passed closed will moved protected state when reopens onto system error hmlr should retried support team contacted cancelled futher available correspondence documents completed further this always return http 200 valid regardless rules there implementing example requests responses v1 applications copy code data 3e4f6da2 ada7 4081 957c b23542466715 warnings type oc018 detail document 00001 pointer null reference ab123fc timestamp 2024 09 25t18 18 49 478z must upload x record 2025 05t08 20 03 996z created 04 050z download 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 name cancellation letter 15 01 259z 281z ltr 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 319z rcs efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a registration completion sheet 343z reg 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 updated register"
+    "section": "Application Information API",
+    "url": "/apis/application-information/1.0/",
+    "tokens": "overview application information api used get detailed about specific this includes status request id accepted hmlr reference once previously known abr priority timestamp any errors that prevented submission warnings did prevent need addressed before caseworker can process otherwise requisition may occur list correspondence records associated with including completion documents cancellation requsition more after receiving notification indicating changed which notifications will available visit section submit page view technical guide specification web version opens new tab how works interaction diagram demonstrates support users using their unique provided via user examples type are listed system respond relevant also by informing been onto day failed validation state submitted when starts there several potential outcomes each trigger different response include passed added awaiting closed reopens case indicate whether error occurred must correct resubmit test created environment ve example code demonstrate what should expect developing your own services stubs please note plans release sandbox developers future exact date confirmed general testing guidance our"
   },
   {
-    "title": "Application Information API test stubs",
-    "section": "Application Information v1.0",
-    "url": "/apis/application-information/1.0/test-stubs/",
-    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api note all application request ids used this are modifiable only need last 3 letters match values references scenario 1 information that validating method get endpoint v1 applications abababab abab ababababavng headers authorization any value response status 200 copy data id reference null priority timestamp correspondences errors warnings 2 failed validation ababababavlf type mdref record detail md ref md123a exist lender name matches records found mandatory documents missing transactions t transferee representation must have please ensure relevant evidence attached system errored ababababasye error 4 accepted awaiting ababababaaap babaaap 5 protected ababababaapp babaapp 2025 08 27t14 40 35 23071z 09 05t08 15 01 259z created 281z download ltr 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 letter 6 cancelled ababababacan babacan 20 03 996z 04 050z can 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 cancellation 7 completed ababababacmp babacmp 319z rcs efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a registration completion sheet 343z reg 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 updated register 8 9 10 11"
+    "title": "Send a document API",
+    "description": "Use this service to attach documents to your application.",
+    "section": "Send a Document API",
+    "url": "/apis/send-a-document/1.0/",
+    "tokens": "overview send document api should used attach documents your application there are two steps sending request generate upload url will respond with hmlr that can this only active 10 minutes after creation endpoint also return id when using submit uploaded via process subject security scanning have been 180 days which point they removed view technical guide specification web version opens new tab how works diagram demonstrates support users user sends system then use test does currently provide environment integrators our business gateway apis instead ve provided example code demonstrate what expect see developing own services stubs please note plans release sandbox developers future exact date confirmed general testing guidance visit"
+  },
+  {
+    "title": "Submit an Application to change the Land Register APIs",
+    "description": "Use this service to help lodge applications with HMLR to update the register or create a new lease or transfer of part.",
+    "section": "apis",
+    "url": "/apis/submit-an-application-to-change-the-land-register/1.0/",
+    "tokens": "version status dropdown v1 0 latest v0 3 button type submit class govuk margin data module onclick setversion view overview this new service will help lodge applications with hmlr update register create lease transfer part faster more responsive than before identify errors prior acceptance application result fewer requisitions improved experience customers using api mean that are only accepted onto day list when provided both valid correct validation significantly reduce number avoidable administrative common mistakes such name discrepancies missing details increase our ability automate how integrate enable users hm land registry must build following apis send document allows upload url use their documents system learn about technical guide test complete documentation submitted notifications receive acknowledge throughout submission process information reviewed processed alternatively can return they re ready proceed attach message reply correspondence received from replies sent download provides way created by work together diagram below shows all should used change start finish specification body link href https landregistry github io bgtechdoc vcad spec html rel noreferrer noopener target blank web opens tab openapi json"
+  },
+  {
+    "title": "Submit an application API",
+    "description": "Use this service to provide data to HMLR for updating the register.",
+    "section": "Submit an Application API",
+    "url": "/apis/submit-an-application/1.0/",
+    "tokens": "overview submit application api will help users provide necessary data hmlr updating register this asynchronous returning unique id submission request which can used when fetching status supports following types update transfer part dipositionary first lease includes new extension removing default form restriction jp1 content contains information about addresses documents parties transactions titles view technical guide specification web version opens tab how works diagram demonstrates support user submits system respond by sending use receive their test created environment ve also provided example code demonstrate what should expect developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
+  },
+  {
+    "title": "Notifications API test stubs",
+    "section": "Notifications API v1.0",
+    "url": "/apis/notifications/1.0/test-stubs/",
+    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 get all notifications request method endpoint v1 headers authorization any value response status 200 copy data notification id created datetime 2024 01 01t12 00 000z event payload schema github io bgtechdoc schemas application accepted priority protected json type subject b3ac19be 2b6d 4b8a 971c e758b0e8e790 additional provider filter subunit1 acknowledged reference abc456a 09 20t09 56 46 123123z 2563940e ae95 4e7e 9b33 49a6571abdf6 new abc456b validation failed 3be62ad3 c542 452d 975e 6cd18d77196f 2 3 4 with invalid date after 2020 01t00 before 2015 400 problems registry smartbear com bad title detail parameter cannot instance 5 acknowledge post 87654321 12345678 found 6 queued pending 45454545 awaiting 7 error system 8 cancelled uuid ending can a97679c9 624f 4680 ae8b 15b7 r411can null documents name cancellation letter 2025 05t08 20 04 050z download 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 9 completed cmp 28a01655 544a 48c5 9e40 4ac2 p311cmp ltr 15 281z 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 rcs registration completion sheet 319z 4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a reg updated register 343z 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 early false 10 requisitioned app correspondence despatched p311app"
   },
   {
     "title": "Attach a document API",
@@ -314,56 +354,16 @@
     "tokens": "overview attach message api allows users text messages existing application notifications can then used understand been successfully attached want document they will need use view technical guide specification web version opens new tab how works this diagram demonstrates support when user submits hmlr system initially respond with empty 202 accepted response receive notification stating whether successful test created environment ve also provided example code demonstrate what should expect developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
   },
   {
+    "title": "Attach a message API technical guide",
+    "description": "Use this service to attach text messages to an existing application.",
+    "section": "Attach a message API v1.0",
+    "url": "/apis/attach-a-message/1.0/technical-guide/",
+    "tokens": "how use attach message api existing application make http post request endpoint body contains text attached once been validated empty 202 accepted response will returned success validation fails 400 containing details error after attachment begins this completes successfully otherwise notification sent notifications process finishes available from about status failed rules pass provided id must exist hmlr s system found 404 also pending state have completed cancelled business unit customer ids are directly computed when sending match those being either values more than 4034 characters example requests responses copy code data upon successful return errors type oc200 detail order creation pointer null already oc036 7788bfb3 02f2 4c9b be58 94e9df010ac8 created datetime 2025 02 25t16 17 19 120585661z payload schema https landregistry github io bgtechdoc schemas v1 json subject 3d4b51cf 76ab 40ad 9b09 099323034adf event 20t09 06 29 new 123 failure reason occurred"
+  },
+  {
     "title": "Attach a message API test stubs",
     "section": "Attach a message API v1.0",
     "url": "/apis/attach-a-message/1.0/test-stubs/",
     "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 attach message request method post endpoint v1 applications faed15d 7ec8 4e7d 866c 9c25874d2b42 attachments headers authorization any value copy data text this response status 202"
-  },
-  {
-    "title": "Download a document API",
-    "description": "Use this service to download documents created by HM Land Registry.",
-    "section": "Download a Document",
-    "url": "/apis/download-a-document/1.0/",
-    "tokens": "overview download document api provides way documents created by hmlr this one endpoint get v1 id binary content may obtain from any following completion notifications cancellation requisition correspondence array application information response view technical guide specification govuk heading m web version opens new tab https landregistry github io bgtechdoc vcad v0 3 spec html tag rel noreferrer noopener target blank how works diagram demonstrates user either can use that their request test environment ve also provided example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
-  },
-  {
-    "title": "Notifications API",
-    "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
-    "section": "Notifications API",
-    "url": "/apis/notifications/1.0/",
-    "tokens": "overview notifications api provides way fetching updates about multiple applications submitted by same business unit currently this service only supports pull interaction model where must requested periodically however more information push will shared future two endpoints get v1 all that match provided filters post acknowledge notify hmlr have been received can used after receiving notification indicating application changed which available visit section submit page view technical guide specification web version opens new tab how works diagram demonstrates support users user may send requests receive time using system respond providing relevant request also acknolwedge test created environment ve example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers exact date confirmed general testing guidance our"
-  },
-  {
-    "title": "Notifications API Technical guide",
-    "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
-    "section": "Notifications API v1.0",
-    "url": "/apis/notifications/1.0/technical-guide/",
-    "tokens": "how use notifications api recieve get request fetch all takes following url query parameters which are optional created after only retrieve with timestamp this date before status specific either new acknowledged occured event notification type subject additional provider filter that match provided limit maximum number return single response related applications submitted by business unit id will returned delivery least once meaning time may result one more e duplicate same events have datetime field can used locate ignore duplicates when receiving continue endpoint until they acknowledge been processed your system should send list ids post change those validation rules there implementing example requests responses examples payloads produced during application submission view submit v1 2025 01 01t00 00 http 1 copy code data 3fa85f64 5717 4562 b3fc 2c963f66afa6 03 06t14 32 55 295z payload schema https com string additionalprop1 additionalprop2 additionalprop3"
-  },
-  {
-    "title": "Notifications API test stubs",
-    "section": "Notifications API v1.0",
-    "url": "/apis/notifications/1.0/test-stubs/",
-    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 get all notifications request method endpoint v1 headers authorization any value response status 200 copy data notification id created datetime 2024 01 01t12 00 000z event payload schema github io bgtechdoc schemas application accepted priority protected json type subject b3ac19be 2b6d 4b8a 971c e758b0e8e790 additional provider filter subunit1 acknowledged reference abc456a 09 20t09 56 46 123123z 2563940e ae95 4e7e 9b33 49a6571abdf6 new abc456b validation failed 3be62ad3 c542 452d 975e 6cd18d77196f 2 3 4 with invalid date after 2020 01t00 before 2015 400 problems registry smartbear com bad title detail parameter cannot instance 5 acknowledge post 87654321 12345678 found 6 queued pending 45454545 awaiting 7 error system 8 cancelled uuid ending can a97679c9 624f 4680 ae8b 15b7 r411can null documents name cancellation letter 2025 05t08 20 04 050z download 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 9 completed cmp 28a01655 544a 48c5 9e40 4ac2 p311cmp ltr 15 281z 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 rcs registration completion sheet 319z 4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a reg updated register 343z 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 early false 10 requisitioned app correspondence despatched p311app"
-  },
-  {
-    "title": "Send a document API Technical guide",
-    "description": "Use this service to attach documents to your application.",
-    "section": "Send a Document API v1.0",
-    "url": "/apis/send-a-document/1.0/technical-guide/",
-    "tokens": "how use send document api this consists two endpoints that must used together upload single post v1 documents url generate endpoint http body request contains information about file being uploaded put documentcapture landregistry gov uk bytes making create will result following items returned make only valid ten minutes after generation timed from start neither size nor speed internet connection cause timeout id unique included application submission payload above should contain content 200 code successful asynchronously virus scanned validated issues found during process surfaced via modify received response validation rules pass follow guidance implementing below types four are supported by hmlr pdfs password protected tiffs gifs pngs any other fail length sha 256 part expects sha256 parameters these refer values also provided when headers value x amz checksum where were given match either receive signature verification failure 403 maximum permitted 40mib 41943040 see examples different languages python copy with open test pdf rb f read len bash du b java new long filelength javascript node const fs require stats statsync base64 encoded bit binary digest exactly 44 characters regardless several hash b64encode cat openssl enc byte data files readallbytes messagedigest digester getinstance update string filesha256 getencoder encodetostring crypto shasum createhash getbytes example requests responses type tr1 6362 xhepsrlehdpshynpjwwarzerivlcpvn8f8pycs7crqa 04c5c3fe aa08 473b 9944 64ef5506f8e2 note may representative actual matches 4xx"
-  },
-  {
-    "title": "Send a document API test stubs",
-    "section": "Send a Document API v1.0",
-    "url": "/apis/send-a-document/1.0/test-stubs/",
-    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect seewhen developing your own services due technical limitations these stubs will only allow get upload url won t work put endpoint stubbed base https bgtest landregistry gov uk bg2test api scenario 1 success request method post v1 documents headers authorization any value copy data document type charge additional provider filter string file length 123123 sha256 this 44 character blah bla response status 200 www would here com id 12345678 1234 123456789abc note body may contain random uuid 2 invalid 400 github io bgtechdoc problems global bad title detail malformed errors l1a json parse error 3 too small 0 schema validation there are with must greater than equal 4 large 419430401 less 41943040 5 characters size between"
-  },
-  {
-    "title": "Submit an Application to change the Land Register APIs",
-    "description": "Use this service to help lodge applications with HMLR to update the register or create a new lease or transfer of part.",
-    "section": "apis",
-    "url": "/apis/submit-an-application-to-change-the-land-register/1.0/",
-    "tokens": "version status dropdown v1 0 latest v0 3 button type submit class govuk margin data module onclick setversion view overview this new service will help lodge applications with hmlr update register create lease transfer part faster more responsive than before identify errors prior acceptance application result fewer requisitions improved experience customers using api mean that are only accepted onto day list when provided both valid correct validation significantly reduce number avoidable administrative common mistakes such name discrepancies missing details increase our ability automate how integrate enable users hm land registry must build following apis send document allows upload url use their documents system learn about technical guide test complete documentation submitted notifications receive acknowledge throughout submission process information reviewed processed alternatively can return they re ready proceed attach message reply correspondence received from replies sent download provides way created by work together diagram below shows all should used change start finish specification body link href https landregistry github io bgtechdoc vcad spec html rel noreferrer noopener target blank web opens tab openapi json"
   }
 ]
