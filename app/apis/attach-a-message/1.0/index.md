@@ -55,7 +55,7 @@ If users want to attach a document to an application, they will need to use the 
 
 ## View the API specification {.govuk-heading-m}
 
-[Web version (opens in new tab)](https://customer-documentation-business-gateway-35cf334e5a1aeb361fcf62d.git.tooling.stp.hmlr.zone/documents/submit-an-application-to-change-the-register/v1.0/openapi.html#tag/Attach-a-message){rel="noreferrer noopener" target="_blank"}
+[Web version (opens in new tab)](https://landregistry.github.io/bgtechdoc/documents/submit-an-application-to-change-the-register/v1.0/openapi.html#tag/Attach-a-message){rel="noreferrer noopener" target="_blank"}
 
 </section>
   
