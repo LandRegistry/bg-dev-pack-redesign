@@ -916,6 +916,9 @@ data-module="govuk-service-navigation"
 </ul>
   </div>
 </details>
+<h3 class="govuk-heading-s" id="registration-of-overseas-entity-id-roe-id" tabindex="-1" class="govuk-heading-m">Registration of Overseas Entity ID (ROE ID)</h3>
+<p class="govuk-body">For an overseas company, you must indicate whether the company is exempt or not from providing a ROE ID. Corresponding documentation must be attached if they are exempt.</p>
+<p class="govuk-body">If not exempt, then a ROE ID must be provided. Format must be OE followed by six numbers e.g. OE123456</p>
 <h3 class="govuk-heading-s" id="transaction-and-document-types" tabindex="-1" class="govuk-heading-m">Transaction and document types</h3>
 <p class="govuk-body">The application submission API accepts several transaction and document types that describe the desired outcome of the application. These types are defined in the schema in their shortened form, but full definitions of each type can be viewed below:</p>
 <details class="govuk-details">
@@ -6442,13 +6445,19 @@ data-module="govuk-service-navigation"
 
 <h3 class="govuk-heading-s" id="attorneys" tabindex="-1" class="govuk-heading-m">Attorneys</h3>
 <p class="govuk-body">The attorney field is a data item within the party role object. It should be used to add a party reference for the attorney acting on behalf of that party.</p>
+<h3 class="govuk-heading-s" id="power-of-attorney" tabindex="-1" class="govuk-heading-m">Power of attorney</h3>
+<p class="govuk-body">It is optional to indicate if there are any power of attorney parties present for a party on a transaction.</p>
+<p class="govuk-body">This will be done within the partyrole object, by providing the party reference ID(s) of the relevant attorney(s) in the “attorneys” data item.</p>
+<p class="govuk-body">A maximum of 4 power of attorney parties can be included per party here. Attorneys must not be provided for any parties with a role of “ATTORNEY” or “ASSENTOR”. All parties referenced as attorneys must also be included on the transaction as parties themselves, with a role of “ATTORNEY”. Any party with a role of “ATTORNEY” must be referenced in the “attorneys” data item.</p>
+<p class="govuk-body">The number of “POA” documents attached to a transaction must be at least the number of parties (only role types transferor, landlord, borrower, lender) in that transaction that have a power of attorney.</p>
 <h3 class="govuk-heading-s" id="representation" tabindex="-1" class="govuk-heading-m">Representation</h3>
 <p class="govuk-body">All parties require a representation type. The representation type cannot be <code class="app-code app-code--inline">NOT_REQUIRED</code> for Borrowers, Transferees and Transferors. The options are as follows:</p>
 <ul class="govuk-list govuk-list--bullet">
-- `LODGING_CONVEYANCER` - the conveyancer lodging the application
-- `OTHER_CONVEYANCER` - the party is represented by another conveyancer. Details will be included with the application
-- `NOT_REPRESENTED` - the party is not represented by a conveyancer and identity evidence has been provided
-- `NOT_REQUIRED` - the party is not required to have a representation type. This should never be selected for Borrowers, Transferees or Transferors
+<li><code class="app-code app-code--inline">LODGING_CONVEYANCER</code> - the conveyancer lodging the application</li>
+<li><code class="app-code app-code--inline">OTHER_CONVEYANCER</code> - the party is represented by another conveyancer. Details will be included with the application</li>
+<li><code class="app-code app-code--inline">NOT_REPRESENTED</code> - the party is not represented by a conveyancer and identity evidence has been provided</li>
+<li><code class="app-code app-code--inline">NOT_REQUIRED</code> - the party is not required to have a representation type. This should never be selected for Borrowers, Transferees or Transferors</li>
+</ul>
 <h2 class="govuk-heading-m" id="list-of-validation-rules" tabindex="-1" class="govuk-heading-l">List of validation rules</h2>
 <p class="govuk-body">During application submission, several validation rules will run against the data provided to ensure it is valid. A number of these rules run synchronously before an <code class="app-code app-code--inline">application_request_id</code> is returned and they are documented in the schema documentation. Other rules run asynchronously, after the <code class="app-code app-code--inline">application_request_id</code> has been returned.</p>
 <h2 class="govuk-heading-s" id="bypass-validation" tabindex="-1" class="govuk-heading-l">Bypass validation</h2>
@@ -7268,6 +7277,8 @@ For the following lease transactions, there must be at least one tenant and one 
 </table>
 <h3 class="govuk-heading-s">Transfer amount validation</h3>
 <p class="govuk-body">Value must be provided, either as an exact value or a value band (where transfer is not for monetary value).</p>
+<h3 class="govuk-heading-s">TR5 Validation</h3>
+<p class="govuk-body">If you are including a TR5 document, then any transaction that a TR5 is attached to must have at least two title numbers. </p>
 <h3 class="govuk-heading-s">Transfer date validation</h3>
 <p class="govuk-body">The transfer date must match what is on the transfer deed to be correct. It must not be in the future.</p>
 <h3 class="govuk-heading-s">Transfer number validation</h3>

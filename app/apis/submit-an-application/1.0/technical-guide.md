@@ -574,6 +574,12 @@ When a party is an overseas company, you must provide the territory of incorpora
 </ul>"
 }) }}
 
+### Registration of Overseas Entity ID (ROE ID) {.govuk-heading-s}
+
+For an overseas company, you must indicate whether the company is exempt or not from providing a ROE ID. Corresponding documentation must be attached if they are exempt. 
+
+If not exempt, then a ROE ID must be provided. Format must be OE followed by six numbers e.g. OE123456 
+
 ### Transaction and document types {.govuk-heading-s}
 
 The application submission API accepts several transaction and document types that describe the desired outcome of the application. These types are defined in the schema in their shortened form, but full definitions of each type can be viewed below:
@@ -2244,16 +2250,28 @@ The following JSON extract begins at the transactions node for an application’
 
 The attorney field is a data item within the party role object. It should be used to add a party reference for the attorney acting on behalf of that party.
 
+### Power of attorney {.govuk-heading-s} 
+
+It is optional to indicate if there are any power of attorney parties present for a party on a transaction.  
+
+This will be done within the partyrole object, by providing the party reference ID(s) of the relevant attorney(s) in the “attorneys” data item.  
+
+ 
+A maximum of 4 power of attorney parties can be included per party here. Attorneys must not be provided for any parties with a role of “ATTORNEY” or “ASSENTOR”. All parties referenced as attorneys must also be included on the transaction as parties themselves, with a role of “ATTORNEY”. Any party with a role of “ATTORNEY” must be referenced in the “attorneys” data item. 
+
+The number of “POA” documents attached to a transaction must be at least the number of parties (only role types transferor, landlord, borrower, lender) in that transaction that have a power of attorney. 
+
 ### Representation {.govuk-heading-s}
 
 All parties require a representation type. The representation type cannot be `NOT_REQUIRED` for Borrowers, Transferees and Transferors. The options are as follows:
 
 
-<ul class="govuk-list govuk-list--bullet">
+
 - `LODGING_CONVEYANCER` - the conveyancer lodging the application
 - `OTHER_CONVEYANCER` - the party is represented by another conveyancer. Details will be included with the application
 - `NOT_REPRESENTED` - the party is not represented by a conveyancer and identity evidence has been provided
 - `NOT_REQUIRED` - the party is not required to have a representation type. This should never be selected for Borrowers, Transferees or Transferors
+
 
 ## List of validation rules {.govuk-heading-m}
 
@@ -3167,6 +3185,9 @@ For the following lease transactions, there must be at least one tenant and one 
 
 <h3 class="govuk-heading-s">Transfer amount validation</h3>
 <p class="govuk-body">Value must be provided, either as an exact value or a value band (where transfer is not for monetary value).</p>
+
+<h3 class="govuk-heading-s">TR5 Validation</h3>
+<p class="govuk-body">If you are including a TR5 document, then any transaction that a TR5 is attached to must have at least two title numbers. </p>
 
 
 <h3 class="govuk-heading-s">Transfer date validation</h3>
