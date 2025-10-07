@@ -84,7 +84,7 @@ The user can use that `download_id` in their request to `GET /v1/documents/{down
 
 HMLR has created a test environment for the Download a document API. We’ve also provided example code to demonstrate what you should expect when developing your own services. 
 
-[View Download a document API test stubs](/apis/download-a-document/1.0/test-stubs).
+[View Download a document API test stubs](/apis/download-a-document/1.0/test-stubs)
 
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
