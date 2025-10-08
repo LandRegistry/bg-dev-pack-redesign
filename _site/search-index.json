@@ -78,13 +78,6 @@
     "tokens": "explore apis find api view documentation our business gateway below read more about types use visit guide soap rest list hmlr terms their definitions glossary service choose application enquiry discharge activity e document registration estimated completion date land charges full search bankruptcy local official copy availability v1 v2 title known whole with priority data part online owner verification outstanding requests poll request register extract registered proprietor names by property description index map submit change this applications that are yet completed check any have been removed previous 30 days send automate collection correspondence responses receive ecd which likely details entries relating notifications get updates multiple submitted same unit order plan conveyance referred deed lease when your relates protect transfers leases mortgages verify ownership against titles real time return obtain new response collect manually processed outside working hours source from electronic stream alongside usual supply name type proprietors throughout process instruction submission out number tenure based address supplied help lodge update create transfer"
   },
   {
-    "title": "Application Information API",
-    "description": "Use this service to get information about a specific application.",
-    "section": "Application Information API",
-    "url": "/apis/application-information/0.3/",
-    "tokens": "overview application information api used get detailed about specific this includes status request id accepted hmlr reference once previously known abr priority timestamp any errors that prevented submission warnings did prevent need addressed before caseworker can process otherwise requisition may occur more after receiving notification indicating changed which notifications will available visit section submit page view technical guide specification web version opens new tab how works interaction diagram demonstrates support users using their unique provided via user examples type are listed system respond with relevant also by informing been onto day list failed validation state submitted when starts there several potential outcomes each trigger different response include passed added awaiting closed reopens case indicate whether error occurred must correct resubmit test created environment ve example code demonstrate what should expect developing your own services stubs please note plans release sandbox developers future exact date confirmed general testing guidance our"
-  },
-  {
     "title": "Application information API Technical guide",
     "description": "Use this service to get information about a specific application.",
     "section": "Application Information API v0.3",
@@ -125,13 +118,6 @@
     "tokens": "select version content"
   },
   {
-    "title": "Attach a document API",
-    "description": "Use this service to attach a document to a submitted order.",
-    "section": "Attach a document API",
-    "url": "/apis/attach-a-document/1.0/",
-    "tokens": "overview attach document api allows users additional documents existing application notifications can then used understand been successfully attached want message they will need use view technical guide specification web version opens new tab how works this diagram demonstrates support when user submits hmlr system initially respond with empty 202 accepted response receive notification stating whether attachment successful test created environment ve also provided example code demonstrate what should expect developing your own services submit stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
-  },
-  {
     "title": "Attach a document API technical guide",
     "description": "Use this service to attach additional documents to an existing application.",
     "section": "Attach a document API v1.0",
@@ -150,13 +136,6 @@
     "section": "APIs",
     "url": "/apis/attach-a-document/",
     "tokens": "select version content"
-  },
-  {
-    "title": "Attach a message API",
-    "description": "Use this service to attach text messages to an existing application.",
-    "section": "Attach a message API",
-    "url": "/apis/attach-a-message/1.0/",
-    "tokens": "overview attach message api allows users text messages existing application notifications can then used understand been successfully attached want document they will need use view technical guide specification web version opens new tab how works this diagram demonstrates support when user submits hmlr system initially respond with empty 202 accepted response receive notification stating whether successful test created environment ve also provided example code demonstrate what should expect developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
   },
   {
     "title": "Attach a message API technical guide",
@@ -206,24 +185,11 @@
     "tokens": "select version content"
   },
   {
-    "title": "Notifications API",
-    "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
-    "section": "Notifications API",
-    "url": "/apis/notifications/0.3/",
-    "tokens": "overview notifications api provides way fetching updates about multiple applications submitted by same business unit currently this service only supports pull interaction model where must requested periodically however more information push will shared future two endpoints get v0 all that match provided filters post acknowledge notify hmlr have been received can used after receiving notification indicating application changed which available visit section submit page view technical guide specification web version opens new tab how works diagram demonstrates support users user may send requests receive time using system respond providing relevant request also acknolwedge test created environment ve example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers exact date confirmed general testing guidance our"
-  },
-  {
     "title": "Notifications API Technical guide",
     "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
     "section": "Notifications API v0.3",
     "url": "/apis/notifications/0.3/technical-guide/",
     "tokens": "how use notifications api recieve get request fetch all takes following url query parameters which are optional created after only retrieve with timestamp this date before status specific either new acknowledged occured event notification type subject additional provider filter that match provided limit maximum number return single response related applications submitted by business unit id will returned delivery least once meaning time may result one more e duplicate same events have datetime field can used locate ignore duplicates when receiving continue endpoint until they acknowledge been processed your system should send list ids post change those validation rules there implementing example requests responses examples payloads produced during application submission view submit v0 2025 01 01t00 00 http 1 copy code data 3fa85f64 5717 4562 b3fc 2c963f66afa6 03 06t14 32 55 295z payload schema https com string additionalprop1 additionalprop2 additionalprop3"
-  },
-  {
-    "title": "Notifications API test stubs",
-    "section": "Notifications API v0.3",
-    "url": "/apis/notifications/0.3/test-stubs/",
-    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 get all notifications request method endpoint v0 headers authorization any value response status 200 copy data notification id created datetime 2024 01 01t12 00 000z event payload schema github io bgtechdoc schemas v1 application accepted priority protected json type subject b3ac19be 2b6d 4b8a 971c e758b0e8e790 additional provider filter subunit1 acknowledged reference abc456a 09 20t09 56 46 123123z 2563940e ae95 4e7e 9b33 49a6571abdf6 new abc456b validation failed 3be62ad3 c542 452d 975e 6cd18d77196f 2 3 4 with invalid date after 2020 01t00 before 2015 400 problems registry smartbear com bad title detail parameter cannot instance 5 acknowledge post 87654321 12345678 found 6 queued pending 45454545 awaiting 7 error system 8 cancelled uuid ending can 50cda861 ba0b 41dc af9a 4748335d51ad 2025 05t08 13 38 076z 052z a97679c9 624f 4680 ae8b 15b7 r411can null 37 697377z 302ce5d2 cb99 4696 b661 767c76caa07c 20 04 695z 03 776z documents name cancellation letter 050z download 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 9 completed cmp 5e6f6865 270f 43da 87b6 4af759f3c2aa 07 346z 320z 28a01655 544a 48c5 9e40 4ac2 p311cmp 55 975284z ac603b14 7c62 431a 99e6 66aca3cdb717 15 02 333z 712z ltr 281z 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 rcs registration completion sheet 319z 4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a reg updated register 343z 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 early false 10 requisitioned app correspondence despatched p311app"
   },
   {
     "title": "Notifications API",
@@ -240,24 +206,11 @@
     "tokens": "how use notifications api recieve get request fetch all takes following url query parameters which are optional created after only retrieve with timestamp this date before status specific either new acknowledged occured event notification type subject additional provider filter that match provided limit maximum number return single response related applications submitted by business unit id will returned delivery least once meaning time may result one more e duplicate same events have datetime field can used locate ignore duplicates when receiving continue endpoint until they acknowledge been processed your system should send list ids post change those validation rules there implementing example requests responses examples payloads produced during application submission view submit v1 2025 01 01t00 00 http 1 copy code data 3fa85f64 5717 4562 b3fc 2c963f66afa6 03 06t14 32 55 295z payload schema https com string additionalprop1 additionalprop2 additionalprop3"
   },
   {
-    "title": "Notifications API test stubs",
-    "section": "Notifications API v1.0",
-    "url": "/apis/notifications/1.0/test-stubs/",
-    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 get all notifications request method endpoint v1 headers authorization any value response status 200 copy data notification id created datetime 2024 01 01t12 00 000z event payload schema github io bgtechdoc schemas application accepted priority protected json type subject b3ac19be 2b6d 4b8a 971c e758b0e8e790 additional provider filter subunit1 acknowledged reference abc456a 09 20t09 56 46 123123z 2563940e ae95 4e7e 9b33 49a6571abdf6 new abc456b validation failed 3be62ad3 c542 452d 975e 6cd18d77196f 2 3 4 with invalid date after 2020 01t00 before 2015 400 problems registry smartbear com bad title detail parameter cannot instance 5 acknowledge post 87654321 12345678 found 6 queued pending 45454545 awaiting 7 error system 8 cancelled uuid ending can 50cda861 ba0b 41dc af9a 4748335d51ad 2025 05t08 13 38 076z 052z a97679c9 624f 4680 ae8b 15b7 r411can null 37 697377z 302ce5d2 cb99 4696 b661 767c76caa07c 20 04 695z 03 776z documents name cancellation letter 050z download 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 9 completed cmp 5e6f6865 270f 43da 87b6 4af759f3c2aa 07 346z 320z 28a01655 544a 48c5 9e40 4ac2 p311cmp 55 975284z ac603b14 7c62 431a 99e6 66aca3cdb717 15 02 333z 712z ltr 281z 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 rcs registration completion sheet 319z 4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a reg updated register 343z 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 early false 10 requisitioned app correspondence despatched p311app"
-  },
-  {
     "title": "Notifications API",
     "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
     "section": "APIs",
     "url": "/apis/notifications/",
     "tokens": "select version content"
-  },
-  {
-    "title": "Send a document API",
-    "description": "Use this service to attach documents to your application.",
-    "section": "Send a Document API",
-    "url": "/apis/send-a-document/0.3/",
-    "tokens": "overview send document api should used attach documents your application there are two steps sending request generate upload url will respond with hmlr that can this only active 10 minutes after creation endpoint also return id when using submit uploaded via process subject security scanning have been 180 days which point they removed view technical guide specification web version opens new tab how works diagram demonstrates support users user sends system then use test does currently provide environment integrators our business gateway apis instead ve provided example code demonstrate what expect see developing own services stubs please note plans release sandbox developers future exact date confirmed general testing guidance visit"
   },
   {
     "title": "Send a document API Technical guide",
@@ -320,13 +273,6 @@
     "tokens": "submit application change land register service api use this help lodge applications with hmlr update create new lease transfer part version status dropdown v1 0 latest v0 3 2 1 button type class govuk margin data module onclick setversion view select related apis send document information attach message notifications download more subsection"
   },
   {
-    "title": "Submit an application API",
-    "description": "Use this service to provide data to HMLR for updating the register.",
-    "section": "Submit an Application API",
-    "url": "/apis/submit-an-application/0.3/",
-    "tokens": "overview submit application api will help users provide necessary data hmlr updating register this asynchronous returning unique id submission request which can used when fetching status supports following types update transfer part dipositionary first lease includes new extension removing default form restriction jp1 content contains information about addresses documents parties transactions titles view technical guide specification web version opens tab how works diagram demonstrates send document support user submits system respond by sending use receive their test created environment ve also provided example code demonstrate what should expect developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
-  },
-  {
     "title": "Submit an application API Technical guide",
     "description": "Use this service to provide data to HMLR for updating the register.",
     "section": "Submit an Application API",
@@ -365,5 +311,59 @@
     "section": "APIs",
     "url": "/apis/submit-an-application/",
     "tokens": "select version content"
+  },
+  {
+    "title": "Attach a document API",
+    "description": "Use this service to attach a document to a submitted order.",
+    "section": "Attach a document API",
+    "url": "/apis/attach-a-document/1.0/",
+    "tokens": "overview attach document api allows users additional documents existing application notifications can then used understand been successfully attached want message they will need use view technical guide specification web version opens new tab how works this diagram demonstrates support when user submits hmlr system initially respond with empty 202 accepted response receive notification stating whether attachment successful test created environment ve also provided example code demonstrate what should expect developing your own services submit stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
+  },
+  {
+    "title": "Application Information API",
+    "description": "Use this service to get information about a specific application.",
+    "section": "Application Information API",
+    "url": "/apis/application-information/0.3/",
+    "tokens": "overview application information api used get detailed about specific this includes status request id accepted hmlr reference once previously known abr priority timestamp any errors that prevented submission warnings did prevent need addressed before caseworker can process otherwise requisition may occur more after receiving notification indicating changed which notifications will available visit section submit page view technical guide specification web version opens new tab how works interaction diagram demonstrates support users using their unique provided via user examples type are listed system respond with relevant also by informing been onto day list failed validation state submitted when starts there several potential outcomes each trigger different response include passed added awaiting closed reopens case indicate whether error occurred must correct resubmit test created environment ve example code demonstrate what should expect developing your own services stubs please note plans release sandbox developers future exact date confirmed general testing guidance our"
+  },
+  {
+    "title": "Attach a message API",
+    "description": "Use this service to attach text messages to an existing application.",
+    "section": "Attach a message API",
+    "url": "/apis/attach-a-message/1.0/",
+    "tokens": "overview attach message api allows users text messages existing application notifications can then used understand been successfully attached want document they will need use view technical guide specification web version opens new tab how works this diagram demonstrates support when user submits hmlr system initially respond with empty 202 accepted response receive notification stating whether successful test created environment ve also provided example code demonstrate what should expect developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
+  },
+  {
+    "title": "Notifications API",
+    "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
+    "section": "Notifications API",
+    "url": "/apis/notifications/0.3/",
+    "tokens": "overview notifications api provides way fetching updates about multiple applications submitted by same business unit currently this service only supports pull interaction model where must requested periodically however more information push will shared future two endpoints get v0 all that match provided filters post acknowledge notify hmlr have been received can used after receiving notification indicating application changed which available visit section submit page view technical guide specification web version opens new tab how works diagram demonstrates support users user may send requests receive time using system respond providing relevant request also acknolwedge test created environment ve example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers exact date confirmed general testing guidance our"
+  },
+  {
+    "title": "Notifications API test stubs",
+    "section": "Notifications API v0.3",
+    "url": "/apis/notifications/0.3/test-stubs/",
+    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 get all notifications request method endpoint v0 headers authorization any value response status 200 copy data notification id created datetime 2024 01 01t12 00 000z event payload schema github io bgtechdoc schemas v1 application accepted priority protected json type subject b3ac19be 2b6d 4b8a 971c e758b0e8e790 additional provider filter subunit1 acknowledged reference abc456a 09 20t09 56 46 123123z 2563940e ae95 4e7e 9b33 49a6571abdf6 new abc456b validation failed 3be62ad3 c542 452d 975e 6cd18d77196f 2 3 4 with invalid date after 2020 01t00 before 2015 400 problems registry smartbear com bad title detail parameter cannot instance 5 acknowledge post 87654321 12345678 found 6 queued pending 45454545 awaiting 7 error system 8 cancelled uuid ending can 50cda861 ba0b 41dc af9a 4748335d51ad 2025 05t08 13 38 076z 052z a97679c9 624f 4680 ae8b 15b7 r411can null 37 697377z 302ce5d2 cb99 4696 b661 767c76caa07c 20 04 695z 03 776z documents name cancellation letter 050z download 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 9 completed cmp 5e6f6865 270f 43da 87b6 4af759f3c2aa 07 346z 320z 28a01655 544a 48c5 9e40 4ac2 p311cmp 55 975284z ac603b14 7c62 431a 99e6 66aca3cdb717 15 02 333z 712z ltr 281z 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 rcs registration completion sheet 319z 4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a reg updated register 343z 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 early false 10 requisitioned app correspondence despatched p311app"
+  },
+  {
+    "title": "Notifications API test stubs",
+    "section": "Notifications API v1.0",
+    "url": "/apis/notifications/1.0/test-stubs/",
+    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 get all notifications request method endpoint v1 headers authorization any value response status 200 copy data notification id created datetime 2024 01 01t12 00 000z event payload schema github io bgtechdoc schemas application accepted priority protected json type subject b3ac19be 2b6d 4b8a 971c e758b0e8e790 additional provider filter subunit1 acknowledged reference abc456a 09 20t09 56 46 123123z 2563940e ae95 4e7e 9b33 49a6571abdf6 new abc456b validation failed 3be62ad3 c542 452d 975e 6cd18d77196f 2 3 4 with invalid date after 2020 01t00 before 2015 400 problems registry smartbear com bad title detail parameter cannot instance 5 acknowledge post 87654321 12345678 found 6 queued pending 45454545 awaiting 7 error system 8 cancelled uuid ending can 50cda861 ba0b 41dc af9a 4748335d51ad 2025 05t08 13 38 076z 052z a97679c9 624f 4680 ae8b 15b7 r411can null 37 697377z 302ce5d2 cb99 4696 b661 767c76caa07c 20 04 695z 03 776z documents name cancellation letter 050z download 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 9 completed cmp 5e6f6865 270f 43da 87b6 4af759f3c2aa 07 346z 320z 28a01655 544a 48c5 9e40 4ac2 p311cmp 55 975284z ac603b14 7c62 431a 99e6 66aca3cdb717 15 02 333z 712z ltr 281z 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 rcs registration completion sheet 319z 4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a reg updated register 343z 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 early false 10 requisitioned app correspondence despatched p311app"
+  },
+  {
+    "title": "Send a document API",
+    "description": "Use this service to attach documents to your application.",
+    "section": "Send a Document API",
+    "url": "/apis/send-a-document/0.3/",
+    "tokens": "overview send document api should used attach documents your application there are two steps sending request generate upload url will respond with hmlr that can this only active 10 minutes after creation endpoint also return id when using submit uploaded via process subject security scanning have been 180 days which point they removed view technical guide specification web version opens new tab how works diagram demonstrates support users user sends system then use test does currently provide environment integrators our business gateway apis instead ve provided example code demonstrate what expect see developing own services stubs please note plans release sandbox developers future exact date confirmed general testing guidance visit"
+  },
+  {
+    "title": "Submit an application API",
+    "description": "Use this service to provide data to HMLR for updating the register.",
+    "section": "Submit an Application API",
+    "url": "/apis/submit-an-application/0.3/",
+    "tokens": "overview submit application api will help users provide necessary data hmlr updating register this asynchronous returning unique id submission request which can used when fetching status supports following types update transfer part dipositionary first lease includes new extension removing default form restriction jp1 content contains information about addresses documents parties transactions titles view technical guide specification web version opens tab how works diagram demonstrates send document support user submits system respond by sending use receive their test created environment ve also provided example code demonstrate what should expect developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
   }
 ]
