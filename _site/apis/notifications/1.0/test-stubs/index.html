@@ -38,7 +38,7 @@
       navItems.forEach(element => {
         let href = element.href.split('#')[1];
         let related = document.querySelector("#"+href);
-        let scrollY = related.offsetTop;
+        let scrollY = related.offsetTop - 2;
         rangeToElement.push({
           scroll: scrollY,
           element: element
@@ -272,7 +272,7 @@ data-module="govuk-service-navigation"
 </div>
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-<section id="scenario-2">
+<section>
 <h2 class="govuk-heading-m" id="scenario-2" tabindex="-1" class="govuk-heading-l">Scenario 2: Get all new notifications</h2>
 <h3 class="govuk-heading-s" id="request-1" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
@@ -327,7 +327,7 @@ data-module="govuk-service-navigation"
 </div>
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-<section id="scenario-3">
+<section>
 <h2 class="govuk-heading-m" id="scenario-3" tabindex="-1" class="govuk-heading-l">Scenario 3: Get all acknowledged notifications</h2>
 <h3 class="govuk-heading-s" id="request-2" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
@@ -366,7 +366,7 @@ data-module="govuk-service-navigation"
 </div>
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-<section id="scenario-4">
+<section>
 <h3 class="govuk-heading-s" id="scenario-4" tabindex="-1" class="govuk-heading-m">Scenario 4: Get all with invalid date filter</h3>
 <h3 class="govuk-heading-s" id="request-3" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
@@ -391,7 +391,7 @@ data-module="govuk-service-navigation"
 </div>
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-<section id="scenario-5">
+<section>
 <h2 class="govuk-heading-m" id="scenario-5" tabindex="-1" class="govuk-heading-l">Scenario 5: Acknowledge notifications</h2>
 <h3 class="govuk-heading-s" id="request-4" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
@@ -468,7 +468,7 @@ data-module="govuk-service-navigation"
 </div>
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-<section id="scenario-7">
+<section>
 <h2 class="govuk-heading-m" id="scenario-7" tabindex="-1" class="govuk-heading-l">Scenario 7: Application error notification</h2>
 <h3 class="govuk-heading-s" id="request-6" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
@@ -503,7 +503,7 @@ data-module="govuk-service-navigation"
 </div>
 </section>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<section id="scenario-8">
+<section>
 <h2 class="govuk-heading-m" id="scenario-8" tabindex="-1" class="govuk-heading-l">Scenario 8: Application cancelled notification</h2>
 <h3 class="govuk-heading-s" id="request-7" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
@@ -570,7 +570,7 @@ data-module="govuk-service-navigation"
 </div>
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-<section id="scenario-9">
+<section>
 <h2 class="govuk-heading-m" id="scenario-9" tabindex="-1" class="govuk-heading-l">Scenario 9: Application completed notification</h2>
 <h3 class="govuk-heading-s" id="request-8" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
