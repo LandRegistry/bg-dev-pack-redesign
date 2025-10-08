@@ -8,25 +8,29 @@ eleventyNavigation:
   key: Application Information API v1.0 Technical guide
   parent: Application Information API v1.0
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"
-    text: "v1.0 (upcoming)"
+    text: "v1.0 (latest)"
     selected: true
   - value: "0.3"
-    text: "v0.3 (latest)"
+    text: "v0.3"
 
 relatedAPIs:
-  - text: Submit an application to change the Land Register
+  - text: Submit an application to change the Land Register API
     href: /apis/submit-an-application-to-change-the-land-register 
-  - text: Send a document
+  - text: Send a document API
     href: /apis/send-a-document
-  - text: Submit an application
+  - text: Submit an application API
     href: /apis/submit-an-application
-  - text: Notifications
+  - text: Attach a document API
+    href: /apis/attach-a-document
+  - text: Attach a message API
+    href: /apis/attach-a-message
+  - text: Notifications API
     href: /apis/notifications
-  - text: Download a document
+  - text: Download a document API
     href: /apis/download-a-document
   - text: More
     href: /find-a-service-api
@@ -78,7 +82,7 @@ There are no validation rules for implementing this API.
 ## Example requests and responses {.govuk-heading-m}
 ### VALIDATING status {.govuk-heading-s}
 
-<code>GET /v0/applications/{id}/information</code>
+<code>GET /v1/applications/{id}/information</code>
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -98,7 +102,7 @@ There are no validation rules for implementing this API.
 
 ### VALIDATION_FAILED status {.govuk-heading-s}
 
-<code>GET /v0/applications/{id}/information</code>
+<code>GET /v1/applications/{id}/information</code>
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -124,7 +128,7 @@ There are no validation rules for implementing this API.
 
 ### SYSTEM ERROR status {.govuk-heading-s}
 
-<code>GET /v0/applications/{id}/information</code>
+<code>GET /v1/applications/{id}/information</code>
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -144,7 +148,7 @@ There are no validation rules for implementing this API.
 
 ### ACCEPTED_AWAITING_PRIORITY status {.govuk-heading-s}
 
-<code>GET /v0/applications/{id}/information</code> 
+<code>GET /v1/applications/{id}/information</code> 
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -164,7 +168,7 @@ There are no validation rules for implementing this API.
 
 ### ACCEPTED_PRIORITY_PROTECTED status {.govuk-heading-s}
 
-<code>GET /v0/applications/{id}/information</code>
+<code>GET /v1/applications/{id}/information</code>
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -188,7 +192,7 @@ There are no validation rules for implementing this API.
 
 ### CANCELLED status {.govuk-heading-s}
 
-<code>GET /v0/applications/{id}/information</code>
+<code>GET /v1/applications/{id}/information</code>
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -220,7 +224,7 @@ There are no validation rules for implementing this API.
 
 ### COMPLETED status {.govuk-heading-s}
 
-<code>GET /v0/applications/{id}/information</code>
+<code>GET /v1/applications/{id}/information</code>
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}

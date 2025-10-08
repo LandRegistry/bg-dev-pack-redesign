@@ -38,7 +38,7 @@
       navItems.forEach(element => {
         let href = element.href.split('#')[1];
         let related = document.querySelector("#"+href);
-        let scrollY = related.offsetTop;
+        let scrollY = related.offsetTop - 2;
         rangeToElement.push({
           scroll: scrollY,
           element: element
@@ -175,13 +175,6 @@ data-module="govuk-service-navigation"
   <h1 class="govuk-heading-xl">Application Information API test stubs</h1>
 </header>
 
-<div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-visually-hidden">Warning</span>
-    These API endpoints are not currently live.
-  </strong>
-</div>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <div class="bg-version-grid">
@@ -193,8 +186,8 @@ data-module="govuk-service-navigation"
     Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="1.0" selected>v1.0 (upcoming)</option>
-    <option value="0.3">v0.3 (latest)</option>
+    <option value="1.0" selected>v1.0 (latest)</option>
+    <option value="0.3">v0.3</option>
   </select>
   <button type="submit" 
                   class="govuk-button govuk-!-margin-0" 
@@ -228,7 +221,7 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code>
 <span class="app-code__punctuation">{</span>
     <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-        <span class="app-code__attr">&quot;order_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababavng&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababavng&quot;</span><span class="app-code__punctuation">,</span>
         <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
         <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
         <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;VALIDATING&quot;</span><span class="app-code__punctuation">,</span>
@@ -256,7 +249,7 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;order_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababavlf&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababavlf&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;VALIDATION_FAILED&quot;</span><span class="app-code__punctuation">,</span>
@@ -298,7 +291,7 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
     <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-        <span class="app-code__attr">&quot;order_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababasye&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababasye&quot;</span><span class="app-code__punctuation">,</span>
         <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
         <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
         <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;SYSTEM_ERROR&quot;</span><span class="app-code__punctuation">,</span>
@@ -326,7 +319,7 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
     <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-        <span class="app-code__attr">&quot;order_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababaaap&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababaaap&quot;</span><span class="app-code__punctuation">,</span>
         <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BABAAAP&quot;</span><span class="app-code__punctuation">,</span>
         <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
         <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_AWAITING_PRIORITY&quot;</span><span class="app-code__punctuation">,</span>
@@ -354,7 +347,7 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;order_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababaapp&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababaapp&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BABAAPP&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-08-27T14:40:35.23071Z&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="app-code__punctuation">,</span>
@@ -396,7 +389,7 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;order_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababacan&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababacan&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BABACAN&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-08-27T14:40:35.23071Z&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CANCELLED&quot;</span><span class="app-code__punctuation">,</span>
@@ -438,7 +431,7 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;order_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababacmp&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababacmp&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BABACMP&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-08-27T14:40:35.23071Z&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;COMPLETED&quot;</span><span class="app-code__punctuation">,</span>
@@ -496,7 +489,7 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
     <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-        <span class="app-code__attr">&quot;order_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababaaap&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababaaap&quot;</span><span class="app-code__punctuation">,</span>
         <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BABAAAP&quot;</span><span class="app-code__punctuation">,</span>
         <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
         <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_AWAITING_PRIORITY&quot;</span><span class="app-code__punctuation">,</span>
@@ -524,7 +517,7 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;order_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababaapp&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababaapp&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BABAAPP&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-08-27T14:40:35.23071Z&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="app-code__punctuation">,</span>
@@ -566,7 +559,7 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;order_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababacan&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababacan&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BABACAN&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-08-27T14:40:35.23071Z&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CANCELLED&quot;</span><span class="app-code__punctuation">,</span>
@@ -608,7 +601,7 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;order_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababacmp&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;abababab-abab-abab-abab-ababababacmp&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BABACMP&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-08-27T14:40:35.23071Z&quot;</span><span class="app-code__punctuation">,</span>
     <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;COMPLETED&quot;</span><span class="app-code__punctuation">,</span>
@@ -657,11 +650,13 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <h3 class="govuk-heading-m">Related APIs</h3>
 <ul class="govuk-list govuk-list--bullet">
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/send-a-document">Send a document</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application">Submit an application</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/notifications">Notifications</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/download-a-document">Download a document</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/send-a-document">Send a document API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application">Submit an application API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/attach-a-document">Attach a document API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/attach-a-message">Attach a message API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/notifications">Notifications API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/download-a-document">Download a document API</a></li>
     <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/find-a-service-api">More</a></li>
 </ul>
 
@@ -678,7 +673,7 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
           <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
             <ul class="govuk-footer__inline-list">
                 <li class="govuk-footer__inline-list-item">
-                  <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">
+                  <a class="govuk-footer__link" href="https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/accessibility/index.html">
                     Accessibility Statement
                   </a>
                 </li>

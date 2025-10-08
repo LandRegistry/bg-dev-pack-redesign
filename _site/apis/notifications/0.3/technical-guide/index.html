@@ -38,7 +38,7 @@
       navItems.forEach(element => {
         let href = element.href.split('#')[1];
         let related = document.querySelector("#"+href);
-        let scrollY = related.offsetTop;
+        let scrollY = related.offsetTop - 2;
         rangeToElement.push({
           scroll: scrollY,
           element: element
@@ -151,13 +151,6 @@ data-module="govuk-service-navigation"
   <h1 class="govuk-heading-xl">Notifications API Technical guide</h1><p class="govuk-body-l">Use this service to get updates about multiple applications submitted by the same business&nbsp;unit.</p>
 </header>
 
-<div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-visually-hidden">Warning</span>
-    These API endpoints are not currently live.
-  </strong>
-</div>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <div class="bg-version-grid">
@@ -295,7 +288,7 @@ data-module="govuk-service-navigation"
           <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
             <ul class="govuk-footer__inline-list">
                 <li class="govuk-footer__inline-list-item">
-                  <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">
+                  <a class="govuk-footer__link" href="https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/accessibility/index.html">
                     Accessibility Statement
                   </a>
                 </li>

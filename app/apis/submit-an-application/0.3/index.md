@@ -11,8 +11,10 @@ eleventyNavigation:
 notlive: true
 
 versions:
+  - value: "1.0"
+    text: "v1.0 (latest)"
   - value: "0.3"
-    text: "v0.3 (latest)"
+    text: "v0.3"
     selected: true
     
 relatedAPIs:
@@ -73,7 +75,7 @@ The data in the request content contains information about:
 
 <ul class="govuk-list"> <!-- Default render for `- list` style lists is to add bullet points, which we don't want here. -->
   <li>
-    <a class="govuk-link" href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Submit-an-application-API" rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
+    <a class="govuk-link" href="https://landregistry.github.io/bgtechdoc/documents/submit-an-application-to-change-the-register/v0.3/openapi.html#tag/Submit-an-application-API" rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
   </li>
 </ul>
 

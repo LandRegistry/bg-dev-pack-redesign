@@ -1,14 +1,14 @@
 ---
 layout: api-overview.njk
 
-title: Download a document
-description: Use this service to download documents.
+title: Download a document API
+description: Use this service to download documents created by HM Land Registry.
 
 eleventyNavigation:
     key: Download a Document v1.0
     parent: Download a Document
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"
@@ -16,15 +16,15 @@ versions:
     selected: true
 
 relatedAPIs:
-  - text: Submit an application to change the Land Register
+  - text: Submit an application to change the Land Register API
     href: /apis/submit-an-application-to-change-the-land-register 
-  - text: Send a document
+  - text: Send a document API
     href: /apis/send-a-document
-  - text: Submit an application
+  - text: Submit an application API
     href: /apis/submit-an-application
-  - text: Application information
+  - text: Application information API
     href: /apis/application-information
-  - text: Notifications
+  - text: Notifications API
     href: /apis/notifications
   - text: More
     href: /find-a-service-api
@@ -33,23 +33,23 @@ relatedAPIs:
 
 ## Overview {.govuk-heading-m}
 
-The Download a document API provides a way to download documents that have been created by HM Land Registry for your consumption.
+The Download a document API provides a way to download documents created by HMLR. 
 
-This API has one endpoints:
+This API has one endpoint:
 
-- `GET /v0/documents/{download_id}` - get the binary content of the document.
+- `GET /v1/documents/{download_id}` - get the binary content of the document.
 
 You may obtain a `download_id` from any of the following:
 
 - Completion notifications
 - Cancellation notifications
 - Requisition correspondence notifications
-- The `/correspondence` array in an [application information](/apis/application-information) response
+- The `/correspondence` array in an [Application information API](/apis/application-information) response
 
 </section>
 <section>
 
-## View the Technical Guide {.govuk-heading-m}
+## View the technical guide {.govuk-heading-m}
 
 [Technical guide](/apis/download-a-document/1.0/technical-guide)
 
@@ -65,33 +65,34 @@ You may obtain a `download_id` from any of the following:
 
 ## How the API works {.govuk-heading-m}
 
-<!-- <a target="_blank" href="/assets/images/NotificationInteraction.png">
-  <img src="/assets/images/NotificationInteraction.png" alt="A diagram showing the interaction of the Notification API.">
-</a> -->
+<a target="_blank" href="/assets/images/Download-a-document-sequence-light.png">
+  <img src="/assets/images/Download-a-document-sequence-light.png" alt="A diagram showing the interaction of the Download a document API.">
+</a>
 
-<!-- < INSERT IMAGE HERE > -->
-<!-- This diagram demonstrates how the download a document API works. -->
+<br>
 
-A user may obtain a `download_id` from either a notification or application information. 
+This diagram demonstrates how the download a document API works.
 
-The user may then use that `download_id` in their request to `GET /v0/documents/{download_id}` to obtain the document binary.
+A user may obtain a `download_id` from either the Notifications or Application information API. 
+
+The user can use that `download_id` in their request to `GET /v1/documents/{download_id}` to obtain the document binary.
  
 </section>
 <section>
 
 ## How to test this API {.govuk-heading-m}
 
-HMLR has created a test environment for the Download a document API. We’ve also provided example code to demonstrate what you should expect when developing your own services.
+HMLR has created a test environment for the Download a document API. We’ve also provided example code to demonstrate what you should expect when developing your own services. 
 
-[View Download a document test stubs](/apis/download-a-document/1.0/test-stubs).
+[View Download a document API test stubs](/apis/download-a-document/1.0/test-stubs)
 
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
 {{ govukInsetText({
-  text: "Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed."
+  text: "Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed. "
 }) }}
 
-For general testing guidance, visit our [guide to testing](/a-guide-to-testing)
+For general testing guidance, visit our [guide to testing](/a-guide-to-testing).
 
 </section>
 

@@ -38,7 +38,7 @@
       navItems.forEach(element => {
         let href = element.href.split('#')[1];
         let related = document.querySelector("#"+href);
-        let scrollY = related.offsetTop;
+        let scrollY = related.offsetTop - 2;
         rangeToElement.push({
           scroll: scrollY,
           element: element
@@ -151,13 +151,6 @@ data-module="govuk-service-navigation"
   <h1 class="govuk-heading-xl">Application information API Technical guide</h1><p class="govuk-body-l">Use this service to get information about a specific&nbsp;application.</p>
 </header>
 
-<div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-visually-hidden">Warning</span>
-    These API endpoints are not currently live.
-  </strong>
-</div>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <div class="bg-version-grid">
@@ -169,8 +162,8 @@ data-module="govuk-service-navigation"
     Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="1.0" selected>v1.0 (upcoming)</option>
-    <option value="0.3">v0.3 (latest)</option>
+    <option value="1.0" selected>v1.0 (latest)</option>
+    <option value="0.3">v0.3</option>
   </select>
   <button type="submit" 
                   class="govuk-button govuk-!-margin-0" 
@@ -204,7 +197,7 @@ data-module="govuk-service-navigation"
 <section>
 <h2 class="govuk-heading-m" id="example-requests-and-responses" tabindex="-1" class="govuk-heading-l">Example requests and responses</h2>
 <h3 class="govuk-heading-s" id="validating-status" tabindex="-1" class="govuk-heading-m">VALIDATING status</h3>
-<p class="govuk-body"><code>GET /v0/applications/{id}/information</code></p>
+<p class="govuk-body"><code>GET /v1/applications/{id}/information</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -222,7 +215,7 @@ data-module="govuk-service-navigation"
 
 </div>
 <h3 class="govuk-heading-s" id="validation-failed-status" tabindex="-1" class="govuk-heading-m">VALIDATION_FAILED status</h3>
-<p class="govuk-body"><code>GET /v0/applications/{id}/information</code></p>
+<p class="govuk-body"><code>GET /v1/applications/{id}/information</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -246,7 +239,7 @@ data-module="govuk-service-navigation"
 
 </div>
 <h3 class="govuk-heading-s" id="system-error-status" tabindex="-1" class="govuk-heading-m">SYSTEM ERROR status</h3>
-<p class="govuk-body"><code>GET /v0/applications/{id}/information</code></p>
+<p class="govuk-body"><code>GET /v1/applications/{id}/information</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -264,7 +257,7 @@ data-module="govuk-service-navigation"
 
 </div>
 <h3 class="govuk-heading-s" id="accepted-awaiting-priority-status" tabindex="-1" class="govuk-heading-m">ACCEPTED_AWAITING_PRIORITY status</h3>
-<p class="govuk-body"><code>GET /v0/applications/{id}/information</code></p>
+<p class="govuk-body"><code>GET /v1/applications/{id}/information</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -282,7 +275,7 @@ data-module="govuk-service-navigation"
 
 </div>
 <h3 class="govuk-heading-s" id="accepted-priority-protected-status" tabindex="-1" class="govuk-heading-m">ACCEPTED_PRIORITY_PROTECTED status</h3>
-<p class="govuk-body"><code>GET /v0/applications/{id}/information</code></p>
+<p class="govuk-body"><code>GET /v1/applications/{id}/information</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -304,7 +297,7 @@ data-module="govuk-service-navigation"
 
 </div>
 <h3 class="govuk-heading-s" id="cancelled-status" tabindex="-1" class="govuk-heading-m">CANCELLED status</h3>
-<p class="govuk-body"><code>GET /v0/applications/{id}/information</code></p>
+<p class="govuk-body"><code>GET /v1/applications/{id}/information</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -334,7 +327,7 @@ data-module="govuk-service-navigation"
 
 </div>
 <h3 class="govuk-heading-s" id="completed-status" tabindex="-1" class="govuk-heading-m">COMPLETED status</h3>
-<p class="govuk-body"><code>GET /v0/applications/{id}/information</code></p>
+<p class="govuk-body"><code>GET /v1/applications/{id}/information</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -385,11 +378,13 @@ data-module="govuk-service-navigation"
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <h3 class="govuk-heading-m">Related APIs</h3>
 <ul class="govuk-list govuk-list--bullet">
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/send-a-document">Send a document</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application">Submit an application</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/notifications">Notifications</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/download-a-document">Download a document</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/send-a-document">Send a document API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application">Submit an application API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/attach-a-document">Attach a document API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/attach-a-message">Attach a message API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/notifications">Notifications API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/download-a-document">Download a document API</a></li>
     <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/find-a-service-api">More</a></li>
 </ul>
 
@@ -406,7 +401,7 @@ data-module="govuk-service-navigation"
           <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
             <ul class="govuk-footer__inline-list">
                 <li class="govuk-footer__inline-list-item">
-                  <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">
+                  <a class="govuk-footer__link" href="https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/accessibility/index.html">
                     Accessibility Statement
                   </a>
                 </li>

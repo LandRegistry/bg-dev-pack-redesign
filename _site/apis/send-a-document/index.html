@@ -81,13 +81,6 @@ data-module="govuk-service-navigation"
   <h1 class="govuk-heading-xl">Send a document API</h1><p class="govuk-body-l">Use this service to attach documents to your&nbsp;application.</p>
 </header>
 
-<div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-visually-hidden">Warning</span>
-    These API endpoints are not currently live.
-  </strong>
-</div>
 </div>
 
 <div class="govuk-grid-column-two-thirds">
@@ -102,7 +95,8 @@ data-module="govuk-service-navigation"
     Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="0.3" selected>v0.3 (latest)</option>
+    <option value="1.0" selected>v1.0 (latest)</option>
+    <option value="0.3">v0.3</option>
   </select>
   <button type="submit" 
                   class="govuk-button govuk-!-margin-0" 
@@ -128,11 +122,13 @@ data-module="govuk-service-navigation"
     </h2>
     <nav role="navigation" aria-labelledby="related-apis">
     <ul class="govuk-list">
-        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a></li>
-        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/submit-an-application">Submit an application</a></li>
-        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/application-information">Application information</a></li>
-        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/notifications">Notifications</a></li>
-        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/download-a-document">Download a document</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register API</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/submit-an-application">Submit an application API</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/application-information">Application information API</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/attach-a-document">Attach a document API</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/attach-a-message">Attach a message API</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/notifications">Notifications API</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/apis/download-a-document">Download a document API</a></li>
         <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link govuk-!-font-weight-bold" href="/find-a-service-api">More</a></li>
     </ul>
     </nav>
@@ -150,7 +146,7 @@ data-module="govuk-service-navigation"
           <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
             <ul class="govuk-footer__inline-list">
                 <li class="govuk-footer__inline-list-item">
-                  <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">
+                  <a class="govuk-footer__link" href="https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/accessibility/index.html">
                     Accessibility Statement
                   </a>
                 </li>

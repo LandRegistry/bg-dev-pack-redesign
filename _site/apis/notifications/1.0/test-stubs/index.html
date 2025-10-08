@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template govuk-template--rebranded">
+  <head>
+    <meta charset="utf-8">
+    <title>Notifications API test stubs - HM Land Registry Developer Pack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#789904">
+
+<link rel="icon" href="/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
+  <script src="/assets/application.js" type="module"></script>
+
+  <link rel="stylesheet" href="/assets/application.css">
+
+
+  <meta property="og:title" content="Notifications API test stubs">
+
+<script src="/assets/script.js"></script><script>
+    function setVersion() {
+        let version = document.getElementById('version').value;
+        if (!window.location.href.includes(version + '/')) {
+            console.log(`Versions were different, navigating to ${version}`)
+            if (window.location.href.match(/\/[0-9.]+\//))
+                window.location.href = window.location.href.replace(/\/[0-9.]+\//, `/${version}/`)
+            else
+                window.location.href = `./${version}`
+        } else {
+            console.log(`Version has not changed`);
+        }
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        setVersion()
+    });
+</script><script>
+    let rangeToElement = []
+    let navigations = {}
+
+    function initialize(navItems) {
+      navItems.forEach(element => {
+        let href = element.href.split('#')[1];
+        let related = document.querySelector("#"+href);
+        let scrollY = related.offsetTop - 2;
+        rangeToElement.push({
+          scroll: scrollY,
+          element: element
+        });
+      });
+      rangeToElement = rangeToElement.sort((a, b) => a.scroll - b.scroll)
+      update();
+    }
+
+    function update() {
+      let scrollY = window.scrollY;
+      let selected = rangeToElement[0];
+      for (let scroller of rangeToElement) {
+        if (scroller.scroll > scrollY) {
+          break;
+        }
+        selected = scroller;
+      }
+      select(selected.element);
+    }
+
+    function select(selectedElement) {
+      if (selectedElement.classList.contains("x-govuk-sub-navigation__section-item--current")) return;
+      for (let el of rangeToElement) {
+        if (el.element == selectedElement) continue;
+        unselect(el.element)
+      }
+      selectedElement.classList.add("x-govuk-sub-navigation__section-item--current")
+      selectedElement.setAttribute("aria-current", true);
+    }
+
+    function unselect(element) {
+      element.classList.remove("x-govuk-sub-navigation__section-item--current")
+      element.setAttribute("aria-current", false);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        initialize(document.querySelectorAll(".x-govuk-sub-navigation a"))
+        document.addEventListener("scroll", (event) => update());
+    });
+</script>
+    <meta property="og:image" content="/hmlrassets/images/hmlr-opengraph-image.png">
+  </head>
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+      <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+  <header class="govuk-header app-header govuk-header--full-width-border" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container app-header__container">
+    <div class="govuk-header__logo app-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+          <span class="app-header__logotype">HM Land Registry Developer Pack</span>
+      </a>
+    </div>
+    <app-search class="app-search govuk-!-display-none-print" index="/search-index.json" label="Search developer pack"><a class="app-search__link" href="/sitemap">Sitemap</a></app-search>
+
+  </div>
+</header>
+
+  
+
+  <div class="govuk-service-navigation app-service-navigation"
+data-module="govuk-service-navigation"
+>
+      <div class="govuk-width-container">
+
+    <div class="govuk-service-navigation__container">
+      
+
+      
+    </div>
+
+    </div>
+
+  </div>
+
+
+
+      <div class="govuk-width-container">
+  <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper" id="main-content">
+<div class="govuk-grid-row">
+
+
+<div class="govuk-grid-column-one-third sticky">
+    <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="sub-navigation-heading">Pages in this section</h2>
+  <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
+  <ul class="x-govuk-sub-navigation__section">
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-1">Scenario 1: Get all notifications</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-2">Scenario 2: Get all new notifications</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-3">Scenario 3: Get all acknowledged notifications</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-4">Scenario 4: Get all with invalid date filter</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-5">Scenario 5: Acknowledge notifications</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-6">Scenario 6: Application queued notificaton</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-7">Scenario 7: System error notification</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-8">Scenario 8: Application cancelled notification</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-9">Scenario 9: Application completed notification</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#scenario-10">Scenario 10: Application requisitioned notification</a>
+    </li>
+  </ul>
+</nav>
+
+</div>
+
+<div class="govuk-grid-column-two-thirds">
+
+
+<header class="app-document-header">
+  <h1 class="govuk-heading-xl">Notifications API test stubs</h1>
+</header>
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<div class="bg-version-grid">
+    <div>
+        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
+    </div>
+    <div class="govuk-form-group version-group govuk-!-margin-0">
+  <label class="govuk-label govuk-visually-hidden" for="version">
+    Version and Status dropdown
+  </label>
+  <select class="govuk-select" id="version" name="version">
+    <option value="1.0" selected>v1.0 (latest)</option>
+    <option value="0.3">v0.3</option>
+  </select>
+  <button type="submit" 
+                  class="govuk-button govuk-!-margin-0" 
+                  data-module="govuk-button"
+                  onclick="setVersion();"
+                  >View</button>
+</div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<div class="app-prose-scope"><p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see when developing your own services.</p>
+<p class="govuk-body">Base URL: <code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<section>
+<h2 class="govuk-heading-m" id="scenario-1" tabindex="-1" class="govuk-heading-l">Scenario 1: Get all notifications</h2>
+<h3 class="govuk-heading-s" id="request" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<h3 class="govuk-heading-s" id="response" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+    <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;{{ID}}&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/schemas/v1/application/accepted-priority-protected.json&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.accepted-priority-protected&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;b3ac19be-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;additional_provider_filter&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;subUnit1&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACKNOWLEDGED&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ABC456A&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;priority&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-09-20T09:56:46.123123Z&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;{{ID}}&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/schemas/v1/application/accepted-priority-protected.json&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.accepted-priority-protected&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2563940e-ae95-4e7e-9b33-49a6571abdf6&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;additional_provider_filter&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;subUnit1&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ABC456B&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;priority&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-09-20T09:56:46.123123Z&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;{{ID}}&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/schemas/v1/application/validation-failed.json&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.validation-failed&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3be62ad3-c542-452d-975e-6cd18d77196f&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;additional_provider_filter&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;subUnit1&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;VALIDATION_FAILED&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span>
+  <span class="app-code__punctuation">]</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<section>
+<h2 class="govuk-heading-m" id="scenario-2" tabindex="-1" class="govuk-heading-l">Scenario 2: Get all new notifications</h2>
+<h3 class="govuk-heading-s" id="request-1" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?status=NEW</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<h3 class="govuk-heading-s" id="response-1" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span> 
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+    <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;{{ID}}&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/schemas/v1/application/accepted-priority-protected.json&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.accepted-priority-protected&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2563940e-ae95-4e7e-9b33-49a6571abdf6&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;additional_provider_filter&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;subUnit1&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ABC456B&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;priority&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-09-20T09:56:46.123123Z&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;{{ID}}&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/schemas/v1/application/validation-failed.json&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.validation-failed&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3be62ad3-c542-452d-975e-6cd18d77196f&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;additional_provider_filter&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;subUnit1&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;VALIDATION_FAILED&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span>
+  <span class="app-code__punctuation">]</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<section>
+<h2 class="govuk-heading-m" id="scenario-3" tabindex="-1" class="govuk-heading-l">Scenario 3: Get all acknowledged notifications</h2>
+<h3 class="govuk-heading-s" id="request-2" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?status=ACKNOWLEDGED</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<h3 class="govuk-heading-s" id="response-2" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+    <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;{{ID}}&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/schemas/v1/application/accepted-priority-protected.json&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.accepted-priority-protected&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;b3ac19be-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;additional_provider_filter&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;subUnit1&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACKNOWLEDGED&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ABC456A&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;priority&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-09-20T09:56:46.123123Z&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span>
+  <span class="app-code__punctuation">]</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<section>
+<h2 class="govuk-heading-m" id="scenario-4" tabindex="-1" class="govuk-heading-l">Scenario 4: Get all with invalid date filter</h2>
+<h3 class="govuk-heading-s" id="request-3" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?created_after=2020-01-01T00:00:00&amp;created_before=2015-01-01T00:00:00</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<h3 class="govuk-heading-s" id="response-3" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://problems-registry.smartbear.com/bad-request/&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;title&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Bad Request&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">400</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;detail&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;created_after parameter cannot be after created_before parameter&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;instance&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;/v1/notifications&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;400-01&quot;</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<section>
+<h2 class="govuk-heading-m" id="scenario-5" tabindex="-1" class="govuk-heading-l">Scenario 5: Acknowledge notifications</h2>
+<h3 class="govuk-heading-s" id="request-4" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications/acknowledge</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+    <span class="app-code__string">&quot;b3ac19be-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__string">&quot;87654321-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__string">&quot;12345678-2b6d-4b8a-971c-e758b0e8e790&quot;</span>
+  <span class="app-code__punctuation">]</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+<h3 class="govuk-heading-s" id="response-4" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;acknowledged&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+      <span class="app-code__string">&quot;b3ac19be-2b6d-4b8a-971c-e758b0e8e790&quot;</span>
+    <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;not_found&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+      <span class="app-code__string">&quot;87654321-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__string">&quot;12345678-2b6d-4b8a-971c-e758b0e8e790&quot;</span>
+    <span class="app-code__punctuation">]</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<section>
+<h2 class="govuk-heading-m" id="scenario-6" tabindex="-1" class="govuk-heading-l">Scenario 6: Application queued notification</h2>
+<h3 class="govuk-heading-s" id="request-5" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?notification_type=application.accepted-priority-pending</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<h3 class="govuk-heading-s" id="response-5" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;{{ID}}&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/schemas/v1/application/accepted-priority-pending.json&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.accepted-priority-pending&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;45454545-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;additional_provider_filter&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;subUnit1&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_AWAITING_PRIORITY&quot;</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span>
+  <span class="app-code__punctuation">}</span><span class="app-code__punctuation">]</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<section>
+<h2 class="govuk-heading-m" id="scenario-7" tabindex="-1" class="govuk-heading-l">Scenario 7: Application error notification</h2>
+<h3 class="govuk-heading-s" id="request-6" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?notification_type=application.error</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<h3 class="govuk-heading-s" id="response-6" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;{{ID}}&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/schemas/v1/application/error.json&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.error&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;45454545-2b6d-4b8a-971c-e758b0e8e790&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;additional_provider_filter&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;subUnit1&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;SYSTEM_ERROR&quot;</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span>
+  <span class="app-code__punctuation">}</span><span class="app-code__punctuation">]</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<section>
+<h2 class="govuk-heading-m" id="scenario-8" tabindex="-1" class="govuk-heading-l">Scenario 8: Application cancelled notification</h2>
+<h3 class="govuk-heading-s" id="request-7" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?subject=&lt;uuid ending with 'can'&gt;</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<h3 class="govuk-heading-s" id="response-7" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+    <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;50cda861-ba0b-41dc-af9a-4748335d51ad&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:13:38.076Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:13:38.052Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/schemas/v1/application/accepted-priority-protected.json&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.accepted-priority-protected&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;a97679c9-624f-4680-ae8b-15b7-r411can&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;additional_provider_filter&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;priority&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:13:37.697377Z&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;R411CAN&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;302ce5d2-cb99-4696-b661-767c76caa07c&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:20:04.695Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:20:03.776Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/schemas/v1/application/cancelled.json&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.cancelled&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;a97679c9-624f-4680-ae8b-15b7-r411can&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;additional_provider_filter&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CANCELLED&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+            <span class="app-code__punctuation">{</span>
+              <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CAN&quot;</span><span class="app-code__punctuation">,</span>
+                <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CANCELLATION LETTER&quot;</span>
+              <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+              <span class="app-code__attr">&quot;created_at&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:20:04.050Z&quot;</span><span class="app-code__punctuation">,</span>
+              <span class="app-code__attr">&quot;download_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;can_62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385&quot;</span>
+            <span class="app-code__punctuation">}</span>
+          <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;R411CAN&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;a97679c9-624f-4680-ae8b-15b7-r411can&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span>
+  <span class="app-code__punctuation">]</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<section>
+<h2 class="govuk-heading-m" id="scenario-9" tabindex="-1" class="govuk-heading-l">Scenario 9: Application completed notification</h2>
+<h3 class="govuk-heading-s" id="request-8" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?subject=&lt;uuid ending with 'cmp'&gt;</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<h3 class="govuk-heading-s" id="response-8" tabindex="-1" class="govuk-heading-m">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
+<div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+    <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;5e6f6865-270f-43da-87b6-4af759f3c2aa&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:07:56.346Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:07:56.320Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/schemas/v1/application/accepted-priority-protected.json&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.accepted-priority-protected&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;28a01655-544a-48c5-9e40-4ac2-p311cmp&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;additional_provider_filter&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;priority&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:07:55.975284Z&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;P311CMP&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ac603b14-7c62-431a-99e6-66aca3cdb717&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:15:02.333Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:15:00.712Z&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/schemas/v1/application/completed.json&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.completed&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;28a01655-544a-48c5-9e40-4ac2-p311cmp&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;additional_provider_filter&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;COMPLETED&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+            <span class="app-code__punctuation">{</span>
+              <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LTR&quot;</span><span class="app-code__punctuation">,</span>
+                <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LETTER&quot;</span>
+              <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+              <span class="app-code__attr">&quot;created_at&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:15:01.281Z&quot;</span><span class="app-code__punctuation">,</span>
+              <span class="app-code__attr">&quot;download_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ltr_6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549&quot;</span>
+            <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__punctuation">{</span>
+              <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;RCS&quot;</span><span class="app-code__punctuation">,</span>
+                <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REGISTRATION COMPLETION SHEET&quot;</span>
+              <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+              <span class="app-code__attr">&quot;created_at&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:15:01.319Z&quot;</span><span class="app-code__punctuation">,</span>
+              <span class="app-code__attr">&quot;download_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;rcs_4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a&quot;</span>
+            <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__punctuation">{</span>
+              <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REG&quot;</span><span class="app-code__punctuation">,</span>
+                <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;COPY OF UPDATED REGISTER&quot;</span>
+              <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+              <span class="app-code__attr">&quot;created_at&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:15:01.343Z&quot;</span><span class="app-code__punctuation">,</span>
+              <span class="app-code__attr">&quot;download_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;reg_7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038&quot;</span>
+            <span class="app-code__punctuation">}</span>
+          <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;P311CMP&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;28a01655-544a-48c5-9e40-4ac2-p311cmp&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;was_subject_to_early_completion&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">false</span></span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span>
+  <span class="app-code__punctuation">]</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+</section>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<section>
+<h2 class="govuk-heading-m" id="scenario-10" tabindex="-1" class="govuk-heading-l">Scenario 10: Application requisitioned notification</h2>
+<h3 class="govuk-heading-s" id="request-9" tabindex="-1" class="govuk-heading-m">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?subject=&lt;uuid ending with 'app'&gt;</code></p>
+<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
+<h3 class="govuk-heading-s" id="response-9" tabindex="-1" class="govuk-heading-m">Response</h3>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;{{ID}}&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-01-01T12:00:00.000Z&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/schemas/v1/application/correspondence-despatched.json&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.correspondence-despatched&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;28a01655-544a-48c5-9e40-4ac2-p311app&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;additional_provider_filter&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">null</span></span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+        <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LTR&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LETTER&quot;</span>
+          <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;created_at&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:15:01.281Z&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;download_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ltr_6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;P311APP&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;28a01655-544a-48c5-9e40-4ac2-p311app&quot;</span>
+    <span class="app-code__punctuation">}</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</section>
+</div>
+
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h3 class="govuk-heading-m">Related APIs</h3>
+<ul class="govuk-list govuk-list--bullet">
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/send-a-document">Send a document API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application">Submit an application API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/application-information">Application information API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/download-a-document">Download a document API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/find-a-service-api">More</a></li>
+</ul>
+
+</div>
+
+</div>
+        </main>
+      </div>
+
+<footer class="govuk-footer govuk-footer--hmlr " role="contentinfo">
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
+            <ul class="govuk-footer__inline-list">
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/accessibility/index.html">
+                    Accessibility Statement
+                  </a>
+                </li>
+            </ul>
+            <div class="govuk-footer__meta-custom">
+              These links open in a new tab.
+            </div>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <span
+          class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr"
+        >&copy; Crown copyright</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

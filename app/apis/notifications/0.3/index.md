@@ -8,11 +8,13 @@ eleventyNavigation:
   key: Notifications API v0.3
   parent: Notifications API
 
-notlive: true
+notlive: false
 
 versions:
+  - value: "1.0"
+    text: "v1.0"
   - value: "0.3"
-    text: "v0.3 (latest)"
+    text: "v0.3"
     selected: true
 
 relatedAPIs:
@@ -48,7 +50,7 @@ This API can be used to get more information after receiving a notification indi
 
 <section>
 
-## View the Technical guide {.govuk-heading-m}
+## View the technical guide {.govuk-heading-m}
 
 <ul class="govuk-list">
   <li>
@@ -64,7 +66,7 @@ This API can be used to get more information after receiving a notification indi
 
 <ul class="govuk-list">
   <li>
-    <a class="govuk-link" href="https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Notifications-API" rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
+    <a class="govuk-link" href="https://landregistry.github.io/bgtechdoc/documents/submit-an-application-to-change-the-register/v0.3/openapi.html#tag/Notifications-API" rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
   </li>
 </ul>
 

@@ -2,13 +2,13 @@
 layout: guidance.njk
 
 
-title: Download a document test stubs
+title: Download a document API test stubs
 
 eleventyNavigation:
     key: Download a Document API v1.0 Test stubs
     parent: Download a Document API API v1.0
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"
@@ -16,15 +16,15 @@ versions:
     selected: true
 
 relatedAPIs:
-  - text: Submit an application to change the Land Register
+  - text: Submit an application to change the Land Register API
     href: /apis/submit-an-application-to-change-the-land-register 
-  - text: Send a document
+  - text: Send a document API
     href: /apis/send-a-document
-  - text: Submit an application
+  - text: Submit an application API
     href: /apis/submit-an-application
-  - text: Application information
+  - text: Application information API
     href: /apis/application-information
-  - text: Notifications
+  - text: Notifications API
     href: /apis/notifications
   - text: More
     href: /find-a-service-api

@@ -45,9 +45,12 @@ options:
             classes: "govuk-visually-hidden"
         },
         items: [{
-            value: "0.3",
-            text: "v0.3 (latest)",
+            value: "1.0",
+            text: "v1.0 (latest)",
             selected: true
+        },{
+            value: "0.3",
+            text: "v0.3"
         }, {
             value: "0.2",
             text: "v0.2"
@@ -94,8 +97,23 @@ options:
                 </a>
             </li>
             <li>
+                <a class="govuk-body govuk-link" href="/apis/attach-a-document">
+                    Attach a document
+                </a>
+            </li>
+            <li>
+                <a class="govuk-body govuk-link" href="/apis/attach-a-message">
+                    Attach a message
+                </a>
+            </li>
+            <li>
                 <a class="govuk-body govuk-link" href="/apis/notifications">
                     Notifications API
+                </a>
+            </li>
+            <li>
+                <a class="govuk-body govuk-link" href="/apis/download-a-document">
+                    Download a document
                 </a>
             </li>
             <li>

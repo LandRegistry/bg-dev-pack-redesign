@@ -7,11 +7,13 @@ eleventyNavigation:
   key: Notifications API v0.3 Test stubs
   parent: Notifications API v0.3
 
-notlive: true
+notlive: false
 
 versions:
+  - value: "1.0"
+    text: "v1.0 (latest)"
   - value: "0.3"
-    text: "v0.3 (latest)"
+    text: "v0.3"
     selected: true
 
 relatedAPIs:
@@ -92,47 +94,47 @@ Status: `200`
   "data": [
     {
       "notification_id": "{{"{{ID}}"}}",
-      "created_datetime": "2024-01-01T12:00:00.000",
-      "event_datetime": "2024-01-01T12:00:00.000",
-      "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json",
-      "notification_type": "APPLICATION_ACCEPTED_ON_DAY_LIST",
-      "subject_type": "LAND_REGISTER_APPLICATION",
+      "created_datetime": "2024-01-01T12:00:00.000Z",
+      "event_datetime": "2024-01-01T12:00:00.000Z",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/accepted-priority-protected.json",
+      "notification_type": "application.accepted-priority-protected",
+      "subject_type": "APPLICATION",
       "subject": "b3ac19be-2b6d-4b8a-971c-e758b0e8e790",
       "additional_provider_filter": "subUnit1",
       "status": "ACKNOWLEDGED",
       "payload": {
         "data": {
           "hmlr_reference": "ABC456A",
-          "status": "ACCEPTED",
-          "priority": "2024-09-20T09:56:46"
+          "status": "ACCEPTED_PRIORITY_PROTECTED",
+          "priority": "2024-09-20T09:56:46.123123Z"
         }
       }
     },
     {
       "notification_id": "{{"{{ID}}"}}",
-      "created_datetime": "2024-01-01T12:00:00.000",
-      "event_datetime": "2024-01-01T12:00:00.000",
-      "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json",
-      "notification_type": "APPLICATION_ACCEPTED_ON_DAY_LIST",
-      "subject_type": "LAND_REGISTER_APPLICATION",
+      "created_datetime": "2024-01-01T12:00:00.000Z",
+      "event_datetime": "2024-01-01T12:00:00.000Z",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/accepted-priority-protected.json",
+      "notification_type": "application.accepted-priority-protected",
+      "subject_type": "APPLICATION",
       "subject": "2563940e-ae95-4e7e-9b33-49a6571abdf6",
       "additional_provider_filter": "subUnit1",
       "status": "NEW",
       "payload": {
         "data": {
           "hmlr_reference": "ABC456B",
-          "status": "ACCEPTED",
-          "priority": "2024-09-20T09:56:46"
+          "status": "ACCEPTED_PRIORITY_PROTECTED",
+          "priority": "2024-09-20T09:56:46.123123Z"
         }
       }
     },
     {
       "notification_id": "{{"{{ID}}"}}",
-      "created_datetime": "2024-01-01T12:00:00.000",
-      "event_datetime": "2024-01-01T12:00:00.000",
-      "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/validation-failed.json",
-      "notification_type": "APPLICATION_VALIDATION_FAILED",
-      "subject_type": "LAND_REGISTER_APPLICATION",
+      "created_datetime": "2024-01-01T12:00:00.000Z",
+      "event_datetime": "2024-01-01T12:00:00.000Z",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/validation-failed.json",
+      "notification_type": "application.validation-failed",
+      "subject_type": "APPLICATION",
       "subject": "3be62ad3-c542-452d-975e-6cd18d77196f",
       "additional_provider_filter": "subUnit1",
       "status": "NEW",
@@ -151,7 +153,7 @@ Status: `200`
 
 ---
 
-<section id="scenario-2">
+<section>
 
 ## Scenario 2: Get all new notifications {.govuk-heading-m #scenario-2}
 ### Request {.govuk-heading-s}
@@ -178,29 +180,29 @@ Status: `200`
   "data": [
     {
       "notification_id": "{{"{{ID}}"}}",
-      "created_datetime": "2024-01-01T12:00:00.000",
-      "event_datetime": "2024-01-01T12:00:00.000",
-      "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json",
-      "notification_type": "APPLICATION_ACCEPTED_ON_DAY_LIST",
-      "subject_type": "LAND_REGISTER_APPLICATION",
+      "created_datetime": "2024-01-01T12:00:00.000Z",
+      "event_datetime": "2024-01-01T12:00:00.000Z",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/accepted-priority-protected.json",
+      "notification_type": "application.accepted-priority-protected",
+      "subject_type": "APPLICATION",
       "subject": "2563940e-ae95-4e7e-9b33-49a6571abdf6",
       "additional_provider_filter": "subUnit1",
       "status": "NEW",
       "payload": {
         "data": {
           "hmlr_reference": "ABC456B",
-          "status": "ACCEPTED",
-          "priority": "2024-09-20T09:56:46"
+          "status": "ACCEPTED_PRIORITY_PROTECTED",
+          "priority": "2024-09-20T09:56:46.123123Z"
         }
       }
     },
     {
       "notification_id": "{{"{{ID}}"}}",
-      "created_datetime": "2024-01-01T12:00:00.000",
-      "event_datetime": "2024-01-01T12:00:00.000",
-      "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/validation-failed.json",
-      "notification_type": "APPLICATION_VALIDATION_FAILED",
-      "subject_type": "LAND_REGISTER_APPLICATION",
+      "created_datetime": "2024-01-01T12:00:00.000Z",
+      "event_datetime": "2024-01-01T12:00:00.000Z",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/validation-failed.json",
+      "notification_type": "application.validation-failed",
+      "subject_type": "APPLICATION",
       "subject": "3be62ad3-c542-452d-975e-6cd18d77196f",
       "additional_provider_filter": "subUnit1",
       "status": "NEW",
@@ -219,7 +221,7 @@ Status: `200`
 
 ---
 
-<section id="scenario-3">
+<section>
 
 ## Scenario 3: Get all acknowledged notifications {.govuk-heading-m #scenario-3}
 ### Request {.govuk-heading-s}
@@ -246,19 +248,19 @@ Status: `200`
   "data": [
     {
       "notification_id": "{{"{{ID}}"}}",
-      "created_datetime": "2024-01-01T12:00:00.000",
-      "event_datetime": "2024-01-01T12:00:00.000",
-      "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json",
-      "notification_type": "APPLICATION_ACCEPTED_ON_DAY_LIST",
-      "subject_type": "LAND_REGISTER_APPLICATION",
+      "created_datetime": "2024-01-01T12:00:00.000Z",
+      "event_datetime": "2024-01-01T12:00:00.000Z",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/accepted-priority-protected.json",
+      "notification_type": "application.accepted-priority-protected",
+      "subject_type": "APPLICATION",
       "subject": "b3ac19be-2b6d-4b8a-971c-e758b0e8e790",
       "additional_provider_filter": "subUnit1",
       "status": "ACKNOWLEDGED",
       "payload": {
         "data": {
           "hmlr_reference": "ABC456A",
-          "status": "ACCEPTED",
-          "priority": "2024-09-20T09:56:46"
+          "status": "ACCEPTED_PRIORITY_PROTECTED",
+          "priority": "2024-09-20T09:56:46.123123Z"
         }
       }
     }
@@ -271,9 +273,9 @@ Status: `200`
 
 ---
 
-<section id="scenario-4">
+<section>
 
-### Scenario 4: Get all with invalid date filter {.govuk-heading-s #scenario-4}
+## Scenario 4: Get all with invalid date filter {.govuk-heading-m #scenario-4}
 ### Request {.govuk-heading-s}
 
 Method: `GET`
@@ -309,7 +311,7 @@ Status: `400`
 
 ---
 
-<section id="scenario-5">
+<section>
 
 ## Scenario 5: Acknowledge notifications {.govuk-heading-m #scenario-5}
 ### Request {.govuk-heading-s}
@@ -374,7 +376,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/notifications?notification_type=APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST`
+Endpoint: `/v0/notifications?notification_type=application.accepted-priority-pending`
 
 Headers: `Authorization: <any-value>`
 
@@ -393,16 +395,16 @@ Status: `200`
 {
   "data": [{
     "notification_id": "{{"{{ID}}"}}",
-    "created_datetime": "2024-01-01T12:00:00.000",
-    "event_datetime": "2024-01-01T12:00:00.000",
-    "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-awaiting-priority.json",
-    "notification_type": "APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST",
-    "subject_type": "LAND_REGISTER_APPLICATION",
+    "created_datetime": "2024-01-01T12:00:00.000Z",
+    "event_datetime": "2024-01-01T12:00:00.000Z",
+    "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/accepted-priority-pending.json",
+    "notification_type": "application.accepted-priority-pending",
+    "subject_type": "APPLICATION",
     "subject": "45454545-2b6d-4b8a-971c-e758b0e8e790",
     "additional_provider_filter": "subUnit1",
     "status": "NEW",
     "payload": {
-      "data" : {
+      "data": {
         "status": "ACCEPTED_AWAITING_PRIORITY"
       }
     }
@@ -414,14 +416,14 @@ Status: `200`
 
 ---
 
-<section id="scenario-7">
+<section>
 
-## Scenario 7: System error notification {.govuk-heading-m #scenario-7}
+## Scenario 7: Application error notification {.govuk-heading-m #scenario-7}
 ### Request {.govuk-heading-s}
 
 Method: `GET`
 
-Endpoint: `/v0/notifications?notification_type=SYSTEM_ERROR`
+Endpoint: `/v0/notifications?notification_type=application.error`
 
 Headers: `Authorization: <any-value>`
 
@@ -440,16 +442,16 @@ Status: `200`
 {
   "data": [{
     "notification_id": "{{"{{ID}}"}}",
-    "created_datetime": "2024-01-01T12:00:00.000",
-    "event_datetime": "2024-01-01T12:00:00.000",
-    "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/system-error.json",
-    "notification_type": "SYSTEM_ERROR",
-    "subject_type": "LAND_REGISTER_APPLICATION",
+    "created_datetime": "2024-01-01T12:00:00.000Z",
+    "event_datetime": "2024-01-01T12:00:00.000Z",
+    "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/error.json",
+    "notification_type": "application.error",
+    "subject_type": "APPLICATION",
     "subject": "45454545-2b6d-4b8a-971c-e758b0e8e790",
     "additional_provider_filter": "subUnit1",
     "status": "NEW",
     "payload": {
-      "data" : {
+      "data": {
         "status": "SYSTEM_ERROR"
       }
     }
@@ -460,7 +462,7 @@ Status: `200`
 </section>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<section id="scenario-8">
+<section>
 
 ## Scenario 8: Application cancelled notification {.govuk-heading-m #scenario-8}
 ### Request {.govuk-heading-s}
@@ -484,32 +486,54 @@ Status: `200`
 
 ```json
 {
-  "notification_id": "{{"{{ID}}"}}",
-  "created_datetime": "2024-01-01T12:00:00.000",
-  "event_datetime": "2024-01-01T12:00:00.000",
-  "payload_schema": "https://landregistry.github.io/bg-dev-pack-redesign/schemas/v1/application/correspondence-despatched.json",
-  "notification_type": "application.correspondence-despatched",
-  "subject_type": "LAND_REGISTER_APPLICATION",
-  "subject": "a97679c9-624f-4680-ae8b-15b7-r411can",
-  "additional_provider_filter": null,
-  "status": "NEW",
-  "payload": {
-    "data": {
-      "status": "CANCELLED",
-      "documents": [
-        {
-          "type": {
-            "code": "CAN",
-            "name": "CANCELLATION LETTER"
-          },
-          "created_at": "2025-09-05T08:20:04.050Z",
-          "download_id": "can_62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385"
+  "data": [
+    {
+      "notification_id": "50cda861-ba0b-41dc-af9a-4748335d51ad",
+      "created_datetime": "2025-09-05T08:13:38.076Z",
+      "event_datetime": "2025-09-05T08:13:38.052Z",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/accepted-priority-protected.json",
+      "notification_type": "application.accepted-priority-protected",
+      "subject_type": "APPLICATION",
+      "subject": "a97679c9-624f-4680-ae8b-15b7-r411can",
+      "additional_provider_filter": null,
+      "status": "NEW",
+      "payload": {
+        "data": {
+          "status": "ACCEPTED_PRIORITY_PROTECTED",
+          "priority": "2025-09-05T08:13:37.697377Z",
+          "hmlr_reference": "R411CAN"
         }
-      ],
-      "hmlr_reference": "R411CAN",
-      "application_request_id": "a97679c9-624f-4680-ae8b-15b7-r411can"
+      }
+    },
+    {
+      "notification_id": "302ce5d2-cb99-4696-b661-767c76caa07c",
+      "created_datetime": "2025-09-05T08:20:04.695Z",
+      "event_datetime": "2025-09-05T08:20:03.776Z",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/cancelled.json",
+      "notification_type": "application.cancelled",
+      "subject_type": "APPLICATION",
+      "subject": "a97679c9-624f-4680-ae8b-15b7-r411can",
+      "additional_provider_filter": null,
+      "status": "NEW",
+      "payload": {
+        "data": {
+          "status": "CANCELLED",
+          "documents": [
+            {
+              "type": {
+                "code": "CAN",
+                "name": "CANCELLATION LETTER"
+              },
+              "created_at": "2025-09-05T08:20:04.050Z",
+              "download_id": "can_62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385"
+            }
+          ],
+          "hmlr_reference": "R411CAN",
+          "application_request_id": "a97679c9-624f-4680-ae8b-15b7-r411can"
+        }
+      }
     }
-  }
+  ]
 }
 ```
 </div>
@@ -517,7 +541,7 @@ Status: `200`
 
 ---
 
-<section id="scenario-9">
+<section>
 
 ## Scenario 9: Application completed notification {.govuk-heading-m #scenario-9}
 ### Request {.govuk-heading-s}
@@ -541,49 +565,71 @@ Status: `200`
 
 ```json
 {
-  "notification_id": "{{"{{ID}}"}}",
-  "created_datetime": "2024-01-01T12:00:00.000",
-  "event_datetime": "2024-01-01T12:00:00.000",
-  "payload_schema": "https://landregistry.github.io/bg-dev-pack-redesign/schemas/v1/application/correspondence-despatched.json",
-  "notification_type": "application.correspondence-despatched",
-  "subject_type": "LAND_REGISTER_APPLICATION",
-  "subject": "28a01655-544a-48c5-9e40-4ac2-p311cmp",
-  "additional_provider_filter": null,
-  "status": "NEW",
-  "payload": {
-    "data": {
-      "status": "COMPLETED",
-      "documents": [
-        {
-          "type": {
-            "code": "LTR",
-            "name": "LETTER"
-          },
-          "created_at": "2025-09-05T08:15:01.281Z",
-          "download_id": "ltr_6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549"
-        },
-        {
-          "type": {
-            "code": "RCS",
-            "name": "REGISTRATION COMPLETION SHEET"
-          },
-          "created_at": "2025-09-05T08:15:01.319Z",
-          "download_id": "rcs_4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a"
-        },
-        {
-          "type": {
-            "code": "REG",
-            "name": "COPY OF UPDATED REGISTER"
-          },
-          "created_at": "2025-09-05T08:15:01.343Z",
-          "download_id": "reg_7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038"
+  "data": [
+    {
+      "notification_id": "5e6f6865-270f-43da-87b6-4af759f3c2aa",
+      "created_datetime": "2025-09-05T08:07:56.346Z",
+      "event_datetime": "2025-09-05T08:07:56.320Z",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/accepted-priority-protected.json",
+      "notification_type": "application.accepted-priority-protected",
+      "subject_type": "APPLICATION",
+      "subject": "28a01655-544a-48c5-9e40-4ac2-p311cmp",
+      "additional_provider_filter": null,
+      "status": "NEW",
+      "payload": {
+        "data": {
+          "status": "ACCEPTED_PRIORITY_PROTECTED",
+          "priority": "2025-09-05T08:07:55.975284Z",
+          "hmlr_reference": "P311CMP"
         }
-      ],
-      "hmlr_reference": "P311CMP",
-      "application_request_id": "28a01655-544a-48c5-9e40-4ac2-p311cmp",
-      "was_subject_to_early_completion": false
+      }
+    },
+    {
+      "notification_id": "ac603b14-7c62-431a-99e6-66aca3cdb717",
+      "created_datetime": "2025-09-05T08:15:02.333Z",
+      "event_datetime": "2025-09-05T08:15:00.712Z",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/completed.json",
+      "notification_type": "application.completed",
+      "subject_type": "APPLICATION",
+      "subject": "28a01655-544a-48c5-9e40-4ac2-p311cmp",
+      "additional_provider_filter": null,
+      "status": "NEW",
+      "payload": {
+        "data": {
+          "status": "COMPLETED",
+          "documents": [
+            {
+              "type": {
+                "code": "LTR",
+                "name": "LETTER"
+              },
+              "created_at": "2025-09-05T08:15:01.281Z",
+              "download_id": "ltr_6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549"
+            },
+            {
+              "type": {
+                "code": "RCS",
+                "name": "REGISTRATION COMPLETION SHEET"
+              },
+              "created_at": "2025-09-05T08:15:01.319Z",
+              "download_id": "rcs_4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a"
+            },
+            {
+              "type": {
+                "code": "REG",
+                "name": "COPY OF UPDATED REGISTER"
+              },
+              "created_at": "2025-09-05T08:15:01.343Z",
+              "download_id": "reg_7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038"
+            }
+          ],
+          "hmlr_reference": "P311CMP",
+          "application_request_id": "28a01655-544a-48c5-9e40-4ac2-p311cmp",
+          "was_subject_to_early_completion": false
+        }
+      }
     }
-  }
+  ]
 }
 ```
 </div>
@@ -598,7 +644,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v0/notifications?subject=<uuid ending with 'ltr'>`
+Endpoint: `/v0/notifications?subject=<uuid ending with 'app'>`
 
 Headers: `Authorization: <any-value>`
 
@@ -607,24 +653,26 @@ Headers: `Authorization: <any-value>`
 ```json
 {
   "notification_id": "{{"{{ID}}"}}",
-  "created_datetime": "2024-01-01T12:00:00.000",
-  "event_datetime": "2024-01-01T12:00:00.000",
-  "payload_schema": "https://landregistry.github.io/bg-dev-pack-redesign/schemas/v1/application/correspondence-despatched.json",
+  "created_datetime": "2024-01-01T12:00:00.000Z",
+  "event_datetime": "2024-01-01T12:00:00.000Z",
+  "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/correspondence-despatched.json",
   "notification_type": "application.correspondence-despatched",
-  "subject_type": "LAND_REGISTER_APPLICATION",
+  "subject_type": "APPLICATION",
   "subject": "28a01655-544a-48c5-9e40-4ac2-p311app",
   "additional_provider_filter": null,
   "status": "NEW",
   "payload": {
     "data": {
-      "documents": [{
-        "type": {
-          "code": "LTR",
-          "name": "LETTER"
-        },
-        "created_at": "2025-09-05T08:15:01.281Z",
-        "download_id": "ltr_6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549"
-      }],
+      "documents": [
+        {
+          "type": {
+            "code": "LTR",
+            "name": "LETTER"
+          },
+          "created_at": "2025-09-05T08:15:01.281Z",
+          "download_id": "ltr_6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549"
+        }
+      ],
       "hmlr_reference": "P311APP",
       "application_request_id": "28a01655-544a-48c5-9e40-4ac2-p311app"
     }

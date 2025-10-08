@@ -1,14 +1,14 @@
 ---
 layout: guidance
 
-title: Download a document Technical guide
+title: Download a document API technical guide
 description: Use this service to download documents provided by HM Land Registry.
 
 eleventyNavigation:
   key: Download a Document v1.0 Technical guide
   parent: Download a Document v1.0
 
-notlive: true
+notlive: false
 
 versions:
   - value: "1.0"
@@ -16,15 +16,15 @@ versions:
     selected: true
 
 relatedAPIs:
-  - text: Submit an application to change the Land Register
+  - text: Submit an application to change the Land Register API
     href: /apis/submit-an-application-to-change-the-land-register 
-  - text: Send a document
+  - text: Send a document API
     href: /apis/send-a-document
-  - text: Submit an application
+  - text: Submit an application API
     href: /apis/submit-an-application
-  - text: Application information
+  - text: Application information API
     href: /apis/application-information
-  - text: Notifications
+  - text: Notifications APi
     href: /apis/notifications
   - text: More
     href: /find-a-service-api
@@ -45,23 +45,23 @@ sidenav:
 
 <section>
 
-## How to use download a document {.govuk-heading-m}
+## How to use the Download a document API {.govuk-heading-m}
 
 ### Obtain a `download id` {.govuk-heading-s}
 
-Before you can use this service, you will need to obtain a `download id` from somewhere. Currently the only way to do this is via submiting an application to change the Land Register. This process will result in one of the following types of document being generated:
+Before you can use this service, you will need to obtain a `download id`. Currently the only way to do this is to submit an application to change the Land Register. This process will result in one of the following types of document being generated:
 
-- Requisition documents
-- Cancellation documents
-- Completion documents
+- requisition
+- cancellation
+- completion
 
-The generation of each of these documents would trigger a notification to be sent via the [Notifications API](/apis/notifications), which would contain a `download id`. Once this notification has been sent, the document will be available for download.
+The generation of each of these documents would trigger a notification to be sent via the [Notifications API](/apis/notifications), which would contain a `download id`. Once this notification is sent, the document will be available for download.
 
-Note: A `download id` may be available in the [application information API's](/apis/application-information) response before the notification is sent, under the `/correspondences` array. The document is not guarenteed to be available for download until the notification has been issued.
+Note: A `download id` may be available in the [Application information API's](/apis/application-information) response before the notification is sent, under the `/correspondences` array. The document is not guaranteed to be available for download until the notification has been issued.
 
 ### Downloading a document {.govuk-heading-s}
 
-Once you've obtained that `download id` you can use it in a `GET` request to this service. The request is simple and will result in the document binary being returned so long as your request method allows redirects.
+Once you’ve obtained the `download id` you can use it in a `GET` request to this service. The request is simple and will result in the document binary being returned (as long as your request method allows redirects).
 
 </section>
 <section>
@@ -79,7 +79,7 @@ For specific examples of notification payloads produced during application submi
 
 ### Download a document (redirection enabled) {.govuk-heading-s}
 
-*Request*
+Request
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -91,15 +91,15 @@ curl --method GET \
 ```
 </div>
 
-*Response*
+Response
 
 Status: `200`
 
-Body: *document binary*
+Body: document binary
 
 ### Download a document (redirection disabled) {.govuk-heading-s}
 
-*Request 1*
+Request 1
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -111,13 +111,13 @@ curl --method GET \
 ```
 </div>
 
-*Response 1*
+Response 1
 
 Status: 302
 
 Header: `Location: <download  url>`
 
-*Request 2*
+Request 2
 
 <div class="code-wrapper">
 {{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
@@ -128,10 +128,10 @@ curl --method GET \
 ```
 </div>
 
-*Response 2*
+Response 2
 
 Status: 200
 
-Body: *document binary*
+Body: document binary
 
 </section>

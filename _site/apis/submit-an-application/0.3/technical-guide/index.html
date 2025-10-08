@@ -38,7 +38,7 @@
       navItems.forEach(element => {
         let href = element.href.split('#')[1];
         let related = document.querySelector("#"+href);
-        let scrollY = related.offsetTop;
+        let scrollY = related.offsetTop - 2;
         rangeToElement.push({
           scroll: scrollY,
           element: element
@@ -169,7 +169,8 @@ data-module="govuk-service-navigation"
     Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="0.3" selected>v0.3 (latest)</option>
+    <option value="1.0">v1.0 (latest)</option>
+    <option value="0.3" selected>v0.3</option>
   </select>
   <button type="submit" 
                   class="govuk-button govuk-!-margin-0" 
@@ -7457,7 +7458,7 @@ Full value of property must be greater than or equal to property value<br><br>Fu
     <span class="app-code__punctuation">{</span>
       <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;7788bfb3-02f2-4c9b-be58-94e9df010ac8&quot;</span><span class="app-code__punctuation">,</span>
       <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-25T16:17:19.120585661Z&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://landregistry.github.io/bgtechdoc/vcad/schemas/accepted-priority-protected.json&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/vcad/schemas/accepted-priority-protected.json&quot;</span><span class="app-code__punctuation">,</span>
       <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION_ACCEPTED_ON_DAY_LIST&quot;</span><span class="app-code__punctuation">,</span>
       <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LAND_REGISTER_APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
       <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3d4b51cf-76ab-40ad-9b09-099323034adf&quot;</span><span class="app-code__punctuation">,</span>
@@ -7485,7 +7486,7 @@ Full value of property must be greater than or equal to property value<br><br>Fu
     <span class="app-code__punctuation">{</span>
       <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;7788bfb3-02f2-4c9b-be58-94e9df010ac8&quot;</span><span class="app-code__punctuation">,</span>
       <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-25T16:17:19.120585661Z&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://landregistry.github.io/bgtechdoc/vcad/schemas/accepted-priority-protected.json&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/vcad/schemas/accepted-priority-protected.json&quot;</span><span class="app-code__punctuation">,</span>
       <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION_VALIDATION_FAILED&quot;</span><span class="app-code__punctuation">,</span>
       <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LAND_REGISTER_APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
       <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3d4b51cf-76ab-40ad-9b09-099323034adf&quot;</span><span class="app-code__punctuation">,</span>
@@ -8016,7 +8017,7 @@ Full value of property must be greater than or equal to property value<br><br>Fu
           <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
             <ul class="govuk-footer__inline-list">
                 <li class="govuk-footer__inline-list-item">
-                  <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">
+                  <a class="govuk-footer__link" href="https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/accessibility/index.html">
                     Accessibility Statement
                   </a>
                 </li>

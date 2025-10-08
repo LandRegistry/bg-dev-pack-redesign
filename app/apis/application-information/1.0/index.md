@@ -8,25 +8,29 @@ eleventyNavigation:
   key: Application Information API v1.0
   parent: Application Information API
 
-notlive: true
+notlive: false 
 
 versions:
   - value: "1.0"
-    text: "v1.0 (upcoming)"
+    text: "v1.0 (latest)"
     selected: true
   - value: "0.3"
-    text: "v0.3 (latest)"
+    text: "v0.3"
 
 relatedAPIs:
-  - text: Submit an application to change the Land Register
+  - text: Submit an application to change the Land Register API
     href: /apis/submit-an-application-to-change-the-land-register 
-  - text: Send a document
+  - text: Send a document API
     href: /apis/send-a-document
-  - text: Submit an application
+  - text: Submit an application API
     href: /apis/submit-an-application
-  - text: Notifications
+  - text: Attach a document API
+    href: /apis/attach-a-document
+  - text: Attach a message API
+    href: /apis/attach-a-message
+  - text: Notifications API
     href: /apis/notifications
-  - text: Download a document
+  - text: Download a document API
     href: /apis/download-a-document
   - text: More
     href: /find-a-service-api
@@ -53,7 +57,7 @@ This API can be used to get more information after receiving a notification indi
 
 <section id="view-the-technical-guide">
 
-## View the Technical guide {.govuk-heading-m}
+## View the technical guide {.govuk-heading-m}
 
 [Technical guide](./technical-guide)
 
@@ -63,7 +67,7 @@ This API can be used to get more information after receiving a notification indi
 
 ## View the API specification {.govuk-heading-m}
 
-[Web version (opens in new tab)](https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Application-information-API){rel="noreferrer noopener" target="_blank"}
+[Web version (opens in new tab)](https://landregistry.github.io/bgtechdoc/documents/submit-an-application-to-change-the-register/v1.0/openapi.html#tag/Application-information-API){rel="noreferrer noopener" target="_blank"}
 
 </section>
 
@@ -107,7 +111,7 @@ HMLR has created a test environment for the Application information API. We’ve
 
 <ul class="govuk-list">
   <li>
-    <a class="govuk-link" href="./test-stubs">View Application information test stubs.</a>
+    <a class="govuk-link" href="./test-stubs">View Application information test stubs</a>
   </li>
 </ul>
 
