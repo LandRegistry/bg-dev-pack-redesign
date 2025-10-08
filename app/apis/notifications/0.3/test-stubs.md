@@ -275,7 +275,7 @@ Status: `200`
 
 <section>
 
-### Scenario 4: Get all with invalid date filter {.govuk-heading-s #scenario-4}
+## Scenario 4: Get all with invalid date filter {.govuk-heading-m #scenario-4}
 ### Request {.govuk-heading-s}
 
 Method: `GET`
