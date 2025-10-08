@@ -486,32 +486,54 @@ Status: `200`
 
 ```json
 {
-  "notification_id": "{{"{{ID}}"}}",
-  "created_datetime": "2024-01-01T12:00:00.000Z",
-  "event_datetime": "2024-01-01T12:00:00.000Z",
-  "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/cancelled.json",
-  "notification_type": "application.cancelled",
-  "subject_type": "APPLICATION",
-  "subject": "a97679c9-624f-4680-ae8b-15b7-r411can",
-  "additional_provider_filter": null,
-  "status": "NEW",
-  "payload": {
-    "data": {
-      "status": "CANCELLED",
-      "documents": [
-        {
-          "type": {
-            "code": "CAN",
-            "name": "CANCELLATION LETTER"
-          },
-          "created_at": "2025-09-05T08:20:04.050Z",
-          "download_id": "can_62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385"
+  "data": [
+    {
+      "notification_id": "50cda861-ba0b-41dc-af9a-4748335d51ad",
+      "created_datetime": "2025-09-05T08:13:38.076Z",
+      "event_datetime": "2025-09-05T08:13:38.052Z",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/accepted-priority-protected.json",
+      "notification_type": "application.accepted-priority-protected",
+      "subject_type": "APPLICATION",
+      "subject": "a97679c9-624f-4680-ae8b-15b7-r411can",
+      "additional_provider_filter": null,
+      "status": "NEW",
+      "payload": {
+        "data": {
+          "status": "ACCEPTED_PRIORITY_PROTECTED",
+          "priority": "2025-09-05T08:13:37.697377Z",
+          "hmlr_reference": "R411CAN"
         }
-      ],
-      "hmlr_reference": "R411CAN",
-      "application_request_id": "a97679c9-624f-4680-ae8b-15b7-r411can"
+      }
+    },
+    {
+      "notification_id": "302ce5d2-cb99-4696-b661-767c76caa07c",
+      "created_datetime": "2025-09-05T08:20:04.695Z",
+      "event_datetime": "2025-09-05T08:20:03.776Z",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/cancelled.json",
+      "notification_type": "application.cancelled",
+      "subject_type": "APPLICATION",
+      "subject": "a97679c9-624f-4680-ae8b-15b7-r411can",
+      "additional_provider_filter": null,
+      "status": "NEW",
+      "payload": {
+        "data": {
+          "status": "CANCELLED",
+          "documents": [
+            {
+              "type": {
+                "code": "CAN",
+                "name": "CANCELLATION LETTER"
+              },
+              "created_at": "2025-09-05T08:20:04.050Z",
+              "download_id": "can_62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385"
+            }
+          ],
+          "hmlr_reference": "R411CAN",
+          "application_request_id": "a97679c9-624f-4680-ae8b-15b7-r411can"
+        }
+      }
     }
-  }
+  ]
 }
 ```
 </div>
@@ -543,49 +565,71 @@ Status: `200`
 
 ```json
 {
-  "notification_id": "{{"{{ID}}"}}",
-  "created_datetime": "2024-01-01T12:00:00.000Z",
-  "event_datetime": "2024-01-01T12:00:00.000Z",
-  "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/completed.json",
-  "notification_type": "application.completed",
-  "subject_type": "APPLICATION",
-  "subject": "28a01655-544a-48c5-9e40-4ac2-p311cmp",
-  "additional_provider_filter": null,
-  "status": "NEW",
-  "payload": {
-    "data": {
-      "status": "COMPLETED",
-      "documents": [
-        {
-          "type": {
-            "code": "LTR",
-            "name": "LETTER"
-          },
-          "created_at": "2025-09-05T08:15:01.281Z",
-          "download_id": "ltr_6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549"
-        },
-        {
-          "type": {
-            "code": "RCS",
-            "name": "REGISTRATION COMPLETION SHEET"
-          },
-          "created_at": "2025-09-05T08:15:01.319Z",
-          "download_id": "rcs_4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a"
-        },
-        {
-          "type": {
-            "code": "REG",
-            "name": "COPY OF UPDATED REGISTER"
-          },
-          "created_at": "2025-09-05T08:15:01.343Z",
-          "download_id": "reg_7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038"
+  "data": [
+    {
+      "notification_id": "5e6f6865-270f-43da-87b6-4af759f3c2aa",
+      "created_datetime": "2025-09-05T08:07:56.346Z",
+      "event_datetime": "2025-09-05T08:07:56.320Z",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/accepted-priority-protected.json",
+      "notification_type": "application.accepted-priority-protected",
+      "subject_type": "APPLICATION",
+      "subject": "28a01655-544a-48c5-9e40-4ac2-p311cmp",
+      "additional_provider_filter": null,
+      "status": "NEW",
+      "payload": {
+        "data": {
+          "status": "ACCEPTED_PRIORITY_PROTECTED",
+          "priority": "2025-09-05T08:07:55.975284Z",
+          "hmlr_reference": "P311CMP"
         }
-      ],
-      "hmlr_reference": "P311CMP",
-      "application_request_id": "28a01655-544a-48c5-9e40-4ac2-p311cmp",
-      "was_subject_to_early_completion": false
+      }
+    },
+    {
+      "notification_id": "ac603b14-7c62-431a-99e6-66aca3cdb717",
+      "created_datetime": "2025-09-05T08:15:02.333Z",
+      "event_datetime": "2025-09-05T08:15:00.712Z",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/completed.json",
+      "notification_type": "application.completed",
+      "subject_type": "APPLICATION",
+      "subject": "28a01655-544a-48c5-9e40-4ac2-p311cmp",
+      "additional_provider_filter": null,
+      "status": "NEW",
+      "payload": {
+        "data": {
+          "status": "COMPLETED",
+          "documents": [
+            {
+              "type": {
+                "code": "LTR",
+                "name": "LETTER"
+              },
+              "created_at": "2025-09-05T08:15:01.281Z",
+              "download_id": "ltr_6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549"
+            },
+            {
+              "type": {
+                "code": "RCS",
+                "name": "REGISTRATION COMPLETION SHEET"
+              },
+              "created_at": "2025-09-05T08:15:01.319Z",
+              "download_id": "rcs_4efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a"
+            },
+            {
+              "type": {
+                "code": "REG",
+                "name": "COPY OF UPDATED REGISTER"
+              },
+              "created_at": "2025-09-05T08:15:01.343Z",
+              "download_id": "reg_7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038"
+            }
+          ],
+          "hmlr_reference": "P311CMP",
+          "application_request_id": "28a01655-544a-48c5-9e40-4ac2-p311cmp",
+          "was_subject_to_early_completion": false
+        }
+      }
     }
-  }
+  ]
 }
 ```
 </div>
