@@ -183,7 +183,8 @@ data-module="govuk-service-navigation"
     Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="0.3" selected>v0.3 (latest)</option>
+    <option value="1.0">v1.0 (latest)</option>
+    <option value="0.3" selected>v0.3</option>
   </select>
   <button type="submit" 
                   class="govuk-button govuk-!-margin-0" 
@@ -202,7 +203,7 @@ data-module="govuk-service-navigation"
 <h2 class="govuk-heading-m" id="scenario-1" tabindex="-1" class="govuk-heading-l">Scenario 1: Get all notifications</h2>
 <h3 class="govuk-heading-s" id="request" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
 <h3 class="govuk-heading-s" id="response" tabindex="-1" class="govuk-heading-m">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
@@ -275,7 +276,7 @@ data-module="govuk-service-navigation"
 <h2 class="govuk-heading-m" id="scenario-2" tabindex="-1" class="govuk-heading-l">Scenario 2: Get all new notifications</h2>
 <h3 class="govuk-heading-s" id="request-1" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?status=NEW</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications?status=NEW</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
 <h3 class="govuk-heading-s" id="response-1" tabindex="-1" class="govuk-heading-m">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
@@ -330,7 +331,7 @@ data-module="govuk-service-navigation"
 <h2 class="govuk-heading-m" id="scenario-3" tabindex="-1" class="govuk-heading-l">Scenario 3: Get all acknowledged notifications</h2>
 <h3 class="govuk-heading-s" id="request-2" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?status=ACKNOWLEDGED</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications?status=ACKNOWLEDGED</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
 <h3 class="govuk-heading-s" id="response-2" tabindex="-1" class="govuk-heading-m">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
@@ -369,7 +370,7 @@ data-module="govuk-service-navigation"
 <h3 class="govuk-heading-s" id="scenario-4" tabindex="-1" class="govuk-heading-m">Scenario 4: Get all with invalid date filter</h3>
 <h3 class="govuk-heading-s" id="request-3" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?created_after=2020-01-01T00:00:00&amp;created_before=2015-01-01T00:00:00</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications?created_after=2020-01-01T00:00:00&amp;created_before=2015-01-01T00:00:00</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
 <h3 class="govuk-heading-s" id="response-3" tabindex="-1" class="govuk-heading-m">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
@@ -382,7 +383,7 @@ data-module="govuk-service-navigation"
   <span class="app-code__attr">&quot;title&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Bad Request&quot;</span><span class="app-code__punctuation">,</span>
   <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">400</span><span class="app-code__punctuation">,</span>
   <span class="app-code__attr">&quot;detail&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;created_after parameter cannot be after created_before parameter&quot;</span><span class="app-code__punctuation">,</span>
-  <span class="app-code__attr">&quot;instance&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;/v1/notifications&quot;</span><span class="app-code__punctuation">,</span>
+  <span class="app-code__attr">&quot;instance&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;/v0/notifications&quot;</span><span class="app-code__punctuation">,</span>
   <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;400-01&quot;</span>
 <span class="app-code__punctuation">}</span>
 </code></pre>
@@ -394,7 +395,7 @@ data-module="govuk-service-navigation"
 <h2 class="govuk-heading-m" id="scenario-5" tabindex="-1" class="govuk-heading-l">Scenario 5: Acknowledge notifications</h2>
 <h3 class="govuk-heading-s" id="request-4" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications/acknowledge</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications/acknowledge</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
 <div class="code-wrapper"> <!--wrapper needed to put the button inside the code block-->
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -436,7 +437,7 @@ data-module="govuk-service-navigation"
 <h2 class="govuk-heading-m" id="scenario-6" tabindex="-1" class="govuk-heading-l">Scenario 6: Application queued notification</h2>
 <h3 class="govuk-heading-s" id="request-5" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?notification_type=application.accepted-priority-pending</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications?notification_type=application.accepted-priority-pending</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
 <h3 class="govuk-heading-s" id="response-5" tabindex="-1" class="govuk-heading-m">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
@@ -471,7 +472,7 @@ data-module="govuk-service-navigation"
 <h2 class="govuk-heading-m" id="scenario-7" tabindex="-1" class="govuk-heading-l">Scenario 7: Application error notification</h2>
 <h3 class="govuk-heading-s" id="request-6" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?notification_type=application.error</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications?notification_type=application.error</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
 <h3 class="govuk-heading-s" id="response-6" tabindex="-1" class="govuk-heading-m">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
@@ -506,7 +507,7 @@ data-module="govuk-service-navigation"
 <h2 class="govuk-heading-m" id="scenario-8" tabindex="-1" class="govuk-heading-l">Scenario 8: Application cancelled notification</h2>
 <h3 class="govuk-heading-s" id="request-7" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?subject=&lt;uuid ending with 'can'&gt;</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications?subject=&lt;uuid ending with 'can'&gt;</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
 <h3 class="govuk-heading-s" id="response-7" tabindex="-1" class="govuk-heading-m">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
@@ -573,7 +574,7 @@ data-module="govuk-service-navigation"
 <h2 class="govuk-heading-m" id="scenario-9" tabindex="-1" class="govuk-heading-l">Scenario 9: Application completed notification</h2>
 <h3 class="govuk-heading-s" id="request-8" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?subject=&lt;uuid ending with 'cmp'&gt;</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications?subject=&lt;uuid ending with 'cmp'&gt;</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
 <h3 class="govuk-heading-s" id="response-8" tabindex="-1" class="govuk-heading-m">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
@@ -657,7 +658,7 @@ data-module="govuk-service-navigation"
 <h2 class="govuk-heading-m" id="scenario-10" tabindex="-1" class="govuk-heading-l">Scenario 10: Application requisitioned notification</h2>
 <h3 class="govuk-heading-s" id="request-9" tabindex="-1" class="govuk-heading-m">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/notifications?subject=&lt;uuid ending with 'app'&gt;</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/notifications?subject=&lt;uuid ending with 'app'&gt;</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
 <h3 class="govuk-heading-s" id="response-9" tabindex="-1" class="govuk-heading-m">Response</h3>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>

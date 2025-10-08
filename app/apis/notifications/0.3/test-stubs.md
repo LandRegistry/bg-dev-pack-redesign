@@ -10,8 +10,10 @@ eleventyNavigation:
 notlive: false
 
 versions:
+  - value: "1.0"
+    text: "v1.0 (latest)"
   - value: "0.3"
-    text: "v0.3 (latest)"
+    text: "v0.3"
     selected: true
 
 relatedAPIs:
@@ -76,7 +78,7 @@ Base URL: `https://bgtest.landregistry.gov.uk/bg2test/api`
 
 Method: `GET`
 
-Endpoint: `/v1/notifications`
+Endpoint: `/v0/notifications`
 
 Headers: `Authorization: <any-value>`
 
@@ -158,7 +160,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?status=NEW`
+Endpoint: `/v0/notifications?status=NEW`
 
 Headers: `Authorization: <any-value>`
 
@@ -226,7 +228,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?status=ACKNOWLEDGED`
+Endpoint: `/v0/notifications?status=ACKNOWLEDGED`
 
 Headers: `Authorization: <any-value>`
 
@@ -278,7 +280,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?created_after=2020-01-01T00:00:00&created_before=2015-01-01T00:00:00`
+Endpoint: `/v0/notifications?created_after=2020-01-01T00:00:00&created_before=2015-01-01T00:00:00`
 
 Headers: `Authorization: <any-value>`
 
@@ -299,7 +301,7 @@ Status: `400`
   "title": "Bad Request",
   "status": 400,
   "detail": "created_after parameter cannot be after created_before parameter",
-  "instance": "/v1/notifications",
+  "instance": "/v0/notifications",
   "code": "400-01"
 }
 ```
@@ -316,7 +318,7 @@ Status: `400`
 
 Method: `POST`
 
-Endpoint: `/v1/notifications/acknowledge`
+Endpoint: `/v0/notifications/acknowledge`
 
 Headers: `Authorization: <any-value>`
 
@@ -374,7 +376,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?notification_type=application.accepted-priority-pending`
+Endpoint: `/v0/notifications?notification_type=application.accepted-priority-pending`
 
 Headers: `Authorization: <any-value>`
 
@@ -421,7 +423,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?notification_type=application.error`
+Endpoint: `/v0/notifications?notification_type=application.error`
 
 Headers: `Authorization: <any-value>`
 
@@ -467,7 +469,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?subject=<uuid ending with 'can'>`
+Endpoint: `/v0/notifications?subject=<uuid ending with 'can'>`
 
 Headers: `Authorization: <any-value>`
 
@@ -546,7 +548,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?subject=<uuid ending with 'cmp'>`
+Endpoint: `/v0/notifications?subject=<uuid ending with 'cmp'>`
 
 Headers: `Authorization: <any-value>`
 
@@ -642,7 +644,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?subject=<uuid ending with 'app'>`
+Endpoint: `/v0/notifications?subject=<uuid ending with 'app'>`
 
 Headers: `Authorization: <any-value>`
 
