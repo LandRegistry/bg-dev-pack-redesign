@@ -153,7 +153,7 @@ Status: `200`
 
 ---
 
-<section id="scenario-2">
+<section>
 
 ## Scenario 2: Get all new notifications {.govuk-heading-m #scenario-2}
 ### Request {.govuk-heading-s}
@@ -221,7 +221,7 @@ Status: `200`
 
 ---
 
-<section id="scenario-3">
+<section>
 
 ## Scenario 3: Get all acknowledged notifications {.govuk-heading-m #scenario-3}
 ### Request {.govuk-heading-s}
@@ -273,9 +273,9 @@ Status: `200`
 
 ---
 
-<section id="scenario-4">
+<section>
 
-### Scenario 4: Get all with invalid date filter {.govuk-heading-s #scenario-4}
+## Scenario 4: Get all with invalid date filter {.govuk-heading-m #scenario-4}
 ### Request {.govuk-heading-s}
 
 Method: `GET`
@@ -311,7 +311,7 @@ Status: `400`
 
 ---
 
-<section id="scenario-5">
+<section>
 
 ## Scenario 5: Acknowledge notifications {.govuk-heading-m #scenario-5}
 ### Request {.govuk-heading-s}
@@ -416,7 +416,7 @@ Status: `200`
 
 ---
 
-<section id="scenario-7">
+<section>
 
 ## Scenario 7: Application error notification {.govuk-heading-m #scenario-7}
 ### Request {.govuk-heading-s}
@@ -462,7 +462,7 @@ Status: `200`
 </section>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<section id="scenario-8">
+<section>
 
 ## Scenario 8: Application cancelled notification {.govuk-heading-m #scenario-8}
 ### Request {.govuk-heading-s}
@@ -541,7 +541,7 @@ Status: `200`
 
 ---
 
-<section id="scenario-9">
+<section>
 
 ## Scenario 9: Application completed notification {.govuk-heading-m #scenario-9}
 ### Request {.govuk-heading-s}

@@ -10,8 +10,10 @@ eleventyNavigation:
 notlive: false
 
 versions:
+  - value: "1.0"
+    text: "v1.0 (latest)"
   - value: "0.3"
-    text: "v0.3 (latest)"
+    text: "v0.3"
     selected: true
 
 relatedAPIs:
@@ -76,7 +78,7 @@ Base URL: `https://bgtest.landregistry.gov.uk/bg2test/api`
 
 Method: `GET`
 
-Endpoint: `/v1/notifications`
+Endpoint: `/v0/notifications`
 
 Headers: `Authorization: <any-value>`
 
@@ -151,14 +153,14 @@ Status: `200`
 
 ---
 
-<section id="scenario-2">
+<section>
 
 ## Scenario 2: Get all new notifications {.govuk-heading-m #scenario-2}
 ### Request {.govuk-heading-s}
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?status=NEW`
+Endpoint: `/v0/notifications?status=NEW`
 
 Headers: `Authorization: <any-value>`
 
@@ -219,14 +221,14 @@ Status: `200`
 
 ---
 
-<section id="scenario-3">
+<section>
 
 ## Scenario 3: Get all acknowledged notifications {.govuk-heading-m #scenario-3}
 ### Request {.govuk-heading-s}
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?status=ACKNOWLEDGED`
+Endpoint: `/v0/notifications?status=ACKNOWLEDGED`
 
 Headers: `Authorization: <any-value>`
 
@@ -271,14 +273,14 @@ Status: `200`
 
 ---
 
-<section id="scenario-4">
+<section>
 
-### Scenario 4: Get all with invalid date filter {.govuk-heading-s #scenario-4}
+## Scenario 4: Get all with invalid date filter {.govuk-heading-m #scenario-4}
 ### Request {.govuk-heading-s}
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?created_after=2020-01-01T00:00:00&created_before=2015-01-01T00:00:00`
+Endpoint: `/v0/notifications?created_after=2020-01-01T00:00:00&created_before=2015-01-01T00:00:00`
 
 Headers: `Authorization: <any-value>`
 
@@ -299,7 +301,7 @@ Status: `400`
   "title": "Bad Request",
   "status": 400,
   "detail": "created_after parameter cannot be after created_before parameter",
-  "instance": "/v1/notifications",
+  "instance": "/v0/notifications",
   "code": "400-01"
 }
 ```
@@ -309,14 +311,14 @@ Status: `400`
 
 ---
 
-<section id="scenario-5">
+<section>
 
 ## Scenario 5: Acknowledge notifications {.govuk-heading-m #scenario-5}
 ### Request {.govuk-heading-s}
 
 Method: `POST`
 
-Endpoint: `/v1/notifications/acknowledge`
+Endpoint: `/v0/notifications/acknowledge`
 
 Headers: `Authorization: <any-value>`
 
@@ -374,7 +376,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?notification_type=application.accepted-priority-pending`
+Endpoint: `/v0/notifications?notification_type=application.accepted-priority-pending`
 
 Headers: `Authorization: <any-value>`
 
@@ -414,14 +416,14 @@ Status: `200`
 
 ---
 
-<section id="scenario-7">
+<section>
 
 ## Scenario 7: Application error notification {.govuk-heading-m #scenario-7}
 ### Request {.govuk-heading-s}
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?notification_type=application.error`
+Endpoint: `/v0/notifications?notification_type=application.error`
 
 Headers: `Authorization: <any-value>`
 
@@ -460,14 +462,14 @@ Status: `200`
 </section>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<section id="scenario-8">
+<section>
 
 ## Scenario 8: Application cancelled notification {.govuk-heading-m #scenario-8}
 ### Request {.govuk-heading-s}
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?subject=<uuid ending with 'can'>`
+Endpoint: `/v0/notifications?subject=<uuid ending with 'can'>`
 
 Headers: `Authorization: <any-value>`
 
@@ -539,14 +541,14 @@ Status: `200`
 
 ---
 
-<section id="scenario-9">
+<section>
 
 ## Scenario 9: Application completed notification {.govuk-heading-m #scenario-9}
 ### Request {.govuk-heading-s}
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?subject=<uuid ending with 'cmp'>`
+Endpoint: `/v0/notifications?subject=<uuid ending with 'cmp'>`
 
 Headers: `Authorization: <any-value>`
 
@@ -642,7 +644,7 @@ Status: `200`
 
 Method: `GET`
 
-Endpoint: `/v1/notifications?subject=<uuid ending with 'app'>`
+Endpoint: `/v0/notifications?subject=<uuid ending with 'app'>`
 
 Headers: `Authorization: <any-value>`
 
