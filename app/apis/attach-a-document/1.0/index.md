@@ -39,7 +39,7 @@ relatedAPIs:
 
 The Attach a document API allows users to attach additional documents to an existing application. The [Notifications API](/apis/notifications) can then be used to understand if the document has been successfully attached to the application. 
 
-If users want to attach a message to an application, they will need to use the [Attach a message API](apis/attach-a-message). 
+If users want to attach a message to an application, they will need to use the [Attach a message API](/apis/attach-a-message). 
 
 
 </section>
