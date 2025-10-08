@@ -37,7 +37,7 @@ relatedAPIs:
 
 ## Overview {.govuk-heading-m}
 
-The Attach a message API allows users to attach text messages to an existing application. The [Notifications API](apis/notifications) can then be used to understand if the message has been successfully attached to the application. 
+The Attach a message API allows users to attach text messages to an existing application. The [Notifications API](/apis/notifications) can then be used to understand if the message has been successfully attached to the application. 
 
 If users want to attach a document to an application, they will need to use the [Attach a document API](/apis/attach-a-document). 
 
