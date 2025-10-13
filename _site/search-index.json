@@ -148,7 +148,7 @@
     "title": "Attach a message API test stubs",
     "section": "Attach a message API v1.0",
     "url": "/apis/attach-a-message/1.0/test-stubs/",
-    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 attach message request method post endpoint v1 applications faed15d 7ec8 4e7d 866c 9c25874d2b42 attachments headers authorization any value copy data text this response status 202"
+    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 attach message request method post endpoint v1 applications faed15d 7ec8 4e7d 866c 9c25874d2b42 messages headers authorization any value copy data text this response status 202"
   },
   {
     "title": "Attach a document",
