@@ -51,7 +51,7 @@ Base URL: `https://bgtest.landregistry.gov.uk/bg2test/api`
 
 Method: `POST`
 
-Endpoint: `/v1/applications/faed15d-7ec8-4e7d-866c-9c25874d2b42/attachments`
+Endpoint: `/v1/applications/faed15d-7ec8-4e7d-866c-9c25874d2b42/messages`
 
 Headers: `Authorization: <any-value>`
 

@@ -62,30 +62,30 @@ Note: For general information, view the [notifications API page](/apis/notificat
 
 During application submission, notifications will be available from the notifications API about changes that happen to the application. These notifications currently include:
 
-- `APPLICATION_ACCEPTED_ON_DAY_LIST` - the application has been accepted and is on the day list
-- `APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST` - the application has been accepted and is queuing for the day list
-- `APPLICATION_VALIDATION_FAILED` - the application submission has failed
-- `APPLICATION_ERROR` - the application has not been added to the day list due to an error
+- `application.accepted-priority-protected` - the application has been accepted and is on the day list
+- `application.accepted-priority-pending` - the application has been accepted and is queuing for the day list
+- `application.validation-failed` - the application submission has failed
+- `application.error` - the application has not been added to the day list due to an error
 - `application.correspondence-despatched` - the application has had a correspondence raised against it
 - `application.cancelled` - the application has been cancelled
 - `application.completed` - the application has been completed
 
 The notifications will contain the following information:
 
-- `APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST`, `APPLICATION_VALIDATION_FAILED` and `APPLICATION_ERROR` will contain the updated application status only
-- `APPLICATION_ACCEPTED_ON_DAY_LIST` will contain updated application status, the priority of the application and the HMLR reference for the accepted application
+- `application.accepted-priority-protected`, `application.accepted-priority-pending` and `application.error` will contain the updated application status only
+- `application.accepted-priority-protected` will contain updated application status, the priority of the application and the HMLR reference for the accepted application
 - `application.correspondence-despatched`, `application.cancelled` and `application.completed` will contain a list of correspondence documents that can be downloaded using the [download a document API](/apis/download-a-document).
 
-To get more detailed information about an application that caused the notification, use the [Application information API](/apis/application-information). For example, after receiving an `APPLICATION_VALIDATION_FAILED` notification, use the Application information API to get a list of the validation errors.
+To get more detailed information about an application that caused the notification, use the [Application information API](/apis/application-information). For example, after receiving an `application.validation-failed` notification, use the Application information API to get a list of the validation errors.
 
 ### Schemas {.govuk-heading-s}
 
 JSON schemas can be found below:
 
-- [`APPLICATION_ACCEPTED_ON_DAY_LIST`](/schemas/v1/application/accepted-priority-protected.json)
-- [`APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST`](/schemas/v1/application/accepted-awaiting-priority.json)
-- [`APPLICATION_VALIDATION_FAILED`](/schemas/v1/application/validation-error.json)
-- [`APPLICATION_ERROR`](/schemas/v1/application/application-error.json)
+- [`application.accepted-priority-protected`](/schemas/v1/application/accepted-priority-protected.json)
+- [`application.accepted-priority-pending`](/schemas/v1/application/accepted-awaiting-priority.json)
+- [`application.validation-failed`](/schemas/v1/application/validation-error.json)
+- [`application.error`](/schemas/v1/application/application-error.json)
 - [`application.correspondence-despatched`](/schemas/v1/application/correspondence-despatched.json)
 - [`application.cancelled`](/schemas/v1/application/cancelled.json)
 - [`application.completed`](/schemas/v1/application/completed.json)
@@ -3350,7 +3350,7 @@ Full value of property must be greater than or equal to property value<br><br>Fu
 </div>
 <h2 class="govuk-heading-m" id="example-requests-and-responses">Example requests and responses</h2>
 <div class="govuk-!-padding-bottom-3"></div>
-<h3 class="govuk-heading-s"><code>APPLICATION_ACCEPTED_ON_DAY_LIST</code> notification</h3>
+<h3 class="govuk-heading-s"><code>application.accepted-priority-protected</code> notification</h3>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
@@ -3359,9 +3359,9 @@ Full value of property must be greater than or equal to property value<br><br>Fu
     {
       "notification_id": "7788bfb3-02f2-4c9b-be58-94e9df010ac8",
       "created_datetime": "2025-02-25T16:17:19.120585661Z",
-      "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/accepted-priority-protected.json",
-      "notification_type": "APPLICATION_ACCEPTED_ON_DAY_LIST",
-      "subject_type": "LAND_REGISTER_APPLICATION",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/accepted-priority-protected.json",
+      "notification_type": "application.accepted-priority-protected",
+      "subject_type": "APPLICATION",
       "subject": "3d4b51cf-76ab-40ad-9b09-099323034adf",
       "event_datetime": "2025-02-20T09:06:29.120585661Z",
       "status": "NEW",
@@ -3377,7 +3377,7 @@ Full value of property must be greater than or equal to property value<br><br>Fu
 }
 ```
 </div>
-<h3 class="govuk-heading-s"><code>APPLICATION_VALIDATION_FAILED</code> notification</h3>
+<h3 class="govuk-heading-s"><code>application.validation-failed</code> notification</h3>
 <div class="code-wrapper">{{ govukButton({ text: "Copy code", classes: "govuk-button--secondary copy-code" }) }}
 
 ```json
@@ -3386,9 +3386,9 @@ Full value of property must be greater than or equal to property value<br><br>Fu
     {
       "notification_id": "7788bfb3-02f2-4c9b-be58-94e9df010ac8",
       "created_datetime": "2025-02-25T16:17:19.120585661Z",
-      "payload_schema": "https://landregistry.github.io/bgtechdoc/vcad/schemas/accepted-priority-protected.json",
-      "notification_type": "APPLICATION_VALIDATION_FAILED",
-      "subject_type": "LAND_REGISTER_APPLICATION",
+      "payload_schema": "https://landregistry.github.io/bgtechdoc/schemas/v1/application/validation-failed.json",
+      "notification_type": "application.validation-failed",
+      "subject_type": "APPLICATION",
       "subject": "3d4b51cf-76ab-40ad-9b09-099323034adf",
       "event_datetime": "2025-02-20T09:06:29.120585661Z",
       "status": "NEW",
@@ -3412,7 +3412,7 @@ Full value of property must be greater than or equal to property value<br><br>Fu
         "submission_warning_understood": true,
         "customer_reference": "MyApplication",
         "application_lodger": {
-            "email": user@company.com,
+            "email": "user@company.com",
             "telephone": "07000000000",
             "type": "CONVEYANCER"
         },
