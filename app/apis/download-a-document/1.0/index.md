@@ -55,12 +55,12 @@ You may obtain a `download_id` from any of the following:
 
 </section>
 
-<!-- <section>
+<section>
 ## View the API specification {.govuk-heading-m}
 
-[Web version (opens in a new tab)](https://landregistry.github.io/bgtechdoc/vcad/v0_3/vcad-spec.html#tag/Notifications-API){rel="noreferrer noopener" target="_blank"}
+[Web version (opens in a new tab)](https://landregistry.github.io/bgtechdoc/documents/submit-an-application-to-change-the-register/v1.0/openapi.html#tag/Download-a-document-API){rel="noreferrer noopener" target="_blank"}
 
-</section> -->
+</section>
 <section>
 
 ## How the API works {.govuk-heading-m}
