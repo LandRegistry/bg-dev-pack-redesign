@@ -2,7 +2,7 @@
 layout: api-overview.njk
 
 title: Attach a message API
-description: Use this service to attach text messages to an existing application. 
+description: Use this service to attach text messages to an existing application 
 
 eleventyNavigation:
   key: Attach a message API v1.0

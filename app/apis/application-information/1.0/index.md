@@ -1,8 +1,8 @@
 ---
 layout: api-overview.njk
 
-title: Application Information API
-description: Use this service to get information about a specific application.
+title: Application information API
+description: Use this service to get information about a specific application
 
 eleventyNavigation:
   key: Application Information API v1.0
@@ -44,12 +44,12 @@ The Application information API is used to get detailed information about a spec
 - the `application_request_id` used in the request
 - an ID for the accepted application, `hmlr_reference`, once accepted (previously known as ABR)
 - the priority of the application, `priority_timestamp`, once accepted
-- any errors that prevented application submission
+- any errors that prevented application submission, including `VALIDATION_FAILED` 
 - any warnings that did not prevent submission but need to be addressed before a caseworker can process the application (otherwise a requisition may occur)
 - a list of correspondence records associated with the application including:
-  - Completion documents
-  - Cancellation documents
-  - Requsition documents
+  - completion documents
+  - cancellation documents
+  - requisition documents
 
 This API can be used to get more information after receiving a notification indicating the application has changed. For information about which notifications will be available, visit the notifications section of the [Submit an application](/apis/submit-an-application/0.3/technical-guide) API page.
 

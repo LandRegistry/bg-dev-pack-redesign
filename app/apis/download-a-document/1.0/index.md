@@ -2,7 +2,7 @@
 layout: api-overview.njk
 
 title: Download a document API
-description: Use this service to download documents created by HM Land Registry.
+description: Use this service to download documents created by HM Land Registry
 
 eleventyNavigation:
     key: Download a Document v1.0
