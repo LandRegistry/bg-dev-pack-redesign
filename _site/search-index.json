@@ -13,7 +13,7 @@
   },
   {
     "title": "Download a document API technical guide",
-    "description": "Use this service to download documents provided by HM Land Registry.",
+    "description": "Use this service to download documents provided by HMLR",
     "section": "Download a Document v1.0",
     "url": "/apis/download-a-document/1.0/technical-guide/",
     "tokens": "how use download document api obtain id before can this service will need currently only way submit application change land register process result one following types being generated requisition cancellation completion generation each these documents would trigger notification sent via notifications which contain once available note may information s response under correspondences array guaranteed until been issued downloading ve obtained get request simple binary returned long your method allows redirects validation rules there are implementing example requests responses specific examples payloads produced during submission view redirection enabled copy code curl url base v1 u username password status 200 body disabled 1 302 header location 2"
@@ -25,8 +25,8 @@
     "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 download cancellation document request method get endpoint v1 documents can 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 headers authorization any value response contents following redirects status 200 body binary 302 location 2 letter ltr 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 3 register completion sheet rcs efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a 4 copy reg 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038"
   },
   {
-    "title": "Download a document",
-    "description": "Use this service to download documents.",
+    "title": "Download a document API",
+    "description": "Use this service to download documents created by HMLR",
     "section": "APIs",
     "url": "/apis/download-a-document/",
     "tokens": "select version content"
@@ -132,15 +132,15 @@
     "tokens": "overview application information api used get detailed about specific this includes status request id accepted hmlr reference once previously known abr priority timestamp any errors that prevented submission including validation failed warnings did prevent need addressed before caseworker can process otherwise requisition may occur list correspondence records associated with completion documents cancellation more after receiving notification indicating changed which notifications will available visit section submit page view technical guide specification web version opens new tab how works interaction diagram demonstrates support users using their unique provided via user examples type are listed system respond relevant also by informing been onto day state submitted when starts there several potential outcomes each trigger different response include passed added awaiting closed reopens case indicate whether error occurred must correct resubmit test created environment ve example code demonstrate what should expect developing your own services stubs please note plans release sandbox developers future exact date confirmed general testing guidance our"
   },
   {
-    "title": "Application Information API",
-    "description": "Use this service to get information about a specific application.",
+    "title": "Application information API",
+    "description": "Use this service to get information about a specific application",
     "section": "APIs",
     "url": "/apis/application-information/",
     "tokens": "select version content"
   },
   {
     "title": "Attach a document API",
-    "description": "Use this service to attach a document to a submitted order.",
+    "description": "Use this service to attach a document to a submitted order",
     "section": "APIs",
     "url": "/apis/attach-a-document/",
     "tokens": "select version content"
@@ -153,15 +153,15 @@
     "tokens": "how use attach message api existing application make http post request endpoint body contains text attached once been validated empty 202 accepted response will returned success validation fails 400 containing details error after attachment begins this completes successfully otherwise notification sent notifications process finishes available from about status failed rules pass provided id must exist hmlr s system found 404 also pending state have completed cancelled business unit customer ids are directly computed when sending match those being either values more than 4034 characters example requests responses copy code data upon successful return errors type oc200 detail order creation pointer null already oc036 7788bfb3 02f2 4c9b be58 94e9df010ac8 created datetime 2025 02 25t16 17 19 120585661z payload schema https landregistry github io bgtechdoc schemas v1 json subject 3d4b51cf 76ab 40ad 9b09 099323034adf event 20t09 06 29 new 123 failure reason occurred"
   },
   {
-    "title": "Attach a document",
-    "description": "Use this service to attach a document to a submitted order.",
+    "title": "Attach a document API",
+    "description": "Use this service to attach a document to a submitted order",
     "section": "APIs",
     "url": "/apis/attach-a-message/",
     "tokens": "select version content"
   },
   {
     "title": "Notifications API",
-    "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
+    "description": "Use this service to get updates about multiple applications submitted by the same business unit",
     "section": "APIs",
     "url": "/apis/notifications/",
     "tokens": "select version content"
@@ -195,16 +195,16 @@
   },
   {
     "title": "Send a document API",
-    "description": "Use this service to attach documents to your application.",
+    "description": "Use this service to attach documents to your application",
     "section": "APIs",
     "url": "/apis/send-a-document/",
     "tokens": "select version content"
   },
   {
-    "title": "Submit an Application to change the Land Register service API",
+    "title": "Submit an Application to change the Land Register APIs",
     "section": "apis",
     "url": "/apis/submit-an-application-to-change-the-land-register/",
-    "tokens": "submit application change land register service api use this help lodge applications with hmlr update create new lease transfer part version status dropdown v1 0 latest v0 3 2 1 button type class govuk margin data module onclick setversion view select related apis send document information attach message notifications download more subsection"
+    "tokens": "submit application change land register apis use this service help lodge applications with hmlr update create new lease transfer part version status dropdown v1 0 latest v0 3 2 1 button type class govuk margin data module onclick setversion view select related send document api information attach message notifications download more subsection"
   },
   {
     "title": "Submit an application API",
@@ -248,7 +248,7 @@
   },
   {
     "title": "Submit an application API",
-    "description": "Use this service to provide data to HMLR for updating the register.",
+    "description": "Use this service to provide data to HMLR for updating the register",
     "section": "APIs",
     "url": "/apis/submit-an-application/",
     "tokens": "select version content"
@@ -258,7 +258,7 @@
     "description": "Use this service to get information about a specific application.",
     "section": "Application Information API v1.0",
     "url": "/apis/application-information/1.0/technical-guide/",
-    "tokens": "how use application information api used get detailed about specific using request id returned by submit status can currently one following validating hm land registry still processing yet been added day list validation failed due errors during found are included section response accepted awaiting priority passed closed will moved protected state when reopens onto system error hmlr should retried support team contacted cancelled futher available correspondence documents completed further this always return http 200 valid regardless rules there implementing example requests responses v1 applications copy code data 3e4f6da2 ada7 4081 957c b23542466715 warnings type oc018 detail document 00001 pointer null reference ab123fc timestamp 2024 09 25t18 18 49 478z must upload x record 2025 05t08 20 03 996z created 04 050z download 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 name cancellation letter 15 01 259z 281z ltr 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 319z rcs efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a registration completion sheet 343z reg 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 updated register"
+    "tokens": "how use application information api used get detailed about specific using request id returned by submit status can currently one following validating hmlr still processing yet been added day list validation failed due errors during found are included section response accepted awaiting priority passed closed will moved protected state when reopens onto system error should retried support team contacted cancelled futher available correspondence documents completed further this always return http 200 valid regardless rules there implementing example requests responses v1 applications copy code data 3e4f6da2 ada7 4081 957c b23542466715 warnings type oc018 detail document 00001 pointer null reference ab123fc timestamp 2024 09 25t18 18 49 478z must upload x record 2025 05t08 20 03 996z created 04 050z download 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 name cancellation letter 15 01 259z 281z ltr 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 319z rcs efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a registration completion sheet 343z reg 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038 updated register"
   },
   {
     "title": "Application Information API test stubs",
@@ -268,7 +268,7 @@
   },
   {
     "title": "Attach a document API",
-    "description": "Use this service to attach a document to a submitted order",
+    "description": "Use this service to attach a document to a submitted application",
     "section": "Attach a document API",
     "url": "/apis/attach-a-document/1.0/",
     "tokens": "overview attach document api allows users additional documents existing application notifications can then used understand been successfully attached want message they will need use view technical guide specification web version opens new tab how works this diagram demonstrates support when user submits hmlr system initially respond with empty 202 accepted response receive notification stating whether attachment successful test created environment ve also provided example code demonstrate what should expect developing your own services submit stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
@@ -301,7 +301,7 @@
   },
   {
     "title": "Download a document API",
-    "description": "Use this service to download documents created by HM Land Registry",
+    "description": "Use this service to download documents created by HMLR",
     "section": "Download a Document",
     "url": "/apis/download-a-document/1.0/",
     "tokens": "overview download document api provides way documents created by hmlr this one endpoint get v1 id binary content may obtain from any following completion notifications cancellation requisition correspondence array application information response view technical guide specification govuk heading m web version opens new tab how works diagram demonstrates user either can use that their request test environment ve also provided example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
@@ -315,7 +315,7 @@
   },
   {
     "title": "Notifications API technical guide",
-    "description": "Use this service to get updates about multiple applications submitted by the same business unit.",
+    "description": "Use this service to get updates about multiple applications submitted by the same business unit",
     "section": "Notifications API v1.0",
     "url": "/apis/notifications/1.0/technical-guide/",
     "tokens": "how use notifications api recieve get request fetch all takes following url query parameters which are optional created after only retrieve with timestamp this date before status specific either new acknowledged occured event notification type subject additional provider filter that match provided limit maximum number return single response related applications submitted by business unit id will returned delivery least once meaning time may result one more e duplicate same events have datetime field can used locate ignore duplicates when receiving continue endpoint until they acknowledge been processed your system should send list ids post change those validation rules there implementing example requests responses examples payloads produced during application submission view submit v1 2025 01 01t00 00 http 1 copy code data 3fa85f64 5717 4562 b3fc 2c963f66afa6 03 06t14 32 55 295z payload schema https com string additionalprop1 additionalprop2 additionalprop3"

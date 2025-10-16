@@ -1,5 +1,5 @@
 ---
-title: Submit an Application to change the Land Register service API
+title: Submit an Application to change the Land Register APIs
 layout: page.njk
 versioned: true
 
@@ -27,7 +27,7 @@ options:
         - /assets/side-by-side.css
 ---
 
-<h1 class="govuk-heading-xl">Submit an Application to change the Land Register service API</h1>
+<h1 class="govuk-heading-xl">Submit an Application to change the Land Register APIs</h1>
 <p class="govuk-body-l">Use this service to help lodge applications with HMLR to update the register or create a new lease or transfer of part.</p>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
