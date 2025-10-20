@@ -201,7 +201,7 @@
     "tokens": "select version content"
   },
   {
-    "title": "Submit an Application to change the Land Register APIs",
+    "title": "Submit an application to change the Land Register APIs",
     "section": "apis",
     "url": "/apis/submit-an-application-to-change-the-land-register/",
     "tokens": "submit application change land register apis use this service help lodge applications with hmlr update create new lease transfer part version status dropdown v1 0 latest v0 3 2 1 button type class govuk margin data module onclick setversion view select related send document api information attach message notifications download more subsection"
@@ -341,7 +341,7 @@
     "tokens": "overview notifications api provides way fetching updates about multiple applications submitted by same business unit currently this service only supports pull interaction model where must requested periodically however more information push will shared future two endpoints get v0 all that match provided filters post acknowledge notify hmlr have been received can used after receiving notification indicating application changed which available visit section submit page view technical guide specification web version opens new tab how works diagram demonstrates support users user may send requests receive time using system respond providing relevant request also acknolwedge test created environment ve example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers exact date confirmed general testing guidance our"
   },
   {
-    "title": "Submit an Application to change the Land Register APIs",
+    "title": "Submit an application to change the Land Register APIs",
     "description": "Use this service to help lodge applications with HMLR to update the register or create a new lease or transfer of part.",
     "section": "apis",
     "url": "/apis/submit-an-application-to-change-the-land-register/0.3/",

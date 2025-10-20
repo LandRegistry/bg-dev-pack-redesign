@@ -1,5 +1,5 @@
 ---
-title: Submit an Application to change the Land Register APIs
+title: Submit an application to change the Land Register APIs
 layout: page.njk
 versioned: true
 
