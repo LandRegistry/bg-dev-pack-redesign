@@ -155,7 +155,7 @@ sidenav:
                   </span>
                 </span>
                 <span class="js-step-title">
-                Service or version is made available in sandbox test environment 
+                Service or version is live 
                 </span>
               </h2>
             </div>
@@ -179,7 +179,7 @@ sidenav:
                   </span>
                 </span>
                 <span class="js-step-title">
-                Service or version is made available in sandbox test environment 
+                Service or version is deprecated 
                 </span>
               </h2>
             </div>
