@@ -223,6 +223,14 @@ sidenav:
 <br clear="all">
 <div class="govuk-grid-row">
   <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">For any questions about our versioning policy, please contact the <a class="govuk-link" href="mailto:channelpartners@landregistry.gov.uk">integration support team</a>. </p>
+
+<br>
+<br>
+<h3 class="govuk-heading-s govuk-!-margin-left-3">System security</h3>
+<p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">All users of the network are responsible for maintaining up-to-date system patches, security updates, anti-virus software and other countermeasures to protect their systems.</p>
+<p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">Any software that could interact with HM Land Registry systems should be thoroughly tested and you must have your own testing procedures and policies in place and apply them rigorously.</p>
+<p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">Some free/beta programs can contain bugs or viruses, which could pose a threat to HM Land Registry systems. Applications and operating system software should only be implemented in operational systems after extensive and successful testing.</p>
+<p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">Testing should be done in a secure environment with non-sensitive data. Access to system files and program source code should be controlled.</p>
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
   <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">We sometimes use technical terms to
     describe the work we do at HMLR. For a list of commonly used terms and their definitions, visit <a
