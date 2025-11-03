@@ -2,7 +2,7 @@
 layout: guidance
 
 title: Download a document API technical guide
-description: Use this service to download documents provided by HM Land Registry.
+description: Use this service to download documents provided by HMLR
 
 eleventyNavigation:
   key: Download a Document v1.0 Technical guide

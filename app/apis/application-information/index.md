@@ -1,8 +1,8 @@
 ---
 layout: api-overview.njk
 
-title: Application Information API
-description: Use this service to get information about a specific application.
+title: Application information API
+description: Use this service to get information about a specific application
 
 eleventyNavigation:
   key: Application Information API

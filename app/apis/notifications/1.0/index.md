@@ -2,7 +2,7 @@
 layout: api-overview.njk
 
 title: Notifications API
-description: Use this service to get updates about multiple applications submitted by the same business unit.
+description: Use this service to get updates about multiple applications submitted by the same business unit
 
 eleventyNavigation:
   key: Notifications API v1.0

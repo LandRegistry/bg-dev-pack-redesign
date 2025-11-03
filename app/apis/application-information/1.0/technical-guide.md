@@ -57,7 +57,7 @@ The Application information API is used to get detailed information about a spec
 
 The status of an application can currently be one of the following:
 
-- `VALIDATING` - HM Land Registry is still processing the application, and it has not yet been added to the day list
+- `VALIDATING` - HMLR is still processing the application, and it has not yet been added to the day list
 - `VALIDATION_FAILED` - The application has not been added to the day list due to errors during validation. The errors found are included in the errors section of the response
 - `ACCEPTED_AWAITING_PRIORITY` - The application has passed validation but has not yet been added to the day list as it is currently closed. The application will be added to the day list and moved to an `ACCEPTED_PRIORITY_PROTECTED` state when the day list reopens
 - `ACCEPTED_PRIORITY_PROTECTED` - The application has been accepted onto the day list, and has priority

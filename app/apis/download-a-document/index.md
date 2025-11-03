@@ -1,8 +1,8 @@
 ---
 layout: api-overview.njk
 
-title: Download a document
-description: Use this service to download documents.
+title: Download a document API
+description: Use this service to download documents created by HMLR
 
 eleventyNavigation:
     key: Download a Document API
