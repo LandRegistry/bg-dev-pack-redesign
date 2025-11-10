@@ -58,9 +58,9 @@ To attach an uploaded document to an existing application, make an HTTP POST req
 
 The body of the request contains:  
 
-the id of the document attached to the application. The document id is retrieved when uploading the document to be attached 
+- the id of the document attached to the application. The document id is retrieved when uploading the document to be attached 
 
-the certification statement type. This must be one of `CERTIFIED`, `CERTIFIED_BY_ANOTHER`, or `NOT_CERTIFIED` 
+- the certification statement type. This must be one of `CERTIFIED`, `CERTIFIED_BY_ANOTHER`, or `NOT_CERTIFIED` 
 
 Once the request to attach a document has been validated, an empty ‘202 Accepted’ response will be returned. If validation fails, a ‘400’ response will be returned containing details of the error. 
 

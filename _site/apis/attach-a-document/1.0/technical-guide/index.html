@@ -180,8 +180,14 @@ data-module="govuk-service-navigation"
 <p class="govuk-body">To attach an uploaded document to an existing application, make an HTTP POST request to the attach document endpoint.</p>
 <h3 id="attach-the-document" tabindex="-1" class="govuk-heading-m">Attach the document</h3>
 <p class="govuk-body">The body of the request contains:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>
 <p class="govuk-body">the id of the document attached to the application. The document id is retrieved when uploading the document to be attached</p>
+</li>
+<li>
 <p class="govuk-body">the certification statement type. This must be one of <code class="app-code app-code--inline">CERTIFIED</code>, <code class="app-code app-code--inline">CERTIFIED_BY_ANOTHER</code>, or <code class="app-code app-code--inline">NOT_CERTIFIED</code></p>
+</li>
+</ul>
 <p class="govuk-body">Once the request to attach a document has been validated, an empty ‘202 Accepted’ response will be returned. If validation fails, a ‘400’ response will be returned containing details of the error.</p>
 <p class="govuk-body">After the request has been accepted, document attachment begins. Once this completes (successfully or otherwise) a notification will be sent.</p>
 <h3 id="notifications" tabindex="-1" class="govuk-heading-m">Notifications</h3>
