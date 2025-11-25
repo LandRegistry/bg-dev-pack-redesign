@@ -74,6 +74,124 @@ Duplicate events will have the same `event_datetime` field and `notification_typ
 
 Once a notification has been processed by your system, the notification should be acknowledged. To do this, send a list of `notification_ids` to the Acknowledge notifications API as a POST request. This will change the status of those notifications to `ACKNOWLEDGED`.
 
+<br>
+
+### Notification types {.govuk-heading-s}
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Order validation and submission</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Notication type</th>
+      <th scope="col" class="govuk-table__header">Scenario</th>
+      <th scope="col" class="govuk-table__header">Response</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" style="width:20%">Application failed validation</td>
+      <td class="govuk-table__cell">An application is submitted, but mandatory fields are missing or incorrectly formatted. The system validates the input and rejects the application, triggering this notification
+      </td>
+      <td class="govuk-table__cell govuk-!-width-one-third" style="white-space:pre-wrap; word-break:break-all"><code class="app-code app-code--inline">applications.creation.application.failed-validation</code>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Application accepted awaiting priority</td>
+      <td class="govuk-table__cell">An application submitted outside business hours passes initial validation, is accepted, and awaits addition to the Daylist
+      </td>
+      <td class="govuk-table__cell govuk-!-width-one-third" style="white-space:pre-wrap; word-break:break-all"><code class="app-code app-code--inline">applications.creation.application.accepted-awaiting-priority</code>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">System error</td>
+      <td class="govuk-table__cell">There is an attempt to create an application, but a system-level error occurs. The application cannot be processed, and this notification is sent to alert the integrator
+      </td>
+      <td class="govuk-table__cell govuk-!-width-one-third" style="white-space:pre-wrap; word-break:break-all"><code class="app-code app-code--inline">applications.creation.application.error</code>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Application accepted priority protected</td>
+      <td class="govuk-table__cell">An application submitted passes initial validation, is accepted, and added to the Daylist
+      </td>
+      <td class="govuk-table__cell govuk-!-width-one-third" style="white-space:pre-wrap; word-break:break-all"><code class="app-code app-code--inline">applications.processing.application.accepted-priority-protected</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Order proccessing and completion</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Notication type</th>
+      <th scope="col" class="govuk-table__header">Scenario</th>
+      <th scope="col" class="govuk-table__header">Response</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Application requisitioned</td>
+      <td class="govuk-table__cell">A caseworker raises a requisition on an application requesting a response or document</td>
+      <td class="govuk-table__cell govuk-!-width-one-third" style="white-space:pre-wrap; word-break:break-all"><code class="app-code app-code--inline">applications.processing.correspondence-despatched</code>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Application completed</td>
+      <td class="govuk-table__cell">The application has successfully passed all processing steps, including validation and approval
+      </td>
+      <td class="govuk-table__cell govuk-!-width-one-third" style="white-space:pre-wrap; word-break:break-all"><code class="app-code app-code--inline">applications.processing.application.completed</code>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Application cancelled</td>
+      <td class="govuk-table__cell">The application was in processing but was cancelled
+      </td>
+      <td class="govuk-table__cell govuk-!-width-one-third" style="white-space:pre-wrap; word-break:break-all"><code class="app-code app-code--inline">applications.processing.application.cancelled</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Response and document upload for applications</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Notication type</th>
+      <th scope="col" class="govuk-table__header">Scenario</th>
+      <th scope="col" class="govuk-table__header">Response</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Document successfully attached</td>
+      <td class="govuk-table__cell">A user uploads a required document to an application during processing. The system successfully attaches the file and sends this notification
+      </td>
+      <td class="govuk-table__cell govuk-!-width-one-third" style="white-space:pre-wrap; word-break:break-all"><code class="app-code app-code--inline">applications.processing.attachment-success</code>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Document attached failed validation</td>
+      <td class="govuk-table__cell">A user uploads an attachment, but the file fails validation due to issues such as incorrect format, corrupted file, or missing mandatory details. The system rejects the attachment and triggers this notification
+      </td>
+      <td class="govuk-table__cell govuk-!-width-one-third" style="white-space:pre-wrap; word-break:break-all"><code class="app-code app-code--inline">applications.processing.attachment-failed</code>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Message successfully attached</td>
+      <td class="govuk-table__cell">A message is successfully added to the application during processing and the system confirms the attachment
+      </td>
+      <td class="govuk-table__cell govuk-!-width-one-third" style="white-space:pre-wrap; word-break:break-all"><code class="app-code app-code--inline">applications.processing.message-success</code>
+      </td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Message failed validation</td>
+      <td class="govuk-table__cell">A message intended for the application fails validation because it violates formatting rules. The system rejects the message and sends this notification
+      </td>
+      <td class="govuk-table__cell govuk-!-width-one-third" style="white-space:pre-wrap; word-break:break-all"><code class="app-code app-code--inline">applications.processing.message-failed</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
 </section>
 <section>
 
