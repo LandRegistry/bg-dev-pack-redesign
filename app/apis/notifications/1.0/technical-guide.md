@@ -81,7 +81,7 @@ Once a notification has been processed by your system, the notification should b
   <caption class="govuk-table__caption govuk-table__caption--s">Order validation and submission</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Notication type</th>
+      <th scope="col" class="govuk-table__header">Notification type</th>
       <th scope="col" class="govuk-table__header">Scenario</th>
       <th scope="col" class="govuk-table__header">Response</th>
     </tr>
@@ -122,7 +122,7 @@ Once a notification has been processed by your system, the notification should b
   <caption class="govuk-table__caption govuk-table__caption--s">Order proccessing and completion</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Notication type</th>
+      <th scope="col" class="govuk-table__header">Notification type</th>
       <th scope="col" class="govuk-table__header">Scenario</th>
       <th scope="col" class="govuk-table__header">Response</th>
     </tr>
@@ -155,7 +155,7 @@ Once a notification has been processed by your system, the notification should b
   <caption class="govuk-table__caption govuk-table__caption--s">Response and document upload for applications</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Notication type</th>
+      <th scope="col" class="govuk-table__header">Notification type</th>
       <th scope="col" class="govuk-table__header">Scenario</th>
       <th scope="col" class="govuk-table__header">Response</th>
     </tr>
