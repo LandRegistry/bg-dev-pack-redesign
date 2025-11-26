@@ -119,7 +119,7 @@ Once a notification has been processed by your system, the notification should b
 </table>
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--s">Order proccessing and completion</caption>
+  <caption class="govuk-table__caption govuk-table__caption--s">Order essing and completion</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Notification type</th>
