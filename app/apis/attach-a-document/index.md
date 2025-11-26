@@ -5,7 +5,7 @@ title: Attach a document API
 description: Use this service to attach a document to a submitted order
 
 eleventyNavigation:
-    key: Attach a document
+    key: Attach a document API
     parent: APIs
 
 notlive: false

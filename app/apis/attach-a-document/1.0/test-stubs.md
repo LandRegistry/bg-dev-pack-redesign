@@ -4,7 +4,7 @@ layout: guidance.njk
 title: Attach a document API test stubs
 
 eleventyNavigation:
-  key: Attach a document API v1.0 Test stubs
+  key: Attach a document API v1.0 test stubs
   parent: Attach a document API v1.0
 
 notlive: false

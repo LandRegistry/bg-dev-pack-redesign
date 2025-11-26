@@ -5,8 +5,8 @@ title: Download a document API technical guide
 description: Use this service to download documents provided by HMLR
 
 eleventyNavigation:
-  key: Download a Document v1.0 Technical guide
-  parent: Download a Document v1.0
+  key: Download a document v1.0 technical guide
+  parent: Download a document v1.0
 
 notlive: false
 

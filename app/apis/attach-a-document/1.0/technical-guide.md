@@ -2,10 +2,10 @@
 layout: guidance
 
 title: Attach a document API technical guide
-description: Use this service to attach additional documents to an existing application. 
+description: Use this service to attach additional documents to an existing application 
 
 eleventyNavigation:
-  key: Attach a document API v1.0 Technical guide
+  key: Attach a document API v1.0 technical guide
   parent: Attach a document API v1.0
 
 notlive: false

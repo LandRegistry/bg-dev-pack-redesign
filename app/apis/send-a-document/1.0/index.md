@@ -5,8 +5,8 @@ title: Send a document API
 description: Use this service to attach documents to your application
 
 eleventyNavigation:
-  key: Send a Document API v1.0
-  parent: Send a Document API
+  key: Send a document API v1.0
+  parent: Send a document API
 
 notlive: false
 

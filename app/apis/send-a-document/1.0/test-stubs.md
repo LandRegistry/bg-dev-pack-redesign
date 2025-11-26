@@ -4,8 +4,8 @@ layout: guidance.njk
 title: Send a document API test stubs
 
 eleventyNavigation:
-  key: Send a Document API v1.0 Test stubs
-  parent: Send a Document API v1.0
+  key: Send a document API v1.0 test stubs
+  parent: Send a document API v1.0
 
 notlive: false
 

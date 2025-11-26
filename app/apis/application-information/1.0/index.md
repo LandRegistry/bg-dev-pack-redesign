@@ -5,8 +5,8 @@ title: Application information API
 description: Use this service to get information about a specific application
 
 eleventyNavigation:
-  key: Application Information API v1.0
-  parent: Application Information API
+  key: Application information API v1.0
+  parent: Application information API
 
 notlive: false 
 
