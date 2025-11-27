@@ -219,9 +219,10 @@ shasum.digest("base64");
 ```json
 {
   "data": {
-    "document_type": "tr1",
+    "document_type": "TR1",
     "file_length": 6362,
-    "file_sha256": "xhepsrlehdpshynpjwwarzerivlcpvn8f8pycs7crqa="
+    "file_sha256": "xhepsrlehdpshynpjwwarzerivlcpvn8f8pycs7crqa=",
+    "additional_provider_filter": "123"
   }
 }
 ```
