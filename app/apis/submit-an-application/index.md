@@ -5,7 +5,7 @@ title: Submit an application API
 description: Use this service to provide data to HMLR for updating the register
 
 eleventyNavigation:
-    key: Submit an Application API
+    key: Submit an application API
     parent: APIs
 
 notlive: false

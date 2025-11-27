@@ -2,11 +2,11 @@
 layout: api-overview.njk
 
 title: Send a document API
-description: Use this service to attach documents to your application.
+description: Use this service to attach documents to your application
 
 eleventyNavigation:
-  key: Send a Document API v0.3
-  parent: Send a Document API
+  key: Send a document API v0.3
+  parent: Send a document API
 
 notlive: true
 

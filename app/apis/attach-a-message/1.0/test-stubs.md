@@ -4,7 +4,7 @@ layout: guidance.njk
 title: Attach a message API test stubs
 
 eleventyNavigation:
-  key: Attach a message API v1.0 Test stubs
+  key: Attach a message API v1.0 test stubs
   parent: Attach a message API v1.0
 
 notlive: false

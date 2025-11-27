@@ -4,8 +4,8 @@ layout: guidance.njk
 title: Application Information API test stubs
 
 eleventyNavigation:
-  key: Application Information v1.0 Test stubs
-  parent: Application Information v1.0
+  key: Application information v1.0 test stubs
+  parent: Application information v1.0
 
 notlive: false
 

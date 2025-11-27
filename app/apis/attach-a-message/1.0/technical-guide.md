@@ -2,10 +2,10 @@
 layout: guidance
 
 title: Attach a message API technical guide
-description: Use this service to attach text messages to an existing application.
+description: Use this service to attach text messages to an existing application
 
 eleventyNavigation:
-  key: Attach a message API v1.0 Technical guide
+  key: Attach a message API v1.0 technical guide
   parent: Attach a message API v1.0
 
 notlive: false

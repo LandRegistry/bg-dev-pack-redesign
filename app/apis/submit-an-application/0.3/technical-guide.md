@@ -2,11 +2,11 @@
 layout: guidance.njk
 
 title: Submit an application API Technical guide
-description: Use this service to provide data to HMLR for updating the register.
+description: Use this service to provide data to HMLR for updating the register
 
 eleventyNavigation:
-    key: Submit an Application API v0.3 Technical guide
-    parent: Submit an Application API
+    key: Submit an application API v0.3 technical guide
+    parent: Submit an application API
 
 notlive: true
 

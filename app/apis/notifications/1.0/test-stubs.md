@@ -4,7 +4,7 @@ layout: guidance.njk
 title: Notifications API test stubs
 
 eleventyNavigation:
-  key: Notifications API v1.0 Test stubs
+  key: Notifications API v1.0 test stubs
   parent: Notifications API v1.0
 
 notlive: false

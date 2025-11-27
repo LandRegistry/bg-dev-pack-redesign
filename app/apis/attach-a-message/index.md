@@ -1,11 +1,11 @@
 ---
 layout: api-overview.njk
 
-title: Attach a document API
-description: Use this service to attach a document to a submitted order
+title: Attach a message API
+description: Use this service to attach text messages to an existing application
 
 eleventyNavigation:
-    key: Attach a document
+    key: Attach a message API
     parent: APIs
 
 notlive: false

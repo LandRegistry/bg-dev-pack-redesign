@@ -1,12 +1,12 @@
 ---
 layout: guidance.njk
 
-title: Send a document API Technical guide
-description: Use this service to attach documents to your application.
+title: Send a document API technical guide
+description: Use this service to attach documents to your application
 
 eleventyNavigation:
-  key: Send a Document API v1.0 Technical guide
-  parent: Send a Document API v1.0
+  key: Send a document API v1.0 technical guide
+  parent: Send a document API v1.0
 
 notlive: false
 

@@ -5,7 +5,7 @@ title: Download a document API
 description: Use this service to download documents created by HMLR
 
 eleventyNavigation:
-    key: Download a Document API
+    key: Download a document API
     parent: APIs
     hide: true
 

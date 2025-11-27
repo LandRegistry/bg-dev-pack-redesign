@@ -5,7 +5,7 @@ title: Notifications API technical guide
 description: Use this service to get updates about multiple applications submitted by the same business unit
 
 eleventyNavigation:
-  key: Notifications API v1.0 Technical guide
+  key: Notifications API v1.0 technical guide
   parent: Notifications API v1.0
 
 notlive: false
@@ -81,7 +81,7 @@ Once a notification has been processed by your system, the notification should b
   <caption class="govuk-table__caption govuk-table__caption--s">Order validation and submission</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Notication type</th>
+      <th scope="col" class="govuk-table__header">Notification type</th>
       <th scope="col" class="govuk-table__header">Scenario</th>
       <th scope="col" class="govuk-table__header">Response</th>
     </tr>
@@ -119,10 +119,10 @@ Once a notification has been processed by your system, the notification should b
 </table>
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--s">Order proccessing and completion</caption>
+  <caption class="govuk-table__caption govuk-table__caption--s">Order essing and completion</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Notication type</th>
+      <th scope="col" class="govuk-table__header">Notification type</th>
       <th scope="col" class="govuk-table__header">Scenario</th>
       <th scope="col" class="govuk-table__header">Response</th>
     </tr>
@@ -155,7 +155,7 @@ Once a notification has been processed by your system, the notification should b
   <caption class="govuk-table__caption govuk-table__caption--s">Response and document upload for applications</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Notication type</th>
+      <th scope="col" class="govuk-table__header">Notification type</th>
       <th scope="col" class="govuk-table__header">Scenario</th>
       <th scope="col" class="govuk-table__header">Response</th>
     </tr>

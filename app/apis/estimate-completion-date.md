@@ -1,5 +1,5 @@
 ---
-title: Estimated Completion Date
+title: Estimated completion date
 layout: devpack-old.njk
 sectionKey: Estimated Completion Date
 breadcrumb: false

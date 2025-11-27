@@ -5,8 +5,8 @@ layout: guidance.njk
 title: Download a document API test stubs
 
 eleventyNavigation:
-    key: Download a Document API v1.0 Test stubs
-    parent: Download a Document API API v1.0
+    key: Download a document API v1.0 Test stubs
+    parent: Download a document API API v1.0
 
 notlive: false
 
