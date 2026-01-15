@@ -3219,7 +3219,15 @@ For the following lease transactions, there must be at least one tenant and one 
 
 
 <h3 class="govuk-heading-s">Transfer amount validation</h3>
-<p class="govuk-body">Value must be provided, either as an exact value or a value band (where transfer is not for monetary value).</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li><code class="app-code app-code--inline">T</code> - Transfer for Value, only the <code class="app-code app-code--inline">value</code> field and not the <code class="app-code app-code--inline">full_value_of_property</code> field to be provided</li>
+  <li><code class="app-code app-code--inline">value</code> field must have a value</li>
+  <li><code class="app-code app-code--inline">full_value_of_property</code> field must be empty</li>
+  <li><code class="app-code app-code--inline">value_band</code> field must be empty</li>
+  <li><code class="app-code app-code--inline">value_bands</code> field must be empty</li>
+  <li><code class="app-code app-code--inline">T</code> - Transfer for Value does not require value bands</li>
+</ul>
+<p class="govuk-body">For all Transfers which are not for a monetary value, please see <a href="#value_bands">Value bands</a> referred to below.</p>
 
 <h3 class="govuk-heading-s">TR5 Validation</h3>
 <p class="govuk-body">If you are including a TR5 document, then any transaction that a TR5 is attached to must have at least two title numbers. </p>
@@ -3325,7 +3333,7 @@ For the following lease transactions, there must be at least one tenant and one 
 </table>
 
 
-<h3 class="govuk-heading-s">Value bands</h3>
+<h3 class="govuk-heading-s" id="value_bands">Value bands</h3>
 <p class="govuk-body">Value bands specify the approximate value of a property, or the equity being transferred,
   where the exact value is not known. The value band fields can be found on the <code
     class="app-code app-code--inline">Transfer</code> and <code
@@ -3360,9 +3368,9 @@ For the following lease transactions, there must be at least one tenant and one 
 </ul>
 <p class="govuk-body">There are several rules regarding value band usage:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li>Both <code class="app-code app-code--inline">value</code> (i.e. value of equity being
-    transferred) and <code class="app-code app-code--inline">full_value_of_property</code> must be either value bands, or exact values</li>
-  <li>The <code class="app-code app-code--inline">full_value_of_property_band</code> must be greater than or equal to the <code class="app-code app-code--inline">value_band</code> (i.e. the value of equity being transferred)</li>
+  <li><code class="app-code app-code--inline">value</code> (i.e. value of equity being transferred) must be exact values</li>
+  <li><code class="app-code app-code--inline">full_value_of_property</code> can be either exact values or value bands</li>
+  <li>The <code class="app-code app-code--inline">full_value_of_property_band</code> must be greater than or equal to the lower <code class="app-code app-code--inline">value_band</code> (i.e. the value of equity being transferred)but not greater than the upper band</li>
 </ul>
 <div class="govuk-!-padding-bottom-6"></div>
 <table class="govuk-table">
