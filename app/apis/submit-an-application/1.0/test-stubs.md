@@ -62,7 +62,7 @@ Base URL: `https://bgtest.landregistry.gov.uk/bg2test/api`
 
 Method: `POST`
 
-Endpoint: `/v0/applications`
+Endpoint: `/v1/applications`
 
 Headers:
 
@@ -86,21 +86,17 @@ Note: The idempotency key should be unique for each request (this is not enforce
     "documents": {
       "Deed": {
         "type": "MRTG_DEED",
-        "document_id": "0d7bd3a5-1aec-4862-9fc9-f796dfc11d35",
+        "document_id": "a40d6fe0-bd45-4c49-b72a-0d80cf43db83",
         "document_metadata": {
           "certification_statement_type": "CERTIFIED",
           "document_filename": "Deed.pdf"
         }
       }
     },
-    "application_lodger": {
-      "email": "valid.email@landregistry.gov.uk",
-      "type": "CONVEYANCER"
-    },
     "parties": {
       "Borrower1": {
-        "address_for_service_option": "NOT_REQUIRED",
         "representation_type": "LODGING_CONVEYANCER",
+        "address_for_service_option": "NOT_REQUIRED",
         "details": {
           "type": "PRIVATE_INDIVIDUAL",
           "forenames": "Tony",
@@ -108,8 +104,8 @@ Note: The idempotency key should be unique for each request (this is not enforce
         }
       },
       "Borrower2": {
-        "address_for_service_option": "NOT_REQUIRED",
         "representation_type": "LODGING_CONVEYANCER",
+        "address_for_service_option": "NOT_REQUIRED",
         "details": {
           "type": "PRIVATE_INDIVIDUAL",
           "forenames": "Toni",
@@ -117,8 +113,8 @@ Note: The idempotency key should be unique for each request (this is not enforce
         }
       },
       "TheBank": {
-        "address_for_service_option": "NOT_REQUIRED",
         "representation_type": "LODGING_CONVEYANCER",
+        "address_for_service_option": "NOT_REQUIRED",
         "details": {
           "type": "UK_COMPANY",
           "company_number": "12345",
@@ -126,30 +122,38 @@ Note: The idempotency key should be unique for each request (this is not enforce
         }
       }
     },
+    "application_lodger": {
+      "email": "valid.email@landregistry.gov.uk",
+      "address_for_service_option": "NOT_REQUIRED",
+      "type": "CONVEYANCER"
+    },
     "titles": {
       "MS305610": {
         "disclosable_overriding_interests": "false",
         "title_number": "MS305610",
+        "title_type": "REGISTER_TITLE",
         "scope_details": {
-          "scope": "WHOLE",
-          "part_description": null
-        },
-        "title_type": "REGISTER_TITLE"
+          "scope": "WHOLE"
+        }
       }
     },
     "transactions": {
       "Charge": {
+        "priority": 1,
+        "title_references": [
+          "MS305610"
+        ],
+        "documents": [
+          "Deed"
+        ],
+        "type": "C",
+        "fee_in_pence": 3000,
         "details": {
           "type": "CHARGE",
           "date": "2024-01-01",
           "mdref": "MD006A",
-          "value": 120000
+          "value": 0
         },
-        "documents": [
-          "Deed"
-        ],
-        "priority": 1,
-        "fee_in_pence": 3000,
         "party_roles": [
           {
             "party_reference": "Borrower1",
@@ -163,10 +167,6 @@ Note: The idempotency key should be unique for each request (this is not enforce
             "party_reference": "TheBank",
             "role": "LENDER"
           }
-        ],
-        "type": "C",
-        "title_references": [
-          "MS305610"
         ]
       }
     },
@@ -199,7 +199,7 @@ Status: `202`
 
 Method: `POST`
 
-Endpoint: `/v0/applications`
+Endpoint: `/v1/applications`
 
 Headers:
 
@@ -221,14 +221,8 @@ Note: The idempotency key should be unique for each request (this is not enforce
         "details": {
           "type": "UK",
           "uprn": 100040203976,
-          "organisation_name": null,
-          "department_name": null,
-          "sub_building_description": null,
           "building_description": "Apartment 11",
           "street": "113 Newton Street",
-          "dependent_street": null,
-          "dependent_locality": null,
-          "double_dependent_locality": null,
           "post_town": "MANCHESTER",
           "postcode": "M1 1AE",
           "full_address": "Apartment 11 ,113 Newton Street, MANCHESTER, M1 1AE",
@@ -253,8 +247,8 @@ Note: The idempotency key should be unique for each request (this is not enforce
           "forenames": "John",
           "surname": "Smith"
         },
-        "address_for_service_option": "PROVIDED_ADDRESS",
         "representation_type": "LODGING_CONVEYANCER",
+        "address_for_service_option": "PROVIDED_ADDRESS",
         "addresses": "transferee_address"
       },
       "Transferor1": {
@@ -268,8 +262,8 @@ Note: The idempotency key should be unique for each request (this is not enforce
           "registered_address": "13 Coral Close, Tuffley, Gloucester, GL4 0RG",
           "conveyancer_reference": "abc-conveyancers-ref"
         },
-        "address_for_service_option": "NOT_REQUIRED",
-        "representation_type": "OTHER_CONVEYANCER"
+        "representation_type": "OTHER_CONVEYANCER",
+        "address_for_service_option": "NOT_REQUIRED"
       },
       "Transferor2": {
         "details": {
@@ -282,8 +276,8 @@ Note: The idempotency key should be unique for each request (this is not enforce
           "registered_address": "13 Coral Close, Tuffley, Gloucester, GL4 0RG",
           "conveyancer_reference": "abc-conveyancers-ref"
         },
-        "address_for_service_option": "NOT_REQUIRED",
-        "representation_type": "OTHER_CONVEYANCER"
+        "representation_type": "OTHER_CONVEYANCER",
+        "address_for_service_option": "NOT_REQUIRED"
       }
     },
     "applicants": [
@@ -297,15 +291,23 @@ Note: The idempotency key should be unique for each request (this is not enforce
       "MS312531": {
         "disclosable_overriding_interests": "false",
         "title_number": "MS312531",
+        "title_type": "REGISTER_TITLE",
         "scope_details": {
-          "scope": "WHOLE",
-          "part_description": null
-        },
-        "title_type": "REGISTER_TITLE"
+          "scope": "WHOLE"
+        }
       }
     },
     "transactions": {
       "Transfer": {
+        "priority": 1,
+        "title_references": [
+          "MS312531"
+        ],
+        "documents": [
+          "TR1"
+        ],
+        "type": "T",
+        "fee_in_pence": 3000,
         "details": {
           "type": "TRANSFER",
           "title_guarantee_code": "FULL",
@@ -313,13 +315,10 @@ Note: The idempotency key should be unique for each request (this is not enforce
           "consideration_description": "string",
           "consideration_type": "MONETARY_VALUE",
           "value": 1300000,
-          "date": "2023-12-12"
+          "full_value_of_property": 1300000,
+          "date": "2023-12-12",
+          "trust_declaration_type": "TRUST_DETAILS"
         },
-        "documents": [
-          "TR1"
-        ],
-        "priority": 1,
-        "fee_in_pence": 3000,
         "party_roles": [
           {
             "party_reference": "Transferee",
@@ -333,10 +332,6 @@ Note: The idempotency key should be unique for each request (this is not enforce
             "party_reference": "Transferor2",
             "role": "TRANSFEROR"
           }
-        ],
-        "type": "T",
-        "title_references": [
-          "MS312531"
         ]
       }
     },
