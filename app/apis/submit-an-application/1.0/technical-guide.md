@@ -3193,7 +3193,7 @@ For the following lease transactions, there must be at least one tenant and one 
 
 
 <h3 class="govuk-heading-s">Title type validation</h3>
-<p class="govuk-body">If the title type provided for a title number is <code class="app-code app-code--inline">LANDLORD_TITLE</code>, the title tenure on our records for title number must be “freehold”. </p>
+<p class="govuk-body">If the title type provided for a title number is <code class="app-code app-code--inline">LANDLORD_TITLE</code>, the title tenure on our records for title number may be “freehold” or "leasehold". </p>
  
 <p class="govuk-body">If the title type provided for a title number is <code class="app-code app-code--inline">TENANT_TITLE</code>, the title tenure on our records for the title number must be “leasehold”. </p>
  
