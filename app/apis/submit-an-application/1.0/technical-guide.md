@@ -2939,6 +2939,8 @@ For the following lease transactions, there must be at least one tenant and one 
 <li>DFL5  </li>
 <li>DL  </li>
 <li>DTL  </li>
+<li>DFL6  </li>
+<li>DPR  </li>
   </ul>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Lease transactions party role validation error types 
