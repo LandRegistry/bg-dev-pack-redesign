@@ -2097,17 +2097,23 @@ The data below details which transactions require which details type. If a trans
 
 <code>AmountDetails</code>
 
+- ADV1NT2 - Second notice of adverse possession
+- ADV1S12 - Adverse possession (under schedule 2)
 - ASTT - Assent
 - ASTC - Assent of charge
 - APT - Appointment of new trustee
 - ASSTTP - Assent (Transfer of part)
+- CADV - Cancellation of Adverse Possession
 - CPVK - Compulsory purchase (property value known)
 - CPVU - Compulsory purchase (property value unknown)
 - DFL1 - New lease - other
 - DFL3 - New lease - shared ownership
 - DFL4 - New lease - right to buy or right to acquire
 - DFL5 - Dispositionary first lease extension of a term
+- DFL6 - New lease - taking effect more than three months from the date of grant
 - DL - Discontinuous lease - non-timeshare
+- DM - De-registration of a manor
+- DPR - New lease - including profit a prendre in gross (PAPIG)
 - DTL - Discontinuous lease - timeshare
 - LCSD - Lease closure - surrender by deed (not for value or reverse premium)
 - LCSDM - Lease closure - surrender by deed
@@ -2115,7 +2121,11 @@ The data below details which transactions require which details type. If a trans
 - LCSDMWT - Lease closure - surrender by deed (together with transfer)
 - LCSOL - Lease closure - surrender by operation of law (not for value or reverse premium)
 - LCSOLM - Lease closure - surrender by operation of law
+- NAOA - Application to note appointment of an administrator
+- RADV - Removal of Adverse Possession entry (proprietorship protective entry)
 - RNT - Overriding lease granted under s.19, Landlord & Tenant (Covenants) Act 1995
+- RORBAP - Registering Official receiver in bankruptcy as a proprietor
+- RTBAP - Registering Trustee in Bankruptcy as a proprietor
 - TNVTP - Transfer (not for value or reverse premium) (Transfer of part)
 - TOC - Transfer of charge
 - TOSNVTP - Transfer of share (not for value or reverse premium) (Transfer of part)
