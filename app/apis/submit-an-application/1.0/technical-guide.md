@@ -1864,7 +1864,7 @@ For each application type (`REGISTER_UPDATE`, `DISPOSITIONARY_FIRST_LEASE`, `TRA
   <li><code class="app-code app-code--inline">ROE</code> - Release of easements</li>
   <li><code class="app-code app-code--inline">RRD</code> - Removal of a right to determine</li>
   <li><code class="app-code app-code--inline">RUN</code> - Removal of unilateral notice (UN2)</li>
-  <li><code class="app-code app-code--inline">RXL</code> - Form || restriction entered - simple request</li>
+  <li><code class="app-code app-code--inline">RXL</code> - Form LL restriction entered - simple request</li>
   <li><code class="app-code app-code--inline">RXN</code> - Restriction (non-standard wording) (RX1)</li>
   <li><code class="app-code app-code--inline">RXS</code> - Restriction (standard wording) (RX1)</li>
   <li><code class="app-code app-code--inline">SBC</code> - Sub charge</li>
