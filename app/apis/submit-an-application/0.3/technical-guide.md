@@ -642,7 +642,7 @@ The application submission API accepts several transaction and document types th
     [{ text: "DSS" }, { text: "Deed of substituted security" }],
     [{ text: "DTL" }, { text: "Discontinuous lease - timeshare" }],
     [{ text: "EX1" }, { text: "Exempt information document registration" }],
-    [{ text: "EX3" }, { text: "Remove emption of document registration" }],
+    [{ text: "EX3" }, { text: "Remove exemption of document registration" }],
     [{ text: "EXR" }, { text: "Extinguishment of rentcharge" }],
     [{ text: "HR" }, { text: "Notice of home rights (HR1)" }],
     [{ text: "JP1" }, { text: "Removal of default Form A restriction" }],
