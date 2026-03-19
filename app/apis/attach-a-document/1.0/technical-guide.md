@@ -71,9 +71,9 @@ After the request has been accepted, document attachment begins. Once this compl
 
 Once the document attachment process finishes, notifications will be available about the status of the attached document via the [Notifications API](apis/notifications). Notifications may include: 
 
-- `application.document-success` - the document has successfully been attached to the application 
+- `application.attachment-success` - the document has successfully been attached to the application 
 
-- `application.document-failed` - the document failed to attach to the application 
+- `application.attachment-failed` - the document failed to attach to the application 
 
 
 
