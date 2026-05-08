@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
-<link rel="icon" href="/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
-  <script src="/assets/application.js" type="module"></script>
+<link rel="icon" href="/bg-dev-pack-redesign/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/bg-dev-pack-redesign/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/bg-dev-pack-redesign/hmlrassets/images/apple-touch-icon.png">
+  <script src="/bg-dev-pack-redesign/assets/application.js" type="module"></script>
 
-  <link rel="stylesheet" href="/assets/application.css">
+  <link rel="stylesheet" href="/bg-dev-pack-redesign/assets/application.css">
+  <link rel="stylesheet" href="/bg-dev-pack-redesign/assets/github.css">
 
 
   <meta property="og:title" content="A guide to testing">
 
-<script src="/assets/script.js"></script>
+<script src="/bg-dev-pack-redesign/assets/script.js"></script>
     <meta property="og:image" content="/hmlrassets/images/hmlr-opengraph-image.png">
   </head>
   <body class="govuk-template__body">
@@ -26,20 +27,18 @@
   <header class="govuk-header app-header govuk-header--full-width-border" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container app-header__container">
     <div class="govuk-header__logo app-header__logo">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+      <a href="/bg-dev-pack-redesign/" class="govuk-header__link govuk-header__link--homepage">
           <span class="app-header__logotype">HM Land Registry Developer Pack</span>
       </a>
     </div>
-    <app-search class="app-search govuk-!-display-none-print" index="/search-index.json" label="Search developer pack"><a class="app-search__link" href="/sitemap">Sitemap</a></app-search>
+    <app-search class="app-search govuk-!-display-none-print" index="/bg-dev-pack-redesign/search-index.json" label="Search developer pack"><a class="app-search__link" href="/bg-dev-pack-redesign/bg-dev-pack-redesign/sitemap">Sitemap</a></app-search>
 
   </div>
 </header>
 
   
 
-  <div class="govuk-service-navigation app-service-navigation"
-data-module="govuk-service-navigation"
->
+  <div class="govuk-service-navigation app-service-navigation" data-module="govuk-service-navigation">
       <div class="govuk-width-container">
 
     <div class="govuk-service-navigation__container">
@@ -63,31 +62,31 @@ data-module="govuk-service-navigation"
   <h3 class="x-govuk-sub-navigation__theme">Before you start</h3>
   <ul class="x-govuk-sub-navigation__section">
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="/what-to-expect-from-the-developer-pack">What to expect from the developer pack</a>
+      <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/what-to-expect-from-the-developer-pack">What to expect from the developer pack</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="/how-to-access-business-gateway">How to access Business Gateway</a>
+      <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/how-to-access-business-gateway">How to access Business Gateway</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="/terms-of-use">Terms of use</a>
+      <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/terms-of-use">Terms of use</a>
     </li>
   </ul>
   <h3 class="x-govuk-sub-navigation__theme">Explore APIs</h3>
   <ul class="x-govuk-sub-navigation__section">
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="/find-a-service-api">Find an API</a>
+      <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/find-a-service-api">Find an API</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="/a-guide-to-soap-and-rest-api-types">A guide to SOAP and REST API types</a>
+      <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/a-guide-to-soap-and-rest-api-types">A guide to SOAP and REST API types</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item x-govuk-sub-navigation__section-item--current">
-      <a class="x-govuk-sub-navigation__link" href="/a-guide-to-testing" aria-current="true">A guide to testing</a>
+      <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/a-guide-to-testing" aria-current="true">A guide to testing</a>
     </li>
   </ul>
   <h3 class="x-govuk-sub-navigation__theme">Support</h3>
   <ul class="x-govuk-sub-navigation__section">
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="/contact-us">Contact us</a>
+      <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/contact-us">Contact us</a>
     </li>
   </ul>
 </nav>
@@ -97,14 +96,14 @@ data-module="govuk-service-navigation"
 <h1 class="govuk-heading-xl">A guide to testing</h1>
 <div class="govuk-grid-row">
   <h3 class="govuk-heading-m govuk-!-margin-left-3">Testing the Submit an application to change the land register APIs</h3>
-  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">HMLR provides a test environment for the <a class="govuk-body govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the land register APIs</a>. We’ve also provided example code to demonstrate what you should expect when developing your own services.</p>
+  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">HMLR provides a test environment for the <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register">Submit an application to change the land register APIs</a>. We’ve also provided example code to demonstrate what you should expect when developing your own services.</p>
   <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">You’ll find test stub examples on our API pages and example request and response code in the API technical guides.</p>
   <div class="govuk-inset-text">Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed.</div>
-  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">For additional support, <a class="govuk-body govuk-link" href="/contact-us">contact our integration support team</a>.</p>
+  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">For additional support, <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/contact-us">contact our integration support team</a>.</p>
   <h3 class="govuk-heading-m govuk-!-margin-left-3">Testing SOAP and REST APIs</h3>
   <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">Information about testing SOAP and REST APIs will be added at a later date.</p>
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">We sometimes use technical terms to describe the work we do at HMLR. For a list of commonly used terms and their definitions, visit <a class="govuk-link" href="/glossary">our glossary</a>.</p>
+  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">We sometimes use technical terms to describe the work we do at HMLR. For a list of commonly used terms and their definitions, visit <a class="govuk-link" href="/bg-dev-pack-redesign/glossary">our glossary</a>.</p>
 </div></div>
 
 </div></div>        </main>
@@ -117,7 +116,7 @@ data-module="govuk-service-navigation"
           <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
             <ul class="govuk-footer__inline-list">
                 <li class="govuk-footer__inline-list-item">
-                  <a class="govuk-footer__link" href="https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/accessibility/index.html">
+                  <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">
                     Accessibility Statement
                   </a>
                 </li>
@@ -127,9 +126,7 @@ data-module="govuk-service-navigation"
             </div>
       </div>
       <div class="govuk-footer__meta-item">
-        <span
-          class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr"
-        >&copy; Crown copyright</span>
+        <span class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr">&copy; Crown copyright</span>
       </div>
     </div>
   </div>

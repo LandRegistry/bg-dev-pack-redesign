@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
-<link rel="icon" href="/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
-  <script src="/assets/application.js" type="module"></script>
+<link rel="icon" href="/bg-dev-pack-redesign/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/bg-dev-pack-redesign/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/bg-dev-pack-redesign/hmlrassets/images/apple-touch-icon.png">
+  <script src="/bg-dev-pack-redesign/assets/application.js" type="module"></script>
 
-  <link rel="stylesheet" href="/assets/application.css">
+  <link rel="stylesheet" href="/bg-dev-pack-redesign/assets/application.css">
+  <link rel="stylesheet" href="/bg-dev-pack-redesign/assets/github.css">
 
 
   <meta property="og:title" content="Notifications API technical guide">
 <meta property="og:description" name="description" content="Use this service to get updates about multiple applications submitted by the same business unit">
-<script src="/assets/script.js"></script><script>
+<script src="/bg-dev-pack-redesign/assets/script.js"></script><script>
     function setVersion() {
         let version = document.getElementById('version').value;
         if (!window.location.href.includes(version + '/')) {
@@ -91,20 +92,18 @@
   <header class="govuk-header app-header govuk-header--full-width-border" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container app-header__container">
     <div class="govuk-header__logo app-header__logo">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+      <a href="/bg-dev-pack-redesign/" class="govuk-header__link govuk-header__link--homepage">
           <span class="app-header__logotype">HM Land Registry Developer Pack</span>
       </a>
     </div>
-    <app-search class="app-search govuk-!-display-none-print" index="/search-index.json" label="Search developer pack"><a class="app-search__link" href="/sitemap">Sitemap</a></app-search>
+    <app-search class="app-search govuk-!-display-none-print" index="/bg-dev-pack-redesign/search-index.json" label="Search developer pack"><a class="app-search__link" href="/bg-dev-pack-redesign/bg-dev-pack-redesign/sitemap">Sitemap</a></app-search>
 
   </div>
 </header>
 
   
 
-  <div class="govuk-service-navigation app-service-navigation"
-data-module="govuk-service-navigation"
->
+  <div class="govuk-service-navigation app-service-navigation" data-module="govuk-service-navigation">
       <div class="govuk-width-container">
 
     <div class="govuk-service-navigation__container">
@@ -162,21 +161,17 @@ data-module="govuk-service-navigation"
     Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="0.3" selected>v0.3 (latest)</option>
+    <option value="0.3" selected="">v0.3 (latest)</option>
   </select>
-  <button type="submit" 
-                  class="govuk-button govuk-!-margin-0" 
-                  data-module="govuk-button"
-                  onclick="setVersion();"
-                  >View</button>
+  <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button" onclick="setVersion();">View</button>
 </div>
 
 </div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 <div class="app-prose-scope"><section>
-<h2 class="govuk-heading-m" id="how-to-use-the-notifications-api" tabindex="-1" class="govuk-heading-l">How to use the Notifications API</h2>
-<h3 class="govuk-heading-s" id="recieve-notifications" tabindex="-1" class="govuk-heading-m">Recieve notifications</h3>
+<h2 class="govuk-heading-m" id="how-to-use-the-notifications-api" tabindex="-1">How to use the Notifications API</h2>
+<h3 class="govuk-heading-s" id="recieve-notifications" tabindex="-1">Recieve notifications</h3>
 <p class="govuk-body">The GET request to fetch all notifications takes the following URL query parameters (which are optional):</p>
 <ul class="govuk-list--bullet govuk-list govuk-list--bullet">
 <li><code class="app-code app-code--inline">created_after</code> - only retrieve notifications with a <code class="app-code app-code--inline">created_timestamp</code> after this date</li>
@@ -192,19 +187,19 @@ data-module="govuk-service-navigation"
 <p class="govuk-body">Only notifications related to applications submitted by the business unit ID provided will be returned.</p>
 <p class="govuk-body">Notification delivery is ‘at least once’, meaning a specific event at a specific time may result in one or more notifications (i.e. duplicate notifications for the same event).</p>
 <p class="govuk-body">Duplicate events will have the same <code class="app-code app-code--inline">event_datetime</code> field and <code class="app-code app-code--inline">notification_type</code> which can be used to locate and ignore duplicates when receiving notifications. Notifications will continue to be returned by the endpoint until they are acknowledged.</p>
-<h3 class="govuk-heading-s" id="acknowledge-notifications" tabindex="-1" class="govuk-heading-m">Acknowledge notifications</h3>
+<h3 class="govuk-heading-s" id="acknowledge-notifications" tabindex="-1">Acknowledge notifications</h3>
 <p class="govuk-body">Once a notification has been processed by your system, the notification should be acknowledged. To do this, send a list of <code class="app-code app-code--inline">notification_ids</code> to the Acknowledge notifications API as a POST request. This will change the status of those notifications to <code class="app-code app-code--inline">ACKNOWLEDGED</code>.</p>
 </section>
 <section>
-<h2 class="govuk-heading-m" id="validation-rules" tabindex="-1" class="govuk-heading-l">Validation rules</h2>
+<h2 class="govuk-heading-m" id="validation-rules" tabindex="-1">Validation rules</h2>
 <p class="govuk-body">There are no validation rules for implementing this API.</p>
 </section>
 <section>
-<h2 class="govuk-heading-m" id="example-requests-and-responses" tabindex="-1" class="govuk-heading-l">Example requests and responses</h2>
-<p class="govuk-body">For specific examples of notification payloads produced during application submission, view <a href="/apis/submit-an-application" class="govuk-link">Submit an application notifications</a>.</p>
-<h3 class="govuk-heading-s" id="get-notifications-request" tabindex="-1" class="govuk-heading-m">Get notifications request</h3>
+<h2 class="govuk-heading-m" id="example-requests-and-responses" tabindex="-1">Example requests and responses</h2>
+<p class="govuk-body">For specific examples of notification payloads produced during application submission, view <a href="/bg-dev-pack-redesign/apis/submit-an-application" class="govuk-link">Submit an application notifications</a>.</p>
+<h3 class="govuk-heading-s" id="get-notifications-request" tabindex="-1">Get notifications request</h3>
 <p class="govuk-body"><code class="app-code app-code--inline">GET /v0/notifications?created_after=2025-01-01t00:00:00 http/1.1</code></p>
-<h3 class="govuk-heading-s" id="get-notifications-response" tabindex="-1" class="govuk-heading-m">Get notifications response</h3>
+<h3 class="govuk-heading-s" id="get-notifications-response" tabindex="-1">Get notifications response</h3>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -230,7 +225,7 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s" id="acknowledge-notifications-request" tabindex="-1" class="govuk-heading-m">Acknowledge notifications request</h3>
+<h3 class="govuk-heading-s" id="acknowledge-notifications-request" tabindex="-1">Acknowledge notifications request</h3>
 <p class="govuk-body"><code class="app-code app-code--inline">POST /v0/notifications/acknowledge http/1.1</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -244,7 +239,7 @@ data-module="govuk-service-navigation"
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s" id="acknowledge-notifications-response" tabindex="-1" class="govuk-heading-m">Acknowledge notifications response</h3>
+<h3 class="govuk-heading-s" id="acknowledge-notifications-response" tabindex="-1">Acknowledge notifications response</h3>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -267,12 +262,12 @@ data-module="govuk-service-navigation"
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <h3 class="govuk-heading-m">Related APIs</h3>
 <ul class="govuk-list govuk-list--bullet">
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/send-a-document">Send a document</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application">Submit an application</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/application-information">Application information</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/download-a-document">Download a document</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/find-a-service-api">More</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/send-a-document">Send a document</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application">Submit an application</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/application-information">Application information</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/download-a-document">Download a document</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/find-a-service-api">More</a></li>
 </ul>
 
 </div>
@@ -288,7 +283,7 @@ data-module="govuk-service-navigation"
           <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
             <ul class="govuk-footer__inline-list">
                 <li class="govuk-footer__inline-list-item">
-                  <a class="govuk-footer__link" href="https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/accessibility/index.html">
+                  <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">
                     Accessibility Statement
                   </a>
                 </li>
@@ -298,9 +293,7 @@ data-module="govuk-service-navigation"
             </div>
       </div>
       <div class="govuk-footer__meta-item">
-        <span
-          class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr"
-        >&copy; Crown copyright</span>
+        <span class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr">&copy; Crown copyright</span>
       </div>
     </div>
   </div>
