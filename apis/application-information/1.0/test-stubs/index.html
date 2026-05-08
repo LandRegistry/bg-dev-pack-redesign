@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
-<link rel="icon" href="/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
-  <script src="/assets/application.js" type="module"></script>
+<link rel="icon" href="/bg-dev-pack-redesign/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/bg-dev-pack-redesign/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/bg-dev-pack-redesign/hmlrassets/images/apple-touch-icon.png">
+  <script src="/bg-dev-pack-redesign/assets/application.js" type="module"></script>
 
-  <link rel="stylesheet" href="/assets/application.css">
+  <link rel="stylesheet" href="/bg-dev-pack-redesign/assets/application.css">
+  <link rel="stylesheet" href="/bg-dev-pack-redesign/assets/github.css">
 
 
   <meta property="og:title" content="Application Information API test stubs">
 
-<script src="/assets/script.js"></script><script>
+<script src="/bg-dev-pack-redesign/assets/script.js"></script><script>
     function setVersion() {
         let version = document.getElementById('version').value;
         if (!window.location.href.includes(version + '/')) {
@@ -91,20 +92,18 @@
   <header class="govuk-header app-header govuk-header--full-width-border" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container app-header__container">
     <div class="govuk-header__logo app-header__logo">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+      <a href="/bg-dev-pack-redesign/" class="govuk-header__link govuk-header__link--homepage">
           <span class="app-header__logotype">HM Land Registry Developer Pack</span>
       </a>
     </div>
-    <app-search class="app-search govuk-!-display-none-print" index="/search-index.json" label="Search developer pack"><a class="app-search__link" href="/sitemap">Sitemap</a></app-search>
+    <app-search class="app-search govuk-!-display-none-print" index="/bg-dev-pack-redesign/search-index.json" label="Search developer pack"><a class="app-search__link" href="/bg-dev-pack-redesign/bg-dev-pack-redesign/sitemap">Sitemap</a></app-search>
 
   </div>
 </header>
 
   
 
-  <div class="govuk-service-navigation app-service-navigation"
-data-module="govuk-service-navigation"
->
+  <div class="govuk-service-navigation app-service-navigation" data-module="govuk-service-navigation">
       <div class="govuk-width-container">
 
     <div class="govuk-service-navigation__container">
@@ -186,14 +185,10 @@ data-module="govuk-service-navigation"
     Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="1.0" selected>v1.0 (latest)</option>
+    <option value="1.0" selected="">v1.0 (latest)</option>
     <option value="0.3">v0.3</option>
   </select>
-  <button type="submit" 
-                  class="govuk-button govuk-!-margin-0" 
-                  data-module="govuk-button"
-                  onclick="setVersion();"
-                  >View</button>
+  <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button" onclick="setVersion();">View</button>
 </div>
 
 </div>
@@ -207,12 +202,12 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </blockquote>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-1" tabindex="-1" class="govuk-heading-l">Scenario 1: Information of application that is validating</h2>
-<h3 class="govuk-heading-s" id="request" tabindex="-1" class="govuk-heading-m">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-1" tabindex="-1">Scenario 1: Information of application that is validating</h2>
+<h3 class="govuk-heading-s" id="request" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications/abababab-abab-abab-abab-ababababavng/information</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<h3 class="govuk-heading-s" id="response" tabindex="-1" class="govuk-heading-m">Response</h3>
+<h3 class="govuk-heading-s" id="response" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -236,12 +231,12 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-2" tabindex="-1" class="govuk-heading-l">Scenario 2: Information of application that has failed validation</h2>
-<h3 class="govuk-heading-s" id="request-1" tabindex="-1" class="govuk-heading-m">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-2" tabindex="-1">Scenario 2: Information of application that has failed validation</h2>
+<h3 class="govuk-heading-s" id="request-1" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications/abababab-abab-abab-abab-ababababavlf/information</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<h3 class="govuk-heading-s" id="response-1" tabindex="-1" class="govuk-heading-m">Response</h3>
+<h3 class="govuk-heading-s" id="response-1" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -278,12 +273,12 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-3" tabindex="-1" class="govuk-heading-l">Scenario 3: Information of application that system errored</h2>
-<h3 class="govuk-heading-s" id="request-2" tabindex="-1" class="govuk-heading-m">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-3" tabindex="-1">Scenario 3: Information of application that system errored</h2>
+<h3 class="govuk-heading-s" id="request-2" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications/abababab-abab-abab-abab-ababababasye/information</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<h3 class="govuk-heading-s" id="response-2" tabindex="-1" class="govuk-heading-m">Response</h3>
+<h3 class="govuk-heading-s" id="response-2" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -306,12 +301,12 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-4" tabindex="-1" class="govuk-heading-l">Scenario 4: Information of application is accepted awaiting priority</h2>
-<h3 class="govuk-heading-s" id="request-3" tabindex="-1" class="govuk-heading-m">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-4" tabindex="-1">Scenario 4: Information of application is accepted awaiting priority</h2>
+<h3 class="govuk-heading-s" id="request-3" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications/abababab-abab-abab-abab-ababababaaap/information</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<h3 class="govuk-heading-s" id="response-3" tabindex="-1" class="govuk-heading-m">Response</h3>
+<h3 class="govuk-heading-s" id="response-3" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -334,12 +329,12 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-5" tabindex="-1" class="govuk-heading-l">Scenario 5: Information of application is accepted priority protected</h2>
-<h3 class="govuk-heading-s" id="request-4" tabindex="-1" class="govuk-heading-m">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-5" tabindex="-1">Scenario 5: Information of application is accepted priority protected</h2>
+<h3 class="govuk-heading-s" id="request-4" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications/abababab-abab-abab-abab-ababababaapp/information</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<h3 class="govuk-heading-s" id="response-4" tabindex="-1" class="govuk-heading-m">Response</h3>
+<h3 class="govuk-heading-s" id="response-4" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -376,12 +371,12 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-6" tabindex="-1" class="govuk-heading-l">Scenario 6: Information of application is cancelled</h2>
-<h3 class="govuk-heading-s" id="request-5" tabindex="-1" class="govuk-heading-m">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-6" tabindex="-1">Scenario 6: Information of application is cancelled</h2>
+<h3 class="govuk-heading-s" id="request-5" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications/abababab-abab-abab-abab-ababababacan/information</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<h3 class="govuk-heading-s" id="response-5" tabindex="-1" class="govuk-heading-m">Response</h3>
+<h3 class="govuk-heading-s" id="response-5" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -418,12 +413,12 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-7" tabindex="-1" class="govuk-heading-l">Scenario 7: Information of application is completed</h2>
-<h3 class="govuk-heading-s" id="request-6" tabindex="-1" class="govuk-heading-m">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-7" tabindex="-1">Scenario 7: Information of application is completed</h2>
+<h3 class="govuk-heading-s" id="request-6" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications/abababab-abab-abab-abab-ababababacmp/information</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<h3 class="govuk-heading-s" id="response-6" tabindex="-1" class="govuk-heading-m">Response</h3>
+<h3 class="govuk-heading-s" id="response-6" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -476,12 +471,12 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-8" tabindex="-1" class="govuk-heading-l">Scenario 8: Information of application is accepted awaiting priority using hmlr reference</h2>
-<h3 class="govuk-heading-s" id="request-7" tabindex="-1" class="govuk-heading-m">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-8" tabindex="-1">Scenario 8: Information of application is accepted awaiting priority using hmlr reference</h2>
+<h3 class="govuk-heading-s" id="request-7" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications/BABAAAP/information</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<h3 class="govuk-heading-s" id="response-7" tabindex="-1" class="govuk-heading-m">Response</h3>
+<h3 class="govuk-heading-s" id="response-7" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -504,12 +499,12 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-9" tabindex="-1" class="govuk-heading-l">Scenario 9: Information of application is accepted priority protected using hmlr reference</h2>
-<h3 class="govuk-heading-s" id="request-8" tabindex="-1" class="govuk-heading-m">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-9" tabindex="-1">Scenario 9: Information of application is accepted priority protected using hmlr reference</h2>
+<h3 class="govuk-heading-s" id="request-8" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications/BABAAPP/information</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<h3 class="govuk-heading-s" id="response-8" tabindex="-1" class="govuk-heading-m">Response</h3>
+<h3 class="govuk-heading-s" id="response-8" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -546,12 +541,12 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-10" tabindex="-1" class="govuk-heading-l">Scenario 10: Information of application is cancelled using hmlr reference</h2>
-<h3 class="govuk-heading-s" id="request-9" tabindex="-1" class="govuk-heading-m">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-10" tabindex="-1">Scenario 10: Information of application is cancelled using hmlr reference</h2>
+<h3 class="govuk-heading-s" id="request-9" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications/BABACAN/information</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<h3 class="govuk-heading-s" id="response-9" tabindex="-1" class="govuk-heading-m">Response</h3>
+<h3 class="govuk-heading-s" id="response-9" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -588,12 +583,12 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-11" tabindex="-1" class="govuk-heading-l">Scenario 11: Information of application is completed using hmlr reference</h2>
-<h3 class="govuk-heading-s" id="request-10" tabindex="-1" class="govuk-heading-m">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-11" tabindex="-1">Scenario 11: Information of application is completed using hmlr reference</h2>
+<h3 class="govuk-heading-s" id="request-10" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications/BABACMP/information</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<h3 class="govuk-heading-s" id="response-10" tabindex="-1" class="govuk-heading-m">Response</h3>
+<h3 class="govuk-heading-s" id="response-10" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -650,14 +645,14 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <h3 class="govuk-heading-m">Related APIs</h3>
 <ul class="govuk-list govuk-list--bullet">
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/send-a-document">Send a document API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application">Submit an application API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/attach-a-document">Attach a document API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/attach-a-message">Attach a message API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/notifications">Notifications API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/download-a-document">Download a document API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/find-a-service-api">More</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/send-a-document">Send a document API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application">Submit an application API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/attach-a-document">Attach a document API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/attach-a-message">Attach a message API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/notifications">Notifications API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/download-a-document">Download a document API</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/find-a-service-api">More</a></li>
 </ul>
 
 </div>
@@ -673,7 +668,7 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
           <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
             <ul class="govuk-footer__inline-list">
                 <li class="govuk-footer__inline-list-item">
-                  <a class="govuk-footer__link" href="https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/accessibility/index.html">
+                  <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">
                     Accessibility Statement
                   </a>
                 </li>
@@ -683,9 +678,7 @@ Note: all hmlr references used in this are modifiable, you only need the last 3 
             </div>
       </div>
       <div class="govuk-footer__meta-item">
-        <span
-          class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr"
-        >&copy; Crown copyright</span>
+        <span class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr">&copy; Crown copyright</span>
       </div>
     </div>
   </div>

@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
-<link rel="icon" href="/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
-  <script src="/assets/application.js" type="module"></script>
+<link rel="icon" href="/bg-dev-pack-redesign/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/bg-dev-pack-redesign/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/bg-dev-pack-redesign/hmlrassets/images/apple-touch-icon.png">
+  <script src="/bg-dev-pack-redesign/assets/application.js" type="module"></script>
 
-  <link rel="stylesheet" href="/assets/application.css">
+  <link rel="stylesheet" href="/bg-dev-pack-redesign/assets/application.css">
+  <link rel="stylesheet" href="/bg-dev-pack-redesign/assets/github.css">
 
 
   <meta property="og:title" content="Application information API test stubs">
 
-<script src="/assets/script.js"></script><script>
+<script src="/bg-dev-pack-redesign/assets/script.js"></script><script>
     function setVersion() {
         let version = document.getElementById('version').value;
         if (!window.location.href.includes(version + '/')) {
@@ -91,20 +92,18 @@
   <header class="govuk-header app-header govuk-header--full-width-border" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container app-header__container">
     <div class="govuk-header__logo app-header__logo">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+      <a href="/bg-dev-pack-redesign/" class="govuk-header__link govuk-header__link--homepage">
           <span class="app-header__logotype">HM Land Registry Developer Pack</span>
       </a>
     </div>
-    <app-search class="app-search govuk-!-display-none-print" index="/search-index.json" label="Search developer pack"><a class="app-search__link" href="/sitemap">Sitemap</a></app-search>
+    <app-search class="app-search govuk-!-display-none-print" index="/bg-dev-pack-redesign/search-index.json" label="Search developer pack"><a class="app-search__link" href="/bg-dev-pack-redesign/bg-dev-pack-redesign/sitemap">Sitemap</a></app-search>
 
   </div>
 </header>
 
   
 
-  <div class="govuk-service-navigation app-service-navigation"
-data-module="govuk-service-navigation"
->
+  <div class="govuk-service-navigation app-service-navigation" data-module="govuk-service-navigation">
       <div class="govuk-width-container">
 
     <div class="govuk-service-navigation__container">
@@ -170,13 +169,9 @@ data-module="govuk-service-navigation"
   </label>
   <select class="govuk-select" id="version" name="version">
     <option value="1.0">v1.0 (latest)</option>
-    <option value="0.3" selected>v0.3</option>
+    <option value="0.3" selected="">v0.3</option>
   </select>
-  <button type="submit" 
-                  class="govuk-button govuk-!-margin-0" 
-                  data-module="govuk-button"
-                  onclick="setVersion();"
-                  >View</button>
+  <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button" onclick="setVersion();">View</button>
 </div>
 
 </div>
@@ -186,12 +181,12 @@ data-module="govuk-service-navigation"
 <p class="govuk-body">Base URL: <code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-1" tabindex="-1" class="govuk-heading-l">Scenario 1: Information of applicaiton with single charge</h2>
-<h3 class="govuk-heading-s" id="request" tabindex="-1" class="govuk-heading-m">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-1" tabindex="-1">Scenario 1: Information of applicaiton with single charge</h2>
+<h3 class="govuk-heading-s" id="request" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/applications/b3ac19be-2b6d-4b8a-971c-e758b0e8e790/information</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<h3 class="govuk-heading-s" id="response" tabindex="-1" class="govuk-heading-m">Response</h3>
+<h3 class="govuk-heading-s" id="response" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -213,12 +208,12 @@ data-module="govuk-service-navigation"
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-2" tabindex="-1" class="govuk-heading-l">Scenario 2: Information of application with single transfer</h2>
-<h3 class="govuk-heading-s" id="request-1" tabindex="-1" class="govuk-heading-m">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-2" tabindex="-1">Scenario 2: Information of application with single transfer</h2>
+<h3 class="govuk-heading-s" id="request-1" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/applications/2563940e-ae95-4e7e-9b33-49a6571abdf6/information</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<h3 class="govuk-heading-s" id="response-1" tabindex="-1" class="govuk-heading-m">Response</h3>
+<h3 class="govuk-heading-s" id="response-1" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -240,12 +235,12 @@ data-module="govuk-service-navigation"
 </section>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <section>
-<h2 class="govuk-heading-m" id="scenario-3" tabindex="-1" class="govuk-heading-l">Scenario 3: Information of application with level 2 validation errors</h2>
-<h3 class="govuk-heading-s" id="request-2" tabindex="-1" class="govuk-heading-m">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-3" tabindex="-1">Scenario 3: Information of application with level 2 validation errors</h2>
+<h3 class="govuk-heading-s" id="request-2" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">GET</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/applications/3be62ad3-c542-452d-975e-6cd18d77196f/information</code></p>
 <p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<h3 class="govuk-heading-s" id="response-2" tabindex="-1" class="govuk-heading-m">Response</h3>
+<h3 class="govuk-heading-s" id="response-2" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">200</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -288,12 +283,12 @@ data-module="govuk-service-navigation"
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <h3 class="govuk-heading-m">Related APIs</h3>
 <ul class="govuk-list govuk-list--bullet">
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/send-a-document">Send a document</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/submit-an-application">Submit an application</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/notifications">Notifications</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/apis/download-a-document">Download a document</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/find-a-service-api">More</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/send-a-document">Send a document</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application">Submit an application</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/notifications">Notifications</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/download-a-document">Download a document</a></li>
+    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/find-a-service-api">More</a></li>
 </ul>
 
 </div>
@@ -309,7 +304,7 @@ data-module="govuk-service-navigation"
           <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
             <ul class="govuk-footer__inline-list">
                 <li class="govuk-footer__inline-list-item">
-                  <a class="govuk-footer__link" href="https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/accessibility/index.html">
+                  <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">
                     Accessibility Statement
                   </a>
                 </li>
@@ -319,9 +314,7 @@ data-module="govuk-service-navigation"
             </div>
       </div>
       <div class="govuk-footer__meta-item">
-        <span
-          class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr"
-        >&copy; Crown copyright</span>
+        <span class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr">&copy; Crown copyright</span>
       </div>
     </div>
   </div>

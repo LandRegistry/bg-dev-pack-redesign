@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
-<link rel="icon" href="/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/hmlrassets/images/apple-touch-icon.png">
-  <script src="/assets/application.js" type="module"></script>
+<link rel="icon" href="/bg-dev-pack-redesign/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/bg-dev-pack-redesign/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/bg-dev-pack-redesign/hmlrassets/images/apple-touch-icon.png">
+  <script src="/bg-dev-pack-redesign/assets/application.js" type="module"></script>
 
-  <link rel="stylesheet" href="/assets/application.css">
+  <link rel="stylesheet" href="/bg-dev-pack-redesign/assets/application.css">
 
 
   <meta property="og:title" content="Submit an application to change the Land Register APIs">
 <meta property="og:description" name="description" content="Use this service to help lodge applications with HMLR to update the register or create a new lease or transfer of part">
-<script src="/assets/script.js"></script><script>
+<script src="/bg-dev-pack-redesign/assets/script.js"></script><script>
     function setVersion() {
         let version = document.getElementById('version').value;
         if (!window.location.href.includes(version + '/')) {
@@ -91,20 +91,18 @@
   <header class="govuk-header app-header govuk-header--full-width-border" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container app-header__container">
     <div class="govuk-header__logo app-header__logo">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+      <a href="/bg-dev-pack-redesign/" class="govuk-header__link govuk-header__link--homepage">
           <span class="app-header__logotype">HM Land Registry Developer Pack</span>
       </a>
     </div>
-    <app-search class="app-search govuk-!-display-none-print" index="/search-index.json" label="Search developer pack"><a class="app-search__link" href="/sitemap">Sitemap</a></app-search>
+    <app-search class="app-search govuk-!-display-none-print" index="/bg-dev-pack-redesign/search-index.json" label="Search developer pack"><a class="app-search__link" href="/bg-dev-pack-redesign/bg-dev-pack-redesign/sitemap">Sitemap</a></app-search>
 
   </div>
 </header>
 
   
 
-  <div class="govuk-service-navigation app-service-navigation"
-data-module="govuk-service-navigation"
->
+  <div class="govuk-service-navigation app-service-navigation" data-module="govuk-service-navigation">
       <div class="govuk-width-container">
 
     <div class="govuk-service-navigation__container">
@@ -156,21 +154,17 @@ data-module="govuk-service-navigation"
     Version and status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="1.0" selected>v1.0 (latest)</option>
+    <option value="1.0" selected="">v1.0 (latest)</option>
     <option value="0.3">v0.3</option>
   </select>
-  <button type="submit" 
-            class="govuk-button govuk-!-margin-0" 
-            data-module="govuk-button"
-            onclick="setVersion();"
-            >View</button>
+  <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button" onclick="setVersion();">View</button>
 </div>
 </div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <div class="govuk-grid-row">
   <section class="govuk-!-margin-top-5 govuk-grid-column-full">
     <div class="govuk-inset-text guidance-panel">
-    This developer pack is maintained by HMLR. If you’ve got a question, idea or suggestion, you can <a href="/contact-us">contact us</a> or fill in our <a href="https://forms.office.com/pages/responsepage.aspx?id=qAljI0soV06ns_x2dzb2nY5sN8l2gs9DpRCL8ID4xzFURjFCRDE4VjFITTFSWkQ5UzFHTEJNMTdaUi4u&route=shorturl" target="_blank">feedback form</a>.
+    This developer pack is maintained by HMLR. If you’ve got a question, idea or suggestion, you can <a href="/bg-dev-pack-redesign/contact-us">contact us</a> or fill in our <a href="https://forms.office.com/pages/responsepage.aspx?id=qAljI0soV06ns_x2dzb2nY5sN8l2gs9DpRCL8ID4xzFURjFCRDE4VjFITTFSWkQ5UzFHTEJNMTdaUi4u&route=shorturl" target="_blank">feedback form</a>.
     </div>
     <h2 class="govuk-heading-m" id="overview">Overview</h2>
     <p class="govuk-body">
@@ -194,13 +188,13 @@ data-module="govuk-service-navigation"
       <div id="accordion-content-1" class="govuk-accordion__section-content">
         <ul class="govuk-list">
           <li>
-            <a class="govuk-body govuk-link" href="/apis/send-a-document/1.0">Learn more about this API</a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/send-a-document/1.0">Learn more about this API</a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/send-a-document/1.0/technical-guide">Build this API using our technical guide </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/send-a-document/1.0/technical-guide">Build this API using our technical guide </a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/send-a-document/1.0/test-stubs">Test this API </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/send-a-document/1.0/test-stubs">Test this API </a>
           </li>
         </ul>
       </div>
@@ -219,13 +213,13 @@ data-module="govuk-service-navigation"
       <div id="accordion-content-2" class="govuk-accordion__section-content">
         <ul class="govuk-list">
           <li>
-            <a class="govuk-body govuk-link" href="/apis/submit-an-application/1.0">Learn more about this API </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application/1.0">Learn more about this API </a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/submit-an-application/1.0/technical-guide">Build this API using our technical guide </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application/1.0/technical-guide">Build this API using our technical guide </a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/submit-an-application/1.0/test-stubs">Test this API </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application/1.0/test-stubs">Test this API </a>
           </li>
         </ul>
       </div>
@@ -244,13 +238,13 @@ data-module="govuk-service-navigation"
       <div id="accordion-content-3" class="govuk-accordion__section-content">
         <ul class="govuk-list">
           <li>
-            <a class="govuk-body govuk-link" href="/apis/notifications/1.0">Learn more about this API </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/notifications/1.0">Learn more about this API </a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/notifications/1.0/technical-guide">Build this API using our technical guide </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/notifications/1.0/technical-guide">Build this API using our technical guide </a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/notifications/1.0/test-stubs">Test this API </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/notifications/1.0/test-stubs">Test this API </a>
           </li>
         </ul>
       </div>
@@ -269,13 +263,13 @@ data-module="govuk-service-navigation"
       <div id="accordion-content-4" class="govuk-accordion__section-content">
         <ul class="govuk-list">
           <li>
-            <a class="govuk-body govuk-link" href="/apis/application-information/1.0">Learn more about this API </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/application-information/1.0">Learn more about this API </a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/application-information/1.0/technical-guide">Build this API using our technical guide </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/application-information/1.0/technical-guide">Build this API using our technical guide </a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/application-information/1.0/test-stubs">Test this API </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/application-information/1.0/test-stubs">Test this API </a>
           </li>
         </ul>
       </div>
@@ -294,13 +288,13 @@ data-module="govuk-service-navigation"
       <div id="accordion-content-5" class="govuk-accordion__section-content">
         <ul class="govuk-list">
           <li>
-            <a class="govuk-body govuk-link" href="/apis/attach-a-message/1.0">Learn more about this API </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/attach-a-message/1.0">Learn more about this API </a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/attach-a-message/1.0/technical-guide">Build this API using our technical guide </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/attach-a-message/1.0/technical-guide">Build this API using our technical guide </a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/attach-a-message/1.0/test-stubs">Test this API </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/attach-a-message/1.0/test-stubs">Test this API </a>
           </li>
         </ul>
       </div>
@@ -319,13 +313,13 @@ data-module="govuk-service-navigation"
       <div id="accordion-content-6" class="govuk-accordion__section-content">
         <ul class="govuk-list">
           <li>
-            <a class="govuk-body govuk-link" href="/apis/attach-a-document/1.0">Learn more about this API </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/attach-a-document/1.0">Learn more about this API </a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/attach-a-document/1.0/technical-guide">Build this API using our technical guide </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/attach-a-document/1.0/technical-guide">Build this API using our technical guide </a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/attach-a-document/1.0/test-stubs">Test this API </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/attach-a-document/1.0/test-stubs">Test this API </a>
           </li>
         </ul>
       </div>
@@ -344,13 +338,13 @@ data-module="govuk-service-navigation"
       <div id="accordion-content-7" class="govuk-accordion__section-content">
         <ul class="govuk-list">
           <li>
-            <a class="govuk-body govuk-link" href="/apis/download-a-document/1.0">Learn more about this API </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/download-a-document/1.0">Learn more about this API </a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/download-a-document/1.0/technical-guide">Build this API using our technical guide </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/download-a-document/1.0/technical-guide">Build this API using our technical guide </a>
           </li>
           <li>
-            <a class="govuk-body govuk-link" href="/apis/download-a-document/1.0/test-stubs">Test this API </a>
+            <a class="govuk-body govuk-link" href="/bg-dev-pack-redesign/apis/download-a-document/1.0/test-stubs">Test this API </a>
           </li>
         </ul>
       </div>
@@ -358,18 +352,16 @@ data-module="govuk-service-navigation"
   </div>
   <h3 class="govuk-heading-m govuk-!-margin-top-5" id="how-apis-work-together">How the APIs work together</h3>
     <p class="govuk-body">The diagram below shows how all the APIs should be used together to submit an application to change the land register from start to finish. </p>
-  <a target="_blank" href="/assets/images/allAPIsDiagram_v4.png">
-  <img src="/assets/images/allAPIsDiagram_v4.png" alt="A diagram showing the interaction of the Notification API.">
+  <a target="_blank" href="/bg-dev-pack-redesign/assets/images/allAPIsDiagram_v4.png">
+  <img src="/bg-dev-pack-redesign/assets/images/allAPIsDiagram_v4.png" alt="A diagram showing the interaction of the Notification API.">
   </a>
   <h3 class="govuk-heading-m" id="view-the-api-specification">View API specification</h3>
   <ul class="govuk-list">
     <li>
-      <a class="govuk-body govuk-link" href="https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/documents/submit-an-application-to-change-the-register/v1.0/openapi.html"
-      rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
+      <a class="govuk-body govuk-link" href="https://landregistry.github.io/bgtechdoc/documents/submit-an-application-to-change-the-register/v1.0/openapi.html" rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
     </li>
     <li>
-      <a class="govuk-body govuk-link" href="https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/documents/submit-an-application-to-change-the-register/v1.0/openapi.json"
-      rel="noreferrer noopener" target="_blank">JSON version (opens in new tab)</a>
+      <a class="govuk-body govuk-link" href="https://landregistry.github.io/bgtechdoc/documents/submit-an-application-to-change-the-register/v1.0/openapi.json" rel="noreferrer noopener" target="_blank">JSON version (opens in new tab)</a>
     </li>
   </ul>
 </section>
@@ -386,7 +378,7 @@ data-module="govuk-service-navigation"
           <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
             <ul class="govuk-footer__inline-list">
                 <li class="govuk-footer__inline-list-item">
-                  <a class="govuk-footer__link" href="https://integration-customer-documentation-bg-int-priv.apps.development.test.stp.hmlr.zone/accessibility/index.html">
+                  <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">
                     Accessibility Statement
                   </a>
                 </li>
@@ -396,16 +388,14 @@ data-module="govuk-service-navigation"
             </div>
       </div>
       <div class="govuk-footer__meta-item">
-        <span
-          class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr"
-        >&copy; Crown copyright</span>
+        <span class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr">&copy; Crown copyright</span>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="/assets/js/step-by-step-navigation.js"></script>
-<script src="/assets/js/step-by-step-polyfills.js"></script>
+<script src="/bg-dev-pack-redesign/assets/js/step-by-step-navigation.js"></script>
+<script src="/bg-dev-pack-redesign/assets/js/step-by-step-polyfills.js"></script>
 <script type="text/javascript">
   var $element = document.querySelector('#step-by-step-navigation')
   var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
