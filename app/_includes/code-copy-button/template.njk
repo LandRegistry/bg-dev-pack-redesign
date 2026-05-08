@@ -1,7 +1,0 @@
-{% from "govuk/components/button/macro.njk" import govukButton %}
-
-{{ govukButton({
-  text: "Copy code",
-  classes: "govuk-button--secondary copy-code-button",
-  attributes: `onclick="copyTextFrom({{params.targetId}})"`
-}) }}
