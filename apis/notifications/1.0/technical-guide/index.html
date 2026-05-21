@@ -172,12 +172,12 @@
 
 <div class="app-prose-scope"><section>
 <h2 class="govuk-heading-m" id="how-to-use-the-notifications-api" tabindex="-1">How to use the Notifications API</h2>
-<h3 class="govuk-heading-s" id="recieve-notifications" tabindex="-1">Recieve notifications</h3>
+<h3 class="govuk-heading-s" id="receive-notifications" tabindex="-1">Receive notifications</h3>
 <p class="govuk-body">The GET request to fetch all notifications takes the following URL query parameters (which are optional):</p>
 <ul class="govuk-list--bullet govuk-list govuk-list--bullet">
 <li><code class="app-code app-code--inline">created_after</code> - only retrieve notifications with a <code class="app-code app-code--inline">created_timestamp</code> after this date</li>
 <li><code class="app-code app-code--inline">created_before</code> - only retrieve notifications with a <code class="app-code app-code--inline">created_timestamp</code> before this date</li>
-<li><code class="app-code app-code--inline">status</code> - only retrieve notifications with a specific status, either <code class="app-code app-code--inline">NEW</code> or <code class="app-code app-code--inline">ACKNOWLEDGED</code></li>
+<li><code class="app-code app-code--inline">status</code> - only retrieve notifications with a specific status, either <code class="app-code app-code--inline">NEW</code> or <code class="app-code app-code--inline">ACKNOWLEDGED</code>. <code class="app-code app-code--inline">NEW</code> is the default if status is not specified.</li>
 <li><code class="app-code app-code--inline">occured_after</code> - only retrieve notifications with an <code class="app-code app-code--inline">event_timestamp</code> after this date</li>
 <li><code class="app-code app-code--inline">occured_before</code> - only retrieve notifications with an <code class="app-code app-code--inline">event_timestamp</code> before this date</li>
 <li><code class="app-code app-code--inline">notification_type</code> - only retrieve notifications with the specific <code class="app-code app-code--inline">notification_type</code></li>
@@ -185,11 +185,15 @@
 <li><code class="app-code app-code--inline">additional_provider_filter</code> - only retrieve notifications that match the provided <code class="app-code app-code--inline">additional_provider_filter</code></li>
 <li><code class="app-code app-code--inline">limit</code> - the maximum number of notifications to return in a single response</li>
 </ul>
-<p class="govuk-body">Only notifications related to applications submitted by the business unit ID provided will be returned.</p>
+<p class="govuk-body">A maximum of 100 matching notifications will be returned, sorted by age (oldest first).</p>
+<p class="govuk-body">A <code class="app-code app-code--inline">GET</code> request with no parameters will return the 100 oldest notifications. To obtain newer notifications, use the <code class="app-code app-code--inline">created_after</code> or <code class="app-code app-code--inline">ocurred_after</code> parameters.</p>
+<p class="govuk-body">Only notifications related to applications submitted by your business unit and matching the <code class="app-code app-code--inline">additional_provider_filter</code> requested will be returned. If no <code class="app-code app-code--inline">additional_provider_filter</code> parameter is specified, only applications that were submitted with no <code class="app-code app-code--inline">additional_provider_filter</code> are returned.</p>
 <p class="govuk-body">Notification delivery is ‘at least once’, meaning a specific event at a specific time may result in one or more notifications (i.e. duplicate notifications for the same event).</p>
 <p class="govuk-body">Duplicate events will have the same <code class="app-code app-code--inline">event_datetime</code> field and <code class="app-code app-code--inline">notification_type</code> which can be used to locate and ignore duplicates when receiving notifications. Notifications will continue to be returned by the endpoint until they are acknowledged.</p>
+<p class="govuk-body">All notifications are deleted after a month, whether acknowledged or not.</p>
 <h3 class="govuk-heading-s" id="acknowledge-notifications" tabindex="-1">Acknowledge notifications</h3>
 <p class="govuk-body">Once a notification has been processed by your system, the notification should be acknowledged. To do this, send a list of <code class="app-code app-code--inline">notification_ids</code> to the Acknowledge notifications API as a POST request. This will change the status of those notifications to <code class="app-code app-code--inline">ACKNOWLEDGED</code>.</p>
+<p class="govuk-body">Subsequent <code class="app-code app-code--inline">GET</code> calls won’t include acknowledged notifications by default.</p>
 </section>
 <section>
 <h2 class="govuk-heading-m" id="validation-rules" tabindex="-1">Validation rules</h2>
@@ -197,7 +201,7 @@
 </section>
 <section>
 <h2 class="govuk-heading-m" id="example-requests-and-responses" tabindex="-1">Example requests and responses</h2>
-<p class="govuk-body">For specific examples of notification payloads produced during application submission, view <a href="/bg-dev-pack-redesign/apis/submit-an-application" class="govuk-link">Submit an application notifications</a>.</p>
+<p class="govuk-body">For specific examples of notification payloads produced during application submission, view <a href="/bg-dev-pack-redesign/apis/submit-an-application/1.0/technical-guide/#notifications" class="govuk-link">Submit an application notifications</a>.</p>
 <h3 class="govuk-heading-s" id="get-notifications-request" tabindex="-1">Get notifications request</h3>
 <p class="govuk-body"><code class="app-code app-code--inline">GET /v1/notifications?created_after=2025-01-01t00:00:00 http/1.1</code></p>
 <h3 class="govuk-heading-s" id="get-notifications-response" tabindex="-1">Get notifications response</h3>

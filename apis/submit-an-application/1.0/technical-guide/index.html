@@ -405,11 +405,6 @@
       <td class="govuk-table__cell">A type on the <code class="app-code app-code--inline">Address</code> object</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">PostcodeOfProperty</td>
-      <td class="govuk-table__cell">postcode</td>
-      <td class="govuk-table__cell">Field on <code class="app-code app-code--inline">UKAddress</code> object</td>
-    </tr>
-    <tr class="govuk-table__row">
       <td class="govuk-table__cell">Product.Email</td>
       <td class="govuk-table__cell">email</td>
       <td class="govuk-table__cell">Field on <code class="app-code app-code--inline">ApplicationLodger</code> object</td>
@@ -418,11 +413,6 @@
       <td class="govuk-table__cell">PostalAddress</td>
       <td class="govuk-table__cell">UKAddress</td>
       <td class="govuk-table__cell">A type on the <code class="app-code app-code--inline">Address</code> object</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">PostcodeOfProperty</td>
-      <td class="govuk-table__cell">postcode</td>
-      <td class="govuk-table__cell">Field on <code class="app-code app-code--inline">UKAddress</code> object</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">Product.Email</td>
@@ -1490,7 +1480,7 @@
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">TSCV</td>
-      <td class="govuk-table__cell"> Transfer subject to a charge for value (Transfer of part)</td>
+      <td class="govuk-table__cell"> Transfer subject to a charge for value</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">TTP</td>
@@ -5897,6 +5887,8 @@
 <ul class="govuk-list govuk-list--bullet">
   <li><code class="app-code app-code--inline">ADV1</code> - First notice of adverse possession</li>
   <li><code class="app-code app-code--inline">ADV2</code> - Adverse possession: notification</li>
+  <li><code class="app-code app-code--inline">ADV1NT2</code> – Second Notice of adverse possession</li>
+  <li><code class="app-code app-code--inline">ADV1S12</code> – Adverse possession (under schedule 12)</li>
   <li><code class="app-code app-code--inline">AGN</code> - Agreed notice (AN1)</li>
   <li><code class="app-code app-code--inline">AML</code> - Amalgamation</li>
   <li><code class="app-code app-code--inline">APLC</code> - Appointment of liquidator (creditor’s voluntary winding up)</li>
@@ -5904,12 +5896,16 @@
   <li><code class="app-code app-code--inline">APLM</code> - Appointment of liquidator (members’ voluntary winding up)</li>
   <li><code class="app-code app-code--inline">APR</code> - Apportionment of rent</li>
   <li><code class="app-code app-code--inline">APT</code> - Appointment of new trustee</li>
+  <li><code class="app-code app-code--inline">ARC</code> – Apportionment of rent charge</li>
   <li><code class="app-code app-code--inline">ASTC</code> - Assent of charge</li>
+  <li><code class="app-code app-code--inline">ASTT</code> – Assent</li>
   <li><code class="app-code app-code--inline">ATP</code> - Amendment to title plan</li>
+  <li><code class="app-code app-code--inline">ATR</code> – Rule 130 alteration of title register</li>
   <li><code class="app-code app-code--inline">AUN</code> - Amendment of unilateral notice (UN3)</li>
   <li><code class="app-code app-code--inline">BKN</code> - Bankruptcy notice/Creditors’ notice</li>
   <li><code class="app-code app-code--inline">BKR</code> - Bankruptcy restriction/Bankruptcy inhibition</li>
   <li><code class="app-code app-code--inline">C</code> - Charge</li>
+  <li><code class="app-code app-code--inline">CADV</code> – Cancellation of adverse possession</li>
   <li><code class="app-code app-code--inline">CAG</code> - Cancellation of notice (not unilateral) (CN1)</li>
   <li><code class="app-code app-code--inline">CANI</code> - Cancellation of inhibition (RX3)</li>
   <li><code class="app-code app-code--inline">CANR</code> - Cancellation of restriction (RX3)</li>
@@ -5936,15 +5932,20 @@
   <li><code class="app-code app-code--inline">DB</code> - Determined boundary (DB)</li>
   <li><code class="app-code app-code--inline">DCLN</code> - Disclaimer - notification</li>
   <li><code class="app-code app-code--inline">DCLV</code> - Disclaimer - notice</li>
+  <li><code class="app-code app-code--inline">DEB</code> – Debenture</li>
   <li><code class="app-code app-code--inline">DFL1</code> - New lease - other</li>
   <li><code class="app-code app-code--inline">DFT</code> - Defect in title s64(1) LRA 2002</li>
   <li><code class="app-code app-code--inline">DIS</code> - Discharge of charge</li>
   <li><code class="app-code app-code--inline">DJP</code> - Death of a joint proprietor</li>
   <li><code class="app-code app-code--inline">DL</code> - Discontinuous lease - non-timeshare</li>
+  <li><code class="app-code app-code--inline">DM</code> – De-registration of a manor</li>
   <li><code class="app-code app-code--inline">DMR</code> - Disapplication of restriction (RX2)</li>
   <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement</li>
   <li><code class="app-code app-code--inline">DP</code> - Discharge of part</li>
   <li><code class="app-code app-code--inline">DSP</code> - Death of a sole proprietor</li>
+  <li><code class="app-code app-code--inline">DSS</code> – Deed of substituted security</li>
+  <li><code class="app-code app-code--inline">EX1</code> – Exempt information document registration</li>
+  <li><code class="app-code app-code--inline">EX3</code> – Remove exemption of document registration</li>
   <li><code class="app-code app-code--inline">JP1</code> - Removal of default Form A restriction</li>
   <li><code class="app-code app-code--inline">LCATCO</code> - Lease closure - of assured tenancies following court order</li>
   <li><code class="app-code app-code--inline">LCBD</code> - Lease closure - by disclaimer</li>
@@ -5961,16 +5962,20 @@
   <li><code class="app-code app-code--inline">LCSOL</code> - Lease closure - surrender by operation of law (not for value or reverse premium)</li>
   <li><code class="app-code app-code--inline">LCSOLM</code> - Lease closure - surrender by operation of law</li>
   <li><code class="app-code app-code--inline">MDR</code> - Modification of Restriction</li>
+  <li><code class="app-code app-code--inline">NAOA</code> – Application to note appointment of an administrator</li>
   <li><code class="app-code app-code--inline">NCT</code> - Caution amendment</li>
   <li><code class="app-code app-code--inline">NDC</code> - Notification of dissolution of company</li>
   <li><code class="app-code app-code--inline">NFR</code> - Noting of an affecting franchise</li>
   <li><code class="app-code app-code--inline">NOE</code> - Noting an easement</li>
   <li><code class="app-code app-code--inline">NOL</code> - Noting a lease</li>
+  <li><code class="app-code app-code--inline">NOPSC</code> – Note overriding priority of a statutory charge</li>
   <li><code class="app-code app-code--inline">NPR</code> - Noting of a profit</li>
   <li><code class="app-code app-code--inline">NRT</code> - Notice of rentcharge</li>
   <li><code class="app-code app-code--inline">PC</code> - Postponement of charge</li>
   <li><code class="app-code app-code--inline">PRO</code> - Provisions</li>
+  <li><code class="app-code app-code--inline">RADV</code> – Removal of adverse possession entry (proprietorship protective entry)</li>
   <li><code class="app-code app-code--inline">RC</code> - Restrictive covenants - entry of</li>
+  <li><code class="app-code app-code--inline">RE</code> – Register easement</li>
   <li><code class="app-code app-code--inline">RFN</code> - Deed of rectification</li>
   <li><code class="app-code app-code--inline">RHR</code> - Renewal of home rights (HR2)</li>
   <li><code class="app-code app-code--inline">RNT</code> - Overriding lease granted under s.19</li>
@@ -5978,7 +5983,10 @@
   <li><code class="app-code app-code--inline">ROCC</code> - Release of covenants - cancellation (CN1)</li>
   <li><code class="app-code app-code--inline">ROCU</code> - Release of covenants - unilateral notice (UN1)</li>
   <li><code class="app-code app-code--inline">ROE</code> - Release of easements</li>
+  <li><code class="app-code app-code--inline">RORBAP</code> – Registering official receiver in bankruptcy as proprietor</li>
+  <li><code class="app-code app-code--inline">RRC</code> – Registration of rent charge</li>
   <li><code class="app-code app-code--inline">RRD</code> - Removal of a right to determine</li>
+  <li><code class="app-code app-code--inline">RTBAP</code> – Registering trustee in bankruptcy as proprietor</li>
   <li><code class="app-code app-code--inline">RTM</code> - Acquisition of right to manage</li>
   <li><code class="app-code app-code--inline">RUN</code> - Removal of unilateral notice (UN2)</li>
   <li><code class="app-code app-code--inline">RXL</code> - Form || restriction entered - simple request</li>
@@ -5987,6 +5995,7 @@
   <li><code class="app-code app-code--inline">SBC</code> - Sub charge</li>
   <li><code class="app-code app-code--inline">SHO</code> - Shared ownership - additional share</li>
   <li><code class="app-code app-code--inline">SJT</code> - Severance of joint tenancy (SEV)</li>
+  <li><code class="app-code app-code--inline">SOT</code> – Subdivision of title</li>
   <li><code class="app-code app-code--inline">STVC</code> - Statutory vestings charge</li>
   <li><code class="app-code app-code--inline">STVL</code> - Statutory vestings land</li>
   <li><code class="app-code app-code--inline">T</code> - Transfer for value</li>
@@ -6002,6 +6011,7 @@
   <li><code class="app-code app-code--inline">TVR</code> - Transfer for value RTB/RTA</li>
   <li><code class="app-code app-code--inline">UNN</code> - Unilateral notice (UN1)</li>
   <li><code class="app-code app-code--inline">UPT</code> - Upgrade class of title (UT1)</li>
+  <li><code class="app-code app-code--inline">VRC</code> – Variation of rent charge</li>
   <li><code class="app-code app-code--inline">VC</code> - Variation of charge</li>
   <li><code class="app-code app-code--inline">VLAN</code> - Variation of lease - agreed notice (AN1)</li>
   <li><code class="app-code app-code--inline">VLAP</code> - Deed of variation of a lease - not increasing the term of or adding new land to the extent demised</li>
@@ -6020,10 +6030,13 @@
 <ul class="govuk-list govuk-list--bullet">
   <li><code class="app-code app-code--inline">ADV1</code> - First notice of adverse possession</li>
   <li><code class="app-code app-code--inline">ADV2</code> - Adverse possession: notification</li>
+  <li><code class="app-code app-code--inline">ADV1NT2</code> – Second Notice of adverse possession</li>
+  <li><code class="app-code app-code--inline">ADV1S12</code> – Adverse possession (under schedule 12)</li>
   <li><code class="app-code app-code--inline">AGN</code> - Agreed notice (AN1)</li>
   <li><code class="app-code app-code--inline">AML</code> - Amalgamation</li>
   <li><code class="app-code app-code--inline">APLM</code> - Appointment of liquidator (members’ voluntary winding up)</li>
   <li><code class="app-code app-code--inline">APR</code> - Apportionment of rent</li>
+  <li><code class="app-code app-code--inline">ARC</code> – Apportionment of rent charge</li>
   <li><code class="app-code app-code--inline">ASSTTP</code> - Assent (Transfer of Part)</li>
   <li><code class="app-code app-code--inline">C</code> - Charge</li>
   <li><code class="app-code app-code--inline">CAG</code> - Cancellation of notice (not unilateral) (CN1)</li>
@@ -6044,6 +6057,7 @@
   <li><code class="app-code app-code--inline">CPVU</code> - Compulsory purchase (property value unknown)</li>
   <li><code class="app-code app-code--inline">CTD</code> - Commonhold transitional dealing</li>
   <li><code class="app-code app-code--inline">CUR</code> - Cancellation of notice of unregistered Rentcharge</li>
+  <li><code class="app-code app-code--inline">DEB</code> – Debenture</li>
   <li><code class="app-code app-code--inline">DB</code> - Determined boundary (DB)</li>
   <li><code class="app-code app-code--inline">DCLN</code> - Disclaimer - notification</li>
   <li><code class="app-code app-code--inline">DFL1</code> - New lease - other</li>
@@ -6054,6 +6068,9 @@
   <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement</li>
   <li><code class="app-code app-code--inline">DP</code> - Discharge of part</li>
   <li><code class="app-code app-code--inline">DSP</code> - Death of a sole proprietor</li>
+  <li><code class="app-code app-code--inline">DSS</code> – Deed of substituted security</li>
+  <li><code class="app-code app-code--inline">EX1</code> – Exempt information document registration</li>
+  <li><code class="app-code app-code--inline">EX3</code> – Remove exemption of document registration</li>
   <li><code class="app-code app-code--inline">LCATCO</code> - Lease closure - of assured tenancies following court order</li>
   <li><code class="app-code app-code--inline">LCBD</code> - Lease closure - by disclaimer</li>
   <li><code class="app-code app-code--inline">LCBET</code> - Lease closure - by effluxion of time</li>
@@ -6063,6 +6080,7 @@
   <li><code class="app-code app-code--inline">LCSOL</code> - Lease closure - surrender by operation of law (not for value or reverse premium)</li>
   <li><code class="app-code app-code--inline">LCSOLM</code> - Lease closure - surrender by operation of law</li>
   <li><code class="app-code app-code--inline">MDR</code> - Modification of Restriction</li>
+  <li><code class="app-code app-code--inline">NAOA</code> – Application to note appointment of an administrator</li>
   <li><code class="app-code app-code--inline">NFR</code> - Noting of an affecting franchise</li>
   <li><code class="app-code app-code--inline">NOE</code> - Noting an easement</li>
   <li><code class="app-code app-code--inline">NOL</code> - Noting a lease</li>
@@ -6070,11 +6088,13 @@
   <li><code class="app-code app-code--inline">NRT</code> - Notice of rentcharge</li>
   <li><code class="app-code app-code--inline">PRO</code> - Provisions</li>
   <li><code class="app-code app-code--inline">RC</code> - Restrictive covenants - entry of</li>
+  <li><code class="app-code app-code--inline">RE</code> – Register easement</li>
   <li><code class="app-code app-code--inline">RFN</code> - Deed of rectification</li>
   <li><code class="app-code app-code--inline">RNT</code> - Overriding lease granted under s.19</li>
   <li><code class="app-code app-code--inline">ROCC</code> - Release of covenants - cancellation (CN1)</li>
   <li><code class="app-code app-code--inline">ROCU</code> - Release of covenants - unilateral notice (UN1)</li>
   <li><code class="app-code app-code--inline">ROE</code> - Release of easements</li>
+  <li><code class="app-code app-code--inline">RRC</code> – Registration of rent charge</li>
   <li><code class="app-code app-code--inline">RRD</code> - Removal of a right to determine</li>
   <li><code class="app-code app-code--inline">RUN</code> - Removal of unilateral notice (UN2)</li>
   <li><code class="app-code app-code--inline">RXL</code> - Form LL restriction entered - simple request</li>
@@ -6082,6 +6102,7 @@
   <li><code class="app-code app-code--inline">RXS</code> - Restriction (standard wording) (RX1)</li>
   <li><code class="app-code app-code--inline">SBC</code> - Sub charge</li>
   <li><code class="app-code app-code--inline">SJT</code> - Severance of joint tenancy (SEV)</li>
+  <li><code class="app-code app-code--inline">SOT</code> – Subdivision of title</li>
   <li><code class="app-code app-code--inline">STVC</code> - Statutory vestings charge</li>
   <li><code class="app-code app-code--inline">STVL</code> - Statutory vestings land</li>
   <li><code class="app-code app-code--inline">TNVTP</code> - Transfer (not for value or reverse premium) (Transfer of part)</li>
@@ -6090,11 +6111,12 @@
   <li><code class="app-code app-code--inline">TPSTP</code> - Transfer under power of sale (Transfer of part)</li>
   <li><code class="app-code app-code--inline">TRC</code> - Termination of commonhold</li>
   <li><code class="app-code app-code--inline">TSCNVTP</code> - Transfer subject to a charge (not for value or reverse premium) (Transfer of part)</li>
-  <li><code class="app-code app-code--inline">TSCVTP</code> - Transfer subject to a charge for value (Transfer of part)</li>
+  <li><code class="app-code app-code--inline">TSCTP</code> - Transfer subject to a charge for value (Transfer of part)</li>
   <li><code class="app-code app-code--inline">TTP</code> - Transfer for value (Transfer of part)</li>
   <li><code class="app-code app-code--inline">TVRTP</code> - Transfer for value RTB/RTA (Transfer of part)</li>
   <li><code class="app-code app-code--inline">UNN</code> - Unilateral notice (UN1)</li>
   <li><code class="app-code app-code--inline">UPT</code> - Upgrade class of title (UT1)</li>
+  <li><code class="app-code app-code--inline">VRC</code> – Variation of rent charge</li>
   <li><code class="app-code app-code--inline">VC</code> - Variation of charge</li>
   <li><code class="app-code app-code--inline">VLAN</code> - Variation of lease - agreed notice (AN1)</li>
   <li><code class="app-code app-code--inline">VLAP</code> - Deed of variation of a lease - not increasing the term of or adding new land to the extent demised</li>
@@ -6137,17 +6159,23 @@
   <li><code class="app-code app-code--inline">COP</code> - Charge of part</li>
   <li><code class="app-code app-code--inline">CUR</code> - Cancellation of notice of unregistered Rentcharge</li>
   <li><code class="app-code app-code--inline">DCLV</code> - Disclaimer - notice</li>
+  <li><code class="app-code app-code--inline">DEB</code> – Debenture</li>
   <li><code class="app-code app-code--inline">DFL1</code> - New lease - other</li>
   <li><code class="app-code app-code--inline">DFL3</code> - New lease - shared ownership</li>
   <li><code class="app-code app-code--inline">DFL4</code> - New lease - right to buy or right to acquire</li>
+  <li><code class="app-code app-code--inline">DFL6</code> – New lease – taking effect more than three months from date of grant</li>
   <li><code class="app-code app-code--inline">DFT</code> - Defect in title s64(1) LRA 2002</li>
   <li><code class="app-code app-code--inline">DIS</code> - Discharge of charge</li>
   <li><code class="app-code app-code--inline">DJP</code> - Death of a joint proprietor</li>
   <li><code class="app-code app-code--inline">DMR</code> - Disapplication of restriction (RX2)</li>
   <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement</li>
   <li><code class="app-code app-code--inline">DP</code> - Discharge of part</li>
+  <li><code class="app-code app-code--inline">DPR</code> – New lease – including profit a prendre in gross (PAPIG)</li>
   <li><code class="app-code app-code--inline">DSP</code> - Death of a sole proprietor</li>
+  <li><code class="app-code app-code--inline">DSS</code> – Deed of substituted security</li>
   <li><code class="app-code app-code--inline">DTL</code> - Discontinuous lease - timeshare</li>
+  <li><code class="app-code app-code--inline">EX1</code> – Exempt information document registration</li>
+  <li><code class="app-code app-code--inline">EX3</code> – Remove exemption of document registration</li>
   <li><code class="app-code app-code--inline">HR</code> - Notice of home rights (HR1)</li>
   <li><code class="app-code app-code--inline">LCBD</code> - Lease closure - by disclaimer</li>
   <li><code class="app-code app-code--inline">LCBN</code> - Lease closure - by notice</li>
@@ -6168,6 +6196,7 @@
   <li><code class="app-code app-code--inline">PER</code> - Personal covenants</li>
   <li><code class="app-code app-code--inline">PRO</code> - Provisions</li>
   <li><code class="app-code app-code--inline">RC</code> - Restrictive covenants - entry of</li>
+  <li><code class="app-code app-code--inline">RE</code> – Register easement</li>
   <li><code class="app-code app-code--inline">RFN</code> - Deed of rectification</li>
   <li><code class="app-code app-code--inline">RHR</code> - Renewal of home rights (HR2)</li>
   <li><code class="app-code app-code--inline">RNT</code> - Overriding lease granted under s.19</li>
@@ -6175,6 +6204,7 @@
   <li><code class="app-code app-code--inline">ROCC</code> - Release of covenants - cancellation (CN1)</li>
   <li><code class="app-code app-code--inline">ROCU</code> - Release of covenants - unilateral notice (UN1)</li>
   <li><code class="app-code app-code--inline">ROE</code> - Release of easements</li>
+  <li><code class="app-code app-code--inline">RRC</code> – Registration of rent charge</li>
   <li><code class="app-code app-code--inline">RRD</code> - Removal of a right to determine</li>
   <li><code class="app-code app-code--inline">RUN</code> - Removal of unilateral notice (UN2)</li>
   <li><code class="app-code app-code--inline">RXN</code> - Restriction (non-standard wording) (RX1)</li>
@@ -6193,6 +6223,7 @@
   <li><code class="app-code app-code--inline">VOE</code> - Variation of easements</li>
   <li><code class="app-code app-code--inline">VOEA</code> - Variation of easements - agreed notice (AN1)</li>
   <li><code class="app-code app-code--inline">VOEU</code> - Variation of easements - unilateral notice (UN1)</li>
+  <li><code class="app-code app-code--inline">VRC</code> – Variation of rent charge</li>
   <li><code class="app-code app-code--inline">WCT</code> - Withdrawal of caution</li>
   <li><code class="app-code app-code--inline">WDR</code> - Withdraw a restriction (RX4)</li>
 </ul>
@@ -6226,8 +6257,10 @@
   <li><code class="app-code app-code--inline">CUR</code> - Cancellation of notice of unregistered Rentcharge</li>
   <li><code class="app-code app-code--inline">DCLN</code> - Disclaimer - notification</li>
   <li><code class="app-code app-code--inline">DCLV</code> - Disclaimer - notice</li>
+  <li><code class="app-code app-code--inline">DEB</code> – Debenture</li>
   <li><code class="app-code app-code--inline">DFL1</code> - New lease - other</li>
   <li><code class="app-code app-code--inline">DFL5</code> - Dispositionary first lease extension of a term</li>
+  <li><code class="app-code app-code--inline">DFL6</code> – New lease – taking effect more than three months from date of grant</li>
   <li><code class="app-code app-code--inline">DFT</code> - Defect in title s64(1) LRA 2002</li>
   <li><code class="app-code app-code--inline">DIS</code> - Discharge of charge</li>
   <li><code class="app-code app-code--inline">DJP</code> - Death of a joint proprietor</li>
@@ -6235,16 +6268,22 @@
   <li><code class="app-code app-code--inline">DMR</code> - Disapplication of restriction (RX2)</li>
   <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement</li>
   <li><code class="app-code app-code--inline">DP</code> - Discharge of part</li>
+  <li><code class="app-code app-code--inline">DPR</code> – New lease – including profit a prendre in gross (PAPIG)</li>
   <li><code class="app-code app-code--inline">DSP</code> - Death of a sole proprietor</li>
+  <li><code class="app-code app-code--inline">DSS</code> – Deed of substituted security</li>
+  <li><code class="app-code app-code--inline">EX1</code> – Exempt information document registration</li>
+  <li><code class="app-code app-code--inline">EX3</code> – Remove exemption of document registration</li>
   <li><code class="app-code app-code--inline">EXR</code> - Extinguishment of rentcharge</li>
   <li><code class="app-code app-code--inline">LCBD</code> - Lease closure - by disclaimer</li>
   <li><code class="app-code app-code--inline">NRT</code> - Notice of rentcharge</li>
   <li><code class="app-code app-code--inline">PRO</code> - Provisions</li>
+  <li><code class="app-code app-code--inline">RE</code> – Register easement</li>
   <li><code class="app-code app-code--inline">RFN</code> - Deed of rectification</li>
   <li><code class="app-code app-code--inline">RNT</code> - Overriding lease granted under s.19</li>
   <li><code class="app-code app-code--inline">ROCC</code> - Release of covenants - cancellation (CN1)</li>
   <li><code class="app-code app-code--inline">ROCU</code> - Release of covenants - unilateral notice (UN1)</li>
   <li><code class="app-code app-code--inline">ROE</code> - Release of easements</li>
+  <li><code class="app-code app-code--inline">RRC</code> – Registration of rent charge</li>
   <li><code class="app-code app-code--inline">RRD</code> - Removal of a right to determine</li>
   <li><code class="app-code app-code--inline">RUN</code> - Removal of unilateral notice (UN2)</li>
   <li><code class="app-code app-code--inline">RXN</code> - Restriction (non-standard wording) (RX1)</li>
@@ -6264,6 +6303,7 @@
   <li><code class="app-code app-code--inline">VOE</code> - Variation of easements</li>
   <li><code class="app-code app-code--inline">VOEA</code> - Variation of easements - agreed notice (AN1)</li>
   <li><code class="app-code app-code--inline">VOEU</code> - Variation of easements - unilateral notice (UN1)</li>
+  <li><code class="app-code app-code--inline">VRC</code> – Variation of rent charge</li>
   <li><code class="app-code app-code--inline">WDR</code> - Withdraw a restriction (RX4)</li>
 </ul>
 <h3 class="govuk-heading-s" id="remove-jp-1" tabindex="-1"><code>REMOVE_JP1</code></h3>
@@ -7428,7 +7468,7 @@ For the following lease transactions, there must be at least one tenant and one 
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">full-value-of-property-or-band-is-valid 
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">full-value-of-property-or-band-is-invalid 
 	</code></td>
       <td class="govuk-table__cell">	
 Full value of property must be greater than or equal to property value<br><br>Full value of property band must be greater than or equal to property value band<br><br>Value bands were used for a transaction type that does not allow value band usage </td>
