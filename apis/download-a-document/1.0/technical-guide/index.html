@@ -182,6 +182,7 @@
 <p class="govuk-body">Note: A <code class="app-code app-code--inline">download id</code> may be available in the <a href="/bg-dev-pack-redesign/apis/application-information" class="govuk-link">Application information API’s</a> response before the notification is sent, under the <code class="app-code app-code--inline">/correspondences</code> array. The document is not guaranteed to be available for download until the notification has been issued.</p>
 <h3 class="govuk-heading-s" id="downloading-a-document" tabindex="-1">Downloading a document</h3>
 <p class="govuk-body">Once you’ve obtained the <code class="app-code app-code--inline">download id</code> you can use it in a <code class="app-code app-code--inline">GET</code> request to this service. The request is simple and will result in the document binary being returned (as long as your request method allows redirects).</p>
+<p class="govuk-body">Upon completion, you can retrieve an Official Copy. Official Copies are currently only returned as PDF documents. We recognise the need for Official Copy data at completion and are considering this for a future release, but there are no confirmed timelines as of yet.</p>
 </section>
 <section>
 <h2 class="govuk-heading-m" id="validation-rules" tabindex="-1">Validation rules</h2>
