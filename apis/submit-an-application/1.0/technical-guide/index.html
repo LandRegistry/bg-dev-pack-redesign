@@ -382,7 +382,7 @@
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">MessageID</td>
       <td class="govuk-table__cell">Idempotency-Key</td>
-      <td class="govuk-table__cell">Idempotency-Key is a HTTP Header</td>
+      <td class="govuk-table__cell">The idempotency key is an HTTP header that stops the same request being handled more than once. It protects your service from accidental repeat calls. Learn more at <a href="#idempotency-key">Idempotency Key guidance</a>.</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">NewLease</td>
@@ -491,6 +491,12 @@
     </tr>
   </tbody>
 </table>
+<h3 class="govuk-heading-s" id="idempotency-key" tabindex="-1">Idempotency key</h3>
+<p class="govuk-body">You must set a new idempotency key for every unique request. A key is only reused when retrying a failed request with the same request data.</p>
+<p class="govuk-body">If you change the request data to fix a validation error, this is a new request. A new idempotency key is required.</p>
+<p class="govuk-body">If the earlier request was processed successfully but the response timed out, the retry is treated as a duplicate. The request payload is ignored, and the original application request ID is returned.</p>
+<p class="govuk-body">HTTP responses that can be retried are 408, 429, 500–599 and network timeouts.</p>
+<p class="govuk-body">HTTP responses of 401 and 403 show that your credentials or permissions are incorrect.</p>
 <h3 class="govuk-heaidng-s" id="list-of-valid-territories" tabindex="-1">List of valid territories</h3>
 <p class="govuk-body">When a party is an overseas company, you must provide the territory of incorporation. This territory must be one of the territories defined below:</p>
 <details class="govuk-details">
@@ -6583,30 +6589,30 @@
 </ul>
 <h2 class="govuk-heading-m" id="list-of-validation-rules" tabindex="-1">List of validation rules</h2>
 <p class="govuk-body">During application submission, several validation rules will run against the data provided to ensure it is valid. A number of these rules run synchronously before an <code class="app-code app-code--inline">application_request_id</code> is returned and they are documented in the schema documentation. Other rules run asynchronously, after the <code class="app-code app-code--inline">application_request_id</code> has been returned.</p>
-<h2 class="govuk-heading-s" id="bypass-validation" tabindex="-1">Bypass validation</h2>
-<p class="govuk-body">If an application fails validation, users should rectify validation errors to avoid the need for bypassing, for example by adding the correct transactions (eg. DJP or Change of name for name discrepancies, and RX1 for restrictions within a transfer). Incorrect use of bypass rules will delay the processing of an application and could result in requisition points.</p>
-<p class="govuk-body">For exceptions to specific rules, we provide a <code class="app-code app-code--inline">bypass_validation</code> array that applies to specific objects, as defined by the <code class="app-code app-code--inline">pointer</code>.</p>
-<p class="govuk-body">Usage of validation bypass will be monitored. To use the bypass functionality, the following information is required:</p>
+<h2 class="govuk-heading-s" id="dispute-validation-result" tabindex="-1">Dispute validation result</h2>
+<p class="govuk-body">If an application fails validation, users should rectify validation errors to avoid the need for disputing the result, for example by adding the correct transactions (e.g. DJP or Change of name for name discrepancies, and RX1 for restrictions within a transfer). Incorrect use of the dispute validation rules will delay the processing of an application and could result in requisition points.</p>
+<p class="govuk-body">For exceptions to specific rules, we provide a <code class="app-code app-code--inline">bypass_validation</code> array that applies to specific objects, as defined by the pointer.</p>
+<p class="govuk-body">Instances of the dispute validation result will be monitored. To use the dispute validation functionality, the following information is required:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">validation_type</code> - the type of validation rule you want to bypass. This is returned in the <code class="app-code app-code--inline">type</code> field from any validation error</li>
-<li><code class="app-code app-code--inline">validation_pointer</code> - the location of the object in the payload structure. This is returned in the <code class="app-code app-code--inline">pointer</code>field from some validation errors</li>
-<li><code class="app-code app-code--inline">reason</code> - the specific reason the bypass was required. Must be one of:
+<li><code class="app-code app-code--inline">validation_type</code> - the type of validation rule you want to dispute. This is returned in the type field from any validation error</li>
+<li><code class="app-code app-code--inline">validation_pointer</code> - the location of the object in the payload structure. This is returned in the pointerfield from some validation errors</li>
+<li><code class="app-code app-code--inline">reason</code> - the specific reason the dispute was required. Must be one of:
 <ul class="govuk-list govuk-list--bullet">
 <li><code class="app-code app-code--inline">DISAGREE_WITH_REGISTER</code> - the validation rule is incorrect because the data on the register is incorrect</li>
 <li><code class="app-code app-code--inline">HMLR_DATA_INCORRECT_OR_OUTDATED</code> - there is missing, outdated or incorrect data in a comparison database</li>
 <li><code class="app-code app-code--inline">EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code> - the application is valid. An exception should apply but is not covered by current business rules</li>
 </ul>
 </li>
-<li><code class="app-code app-code--inline">comment</code> - a user inputted description of why the validation is being bypassed</li>
+<li><code class="app-code app-code--inline">comment</code> - a user inputted description of why the validation is being disputed</li>
 </ul>
-<p class="govuk-body">Bypassing validation can only be done for specific rules, and each rule is only permitted to have specific reasons for bypassing the validation. Information about which validation types support bypassing and which reasons are valid for those types are defined below:-color:</p>
+<p class="govuk-body">Disputing validation can only be done under specific rules. Each rule is only permitted with specific reasons for disputing the validation result. Information about which validation types support the dispute function and which reasons are valid for those types are defined below:</p>
 <!--LG: Refactored to markdown up to here-->
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--s">Validation bypass rules</caption>
+  <caption class="govuk-table__caption govuk-table__caption--s">Validation dispute rules</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Validation type</th>
-      <th scope="col" class="govuk-table__header">Valid bypass reasons</th>
+      <th scope="col" class="govuk-table__header">Valid dispute reasons</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
