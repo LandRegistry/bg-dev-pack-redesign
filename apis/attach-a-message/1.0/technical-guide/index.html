@@ -179,7 +179,7 @@
 <p class="govuk-body">Once the request to attach a message has been validated, an empty ‘202 Accepted’ response will be returned on success. If validation fails, a ‘400’ response will be returned containing details of the error.</p>
 <p class="govuk-body">After the request has been accepted, message attachment begins. Once this completes (successfully or otherwise) a notification will be sent.</p>
 <h3 id="notifications" tabindex="-1" class="govuk-heading-m">Notifications</h3>
-<p class="govuk-body">Once the message attachment process finishes, notifications will be available from the <a href="apis/notifications" class="govuk-link">Notifications API</a> about the status of the attached message:</p>
+<p class="govuk-body">Once the message attachment process finishes, notifications will be available from the <a href="apis/notifications#attach-a-message-status-notification" class="govuk-link">Notifications API</a> about the status of the attached message:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li>
 <p class="govuk-body"><code class="app-code app-code--inline">application.message-success</code> - the message has successfully been attached to the application</p>
@@ -261,101 +261,6 @@
   <span class="app-code__punctuation">]</span>  
 
 <span class="app-code__punctuation">}</span>      
-</code></pre>
-
-</div>
-<p class="govuk-body">Attach a message status notification</p>
-<div class="code-wrapper">
-<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
-  Copy code
-</button>
-<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>  
-
-  <span class="app-code__attr">&quot;errors &quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>  
-
-    <span class="app-code__punctuation">{</span>  
-
-  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>  
-
-    <span class="app-code__punctuation">{</span>  
-
-      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;7788bfb3-02f2-4c9b-be58-94e9df010ac8&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-25T16:17:19.120585661Z&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://landregistry.github.io/bgtechdoc/schemas/v1/application/message-success.json&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.message-success&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3d4b51cf-76ab-40ad-9b09-099323034adf&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-20T09:06:29.120585661Z&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
-
-        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
-
-          <span class="app-code__attr">&quot;attachment_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">123</span>  
-
-        <span class="app-code__punctuation">}</span>  
-
-      <span class="app-code__punctuation">}</span>  
-
-    <span class="app-code__punctuation">}</span>  
-  
-
-  <span class="app-code__punctuation">]</span>  
-
-<span class="app-code__punctuation">}</span>     
-</code></pre>
-
-</div>
-<p class="govuk-body">Attach a message success notification</p>
-<div class="code-wrapper">
-<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
-  Copy code
-</button>
-<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>  
-
-  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>  
-
-    <span class="app-code__punctuation">{</span>  
-
-      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;7788bfb3-02f2-4c9b-be58-94e9df010ac8&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-25T16:17:19.120585661Z&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot; https://landregistry.github.io/bgtechdoc/schemas/v1/application/message-failed.json &quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot; application.message-failed&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3d4b51cf-76ab-40ad-9b09-099323034adf&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-20T09:06:29.120585661Z&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>  
-
-      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
-
-        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
-
-          <span class="app-code__attr">&quot;failure_reason&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;An error occurred&quot;</span>  
-
-        <span class="app-code__punctuation">}</span>  
-
-      <span class="app-code__punctuation">}</span>  
-
-    <span class="app-code__punctuation">}</span>  
-
-  <span class="app-code__punctuation">]</span>  
-
-<span class="app-code__punctuation">}</span>     
 </code></pre>
 
 </div>
