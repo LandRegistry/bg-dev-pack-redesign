@@ -174,36 +174,7 @@
 <h2 class="govuk-heading-m" id="how-to-use-the-submit-an-application-api" tabindex="-1">How to use the Submit an application API</h2>
 <p class="govuk-body">To submit an application request, make an HTTP POST request to the application request endpoint, the body of which contains the information about the application using the <code class="app-code app-code--inline">application/json</code> content type.</p>
 <p class="govuk-body">This endpoint will return an object containing a unique ID for the request, <code class="app-code app-code--inline">application_request_id</code>, which is then used when fetching the status of the application. Any errors in the schema will be rejected as a 400 HTTP error. Any other validation errors will be returned in the application information response.</p>
-<h3 class="govuk-heading-s" id="notifications" tabindex="-1">Notifications</h3>
-<p class="govuk-body">Note: For general information, view the <a href="/bg-dev-pack-redesign/apis/notifications" class="govuk-link">notifications API page</a>.</p><p></p>
-<p class="govuk-body">During application submission, notifications will be available from the notifications API about changes that happen to the application. These notifications currently include:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">application.accepted-priority-protected</code> - the application has been accepted and is on the day list</li>
-<li><code class="app-code app-code--inline">application.accepted-priority-pending</code> - the application has been accepted and is queuing for the day list</li>
-<li><code class="app-code app-code--inline">application.validation-failed</code> - the application submission has failed</li>
-<li><code class="app-code app-code--inline">application.error</code> - the application has not been added to the day list due to an error</li>
-<li><code class="app-code app-code--inline">application.correspondence-despatched</code> - the application has had a correspondence raised against it</li>
-<li><code class="app-code app-code--inline">application.cancelled</code> - the application has been cancelled</li>
-<li><code class="app-code app-code--inline">application.completed</code> - the application has been completed</li>
-</ul>
-<p class="govuk-body">The notifications will contain the following information:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">application.accepted-priority-protected</code>, <code class="app-code app-code--inline">application.accepted-priority-pending</code> and <code class="app-code app-code--inline">application.error</code> will contain the updated application status only</li>
-<li><code class="app-code app-code--inline">application.accepted-priority-protected</code> will contain updated application status, the priority of the application and the HMLR reference for the accepted application</li>
-<li><code class="app-code app-code--inline">application.correspondence-despatched</code>, <code class="app-code app-code--inline">application.cancelled</code> and <code class="app-code app-code--inline">application.completed</code> will contain a list of correspondence documents that can be downloaded using the <a href="/bg-dev-pack-redesign/apis/download-a-document" class="govuk-link">download a document API</a>.</li>
-</ul>
-<p class="govuk-body">To get more detailed information about an application that caused the notification, use the <a href="/bg-dev-pack-redesign/apis/application-information" class="govuk-link">Application information API</a>. For example, after receiving an <code class="app-code app-code--inline">application.validation-failed</code> notification, use the Application information API to get a list of the validation errors.</p>
-<h3 class="govuk-heading-s" id="schemas" tabindex="-1">Schemas</h3>
-<p class="govuk-body">JSON schemas can be found below:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li><a href="/bg-dev-pack-redesign/schemas/v1/application/accepted-priority-protected.json" class="govuk-link"><code class="app-code app-code--inline">application.accepted-priority-protected</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/application/accepted-awaiting-priority.json" class="govuk-link"><code class="app-code app-code--inline">application.accepted-priority-pending</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/application/validation-error.json" class="govuk-link"><code class="app-code app-code--inline">application.validation-failed</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/application/application-error.json" class="govuk-link"><code class="app-code app-code--inline">application.error</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/application/correspondence-despatched.json" class="govuk-link"><code class="app-code app-code--inline">application.correspondence-despatched</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/application/cancelled.json" class="govuk-link"><code class="app-code app-code--inline">application.cancelled</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/application/completed.json" class="govuk-link"><code class="app-code app-code--inline">application.completed</code></a></li>
-</ul>
+<p class="govuk-body">During application submission, notifications will be available from the notifications API about changes that happen to the application. To find out about these notifications, view the <a href="/bg-dev-pack-redesign/apis/notifications" class="govuk-link">notifications API page</a>.</p><p></p>
 </section>
 <section id="validation-rules">
 <h2 class="govuk-heading-m" id="validation-rules" tabindex="-1">Validation rules</h2>
@@ -7512,60 +7483,6 @@ Full value of property must be greater than or equal to property value<br><br>Fu
 </div>
 <h2 class="govuk-heading-m" id="example-requests-and-responses">Example requests and responses</h2>
 <div class="govuk-!-padding-bottom-3"></div>
-<h3 class="govuk-heading-s"><code>application.accepted-priority-protected</code> notification</h3>
-<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
-  Copy code
-</button>
-<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
-  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
-    <span class="app-code__punctuation">{</span>
-      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;7788bfb3-02f2-4c9b-be58-94e9df010ac8&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-25T16:17:19.120585661Z&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://landregistry.github.io/bgtechdoc/schemas/v1/application/accepted-priority-protected.json&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.accepted-priority-protected&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3d4b51cf-76ab-40ad-9b09-099323034adf&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-20T09:06:29.120585661Z&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-          <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ACCEPTED_PRIORITY_PROTECTED&quot;</span><span class="app-code__punctuation">,</span>
-          <span class="app-code__attr">&quot;priority&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-20T09:06:29.04&quot;</span><span class="app-code__punctuation">,</span>
-          <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;A123ABR&quot;</span>
-        <span class="app-code__punctuation">}</span>
-      <span class="app-code__punctuation">}</span>
-    <span class="app-code__punctuation">}</span>
-  <span class="app-code__punctuation">]</span>
-<span class="app-code__punctuation">}</span>
-</code></pre>
-
-</div>
-<h3 class="govuk-heading-s"><code>application.validation-failed</code> notification</h3>
-<div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
-  Copy code
-</button>
-<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
-  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
-    <span class="app-code__punctuation">{</span>
-      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;7788bfb3-02f2-4c9b-be58-94e9df010ac8&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-25T16:17:19.120585661Z&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://landregistry.github.io/bgtechdoc/schemas/v1/application/validation-failed.json&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.validation-failed&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3d4b51cf-76ab-40ad-9b09-099323034adf&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-20T09:06:29.120585661Z&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-          <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;VALIDATION_FAILED&quot;</span>
-        <span class="app-code__punctuation">}</span>
-      <span class="app-code__punctuation">}</span>
-    <span class="app-code__punctuation">}</span>
-  <span class="app-code__punctuation">]</span>
-<span class="app-code__punctuation">}</span>
-</code></pre>
-
-</div>
 <h3 class="govuk-heading-s"><code>POST - /v0/applications</code> - Charge</h3>
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
