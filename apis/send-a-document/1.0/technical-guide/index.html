@@ -184,7 +184,10 @@
 <li><code class="app-code app-code--inline">document_id</code> - This is a unique ID for this document, and must be included in the application submission payload</li>
 </ul>
 <h3 class="govuk-heading-s" id="upload-a-document" tabindex="-1">Upload a document</h3>
-<p class="govuk-body">To upload a document, make a PUT request to the URL returned from the ‘Create an upload URL’ POST request above. This request should contain the document as the body content. A 200 HTTP code will be returned if the upload was successful. Documents will asynchronously be virus scanned and validated. Issues found during this process will be surfaced via the Application information API. Do not modify the URL received in the response.</p>
+<p class="govuk-body">To upload a document, make a PUT request to the URL returned from the ‘Create an upload URL’ POST request above. This request should contain the document as the body content. Do not modify the URL received in the response. A 200 HTTP code will be returned if the upload was successful.</p>
+<p class="govuk-body">Documents will asynchronously be virus scanned and validated. Issues found during this process will be surfaced via the application information API. If a virus is found, the application information API will tell you this. If the file is corrupted, it will report that the file type is not supported. You will not receive notifications about these issues.</p>
+<p class="govuk-body">The maximum size permitted for a single document upload is 40MiB (41943040 bytes).</p>
+<p class="govuk-body">Multi-part uploads are not supported and there are no plans to add them.</p>
 </section>
 <section>
 <h2 class="govuk-heading-m" id="validation-rules" tabindex="-1">Validation rules</h2>
@@ -195,7 +198,7 @@
 <li>PDFs (must not be password protected)</li>
 <li>TIFFs</li>
 <li>GIFs</li>
-<li>PNGs</li>
+<li>JPGs</li>
 </ul>
 <p class="govuk-body">Any other file types are not supported and will cause application submission to fail.</p>
 <h3 class="govuk-heading-s" id="file-length-sha-256" tabindex="-1">File length/SHA-256</h3>
