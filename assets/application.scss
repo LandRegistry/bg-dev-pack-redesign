@@ -177,3 +177,14 @@ a {
         width: 100%;
         margin-top: -10px;
     }
+
+// Fixing max-width of accordion headers
+.app-prose-scope h2,
+.app-prose-scope h3 {
+max-width: 100%;
+}
+
+// Fix colour text on search
+.app-search__menu {
+  color: govuk-colour("black");
+}
