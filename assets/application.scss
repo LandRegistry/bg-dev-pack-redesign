@@ -1,45 +1,21 @@
-// Use GOV.UK Frontend
-$_font-family: 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif !important;
-$_brand-colour: #789904;
+@use "govuk-frontend/dist/govuk/" as *;
 
-// Use HMLR Frontend
-@use "../../node_modules/@hmlr/frontend/hmlr/all.scss" as * with (
-  $govuk-font-family: $_font-family,
-  $govuk-brand-colour: $_brand-colour,
+$govuk-font-family: 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif !important;
+$govuk-brand-colour: #789904;
+
+@forward "pkg:@hmlr/frontend" with (
   $hmlr-assets-path: "/hmlrassets/"
 );
-@use "pkg:govuk-frontend/dist/govuk" with (
-  $govuk-font-family: $_font-family,
-  $govuk-brand-colour: $_brand-colour
-);
-@use "pkg:@x-govuk/govuk-eleventy-plugin";
+@forward "pkg:@x-govuk/govuk-eleventy-plugin";
 
 @import "../../node_modules/@govuk-prototype-kit/step-by-step/sass/step-by-step-navigation";
 @import "../../node_modules/@govuk-prototype-kit/step-by-step/sass/step-by-step-navigation-related";
 @import "../../node_modules/@govuk-prototype-kit/step-by-step/sass/step-by-step-navigation-header";
 
-body,
-input,
-h1,
-h2,
-h3,
-a,
-.govuk-body,
-.govuk-heading-xl,
-.govuk-heading-l,
-.govuk-heading-m,
-.govuk-heading-s,
-.govuk-caption-xl,
-.govuk-caption-l,
-.govuk-caption-m,
-.govuk-caption-s,
-.govuk-link,
-.govuk-list,
-.govuk-related-items,
-.govuk-side-navigation {
-  font-family: $govuk-font-family;
+:root {
+  --govuk-brand-colour: #{$govuk-brand-colour};
+  --govuk-font-family: #{$govuk-font-family};
 }
-
 
 aside.contents-list {
   padding-bottom: 15px;
@@ -47,7 +23,7 @@ aside.contents-list {
 }
 
 aside.related-items {
-  border-top: 2px solid $_brand-colour;
+  border-top: 2px solid var(--govuk-brand-colour);
   padding-top: 10px;
 }
 
@@ -81,8 +57,8 @@ aside.content-list ol.dashed-list, .content-list ul {
 }
 
 .grey {
-  background-color: govuk-colour("light-grey");
-  border-bottom-color: govuk-colour("mid-grey");
+  background-color: govuk-colour("black", $variant: "tint-95");
+  border-bottom-color: govuk-colour("black", $variant: "tint-80");
   border-bottom-width: .1em;
   border-bottom-style: solid;
 }
