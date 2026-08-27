@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "type": "object",
     "additionalProperties": false,
-    "description": "JSON Schema for attachments that were successfully added to an application.",
+    "description": "JSON Schema for attachments that have failed validation and were not added to an application.",
     "required": [
         "data"
     ],

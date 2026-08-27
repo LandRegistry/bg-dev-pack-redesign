@@ -137,19 +137,6 @@
     "tokens": "select version content"
   },
   {
-    "title": "Download a document API test stubs",
-    "section": "Download a document API API v1.0",
-    "url": "/bg-dev-pack-redesign/apis/download-a-document/1.0/test-stubs/",
-    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 download cancellation document request method get endpoint v1 documents can 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 headers authorization any value response contents following redirects status 200 body binary 302 location 2 letter ltr 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 3 register completion sheet rcs efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a 4 copy reg 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038"
-  },
-  {
-    "title": "Download a document API",
-    "description": "Use this service to download documents created by HMLR",
-    "section": "APIs",
-    "url": "/bg-dev-pack-redesign/apis/download-a-document/",
-    "tokens": "select version content"
-  },
-  {
     "title": "Notifications API",
     "description": "Use this service to get updates about multiple applications submitted by the same business unit",
     "section": "Notifications API",
@@ -243,13 +230,6 @@
     "tokens": "version status dropdown v1 0 latest v0 3 button type submit class govuk margin data module onclick setversion view this developer pack maintained by hmlr ve got question idea suggestion can contact us fill our feedback form overview new service will help lodge applications with update register create lease transfer part faster more responsive than before identify errors prior acceptance application result fewer requisitions improved experience customers using api mean that are only accepted onto day list when provided both valid correct validation significantly reduce number avoidable administrative common mistakes such name discrepancies missing details increase ability automate how integrate enable users must build following apis send document allows upload url use their documents system learn about technical guide test complete documentation submitted notifications receive acknowledge throughout submission process information provides specific attach message text messages existing includes replies correspondence received from attaching sent download way created work together diagram below shows all should used change land start finish specification body link href https landregistry github io bgtechdoc openapi html rel noreferrer noopener target blank web opens tab json"
   },
   {
-    "title": "Attach a document API technical guide",
-    "description": "Use this service to attach additional documents to an existing application",
-    "section": "Attach a document API v1.0",
-    "url": "/bg-dev-pack-redesign/apis/attach-a-document/1.0/technical-guide/",
-    "tokens": "how use attach document api before attaching application must uploaded this step read send technical guide existing make http post request endpoint body contains id attached retrieved when uploading certification statement type one certified by another once been validated empty 202 accepted response will returned validation fails 400 containing details error after attachment begins completes successfully otherwise notification sent notifications process finishes available about status via may include success failed rules pass provided exist hmlr s system found 404 also pending state have completed cancelled business unit customer ids are directly computed sending match those being either values example requests responses copy code data 38e7eba4 35bf 41a2 a7a2 7aaf2faa2b3b upon successful return errors oc200 detail order creation pointer null already oc036 7788bfb3 02f2 4c9b be58 94e9df010ac8 created datetime 2025 02 25t16 17 19 120585661z payload schema https landregistry github io bgtechdoc schemas v1 json subject 3d4b51cf 76ab 40ad 9b09 099323034adf event 20t09 06 29 new 123 failure reason occurred"
-  },
-  {
     "title": "Estimated completion date",
     "section": "apis",
     "url": "/bg-dev-pack-redesign/apis/estimate-completion-date/",
@@ -277,20 +257,6 @@
     "tokens": "how use attach message api existing application make http post request endpoint body contains text attached once been validated empty 202 accepted response will returned success validation fails 400 containing details error after attachment begins this completes successfully otherwise notification sent notifications process finishes available from about status failed rules pass provided id must exist hmlr s system found 404 also pending state have completed cancelled business unit customer ids are directly computed when sending match those being either values more than 4034 characters example requests responses copy code data upon successful return errors type oc200 detail order creation pointer null already oc036"
   },
   {
-    "title": "Download a document API",
-    "description": "Use this service to download documents created by HMLR",
-    "section": "Download a document API",
-    "url": "/bg-dev-pack-redesign/apis/download-a-document/1.0/",
-    "tokens": "overview download document api provides way documents created by hmlr this one endpoint get v1 id binary content may obtain from any following completion notifications cancellation requisition correspondence array application information response view technical guide specification web version opens new tab how works diagram demonstrates user either can use that their request test environment ve also provided example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
-  },
-  {
-    "title": "Download a document API technical guide",
-    "description": "Use this service to download documents provided by HMLR",
-    "section": "Download a document v1.0",
-    "url": "/bg-dev-pack-redesign/apis/download-a-document/1.0/technical-guide/",
-    "tokens": "how use download document api obtain id before can this service will need currently only way submit application change land register process result one following types being generated requisition cancellation completion generation each these documents would trigger notification sent via notifications which contain once available note may information s response under correspondences array guaranteed until been issued downloading ve obtained get request simple binary returned long your method allows redirects upon retrieve official copy copies are pdf recognise data considering future release there confirmed timelines yet validation rules implementing example requests responses specific examples payloads produced during submission view documentation redirection enabled code curl url base v1 u username password status 200 body disabled 1 302 header location 2"
-  },
-  {
     "title": "Notifications API technical guide",
     "description": "Use this service to get updates about multiple applications submitted by the same business unit",
     "section": "Notifications API v0.3",
@@ -303,13 +269,6 @@
     "section": "Notifications API",
     "url": "/bg-dev-pack-redesign/apis/notifications/1.0/",
     "tokens": "overview notifications api provides way fetching updates about multiple applications submitted by same business unit currently this service only supports pull interaction model where must requested periodically however more information push will shared future two endpoints get v1 all that match provided filters post acknowledge notify hmlr have been received view technical guide specification web version opens new tab how works diagram demonstrates support users user may send requests receive time using system respond providing relevant request can also acknolwedge notification test created environment ve example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers exact date confirmed general testing guidance visit our"
-  },
-  {
-    "title": "Notifications API technical guide",
-    "description": "Use this service to get updates about multiple applications submitted by the same business unit",
-    "section": "Notifications API v1.0",
-    "url": "/bg-dev-pack-redesign/apis/notifications/1.0/technical-guide/",
-    "tokens": "how use notifications api receive get request fetch all takes following url query parameters which are optional created after only retrieve with timestamp this date before status specific either new acknowledged default specified occurred event notification type subject currently available application more subjects will developed further additional provider filter that match provided limit maximum number return single response 100 matching returned sorted by age oldest first obtain newer related applications submitted your business unit requested parameter were delivery least once meaning time may result one e multiple same different ids duplicate have datetime field can used locate ignore duplicates when receiving continue endpoint until they each still needs separately deleted month whether acknowledge been processed system should send list post change those subsequent calls won t include types description accepted priority protected added daylist pending queuing validation failed error due correspondence despatched raised attachment success document successfully attached attach message cancelled completed these contain information updated hmlr reference documents downloaded using download detailed about caused usually example errors however does attachments messages early completion schemas json found below rules there implementing requests responses v1 2025 01 01t00 00 http 1 copy code data id 3fa85f64 5717 4562 b3fc 2c963f66afa6 03 06t14 32 55 295z payload schema https com string additionalprop1 additionalprop2 additionalprop3 7788bfb3 02f2 4c9b be58 94e9df010ac8 02 25t16 17 19 120585661z landregistry github io bgtechdoc 3d4b51cf 76ab 40ad 9b09 099323034adf 20t09 06 29 04 a123abr 123 failure reason 13fd86a1 ca5d 48c5 9a3a 201f98b80a70 2026 15t09 20 703z 132z 2e640fca 7550 425c 8ad1 51ef87ac32b2 null rcs name registration sheet 616z a19dac826ecf5c1ca604ceff33fc109832b8d5a7d269a987199f49261c62f958 reg register 701z 852518c2cc217638fc02629ffd417138187ebfc44ee6db7b59e21e5d25dface4 f185hbx true receives ecm ecr letter official next gives evidence discharge d3ca1fdf d4ee 4f63 bf6f 6be37de6e882 30 953z 359z 494z 39d2c53730b8f5d9d9c69c05d0429e3b0bb91c974db5092b78521febce86eb46 891z 4e8dbeb03ac6aa3c418cd5ef1d10f392c4cbc27a533dd9834fc8568568d5e0fb"
   },
   {
     "title": "Send a document API",
@@ -352,6 +311,47 @@
   {
     "title": "Support",
     "url": "/bg-dev-pack-redesign/support/"
+  },
+  {
+    "title": "Attach a document API technical guide",
+    "description": "Use this service to attach additional documents to an existing application",
+    "section": "Attach a document API v1.0",
+    "url": "/bg-dev-pack-redesign/apis/attach-a-document/1.0/technical-guide/",
+    "tokens": "how use attach document api before attaching application must uploaded this step read send technical guide existing make http post request endpoint body contains id attached retrieved when uploading certification statement type one certified by another once been validated empty 202 accepted response will returned validation fails 400 containing details error after attachment begins completes successfully otherwise notification sent notifications process finishes available about status via may include success failed rules pass provided exist hmlr s system found 404 also pending state have completed cancelled business unit customer ids are directly computed sending match those being either values example requests responses copy code data 38e7eba4 35bf 41a2 a7a2 7aaf2faa2b3b upon successful return errors oc200 detail order creation pointer null already oc036 7788bfb3 02f2 4c9b be58 94e9df010ac8 created datetime 2025 02 25t16 17 19 120585661z payload schema https landregistry github io bgtechdoc schemas v1 json subject 3d4b51cf 76ab 40ad 9b09 099323034adf event 20t09 06 29 new 123 failure reason occurred"
+  },
+  {
+    "title": "Download a document API",
+    "description": "Use this service to download documents created by HMLR",
+    "section": "Download a document API",
+    "url": "/bg-dev-pack-redesign/apis/download-a-document/1.0/",
+    "tokens": "overview download document api provides way documents created by hmlr this one endpoint get v1 id binary content may obtain from any following completion notifications cancellation requisition correspondence array application information response view technical guide specification web version opens new tab how works diagram demonstrates user either can use that their request test environment ve also provided example code demonstrate what should expect when developing your own services stubs please note there are plans release sandbox developers future exact date confirmed general testing guidance visit our"
+  },
+  {
+    "title": "Download a document API technical guide",
+    "description": "Use this service to download documents provided by HMLR",
+    "section": "Download a document v1.0",
+    "url": "/bg-dev-pack-redesign/apis/download-a-document/1.0/technical-guide/",
+    "tokens": "how use download document api obtain id before can this service will need currently only way submit application change land register process result one following types being generated requisition cancellation completion generation each these documents would trigger notification sent via notifications which contain once available note may information s response under correspondences array guaranteed until been issued downloading ve obtained get request simple binary returned long your method allows redirects upon retrieve official copy copies are pdf recognise data considering future release there confirmed timelines yet validation rules implementing example requests responses specific examples payloads produced during submission view documentation redirection enabled code curl url base v1 u username password status 200 body disabled 1 302 header location 2"
+  },
+  {
+    "title": "Download a document API test stubs",
+    "section": "Download a document API API v1.0",
+    "url": "/bg-dev-pack-redesign/apis/download-a-document/1.0/test-stubs/",
+    "tokens": "hmlr does currently provide test environment integrators using our business gateway apis instead ve provided example code different scenarios demonstrate what should expect see when developing your own services base url https bgtest landregistry gov uk bg2test api scenario 1 download cancellation document request method get endpoint v1 documents can 62523897b09f9a3f380eefd878e7205aac78781cc68383ba79c3b7d42385 headers authorization any value response contents following redirects status 200 body binary 302 location 2 letter ltr 6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549 3 register completion sheet rcs efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a 4 copy reg 7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038"
+  },
+  {
+    "title": "Download a document API",
+    "description": "Use this service to download documents created by HMLR",
+    "section": "APIs",
+    "url": "/bg-dev-pack-redesign/apis/download-a-document/",
+    "tokens": "select version content"
+  },
+  {
+    "title": "Notifications API technical guide",
+    "description": "Use this service to get updates about multiple applications submitted by the same business unit",
+    "section": "Notifications API v1.0",
+    "url": "/bg-dev-pack-redesign/apis/notifications/1.0/technical-guide/",
+    "tokens": "how use notifications api receive get request fetch all takes following url query parameters which are optional created after only retrieve with timestamp this date before status specific either new acknowledged default specified occurred event notification type subject currently available application more subjects will developed further additional provider filter that match provided limit maximum number return single response 100 matching returned sorted by age oldest first obtain newer related applications submitted your business unit requested parameter were delivery least once meaning time may result one e multiple same different ids duplicate have datetime field can used locate ignore duplicates when receiving continue endpoint until they each still needs separately deleted month whether acknowledge been processed system should send list post change those subsequent calls won t include types description accepted priority protected added daylist pending queuing validation failed error due correspondence despatched raised attachment success document successfully attached attach message cancelled completed these contain information updated hmlr reference documents download using detailed about caused usually example errors however does attachments messages early completion supported support code name atp plan cancellation letter cmt transaction dsr data synchronisation enquiries ecm ecr official copy register ec6 6 reminder lrp land registry notice illustrative ltr ocd ocp title ocr pcd postal rcs registration sheet reg roa tid schemas json found below rules there implementing requests responses v1 2025 01 01t00 00 http 1 id 3fa85f64 5717 4562 b3fc 2c963f66afa6 03 06t14 32 55 295z payload schema https com string additionalprop1 additionalprop2 additionalprop3 7788bfb3 02f2 4c9b be58 94e9df010ac8 02 25t16 17 19 120585661z landregistry github io bgtechdoc 3d4b51cf 76ab 40ad 9b09 099323034adf 20t09 06 29 04 a123abr 123 failure reason 13fd86a1 ca5d 48c5 9a3a 201f98b80a70 2026 15t09 20 703z 132z 2e640fca 7550 425c 8ad1 51ef87ac32b2 null 616z a19dac826ecf5c1ca604ceff33fc109832b8d5a7d269a987199f49261c62f958 701z 852518c2cc217638fc02629ffd417138187ebfc44ee6db7b59e21e5d25dface4 f185hbx true receives next gives evidence discharge d3ca1fdf d4ee 4f63 bf6f 6be37de6e882 30 953z 359z 494z 39d2c53730b8f5d9d9c69c05d0429e3b0bb91c974db5092b78521febce86eb46 891z 4e8dbeb03ac6aa3c418cd5ef1d10f392c4cbc27a533dd9834fc8568568d5e0fb"
   },
   {
     "title": "Submit an application API technical guide",
