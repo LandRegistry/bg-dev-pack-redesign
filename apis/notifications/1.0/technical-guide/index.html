@@ -260,9 +260,91 @@
 <ul class="govuk-list govuk-list--bullet">
 <li><code class="app-code app-code--inline">application.accepted-priority-protected</code>, <code class="app-code app-code--inline">application.accepted-priority-pending</code> and <code class="app-code app-code--inline">application.error</code> will contain the updated application status only</li>
 <li><code class="app-code app-code--inline">application.accepted-priority-protected</code> will contain updated application status, the priority of the application and the HMLR reference for the accepted application</li>
-<li><code class="app-code app-code--inline">application.correspondence-despatched</code>, <code class="app-code app-code--inline">application.cancelled</code> and <code class="app-code app-code--inline">application.completed</code> will contain a list of correspondence documents that can be downloaded using the <a href="/bg-dev-pack-redesign/apis/download-a-document" class="govuk-link">download a document API</a>.</li>
+<li><code class="app-code app-code--inline">application.correspondence-despatched</code>, <code class="app-code app-code--inline">application.cancelled</code> and <code class="app-code app-code--inline">application.completed</code> will contain <a href="#supported-correspondence-documents" class="govuk-link">a list of correspondence documents</a> for download using the <a href="/bg-dev-pack-redesign/apis/download-a-document" class="govuk-link">download a document API</a>.</li>
 </ul>
 <p class="govuk-body">To get more detailed information about an application that caused the notification, you can usually use the <a href="/bg-dev-pack-redesign/apis/application-information" class="govuk-link">application information API</a>. For example, after receiving an <code class="app-code app-code--inline">application.validation-failed</code> notification, use the Application information API to get a list of the validation errors. However, the application information API does not currently return information related to attachments, messages or early completion.</p>
+<h4 id="supported-correspondence-documents" tabindex="-1" class="govuk-heading-s">Supported correspondence documents</h4>
+<p class="govuk-body">Notifications currently support the following types of correspondence document.</p>
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Document code</th>
+      <th scope="col" class="govuk-table__header">Name</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">ATP</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">ATTACHED PLAN</code></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">CAN</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">CANCELLATION LETTER</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">CMT</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">COMPLETION OF TRANSACTION NOTIFICATION</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">DSR</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">DATA SYNCHRONISATION ENQUIRIES RESULT</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">ECM</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">EARLY COMPLETION LETTER</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">ECR</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">EARLY COMPLETION OFFICIAL COPY OF THE REGISTER</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">EC6</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">EARLY COMPLETION 6 MONTH REMINDER</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">LRP</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">LAND REGISTRY NOTICE PLAN/ILLUSTRATIVE PLAN</code></td>
+    </tr>
+    
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">LTR</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">LETTER</code></td>
+    </tr>
+    
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">OCD</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">OFFICIAL COPY OF A DOCUMENT</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">OCP</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">OFFICIAL COPY OF THE TITLE PLAN</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">OCR</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">OFFICIAL COPY OF THE REGISTER</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">PCD</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">POSTAL CANCELLATION DOCUMENT</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">RCS</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">REGISTRATION COMPLETION SHEET</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">REG</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">COPY OF UPDATED REGISTER</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">ROA</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">RESULT OF APPLICATION</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">TID</code></td>
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">TITLE INFORMATION DOCUMENT</code></td>
+    </tr>                                    
+  </tbody>
+</table>
 <h3 class="govuk-heading-s" id="schemas" tabindex="-1">Schemas</h3>
 <p class="govuk-body">JSON schemas for each notification type can be found below:</p>
 <ul class="govuk-list govuk-list--bullet">
