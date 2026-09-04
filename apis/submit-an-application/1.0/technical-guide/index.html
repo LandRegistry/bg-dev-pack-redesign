@@ -197,8 +197,8 @@
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">AddressForService</td>
-      <td class="govuk-table__cell">full_address</td>
-      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">addresses[]</td>
+      <td class="govuk-table__cell">Array on the <code class="app-code app-code--inline">Party</code> object containing address references for the specified parties </td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">AP1WarningUnderstood</td>
@@ -6477,7 +6477,7 @@
 <p class="govuk-body">During application submission, several validation rules will run against the data provided to ensure it is valid. A number of these rules run synchronously before an <code class="app-code app-code--inline">application_request_id</code> is returned and they are documented in the schema documentation. Other rules run asynchronously, after the <code class="app-code app-code--inline">application_request_id</code> has been returned.</p>
 <h2 class="govuk-heading-s" id="dispute-validation-result" tabindex="-1">Dispute validation result</h2>
 <p class="govuk-body">If an application fails validation, users should rectify validation errors to avoid the need for disputing the result, for example by adding the correct transactions (e.g. DJP or Change of name for name discrepancies, and RX1 for restrictions within a transfer). Incorrect use of the dispute validation rules will delay the processing of an application and could result in requisition points.</p>
-<p class="govuk-body">For exceptions to specific rules, we provide a <code class="app-code app-code--inline">bypass_validation</code> array that applies to specific objects, as defined by the pointer.</p>
+<p class="govuk-body">For exceptions to specific rules, we provide a <code class="app-code app-code--inline">disagree_with_validation_results</code> array that applies to specific objects, as defined by the pointer.</p>
 <p class="govuk-body">Instances of the dispute validation result will be monitored. To use the dispute validation functionality, the following information is required:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li><code class="app-code app-code--inline">validation_type</code> - the type of validation rule you want to dispute. This is returned in the type field from any validation error</li>
@@ -6572,7 +6572,7 @@
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;bypass_validation&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;disagree_with_validation_results&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">{</span>
       <span class="app-code__attr">&quot;validation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;all-proprietors-matched-to-borrowers&quot;</span><span class="app-code__punctuation">,</span>
       <span class="app-code__attr">&quot;validation_pointer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;/data/parties/borrower-1&quot;</span><span class="app-code__punctuation">,</span>
       <span class="app-code__attr">&quot;reason&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;DISAGREE_WITH_REGISTER&quot;</span><span class="app-code__punctuation">,</span>
