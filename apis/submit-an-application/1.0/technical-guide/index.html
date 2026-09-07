@@ -113,6 +113,40 @@
       
 
       
+        <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+          <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden="" aria-hidden="true">
+            Menu
+          </button>
+
+          <ul class="govuk-service-navigation__list" id="navigation">
+
+            
+              
+              <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/bg-dev-pack-redesign /what-to-expect-from-the-developer-pack">
+                                    
+Get started
+                  </a>
+              </li>
+
+              
+              <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/bg-dev-pack-redesign /find-a-service-api">
+                                    
+Explore APIs
+                  </a>
+              </li>
+
+              
+              <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/bg-dev-pack-redesign /support/feedback">
+                                    
+Support
+                  </a>
+              </li>
+
+            </ul>
+        </nav>
     </div>
 
     </div>
@@ -179,11 +213,49 @@
 <h2 class="govuk-heading-m" id="how-to-use-the-submit-an-application-api" tabindex="-1">How to use the Submit an application API</h2>
 <p class="govuk-body">To submit an application request, make an HTTP POST request to the application request endpoint, the body of which contains the information about the application using the <code class="app-code app-code--inline">application/json</code> content type.</p>
 <p class="govuk-body">This endpoint will return an object containing a unique ID for the request, <code class="app-code app-code--inline">application_request_id</code>, which is then used when fetching the status of the application. Any errors in the schema will be rejected as a 400 HTTP error. Any other validation errors will be returned in the application information response.</p>
+<h3 id="find-the-status-of-your-applications" tabindex="-1" class="govuk-heading-m">Find the status of your applications</h3>
 <p class="govuk-body">During application submission, notifications will be available from the notifications API about changes that happen to the application. To find out about these notifications, view the <a href="/bg-dev-pack-redesign/apis/notifications" class="govuk-link">notifications API page</a>.</p><p></p>
 </section>
 <section id="validation-rules">
 <h2 class="govuk-heading-m" id="validation-rules" tabindex="-1">Validation rules</h2>
 <p class="govuk-body">To pass validation, you must follow the guidance for implementing this API below.</p>
+<h3 id="digital-mortgage-validation" tabindex="-1" class="govuk-heading-m">Digital mortgage validation</h3>
+<div class="govuk-inset-text app-inset-text--note"><span class="govuk-visually-hidden">Note: </span><p class="govuk-body">Digital mortgage submissions are currently limited to:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>integrators who already use our digital mortgage service, and their customers</li>
+<li>single title charge transactions with a title <code class="app-code app-code--inline">scope</code> of <code class="app-code app-code--inline">WHOLE</code></li>
+</ul>
+</div>
+<p class="govuk-body">If you have built for the digital mortgage service, your digital mortgage applications can be accepted without requiring an attached legal charge document or deed. Instead, you can provide the electronic mortgage deed (e-MD) reference, using the <code class="app-code app-code--inline">mdref</code> parameter.</p>
+<p class="govuk-body">The <code class="app-code app-code--inline">mdref</code> parameter value must contain between eight and nine characters, using the following pattern:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="app-code app-code--inline">e-MD</code> using a hyphen character</li>
+<li>followed by three or four digits (0 to 9)</li>
+<li>followed by a single letter (A to Z) (uppercase)</li>
+</ul>
+<p class="govuk-body">Example value: <code class="app-code app-code--inline">e-MD0006A</code></p>
+<p class="govuk-body">The e-MD reference is required for all digital mortgage applications that have been created using the digital mortgage service. Applications with an incorrect e-MD reference will be requisitioned.</p>
+<p class="govuk-body">For related error messages, see <a href="/bg-dev-pack-redesign/apis/application-information/1.0/technical-guide#digital-mortgage-validation-error-types" class="govuk-link">Application information API technical guide</a>.</p>
+<h3 id="search-reference-validation" tabindex="-1" class="govuk-heading-m">Search reference validation</h3>
+<p class="govuk-body">You can now provide the reference number of the search certificate for an official search, using the <code class="app-code app-code--inline">search_reference</code> parameter. Applications with search references that match the highest priority search on the daylist can benefit from faster processing.</p>
+<div class="govuk-inset-text app-inset-text--note"><span class="govuk-visually-hidden">Note: </span><p class="govuk-body">Search reference validation is currently limited to:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>official searches with a priority of whole, which are for a valuable consideration, such as a charge or purchase</li>
+<li>title charge transactions at title level (transaction code <code class="app-code app-code--inline">&quot;C&quot;</code>)</li>
+</ul>
+</div>
+<p class="govuk-body">The <code class="app-code app-code--inline">search_reference</code> parameter value is an optional nine-character string, which must contain nine characters, using the following pattern:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>a three-digit number (001 and 255)</li>
+<li>followed by a hyphen</li>
+<li>followed by a letter or number</li>
+<li>followed by a letter or number</li>
+<li>followed by a hyphen</li>
+<li>followed by a letter or number</li>
+<li>followed by a letter or number</li>
+</ul>
+<p class="govuk-body">Example value: <code class="app-code app-code--inline">114-B2-L5</code></p>
+<p class="govuk-body">For related error messages, see <a href="/bg-dev-pack-redesign/apis/application-information/1.0/technical-guide#search-reference-warning" class="govuk-link">Application information API technical guide</a>.</p>
 <h3 class="govuk-heading-s" id="soap-migration-guide" tabindex="-1">SOAP migration guide</h3>
 <p class="govuk-body">The structure has changed between the SOAP and REST APIs. Most fields retain their existing names, but some have changed, as noted below:</p>
 <table class="govuk-table">
@@ -1212,7 +1284,7 @@
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">RADV</td>
-      <td class="govuk-table__cell">Removal of Adverse Possession entry (proprietorship protective entry)</td>
+      <td class="govuk-table__cell">Removal of adverse possession entry (proprietorship protective entry)</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">RC</td>
@@ -1244,7 +1316,7 @@
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">RORBAP</td>
-      <td class="govuk-table__cell">Registering Official receiver in bankruptcy as proprietor</td>
+      <td class="govuk-table__cell">Registering official receiver in bankruptcy as proprietor</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">RNT</td>
@@ -1264,7 +1336,7 @@
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">RTBAP</td>
-      <td class="govuk-table__cell">Registering Trustee in bankruptcy as a proprietor</td>
+      <td class="govuk-table__cell">Registering trustee in bankruptcy as a proprietor</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">RTM</td>
@@ -1289,6 +1361,10 @@
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">SBC</td>
       <td class="govuk-table__cell">Sub charge</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SCH</td>
+      <td class="govuk-table__cell">Correction or alteration registration (mistakes, updates or superfluous entries)</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">SHO</td>
@@ -1448,7 +1524,7 @@
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">WDR</td>
-      <td class="govuk-table__cell">Withdraw a restriction (RX4)</td>
+      <td class="govuk-table__cell">Withdrawal of a restriction (RX4)</td>
     </tr>
   </tbody>
 </table>
@@ -1541,6 +1617,14 @@
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">ASSIGNMENT</td>
       <td class="govuk-table__cell">Assignment</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">BANKRUPTCY_COURT_ORDER</td>
+      <td class="govuk-table__cell">Office copy or certified copy of the bankruptcy order</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">BCA_TRUST</td>
+      <td class="govuk-table__cell">Certified copy of the certificate of appointment as trustee by a meeting of the bankrupt's creditors</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">BIRTH_CERT</td>
@@ -1951,6 +2035,14 @@
       <td class="govuk-table__cell">Notice of disclaimer</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">NOTICE_OF_APPOINTMENT</td>
+      <td class="govuk-table__cell">Notice of appointment</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">OR_CERT_BE</td>
+      <td class="govuk-table__cell">Certificate by the official receiver</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">ORD_DISS_NULL_CP</td>
       <td class="govuk-table__cell">Order of dissolution or nullity of civil partnership</td>
     </tr>
@@ -2027,8 +2119,12 @@
       <td class="govuk-table__cell">Statement Of Truth</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SSA_TRUST</td>
+      <td class="govuk-table__cell">Certified copy of the certificate of appointment as trustee by the Secretary of State</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">SSALIQ</td>
-      <td class="govuk-table__cell">Appointment of Liquidator by The Secretary of State</td>
+      <td class="govuk-table__cell">Appointment of Liquidator by the Secretary of State</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">STAT_DEC</td>
@@ -2037,6 +2133,10 @@
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">SUB_CHARGE</td>
       <td class="govuk-table__cell">Sub Charge</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">TIB_CERT_BE</td>
+      <td class="govuk-table__cell">Certificate by the trustee in bankruptcy that the registered estate or charge is comprised within the bankrupt's estate</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">TP1</td>
@@ -2061,6 +2161,10 @@
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">TRANSFER</td>
       <td class="govuk-table__cell">Transfer</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">TRUSTEE_COURT_ORDER</td>
+      <td class="govuk-table__cell">Office copy or certified copy of the order of the court appointing the trustee</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">TRUSTEE_RESOLUTION</td>
@@ -2122,6 +2226,7 @@
 </table>
   </div>
 </details>
+<h3 class="govuk-heading-s" id="transaction-and-document-mapping" tabindex="-1">Transaction and document mapping</h3>
 <p class="govuk-body">As well as the definition of each transaction/document, we have also provided a mapping, showing the required documents for each transaction type. There are three categories of documents that can be uploaded for a transaction:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li><strong>Compulsory</strong> - this document is required for the transaction type</li>
@@ -2185,6 +2290,56 @@
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">ADV1NT2</td>
+      <td class="govuk-table__cell">ADV1</td>
+      <td class="govuk-table__cell">Compulsory</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">SOT</td>
+      <td class="govuk-table__cell">Either</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">STAT_DEC</td>
+      <td class="govuk-table__cell">Either</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">EVIDENCE</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">PLAN</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">RXC</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">ADV1S12</td>
+      <td class="govuk-table__cell">SOT</td>
+      <td class="govuk-table__cell">Either</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">STAT_DEC</td>
+      <td class="govuk-table__cell">Either</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">EVIDENCE</td>
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
@@ -2651,6 +2806,11 @@
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">RX1</td>
       <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">CADV</td>
+      <td class="govuk-table__cell">EVIDENCE</td>
+      <td class="govuk-table__cell">Compulsory</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">CAG</td>
@@ -3338,6 +3498,36 @@
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">DFL6</td>
+      <td class="govuk-table__cell">COMP_DOC</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">CONSENT</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">CONV_CERT</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">LEASE</td>
+      <td class="govuk-table__cell">Compulsory</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">LTT</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">SDLT</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">DFT</td>
       <td class="govuk-table__cell">EVIDENCE</td>
       <td class="govuk-table__cell">Suggested</td>
@@ -3423,6 +3613,11 @@
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">DM</td>
+      <td class="govuk-table__cell">EVIDENCE</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">DMR</td>
       <td class="govuk-table__cell">RX2</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -3456,6 +3651,36 @@
       <td class="govuk-table__cell">DP</td>
       <td class="govuk-table__cell">DS1</td>
       <td class="govuk-table__cell">Compulsory</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">DPR</td>
+      <td class="govuk-table__cell">COMP_DOC</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">CONSENT</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">CONV_CERT</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">LEASE</td>
+      <td class="govuk-table__cell">Compulsory</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">LTT</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">SDLT</td>
+      <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">DSP</td>
@@ -4193,6 +4418,21 @@
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">NAOA</td>
+      <td class="govuk-table__cell">COURT_ORD</td>
+      <td class="govuk-table__cell">Either</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">NOTICE_OF_APPOINTMENT</td>
+      <td class="govuk-table__cell">Either</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">EVIDENCE</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">NCT</td>
       <td class="govuk-table__cell">EVIDENCE</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -4351,6 +4591,11 @@
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">POA</td>
       <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">RADV</td>
+      <td class="govuk-table__cell">EVIDENCE</td>
+      <td class="govuk-table__cell">Compulsory</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">RC</td>
@@ -4573,6 +4818,16 @@
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">RORBAP</td>
+      <td class="govuk-table__cell">BANKRUPTCY_COURT_ORDER</td>
+      <td class="govuk-table__cell">Compulsory</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">OR_CERT_BE</td>
+      <td class="govuk-table__cell">Compulsory</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">RRC</td>
       <td class="govuk-table__cell">DEED</td>
       <td class="govuk-table__cell">Either</td>
@@ -4611,6 +4866,31 @@
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">POA</td>
       <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">RTBAP</td>
+      <td class="govuk-table__cell">BANKRUPTCY_COURT_ORDER</td>
+      <td class="govuk-table__cell">Compulsory</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">TIB_CERT_BE</td>
+      <td class="govuk-table__cell">Compulsory</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">BCA_TRUST</td>
+      <td class="govuk-table__cell">Either</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">SSA_TRUST</td>
+      <td class="govuk-table__cell">Either</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">TRUSTEE_COURT_ORDER</td>
+      <td class="govuk-table__cell">Either</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">RTM</td>
@@ -5779,7 +6059,7 @@
 <ul class="govuk-list govuk-list--bullet">
   <li><code class="app-code app-code--inline">ADV1</code> - First notice of adverse possession</li>
   <li><code class="app-code app-code--inline">ADV2</code> - Adverse possession: notification</li>
-  <li><code class="app-code app-code--inline">ADV1NT2</code> – Second Notice of adverse possession</li>
+  <li><code class="app-code app-code--inline">ADV1NT2</code> – Second notice of adverse possession</li>
   <li><code class="app-code app-code--inline">ADV1S12</code> – Adverse possession (under schedule 12)</li>
   <li><code class="app-code app-code--inline">AGN</code> - Agreed notice (AN1)</li>
   <li><code class="app-code app-code--inline">AML</code> - Amalgamation</li>
@@ -5832,7 +6112,7 @@
   <li><code class="app-code app-code--inline">DL</code> - Discontinuous lease - non-timeshare</li>
   <li><code class="app-code app-code--inline">DM</code> – De-registration of a manor</li>
   <li><code class="app-code app-code--inline">DMR</code> - Disapplication of restriction (RX2)</li>
-  <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement</li>
+  <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement (easement contained in a deed of grant)</li>
   <li><code class="app-code app-code--inline">DP</code> - Discharge of part</li>
   <li><code class="app-code app-code--inline">DSP</code> - Death of a sole proprietor</li>
   <li><code class="app-code app-code--inline">DSS</code> – Deed of substituted security</li>
@@ -5867,7 +6147,7 @@
   <li><code class="app-code app-code--inline">PRO</code> - Provisions</li>
   <li><code class="app-code app-code--inline">RADV</code> – Removal of adverse possession entry (proprietorship protective entry)</li>
   <li><code class="app-code app-code--inline">RC</code> - Restrictive covenants - entry of</li>
-  <li><code class="app-code app-code--inline">RE</code> – Register easement</li>
+  <li><code class="app-code app-code--inline">RE</code> – Register easement (easement contained in a transfer/lease)</li>
   <li><code class="app-code app-code--inline">RFN</code> - Deed of rectification</li>
   <li><code class="app-code app-code--inline">RHR</code> - Renewal of home rights (HR2)</li>
   <li><code class="app-code app-code--inline">RNT</code> - Overriding lease granted under s.19</li>
@@ -5885,6 +6165,7 @@
   <li><code class="app-code app-code--inline">RXN</code> - Restriction (non-standard wording) (RX1)</li>
   <li><code class="app-code app-code--inline">RXS</code> - Restriction (standard wording) (RX1)</li>
   <li><code class="app-code app-code--inline">SBC</code> - Sub charge</li>
+  <li><code class="app-code app-code--inline">SCH</code> - Correction or alteration of register (mistakes, updates, or superfluous entries)</li>
   <li><code class="app-code app-code--inline">SHO</code> - Shared ownership - additional share</li>
   <li><code class="app-code app-code--inline">SJT</code> - Severance of joint tenancy (SEV)</li>
   <li><code class="app-code app-code--inline">SOT</code> – Subdivision of title</li>
@@ -5916,7 +6197,7 @@
   <li><code class="app-code app-code--inline">VOEA</code> - Variation of easements - agreed notice (AN1)</li>
   <li><code class="app-code app-code--inline">VOEU</code> - Variation of easements - unilateral notice (UN1)</li>
   <li><code class="app-code app-code--inline">WCT</code> - Withdrawal of caution</li>
-  <li><code class="app-code app-code--inline">WDR</code> - Withdraw a restriction (RX4)</li>
+  <li><code class="app-code app-code--inline">WDR</code> - Withdrawal of a restriction (RX4)</li>
 </ul>
 <h3 class="govuk-heading-s" id="transfer-of-part" tabindex="-1"><code>TRANSFER_OF_PART</code></h3>
 <ul class="govuk-list govuk-list--bullet">
@@ -5957,7 +6238,7 @@
   <li><code class="app-code app-code--inline">DIS</code> - Discharge of charge</li>
   <li><code class="app-code app-code--inline">DL</code> - Discontinuous lease - non-timeshare</li>
   <li><code class="app-code app-code--inline">DMR</code> - Disapplication of restriction (RX2)</li>
-  <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement</li>
+  <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement (easement contained in a deed of grant)</li>
   <li><code class="app-code app-code--inline">DP</code> - Discharge of part</li>
   <li><code class="app-code app-code--inline">DSP</code> - Death of a sole proprietor</li>
   <li><code class="app-code app-code--inline">DSS</code> – Deed of substituted security</li>
@@ -5980,7 +6261,7 @@
   <li><code class="app-code app-code--inline">NRT</code> - Notice of rentcharge</li>
   <li><code class="app-code app-code--inline">PRO</code> - Provisions</li>
   <li><code class="app-code app-code--inline">RC</code> - Restrictive covenants - entry of</li>
-  <li><code class="app-code app-code--inline">RE</code> – Register easement</li>
+  <li><code class="app-code app-code--inline">RE</code> – Register easement (easement contained in a transfer/lease)</li>
   <li><code class="app-code app-code--inline">RFN</code> - Deed of rectification</li>
   <li><code class="app-code app-code--inline">RNT</code> - Overriding lease granted under s.19</li>
   <li><code class="app-code app-code--inline">ROCC</code> - Release of covenants - cancellation (CN1)</li>
@@ -6060,7 +6341,7 @@
   <li><code class="app-code app-code--inline">DIS</code> - Discharge of charge</li>
   <li><code class="app-code app-code--inline">DJP</code> - Death of a joint proprietor</li>
   <li><code class="app-code app-code--inline">DMR</code> - Disapplication of restriction (RX2)</li>
-  <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement</li>
+  <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement (easement contained in a deed of grant)</li>
   <li><code class="app-code app-code--inline">DP</code> - Discharge of part</li>
   <li><code class="app-code app-code--inline">DPR</code> – New lease – including profit a prendre in gross (PAPIG)</li>
   <li><code class="app-code app-code--inline">DSP</code> - Death of a sole proprietor</li>
@@ -6088,7 +6369,7 @@
   <li><code class="app-code app-code--inline">PER</code> - Personal covenants</li>
   <li><code class="app-code app-code--inline">PRO</code> - Provisions</li>
   <li><code class="app-code app-code--inline">RC</code> - Restrictive covenants - entry of</li>
-  <li><code class="app-code app-code--inline">RE</code> – Register easement</li>
+  <li><code class="app-code app-code--inline">RE</code> – Register easement (easement contained in a transfer/lease)</li>
   <li><code class="app-code app-code--inline">RFN</code> - Deed of rectification</li>
   <li><code class="app-code app-code--inline">RHR</code> - Renewal of home rights (HR2)</li>
   <li><code class="app-code app-code--inline">RNT</code> - Overriding lease granted under s.19</li>
@@ -6158,7 +6439,7 @@
   <li><code class="app-code app-code--inline">DJP</code> - Death of a joint proprietor</li>
   <li><code class="app-code app-code--inline">DL</code> - Discontinuous lease - non-timeshare</li>
   <li><code class="app-code app-code--inline">DMR</code> - Disapplication of restriction (RX2)</li>
-  <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement</li>
+  <li><code class="app-code app-code--inline">DOG</code> - Deed of grant of easement (easement contained in a deed of grant)</li>
   <li><code class="app-code app-code--inline">DP</code> - Discharge of part</li>
   <li><code class="app-code app-code--inline">DPR</code> – New lease – including profit a prendre in gross (PAPIG)</li>
   <li><code class="app-code app-code--inline">DSP</code> - Death of a sole proprietor</li>
@@ -6169,7 +6450,7 @@
   <li><code class="app-code app-code--inline">LCBD</code> - Lease closure - by disclaimer</li>
   <li><code class="app-code app-code--inline">NRT</code> - Notice of rentcharge</li>
   <li><code class="app-code app-code--inline">PRO</code> - Provisions</li>
-  <li><code class="app-code app-code--inline">RE</code> – Register easement</li>
+  <li><code class="app-code app-code--inline">RE</code> – Register easement (easement contained in a transfer/lease)</li>
   <li><code class="app-code app-code--inline">RFN</code> - Deed of rectification</li>
   <li><code class="app-code app-code--inline">RNT</code> - Overriding lease granted under s.19</li>
   <li><code class="app-code app-code--inline">ROCC</code> - Release of covenants - cancellation (CN1)</li>
@@ -6205,8 +6486,8 @@
 <h3 class="govuk-heading-s" id="additional-transaction-details" tabindex="-1">Additional transaction details</h3>
 <p class="govuk-body">For certain transaction types, more detailed information is needed (via the <code class="app-code app-code--inline">Transaction.details</code> field). This field can be one of several different types:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">Transfer</code>  (dates must not be in the future)</li>
-<li><code class="app-code app-code--inline">Charge</code>  (dates must not be in the future)</li>
+<li><code class="app-code app-code--inline">Transfer</code> (Transfer date must not be in the future)</li>
+<li><code class="app-code app-code--inline">Charge</code> (Charge date must not be in the future)</li>
 <li><code class="app-code app-code--inline">Discharge</code></li>
 <li><code class="app-code app-code--inline">AmountDetails</code></li>
 </ul>
@@ -6230,15 +6511,13 @@
 <li><code class="app-code app-code--inline">DIS</code> - Discharge</li>
 <li><code class="app-code app-code--inline">DP</code> - Discharge of part</li>
 </ul>
+<p class="govuk-body">For paper discharges, we will require lender and representation details as part of the application submission.</p>
 <p class="govuk-body"><code>AmountDetails</code></p>
 <ul class="govuk-list govuk-list--bullet">
-<li>ADV1NT2 - Second notice of adverse possession</li>
-<li>ADV1S12 - Adverse possession (under schedule 2)</li>
 <li>ASTT - Assent</li>
 <li>ASTC - Assent of charge</li>
 <li>APT - Appointment of new trustee</li>
 <li>ASSTTP - Assent (Transfer of part)</li>
-<li>CADV - Cancellation of Adverse Possession</li>
 <li>CPVK - Compulsory purchase (property value known)</li>
 <li>CPVU - Compulsory purchase (property value unknown)</li>
 <li>DFL1 - New lease - other</li>
@@ -6247,8 +6526,6 @@
 <li>DFL5 - Dispositionary first lease extension of a term</li>
 <li>DFL6 - New lease - taking effect more than three months from the date of grant</li>
 <li>DL - Discontinuous lease - non-timeshare</li>
-<li>DM - De-registration of a manor</li>
-<li>DPR - New lease - including profit a prendre in gross (PAPIG)</li>
 <li>DTL - Discontinuous lease - timeshare</li>
 <li>LCSD - Lease closure - surrender by deed (not for value or reverse premium)</li>
 <li>LCSDM - Lease closure - surrender by deed</li>
@@ -6256,11 +6533,9 @@
 <li>LCSDMWT - Lease closure - surrender by deed (together with transfer)</li>
 <li>LCSOL - Lease closure - surrender by operation of law (not for value or reverse premium)</li>
 <li>LCSOLM - Lease closure - surrender by operation of law</li>
-<li>NAOA - Application to note appointment of an administrator</li>
-<li>RADV - Removal of Adverse Possession entry (proprietorship protective entry)</li>
 <li>RNT - Overriding lease granted under s.19, Landlord &amp; Tenant (Covenants) Act 1995</li>
-<li>RORBAP - Registering Official receiver in bankruptcy as a proprietor</li>
-<li>RTBAP - Registering Trustee in Bankruptcy as a proprietor</li>
+<li>RORBAP - Registering official receiver in bankruptcy as a proprietor</li>
+<li>RTBAP - Registering trustee in bankruptcy as a proprietor</li>
 <li>TNVTP - Transfer (not for value or reverse premium) (Transfer of part)</li>
 <li>TOC - Transfer of charge</li>
 <li>TOSNVTP - Transfer of share (not for value or reverse premium) (Transfer of part)</li>
@@ -6298,17 +6573,21 @@
 <h3 class="govuk-heading-s" id="party-roles" tabindex="-1">Party roles</h3>
 <p class="govuk-body">Each party included in an application should be given a party role for each transaction it is used in. Parties can be given the following roles:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">ATTORNEY</code></li>
-<li><code class="app-code app-code--inline">TRANSFEROR</code></li>
-<li><code class="app-code app-code--inline">TRANSFEREE</code></li>
-<li><code class="app-code app-code--inline">LENDER</code></li>
-<li><code class="app-code app-code--inline">BORROWER</code></li>
-<li><code class="app-code app-code--inline">PERSONAL_REPRESENTATIVE</code></li>
+<li><code class="app-code app-code--inline">APPLICANT</code></li>
 <li><code class="app-code app-code--inline">ASSENTOR</code></li>
+<li><code class="app-code app-code--inline">ATTORNEY</code></li>
+<li><code class="app-code app-code--inline">BORROWER</code></li>
 <li><code class="app-code app-code--inline">LANDLORD</code></li>
+<li><code class="app-code app-code--inline">LENDER</code></li>
+<li><code class="app-code app-code--inline">OFFICIAL_RECEIVER</code></li>
+<li><code class="app-code app-code--inline">PERSONAL_REPRESENTATIVE</code></li>
 <li><code class="app-code app-code--inline">TENANT</code></li>
+<li><code class="app-code app-code--inline">TRANSFEREE</code></li>
+<li><code class="app-code app-code--inline">TRANSFEROR</code></li>
+<li><code class="app-code app-code--inline">TRUSTEE_IN_BANKRUPTCY</code></li>
 </ul>
-<p class="govuk-body">A party may be given different roles in different transactions. A party must not be used for multiple party roles within a single transaction, with the exception of the following transactions: ASTT, ASSTTP, ASTC, TOSNV, TOSNVTP, TOSTP, TOSV</p>
+<p class="govuk-body">A party may be given different roles in different transactions. A party must not be used for multiple party roles within a single transaction, with the exception of the following transactions: ASTT, ASSTTP, ASTC, TOSNV, TOSNVTP, TOSTP, TOSV.</p>
+<p class="govuk-body">When a party does not have a defined role, the party role is optional. For example, an applicant with a third party interest.</p>
 <h3 class="govuk-heading-s" id="capacity-fields" tabindex="-1">Capacity fields</h3>
 <p class="govuk-body">The capacity field is a data item within the party role object. The capacity field must be provided for Landlords, Tenants and Transferors when they are added as additional parties to transactions. It can be provided for any other party role, but this is optional. The exception to this rule is for Transferors on assent transactions.</p>
 <p class="govuk-body">Certain capacities will require specific documents to be included.</p>
@@ -7257,9 +7536,9 @@ For the following lease transactions, there must be at least one tenant and one 
     </tr>
   </tbody>
 </table>
-<h3 class="govuk-heading-s">Transferee validation</h3>
+<h3 class="govuk-heading-s" id="transferee-validation" tabindex="-1">Transferee validation</h3>
 <p class="govuk-body">All Transfer transactions must have at least one transferee present. Each transferee must have a representation type that is not <code class="app-code app-code--inline">NOT_REQUIRED</code>.  </p>
-<p class="govuk-body">At least one valid postal address must be provided as the address for service. If overseas, the address must have a country. </p>
+<p class="govuk-body">At least one valid postal address must be provided as the address for service. If overseas, you must provide the first line of the address and the country. </p>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Transferee validation error types</caption>
   <thead class="govuk-table__head">

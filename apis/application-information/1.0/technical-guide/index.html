@@ -113,6 +113,40 @@
       
 
       
+        <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+          <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden="" aria-hidden="true">
+            Menu
+          </button>
+
+          <ul class="govuk-service-navigation__list" id="navigation">
+
+            
+              
+              <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/bg-dev-pack-redesign /what-to-expect-from-the-developer-pack">
+                                    
+Get started
+                  </a>
+              </li>
+
+              
+              <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/bg-dev-pack-redesign /find-a-service-api">
+                                    
+Explore APIs
+                  </a>
+              </li>
+
+              
+              <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/bg-dev-pack-redesign /support/feedback">
+                                    
+Support
+                  </a>
+              </li>
+
+            </ul>
+        </nav>
     </div>
 
     </div>
@@ -193,6 +227,73 @@
 <section>
 <h2 class="govuk-heading-m" id="validation-rules" tabindex="-1">Validation rules</h2>
 <p class="govuk-body">There are no validation rules for implementing this API.</p>
+</section>
+<section>
+<h2 class="govuk-heading-m" id="search-reference-warning" tabindex="-1">Search reference warning</h2>
+<p class="govuk-body">The following warnings are displayed for information purposes, when a search reference is provided, but does not match our records for the reasons below:</p>
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Warning message</th>
+      <th scope="col" class="govuk-table__header">Reason</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">SEARCH_REFERENCE_DOES_NOT_MATCH</code> “The search reference provided, at the time of submission, is not the highest priority search on the daylist."</td>
+      <td class="govuk-table__cell">A search reference is provided, but it doesn’t match the highest priority search on record</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">SEARCH_REFERENCE_NOT_PROVIDED</code> “There are official searches found on the daylist.”</td>
+      <td class="govuk-table__cell">A search reference isn’t provided at all, but there is an active search on the daylist</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">SEARCH_REFERENCE_NOT_REQUIRED</code> “The search reference provided, at the time of submission, is not a live search on the daylist.”</td>
+      <td class="govuk-table__cell">A search reference is provided, but there is no active search on the daylist</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+<section>
+<h2 class="govuk-heading-m" id="digital-mortgage-validation" tabindex="-1">Digital mortgage validation </h2>
+<div class="govuk-inset-text app-inset-text--note"><span class="govuk-visually-hidden">Note: </span><p class="govuk-body">Digital mortgage submissions are currently limited to:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>integrators who already use our digital mortgage service, and their customers</li>
+<li>single title charge transactions with a title <code class="app-code app-code--inline">scope</code> of <code class="app-code app-code--inline">WHOLE</code></li>
+</ul>
+</div>
+<p class="govuk-body">For digital mortgage applications:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>an e-MD reference is required</li>
+<li>no documents need to be attached</li>
+</ul>
+<h3 class="govuk-heading-s" id="digital-mortgage-validation-error-types" tabindex="-1">Digital mortgage validation error types </h3>
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">TOO_MANY_TITLES</code></td>
+      <td class="govuk-table__cell">Provide an e-MD reference for single title applications only</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">INVALID_TRANSACTION_TYPE</code></td>
+      <td class="govuk-table__cell">Provide an e-MD reference for charge transactions only</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">INVALID_TITLE_SCOPE</code></td>
+      <td class="govuk-table__cell">Title scope must be WHOLE for the title associated with a transaction containing an e-MD reference</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">TOO_MANY_TRANSACTIONS_WITH_EMDREF</code></td>
+      <td class="govuk-table__cell">Provide a maximum of one transaction that contains an e-MD reference</td>
+    </tr>
+  </tbody>
+</table>
 </section>
 <section>
 <h2 class="govuk-heading-m" id="example-requests-and-responses" tabindex="-1">Example requests and responses</h2>

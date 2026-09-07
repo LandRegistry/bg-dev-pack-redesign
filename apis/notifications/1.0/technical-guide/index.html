@@ -113,6 +113,40 @@
       
 
       
+        <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+          <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden="" aria-hidden="true">
+            Menu
+          </button>
+
+          <ul class="govuk-service-navigation__list" id="navigation">
+
+            
+              
+              <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/bg-dev-pack-redesign /what-to-expect-from-the-developer-pack">
+                                    
+Get started
+                  </a>
+              </li>
+
+              
+              <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/bg-dev-pack-redesign /find-a-service-api">
+                                    
+Explore APIs
+                  </a>
+              </li>
+
+              
+              <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/bg-dev-pack-redesign /support/feedback">
+                                    
+Support
+                  </a>
+              </li>
+
+            </ul>
+        </nav>
     </div>
 
     </div>
@@ -186,7 +220,8 @@
 <li><code class="app-code app-code--inline">occurred_after</code> - only retrieve notifications with an <code class="app-code app-code--inline">event_timestamp</code> after this date</li>
 <li><code class="app-code app-code--inline">occurred_before</code> - only retrieve notifications with an <code class="app-code app-code--inline">event_timestamp</code> before this date</li>
 <li><code class="app-code app-code--inline">notification_type</code> - only retrieve notifications with the specific <code class="app-code app-code--inline">notification_type</code></li>
-<li><code class="app-code app-code--inline">subject</code> - only retrieve notifications with the specific <code class="app-code app-code--inline">subject</code>. The only subject currently available is <code class="app-code app-code--inline">application</code>. More subjects will be available as the API is developed further.</li>
+<li><code class="app-code app-code--inline">subject_type</code> - only retrieve notifications with the specific <code class="app-code app-code--inline">subject_type</code>. The only <code class="app-code app-code--inline">subject_type</code> currently available is <code class="app-code app-code--inline">APPLICATION</code>.</li>
+<li><code class="app-code app-code--inline">subject</code> - only retrieve notifications for a specific application, using the <code class="app-code app-code--inline">application_request_id</code> of the application as the <code class="app-code app-code--inline">subject</code> value</li>
 <li><code class="app-code app-code--inline">additional_provider_filter</code> - only retrieve notifications that match the provided <code class="app-code app-code--inline">additional_provider_filter</code></li>
 <li><code class="app-code app-code--inline">limit</code> - the maximum number of notifications to return in a single response</li>
 </ul>
