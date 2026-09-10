@@ -6497,6 +6497,7 @@ Support
 <li><code class="app-code app-code--inline">T</code> - Transfer for value</li>
 <li><code class="app-code app-code--inline">TNV</code> - Transfer (not for value or reverse premium)</li>
 <li><code class="app-code app-code--inline">TOSNV</code> - Transfer of share (not for value or reverse premium)</li>
+<li><code class="app-code app-code--inline">TOSV</code> - Transfer of share for value</li>
 <li><code class="app-code app-code--inline">TSCNV</code> - Transfer subject to a charge (not for value or reverse premium)</li>
 <li><code class="app-code app-code--inline">TSCV</code> - Transfer subject to a charge for value</li>
 </ul>
@@ -6540,7 +6541,6 @@ Support
 <li>TOC - Transfer of charge</li>
 <li>TOSNVTP - Transfer of share (not for value or reverse premium) (Transfer of part)</li>
 <li>TOSTP - Transfer of share for value (Transfer of part)</li>
-<li>TOSV - Transfer of share for value</li>
 <li>TPS - Transfer under power of sale</li>
 <li>TPSTP - Transfer under power of sale (Transfer of part)</li>
 <li>TRM - Transfer by operation of law on death</li>
@@ -7530,9 +7530,9 @@ For the following lease transactions, there must be at least one tenant and one 
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">order-contains-one-transfer
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">application-contains-one-transfer
 	</code></td>
-      <td class="govuk-table__cell">Order must contain at most one transfer transaction</td>
+      <td class="govuk-table__cell">Application must contain at most one transfer transaction</td>
     </tr>
   </tbody>
 </table>
