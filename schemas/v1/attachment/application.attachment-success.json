@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "description": "JSON schema to notify that a document was successfully attached to an application.",
+  "properties": {
+    "data": {
+      "$ref": "#/$defs/payload_data"
+    }
+  },
+  "required": ["data"],
+  "$defs": {
+    "payload_data": {
+      "type": "object",
+      "properties": {
+        "attachment_id": {
+          "$ref": "#/$defs/attachment_id"
+        }
+      },
+      "required": ["attachment_id"]
+    },
+    "attachment_id": {
+      "type": "integer",
+      "description": "Unique identifier for the attachment."
+    }
+  }
+}

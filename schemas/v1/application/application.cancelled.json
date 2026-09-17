@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "description": "JSON Schema for notifications that an application to change the register has been cancelled.",
+  "properties": {
+    "data": {
+      "$ref": "#/$defs/payload_data"
+    }
+  },
+  "required": ["data"],
+  "$defs": {
+    "payload_data": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "documents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/document"
+          }
+        },
+        "hmlr_reference": {
+          "$ref": "#/$defs/hmlr_reference"
+        },
+        "application_request_id": {
+          "$ref": "#/$defs/application_request_id"
+        }
+      },
+      "required": ["status", "documents", "hmlr_reference", "application_request_id"]
+    },
+    "status": {
+      "type": "string",
+      "const": "CANCELLED",
+      "description": "The status of the application."
+    },
+    "document": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/document_type"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date and time the document was created."
+        },
+        "download_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "SHA-256 hex identifier used to download the document."
+        }
+      },
+      "required": ["type", "created_at", "download_id"]
+    },
+    "document_type": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "The document type code."
+        },
+        "name": {
+          "type": "string",
+          "description": "The human-readable name of the document type."
+        }
+      },
+      "required": ["code", "name"]
+    },
+    "hmlr_reference": {
+      "type": "string",
+      "pattern": "^[A-Z0-9]{7}$",
+      "description": "The reference to the application."
+    },
+    "application_request_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "The unique identifier for the application request."
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "description": "JSON schema to notify that a document failed to be attached to an application.",
+  "properties": {
+    "data": {
+      "$ref": "#/$defs/payload_data"
+    }
+  },
+  "required": ["data"],
+  "$defs": {
+    "payload_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "failure_reason": {
+          "$ref": "#/$defs/failure_reason"
+        }
+      },
+      "required": ["failure_reason"]
+    },
+    "failure_reason": {
+      "type": "string",
+      "description": "Reason why the document failed to be attached."
+    }
+  }
+}

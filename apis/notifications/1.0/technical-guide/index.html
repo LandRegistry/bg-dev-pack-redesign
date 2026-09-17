@@ -172,6 +172,9 @@ Support
       <a class="x-govuk-sub-navigation__link" href="#how-to-use-the-notifications-api">How to use the Notifications API</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
+      <a class="x-govuk-sub-navigation__link" href="#schemas">Schemas</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item">
       <a class="x-govuk-sub-navigation__link" href="#validation-rules">Validation rules</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
@@ -232,11 +235,12 @@ Support
 <p class="govuk-body">Duplicate notifications will have the same <code class="app-code app-code--inline">event_datetime</code> field and <code class="app-code app-code--inline">notification_type</code> which can be used to locate and ignore duplicates when receiving notifications. Notifications will continue to be returned by the endpoint until they are acknowledged, so each duplicate notification still needs to be acknowledged separately.</p>
 <p class="govuk-body">All notifications are deleted after a month, whether acknowledged or not.</p>
 <h3 class="govuk-heading-s" id="acknowledge-notifications" tabindex="-1">Acknowledge notifications</h3>
-<p class="govuk-body">Once a notification has been processed by your system, the notification should be acknowledged. To do this, send a list of <code class="app-code app-code--inline">notification_ids</code> to the <code class="app-code app-code--inline">acknowledge</code> endpoint of the notifications API as a POST request. This will change the status of those notifications to <code class="app-code app-code--inline">ACKNOWLEDGED</code>.</p>
+<p class="govuk-body">Once a notification has been processed by your system, the notification should be acknowledged. To do this, send a list of <code class="app-code app-code--inline">notification_ids</code> to the Acknowledge notifications endpoint (<code class="app-code app-code--inline">POST /v1/notifications/acknowledge</code>) of the notifications API as a POST request. This will change the status of those notifications to <code class="app-code app-code--inline">ACKNOWLEDGED</code>.</p>
 <p class="govuk-body">Subsequent <code class="app-code app-code--inline">GET</code> calls won’t include acknowledged notifications by default.</p>
 </section>
 <section>
 <h3 id="notification-types" tabindex="-1" class="govuk-heading-m">Notification types</h3>
+<p class="govuk-body">Notifications are the most effective way to monitor the status of your business unit’s applications as they progress to completion. For the data retrieved for each notification type, see the <a href="#schemas" class="govuk-link">JSON schemas</a>.</p>
 <table class="govuk-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -291,14 +295,15 @@ Support
     </tr>
   </tbody>
 </table>
-<p class="govuk-body">These notifications will contain the following information:</p>
+<p class="govuk-body">Only certain notification types should prompt you to use the <a href="/bg-dev-pack-redesign/apis/application-information" class="govuk-link">Application information API</a>. For example, after retrieving a <code class="app-code app-code--inline">application.validation-failed</code> notification for an application, use the Application information API to get a list of the validation errors.</p>
+<div class="govuk-inset-text app-inset-text--note"><span class="govuk-visually-hidden">Note: </span><p class="govuk-body">The Application information API <em>does not</em> currently return the following information:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">application.accepted-priority-protected</code>, <code class="app-code app-code--inline">application.accepted-priority-pending</code> and <code class="app-code app-code--inline">application.error</code> will contain the updated application status only</li>
-<li><code class="app-code app-code--inline">application.accepted-priority-protected</code> will contain updated application status, the priority of the application and the HMLR reference for the accepted application</li>
-<li><code class="app-code app-code--inline">application.correspondence-despatched</code>, <code class="app-code app-code--inline">application.cancelled</code> and <code class="app-code app-code--inline">application.completed</code> will contain <a href="#supported-correspondence-documents" class="govuk-link">a list of correspondence documents</a> for download using the <a href="/bg-dev-pack-redesign/apis/download-a-document" class="govuk-link">download a document API</a>.</li>
+<li>the status of attachments (<code class="app-code app-code--inline">application.attachment-success</code> and <code class="app-code app-code--inline">application.attachment-failed</code>)</li>
+<li>the status of messages (<code class="app-code app-code--inline">application.message-success</code> and <code class="app-code app-code--inline">application.message-failed</code>)</li>
+<li>the boolean field (<code class="app-code app-code--inline">was_subject_to_early_completion</code>), which indicates that an application has been subject to early completion</li>
 </ul>
-<p class="govuk-body">To get more detailed information about an application that caused the notification, you can usually use the <a href="/bg-dev-pack-redesign/apis/application-information" class="govuk-link">application information API</a>. For example, after receiving an <code class="app-code app-code--inline">application.validation-failed</code> notification, use the Application information API to get a list of the validation errors. However, the application information API does not currently return information related to attachments, messages or early completion.</p>
-<h4 id="supported-correspondence-documents" tabindex="-1" class="govuk-heading-s">Supported correspondence documents</h4>
+</div>
+<h3 id="supported-correspondence-documents" tabindex="-1" class="govuk-heading-m">Supported correspondence documents</h3>
 <p class="govuk-body">Notifications currently support the following types of correspondence document.</p>
 <table class="govuk-table">
   <thead class="govuk-table__head">
@@ -380,20 +385,20 @@ Support
     </tr>                                    
   </tbody>
 </table>
-<h3 class="govuk-heading-s" id="schemas" tabindex="-1">Schemas</h3>
+<h2 class="govuk-heading-s" id="schemas" tabindex="-1">Schemas</h2>
 <p class="govuk-body">JSON schemas for each notification type can be found below:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><a href="/bg-dev-pack-redesign/schemas/v1/application/accepted-priority-protected.json" class="govuk-link"><code class="app-code app-code--inline">application.accepted-priority-protected</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/application/accepted-awaiting-priority.json" class="govuk-link"><code class="app-code app-code--inline">application.accepted-priority-pending</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/application/validation-error.json" class="govuk-link"><code class="app-code app-code--inline">application.validation-failed</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/application/application-error.json" class="govuk-link"><code class="app-code app-code--inline">application.error</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/application/correspondence-despatched.json" class="govuk-link"><code class="app-code app-code--inline">application.correspondence-despatched</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/attachment/success.json" class="govuk-link"><code class="app-code app-code--inline">application.attachment-success</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/attachment/failed.json" class="govuk-link"><code class="app-code app-code--inline">application.attachment-failed</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/message/success.json" class="govuk-link"><code class="app-code app-code--inline">application.message-success</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/message/failed.json" class="govuk-link"><code class="app-code app-code--inline">application.message-failed</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/application/cancelled.json" class="govuk-link"><code class="app-code app-code--inline">application.cancelled</code></a></li>
-<li><a href="/bg-dev-pack-redesign/schemas/v1/application/completed.json" class="govuk-link"><code class="app-code app-code--inline">application.completed</code></a></li>
+<li><a href="/bg-dev-pack-redesign/schemas/v1/application/application.accepted-priority-protected.json" class="govuk-link"><code class="app-code app-code--inline">application.accepted-priority-protected</code></a></li>
+<li><a href="/bg-dev-pack-redesign/schemas/v1/application/application.accepted-priority-pending.json" class="govuk-link"><code class="app-code app-code--inline">application.accepted-priority-pending</code></a></li>
+<li><a href="/bg-dev-pack-redesign/schemas/v1/application/application.validation-failed.json" class="govuk-link"><code class="app-code app-code--inline">application.validation-failed</code></a></li>
+<li><a href="/bg-dev-pack-redesign/schemas/v1/application/application.error.json" class="govuk-link"><code class="app-code app-code--inline">application.error</code></a></li>
+<li><a href="/bg-dev-pack-redesign/schemas/v1/application/application.correspondence-despatched.json" class="govuk-link"><code class="app-code app-code--inline">application.correspondence-despatched</code></a></li>
+<li><a href="/bg-dev-pack-redesign/schemas/v1/attachment/application.attachment-success.json" class="govuk-link"><code class="app-code app-code--inline">application.attachment-success</code></a></li>
+<li><a href="/bg-dev-pack-redesign/schemas/v1/attachment/application.attachment-failed.json" class="govuk-link"><code class="app-code app-code--inline">application.attachment-failed</code></a></li>
+<li><a href="/bg-dev-pack-redesign/schemas/v1/message/application.message-success.json" class="govuk-link"><code class="app-code app-code--inline">application.message-success</code></a></li>
+<li><a href="/bg-dev-pack-redesign/schemas/v1/message/application.message-failed.json" class="govuk-link"><code class="app-code app-code--inline">application.message-failed</code></a></li>
+<li><a href="/bg-dev-pack-redesign/schemas/v1/application/application.cancelled.json" class="govuk-link"><code class="app-code app-code--inline">application.cancelled</code></a></li>
+<li><a href="/bg-dev-pack-redesign/schemas/v1/application/application.completed.json" class="govuk-link"><code class="app-code app-code--inline">application.completed</code></a></li>
 </ul>
 <h2 class="govuk-heading-m" id="validation-rules" tabindex="-1">Validation rules</h2>
 <p class="govuk-body">There are no validation rules for implementing this API.</p>

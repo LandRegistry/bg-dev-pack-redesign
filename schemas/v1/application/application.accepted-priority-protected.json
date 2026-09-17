@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "description": "JSON schema to notify that an application has been accepted and added to the day list",
+  "properties": {
+    "data": {
+      "$ref": "#/$defs/payload_data"
+    }
+  },
+  "required": ["data"],
+  "$defs": {
+    "payload_data": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "priority": {
+          "$ref": "#/$defs/priority"
+        },
+        "hmlr_reference": {
+          "$ref": "#/$defs/hmlr_reference"
+        }
+      },
+      "required": ["status", "priority", "hmlr_reference"]
+    },
+    "status": {
+      "type": "string",
+      "const": "ACCEPTED_PRIORITY_PROTECTED",
+      "description": "The status of the application notification."
+    },
+    "priority": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The priority date and time assigned to the application."
+    },
+    "hmlr_reference": {
+      "type": "string",
+      "pattern": "^[A-Z0-9]{7}$",
+      "description": "The reference to the application."
+    }
+  }
+}

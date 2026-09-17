@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "description": "JSON schema to notify that an application has been accepted and is queued waiting to be added to the day list",
+  "properties": {
+    "data": {
+      "$ref": "#/$defs/payload_data"
+    }
+  },
+  "required": ["data"],
+  "$defs": {
+    "payload_data": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/status"
+        }
+      },
+      "required": ["status"]
+    },
+    "status": {
+      "type": "string",
+      "const": "ACCEPTED_AWAITING_PRIORITY",
+      "description": "The status of the application."
+    }
+  }
+}
