@@ -139,6 +139,14 @@ Explore APIs
 
               
               <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/user-guides">
+                                    
+User guides
+                  </a>
+              </li>
+
+              
+              <li class="govuk-service-navigation__item">
                   <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/support/feedback">
                                     
 Support
@@ -158,8 +166,7 @@ Support
 
         </header>
       <div class="govuk-width-container">
-  <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
-        <main class="govuk-main-wrapper" id="main-content">
+          <main class="govuk-main-wrapper" id="main-content">
 <div class="govuk-grid-row">
 
 
@@ -201,7 +208,6 @@ Support
   </label>
   <select class="govuk-select" id="version" name="version">
     <option value="1.0" selected="">v1.0 (latest)</option>
-    <option value="0.3">v0.3</option>
   </select>
   <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button" onclick="setVersion();">View</button>
 </div>
@@ -219,8 +225,13 @@ Support
 <li><code class="app-code app-code--inline">ACCEPTED_AWAITING_PRIORITY</code> - The application has passed validation but has not yet been added to the day list as it is currently closed. The application will be added to the day list and moved to an <code class="app-code app-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> state when the day list reopens</li>
 <li><code class="app-code app-code--inline">ACCEPTED_PRIORITY_PROTECTED</code> - The application has been accepted onto the day list, and has priority</li>
 <li><code class="app-code app-code--inline">SYSTEM_ERROR</code> - The application has not been added to the day list due to an HMLR system error. The request should be retried, or the support team contacted</li>
-<li><code class="app-code app-code--inline">CANCELLED</code> - The application has been cancelled. Futher information should be available in the correspondence documents.</li>
-<li><code class="app-code app-code--inline">COMPLETED</code> - The application has been completed. Further information should be available in correspondence documents.</li>
+<li><code class="app-code app-code--inline">CANCELLED</code> - The application has been cancelled. Further information should be available in the correspondence documents.</li>
+<li><code class="app-code app-code--inline">COMPLETED</code> - The application has been completed. Further information should be available in correspondence documents and completion data. If completion data (<code class="app-code app-code--inline">completion_data</code>) is not available, one of the following status messages is provided:
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="app-code app-code--inline">PENDING</code> - completion data is being processed and will be available soon</li>
+<li><code class="app-code app-code--inline">UNAVAILABLE</code> - a processing error has occurred, which the HMLR support team must resolve</li>
+</ul>
+</li>
 </ul>
 <p class="govuk-body">This API will always return an HTTP 200 response for a valid request, regardless of the status of the application.</p>
 </section>
@@ -429,44 +440,134 @@ Support
 </div>
 <h3 class="govuk-heading-s" id="completed-status" tabindex="-1">COMPLETED status</h3>
 <p class="govuk-body"><code>GET /v1/applications/{id}/information</code></p>
+<p class="govuk-body">For early completions, the completion data is only provided when the application’s status is updated to completed. No updates are provided after the discharge transaction is successfully processed.</p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
-  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;COMPLETED&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3e4f6da2-ada7-4081-957c-b23542466715&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;AB123FC&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2024-09-25T18:18:49.478Z&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;correspondences&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">{</span>
-      <span class="app-code__attr">&quot;record_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:15:01.259Z&quot;</span><span class="app-code__punctuation">,</span>
-      <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">{</span>
-        <span class="app-code__attr">&quot;created_at&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:15:01.281Z&quot;</span><span class="app-code__punctuation">,</span>
-        <span class="app-code__attr">&quot;download_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;ltr_6a1756a68fbe29c58fe75e9c7a261dd416692f8a0d916ac63aead8111549&quot;</span><span class="app-code__punctuation">,</span>
-        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-          <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LTR&quot;</span><span class="app-code__punctuation">,</span>
-          <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LETTER&quot;</span>
+    <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;345b3d41-5448-47a0-b444-f2a292353b8b&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;COMPLETED&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;N614FCX&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;priority_timestamp&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2026-08-21T14:21:04.229243Z&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;warnings&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;correspondences&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+            <span class="app-code__punctuation">{</span>
+                <span class="app-code__attr">&quot;record_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2026-08-21T15:45:01.028Z&quot;</span><span class="app-code__punctuation">,</span>
+                <span class="app-code__attr">&quot;hmlr_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;N614FCX&quot;</span><span class="app-code__punctuation">,</span>
+                <span class="app-code__attr">&quot;title_no&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MS381261 &quot;</span><span class="app-code__punctuation">,</span>
+                <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+                    <span class="app-code__punctuation">{</span>
+                        <span class="app-code__attr">&quot;created_at&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2026-08-21T15:45:01.046Z&quot;</span><span class="app-code__punctuation">,</span>
+                        <span class="app-code__attr">&quot;download_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;7ae07dcc44f20fc8a467cba8aaf58569e67404b3db976f9cc63401eef18e026c&quot;</span><span class="app-code__punctuation">,</span>
+                        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                            <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;RCS&quot;</span><span class="app-code__punctuation">,</span>
+                            <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REGISTRATION COMPLETION SHEET&quot;</span>
+                        <span class="app-code__punctuation">}</span>
+                    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+                    <span class="app-code__punctuation">{</span>
+                        <span class="app-code__attr">&quot;created_at&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2026-08-21T15:45:01.070Z&quot;</span><span class="app-code__punctuation">,</span>
+                        <span class="app-code__attr">&quot;download_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;f51c7340fc6b4abc5b4d81b9586127232007a24d4f0019d9839c8fdaa934de83&quot;</span><span class="app-code__punctuation">,</span>
+                        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                            <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REG&quot;</span><span class="app-code__punctuation">,</span>
+                            <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;COPY OF UPDATED REGISTER&quot;</span>
+                        <span class="app-code__punctuation">}</span>
+                    <span class="app-code__punctuation">}</span>
+                <span class="app-code__punctuation">]</span>
+            <span class="app-code__punctuation">}</span>
+        <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;completion_data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;title_summary_data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+                <span class="app-code__punctuation">{</span>
+                    <span class="app-code__attr">&quot;title_number&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MS444261&quot;</span><span class="app-code__punctuation">,</span>
+                    <span class="app-code__attr">&quot;oc_summary_data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                        <span class="app-code__attr">&quot;document_details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                          <span class="app-code__attr">&quot;document&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+                            <span class="app-code__punctuation">{</span>
+                              <span class="app-code__attr">&quot;document_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;90&quot;</span><span class="app-code__punctuation">,</span>
+                              <span class="app-code__attr">&quot;document_date&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2026-07-21&quot;</span><span class="app-code__punctuation">,</span>
+                              <span class="app-code__attr">&quot;entry_number&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+                                <span class="app-code__string">&quot;L1&quot;</span>
+                              <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+                              <span class="app-code__attr">&quot;plan_only_indicator&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;1&quot;</span><span class="app-code__punctuation">,</span>
+                              <span class="app-code__attr">&quot;register_description&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Lease&quot;</span>
+                            <span class="app-code__punctuation">}</span>
+                          <span class="app-code__punctuation">]</span>
+                        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+                        <span class="app-code__attr">&quot;property_address&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+                            <span class="app-code__punctuation">{</span>
+                                <span class="app-code__attr">&quot;postcode_zone&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                                    <span class="app-code__attr">&quot;postcode&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CHXX 4LL&quot;</span>
+                                <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+                                <span class="app-code__attr">&quot;address_line&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+                                    <span class="app-code__punctuation">{</span>
+                                        <span class="app-code__attr">&quot;line&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;6 Wayland Way, Barchester (CHXX 4LL)&quot;</span>
+                                    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+                                <span class="app-code__punctuation">]</span>
+                            <span class="app-code__punctuation">}</span>
+                        <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+                        <span class="app-code__attr">&quot;proprietorship&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                            <span class="app-code__attr">&quot;current_proprietorship_date&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;21.08.2026&quot;</span><span class="app-code__punctuation">,</span>
+                            <span class="app-code__attr">&quot;registered_proprietor_party&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+                                <span class="app-code__punctuation">{</span>
+                                    <span class="app-code__attr">&quot;private_individual&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                                        <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                                            <span class="app-code__attr">&quot;forenames_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;JOHN&quot;</span><span class="app-code__punctuation">,</span>
+                                            <span class="app-code__attr">&quot;surname_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;SMITH&quot;</span>
+                                        <span class="app-code__punctuation">}</span>
+                                    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+                                    <span class="app-code__attr">&quot;address&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+                                        <span class="app-code__punctuation">{</span>
+                                            <span class="app-code__attr">&quot;postcode_zone&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                                                <span class="app-code__attr">&quot;postcode&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;EXX 1BN&quot;</span>
+                                            <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+                                            <span class="app-code__attr">&quot;address_line&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+                                                <span class="app-code__punctuation">{</span>
+                                                    <span class="app-code__attr">&quot;line&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;1 Waytest Terrace, Exeter, EXX 1BN&quot;</span>
+                                                <span class="app-code__punctuation">}</span>
+                                            <span class="app-code__punctuation">]</span>
+                                        <span class="app-code__punctuation">}</span>
+                                    <span class="app-code__punctuation">]</span>
+                                <span class="app-code__punctuation">}</span>
+                            <span class="app-code__punctuation">]</span>
+                        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+                        <span class="app-code__attr">&quot;price_paid_entry&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                            <span class="app-code__attr">&quot;entry_details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                                <span class="app-code__attr">&quot;entry_text&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;The price stated to have been paid on 13 August 2024 was £130,000.&quot;</span>
+                            <span class="app-code__punctuation">}</span>
+                        <span class="app-code__punctuation">}</span>
+                    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+                    <span class="app-code__attr">&quot;xml_register_data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+                        <span class="app-code__attr">&quot;property_register&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+                            <span class="app-code__punctuation">{</span>
+                                <span class="app-code__attr">&quot;register_entry&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+                                    <span class="app-code__punctuation">{</span>
+                                        <span class="app-code__attr">&quot;entry_text&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BARCHESTER : WIRRAL&quot;</span>
+                                    <span class="app-code__punctuation">}</span>
+                                <span class="app-code__punctuation">]</span>
+                            <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+                            <span class="app-code__punctuation">{</span>
+                                <span class="app-code__attr">&quot;register_entry&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+                                    <span class="app-code__punctuation">{</span>
+                                        <span class="app-code__attr">&quot;entry_text&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;The Freehold land shown edged with red on the plan of the above title filed at the Registry and being 6 Wayland Way, Barchester (CHXX 4LL).&quot;</span>
+                                    <span class="app-code__punctuation">}</span>
+                                <span class="app-code__punctuation">]</span>
+                            <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+                            <span class="app-code__punctuation">{</span>
+                                <span class="app-code__attr">&quot;register_entry&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+                                    <span class="app-code__punctuation">{</span>
+                                        <span class="app-code__attr">&quot;entry_text&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PROPRIETOR: JOHN SMITH of 1 Waytest Terrace, Exeter, EXX 1BN.&quot;</span>
+                                    <span class="app-code__punctuation">}</span>
+                                <span class="app-code__punctuation">]</span>
+                            <span class="app-code__punctuation">}</span>
+                        <span class="app-code__punctuation">]</span>
+                    <span class="app-code__punctuation">}</span>
+                <span class="app-code__punctuation">}</span>
+            <span class="app-code__punctuation">]</span>
         <span class="app-code__punctuation">}</span>
-      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span> <span class="app-code__punctuation">{</span>
-        <span class="app-code__attr">&quot;created_at&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:15:01.319Z&quot;</span><span class="app-code__punctuation">,</span>
-        <span class="app-code__attr">&quot;download_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;rcs_efc428e900f2d1501c156e9ec664f2a740749b6689afe61b6bf95440a31a&quot;</span><span class="app-code__punctuation">,</span>
-        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-          <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;RCS&quot;</span><span class="app-code__punctuation">,</span>
-          <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REGISTRATION COMPLETION SHEET&quot;</span>
-          <span class="app-code__punctuation">}</span>
-      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span> <span class="app-code__punctuation">{</span>
-        <span class="app-code__attr">&quot;created_at&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-09-05T08:15:01.343Z&quot;</span><span class="app-code__punctuation">,</span>
-        <span class="app-code__attr">&quot;download_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;reg_7ea12372179f1ae9d80fefec38cb7ff6b42672c49a0c292827434c848038&quot;</span><span class="app-code__punctuation">,</span>
-        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-          <span class="app-code__attr">&quot;code&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REG&quot;</span><span class="app-code__punctuation">,</span>
-          <span class="app-code__attr">&quot;name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;COPY OF UPDATED REGISTER&quot;</span>
-        <span class="app-code__punctuation">}</span>
-      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">]</span>
-    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;errors&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;warnings&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span><span class="app-code__punctuation">]</span>
-  <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span>
 <span class="app-code__punctuation">}</span>
 </code></pre>
 
@@ -497,30 +598,32 @@ Support
 
     
 
-<footer class="govuk-footer govuk-footer--hmlr " role="contentinfo">
+        <footer class="govuk-template__footer">
+            <div class="govuk-footer app-footer " role="contentinfo">
   <div class="govuk-width-container ">
     <div class="govuk-footer__meta">
       <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-          <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
+          <h2 class="govuk-visually-hidden">Support links</h2>
             <ul class="govuk-footer__inline-list">
                 <li class="govuk-footer__inline-list-item">
                   <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">
-                    Accessibility Statement
+                    Accessibility Statement (opens in a new tab)
                   </a>
                 </li>
             </ul>
-            <div class="govuk-footer__meta-custom">
-              These links open in a new tab.
-            </div>
-      </div>
-      <div class="govuk-footer__meta-item">
-        <span class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr">&copy; Crown copyright</span>
-      </div>
+<svg class="govuk-footer__licence-logo" aria-hidden="true" focusable="false" height="17" width="41" viewBox="0 0 483.2 195.7" xmlns="http://www.w3.org/2000/svg">
+  <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"></path>
+</svg>
+          <span class="govuk-footer__licence-description">
+            All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+          </span>
+      </div><div class="govuk-footer__meta-item">            <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">©&nbsp;Crown copyright</a>
+        </div>
     </div>
   </div>
-</footer>
+</div>
 
-<!-- Original file: ../../../../../node_modules/@hmlr/frontend/hmlr/components/footer/template.njk -->
 
+        </footer>
   </body>
 </html>

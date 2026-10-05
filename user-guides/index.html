@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template">
   <head>
     <meta charset="utf-8">
-    <title>Sitemap - HM Land Registry Developer Pack</title>
+    <title>User guides - HM Land Registry Developer Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
@@ -12,7 +12,38 @@
   <link rel="stylesheet" href="/bg-dev-pack-redesign/assets/github.css">
 
 
-  <meta property="og:title" content="Sitemap">
+  <meta property="og:title" content="User guides">
+
+<script src="/bg-dev-pack-redesign/assets/script.js"></script>
+<script>
+    function hide(element) {
+        element.classList.remove("api-sort-visible");
+        element.setAttribute("aria-hidden", true);
+    }
+
+    function show(element) {
+        element.classList.add("api-sort-visible");
+        element.removeAttribute("aria-hidden");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        let sorter = document.getElementById('sort');
+        let sorted = document.querySelectorAll('[data-sortable]');
+        function updateSortedValues(changedEvent) {
+            console.log("Sorted to show only", sorter.value)
+            if (sorter.value == 'choose-service-api') {
+                sorted.forEach(it => show(it));
+            }
+            else {
+                let selected = document.querySelector(`[data-sortable='${sorter.value}']`);
+                sorted.forEach(it => hide(it))
+                show(selected);
+            }
+        }
+        sorter.addEventListener('change', updateSortedValues);
+        updateSortedValues(null);        
+    })
+</script>
 
 <link rel="icon" href="/bg-dev-pack-redesign/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/bg-dev-pack-redesign/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/bg-dev-pack-redesign/hmlrassets/images/apple-touch-icon.png">
     <meta property="og:image" content="/hmlrassets/images/hmlr-opengraph-image.png">
@@ -72,10 +103,11 @@ Explore APIs
               </li>
 
               
-              <li class="govuk-service-navigation__item">
-                  <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/user-guides">
+              <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                  <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/user-guides" aria-current="true">
                                     
-User guides
+                  <strong class="govuk-service-navigation__active-fallback">User guides</strong>
+
                   </a>
               </li>
 
@@ -100,51 +132,33 @@ Support
 
         </header>
       <div class="govuk-width-container">
-        <main class="govuk-main-wrapper" id="main-content">
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Sitemap</h1>
-
-    
-
-      <div class="govuk-!-margin-bottom-4">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-          <a class="govuk-link" href="/bg-dev-pack-redesign/developer-pack-changelog/"></a>
-        </h2>
-        <ul class="app-contents-list govuk-!-margin-left-4"><li><a href="/bg-dev-pack-redesign/">Home</a><ul><li><a href="/bg-dev-pack-redesign/developer-pack-changelog/">undefined</a></li>
-<li><a href="/bg-dev-pack-redesign/find-a-service-api/">Find an API</a><ul><li><a href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register/">submit-an-application-to-change-the-land-register</a></li></ul></li>
-<li><a href="/bg-dev-pack-redesign/mainstream-guidance/">undefined</a></li>
-<li><a href="/bg-dev-pack-redesign/user-guides/">User guides</a><ul><li><a href="/bg-dev-pack-redesign/user-guides/a-guide-to-soap-and-rest-api-types/">A guide to SOAP and REST API types</a></li>
-<li><a href="/bg-dev-pack-redesign/user-guides/a-guide-to-submitting-applications-to-change-land-register/">A guide to submitting applications to change the land register</a></li>
-<li><a href="/bg-dev-pack-redesign/user-guides/a-guide-to-testing/">A guide to testing</a></li></ul></li></ul></li></ul>
-      </div>
-      <div class="govuk-!-margin-bottom-4">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-          <a class="govuk-link" href="/bg-dev-pack-redesign/find-a-service-api/">Find an API</a>
-        </h2>
-        <ul class="app-contents-list govuk-!-margin-left-4"><li><a href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register/">submit-an-application-to-change-the-land-register</a></li></ul>
-      </div>
-      <div class="govuk-!-margin-bottom-4">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-          <a class="govuk-link" href="/bg-dev-pack-redesign/mainstream-guidance/"></a>
-        </h2>
-        <ul class="app-contents-list govuk-!-margin-left-4"><li><a href="/bg-dev-pack-redesign/">Home</a><ul><li><a href="/bg-dev-pack-redesign/developer-pack-changelog/">undefined</a></li>
-<li><a href="/bg-dev-pack-redesign/find-a-service-api/">Find an API</a><ul><li><a href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register/">submit-an-application-to-change-the-land-register</a></li></ul></li>
-<li><a href="/bg-dev-pack-redesign/mainstream-guidance/">undefined</a></li>
-<li><a href="/bg-dev-pack-redesign/user-guides/">User guides</a><ul><li><a href="/bg-dev-pack-redesign/user-guides/a-guide-to-soap-and-rest-api-types/">A guide to SOAP and REST API types</a></li>
-<li><a href="/bg-dev-pack-redesign/user-guides/a-guide-to-submitting-applications-to-change-land-register/">A guide to submitting applications to change the land register</a></li>
-<li><a href="/bg-dev-pack-redesign/user-guides/a-guide-to-testing/">A guide to testing</a></li></ul></li></ul></li></ul>
-      </div>
-      <div class="govuk-!-margin-bottom-4">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-          <a class="govuk-link" href="/bg-dev-pack-redesign/user-guides/">User guides</a>
-        </h2>
-        <ul class="app-contents-list govuk-!-margin-left-4"><li><a href="/bg-dev-pack-redesign/user-guides/a-guide-to-soap-and-rest-api-types/">A guide to SOAP and REST API types</a></li>
-<li><a href="/bg-dev-pack-redesign/user-guides/a-guide-to-submitting-applications-to-change-land-register/">A guide to submitting applications to change the land register</a></li>
-<li><a href="/bg-dev-pack-redesign/user-guides/a-guide-to-testing/">A guide to testing</a></li></ul>
-      </div>
-  </div>
+          <main class="govuk-main-wrapper" id="main-content">
+<div class="app-prose-scope"><p class="govuk-body"><span class="govuk-caption-xl">User guides</span></p>
+<h1 class="govuk-heading-xl">Find a guide</h1>
+<p class="govuk-body-l">Find guides to help you implement HMLR APIs</p>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="sort">User guides</label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="choose-service-api" selected="selected">Choose a guide</option>
+    <option value="a-guide-to-soap-and-rest-api-types">A guide to SOAP and REST API types</option>
+    <option value="a-guide-to-submitting-applications-to-change-land-register">A guide to submitting applications to change the land register</option>
+    <option value="a-guide-to-testing">A guide to testing</option>
+  </select>
 </div>
+<div data-sortable="a-guide-to-soap-and-rest-api-types">
+  <h2 class="govuk-heading-s" id="a-guide-to-soap-and-rest-api-types"><a class="govuk-link" href="a-guide-to-soap-and-rest-api-types">A guide to SOAP and REST API types</a></h2>
+  <p class="govuk-body govuk-!-margin-bottom-7">Learn more about REST and SOAP and how to integrate them.</p>
+</div>
+<div data-sortable="a-guide-to-submitting-applications-to-change-land-register">
+  <h2 class="govuk-heading-s" id="a-guide-to-testing"><a class="govuk-link" href="a-guide-to-submitting-applications-to-change-land-register">A guide to submitting applications to change the land register</a></h2>
+  <p class="govuk-body govuk-!-margin-bottom-7">How to use the 'Submit an application to change the land register' APIs to submit your applications.</p>
+</div>
+<div data-sortable="a-guide-to-testing">
+  <h2 class="govuk-heading-s" id="a-guide-to-testing"><a class="govuk-link" href="a-guide-to-testing">A guide to testing</a></h2>
+  <p class="govuk-body govuk-!-margin-bottom-7">How to test the 'Submit an application to change the land register' APIs.</p>
+</div>
+</div>
+
         </main>
       </div>
 

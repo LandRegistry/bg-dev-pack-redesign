@@ -1,7 +1,7 @@
 @use "govuk-frontend/dist/govuk/" as *;
 
 $govuk-font-family: 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif !important;
-$govuk-brand-colour: #789904;
+$govuk-brand-colour: #000000;
 
 @forward "pkg:@hmlr/frontend" with (
   $hmlr-assets-path: "/hmlrassets/"
@@ -47,6 +47,8 @@ aside.content-list ol.dashed-list, .content-list ul {
 
 .x-govuk-sub-navigation__section-item--current {
   border-left-color: govuk-colour("blue");
+  background:transparent;
+  display:block;
 }
 
 @media (min-width: 40.0625em) {
@@ -83,9 +85,10 @@ aside.content-list ol.dashed-list, .content-list ul {
   background-repeat: no-repeat;  
 }
 
-.govuk-footer__copyright-logo::before {
-  display: none;
-}
+// Got rid of the crown crest
+// .govuk-footer__copyright-logo::before {
+//  display: none;
+// }
 
 .govuk-header__logo {
   width: auto;
@@ -178,6 +181,15 @@ a {
         margin-top: -10px;
     }
 
+// Logo adding to header to align with new design guidance
+.govuk-header__logo {
+  padding-left:40px;
+  line-height:35px;
+  background: url("/assets/images/hmlr-logomark.svg") left center no-repeat;
+}
+.govuk-template--rebranded .govuk-header__link--homepage:not(:focus) {
+  background-color: transparent;
+}
 // Fixing max-width of accordion headers
 .app-prose-scope h2,
 .app-prose-scope h3 {

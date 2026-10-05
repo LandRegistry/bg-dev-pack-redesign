@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template">
   <head>
     <meta charset="utf-8">
-    <title>Attach a document API test stubs - HM Land Registry Developer Pack</title>
+    <title>Submit an application API - HM Land Registry Developer Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#789904">
 
@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="/bg-dev-pack-redesign/assets/github.css">
 
 
-  <meta property="og:title" content="Attach a document API test stubs">
-
+  <meta property="og:title" content="Submit an application API">
+<meta property="og:description" name="description" content="Use this service to provide data to HMLR for updating the register">
 <script src="/bg-dev-pack-redesign/assets/script.js"></script><script>
     function setVersion() {
         let version = document.getElementById('version').value;
@@ -29,55 +29,6 @@
     }
     document.addEventListener("DOMContentLoaded", () => {
         setVersion()
-    });
-</script><script>
-    let rangeToElement = []
-    let navigations = {}
-
-    function initialize(navItems) {
-      navItems.forEach(element => {
-        let href = element.href.split('#')[1];
-        let related = document.querySelector("#"+href);
-        let scrollY = related.offsetTop - 2;
-        rangeToElement.push({
-          scroll: scrollY,
-          element: element
-        });
-      });
-      rangeToElement = rangeToElement.sort((a, b) => a.scroll - b.scroll)
-      update();
-    }
-
-    function update() {
-      let scrollY = window.scrollY;
-      let selected = rangeToElement[0];
-      for (let scroller of rangeToElement) {
-        if (scroller.scroll > scrollY) {
-          break;
-        }
-        selected = scroller;
-      }
-      select(selected.element);
-    }
-
-    function select(selectedElement) {
-      if (selectedElement.classList.contains("x-govuk-sub-navigation__section-item--current")) return;
-      for (let el of rangeToElement) {
-        if (el.element == selectedElement) continue;
-        unselect(el.element)
-      }
-      selectedElement.classList.add("x-govuk-sub-navigation__section-item--current")
-      selectedElement.setAttribute("aria-current", true);
-    }
-
-    function unselect(element) {
-      element.classList.remove("x-govuk-sub-navigation__section-item--current")
-      element.setAttribute("aria-current", false);
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-        initialize(document.querySelectorAll(".x-govuk-sub-navigation a"))
-        document.addEventListener("scroll", (event) => update());
     });
 </script>
 <link rel="icon" href="/bg-dev-pack-redesign/hmlrassets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/bg-dev-pack-redesign/hmlrassets/images/mask-icon.svg" color="#789904"><link rel="apple-touch-icon" href="/bg-dev-pack-redesign/hmlrassets/images/apple-touch-icon.png">
@@ -169,35 +120,17 @@ Support
           <main class="govuk-main-wrapper" id="main-content">
 <div class="govuk-grid-row">
 
+<div class="govuk-grid-column-full">
 
-<div class="govuk-grid-column-one-third sticky">
-    <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
-  <h2 class="govuk-visually-hidden" id="sub-navigation-heading">Pages in this section</h2>
-  <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
-  <ul class="x-govuk-sub-navigation__section">
-    <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="#scenario-1">Scenario 1: Attach a Document</a>
-    </li>
-  </ul>
-  <h3 class="x-govuk-sub-navigation__theme">Guides</h3>
-  <ul class="x-govuk-sub-navigation__section">
-    <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/user-guides/a-guide-to-testing">A guide to testing</a>
-    </li>
-  </ul>
-</nav>
+<header class="app-document-header">
+  <h1 class="govuk-heading-xl">Submit an application API</h1><p class="govuk-body-l">Use this service to provide data to HMLR for updating the&nbsp;register</p>
+</header>
 
 </div>
 
 <div class="govuk-grid-column-two-thirds">
 
-
-<header class="app-document-header">
-  <h1 class="govuk-heading-xl">Attach a document API test stubs</h1>
-</header>
-
-
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-0">
 <div class="bg-version-grid">
     <div>
         <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
@@ -207,7 +140,8 @@ Support
     Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="1.0" selected="">v1.0 (latest)</option>
+    <option value="2.0" selected="">v2.0 (latest)</option>
+    <option value="1.0">v1.0</option>
   </select>
   <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button" onclick="setVersion();">View</button>
 </div>
@@ -215,46 +149,86 @@ Support
 </div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<div class="app-prose-scope"><p class="govuk-body">HMLR does not currently provide a test environment for integrators using our Business Gateway APIs. Instead, we’ve provided example code for different scenarios to demonstrate what you should expect to see when developing your own services.</p>
-<p class="govuk-body">Base URL: <code class="app-code app-code--inline">https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<div class="app-prose-scope"><section>
+<h2 class="govuk-heading-m" id="overview" tabindex="-1">Overview</h2>
+<p class="govuk-body">The Submit an application API will help users provide the necessary data to HMLR for updating the register. This API is asynchronous, returning a unique ID for the submission request which can be used when fetching the application status.</p>
+<p class="govuk-body">This API supports the following application types:</p>
+<ul class="govuk-list--bullet govuk-list govuk-list--bullet">
+<li>Register update</li>
+<li>Transfer of part</li>
+<li>Dispositionary first lease (includes new lease and lease extension)</li>
+<li>Removing a default Form A restriction (JP1)</li>
+</ul>
+<p class="govuk-body">The data in the request content contains information about:</p>
+<ul class="govuk-list--bullet govuk-list govuk-list--bullet">
+<li>Addresses</li>
+<li>Documents</li>
+<li>Parties</li>
+<li>Transactions</li>
+<li>Titles</li>
+</ul>
+</section>
 <section>
-<h2 class="govuk-heading-m" id="scenario-1" tabindex="-1">Scenario 1: Attach a document</h2>
-<h3 class="govuk-heading-s" id="request" tabindex="-1">Request</h3>
-<p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications/7faed15d-7ec8-4e7d-866c-9c25874d2b42/attachments</code></p>
-<p class="govuk-body">Headers: <code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></p>
-<div class="code-wrapper">
-<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
-  Copy code
-</button>
-<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
-  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
-    <span class="app-code__attr">&quot;document_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;fa8c395b-ce64-4cb4-a188-d7f91f4c3139&quot;</span><span class="app-code__punctuation">,</span>
-    <span class="app-code__attr">&quot;certification_statement_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CERTIFIED&quot;</span>
-  <span class="app-code__punctuation">}</span>
-<span class="app-code__punctuation">}</span>
-</code></pre>
-
-<h3 class="govuk-heading-s" id="response" tabindex="-1">Response</h3>
-<p class="govuk-body">Status: <code class="app-code app-code--inline">202</code></p>
-</div></section>
+<h2 class="govuk-heading-m" id="view-the-technical-guide" tabindex="-1">View the technical guide</h2>
+<ul class="govuk-list"> <!-- Default render for `- list` style lists is to add bullet points, which we don't want here. -->
+  <li>
+    <a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application/2.0/technical-guide">Technical guide</a>
+  </li>
+</ul>
+</section>
+<section>
+<h2 class="govuk-heading-m" id="view-the-api-specification" tabindex="-1">View the API specification</h2>
+<ul class="govuk-list"> <!-- Default render for `- list` style lists is to add bullet points, which we don't want here. -->
+  <li>
+    <a class="govuk-link" href="https://landregistry.github.io/bgtechdoc/documents/submit-an-application-to-change-the-register/v2.0/openapi.html#tag/Submit-an-application-API" rel="noreferrer noopener" target="_blank">Web version (opens in new tab)</a>
+  </li>
+</ul>
+</section>
+<section>
+<h2 class="govuk-heading-m" id="how-the-api-works" tabindex="-1">How the API works</h2>
+<a target="_blank" href="/bg-dev-pack-redesign/assets/images/SubmitAnApplication.png">
+  <img class="govuk-!-margin-bottom-3" src="/bg-dev-pack-redesign/assets/images/SubmitAnApplication.png" alt="A diagram showing how the Submit an application API works.">
+</a>
+<p class="govuk-body">This diagram demonstrates how the Submit an application API works to support users.</p>
+<p class="govuk-body">When a user submits information to update the register, the HMLR system will respond by sending a unique application ID. Users can use this ID to receive information about the status of their application.</p>
+</section>
+<section>
+<h2 class="govuk-heading-m" id="how-to-test-this-api" tabindex="-1">How to test this API</h2>
+<p class="govuk-body">HMLR has created a test environment for the Submit an application API. We’ve also provided example code to demonstrate what you should expect when developing your own services.</p>
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application/2.0/test-stubs">View Submit an application test stubs</a>
+  </li>
+</ul>
+<div class="govuk-inset-text">
+  Please note there are also plans to release a sandbox test environment for developers in the future. The exact release date is to be confirmed.
+</div>
+<p class="govuk-body">For general testing guidance, visit our <a href="/bg-dev-pack-redesign/user-guides/a-guide-to-testing" class="govuk-link">guide to testing</a>.</p>
+</section>
 </div>
 
 
+</div>
 
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-<h3 class="govuk-heading-m">Related APIs</h3>
-<ul class="govuk-list govuk-list--bullet">
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/send-a-document">Send a document API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application">Submit an application API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/application-information">Application information API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/attach-a-message">Attach a message API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/download-a-document">Download a document API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/find-a-service-api">More</a></li>
-</ul>
 
+<div class="govuk-grid-column-one-third">
+<aside class="related-items" role="complementary">
+    <h2 class="govuk-heading-m" id="related-apis">
+    Related APIs
+    </h2>
+    <nav role="navigation" aria-labelledby="related-apis">
+    <ul class="govuk-list">
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register API</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/bg-dev-pack-redesign/apis/send-a-document">Send a document API</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/bg-dev-pack-redesign/apis/application-information">Application information API</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/bg-dev-pack-redesign/apis/attach-a-document">Attach a document API</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/bg-dev-pack-redesign/apis/attach-a-message">Attach a message API</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/bg-dev-pack-redesign/apis/notifications">Notifications API</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link " href="/bg-dev-pack-redesign/apis/download-a-document">Download a document API</a></li>
+        <li class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-link govuk-!-font-weight-bold" href="/bg-dev-pack-redesign/find-a-service-api">More</a></li>
+    </ul>
+    </nav>
+</aside>
 </div>
 
 </div>

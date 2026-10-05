@@ -207,8 +207,8 @@ Support
     Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="2.0">v2.0 (latest)</option>
-    <option value="1.0" selected="">v1.0</option>
+    <option value="2.0" selected="">v2.0 (latest)</option>
+    <option value="1.0">v1.0</option>
   </select>
   <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button" onclick="setVersion();">View</button>
 </div>
@@ -221,11 +221,21 @@ Support
 <p class="govuk-body">To submit an application request, make an HTTP POST request to the application request endpoint, the body of which contains the information about the application using the <code class="app-code app-code--inline">application/json</code> content type.</p>
 <p class="govuk-body">This endpoint will return an object containing a unique ID for the request, <code class="app-code app-code--inline">application_request_id</code>, which is then used when fetching the status of the application. Any errors in the schema will be rejected as a 400 HTTP error. Any other validation errors will be returned in the application information response.</p>
 <h3 id="find-the-status-of-your-applications" tabindex="-1" class="govuk-heading-m">Find the status of your applications</h3>
-<p class="govuk-body">During application submission, notifications will be available from the notifications API about changes that happen to the application. To find out about these notifications, view the <a href="/bg-dev-pack-redesign/apis/notifications" class="govuk-link">notifications API page</a>.</p><p></p>
+<p class="govuk-body">During application submission, notifications will be available from the notifications API about changes that happen to the application. To find out about these notifications, view the <a href="/bg-dev-pack-redesign/apis/notifications" class="govuk-link">Notifications API page</a>.</p><p></p>
 </section>
 <section id="validation-rules">
 <h2 class="govuk-heading-m" id="validation-rules" tabindex="-1">Validation rules</h2>
 <p class="govuk-body">To pass validation, you must follow the guidance for implementing this API below.</p>
+<h3 id="contractual-control-interests-validation" tabindex="-1" class="govuk-heading-m">Contractual control interests validation</h3>
+<p class="govuk-body">By 6 April 2027, all applications submitted to register notices or restrictions must include a declaration stating whether contractual control interests apply and they have been recorded correctly. The following transaction types are affected:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="app-code app-code--inline">AGN</code> - Agreed notice (AN1)</li>
+<li><code class="app-code app-code--inline">AUN</code> - Amendment of unilateral notice (UN3)</li>
+<li><code class="app-code app-code--inline">RXN</code> - Restriction (non-standard wording) (RX1)</li>
+<li><code class="app-code app-code--inline">RXS</code> - Restriction (standard wording) (RX1)</li>
+<li><code class="app-code app-code--inline">UNN</code> - Unilateral notice (UN1)</li>
+</ul>
+<p class="govuk-body">For each transaction type, <a href="#additional-transaction-details" class="govuk-link">additional transaction details</a> are required.</p>
 <h3 id="digital-mortgage-validation" tabindex="-1" class="govuk-heading-m">Digital mortgage validation</h3>
 <div class="govuk-inset-text app-inset-text--note"><span class="govuk-visually-hidden">Note: </span><p class="govuk-body">Digital mortgage submissions are currently limited to:</p>
 <ul class="govuk-list govuk-list--bullet">
@@ -6493,13 +6503,21 @@ Support
 <h3 class="govuk-heading-s" id="additional-transaction-details" tabindex="-1">Additional transaction details</h3>
 <p class="govuk-body">For certain transaction types, more detailed information is needed (via the <code class="app-code app-code--inline">Transaction.details</code> field). This field can be one of several different types:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">Transfer</code> (Transfer date must not be in the future)</li>
-<li><code class="app-code app-code--inline">Charge</code> (Charge date must not be in the future)</li>
-<li><code class="app-code app-code--inline">Discharge</code></li>
-<li><code class="app-code app-code--inline">AmountDetails</code></li>
+<li><code class="app-code app-code--inline">TransferV2</code> (Transfer date must not be in the future)</li>
+<li><code class="app-code app-code--inline">ChargeV2</code> (Charge date must not be in the future)</li>
+<li><code class="app-code app-code--inline">DischargeV2</code></li>
+<li><code class="app-code app-code--inline">AmountDetailsV2</code></li>
 </ul>
-<p class="govuk-body">The data below details which transactions require which details type. If a transaction is not listed, it does not require additional details.</p>
-<p class="govuk-body"><code>Transfer</code></p>
+<p class="govuk-body">For recording contractual control interests:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="app-code app-code--inline">AgreedNoticeV2</code>- Agreed notice (AN1)</li>
+<li><code class="app-code app-code--inline">AmendmentOfUnilateralNoticeV2</code> - Amendment of unilateral notice (UN3)</li>
+<li><code class="app-code app-code--inline">RestrictionV2</code> - Restriction (standard wording) (RX1)</li>
+<li><code class="app-code app-code--inline">RestrictionNonStandardV2</code> - Restriction (non-standard wording) (RX1)</li>
+<li><code class="app-code app-code--inline">UnilateralNoticeV2</code> - Unilateral notice (UN1)</li>
+</ul>
+<p class="govuk-body">The data below details which transactions require which details type and any other required information. If a transaction is not listed, it does not require additional details.</p>
+<p class="govuk-body"><code>TransferV2</code></p>
 <ul class="govuk-list govuk-list--bullet">
 <li><code class="app-code app-code--inline">T</code> - Transfer for value</li>
 <li><code class="app-code app-code--inline">TNV</code> - Transfer (not for value or reverse premium)</li>
@@ -6508,19 +6526,19 @@ Support
 <li><code class="app-code app-code--inline">TSCNV</code> - Transfer subject to a charge (not for value or reverse premium)</li>
 <li><code class="app-code app-code--inline">TSCV</code> - Transfer subject to a charge for value</li>
 </ul>
-<p class="govuk-body"><code>Charge</code></p>
+<p class="govuk-body"><code>ChargeV2</code></p>
 <ul class="govuk-list govuk-list--bullet">
 <li><code class="app-code app-code--inline">C</code> - Charge</li>
 <li><code class="app-code app-code--inline">COP</code> - Charge of part</li>
 <li><code class="app-code app-code--inline">SBC</code> - Sub charge</li>
 </ul>
-<p class="govuk-body"><code>Discharge</code></p>
+<p class="govuk-body"><code>DischargeV2</code></p>
 <ul class="govuk-list govuk-list--bullet">
 <li><code class="app-code app-code--inline">DIS</code> - Discharge</li>
 <li><code class="app-code app-code--inline">DP</code> - Discharge of part</li>
 </ul>
 <p class="govuk-body">For paper discharges, we will require lender and representation details as part of the application submission.</p>
-<p class="govuk-body"><code>AmountDetails</code></p>
+<p class="govuk-body"><code>AmountDetailsV2</code></p>
 <ul class="govuk-list govuk-list--bullet">
 <li>ASTT - Assent</li>
 <li>ASTC - Assent of charge</li>
@@ -6557,6 +6575,41 @@ Support
 <li>TVR - Transfer for value RTB/RTA</li>
 <li>TVRTP - Transfer for value RTB/RTA (Transfer of part)</li>
 <li>VO - Vesting order</li>
+</ul>
+<p class="govuk-body"><code>AgreedNoticeV2</code></p>
+<p class="govuk-body"><code class="app-code app-code--inline">AGREEDNOTICE</code> - Agreed notice (AN1)</p>
+<p class="govuk-body">You must also set the <code class="app-code app-code--inline">contractual_control_right_affects_transaction</code> property to either:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - contractual control interests apply and the contractual control right has been recorded</li>
+<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - there are no contractual control interests</li>
+</ul>
+<p class="govuk-body"><code>AmendmentOfUnilateralNoticeV2</code></p>
+<p class="govuk-body"><code class="app-code app-code--inline">AMENDMENTOFUNILATERALNOTICE</code> - Amendment of unilateral notice (UN3)</p>
+<p class="govuk-body">You must also set the <code class="app-code app-code--inline">contractual_control_right_affects_transaction</code> property to either:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - contractual control interests apply and the contractual control right has been recorded</li>
+<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - there are no contractual control interests</li>
+</ul>
+<p class="govuk-body"><code>RestrictionV2</code></p>
+<p class="govuk-body"><code class="app-code app-code--inline">RESTRICTION</code> - Restriction (standard wording) (RX1)</p>
+<p class="govuk-body">You must also set the <code class="app-code app-code--inline">contractual_control_right_affects_transaction</code> property to either:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - contractual control interests apply and the contractual control right has been recorded</li>
+<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - there are no contractual control interests</li>
+</ul>
+<p class="govuk-body"><code>RestrictionNonStandardV2</code></p>
+<p class="govuk-body"><code class="app-code app-code--inline">RESTRICTIONNONSTANDARD</code> - Restriction (standard wording) (RX1)</p>
+<p class="govuk-body">You must also set the <code class="app-code app-code--inline">contractual_control_right_affects_transaction</code> property to either:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - contractual control interests apply and the contractual control right has been recorded</li>
+<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - there are no contractual control interests</li>
+</ul>
+<p class="govuk-body"><code>UnilateralNoticeV2</code></p>
+<p class="govuk-body"><code class="app-code app-code--inline">UNILATERALNOTICE</code> - Unilateral notice (UN1)</p>
+<p class="govuk-body">You must also set the <code class="app-code app-code--inline">contractual_control_right_affects_transaction</code> property to either:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - contractual control interests apply and the contractual control right has been recorded</li>
+<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - there are no contractual control interests</li>
 </ul>
 <h3 class="govuk-heading-s" id="title-types" tabindex="-1">Title types</h3>
 <p class="govuk-body">Titles included as part of submission have a <code class="app-code app-code--inline">type</code> field that informs HMLR how to process the application. This type depends on the application type, and the usage of the title within the application.</p>
@@ -6875,7 +6928,7 @@ Support
 <p class="govuk-body">This would resubmit the application, but this time ignoring the validation rule for the
   specific field identified by the pointer.</p>
 <h3 class="govuk-heading-s">Additional provisions validation</h3>
-<p class="govuk-body">The additional provisions code is specific to Tranfer transactions and is part of the Transfer object. For transfers, one of the following Additional Provision code options must be selected:</p>
+<p class="govuk-body">The additional provisions code is specific to Transfer transactions and is part of the Transfer object. For transfers, one of the following Additional Provision code options must be selected:</p>
 <ol class="govuk-list govuk-list--number">
   <li>No provisions</li>
   <li>Manual TR1 form</li>
@@ -7060,6 +7113,36 @@ Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transact
       <td class="govuk-table__cell">Transactions type was paired with an invalid consideration type  <br>
 <p class="govuk-body">A transfer value must be provided when consideration type is <code class="app-code app-code--inline">MONETARY_VALUE</code> </p></td><br>
 </tr><p></p>
+  </tbody>
+</table>
+<h3 class="govuk-heading-s">Contractual controls validation</h3>
+<p class="govuk-body">For the following transaction types, <a href="#additional-transaction-details" class="govuk-link">additional transaction details</a> are required to declare whether contractual control interests apply and they have been recorded correctly.</p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="app-code app-code--inline">AGN</code> - Agreed notice (AN1)</li>
+<li><code class="app-code app-code--inline">AUN</code> - Amendment of unilateral notice (UN3)</li>
+<li><code class="app-code app-code--inline">RXN</code> - Restriction (non-standard wording) (RX1)</li>
+<li><code class="app-code app-code--inline">RXS</code> - Restriction (standard wording) (RX1)</li>
+<li><code class="app-code app-code--inline">UNN</code> - Unilateral notice (UN1)</li>
+</ul>
+<p class="govuk-body">You must set the <code class="app-code app-code--inline">contractual_control_right_affects_transaction</code> property to either:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - contractual control interests apply and the contractual control right has been recorded</li>
+<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - there are no contractual control interests</li>
+</ul>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Contractual control interests validation error types
+  </caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Error type</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code class="app-code app-code--inline">cc-transaction-has-at-least-one-contractual-control-title</code></td>
+      <td class="govuk-table__cell">No contractual control interest on record for any titles on transaction <i>TransactionReference</i></td>
+    </tr>
   </tbody>
 </table>
 <h3 class="govuk-heading-s">Conveyancers certificate validation</h3>
