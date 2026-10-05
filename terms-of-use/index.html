@@ -73,6 +73,14 @@ Explore APIs
 
               
               <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/user-guides">
+                                    
+User guides
+                  </a>
+              </li>
+
+              
+              <li class="govuk-service-navigation__item">
                   <a class="govuk-service-navigation__link" href="/bg-dev-pack-redesign/support/feedback">
                                     
 Support
@@ -103,11 +111,11 @@ Support
     <li class="x-govuk-sub-navigation__section-item">
       <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/what-to-expect-from-the-developer-pack/">What to expect from the developer pack</a>
     </li>
-    <li class="x-govuk-sub-navigation__section-item x-govuk-sub-navigation__section-item--current">
-      <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/terms-of-use/" aria-current="true">Terms of use</a>
-    </li>
     <li class="x-govuk-sub-navigation__section-item">
       <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/how-to-access-business-gateway/">How to access Business Gateway</a>
+    </li>
+    <li class="x-govuk-sub-navigation__section-item x-govuk-sub-navigation__section-item--current">
+      <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/terms-of-use/" aria-current="true">Terms of use</a>
     </li>
   </ul>
 </nav>
@@ -121,36 +129,32 @@ Support
 
 
 
-      <div class="app-prose-scope"><div class="govuk-grid-row">
-  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">The terms of use policies explain what users can expect when creating and operating software services that use Business Gateway APIs.
-  </p>
-  <h3 class="govuk-heading-s govuk-!-margin-left-3">Versioning policy
-  </h3>
-  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">This versioning policy outlines Business Gateway’s process for making changes to its <a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register">APIs</a>.
-  </p>
-  <h4 class="govuk-heading-s govuk-!-margin-left-3">What we are changing and why
-  </h4>
-  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">HMLR reserves the right to introduce up to four new major versions of any API per year. When a new version of an API is released, we’ll allow six months between the deprecation and decommissioning of old versions.
-  </p>
-  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">Any minor changes to existing API versions will be backwards compatible and will not require any immediate changes by our customers.
-  </p>
-  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">Making these changes will mean continuing to provide a faster and more responsive service but we understand they may also disrupt the work of our customers. As a result, we’ll be clear about the changes we’re making, and when, so you can understand the risks and benefits to your own systems and ways of working.
-  </p>
-  <h4 class="govuk-heading-s govuk-!-margin-left-3">How we'll support you to make changes
-  </h4>
-  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">Where possible, we’ll provide you with access to our sandbox test environment to run new versions of APIs before they go live. We'll also provide API schema documentation in the form of OpenAPI specifications. This should help you to understand how any changes might impact your systems.  We may also provide other resources, including:
-  </p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>diagrams and visuals </li>
-    <li>best practice examples </li>
-  </ul>
-  <h4 class="govuk-heading-s govuk-!-margin-left-3">When to expect changes
-  </h4>
-  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">We know that changes will impact our customers differently and have factored this into how we communicate with you. We’ll be clear about deadlines for integrating new versions of services and provide advanced notice when services will be deprecated and decommissioned. 
-  </p>
-  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">Below you’ll find a step-by-step guide to help you understand how and when we'll implement changes:  
-  </p>
-  </div>
+      <div class="app-prose-scope"><p class="govuk-body">The terms of use policies explain what users can expect when creating and operating software services that use Business Gateway APIs.</p>
+<h2 id="versioning-policy" tabindex="-1" class="govuk-heading-l">Versioning policy</h2>
+<p class="govuk-body">This versioning policy outlines Business Gateway’s process for making changes to its <a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register">APIs</a>.</p>
+<p class="govuk-body">HMLR reserves the right to introduce:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>up to 4 major versions of any API per year</li>
+<li>unlimited minor changes to existing APIs</li>
+</ul>
+<p class="govuk-body">Making these changes will mean continuing to provide a faster and more responsive service but we understand they may also disrupt the work of our customers. As a result, we’ll be clear about the changes we’re making, and when, so you can understand the risks and benefits to your own systems and ways of working.</p>
+<h3 id="release-versioning" tabindex="-1" class="govuk-heading-m">Release versioning</h3>
+<p class="govuk-body">We follow the <a class="govuk-link" href="https://semver.org/" rel="noreferrer noopener" target="_blank">Semantic Versioning 2.0.0 system</a> (opens in new tab).</p>
+<h4 id="minor-version-releases" tabindex="-1" class="govuk-heading-s">Minor version releases</h4>
+<p class="govuk-body">Any minor changes to existing API versions will be backwards compatible and will not require any immediate changes by our customers. The OpenAPI specification shows the full version number <code class="app-code app-code--inline">MAJOR.MINOR.PATCH</code>, and <a href="/bg-dev-pack-redesign/support/news" class="govuk-link">regular release notes</a> are published to notify you of changes.</p>
+<h4 id="major-version-releases" tabindex="-1" class="govuk-heading-s">Major version releases</h4>
+<p class="govuk-body">When we release a major version of an API, the version numbers of all affected endpoint URLs are incremented to denote a breaking change, using the format <code class="app-code app-code--inline">vX</code>. For example, the <code class="app-code app-code--inline">POST /v1/applications</code> endpoint would be updated to <code class="app-code app-code--inline">POST /v2/applications</code>.</p>
+<p class="govuk-body">To avoid unnecessary updates, groups of APIs are versioned independently. For example, for the Submit an application to the Land Registry APIs, version 2 of the Submit an application API (<code class="app-code app-code--inline">POST /v2/applications</code>) is compatible with version 1 of the Download a document API (<code class="app-code app-code--inline">GET /v1/documents/{document_id}</code>) unless stated otherwise.</p>
+<p class="govuk-body">After a major version of an API is released, we’ll allow six months between the deprecation and decommissioning of old versions.</p>
+<h3 id="how-we-ll-support-you-to-make-changes" tabindex="-1" class="govuk-heading-m">How we’ll support you to make changes</h3>
+<p class="govuk-body">Where possible, we’ll provide you with access to our sandbox test environment to run new versions of APIs before they go live, or to test stubs. We’ll also provide API schema documentation in the form of OpenAPI specifications, and release notes. This should help you to understand how any changes might impact your systems.  We may also provide other resources, including:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>diagrams and visuals</li>
+<li>best practice examples</li>
+</ul>
+<h3 id="when-to-expect-changes" tabindex="-1" class="govuk-heading-m">When to expect changes</h3>
+<p class="govuk-body">We know that changes will impact our customers differently and have factored this into how we communicate with you. We’ll be clear about deadlines for integrating new versions of services and provide advanced notice when services will be deprecated and decommissioned.</p>
+<p class="govuk-body">Below you’ll find a step-by-step guide to help you understand how and when we’ll implement changes:</p>
   <!-- step by step goes here -->
   <section class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -299,55 +303,52 @@ Support
       </div>
     </div>
   </section>
-<br clear="all">
-<div class="govuk-grid-row">
-  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">For any questions about our versioning policy, please contact the <a class="govuk-link" href="mailto:channelpartners@landregistry.gov.uk">integration support team</a>. </p>
-<br>
-<br>
-<h3 class="govuk-heading-s govuk-!-margin-left-3">System security</h3>
-<p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">All users of the network are responsible for maintaining up-to-date system patches, security updates, anti-virus software and other countermeasures to protect their systems.</p>
-<p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">Any software that could interact with HM Land Registry systems should be thoroughly tested and you must have your own testing procedures and policies in place and apply them rigorously.</p>
-<p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">Some free/beta programs can contain bugs or viruses, which could pose a threat to HM Land Registry systems. Applications and operating system software should only be implemented in operational systems after extensive and successful testing.</p>
-<p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">Testing should be done in a secure environment with non-sensitive data. Access to system files and program source code should be controlled.</p>
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-  <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-3">We sometimes use technical terms to
-    describe the work we do at HMLR. For a list of commonly used terms and their definitions, visit <a class="govuk-link" href="/bg-dev-pack-redesign/glossary">our glossary</a>.</p>
+<p class="govuk-body">For any questions about our versioning policy, please contact the <a class="govuk-link" href="mailto:channelpartners@landregistry.gov.uk">integration support team</a>.</p>
+<h3 id="system-security" tabindex="-1" class="govuk-heading-m">System security</h3>
+<p class="govuk-body">All users of the network are responsible for maintaining up-to-date system patches, security updates, anti-virus software and other countermeasures to protect their systems.</p>
+<p class="govuk-body">Any software that could interact with HM Land Registry systems should be thoroughly tested and you must have your own testing procedures and policies in place and apply them rigorously.</p>
+<p class="govuk-body">Some free/beta programs can contain bugs or viruses, which could pose a threat to HM Land Registry systems. Applications and operating system software should only be implemented in operational systems after extensive and successful testing.</p><p></p>
+<p class="govuk-body">Testing should be done in a secure environment with non-sensitive data. Access to system files and program source code should be controlled.</p>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<p class="govuk-body">We sometimes use technical terms to describe the work we do at HMLR. For a list of commonly used terms and their definitions, visit <a class="govuk-link" href="/bg-dev-pack-redesign/glossary">our glossary</a>.</p><p></p>
 </div></div>
 
 
 
 
     </div>
-  </div>
-        </main>
-      </div>
+  </main></div>
+        
+      
 
     
 
-<footer class="govuk-footer govuk-footer--hmlr " role="contentinfo">
+        <footer class="govuk-template__footer">
+            <div class="govuk-footer app-footer " role="contentinfo">
   <div class="govuk-width-container ">
     <div class="govuk-footer__meta">
       <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-          <h2 class="govuk-visually-hidden">These links open in a new tab.</h2>
+          <h2 class="govuk-visually-hidden">Support links</h2>
             <ul class="govuk-footer__inline-list">
                 <li class="govuk-footer__inline-list-item">
                   <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">
-                    Accessibility Statement
+                    Accessibility Statement (opens in a new tab)
                   </a>
                 </li>
             </ul>
-            <div class="govuk-footer__meta-custom">
-              These links open in a new tab.
-            </div>
-      </div>
-      <div class="govuk-footer__meta-item">
-        <span class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr">&copy; Crown copyright</span>
-      </div>
+<svg class="govuk-footer__licence-logo" aria-hidden="true" focusable="false" height="17" width="41" viewBox="0 0 483.2 195.7" xmlns="http://www.w3.org/2000/svg">
+  <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"></path>
+</svg>
+          <span class="govuk-footer__licence-description">
+            All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+          </span>
+      </div><div class="govuk-footer__meta-item">            <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">©&nbsp;Crown copyright</a>
+        </div>
     </div>
   </div>
-</footer>
+</div>
 
-<!-- Original file: ../../../../../node_modules/@hmlr/frontend/hmlr/components/footer/template.njk -->
 
+        </footer>
   </body>
 </html>

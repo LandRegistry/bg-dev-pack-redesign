@@ -182,16 +182,13 @@ Support
       <a class="x-govuk-sub-navigation__link" href="#scenario-2">Scenario 2: Submit a single transfer</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="#scenario-3">Scenario 3: Submit an application with Level 1 validation errors</a>
+      <a class="x-govuk-sub-navigation__link" href="#scenario-3">Scenario 3: Submit an application for a unilateral notice (UN1) recording contractual control interests</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="#scenario-4">Scenario 4: Submit an application with Level 2 validation errors</a>
+      <a class="x-govuk-sub-navigation__link" href="#scenario-4">Scenario 4: Submit an application with Level 1 validation errors</a>
     </li>
-  </ul>
-  <h3 class="x-govuk-sub-navigation__theme">Guides</h3>
-  <ul class="x-govuk-sub-navigation__section">
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/user-guides/a-guide-to-testing">A guide to testing</a>
+      <a class="x-govuk-sub-navigation__link" href="#scenario-5">Scenario 5: Submit an application with Level 2 validation errors</a>
     </li>
   </ul>
 </nav>
@@ -216,8 +213,8 @@ Support
     Version and Status dropdown
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="2.0">v2.0 (latest)</option>
-    <option value="1.0" selected="">v1.0</option>
+    <option value="2.0" selected="">v2.0 (latest)</option>
+    <option value="1.0">v1.0</option>
   </select>
   <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button" onclick="setVersion();">View</button>
 </div>
@@ -231,7 +228,7 @@ Support
 <h2 class="govuk-heading-m" id="scenario-1" tabindex="-1">Scenario 1: Submit a single charge</h2>
 <h3 class="govuk-heading-s" id="request" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v2/applications</code></p>
 <p class="govuk-body">Headers:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li><code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></li>
@@ -361,7 +358,7 @@ Support
 <h2 class="govuk-heading-m" id="scenario-2" tabindex="-1">Scenario 2: Submit a single transfer</h2>
 <h3 class="govuk-heading-s" id="request-1" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
-<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v1/applications</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v2/applications</code></p>
 <p class="govuk-body">Headers:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li><code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></li>
@@ -517,8 +514,160 @@ Support
 
 </div>
 <hr class="govuk-section-break--l govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-<h2 class="govuk-heading-m" id="scenario-3" tabindex="-1">Scenario 3: Submit an application with Level 1 validation errors</h2>
+<h2 class="govuk-heading-m" id="scenario-3" tabindex="-1">Scenario 3: Submit an application for a unilateral notice (UN1) recording contractual control interests</h2>
 <h3 class="govuk-heading-s" id="request-2" tabindex="-1">Request</h3>
+<p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
+<p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v2/applications</code></p>
+<p class="govuk-body">Headers:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="app-code app-code--inline">Authorization: &lt;any-value&gt;</code></li>
+<li><code class="app-code app-code--inline">Idempotency-Key: &lt;any-value&gt;</code></li>
+</ul>
+<p class="govuk-body">Note: The idempotency key should be unique for each request (this is not enforced by the stubs).</p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;submission_warning_understood&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">true</span></span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;applicants&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+      <span class="app-code__string">&quot;Borrower1&quot;</span>
+    <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;addresses&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;Address1&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;UK&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;sub_building_description&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;UNIT 3-4&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;building_description&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PO Box 1234&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;street&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;12 BEDFORD STREET&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;dependant_locality&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;SOWTON INDUSTRIAL ESTATE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;double_dependant_locality&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MATFORD BUSINESS PARK&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;post_town&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;EXETER&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;postcode&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;EX4 1BN&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;parties&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;Borrower1&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;address_for_service_option&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NOT_REQUIRED&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;forenames&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Toni&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;surname&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Bonito&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;private-individual-reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;address_for_service_option&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PROVIDED_ADDRESS&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;addresses&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__string">&quot;Address1&quot;</span>
+        <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;identity_evidence_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;EVIDENCE&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;other_conveyancer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;full_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Private Individual Conveyancer&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;address_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Address1&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;conveyancer_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;pi-conveyancer-ref&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;register_action&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;AMEND&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;LODGING_CONVEYANCER&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PRIVATE_INDIVIDUAL&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;forenames&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Private&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;surname&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Individual&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;other-organisation-reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;address_for_service_option&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;PROVIDED_ADDRESS&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;addresses&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__string">&quot;Address1&quot;</span>
+        <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;identity_evidence_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;VERIFIED&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;other_conveyancer&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;full_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Other Organisation Conveyancer&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;address_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Address1&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;conveyancer_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;oo-conveyancer-ref&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;register_action&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REMOVE&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;representation_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;OTHER_CONVEYANCER&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;OTHER_ORGANISATION&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;organisation_name&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Other Organisation Name&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;titles&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;MS312531&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;title_number&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MS312531&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;scope_details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;scope&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;WHOLE&quot;</span>
+        <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;disclosable_overriding_interests&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__literal"><span class="app-code__keyword">false</span></span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;title_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REGISTER_TITLE&quot;</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;customer_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CustomerRef&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;application_lodger&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;email&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;John.Doe@conveyencingcompany.co.uk&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CONVEYANCER&quot;</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;total_fee_in_pence&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">0</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;transactions&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;transaction_1&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;UNN&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;title_references&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;MS312531&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;priority&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">1</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__string">&quot;DOC1&quot;</span>
+        <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;details&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;UNILATERALNOTICE&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;contractual_control_right_affects_transaction&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;RELATED_TO_CCR_AND_CCI_SUBMITTED&quot;</span>
+          <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;fee_in_pence&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">0</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;party_roles&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+          <span class="app-code__punctuation">{</span>
+            <span class="app-code__attr">&quot;party_reference&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;Borrower1&quot;</span><span class="app-code__punctuation">,</span>
+            <span class="app-code__attr">&quot;role&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;BORROWER&quot;</span>
+
+          <span class="app-code__punctuation">}</span>
+        <span class="app-code__punctuation">]</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;documents&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+      <span class="app-code__attr">&quot;DOC1&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+        <span class="app-code__attr">&quot;document_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;a40d6fe0-bd45-4c49-b72a-0d80cf43db83&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;UN1&quot;</span><span class="app-code__punctuation">,</span>
+        <span class="app-code__attr">&quot;document_metadata&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+          <span class="app-code__attr">&quot;certification_statement_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;CERTIFIED&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;document_filename&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;UN1.pdf&quot;</span>
+        <span class="app-code__punctuation">}</span>
+      <span class="app-code__punctuation">}</span>
+    <span class="app-code__punctuation">}</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;REGISTER_UPDATE&quot;</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+<div class="govuk-!-padding-bottom-6"></div>
+<h3 class="govuk-heading-s govuk-!-margin-top-6" id="response-2" tabindex="-1">Response</h3>
+<p class="govuk-body">Status: <code class="app-code app-code--inline">202</code></p>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
+    <span class="app-code__attr">&quot;application_request_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2563940e-ae95-4e7e-9b33-49a6571abdf6&quot;</span>
+  <span class="app-code__punctuation">}</span>
+<span class="app-code__punctuation">}</span>
+</code></pre>
+
+</div>
+<hr class="govuk-section-break--l govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 class="govuk-heading-m" id="scenario-4" tabindex="-1">Scenario 4: Submit an application with Level 1 validation errors</h2>
+<h3 class="govuk-heading-s" id="request-3" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/applications</code></p>
 <p class="govuk-body">Headers:</p>
@@ -625,7 +774,7 @@ Support
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s govuk-!-margin-top-6" id="response-2" tabindex="-1">Response</h3>
+<h3 class="govuk-heading-s govuk-!-margin-top-6" id="response-3" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">400</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -653,8 +802,8 @@ Support
 
 </div>
 <hr class="govuk-section-break--l govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-<h2 class="govuk-heading-m" id="scenario-4" tabindex="-1">Scenario 4: Submit an application with Level 2 validation errors</h2>
-<h3 class="govuk-heading-s" id="request-3" tabindex="-1">Request</h3>
+<h2 class="govuk-heading-m" id="scenario-5" tabindex="-1">Scenario 5: Submit an application with Level 2 validation errors</h2>
+<h3 class="govuk-heading-s" id="request-4" tabindex="-1">Request</h3>
 <p class="govuk-body">Method: <code class="app-code app-code--inline">POST</code></p>
 <p class="govuk-body">Endpoint: <code class="app-code app-code--inline">/v0/applications</code></p>
 <p class="govuk-body">Headers:</p>
@@ -837,7 +986,7 @@ Support
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s govuk-!-margin-top-6" id="response-3" tabindex="-1">Response</h3>
+<h3 class="govuk-heading-s govuk-!-margin-top-6" id="response-4" tabindex="-1">Response</h3>
 <p class="govuk-body">Status: <code class="app-code app-code--inline">202</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
