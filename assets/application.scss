@@ -90,6 +90,12 @@ aside.content-list ol.dashed-list, .content-list ul {
 //  display: none;
 // }
 
+// Fixing the crown crest for live environments - breaks on local
+.govuk-footer__copyright-logo::before {
+    -webkit-mask-image: url(/bg-dev-pack-redesign/assets/images/govuk-crest.svg);
+    mask-image: url(/bg-dev-pack-redesign/assets/images/govuk-crest.svg);
+}
+
 .govuk-header__logo {
   width: auto;
 }
@@ -185,7 +191,7 @@ a {
 .govuk-header__logo {
   padding-left:40px;
   line-height:35px;
-  background: url("/assets/images/hmlr-logomark.svg") left center no-repeat;
+  background: url("/bg-dev-pack-redesign/assets/images/hmlr-logomark.svg") left center no-repeat;
 }
 .govuk-template--rebranded .govuk-header__link--homepage:not(:focus) {
   background-color: transparent;
