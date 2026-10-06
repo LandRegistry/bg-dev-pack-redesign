@@ -80,20 +80,19 @@ aside.content-list ol.dashed-list, .content-list ul {
   height: 40px;
 }
 
-.govuk-footer__copyright-logo--hmlr{
-  display: block;
-  background-repeat: no-repeat;  
-}
 
-// Got rid of the crown crest
-// .govuk-footer__copyright-logo::before {
-//  display: none;
-// }
-
-// Fixing the crown crest for live environments - breaks on local
+// Fixing the crown crest for all environments
 .govuk-footer__copyright-logo::before {
-    -webkit-mask-image: url(/bg-dev-pack-redesign/assets/images/govuk-crest.svg);
-    mask-image: url(/bg-dev-pack-redesign/assets/images/govuk-crest.svg);
+  content: none;
+  display: none;
+  width: 100%;
+  padding-top: 112px;
+  background-image:none;
+}
+.gov-crest {
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 
 .govuk-header__logo {
@@ -189,9 +188,13 @@ a {
 
 // Logo adding to header to align with new design guidance
 .govuk-header__logo {
-  padding-left:40px;
-  line-height:35px;
-  background: url("/bg-dev-pack-redesign/assets/images/hmlr-logomark.svg") left center no-repeat;
+  line-height:35px;    
+}
+.hmlr-logo {
+  display: inline-block;
+  position: relative;
+  top:4px; 
+  margin-right:.4375rem;
 }
 .govuk-template--rebranded .govuk-header__link--homepage:not(:focus) {
   background-color: transparent;
