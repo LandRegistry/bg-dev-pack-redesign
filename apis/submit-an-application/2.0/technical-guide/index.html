@@ -60,18 +60,35 @@
         select(selected.element);
       }
 
+      let currentItemClass = "x-govuk-sub-navigation__section-item--current"
+
       function select(selectedElement) {
-        if (selectedElement.classList.contains("x-govuk-sub-navigation__section-item--current")) return;
+
         for (let el of rangeToElement) {
           if (el.element == selectedElement) continue;
           unselect(el.element)
         }
-        selectedElement.classList.add("x-govuk-sub-navigation__section-item--current")
+        selectedElement.classList.add(currentItemClass)
+        
+        // Adds support for highlighting child elements
+        let parentOfSelected = selectedElement.parentElement.parentElement.closest('.x-govuk-sub-navigation__section-item')
+        if (parentOfSelected) {
+          parentOfSelected.classList.add(currentItemClass)
+        }
+        // End child support
+
         selectedElement.setAttribute("aria-current", true);
       }
 
       function unselect(element) {
-        element.classList.remove("x-govuk-sub-navigation__section-item--current")
+        // Adds support for highlighting child elements
+        let notTheParent = element.parentElement.parentElement.closest('.x-govuk-sub-navigation__section-item--current')
+        if (notTheParent) {
+          notTheParent.classList.remove(currentItemClass)
+        }
+        // End child support
+
+        element.classList.remove(currentItemClass)
         element.setAttribute("aria-current", false);
       }
 
@@ -2910,6 +2927,11 @@ Support
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">MRTG_DEED</td>
       <td class="govuk-table__cell">Either (Compulsory if mdref is provided)</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">CERT_REG_CH</td>
+      <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"></td>
@@ -6684,29 +6706,29 @@ Support
 <p class="govuk-body"><code class="app-code app-code--inline">AMENDMENTOFUNILATERALNOTICE</code> - Amendment of unilateral notice (UN3)</p>
 <p class="govuk-body">You must also set the <code class="app-code app-code--inline">contractual_control_right_affects_transaction</code> property to either:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - contractual control interests apply and the contractual control right has been recorded</li>
-<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - there are no contractual control interests</li>
+<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - this transaction does relate to a contractual control right. I confirm that all contractual control information relating to that right has been provided in accordance with regulation 7 of the Contractual Control Regulations.</li>
+<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - this transaction does not relate to a contractual control right within the meaning of the Contractual Control Regulations.</li>
 </ul>
 <p class="govuk-body"><code>RestrictionV2</code></p>
 <p class="govuk-body"><code class="app-code app-code--inline">RESTRICTION</code> - Restriction (standard wording) (RX1)</p>
 <p class="govuk-body">You must also set the <code class="app-code app-code--inline">contractual_control_right_affects_transaction</code> property to either:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - contractual control interests apply and the contractual control right has been recorded</li>
-<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - there are no contractual control interests</li>
+<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - this transaction does relate to a contractual control right. I confirm that all contractual control information relating to that right has been provided in accordance with regulation 7 of the Contractual Control Regulations.</li>
+<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - this transaction does not relate to a contractual control right within the meaning of the Contractual Control Regulations.</li>
 </ul>
 <p class="govuk-body"><code>RestrictionNonStandardV2</code></p>
 <p class="govuk-body"><code class="app-code app-code--inline">RESTRICTIONNONSTANDARD</code> - Restriction (standard wording) (RX1)</p>
 <p class="govuk-body">You must also set the <code class="app-code app-code--inline">contractual_control_right_affects_transaction</code> property to either:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - contractual control interests apply and the contractual control right has been recorded</li>
-<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - there are no contractual control interests</li>
+<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - this transaction does relate to a contractual control right. I confirm that all contractual control information relating to that right has been provided in accordance with regulation 7 of the Contractual Control Regulations.</li>
+<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - this transaction does not relate to a contractual control right within the meaning of the Contractual Control Regulations.</li>
 </ul>
 <p class="govuk-body"><code>UnilateralNoticeV2</code></p>
 <p class="govuk-body"><code class="app-code app-code--inline">UNILATERALNOTICE</code> - Unilateral notice (UN1)</p>
 <p class="govuk-body">You must also set the <code class="app-code app-code--inline">contractual_control_right_affects_transaction</code> property to either:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - contractual control interests apply and the contractual control right has been recorded</li>
-<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - there are no contractual control interests</li>
+<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - this transaction does relate to a contractual control right. I confirm that all contractual control information relating to that right has been provided in accordance with regulation 7 of the Contractual Control Regulations.</li>
+<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - this transaction does not relate to a contractual control right within the meaning of the Contractual Control Regulations.</li>
 </ul>
 <h3 class="govuk-heading-s" id="title-types" tabindex="-1">Title types</h3>
 <p class="govuk-body">Titles included as part of submission have a <code class="app-code app-code--inline">type</code> field that informs HMLR how to process the application. This type depends on the application type, and the usage of the title within the application.</p>
@@ -7223,8 +7245,8 @@ Fee must be 0 pence for a charge transaction accompanied by a Scale Fee transact
 </ul>
 <p class="govuk-body">You must set the <code class="app-code app-code--inline">contractual_control_right_affects_transaction</code> property to either:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - contractual control interests apply and the contractual control right has been recorded</li>
-<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - there are no contractual control interests</li>
+<li><code class="app-code app-code--inline">RELATED_TO_CCR_AND_CCI_SUBMITTED</code> - this transaction does relate to a contractual control right. I confirm that all contractual control information relating to that right has been provided in accordance with regulation 7 of the Contractual Control Regulations.</li>
+<li><code class="app-code app-code--inline">NOT_RELATED_TO_CCR</code> - this transaction does not relate to a contractual control right within the meaning of the Contractual Control Regulations.</li>
 </ul>
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--s">Contractual control interests validation error types
