@@ -44,18 +44,35 @@
         select(selected.element);
       }
 
+      let currentItemClass = "x-govuk-sub-navigation__section-item--current"
+
       function select(selectedElement) {
-        if (selectedElement.classList.contains("x-govuk-sub-navigation__section-item--current")) return;
+
         for (let el of rangeToElement) {
           if (el.element == selectedElement) continue;
           unselect(el.element)
         }
-        selectedElement.classList.add("x-govuk-sub-navigation__section-item--current")
+        selectedElement.classList.add(currentItemClass)
+        
+        // Adds support for highlighting child elements
+        let parentOfSelected = selectedElement.parentElement.parentElement.closest('.x-govuk-sub-navigation__section-item')
+        if (parentOfSelected) {
+          parentOfSelected.classList.add(currentItemClass)
+        }
+        // End child support
+
         selectedElement.setAttribute("aria-current", true);
       }
 
       function unselect(element) {
-        element.classList.remove("x-govuk-sub-navigation__section-item--current")
+        // Adds support for highlighting child elements
+        let notTheParent = element.parentElement.parentElement.closest('.x-govuk-sub-navigation__section-item--current')
+        if (notTheParent) {
+          notTheParent.classList.remove(currentItemClass)
+        }
+        // End child support
+
+        element.classList.remove(currentItemClass)
         element.setAttribute("aria-current", false);
       }
 

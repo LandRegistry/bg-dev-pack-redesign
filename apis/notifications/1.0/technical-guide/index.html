@@ -60,18 +60,35 @@
         select(selected.element);
       }
 
+      let currentItemClass = "x-govuk-sub-navigation__section-item--current"
+
       function select(selectedElement) {
-        if (selectedElement.classList.contains("x-govuk-sub-navigation__section-item--current")) return;
+
         for (let el of rangeToElement) {
           if (el.element == selectedElement) continue;
           unselect(el.element)
         }
-        selectedElement.classList.add("x-govuk-sub-navigation__section-item--current")
+        selectedElement.classList.add(currentItemClass)
+        
+        // Adds support for highlighting child elements
+        let parentOfSelected = selectedElement.parentElement.parentElement.closest('.x-govuk-sub-navigation__section-item')
+        if (parentOfSelected) {
+          parentOfSelected.classList.add(currentItemClass)
+        }
+        // End child support
+
         selectedElement.setAttribute("aria-current", true);
       }
 
       function unselect(element) {
-        element.classList.remove("x-govuk-sub-navigation__section-item--current")
+        // Adds support for highlighting child elements
+        let notTheParent = element.parentElement.parentElement.closest('.x-govuk-sub-navigation__section-item--current')
+        if (notTheParent) {
+          notTheParent.classList.remove(currentItemClass)
+        }
+        // End child support
+
+        element.classList.remove(currentItemClass)
         element.setAttribute("aria-current", false);
       }
 
@@ -272,8 +289,19 @@ Support
   <h2 class="govuk-visually-hidden" id="sub-navigation-heading">Pages in this section</h2>
   <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
   <ul class="x-govuk-sub-navigation__section">
-    <li class="x-govuk-sub-navigation__section-item">
+    <li class="x-govuk-sub-navigation__section-item x-govuk-sub-navigation__section-item--current">
       <a class="x-govuk-sub-navigation__link" href="#how-to-use-the-notifications-api">How to use the Notifications API</a>
+      <ul class="x-govuk-sub-navigation__section x-govuk-sub-navigation__section--nested">
+        <li class="x-govuk-sub-navigation__section-item">
+          <a class="x-govuk-sub-navigation__link" href="#receive-notifications">Receive notifications</a>
+        </li>
+        <li class="x-govuk-sub-navigation__section-item">
+          <a class="x-govuk-sub-navigation__link" href="#acknowledge-notifications">Acknowledge notifications</a>
+        </li>
+        <li class="x-govuk-sub-navigation__section-item">
+          <a class="x-govuk-sub-navigation__link" href="#notification-types">Notifications types</a>
+        </li>
+      </ul>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
       <a class="x-govuk-sub-navigation__link" href="#schemas">Schemas</a>
@@ -316,8 +344,8 @@ Support
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 <div class="app-prose-scope"><section>
-<h2 class="govuk-heading-m" id="how-to-use-the-notifications-api" tabindex="-1">How to use the Notifications API</h2>
-<h3 class="govuk-heading-s" id="receive-notifications" tabindex="-1">Receive notifications</h3>
+<h2 id="how-to-use-the-notifications-api" tabindex="-1" class="govuk-heading-l">How to use the Notifications API</h2>
+<h3 id="receive-notifications" tabindex="-1" class="govuk-heading-m">Receive notifications</h3>
 <p class="govuk-body">The GET request to fetch all notifications takes the following URL query parameters (which are optional):</p>
 <ul class="govuk-list--bullet govuk-list govuk-list--bullet">
 <li><code class="app-code app-code--inline">created_after</code> - only retrieve notifications with a <code class="app-code app-code--inline">created_timestamp</code> after this date</li>
@@ -337,8 +365,8 @@ Support
 <p class="govuk-body">Notification delivery is ‘at least once’, meaning a specific event at a specific time may result in one or more notifications (i.e. multiple notifications for the same event, but with different IDs).</p>
 <p class="govuk-body">Duplicate notifications will have the same <code class="app-code app-code--inline">event_datetime</code> field and <code class="app-code app-code--inline">notification_type</code> which can be used to locate and ignore duplicates when receiving notifications. Notifications will continue to be returned by the endpoint until they are acknowledged, so each duplicate notification still needs to be acknowledged separately.</p>
 <p class="govuk-body">All notifications are deleted after a month, whether acknowledged or not.</p>
-<h3 class="govuk-heading-s" id="acknowledge-notifications" tabindex="-1">Acknowledge notifications</h3>
-<p class="govuk-body">Once a notification has been processed by your system, the notification should be acknowledged. To do this, send a list of <code class="app-code app-code--inline">notification_ids</code> to the Acknowledge notifications endpoint (<code class="app-code app-code--inline">POST /v1/notifications/acknowledge</code>) of the notifications API as a POST request. This will change the status of those notifications to <code class="app-code app-code--inline">ACKNOWLEDGED</code>.</p>
+<h3 id="acknowledge-notifications" tabindex="-1" class="govuk-heading-m">Acknowledge notifications</h3>
+<p class="govuk-body">Once your system processes a notification, you should acknowledge it. To do this, send a comma separated list of <code class="app-code app-code--inline">notification_ids</code> to the Acknowledge notifications endpoint (<code class="app-code app-code--inline">POST /v1/notifications/acknowledge</code>) of the notifications API as a POST request. You can acknowledge a maximum of 100 notifications at a time. This will change the status of those notifications to <code class="app-code app-code--inline">ACKNOWLEDGED</code>.</p>
 <p class="govuk-body">Subsequent <code class="app-code app-code--inline">GET</code> calls won’t include acknowledged notifications by default.</p>
 </section>
 <section>
@@ -346,71 +374,71 @@ Support
 <p class="govuk-body">Notifications are the most effective way to monitor the status of your business unit’s applications as they progress to completion. The following table maps each notification type to the action you should take in response to it.</p>
 <div class="govuk-inset-text app-inset-text--note"><span class="govuk-visually-hidden">Note: </span><p class="govuk-body">For more information about the data retrieved for each notification type, see the <a href="#schemas" class="govuk-link">JSON schemas</a>.</p>
 </div>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Notification type</th>
-      <th scope="col" class="govuk-table__header">Description</th>
-      <th scope="col" class="govuk-table__header">Action</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">application.accepted-priority-protected</code></td>
-      <td class="govuk-table__cell">Application accepted and added to the daylist</td>
-      <td class="govuk-table__cell">Use the <a href="/bg-dev-pack-redesign/apis/application-information/1.0/technical-guide">Application information API</a> to check for errors or warnings associated with the application.</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">application.accepted-priority-pending</code></td>
-      <td class="govuk-table__cell">Application accepted and queuing for the daylist</td>
-      <td class="govuk-table__cell">Wait for further notifications with application status updates.</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">application.validation-failed</code></td>
-      <td class="govuk-table__cell">Application failed validation</td>
-      <td class="govuk-table__cell">Use the <a href="/bg-dev-pack-redesign/apis/application-information/1.0/technical-guide">Application information API</a> to check for validation errors associated with the application.</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">application.error</code></td>
-      <td class="govuk-table__cell">Application not added to the daylist due to a system error</td>
-      <td class="govuk-table__cell">A processing failure has occurred. Try resubmitting the application. If the error persists, contact HMLR support</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">application.correspondence-despatched</code></td>
-      <td class="govuk-table__cell">Correspondence was raised on the application</td>
-      <td class="govuk-table__cell">Use the <a href="/bg-dev-pack-redesign/apis/download-a-document/1.0/technical-guide">Download a document API</a> to download the correspondence documents in PDF format.</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">application.attachment-success</code></td>
-      <td class="govuk-table__cell">Document successfully attached to application</td>
-      <td class="govuk-table__cell">Wait for further notifications with application status updates.</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">application.attachment-failed</code></td>
-      <td class="govuk-table__cell">Document failed to attach to application</td>
-      <td class="govuk-table__cell">Review the error details, fix the issue and try attaching the document again.</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">application.message-success</code></td>
-      <td class="govuk-table__cell">Message successfully attached to application</td>
-      <td class="govuk-table__cell">Wait for further notifications with application status updates.</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">application.message-failed</code></td>
-      <td class="govuk-table__cell">Message failed to attach to application</td>
-      <td class="govuk-table__cell">Review the error details, fix the issue and try attaching the message again.</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">application.cancelled</code></td>
-      <td class="govuk-table__cell">Application cancelled</td>
-      <td class="govuk-table__cell">If any correspondence documents have been created, use the <a href="/bg-dev-pack-redesign/apis/download-a-document/1.0/technical-guide">Download a document API</a> to download them in PDF format.</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">application.completed</code></td>
-      <td class="govuk-table__cell">Application completed</td>
-      <td class="govuk-table__cell">Use the <a href="/bg-dev-pack-redesign/apis/download-a-document/1.0/technical-guide">Download a document API</a> to download the correspondence documents in PDF format. You can also use the <a href="/bg-dev-pack-redesign/apis/application-information/1.0/technical-guide">Application information API</a> to get full completion details for the application.</td>
-    </tr>
-  </tbody>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th class="govuk-table__header">Notification type</th>
+<th class="govuk-table__header">Description</th>
+<th class="govuk-table__header">Action</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">application.accepted-priority-protected</code></td>
+<td class="govuk-table__cell">Application accepted and added to the daylist</td>
+<td class="govuk-table__cell">Use the <a href="/bg-dev-pack-redesign/apis/application-information" class="govuk-link">Application information API</a> to check for errors or warnings associated with the application.</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">application.accepted-priority-pending</code></td>
+<td class="govuk-table__cell">Application accepted and queuing for the daylist</td>
+<td class="govuk-table__cell">Wait for further notifications with application status updates.</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">application.validation-failed</code></td>
+<td class="govuk-table__cell">Application failed validation</td>
+<td class="govuk-table__cell">Use the <a href="/bg-dev-pack-redesign/apis/application-information" class="govuk-link">Application information API</a> to check for validation errors associated with the application.</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">application.error</code></td>
+<td class="govuk-table__cell">Application not added to the daylist due to a system error</td>
+<td class="govuk-table__cell">A processing failure has occurred. Try resubmitting the application. If the error persists, contact HMLR support</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">application.correspondence-despatched</code></td>
+<td class="govuk-table__cell">Correspondence was raised on the application</td>
+<td class="govuk-table__cell">Use the <a href="/bg-dev-pack-redesign/apis/download-a-document" class="govuk-link">Download a document API</a> to download the correspondence documents in PDF format.</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">application.attachment-success</code></td>
+<td class="govuk-table__cell">Document successfully attached to application</td>
+<td class="govuk-table__cell">Wait for further notifications with application status updates.</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">application.attachment-failed</code></td>
+<td class="govuk-table__cell">Document failed to attach to application</td>
+<td class="govuk-table__cell">Review the error details, fix the issue and try attaching the document again.</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">application.message-success</code></td>
+<td class="govuk-table__cell">Message successfully attached to application</td>
+<td class="govuk-table__cell">Wait for further notifications with application status updates.</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">application.message-failed</code></td>
+<td class="govuk-table__cell">Message failed to attach to application</td>
+<td class="govuk-table__cell">Review the error details, fix the issue and try attaching the message again.</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">application.cancelled</code></td>
+<td class="govuk-table__cell">Application cancelled</td>
+<td class="govuk-table__cell">If any correspondence documents have been created, use the <a href="/bg-dev-pack-redesign/apis/download-a-document" class="govuk-link">Download a document API</a> to download them in PDF format.</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">application.completed</code></td>
+<td class="govuk-table__cell">Application completed</td>
+<td class="govuk-table__cell">Use the <a href="/bg-dev-pack-redesign/apis/download-a-document" class="govuk-link">Download a document API</a> to download the correspondence documents in PDF format. You can also use the <a href="/bg-dev-pack-redesign/apis/application-information" class="govuk-link">Application information API</a> to get full completion details for the application.</td>
+</tr>
+</tbody>
 </table>
 <p class="govuk-body">Only certain notification types should prompt you to use the <a href="/bg-dev-pack-redesign/apis/application-information" class="govuk-link">Application information API</a>. For example, after retrieving a <code class="app-code app-code--inline">application.validation-failed</code> notification for an application, use the Application information API to get a list of the validation errors.</p>
 <div class="govuk-inset-text app-inset-text--note"><span class="govuk-visually-hidden">Note: </span><p class="govuk-body">The Application information API <em>does not</em> currently return the following information:</p>
@@ -422,87 +450,89 @@ Support
 </div>
 <h3 id="supported-correspondence-documents" tabindex="-1" class="govuk-heading-m">Supported correspondence documents</h3>
 <p class="govuk-body">Notifications currently support the following types of correspondence document.</p>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Document code</th>
-      <th scope="col" class="govuk-table__header">Name</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">ATP</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">ATTACHED PLAN</code></td>
-    </tr>
-     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">CAN</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">CANCELLATION LETTER</code></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">CMT</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">COMPLETION OF TRANSACTION NOTIFICATION</code></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">DSR</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">DATA SYNCHRONISATION ENQUIRIES RESULT</code></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">ECM</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">EARLY COMPLETION LETTER</code></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">ECR</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">EARLY COMPLETION OFFICIAL COPY OF THE REGISTER</code></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">EC6</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">EARLY COMPLETION 6 MONTH REMINDER</code></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">LRP</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">LAND REGISTRY NOTICE PLAN/ILLUSTRATIVE PLAN</code></td>
-    </tr>
-    
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">LTR</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">LETTER</code></td>
-    </tr>
-    
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">OCD</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">OFFICIAL COPY OF A DOCUMENT</code></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">OCP</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">OFFICIAL COPY OF THE TITLE PLAN</code></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">OCR</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">OFFICIAL COPY OF THE REGISTER</code></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">PCD</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">POSTAL CANCELLATION DOCUMENT</code></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">RCS</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">REGISTRATION COMPLETION SHEET</code></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">REG</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">COPY OF UPDATED REGISTER</code></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">ROA</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">RESULT OF APPLICATION</code></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">TID</code></td>
-      <td class="govuk-table__cell"><code class="app-code app-code--inline">TITLE INFORMATION DOCUMENT</code></td>
-    </tr>                                    
-  </tbody>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th class="govuk-table__header">Document code</th>
+<th class="govuk-table__header">Document name</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">ATP</code></td>
+<td class="govuk-table__cell">Attached Plan</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">CAN</code></td>
+<td class="govuk-table__cell">Cancellation Letter</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">CMT</code></td>
+<td class="govuk-table__cell">Completion of Transaction Notification</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">CRD</code></td>
+<td class="govuk-table__cell">Combined Registration Document</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">DSR</code></td>
+<td class="govuk-table__cell">Data Synchronisation Enquiries Result</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">ECM</code></td>
+<td class="govuk-table__cell">Early Completion Letter</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">ECR</code></td>
+<td class="govuk-table__cell">Early Completion Official Copy of the Register</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">EC6</code></td>
+<td class="govuk-table__cell">Early Completion 6 Month Reminder</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">LRP</code></td>
+<td class="govuk-table__cell">Land Registry Notice Plan/Illustrative Plan</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">LTR</code></td>
+<td class="govuk-table__cell">Letter</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">OCD</code></td>
+<td class="govuk-table__cell">Official Copy of a Document</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">OCP</code></td>
+<td class="govuk-table__cell">Official Copy of the Title Plan</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">OCR</code></td>
+<td class="govuk-table__cell">Official Copy of the Register</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">PCD</code></td>
+<td class="govuk-table__cell">Postal Cancellation Document</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">RCS</code></td>
+<td class="govuk-table__cell">Registration Completion Sheet</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">REG</code></td>
+<td class="govuk-table__cell">Copy of Updated Register</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">ROA</code></td>
+<td class="govuk-table__cell">Result of Application</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="app-code app-code--inline">TID</code></td>
+<td class="govuk-table__cell">Title Information Document`</td>
+</tr>
+</tbody>
 </table>
-<h2 class="govuk-heading-s" id="schemas" tabindex="-1">Schemas</h2>
+<h2 id="schemas" tabindex="-1" class="govuk-heading-l">Schemas</h2>
 <p class="govuk-body">JSON schemas for each notification type can be found below:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li><a href="/bg-dev-pack-redesign/schemas/v1/application/application.accepted-priority-protected.json" class="govuk-link"><code class="app-code app-code--inline">application.accepted-priority-protected</code></a></li>
@@ -517,14 +547,14 @@ Support
 <li><a href="/bg-dev-pack-redesign/schemas/v1/application/application.cancelled.json" class="govuk-link"><code class="app-code app-code--inline">application.cancelled</code></a></li>
 <li><a href="/bg-dev-pack-redesign/schemas/v1/application/application.completed.json" class="govuk-link"><code class="app-code app-code--inline">application.completed</code></a></li>
 </ul>
-<h2 class="govuk-heading-m" id="validation-rules" tabindex="-1">Validation rules</h2>
+<h2 id="validation-rules" tabindex="-1" class="govuk-heading-l">Validation rules</h2>
 <p class="govuk-body">There are no validation rules for implementing this API.</p>
 </section>
 <section>
-<h2 class="govuk-heading-m" id="example-requests-and-responses" tabindex="-1">Example requests and responses</h2>
-<h3 class="govuk-heading-s" id="get-notifications-request" tabindex="-1">Get notifications request</h3>
+<h2 id="example-requests-and-responses" tabindex="-1" class="govuk-heading-l">Example requests and responses</h2>
+<h3 id="get-notifications-request" tabindex="-1" class="govuk-heading-m">Get notifications request</h3>
 <p class="govuk-body"><code class="app-code app-code--inline">GET /v1/notifications?created_after=2025-01-01t00:00:00 http/1.1</code></p>
-<h3 class="govuk-heading-s" id="get-notifications-response" tabindex="-1">Get notifications response</h3>
+<h3 id="get-notifications-response" tabindex="-1" class="govuk-heading-m">Get notifications response</h3>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -550,7 +580,7 @@ Support
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s" id="acknowledge-notifications-request" tabindex="-1">Acknowledge notifications request</h3>
+<h3 id="acknowledge-notifications-request" tabindex="-1" class="govuk-heading-m">Acknowledge notifications request</h3>
 <p class="govuk-body"><code class="app-code app-code--inline">POST /v1/notifications/acknowledge http/1.1</code></p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
@@ -564,7 +594,7 @@ Support
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s" id="acknowledge-notifications-response" tabindex="-1">Acknowledge notifications response</h3>
+<h3 id="acknowledge-notifications-response" tabindex="-1" class="govuk-heading-m">Acknowledge notifications response</h3>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -579,7 +609,7 @@ Support
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s"><code>application.accepted-priority-protected</code> notification</h3>
+<h3 class="govuk-heading-s"><code>application.accepted-priority-protected` notification</code></h3>
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
@@ -607,7 +637,7 @@ Support
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s"><code>application.validation-failed</code> notification</h3>
+<h3 class="govuk-heading-s"><code>application.validation-failed` notification</code></h3>
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
@@ -633,7 +663,7 @@ Support
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s" id="attach-a-message-success-notification" tabindex="-1">Attach a message success notification</h3>
+<h3 id="attach-a-message-success-notification" tabindex="-1" class="govuk-heading-m">Attach a message success notification</h3>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -662,7 +692,7 @@ Support
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s" id="attach-a-message-failed-notification" tabindex="-1">Attach a message failed notification</h3>
+<h3 id="attach-a-message-failed-notification" tabindex="-1" class="govuk-heading-m">Attach a message failed notification</h3>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -689,7 +719,7 @@ Support
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s" id="when-an-application-is-completed-but-subject-to-early-completion" tabindex="-1">When an application is completed, but subject to early completion</h3>
+<h3 id="when-an-application-is-completed-but-subject-to-early-completion" tabindex="-1" class="govuk-heading-m">When an application is completed, but subject to early completion</h3>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -738,7 +768,7 @@ Support
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s" id="when-an-early-completion-application-receives-ecm-and-ecr" tabindex="-1">When an early completion application receives ECM and ECR</h3>
+<h3 id="when-an-early-completion-application-receives-ecm-and-ecr" tabindex="-1" class="govuk-heading-m">When an early completion application receives ECM and ECR</h3>
 <p class="govuk-body">The ECM (Early completion letter) and ECR (Early completion official copy of the register) are provided when the next application gives evidence of discharge.</p>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">

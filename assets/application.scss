@@ -209,3 +209,18 @@ max-width: 100%;
 .app-search__menu {
   color: govuk-colour("black");
 }
+
+// Fixes gov side navigation to work when using the 'spy' function to highlight the active section and subsections
+.x-govuk-sub-navigation__section--nested .x-govuk-sub-navigation__link[aria-current] {
+  font-weight: bold;
+  display: inline;
+  border-left:0;
+  padding-left:0;
+  margin-left:0;
+}
+.x-govuk-sub-navigation__section--nested .x-govuk-sub-navigation__link[aria-current]::before {
+  content: none;
+}
+.x-govuk-sub-navigation__section--nested .x-govuk-sub-navigation__link[aria-current='false'] {
+  font-weight:normal;
+}
