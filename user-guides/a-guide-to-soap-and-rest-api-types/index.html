@@ -277,8 +277,8 @@ Support
 </nav>
         <main class="govuk-main-wrapper" id="main-content">
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third sticky">
-          <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
+        <div class="govuk-grid-column-one-third sticky">
+            <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
   <h2 class="govuk-visually-hidden" id="sub-navigation-heading">Pages in this section</h2>
   <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
   <ul class="x-govuk-sub-navigation__section">
@@ -297,8 +297,8 @@ Support
   </ul>
 </nav>
 
-      </div>
-    <div class="govuk-grid-column-two-thirds">
+</div>
+      <div class="govuk-grid-column-two-thirds">
 <header class="app-document-header">
   <h1 class="govuk-heading-xl">A guide to SOAP and REST API types</h1>
 </header>
@@ -316,13 +316,13 @@ Support
 <p class="govuk-body">HMLR may need to restrict the usage of an API to protect it from excessive use. These rate limits are subject to change based on expected loads and uptake of the service.</p>
 <p class="govuk-body">If the rate limit is exceeded, you’ll get a HTTP 429 response (Too Many Requests). HTTP headers will be provided in the response to inform you when the next request may be made.</p>
 <p class="govuk-body">We currently promote a sliding window rate limiting policy. This ensures an initial burst of requests can be sent and slowly replenished over time. Where possible, spreading requests out over time is highly advised.</p>
-<p class="govuk-body">If you are concerned with a rate limit, you can <a class="govuk-link" href="/bg-dev-pack-redesign/contact-us">contact us</a> and we can discuss whether increasing the rate limit is appropriate.</p>
+<p class="govuk-body">If you are concerned with a rate limit, you can <a href="/bg-dev-pack-redesign/contact-us" class="govuk-link">contact us</a> and we can discuss whether increasing the rate limit is appropriate.</p>
 <h4 id="error-registry" tabindex="-1" class="govuk-heading-s">Error registry</h4>
 <p class="govuk-body">If our systems detect a problem with requests to our REST services, an error registry will capture these problems as headings and pages with primers on how to solve them. We will share a link to these problem pages from within the JSON response.</p>
 <h4 id="http-500-errors" tabindex="-1" class="govuk-heading-s">HTTP 500 errors</h4>
 <p class="govuk-body">Although measures have been taken to ensure the API is robust and readily available, there may be cases where HMLR systems cannot respond to requests correctly. In such cases, the API will respond with a HTTP 500 error (Internal Server Error), meaning we could not process the request due to an issue within HMLR. This error will not provide much detail about the error externally but will alert a member of the HMLR support team to investigate the issue.</p>
 <p class="govuk-body">If you receive a 500 error from the API, you should wait a short period of time and then retry the request. If, after a few retries, you are still receiving the same error, please contact the support team.</p>
-<p class="govuk-body">Note that a 500 error does not indicate if the request is correct or incorrect, only that there was an issue internal to the API, and the request should be retried. Visit <a class="govuk-link" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" rel="noreferrer noopener" target="_blank">the Mozilla web documentation (opens in new tab)</a> for more information about HTTP response codes.</p>
+<p class="govuk-body">Note that a 500 error does not indicate if the request is correct or incorrect, only that there was an issue internal to the API, and the request should be retried. Visit <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" class="govuk-link">the Mozilla web documentation (opens in new tab)</a> for more information about HTTP response codes.</p>
 <h4 id="http-400-errors" tabindex="-1" class="govuk-heading-s">HTTP 400 errors</h4>
 <p class="govuk-body">Sometimes the requests sent to our APIs are missing parts, have been sent incorrectly or have logical errors within them. When this happens, our APIs will return an error from the HTTP 400 series. The most common include 400, 401, 403, 404 and 429. Below, you’ll find information about what these mean at a high level. For further information about the 400 series errors, visit the Mozilla web documentation.</p>
 <h4 id="400-errors" tabindex="-1" class="govuk-heading-s">400 errors</h4>
@@ -341,7 +341,7 @@ Support
 <h4 id="outstanding-requests" tabindex="-1" class="govuk-heading-s">Outstanding requests</h4>
 <p class="govuk-body">We use an outstanding requests service which allows you to obtain a list of available responses from our SOAP services. Each service offered has a corresponding poll request service, that can then be used to retrieve the full response.</p>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-<p class="govuk-body">We sometimes use technical terms to describe the work we do at HMLR. For a list of commonly used terms and their definitions, visit <a class="govuk-link" href="/bg-dev-pack-redesign/glossary">our glossary</a>.</p>
+<p class="govuk-body">We sometimes use technical terms to describe the work we do at HMLR. For a list of commonly used terms and their definitions, visit <a href="/bg-dev-pack-redesign/glossary" class="govuk-link">our glossary</a>.</p>
 </div>
 
 </div></div>        </main>
