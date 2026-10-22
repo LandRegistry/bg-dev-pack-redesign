@@ -301,6 +301,9 @@ Support
         <li class="x-govuk-sub-navigation__section-item">
           <a class="x-govuk-sub-navigation__link" href="#notification-types">Notifications types</a>
         </li>
+        <li class="x-govuk-sub-navigation__section-item">
+          <a class="x-govuk-sub-navigation__link" href="#supported-correspondence-documents">Supported correspondence documents</a>
+        </li>
       </ul>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
@@ -315,7 +318,18 @@ Support
   </ul>
 </nav>
 
-</div>
+<aside role="complementary">
+                <h2 class="x-govuk-sub-navigation__theme" id="related-guides">
+                Guides
+                </h2>
+                <nav role="navigation" aria-labelledby="related-guides">
+                    <ul class="x-govuk-sub-navigation__section">
+                            <li class="x-govuk-sub-navigation__section-item">
+                                <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/user-guides/a-guide-to-notifications/">A guide to notifications</a>
+                            </li>
+                    </ul>
+                </nav>
+            </aside></div>
 
 <div class="govuk-grid-column-two-thirds">
 
@@ -588,7 +602,10 @@ Support
 </button>
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
-    <span class="app-code__string">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span>
+    <span class="app-code__string">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__string">&quot;8ba85f64-5111-4562-b3fc-2c963f44afa7&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__string">&quot;8ba85f64-5229-4562-b3fc-2c963f44afa7&quot;</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>
   <span class="app-code__punctuation">]</span>
 <span class="app-code__punctuation">}</span>
 </code></pre>
@@ -602,14 +619,19 @@ Support
 <pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>
     <span class="app-code__attr">&quot;acknowledged&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
-      <span class="app-code__string">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span>
+      <span class="app-code__string">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__string">&quot;8ba85f64-5111-4562-b3fc-2c963f44aeg7&quot;</span><span class="app-code__punctuation">,</span>
+      <span class="app-code__string">&quot;3ga85f64-5229-4562-b3fc-2c963f44afj5&quot;</span>
+    <span class="app-code__punctuation">]</span><span class="app-code__punctuation">,</span>
+    <span class="app-code__attr">&quot;not_found&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>
+      <span class="app-code__string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>
     <span class="app-code__punctuation">]</span>
   <span class="app-code__punctuation">}</span>
 <span class="app-code__punctuation">}</span>
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s"><code>application.accepted-priority-protected` notification</code></h3>
+<h3 id="application-accepted-priority-protected-notification" tabindex="-1" class="govuk-heading-m"><code class="app-code app-code--inline">application.accepted-priority-protected</code> notification</h3>
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
@@ -637,7 +659,7 @@ Support
 </code></pre>
 
 </div>
-<h3 class="govuk-heading-s"><code>application.validation-failed` notification</code></h3>
+<h3 id="application-validation-failed-notification" tabindex="-1" class="govuk-heading-m"><code class="app-code app-code--inline">application.validation-failed</code> notification</h3>
 <div class="code-wrapper"><button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
