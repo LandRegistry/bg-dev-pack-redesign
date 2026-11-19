@@ -282,10 +282,8 @@ Support
       <div class="govuk-width-container">
           <main class="govuk-main-wrapper" id="main-content">
 <div class="govuk-grid-row">
-
-
-<div class="govuk-grid-column-one-third sticky">
-    <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
+            <div class="govuk-grid-column-one-third sticky">
+                <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
   <h2 class="govuk-visually-hidden" id="sub-navigation-heading">Pages in this section</h2>
   <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
   <ul class="x-govuk-sub-navigation__section">
@@ -301,22 +299,32 @@ Support
   </ul>
 </nav>
 
-</div>
-
-<div class="govuk-grid-column-two-thirds">
-
-
+<aside role="complementary">
+                    <h2 class="x-govuk-sub-navigation__theme" id="related-guides">
+                    Guides
+                    </h2>
+                    <nav role="navigation" aria-labelledby="related-guides">
+                        <ul class="x-govuk-sub-navigation__section">
+                                <li class="x-govuk-sub-navigation__section-item">
+                                    <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/user-guides/transaction-and-document-types">Transaction and document types</a>
+                                </li>
+                        </ul>
+                    </nav>
+                </aside></div>
+      <div class="govuk-grid-column-two-thirds">
+        
 <header class="app-document-header">
   <h1 class="govuk-heading-xl">Send a document API technical guide</h1><p class="govuk-body-l">Use this service to attach documents to your&nbsp;application</p>
 </header>
 
 
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<div class="bg-version-grid">
-    <div>
-        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
-    </div>
-    <div class="govuk-form-group version-group govuk-!-margin-0">
+    
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <div class="bg-version-grid">
+            <div>
+                <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
+            </div>
+            <div class="govuk-form-group version-group govuk-!-margin-0">
   <label class="govuk-label govuk-visually-hidden" for="version">
     Version and Status dropdown
   </label>
@@ -326,10 +334,11 @@ Support
   <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button" onclick="setVersion();">View</button>
 </div>
 
-</div>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<div class="app-prose-scope"><section>
+    
+    <div class="app-prose-scope"><section>
 <h2 class="govuk-heading-m" id="how-to-use-the-send-a-document-api" tabindex="-1">How to use the Send a document API</h2>
 <p class="govuk-body">This API consists of two endpoints that must be used together to upload a single document.</p>
 <ol class="govuk-list govuk-list--number">
@@ -347,6 +356,7 @@ Support
 <p class="govuk-body">Documents will asynchronously be virus scanned and validated. Issues found during this process will be surfaced via the application information API. If a virus is found, the application information API will tell you this. If the file is corrupted, it will report that the file type is not supported. You will not receive notifications about these issues.</p>
 <p class="govuk-body">The maximum size permitted for a single document upload is 40MiB (41943040 bytes).</p>
 <p class="govuk-body">Multi-part uploads are not supported and there are no plans to add them.</p>
+<p class="govuk-body">To better understand document types refer to our <a href="/bg-dev-pack-redesign/user-guides/transaction-and-document-types" class="govuk-link">guide to transaction and document types</a>. You should also be aware of which documents are required for which transaction types, which can be found in <a href="/bg-dev-pack-redesign/apis/submit-an-application/2.0/validation/#transaction-and-document-mapping" class="govuk-link">the validation rules for the Submit an application API</a></p>
 </section>
 <section>
 <h2 class="govuk-heading-m" id="validation-rules" tabindex="-1">Validation rules</h2>
@@ -510,23 +520,23 @@ shasum.<span class="app-code__title function_">digest</span>(<span class="app-co
 </div>
 
 
+    
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <h3 class="govuk-heading-m">Related APIs</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register API</a></li>
+            <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application">Submit an application API</a></li>
+            <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/application-information">Application information API</a></li>
+            <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/attach-a-document">Attach a document API</a></li>
+            <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/attach-a-message">Attach a message API</a></li>
+            <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/notifications">Notifications API</a></li>
+            <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/download-a-document">Download a document API</a></li>
+            <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/find-a-service-api">More</a></li>
+        </ul>
 
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-<h3 class="govuk-heading-m">Related APIs</h3>
-<ul class="govuk-list govuk-list--bullet">
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application">Submit an application API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/application-information">Application information API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/attach-a-document">Attach a document API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/attach-a-message">Attach a message API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/notifications">Notifications API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/download-a-document">Download a document API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/find-a-service-api">More</a></li>
-</ul>
+    </div>
 
-</div>
-
-</div>
+    </div>
         </main>
       </div>
 

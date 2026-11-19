@@ -282,10 +282,8 @@ Support
       <div class="govuk-width-container">
           <main class="govuk-main-wrapper" id="main-content">
 <div class="govuk-grid-row">
-
-
-<div class="govuk-grid-column-one-third sticky">
-    <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
+            <div class="govuk-grid-column-one-third sticky">
+                <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
   <h2 class="govuk-visually-hidden" id="sub-navigation-heading">Pages in this section</h2>
   <h3 class="x-govuk-sub-navigation__theme">Contents</h3>
   <ul class="x-govuk-sub-navigation__section">
@@ -319,32 +317,31 @@ Support
 </nav>
 
 <aside role="complementary">
-                <h2 class="x-govuk-sub-navigation__theme" id="related-guides">
-                Guides
-                </h2>
-                <nav role="navigation" aria-labelledby="related-guides">
-                    <ul class="x-govuk-sub-navigation__section">
-                            <li class="x-govuk-sub-navigation__section-item">
-                                <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/user-guides/a-guide-to-notifications/">A guide to notifications</a>
-                            </li>
-                    </ul>
-                </nav>
-            </aside></div>
-
-<div class="govuk-grid-column-two-thirds">
-
-
+                    <h2 class="x-govuk-sub-navigation__theme" id="related-guides">
+                    Guides
+                    </h2>
+                    <nav role="navigation" aria-labelledby="related-guides">
+                        <ul class="x-govuk-sub-navigation__section">
+                                <li class="x-govuk-sub-navigation__section-item">
+                                    <a class="x-govuk-sub-navigation__link" href="/bg-dev-pack-redesign/user-guides/a-guide-to-notifications/">A guide to notifications</a>
+                                </li>
+                        </ul>
+                    </nav>
+                </aside></div>
+      <div class="govuk-grid-column-two-thirds">
+        
 <header class="app-document-header">
   <h1 class="govuk-heading-xl">Notifications API technical guide</h1><p class="govuk-body-l">Use this service to get updates about multiple applications submitted by the same business&nbsp;unit</p>
 </header>
 
 
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<div class="bg-version-grid">
-    <div>
-        <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
-    </div>
-    <div class="govuk-form-group version-group govuk-!-margin-0">
+    
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <div class="bg-version-grid">
+            <div>
+                <h2 class="govuk-heading-m govuk-!-margin-0" id="version-and-status">Version and Status</h2>
+            </div>
+            <div class="govuk-form-group version-group govuk-!-margin-0">
   <label class="govuk-label govuk-visually-hidden" for="version">
     Version and Status dropdown
   </label>
@@ -354,10 +351,11 @@ Support
   <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button" onclick="setVersion();">View</button>
 </div>
 
-</div>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<div class="app-prose-scope"><section>
+    
+    <div class="app-prose-scope"><section>
 <h2 id="how-to-use-the-notifications-api" tabindex="-1" class="govuk-heading-l">How to use the Notifications API</h2>
 <h3 id="receive-notifications" tabindex="-1" class="govuk-heading-m">Receive notifications</h3>
 <p class="govuk-body">The GET request to fetch all notifications takes the following URL query parameters (which are optional):</p>
@@ -430,7 +428,7 @@ Support
 <tr class="govuk-table__row">
 <td class="govuk-table__cell"><code class="app-code app-code--inline">application.attachment-failed</code></td>
 <td class="govuk-table__cell">Document failed to attach to application</td>
-<td class="govuk-table__cell">Review the error details, fix the issue and try attaching the document again.</td>
+<td class="govuk-table__cell">Use the <code class="app-code app-code--inline">document_id</code> to identify which document failed. Review the error details, fix the issue and try attaching the document again.</td>
 </tr>
 <tr class="govuk-table__row">
 <td class="govuk-table__cell"><code class="app-code app-code--inline">application.message-success</code></td>
@@ -686,13 +684,14 @@ Support
 
 </div>
 <h3 id="attach-a-message-success-notification" tabindex="-1" class="govuk-heading-m">Attach a message success notification</h3>
+<div class="govuk-inset-text app-inset-text--note"><span class="govuk-visually-hidden">Note: </span><p class="govuk-body">The <code class="app-code app-code--inline">message_id</code> field is not returned in notifications yet. It will be included in a later update.</p>
+</div>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
 </button>
-<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>  
-  <span class="app-code__attr">&quot;errors &quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>  
-    <span class="app-code__punctuation">{</span>  
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code>
+<span class="app-code__punctuation">{</span>  
   <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>  
     <span class="app-code__punctuation">{</span>  
       <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;7788bfb3-02f2-4c9b-be58-94e9df010ac8&quot;</span><span class="app-code__punctuation">,</span>  
@@ -705,7 +704,8 @@ Support
       <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>  
       <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
         <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
-          <span class="app-code__attr">&quot;attachment_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">123</span>  
+          <span class="app-code__attr">&quot;attachment_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">123</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;message_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;e02ed81d-22bd-440f-8eb4-4c1314e665f1&quot;</span>  
         <span class="app-code__punctuation">}</span>  
       <span class="app-code__punctuation">}</span>  
     <span class="app-code__punctuation">}</span>  
@@ -715,6 +715,8 @@ Support
 
 </div>
 <h3 id="attach-a-message-failed-notification" tabindex="-1" class="govuk-heading-m">Attach a message failed notification</h3>
+<div class="govuk-inset-text app-inset-text--note"><span class="govuk-visually-hidden">Note: </span><p class="govuk-body">The <code class="app-code app-code--inline">message_id</code> field is not returned in notifications yet. It will be included in a later update.</p>
+</div>
 <div class="code-wrapper">
 <button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
   Copy code
@@ -724,15 +726,72 @@ Support
     <span class="app-code__punctuation">{</span>  
       <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;7788bfb3-02f2-4c9b-be58-94e9df010ac8&quot;</span><span class="app-code__punctuation">,</span>  
       <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-25T16:17:19.120585661Z&quot;</span><span class="app-code__punctuation">,</span>  
-      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot; https://landregistry.github.io/bgtechdoc/schemas/v1/application/message-failed.json &quot;</span><span class="app-code__punctuation">,</span>  
-      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot; application.message-failed&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://landregistry.github.io/bgtechdoc/schemas/v1/application/message-failed.json&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.message-failed&quot;</span><span class="app-code__punctuation">,</span>  
       <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>  
       <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3d4b51cf-76ab-40ad-9b09-099323034adf&quot;</span><span class="app-code__punctuation">,</span>  
       <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-20T09:06:29.120585661Z&quot;</span><span class="app-code__punctuation">,</span>  
       <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>  
       <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
         <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
-          <span class="app-code__attr">&quot;failure_reason&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;An error occurred&quot;</span>  
+          <span class="app-code__attr">&quot;failure_reason&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;An error occurred&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;message_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;e02ed81d-22bd-440f-8eb4-4c1314e665f1&quot;</span>  
+        <span class="app-code__punctuation">}</span>  
+      <span class="app-code__punctuation">}</span>  
+    <span class="app-code__punctuation">}</span>  
+  <span class="app-code__punctuation">]</span>  
+<span class="app-code__punctuation">}</span>     
+</code></pre>
+
+</div>
+<h3 id="attach-a-document-success-notification" tabindex="-1" class="govuk-heading-m">Attach a document success notification</h3>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>  
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>  
+    <span class="app-code__punctuation">{</span>  
+      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;7788bfb3-02f2-4c9b-be58-94e9df010ac8&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-25T16:17:19.120585661Z&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://landregistry.github.io/bgtechdoc/schemas/v1/application/attachment-success.json&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.attachment-success&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3d4b51cf-76ab-40ad-9b09-099323034adf&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-20T09:06:29.120585661Z&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
+        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
+          <span class="app-code__attr">&quot;attachment_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__number">123</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;document_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3f6c1a2e-8b4d-4e9a-a1c7-5d2f9e0b6a14&quot;</span>  
+        <span class="app-code__punctuation">}</span>  
+      <span class="app-code__punctuation">}</span>  
+    <span class="app-code__punctuation">}</span>  
+  <span class="app-code__punctuation">]</span>  
+<span class="app-code__punctuation">}</span>     
+</code></pre>
+
+</div>
+<h3 id="attach-a-document-failed-notification" tabindex="-1" class="govuk-heading-m">Attach a document failed notification</h3>
+<div class="code-wrapper">
+<button type="submit" class="govuk-button govuk-button--secondary copy-code" data-module="govuk-button">
+  Copy code
+</button>
+<pre class="app-code app-code--block app-code__language--json" tabindex="0"><code><span class="app-code__punctuation">{</span>  
+  <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">[</span>  
+    <span class="app-code__punctuation">{</span>  
+      <span class="app-code__attr">&quot;notification_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;7788bfb3-02f2-4c9b-be58-94e9df010ac8&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;created_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-25T16:17:19.120585661Z&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;payload_schema&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;https://landregistry.github.io/bgtechdoc/schemas/v1/application/attachment-failed.json&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;notification_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;application.attachment-failed&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;subject_type&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;APPLICATION&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;subject&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3d4b51cf-76ab-40ad-9b09-099323034adf&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;event_datetime&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;2025-02-20T09:06:29.120585661Z&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;status&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;NEW&quot;</span><span class="app-code__punctuation">,</span>  
+      <span class="app-code__attr">&quot;payload&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
+        <span class="app-code__attr">&quot;data&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__punctuation">{</span>  
+          <span class="app-code__attr">&quot;failure_reason&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;An error occurred&quot;</span><span class="app-code__punctuation">,</span>
+          <span class="app-code__attr">&quot;document_id&quot;</span><span class="app-code__punctuation">:</span> <span class="app-code__string">&quot;3f6c1a2e-8b4d-4e9a-a1c7-5d2f9e0b6a14&quot;</span> 
         <span class="app-code__punctuation">}</span>  
       <span class="app-code__punctuation">}</span>  
     <span class="app-code__punctuation">}</span>  
@@ -842,21 +901,21 @@ Support
 </div>
 
 
+    
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <h3 class="govuk-heading-m">Related APIs</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register API</a></li>
+            <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/send-a-document">Send a document API</a></li>
+            <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application">Submit an application API</a></li>
+            <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/application-information">Application information API</a></li>
+            <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/download-a-document">Download a document API</a></li>
+            <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/find-a-service-api">More</a></li>
+        </ul>
 
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-<h3 class="govuk-heading-m">Related APIs</h3>
-<ul class="govuk-list govuk-list--bullet">
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application-to-change-the-land-register">Submit an application to change the Land Register API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/send-a-document">Send a document API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/submit-an-application">Submit an application API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/application-information">Application information API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/apis/download-a-document">Download a document API</a></li>
-    <li class="govuk-!-margin-bottom-2"><a class="govuk-link" href="/bg-dev-pack-redesign/find-a-service-api">More</a></li>
-</ul>
+    </div>
 
-</div>
-
-</div>
+    </div>
         </main>
       </div>
 
