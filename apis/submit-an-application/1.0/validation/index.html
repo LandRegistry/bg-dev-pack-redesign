@@ -285,9 +285,6 @@ Support
       <a class="x-govuk-sub-navigation__link" href="#power-of-attorney">Power of attorney</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
-      <a class="x-govuk-sub-navigation__link" href="#representation">Representation</a>
-    </li>
-    <li class="x-govuk-sub-navigation__section-item">
       <a class="x-govuk-sub-navigation__link" href="#additional-provisions">Additional provisions</a>
     </li>
     <li class="x-govuk-sub-navigation__section-item">
@@ -449,7 +446,7 @@ Support
             <p class="govuk-body">
                 
 
-                <a href="https://landregistry.github.io/bgtechdoc/documents/submit-an-application-to-change-the-register/v2.0/openapi.html#tag/Submit-an-application-API" role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-2" data-module="govuk-button" target="_blank">
+                <a href="https://landregistry.github.io/bgtechdoc/documents/submit-an-application-to-change-the-register/v2.1/openapi.html#/submit-an-application-api" role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-2" data-module="govuk-button" target="_blank">
   View API technical specifications
 </a>
                 <span class="govuk-body-s govuk-hint" style="display:block">Opens in a new tab</span>
@@ -484,7 +481,7 @@ Support
 <li>single title charge transactions with a title <code class="app-code app-code--inline">scope</code> of <code class="app-code app-code--inline">WHOLE</code></li>
 </ul>
 </div>
-<p class="govuk-body">If you have built for the digital mortgage service, your digital mortgage applications can be accepted without requiring an attached legal charge document or deed. Instead, you can provide the electronic mortgage deed (e-MD) reference, using the <code class="app-code app-code--inline">mdref</code> parameter.</p>
+<p class="govuk-body">If you have built for the digital mortgage service, your digital mortgage applications can be accepted without requiring an attached legal charge document or deed. Instead, you can provide the electronic mortgage deed (e-MD) reference, using the <code class="app-code app-code--inline">mdref</code> parameter, within a charge transaction.</p>
 <p class="govuk-body">The <code class="app-code app-code--inline">mdref</code> parameter value must contain between eight and nine characters, using the following pattern:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li><code class="app-code app-code--inline">e-MD</code> using a hyphen character</li>
@@ -546,7 +543,6 @@ Support
   <li>Angola</li>
   <li>Anguilla</li>
   <li>Antarctica</li>
-  <li>Antigua & Barbuda</li>
   <li>Antigua and Barbuda</li>
   <li>Argentina</li>
   <li>Arizona, United States of America</li>
@@ -574,7 +570,6 @@ Support
   <li>Bolivia</li>
   <li>Bonaire</li>
   <li>Bonaire, Sint Eustatius and Saba</li>
-  <li>Bosnia & Herzegovina</li>
   <li>Bosnia and Herzegovina</li>
   <li>Botswana</li>
   <li>Bouvet Island</li>
@@ -613,7 +608,6 @@ Support
   <li>Cook Islands</li>
   <li>Costa Rica</li>
   <li>Cote D'Ivoire</li>
-  <li>Cote D’‘Ivoire</li>
   <li>Croatia</li>
   <li>Cuba</li>
   <li>Curacao</li>
@@ -623,7 +617,6 @@ Support
   <li>Delaware, United States of America</li>
   <li>Democratic People’s Republic of Korea</li>
   <li>Democratic Republic of Congo</li>
-  <li>Democratic Republic of the Congo</li>
   <li>Denmark</li>
   <li>Djibouti</li>
   <li>Dominica</li>
@@ -674,7 +667,6 @@ Support
   <li>Guyana</li>
   <li>Haiti</li>
   <li>Hawaii, United States of America</li>
-  <li>Heard & Mcdonald Islands</li>
   <li>Heard and Mcdonald Islands</li>
   <li>Holy See</li>
   <li>Honduras</li>
@@ -707,7 +699,6 @@ Support
   <li>Kosovo</li>
   <li>Kuwait</li>
   <li>Kyrgyzstan</li>
-  <li>Labuan</li>
   <li>Labuan, Malaysia</li>
   <li>Lao People’s Democratic Republic</li>
   <li>Laos</li>
@@ -825,18 +816,15 @@ Support
   <li>Saint Lucia</li>
   <li>Saint Martin</li>
   <li>Saint Pierre and Miquelon</li>
-  <li>Saint Vincent & Grenadines</li>
   <li>Saint Vincent and the Grenadines</li>
   <li>Samoa</li>
   <li>San Marino</li>
-  <li>Sao Tome & Principe</li>
   <li>Sao Tome and Principe</li>
   <li>Sark</li>
   <li>Saskatchewan, Canada</li>
   <li>Saudi Arabia</li>
   <li>Scattered Islands</li>
   <li>Senegal</li>
-  <li>Serbia</li>
   <li>Serbia and Montenegro</li>
   <li>Seychelles</li>
   <li>Sharjah, United Arab Emirates</li>
@@ -872,7 +860,6 @@ Support
   <li>Syria</li>
   <li>Syrian Arab Republic</li>
   <li>Tahiti</li>
-  <li>Taiwan</li>
   <li>Taiwan, Province of China</li>
   <li>Tajikistan</li>
   <li>Tanzania</li>
@@ -2663,6 +2650,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">ARC</td>
       <td class="govuk-table__cell">DEED</td>
       <td class="govuk-table__cell">Either</td>
@@ -2718,6 +2715,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">ASTC</td>
       <td class="govuk-table__cell">AS2</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -2748,6 +2755,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">ASTT</td>
       <td class="govuk-table__cell">AS1</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -2770,6 +2787,16 @@ Support
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">COURT_ORD</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
@@ -2859,28 +2886,8 @@ Support
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"></td>
-      <td class="govuk-table__cell">DEC_AB_NULL_MARR</td>
-      <td class="govuk-table__cell">Either</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"></td>
-      <td class="govuk-table__cell">MARR_CERT</td>
-      <td class="govuk-table__cell">Either</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"></td>
-      <td class="govuk-table__cell">ORD_DISS_NULL_CP</td>
-      <td class="govuk-table__cell">Either</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"></td>
-      <td class="govuk-table__cell">COURT_ORD</td>
-      <td class="govuk-table__cell">Either</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">MRTG_DEED</td>
-      <td class="govuk-table__cell">Either (Compulsory if mdref is provided)</td>
+      <td class="govuk-table__cell">Either (Compulsory if mdref is provided - does not apply to Digital Mortgage applications)</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"></td>
@@ -3493,6 +3500,11 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">DFL1</td>
       <td class="govuk-table__cell">LEASE</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -3520,6 +3532,16 @@ Support
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">CONV_CERT</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
@@ -3553,6 +3575,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">DFL4</td>
       <td class="govuk-table__cell">LEASE</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -3580,6 +3612,16 @@ Support
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">CONV_CERT</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
@@ -3623,6 +3665,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">DFL6</td>
       <td class="govuk-table__cell">COMP_DOC</td>
       <td class="govuk-table__cell">Suggested</td>
@@ -3650,6 +3702,16 @@ Support
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">SDLT</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
@@ -5148,7 +5210,7 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">SOT</td>
+      <td class="govuk-table__cell">SOT (Subdivision of title)</td>
       <td class="govuk-table__cell">CORRES</td>
       <td class="govuk-table__cell">Suggested</td>
     </tr>
@@ -5238,6 +5300,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">TNV</td>
       <td class="govuk-table__cell">TR1 or TR5</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -5278,6 +5350,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">TNVTP</td>
       <td class="govuk-table__cell">TP1 or TR5</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -5303,6 +5385,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">TOC</td>
       <td class="govuk-table__cell">TR4</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -5320,6 +5412,16 @@ Support
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">CONSENT</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
@@ -5363,6 +5465,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">TOSNVTP</td>
       <td class="govuk-table__cell">TP1</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -5388,6 +5500,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">TOSTP</td>
       <td class="govuk-table__cell">TP1</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -5410,6 +5532,16 @@ Support
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">PLAN</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
@@ -5453,6 +5585,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">TPS</td>
       <td class="govuk-table__cell">TR2</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -5493,6 +5635,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">TPSTP</td>
       <td class="govuk-table__cell">TP2</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -5515,6 +5667,16 @@ Support
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">PLAN</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
@@ -5623,6 +5785,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">TSCNVTP</td>
       <td class="govuk-table__cell">TP1</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -5643,6 +5815,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">TSCTP</td>
       <td class="govuk-table__cell">TP1 or TR5</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -5660,6 +5842,16 @@ Support
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">PLAN</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
@@ -5703,6 +5895,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">TTP</td>
       <td class="govuk-table__cell">TP1 or TR5</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -5738,6 +5940,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">TVR</td>
       <td class="govuk-table__cell">TR1</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -5758,6 +5970,16 @@ Support
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">TVRTP</td>
       <td class="govuk-table__cell">TP1</td>
       <td class="govuk-table__cell">Compulsory</td>
@@ -5775,6 +5997,16 @@ Support
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">FORM_JO</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">POA</td>
+      <td class="govuk-table__cell">Suggested</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">FORM_DI</td>
       <td class="govuk-table__cell">Suggested</td>
     </tr>
     <tr class="govuk-table__row">
@@ -6689,7 +6921,7 @@ Support
 <h4 id="dispositionary-first-lease-application-types" tabindex="-1" class="govuk-heading-s"><code class="app-code app-code--inline">DISPOSITIONARY_FIRST_LEASE</code> application types</h4>
 <p class="govuk-body">The following title types are supported:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">LANDLORD_TITLES</code> - titles related to the landlord(s) on the application</li>
+<li><code class="app-code app-code--inline">LANDLORD_TITLE</code> - titles related to the landlord(s) on the application</li>
 <li><code class="app-code app-code--inline">ADDITIONAL_TITLE</code> - any other titles on the application</li>
 </ul>
 <p class="govuk-body">For a lease extension application (where the transaction type is <code class="app-code app-code--inline">DFL5</code> Dispositionary first lease extension of a term) a single title with type <code class="app-code app-code--inline">TENANT_TITLE</code> must also be provided, which is related to the tenant on the application.</p>
@@ -6711,7 +6943,7 @@ Support
 <li><code class="app-code app-code--inline">TRANSFEROR</code></li>
 <li><code class="app-code app-code--inline">TRUSTEE_IN_BANKRUPTCY</code></li>
 </ul>
-<p class="govuk-body">A party may be given different roles in different transactions. A party must not be used for multiple party roles within a single transaction, with the exception of the following transactions: ASTT, ASSTTP, ASTC, TOSNV, TOSNVTP, TOSTP, TOSV.</p>
+<p class="govuk-body">A party may be given different roles in different transactions. A party must not be used for multiple party roles within a single transaction, with the exception of the following transactions: ASTT, ASSTTP, ASTC, TOSNV, TOSNVTP, TOSTP, TOSV, TSCV, TSCTP, TSCNVTP, TSCNV.</p>
 <p class="govuk-body">When a party does not have a defined role, the party role is optional. For example, an applicant with a third party interest.</p>
 <h3 id="capacity-fields" tabindex="-1" class="govuk-heading-m">Capacity fields</h3>
 <p class="govuk-body">The capacity field is a data item within the party role object. The capacity field must be provided for Landlords, Tenants and Transferors when they are added as additional parties to transactions. It can be provided for any other party role, but this is optional. The exception to this rule is for Transferors on assent transactions.</p>
@@ -6764,7 +6996,7 @@ Support
 </ul>
 <p class="govuk-body">Example request for capacity field:</p>
 <p class="govuk-body">“Select the capacity the Transferor is acting in. You’ll need to evidence the capacity to act and check whether ID evidence will be required.”</p>
-<p class="govuk-body">The capacity field is currently optional, but it may become mandatory in the future.</p><p></p>
+<p></p>
 <div class="govuk-inset-text">
   Field type: This field is a type String, with a set of enumerated values.
 </div>
@@ -6869,14 +7101,6 @@ Support
 <p class="govuk-body">This will be done within the partyrole object, by providing the party reference ID(s) of the relevant attorney(s) in the “attorneys” data item.</p>
 <p class="govuk-body">A maximum of 4 power of attorney parties can be included per party here. Attorneys must not be provided for any parties with a role of “ATTORNEY” or “ASSENTOR”. All parties referenced as attorneys must also be included on the transaction as parties themselves, with a role of “ATTORNEY”. Any party with a role of “ATTORNEY” must be referenced in the “attorneys” data item.</p>
 <p class="govuk-body">The number of “POA” documents attached to a transaction must be at least the number of parties (only role types transferor, landlord, borrower, lender) in that transaction that have a power of attorney.</p>
-<h3 id="representation" tabindex="-1" class="govuk-heading-m">Representation</h3>
-<p class="govuk-body">All parties require a representation type. The representation type cannot be <code class="app-code app-code--inline">NOT_REQUIRED</code> for Borrowers, Transferees and Transferors. The options are as follows:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li><code class="app-code app-code--inline">LODGING_CONVEYANCER</code> - the conveyancer lodging the application</li>
-<li><code class="app-code app-code--inline">OTHER_CONVEYANCER</code> - the party is represented by another conveyancer. Details will be included with the application</li>
-<li><code class="app-code app-code--inline">NOT_REPRESENTED</code> - the party is not represented by a conveyancer and identity evidence has been provided</li>
-<li><code class="app-code app-code--inline">NOT_REQUIRED</code> - the party is not required to have a representation type. This should never be selected for Borrowers, Transferees or Transferors</li>
-</ul>
 <h3 id="additional-provisions" tabindex="-1" class="govuk-heading-m">Additional provisions</h3>
 <p class="govuk-body">The additional provisions code is specific to Tranfer transactions and is part of the Transfer object. For transfers, one of the following Additional Provision code options must be selected:</p>
 <ol class="govuk-list govuk-list--number">
@@ -6978,10 +7202,20 @@ Support
 <h3 id="proprietor-address-for-service" tabindex="-1" class="govuk-heading-m">Proprietor address for service</h3>
 <p class="govuk-body">Proprietor address for service must be a valid postal address.</p>
 <h3 id="representation-type" tabindex="-1" class="govuk-heading-m">Representation type</h3>
-<p class="govuk-body">One of the following options must be selected:</p>
+<p class="govuk-body">All parties require a representation type. The representation type cannot be <code class="app-code app-code--inline">NOT_REQUIRED</code> for Borrowers, Transferees and Transferors. The options are as follows:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li>Lodging conveyancer</li>
-<li>Other conveyancer</li>
+<li>
+<p class="govuk-body"><code class="app-code app-code--inline">LODGING_CONVEYANCER</code> - the conveyancer lodging the application</p>
+</li>
+<li>
+<p class="govuk-body"><code class="app-code app-code--inline">OTHER_CONVEYANCER</code> - the party is represented by another conveyancer. Details will be included with the application</p>
+</li>
+<li>
+<p class="govuk-body"><code class="app-code app-code--inline">NOT_REPRESENTED</code> - the party is not represented by a conveyancer and identity evidence has been provided</p>
+</li>
+<li>
+<p class="govuk-body"><code class="app-code app-code--inline">NOT_REQUIRED</code> - the party is not required to have a representation type. This should never be selected for Borrowers, Transferees or Transferors</p>
+</li>
 </ul>
 <p class="govuk-body">The party roles of borrower, transferor and transferee cannot have the representation type of <code class="app-code app-code--inline">NOT_REQUIRED</code>.</p>
 <p class="govuk-body">If the application lodger is not a conveyancer, then no parties can use the <code class="app-code app-code--inline">LODGING_CONVEYANCER</code> representation type.</p>

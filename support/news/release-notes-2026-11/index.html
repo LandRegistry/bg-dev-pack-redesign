@@ -240,7 +240,8 @@ Support
 
 
 
-      <div class="app-prose-scope"><p class="govuk-body">Changes listed in these release notes are for the <a href="/bg-dev-pack-redesign/apis/notifications/" class="govuk-link">Notifications API</a>, the <a href="/bg-dev-pack-redesign/apis/attach-a-message/1.0/" class="govuk-link">Attach a message API</a>, the <a href="/bg-dev-pack-redesign/apis/submit-an-application/" class="govuk-link">Submit an application API</a> and the <a href="/bg-dev-pack-redesign/apis/application-information/" class="govuk-link">Application information API</a>. They include:</p>
+      <div class="app-prose-scope"><p class="govuk-body">Updated 26 November 2026: <code class="app-code app-code--inline">message_id</code> is now returned in message notifications, and the Developer Pack now links to version 2.1 of the API specification.</p>
+<p class="govuk-body">Changes listed in these release notes are for the <a href="/bg-dev-pack-redesign/apis/notifications/" class="govuk-link">Notifications API</a>, the <a href="/bg-dev-pack-redesign/apis/attach-a-message/1.0/" class="govuk-link">Attach a message API</a>, the <a href="/bg-dev-pack-redesign/apis/submit-an-application/" class="govuk-link">Submit an application API</a> and the <a href="/bg-dev-pack-redesign/apis/application-information/" class="govuk-link">Application information API</a>. They include:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li><a href="#enhancements" class="govuk-link">Enhancements</a></li>
 <li><a href="#fixes" class="govuk-link">Fixes</a></li>
@@ -250,14 +251,18 @@ Support
 <p class="govuk-body">This release introduces the following enhancements.</p>
 <h3 id="message-and-document-ids-in-notifications" tabindex="-1" class="govuk-heading-m">Message and document IDs in notifications</h3>
 <p class="govuk-body"><a href="/bg-dev-pack-redesign/apis/notifications/1.0/technical-guide/#notification-types" class="govuk-link">Notifications</a> for attached documents now include a <code class="app-code app-code--inline">document_id</code> field. You already create this ID when you attach a document, so you do not need to do anything.</p>
-<p class="govuk-body">The API specification also shows an optional <code class="app-code app-code--inline">message_id</code> for message notifications. If you include it when you use the <a href="/bg-dev-pack-redesign/apis/attach-a-message/1.0/" class="govuk-link">Attach a message API</a>, it will not cause any errors, but it is not returned in notifications yet. We will update these release notes when it is.</p>
+<p class="govuk-body">Notifications for messages now include a <code class="app-code app-code--inline">message_id</code> field, if you include it when you use the <a href="/bg-dev-pack-redesign/apis/attach-a-message/1.0/" class="govuk-link">Attach a message API</a>.</p>
 <p class="govuk-body">You can use these fields to match each notification to the message or document you sent. This is especially useful for failed attachments, because the ID tells you which one failed.</p>
 <p class="govuk-body">If your integration validates notification payloads against our <a href="/bg-dev-pack-redesign/apis/notifications/1.0/technical-guide/#schemas" class="govuk-link">schemas</a>, update to the latest version of the schemas, which now include <code class="app-code app-code--inline">message_id</code> and <code class="app-code app-code--inline">document_id</code>.</p>
 <div class="govuk-inset-text app-inset-text--note"><span class="govuk-visually-hidden">Note: </span><p class="govuk-body">Adding a required field to a notification payload can sometimes be a breaking change. We do not consider this change to be breaking because <code class="app-code app-code--inline">document_id</code> is already part of the <a href="/bg-dev-pack-redesign/apis/attach-a-document/1.0/technical-guide/#example-requests-and-responses" class="govuk-link">Attach a document</a> request. Notifications now return the value you sent.</p>
 </div>
 <h4 id="api-updates" tabindex="-1" class="govuk-heading-s">API updates</h4>
-<p class="govuk-body"><strong>Notifications API v1:</strong> <code class="app-code app-code--inline">GET /v1/notifications</code> now returns <code class="app-code app-code--inline">document_id</code> (always present) in <code class="app-code app-code--inline">application.attachment-success</code> and <code class="app-code app-code--inline">application.attachment-failed</code></p>
-<p class="govuk-body"><code class="app-code app-code--inline">message_id</code> in <code class="app-code app-code--inline">application.message-success</code> and <code class="app-code app-code--inline">application.message-failed</code> will be returned in a later update.</p>
+<p class="govuk-body"><strong>Notifications API v1:</strong> <code class="app-code app-code--inline">GET /v1/notifications</code> now returns:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="app-code app-code--inline">document_id</code> (always present) in <code class="app-code app-code--inline">application.attachment-success</code> and <code class="app-code app-code--inline">application.attachment-failed</code></li>
+<li><code class="app-code app-code--inline">message_id</code> (if you sent one) in <code class="app-code app-code--inline">application.message-success</code> and <code class="app-code app-code--inline">application.message-failed</code></li>
+</ul>
+<p class="govuk-body"><strong>API specification:</strong> the Developer Pack now links to <a href="https://landregistry.github.io/bgtechdoc/documents/submit-an-application-to-change-the-register/v2.1/openapi.html" class="govuk-link">version 2.1 of the API specification</a>. It has a new layout, and links to individual sections have changed. If you bookmarked a section of the old specification, update your bookmark.</p>
 <h2 id="fixes" tabindex="-1" class="govuk-heading-l">Fixes</h2>
 <h3 id="data-on-completion-fixes-in-the-application-information-api" tabindex="-1" class="govuk-heading-m">Data on Completion fixes in the Application information API</h3>
 <p class="govuk-body">These changes fix an object naming clash introduced with Data on Completion in October 2026. The object names in the API specification now match the JSON responses.</p>
